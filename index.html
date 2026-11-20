@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ôn Tập & Thi Thử - Đại Số Tuyến Tính & Toán Rời Rạc</title>
+  
+  <!-- Favicon minimal SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+
+  <!-- KaTeX for Lightning Fast Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script>
+    // Robust CDN Fallback if primary CDN is slow or unreachable
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        if (!window.katex) {
+          console.warn('Loading KaTeX fallback from cdnjs...');
+          const css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css';
+          document.head.appendChild(css);
+
+          const js = document.createElement('script');
+          js.src = 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js';
+          js.onload = () => {
+            const autoRender = document.createElement('script');
+            autoRender.src = 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js';
+            autoRender.onload = () => {
+              if (window.renderMathInElement) {
+                window.renderMathInElement(document.body, {
+                  delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                  ]
+                });
+              }
+            };
+            document.head.appendChild(autoRender);
+          };
+          document.head.appendChild(js);
+        }
+      }, 1500);
+    });
+  </script>
+
+  <!-- Application Styles (Relative Path for GitHub Pages) -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Minimalist Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <h1 class="brand-title">Đại Số Tuyến Tính & Toán Rời Rạc</h1>
+        <span class="brand-badge">200 Câu</span>
+      </div>
+
+      <!-- Mode Switcher Tabs -->
+      <nav class="nav-modes">
+        <button class="nav-tab active" id="tabQuiz">
+          <span>⚡</span> Thi thử (35p / 20 câu)
+        </button>
+        <button class="nav-tab" id="tabPractice">
+          <span>📖</span> Ôn tập 200 câu (Chấm ngay)
+        </button>
+      </nav>
+
+      <!-- Utility Actions -->
+      <div class="header-actions">
+        <button class="btn-icon" id="themeToggle" title="Chuyển chế độ Sáng / Tối">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+
+    <!-- ============================================================== -->
+    <!-- VIEW 1: QUIZ MODE (Thi thử 35 phút / 20 câu) -->
+    <!-- ============================================================== -->
+    <section id="quizView">
+      <!-- 1A. START SCREEN (Chỉ bắt đầu khi người dùng bấm nút) -->
+      <div id="quizStartScreen" class="start-exam-card">
+        <div class="start-header">
+          <div class="start-badge">⚡ Đề thi chuẩn 35 phút</div>
+          <h2 class="start-title">Thi Thử Đại Số Tuyến Tính & Toán Rời Rạc</h2>
+          <p class="start-subtitle">Mỗi đề gồm 20 câu hỏi trắc nghiệm bốc ngẫu nhiên cân đối qua 6 chuyên đề, thời gian làm bài đúng 35 phút.</p>
+        </div>
+
+        <div class="start-info-grid">
+          <div class="info-item">
+            <span class="info-label">Số lượng câu hỏi</span>
+            <span class="info-val">20 câu</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Thời gian làm bài</span>
+            <span class="info-val">35:00 phút</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Phạm vi kiến thức</span>
+            <span class="info-val">Toàn bộ 6 chuyên đề</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Kết quả & Lời giải</span>
+            <span class="info-val">Chi tiết từng bước sau khi nộp</span>
+          </div>
+        </div>
+
+        <div class="start-options-box">
+          <label class="start-opt-label">Nguồn câu hỏi cho đề thi:</label>
+          <div class="start-opt-group">
+            <label class="radio-label">
+              <input type="radio" name="quizSourceOption" value="all" checked>
+              <span>Ngẫu nhiên từ toàn bộ ngân hàng (200 câu hỏi)</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="quizSourceOption" value="original">
+              <span>Chỉ lấy từ 42 câu hỏi đề thi gốc</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="start-notes">
+          <p><strong>Lưu ý:</strong> Đồng hồ 35 phút sẽ chỉ bắt đầu chạy sau khi bạn bấm nút bên dưới. Khi hết giờ, hệ thống sẽ tự động thu bài và hiển thị lời giải chi tiết.</p>
+          <p style="margin-top: 6px;">Hỗ trợ phím tắt: <span class="kbd-hint">1-4</span> / <span class="kbd-hint">A-D</span> chọn đáp án • <span class="kbd-hint">←</span> <span class="kbd-hint">→</span> chuyển câu • <span class="kbd-hint">F</span> đánh dấu xem lại.</p>
+        </div>
+
+        <button class="btn btn-primary btn-start-exam" id="btnStartExam">
+          ⚡ Bắt đầu làm bài thi (35 phút)
+        </button>
+      </div>
+
+      <!-- 1B. ACTIVE EXAM SCREEN (Hiển thị khi đang làm bài thi) -->
+      <div id="quizActiveScreen" style="display: none;">
+        <!-- Top info bar with timer -->
+        <div class="quiz-top-bar">
+          <div class="timer-box" title="Thời gian còn lại">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span id="quizTimer">35:00</span>
+          </div>
+
+          <div class="quiz-progress-text" id="quizProgressText">
+            Đã làm 0/20 câu
+          </div>
+
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-flag" id="btnQuizFlag">
+              ☆ Đánh dấu xem lại <span class="kbd-hint">F</span>
+            </button>
+            <button class="btn btn-cancel-quiz" id="btnQuizCancel" title="Hủy lượt thi này">
+              Hủy thi
+            </button>
+            <button class="btn btn-submit" id="btnQuizSubmit">
+              Nộp bài
+            </button>
+          </div>
+        </div>
+
+        <!-- 20 Question Dots Navigator -->
+        <div class="quiz-nav-grid" id="quizNavGrid"></div>
+
+        <!-- Current Question Card -->
+        <div class="question-card" id="quizQuestionContainer">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Bottom Prev / Next Navigation -->
+        <div class="quiz-controls">
+          <button class="btn" id="btnQuizPrev" disabled>
+            ← Câu trước <span class="kbd-hint">←</span>
+          </button>
+          <span style="font-size:0.85rem; color:var(--text-muted)">
+            Phím tắt: <span class="kbd-hint">1-4</span> / <span class="kbd-hint">A-D</span> chọn đáp án • <span class="kbd-hint">←</span> <span class="kbd-hint">→</span> chuyển câu
+          </span>
+          <button class="btn btn-primary" id="btnQuizNext">
+            Câu sau → <span class="kbd-hint">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 2: REVIEW MODE (Xem lại bài thi & Lời giải sau khi nộp) -->
+    <!-- ============================================================== -->
+    <section id="reviewView" style="display: none;">
+      <!-- Score summary card -->
+      <div class="score-banner">
+        <div class="score-badge high" id="reviewScoreBadge">Kết quả thi</div>
+        <div class="score-value" id="reviewScoreValue">--/20</div>
+        <div class="score-sub" id="reviewScoreSub">Điểm: --/10 • Thời gian: --</div>
+        <div class="score-actions">
+          <button class="btn btn-primary" id="btnRetryTest">
+            ↺ Làm lại đề thi này
+          </button>
+          <button class="btn" id="btnNewTest">
+            ⚡ Tạo đề thi mới (20 câu khác)
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter review questions -->
+      <div class="review-filter-bar">
+        <h3 style="font-size:1.05rem; font-weight:700;">Chi tiết bài làm & Lời giải</h3>
+        <div class="filter-group">
+          <button class="filter-chip review-filter-chip active" data-filter="all">Tất cả (20)</button>
+          <button class="filter-chip review-filter-chip" data-filter="wrong">Chỉ câu sai</button>
+          <button class="filter-chip review-filter-chip" data-filter="right">Chỉ câu đúng</button>
+          <button class="filter-chip review-filter-chip" data-filter="unanswered">Chưa trả lời</button>
+        </div>
+      </div>
+
+      <!-- Review Questions List -->
+      <div id="reviewQuestionsList"></div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 3: PRACTICE MODE (Ôn tổng quát 200 câu - Làm câu nào chấm câu đó) -->
+    <!-- ============================================================== -->
+    <section id="practiceView" style="display: none;">
+      <!-- Practice Global Stats Header -->
+      <div class="practice-header-bar">
+        <div class="practice-stats" id="practiceStatsText">
+          <!-- Rendered dynamically -->
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="practiceProgressFill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Filtering and Search Bar -->
+      <div class="practice-controls-row">
+        <!-- Topic Select -->
+        <select class="select-filter" id="practiceTopicSelect">
+          <option value="all">Tất cả chuyên đề (200 câu)</option>
+          <option value="1">CĐ 1: Logic, Tập hợp & Ánh xạ</option>
+          <option value="2">CĐ 2: Ma trận & Định thức</option>
+          <option value="3">CĐ 3: Hệ phương trình tuyến tính</option>
+          <option value="4">CĐ 4: Không gian véc tơ</option>
+          <option value="5">CĐ 5: Ánh xạ tuyến tính & GTR</option>
+          <option value="6">CĐ 6: Không gian Euclide & Dạng toàn phương</option>
+        </select>
+
+        <!-- Origin Select -->
+        <select class="select-filter" id="practiceOriginSelect">
+          <option value="all">Toàn bộ câu hỏi</option>
+          <option value="original">Chỉ 42 câu đề thi gốc</option>
+          <option value="extra">158 câu luyện tập thêm</option>
+        </select>
+
+        <!-- Status Select -->
+        <select class="select-filter" id="practiceStatusSelect">
+          <option value="all">Tất cả trạng thái</option>
+          <option value="unanswered">Chưa làm</option>
+          <option value="correct">Đã làm đúng</option>
+          <option value="incorrect">Đã làm sai</option>
+          <option value="bookmarked">Đã đánh dấu sao ⭐</option>
+        </select>
+
+        <!-- Keyword Search -->
+        <input type="text" class="input-search" id="practiceSearchInput" placeholder="Tìm theo nội dung, khái niệm (ma trận, đối ngẫu, Cramer...)...">
+
+        <!-- View mode toggle -->
+        <button class="btn" id="btnToggleViewMode" title="Chuyển đổi chế độ xem">
+          Chuyển xem dạng danh sách 📜
+        </button>
+
+        <!-- Reset Button -->
+        <button class="btn" id="btnResetPractice" title="Xóa lịch sử làm bài ôn tập" style="color:var(--error-text)">
+          Làm lại từ đầu
+        </button>
+      </div>
+
+      <!-- Dynamic Practice Questions Content -->
+      <div id="practiceContentArea"></div>
+    </section>
+
+  </main>
+
+  <!-- Modal Container -->
+  <div id="modalContainer"></div>
+
+  <!-- Minimal Footer -->
+  <footer class="app-footer">
+    <p>Hệ thống Ôn tập & Thi thử Đại Số Tuyến Tính & Toán Rời Rạc • 100% Pure Frontend • Deploy GitHub Pages</p>
+  </footer>
+
+  <!-- Scripts (Relative Paths for GitHub Pages) -->
+  <script src="./data/questions.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
