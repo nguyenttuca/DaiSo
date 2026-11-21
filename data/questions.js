@@ -1,5 +1,5 @@
 // Ngân hàng 200 câu hỏi Đại số tuyến tính & Toán rời rạc (Bản chuẩn hóa đầy đủ)
-window.QUESTIONS_DATA = [
+window.QUESTIONS_BANK = window.QUESTIONS_DATA = [
   {
     "originalId": 1,
     "topicId": 1,

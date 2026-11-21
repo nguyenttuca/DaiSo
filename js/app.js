@@ -41,9 +41,18 @@
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
 
+  // --- Data Provider Helper ---
+  function getQuestionsBank() {
+    if (typeof window !== 'undefined') {
+      if (Array.isArray(window.QUESTIONS_BANK) && window.QUESTIONS_BANK.length > 0) return window.QUESTIONS_BANK;
+      if (Array.isArray(window.QUESTIONS_DATA) && window.QUESTIONS_DATA.length > 0) return window.QUESTIONS_DATA;
+    }
+    return [];
+  }
+
   // --- App State ---
   const state = {
-    allQuestions: window.QUESTIONS_BANK || [],
+    allQuestions: getQuestionsBank(),
     currentTab: 'quiz', // 'quiz' | 'review' | 'practice'
     
     // Quiz State
@@ -174,6 +183,14 @@
   function startExam() {
     clearInterval(state.quiz.timerInterval);
 
+    if (!state.allQuestions || state.allQuestions.length === 0) {
+      state.allQuestions = getQuestionsBank();
+    }
+    if (!state.allQuestions || state.allQuestions.length === 0) {
+      alert("Đang tải dữ liệu câu hỏi hoặc chưa tìm thấy ngân hàng đề. Vui lòng làm mới trang (F5).");
+      return;
+    }
+
     // Get source preference
     const sourceRadio = document.querySelector('input[name="quizSourceOption"]:checked');
     const source = sourceRadio ? sourceRadio.value : 'all';
@@ -199,6 +216,11 @@
       }
       shuffleArray(selected);
       state.quiz.questions = selected;
+    }
+
+    if (!state.quiz.questions || state.quiz.questions.length === 0) {
+      alert("Không thể khởi tạo danh sách câu hỏi thi. Vui lòng tải lại trang.");
+      return;
     }
 
     state.quiz.started = true;
@@ -276,7 +298,15 @@
 
   function renderQuizQuestion() {
     const q = state.quiz.questions[state.quiz.currentIndex];
-    if (!q) return;
+    if (!q) {
+      el.quizQuestionContainer.innerHTML = `
+        <div style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+          <p style="font-size: 1.05rem; margin-bottom: 12px;">Đang tải nội dung câu hỏi hoặc chưa tìm thấy dữ liệu.</p>
+          <button class="btn btn-primary" onclick="location.reload()">Tải lại trang (F5)</button>
+        </div>
+      `;
+      return;
+    }
 
     const isFlagged = state.quiz.flags.has(q.id);
     el.btnQuizFlag.classList.toggle('active', isFlagged);
@@ -556,6 +586,9 @@
   }
 
   function renderPracticeView() {
+    if (!state.allQuestions || state.allQuestions.length === 0) {
+      state.allQuestions = getQuestionsBank();
+    }
     updatePracticeStats();
 
     const filtered = getFilteredPracticeQuestions();
@@ -1168,6 +1201,23 @@
   el.quizStartScreen.style.display = 'block';
   el.quizActiveScreen.style.display = 'none';
   renderPracticeView();
+
+  // Asynchronous fallback if questions weren't loaded synchronously
+  if (state.allQuestions.length === 0 && typeof fetch === 'function') {
+    fetch('./data/questions.json')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          window.QUESTIONS_BANK = window.QUESTIONS_DATA = data;
+          state.allQuestions = data;
+          if (state.currentTab === 'practice') {
+            renderPracticeView();
+          }
+          console.log(`Async loaded ${data.length} questions from questions.json fallback.`);
+        }
+      })
+      .catch(err => console.warn('Fallback fetch questions.json error:', err));
+  }
 
   console.log(`Initialized app with ${state.allQuestions.length} questions. Waiting for user to start.`);
 })();
