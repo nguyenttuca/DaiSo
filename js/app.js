@@ -1839,7 +1839,12 @@
       transition: all 0.25s ease;
     `;
     toast.textContent = msg;
-    document.body.appendChild(toast);
+    const targetParent = document.body || document.documentElement;
+    if (targetParent) {
+      targetParent.appendChild(toast);
+    } else {
+      return;
+    }
 
     setTimeout(() => {
       toast.style.opacity = '1';
