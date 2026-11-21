@@ -440,7 +440,8 @@
     // Update active class on size cards
     const countRadio = document.querySelector('input[name="quizQuestionCount"]:checked');
     const reqCount = countRadio ? parseInt(countRadio.value, 10) : 20;
-    const reqDur = countRadio ? parseInt(countRadio.dataset.duration || '25', 10) : 25;
+    const durVal = countRadio ? ((countRadio.dataset && countRadio.dataset.duration) || (countRadio.getAttribute ? countRadio.getAttribute('data-duration') : null) || '25') : '25';
+    const reqDur = parseInt(durVal, 10) || 25;
     document.querySelectorAll('.size-pill-card').forEach(card => {
       const r = card.querySelector('input[type="radio"]');
       card.classList.toggle('active', r && r.checked);
@@ -596,7 +597,8 @@
     // 3. Get Selected Question Count & Duration
     const countRadio = document.querySelector('input[name="quizQuestionCount"]:checked');
     const requestedCount = countRadio ? parseInt(countRadio.value, 10) : 20;
-    const requestedDuration = countRadio ? parseInt(countRadio.dataset.duration || '25', 10) : 25;
+    const durVal = countRadio ? ((countRadio.dataset && countRadio.dataset.duration) || (countRadio.getAttribute ? countRadio.getAttribute('data-duration') : null) || '25') : '25';
+    const requestedDuration = parseInt(durVal, 10) || 25;
 
     // 4. Filter Available Pool
     const pool = state.allQuestions.filter(q => {
