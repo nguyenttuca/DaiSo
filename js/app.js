@@ -35,8 +35,8 @@
 
   // --- Format Markdown Text Helper ---
   function formatContent(text) {
-    if (!text) return '';
-    return text
+    if (text === null || text === undefined) return '';
+    return String(text)
       .replace(/^(\s*)\*\s+/gm, '$1• ')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
@@ -50,9 +50,202 @@
     return [];
   }
 
+  // --- Question History & Smart Sampling Helpers ---
+  function initQuestionHistory() {
+    let hist = {};
+    try {
+      hist = JSON.parse(localStorage.getItem('toancc_question_history') || '{}');
+    } catch (e) {
+      hist = {};
+    }
+
+    // Auto-migrate from past practice or type-practice answers if any
+    try {
+      const practiceAnswers = JSON.parse(localStorage.getItem('practice_answers') || '{}');
+      const tpAnswers = JSON.parse(localStorage.getItem('tp_answers') || '{}');
+      const allQ = getQuestionsBank();
+      const qMap = new Map(allQ.map(q => [q.id, q]));
+      let changed = false;
+
+      Object.keys(practiceAnswers).forEach(idStr => {
+        const id = parseInt(idStr, 10);
+        if (!hist[id] && qMap.has(id)) {
+          const q = qMap.get(id);
+          const ans = practiceAnswers[idStr];
+          const isRight = (ans === q.correct);
+          hist[id] = {
+            attempts: 1,
+            correctCount: isRight ? 1 : 0,
+            wrongCount: isRight ? 0 : 1,
+            lastResult: isRight,
+            lastAttempt: Date.now() - 3600000 * 24,
+            lastAnswer: ans
+          };
+          changed = true;
+        }
+      });
+
+      Object.keys(tpAnswers).forEach(idStr => {
+        const id = parseInt(idStr, 10);
+        if (!hist[id] && qMap.has(id)) {
+          const q = qMap.get(id);
+          const ans = tpAnswers[idStr];
+          const isRight = (ans === q.correct);
+          hist[id] = {
+            attempts: 1,
+            correctCount: isRight ? 1 : 0,
+            wrongCount: isRight ? 0 : 1,
+            lastResult: isRight,
+            lastAttempt: Date.now() - 3600000 * 12,
+            lastAnswer: ans
+          };
+          changed = true;
+        }
+      });
+
+      if (changed) {
+        localStorage.setItem('toancc_question_history', JSON.stringify(hist));
+      }
+    } catch (e) {}
+
+    return hist;
+  }
+
+  function getQuestionHistory(qid) {
+    if (!state || !state.history) {
+      return null;
+    }
+    return state.history[qid] || null;
+  }
+
+  function recordQuestionAttempt(qid, chosenKey, isCorrect) {
+    if (!state.history) {
+      state.history = {};
+    }
+    const id = parseInt(qid, 10);
+    const prev = state.history[id] || { attempts: 0, correctCount: 0, wrongCount: 0 };
+    
+    state.history[id] = {
+      attempts: (prev.attempts || 0) + 1,
+      correctCount: (prev.correctCount || 0) + (isCorrect ? 1 : 0),
+      wrongCount: (prev.wrongCount || 0) + (isCorrect ? 0 : 1),
+      lastResult: !!isCorrect,
+      lastAttempt: Date.now(),
+      lastAnswer: chosenKey
+    };
+
+    try {
+      localStorage.setItem('toancc_question_history', JSON.stringify(state.history));
+    } catch (e) {
+      console.warn('Lỗi lưu toancc_question_history:', e);
+    }
+  }
+
+  function computeQuestionPriorityScore(q) {
+    const h = getQuestionHistory(q.id);
+    const now = Date.now();
+
+    // Priority Tier 1: Câu chưa từng làm (New Questions)
+    // Ưu tiên cao nhất: Score từ 0 đến 99
+    if (!h || !h.attempts) {
+      return Math.random() * 99;
+    }
+
+    // Priority Tier 2: Câu đã từng làm nhưng lần gần nhất bị SAI (Wrong Questions to reinforce)
+    // Ưu tiên thứ hai: Score từ 10,000 đến 49,999
+    if (!h.lastResult) {
+      const wrongBonus = Math.min((h.wrongCount || 1) * 300, 3000);
+      const hoursSince = Math.max(0, (now - (h.lastAttempt || 0)) / (1000 * 3600));
+      const ageBonus = Math.min(hoursSince * 20, 2000);
+      const cooldownPenalty = (hoursSince < 0.2) ? 3000 : 0;
+      return 10000 - wrongBonus - ageBonus + cooldownPenalty + (Math.random() * 500);
+    }
+
+    // Priority Tier 3: Câu đã làm và lần gần nhất ĐÚNG (Correct Questions - Spaced Repetition)
+    // Ưu tiên thứ ba: Score từ 100,000 trở lên
+    const hoursSince = Math.max(0, (now - (h.lastAttempt || 0)) / (1000 * 3600));
+    let recencyPenalty = 0;
+    if (hoursSince < 1) {
+      recencyPenalty = 1000000; // Vừa làm xong trong 1 giờ -> KHÔNG lặp lại
+    } else if (hoursSince < 6) {
+      recencyPenalty = 500000;
+    } else if (hoursSince < 24) {
+      recencyPenalty = 100000;
+    } else if (hoursSince < 72) {
+      recencyPenalty = 30000;
+    }
+
+    const spacedDecay = Math.min(hoursSince * 50, 60000);
+    return 100000 + recencyPenalty - spacedDecay + (Math.random() * 1000);
+  }
+
+  function sampleSmartQuestionsFromChapter(chapterQuestions, count) {
+    if (!Array.isArray(chapterQuestions) || chapterQuestions.length <= count) {
+      return [...(chapterQuestions || [])];
+    }
+
+    // 1. Phân nhóm câu hỏi theo subTypeId để đảm bảo dàn trải đủ các dạng bài
+    const subGroups = {};
+    chapterQuestions.forEach(q => {
+      const subId = q.subTypeId || 1;
+      if (!subGroups[subId]) subGroups[subId] = [];
+      subGroups[subId].push(q);
+    });
+
+    // 2. Sắp xếp các câu trong từng dạng bài theo Priority Score (thấp nhất = ưu tiên nhất)
+    const subKeys = Object.keys(subGroups);
+    shuffleArray(subKeys); // Khởi đầu xoay vòng công bằng
+
+    const sortedSubGroups = {};
+    subKeys.forEach(k => {
+      sortedSubGroups[k] = [...subGroups[k]].sort((a, b) => {
+        return computeQuestionPriorityScore(a) - computeQuestionPriorityScore(b);
+      });
+    });
+
+    // 3. Round-Robin xoay vòng giữa các dạng bài
+    const selected = [];
+    const usedIds = new Set();
+    const indexPointers = {};
+    subKeys.forEach(k => { indexPointers[k] = 0; });
+
+    while (selected.length < count) {
+      let addedInRound = false;
+      for (const k of subKeys) {
+        if (selected.length >= count) break;
+        const list = sortedSubGroups[k];
+        while (indexPointers[k] < list.length) {
+          const candidate = list[indexPointers[k]];
+          indexPointers[k]++;
+          if (!usedIds.has(candidate.id)) {
+            usedIds.add(candidate.id);
+            selected.push(candidate);
+            addedInRound = true;
+            break;
+          }
+        }
+      }
+      if (!addedInRound) break;
+    }
+
+    // 4. Bù số lượng nếu round-robin chưa đủ
+    if (selected.length < count) {
+      const leftovers = chapterQuestions.filter(q => !usedIds.has(q.id));
+      leftovers.sort((a, b) => computeQuestionPriorityScore(a) - computeQuestionPriorityScore(b));
+      for (const q of leftovers) {
+        if (selected.length >= count) break;
+        usedIds.add(q.id);
+        selected.push(q);
+      }
+    }
+
+    return selected;
+  }
+
   // --- App State ---
   const state = {
     allQuestions: getQuestionsBank(),
+    history: initQuestionHistory(),
     currentTab: 'quiz', // 'quiz' | 'review' | 'practice'
     
     // Quiz State
@@ -274,12 +467,35 @@
     const actualCount = Math.min(reqCount, pool.length);
     const examText = `${actualCount} câu hỏi • ${reqDur}:00 phút`;
 
+    // Calculate smart stats in pool
+    let newInPool = 0;
+    let wrongInPool = 0;
+    let doneInPool = 0;
+    pool.forEach(q => {
+      const h = getQuestionHistory(q.id);
+      if (!h || !h.attempts) newInPool++;
+      else if (!h.lastResult) wrongInPool++;
+      else doneInPool++;
+    });
+
+    const summaryDistributionText = document.getElementById('summaryDistributionText');
+    if (summaryDistributionText) {
+      if (newInPool >= actualCount) {
+        summaryDistributionText.innerHTML = `✨ <strong>100% câu mới (${newInPool} câu chưa làm)</strong>`;
+      } else {
+        const takeNew = newInPool;
+        const takeWrong = Math.min(wrongInPool, actualCount - takeNew);
+        const takeOld = Math.max(0, actualCount - takeNew - takeWrong);
+        summaryDistributionText.innerHTML = `✨ <strong>${takeNew} câu mới</strong> + 🎯 <strong>${takeWrong} câu sai</strong> + 🔄 <strong>${takeOld} câu ôn lại</strong>`;
+      }
+    }
+
     const summaryChaptersText = document.getElementById('summaryChaptersText');
     const summarySourceText = document.getElementById('summarySourceText');
     const summaryExamText = document.getElementById('summaryExamText');
 
     if (summaryChaptersText) summaryChaptersText.textContent = chText;
-    if (summarySourceText) summarySourceText.textContent = `${pool.length} câu khả dụng (${srcText})`;
+    if (summarySourceText) summarySourceText.textContent = `${pool.length} câu khả dụng (${newInPool} mới • ${wrongInPool} cần ôn • ${doneInPool} đã làm)`;
     if (summaryExamText) summaryExamText.textContent = examText;
 
     const btnStart = document.getElementById('btnStartExam');
@@ -395,34 +611,50 @@
       return;
     }
 
-    // 5. Balanced Sampling across selected chapters
+    // 5. Intelligent Balanced & Spaced Sampling across selected chapters
+    // Priorities:
+    //  1. Never attempted questions (New)
+    //  2. Previously answered incorrectly (Mistakes to reinforce)
+    //  3. Answered correctly long ago (Spaced repetition)
+    //  4. Avoid recently answered correct questions (Anti-repetition)
+    //  5. Subtype round-robin distribution to prevent topical clustering
     const targetTotal = Math.min(requestedCount, pool.length);
     const byChapter = {};
     selectedChapters.forEach(ch => {
       byChapter[ch] = pool.filter(q => q.topicId === ch);
-      shuffleArray(byChapter[ch]);
     });
 
     const basePerChapter = Math.floor(targetTotal / selectedChapters.length);
     let remainder = targetTotal % selectedChapters.length;
     const selected = [];
+    const chosenIds = new Set();
 
-    // Distribute among selected chapters
+    // Distribute among selected chapters using smart sampling
     selectedChapters.forEach(ch => {
       const take = basePerChapter + (remainder > 0 ? 1 : 0);
       if (remainder > 0) remainder--;
-      const fromChapter = byChapter[ch].slice(0, Math.min(take, byChapter[ch].length));
-      selected.push(...fromChapter);
+      const chQuestions = byChapter[ch] || [];
+      const fromChapter = sampleSmartQuestionsFromChapter(chQuestions, Math.min(take, chQuestions.length));
+      fromChapter.forEach(q => {
+        if (!chosenIds.has(q.id)) {
+          chosenIds.add(q.id);
+          selected.push(q);
+        }
+      });
     });
 
-    // If some chapter had fewer questions than its quota, fill remainder from pool
+    // If some chapter had fewer questions than its quota, fill remainder from remaining pool
     if (selected.length < targetTotal) {
-      const selectedIds = new Set(selected.map(q => q.id));
-      const leftovers = pool.filter(q => !selectedIds.has(q.id));
-      shuffleArray(leftovers);
-      selected.push(...leftovers.slice(0, targetTotal - selected.length));
+      const leftovers = pool.filter(q => !chosenIds.has(q.id));
+      leftovers.sort((a, b) => computeQuestionPriorityScore(a) - computeQuestionPriorityScore(b));
+      const needed = targetTotal - selected.length;
+      leftovers.slice(0, needed).forEach(q => {
+        chosenIds.add(q.id);
+        selected.push(q);
+      });
     }
 
+    // Shuffle final selected questions so chapters are naturally interwoven
     shuffleArray(selected);
     state.quiz.questions = (selected || []).filter(q => q && q.id);
 
@@ -553,10 +785,24 @@
         ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')}</span>`
         : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng PTIT</span>`;
 
+      // Smart Learning Status Tag
+      const h = getQuestionHistory(q.id);
+      let statusTagHtml = '';
+      if (!h || !h.attempts) {
+        statusTagHtml = `<span class="orig-tag" style="background: rgba(16, 185, 129, 0.12); color: #059669; border-color: rgba(16, 185, 129, 0.25);">✨ Câu mới</span>`;
+      } else if (!h.lastResult) {
+        statusTagHtml = `<span class="orig-tag" style="background: rgba(239, 68, 68, 0.12); color: #dc2626; border-color: rgba(239, 68, 68, 0.25);">🎯 Ôn lại (từng làm sai)</span>`;
+      } else {
+        const days = Math.floor((Date.now() - (h.lastAttempt || 0)) / (1000 * 3600 * 24));
+        const timeText = days > 0 ? `${days} ngày trước` : 'Đã làm đúng';
+        statusTagHtml = `<span class="orig-tag" style="background: rgba(59, 130, 246, 0.12); color: #2563eb; border-color: rgba(59, 130, 246, 0.25);">🔄 Ôn tập định kỳ (${timeText})</span>`;
+      }
+
       el.quizQuestionContainer.innerHTML = `
         <div class="question-meta">
-          <span class="topic-tag">${escapeHtml(q.topicName)}</span>
-          <div>
+          <span class="topic-tag">${escapeHtml(q.topicName || q.chapterName || ('Chương ' + q.topicId))}</span>
+          <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+            ${statusTagHtml}
             ${originBadgeHtml}
           </div>
         </div>
@@ -661,11 +907,14 @@
     const totalDuration = state.quiz.durationSeconds || (25 * 60);
     state.quiz.timeSpent = totalDuration - Math.max(0, state.quiz.timeLeft);
 
-    // Calculate score
+    // Calculate score & record attempt into question history
     let correctCount = 0;
-    state.quiz.questions.forEach(q => {
-      if (state.quiz.answers[q.id] === q.correct) {
-        correctCount++;
+    (state.quiz.questions || []).forEach(q => {
+      const userAns = state.quiz.answers[q.id];
+      if (userAns) {
+        const isRight = (userAns === q.correct);
+        if (isRight) correctCount++;
+        recordQuestionAttempt(q.id, userAns, isRight);
       }
     });
     state.quiz.score = correctCount;
@@ -1100,6 +1349,8 @@
             const chosenKey = btn.dataset.key;
             state.typePractice.answers[q.id] = chosenKey;
             localStorage.setItem('tp_answers', JSON.stringify(state.typePractice.answers));
+            const isRight = (chosenKey === q.correct);
+            recordQuestionAttempt(q.id, chosenKey, isRight);
             renderTpQuestions();
           });
         });
@@ -1484,6 +1735,13 @@
   function handlePracticeAnswer(qid, key) {
     state.practice.answers[qid] = key;
     savePracticeState();
+
+    const q = (state.allQuestions || []).find(item => item.id === parseInt(qid, 10));
+    if (q) {
+      const isRight = (key === q.correct);
+      recordQuestionAttempt(qid, key, isRight);
+    }
+
     renderPracticeView();
   }
 
@@ -1596,8 +1854,8 @@
   }
 
   function escapeHtml(str) {
-    if (!str) return '';
-    return str
+    if (str === null || str === undefined) return '';
+    return String(str)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
