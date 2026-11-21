@@ -56,16 +56,16 @@
     <div class="header-container">
       <div class="brand">
         <h1 class="brand-title">Đại Số Tuyến Tính & Toán Rời Rạc</h1>
-        <span class="brand-badge">200 Câu</span>
+        <span class="brand-badge" id="brandTotalBadge">300 Câu</span>
       </div>
 
       <!-- Mode Switcher Tabs -->
       <nav class="nav-modes">
         <button class="nav-tab active" id="tabQuiz">
-          <span>⚡</span> Thi thử (35p / 20 câu)
+          <span>⚡</span> Thi thử (25p / 20 câu)
         </button>
         <button class="nav-tab" id="tabPractice">
-          <span>📖</span> Ôn tập 200 câu (Chấm ngay)
+          <span id="tabPracticeLabel"><span>📖</span> Ôn tập 300 câu (Chấm ngay)</span>
         </button>
       </nav>
 
@@ -90,9 +90,9 @@
       <!-- 1A. START SCREEN (Chỉ bắt đầu khi người dùng bấm nút) -->
       <div id="quizStartScreen" class="start-exam-card">
         <div class="start-header">
-          <div class="start-badge">⚡ Đề thi chuẩn 35 phút</div>
+          <div class="start-badge">⚡ Đề thi chuẩn 25 phút</div>
           <h2 class="start-title">Thi Thử Đại Số Tuyến Tính & Toán Rời Rạc</h2>
-          <p class="start-subtitle">Mỗi đề gồm 20 câu hỏi trắc nghiệm bốc ngẫu nhiên cân đối qua 6 chuyên đề, thời gian làm bài đúng 35 phút.</p>
+          <p class="start-subtitle">Mỗi đề gồm 20 câu hỏi trắc nghiệm bốc ngẫu nhiên cân đối qua 6 chuyên đề, thời gian làm bài đúng 25 phút.</p>
         </div>
 
         <div class="start-info-grid">
@@ -102,7 +102,7 @@
           </div>
           <div class="info-item">
             <span class="info-label">Thời gian làm bài</span>
-            <span class="info-val">35:00 phút</span>
+            <span class="info-val">25:00 phút</span>
           </div>
           <div class="info-item">
             <span class="info-label">Phạm vi kiến thức</span>
@@ -119,7 +119,7 @@
           <div class="start-opt-group">
             <label class="radio-label">
               <input type="radio" name="quizSourceOption" value="all" checked>
-              <span>Ngẫu nhiên từ toàn bộ ngân hàng (200 câu hỏi)</span>
+              <span>Ngẫu nhiên từ toàn bộ ngân hàng (300 câu hỏi lý thuyết & bài tập)</span>
             </label>
             <label class="radio-label">
               <input type="radio" name="quizSourceOption" value="original">
@@ -129,12 +129,12 @@
         </div>
 
         <div class="start-notes">
-          <p><strong>Lưu ý:</strong> Đồng hồ 35 phút sẽ chỉ bắt đầu chạy sau khi bạn bấm nút bên dưới. Khi hết giờ, hệ thống sẽ tự động thu bài và hiển thị lời giải chi tiết.</p>
+          <p><strong>Lưu ý:</strong> Đồng hồ 25 phút sẽ chỉ bắt đầu chạy sau khi bạn bấm nút bên dưới. Khi hết giờ, hệ thống sẽ tự động thu bài và hiển thị lời giải chi tiết.</p>
           <p style="margin-top: 6px;">Hỗ trợ phím tắt: <span class="kbd-hint">1-4</span> / <span class="kbd-hint">A-D</span> chọn đáp án • <span class="kbd-hint">←</span> <span class="kbd-hint">→</span> chuyển câu • <span class="kbd-hint">F</span> đánh dấu xem lại.</p>
         </div>
 
         <button class="btn btn-primary btn-start-exam" id="btnStartExam">
-          ⚡ Bắt đầu làm bài thi (35 phút)
+          ⚡ Bắt đầu làm bài thi (25 phút)
         </button>
       </div>
 
@@ -146,7 +146,7 @@
             <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span id="quizTimer">35:00</span>
+            <span id="quizTimer">25:00</span>
           </div>
 
           <div class="quiz-progress-text" id="quizProgressText">
@@ -241,7 +241,7 @@
       <div class="practice-controls-row">
         <!-- Topic Select -->
         <select class="select-filter" id="practiceTopicSelect">
-          <option value="all">Tất cả chuyên đề (200 câu)</option>
+          <option value="all">Tất cả chuyên đề (300 câu)</option>
           <option value="1">CĐ 1: Logic, Tập hợp & Ánh xạ</option>
           <option value="2">CĐ 2: Ma trận & Định thức</option>
           <option value="3">CĐ 3: Hệ phương trình tuyến tính</option>

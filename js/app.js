@@ -62,8 +62,8 @@
       currentIndex: 0,
       answers: {}, // questionId -> 'A' | 'B' | 'C' | 'D'
       flags: new Set(), // questionIds
-      durationSeconds: 35 * 60, // 35 minutes
-      timeLeft: 35 * 60,
+      durationSeconds: 25 * 60, // 25 minutes
+      timeLeft: 25 * 60,
       timerInterval: null,
       submitted: false,
       score: 0,
@@ -228,8 +228,8 @@
     state.quiz.currentIndex = 0;
     state.quiz.answers = {};
     state.quiz.flags = new Set();
-    state.quiz.durationSeconds = 35 * 60;
-    state.quiz.timeLeft = 35 * 60;
+    state.quiz.durationSeconds = 25 * 60;
+    state.quiz.timeLeft = 25 * 60;
     state.quiz.score = 0;
     state.quiz.timeSpent = 0;
 
@@ -420,7 +420,7 @@
     clearInterval(state.quiz.timerInterval);
     state.quiz.submitted = true;
     state.quiz.started = false;
-    state.quiz.timeSpent = (35 * 60) - Math.max(0, state.quiz.timeLeft);
+    state.quiz.timeSpent = (25 * 60) - Math.max(0, state.quiz.timeLeft);
 
     // Calculate score
     let correctCount = 0;
@@ -432,7 +432,7 @@
     state.quiz.score = correctCount;
 
     if (isAuto) {
-      showToast('Đã hết thời gian 35 phút! Hệ thống đã tự động thu bài.');
+      showToast('Đã hết thời gian 25 phút! Hệ thống đã tự động thu bài.');
     }
 
     switchTab('review');
@@ -694,7 +694,7 @@
         </div>
 
         <div class="question-title">
-          <strong>Câu ${q.id} / 200.</strong> ${formatContent(q.question)}
+          <strong>Câu ${q.id} / ${state.allQuestions.length || 300}.</strong> ${formatContent(q.question)}
         </div>
 
         <div class="options-list">
@@ -942,7 +942,7 @@
   function promptResetPractice() {
     showModal({
       title: 'Xóa kết quả ôn tập?',
-      message: 'Thao tác này sẽ xóa toàn bộ lịch sử trả lời và các câu đã làm trong chế độ ôn tập 200 câu. Các câu đã đánh dấu sao vẫn được giữ lại.',
+      message: 'Thao tác này sẽ xóa toàn bộ lịch sử trả lời và các câu đã làm trong chế độ ôn tập. Các câu đã đánh dấu sao vẫn được giữ lại.',
       confirmText: 'Xác nhận xóa',
       cancelText: 'Hủy',
       onConfirm: () => {
@@ -1141,7 +1141,7 @@
     state.quiz.answers = {};
     state.quiz.flags = new Set();
     state.quiz.currentIndex = 0;
-    state.quiz.timeLeft = 35 * 60;
+    state.quiz.timeLeft = 25 * 60;
     state.quiz.submitted = false;
     state.quiz.started = true;
     startQuizTimer();
