@@ -55,8 +55,8 @@
   <header class="app-header">
     <div class="header-container">
       <div class="brand">
-        <h1 class="brand-title">Đại Số Tuyến Tính & Toán Rời Rạc</h1>
-        <span class="brand-badge" id="brandTotalBadge">300 Câu</span>
+        <h1 class="brand-title">Đại Số Tuyến Tính & Toán Rời Rạc PTIT</h1>
+        <span class="brand-badge" id="brandTotalBadge">81 Câu Đề Gốc PTIT</span>
       </div>
 
       <!-- Mode Switcher Tabs -->
@@ -65,7 +65,7 @@
           <span>⚡</span> Thi thử (25p / 20 câu)
         </button>
         <button class="nav-tab" id="tabPractice">
-          <span id="tabPracticeLabel"><span>📖</span> Ôn tập 300 câu (Chấm ngay)</span>
+          <span id="tabPracticeLabel"><span>📖</span> Ôn tập 81 câu (Chấm ngay)</span>
         </button>
       </nav>
 
@@ -90,9 +90,9 @@
       <!-- 1A. START SCREEN (Chỉ bắt đầu khi người dùng bấm nút) -->
       <div id="quizStartScreen" class="start-exam-card">
         <div class="start-header">
-          <div class="start-badge">⚡ Đề thi chuẩn 25 phút</div>
-          <h2 class="start-title">Thi Thử Đại Số Tuyến Tính & Toán Rời Rạc</h2>
-          <p class="start-subtitle">Mỗi đề gồm 20 câu hỏi trắc nghiệm bốc ngẫu nhiên cân đối qua 6 chuyên đề, thời gian làm bài đúng 25 phút.</p>
+          <div class="start-badge">⚡ Đề thi chuẩn 25 phút • 20 câu</div>
+          <h2 class="start-title">Thi Thử Đại Số Tuyến Tính & Toán Rời Rạc PTIT</h2>
+          <p class="start-subtitle">Mỗi đề gồm 20 câu hỏi trắc nghiệm bốc ngẫu nhiên từ Ngân hàng đề thi gốc chính thức của Học viện Công nghệ Bưu chính Viễn thông (81 câu chuẩn hóa từ Đề 101 và Đề ôn tập 80 phút), thời gian làm bài đúng 25 phút.</p>
         </div>
 
         <div class="start-info-grid">
@@ -106,7 +106,7 @@
           </div>
           <div class="info-item">
             <span class="info-label">Phạm vi kiến thức</span>
-            <span class="info-val">Toàn bộ 6 chuyên đề</span>
+            <span class="info-val">Toàn bộ 6 chuyên đề Đề gốc</span>
           </div>
           <div class="info-item">
             <span class="info-label">Kết quả & Lời giải</span>
@@ -119,11 +119,15 @@
           <div class="start-opt-group">
             <label class="radio-label">
               <input type="radio" name="quizSourceOption" value="all" checked>
-              <span>Ngẫu nhiên từ toàn bộ ngân hàng (300 câu hỏi lý thuyết & bài tập)</span>
+              <span>Toàn bộ 81 câu đề thi gốc PTIT (Cân đối 6 chuyên đề)</span>
             </label>
             <label class="radio-label">
-              <input type="radio" name="quizSourceOption" value="original">
-              <span>Chỉ lấy từ 42 câu hỏi đề thi gốc</span>
+              <input type="radio" name="quizSourceOption" value="de101">
+              <span>Đề minh họa thi hết học phần 101 • PTIT (40 câu)</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="quizSourceOption" value="de_ontap">
+              <span>Đề thi đại số ôn tập 80 phút • PTIT (41 câu)</span>
             </label>
           </div>
         </div>
@@ -241,20 +245,20 @@
       <div class="practice-controls-row">
         <!-- Topic Select -->
         <select class="select-filter" id="practiceTopicSelect">
-          <option value="all">Tất cả chuyên đề (300 câu)</option>
-          <option value="1">CĐ 1: Logic, Tập hợp & Ánh xạ</option>
-          <option value="2">CĐ 2: Ma trận & Định thức</option>
-          <option value="3">CĐ 3: Hệ phương trình tuyến tính</option>
-          <option value="4">CĐ 4: Không gian véc tơ</option>
-          <option value="5">CĐ 5: Ánh xạ tuyến tính & GTR</option>
-          <option value="6">CĐ 6: Không gian Euclide & Dạng toàn phương</option>
+          <option value="all">Tất cả chuyên đề (81 câu đề gốc)</option>
+          <option value="1">CĐ 1: Logic, Tập hợp & Ánh xạ (8 câu)</option>
+          <option value="2">CĐ 2: Ma trận & Định thức (28 câu)</option>
+          <option value="3">CĐ 3: Hệ phương trình tuyến tính (14 câu)</option>
+          <option value="4">CĐ 4: Không gian véc tơ (13 câu)</option>
+          <option value="5">CĐ 5: Ánh xạ tuyến tính & Chéo hóa (11 câu)</option>
+          <option value="6">CĐ 6: Dạng toàn phương & Euclid (7 câu)</option>
         </select>
 
         <!-- Origin Select -->
         <select class="select-filter" id="practiceOriginSelect">
-          <option value="all">Toàn bộ câu hỏi</option>
-          <option value="original">Chỉ 42 câu đề thi gốc</option>
-          <option value="extra">158 câu luyện tập thêm</option>
+          <option value="all">Tất cả đề thi gốc (81 câu)</option>
+          <option value="de101">Đề minh họa 101 • PTIT (40 câu)</option>
+          <option value="de_ontap">Đề ôn tập PTIT • 80 phút (41 câu)</option>
         </select>
 
         <!-- Status Select -->

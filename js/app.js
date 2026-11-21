@@ -196,27 +196,45 @@
     const source = sourceRadio ? sourceRadio.value : 'all';
 
     let pool = [];
-    if (source === 'original') {
-      pool = state.allQuestions.filter(q => q.isOriginal);
+    if (source === 'de101') {
+      pool = state.allQuestions.filter(q => q.examId === 'de101');
+      shuffleArray(pool);
+      state.quiz.questions = pool.slice(0, 20);
+    } else if (source === 'de_ontap') {
+      pool = state.allQuestions.filter(q => q.examId === 'de_ontap');
       shuffleArray(pool);
       state.quiz.questions = pool.slice(0, 20);
     } else {
-      // Pick 20 questions balanced across 6 topics
+      // Pick 20 questions balanced across 6 topics from all 81 authentic PTIT exam questions
       const questionsByTopic = {};
       for (let t = 1; t <= 6; t++) {
         questionsByTopic[t] = state.allQuestions.filter(q => q.topicId === t);
       }
 
       const selected = [];
-      const counts = [4, 4, 3, 3, 3, 3]; // sum = 20
+      // Topic 1: 2, Topic 2: 5, Topic 3: 4, Topic 4: 3, Topic 5: 3, Topic 6: 3 (sum = 20)
+      const counts = [2, 5, 4, 3, 3, 3];
       for (let t = 1; t <= 6; t++) {
-        const topicQs = [...questionsByTopic[t]];
+        const topicQs = [...(questionsByTopic[t] || [])];
         shuffleArray(topicQs);
-        selected.push(...topicQs.slice(0, counts[t - 1]));
+        const take = Math.min(counts[t - 1], topicQs.length);
+        selected.push(...topicQs.slice(0, take));
       }
+
+      // If selected is less than 20 for any reason, fill up from remaining pool
+      if (selected.length < 20) {
+        const selectedIds = new Set(selected.map(q => q.id));
+        const remaining = state.allQuestions.filter(q => !selectedIds.has(q.id));
+        shuffleArray(remaining);
+        selected.push(...remaining.slice(0, 20 - selected.length));
+      }
+
       shuffleArray(selected);
       state.quiz.questions = selected;
     }
+
+    // Defensive check: ensure only valid question objects
+    state.quiz.questions = (state.quiz.questions || []).filter(q => q && q.id);
 
     if (!state.quiz.questions || state.quiz.questions.length === 0) {
       alert("Không thể khởi tạo danh sách câu hỏi thi. Vui lòng tải lại trang.");
@@ -260,21 +278,26 @@
   }
 
   function updateTimerDisplay() {
+    if (!el.quizTimer) return;
     const mins = Math.floor(state.quiz.timeLeft / 60);
     const secs = state.quiz.timeLeft % 60;
     const timeStr = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
     el.quizTimer.textContent = timeStr;
 
-    if (state.quiz.timeLeft < 300) { // under 5 mins
-      el.quizTimer.parentElement.classList.add('warning');
-    } else {
-      el.quizTimer.parentElement.classList.remove('warning');
+    if (el.quizTimer.parentElement) {
+      if (state.quiz.timeLeft < 300) { // under 5 mins
+        el.quizTimer.parentElement.classList.add('warning');
+      } else {
+        el.quizTimer.parentElement.classList.remove('warning');
+      }
     }
   }
 
   function renderQuizNav() {
+    if (!el.quizNavGrid) return;
     el.quizNavGrid.innerHTML = '';
-    state.quiz.questions.forEach((q, idx) => {
+    (state.quiz.questions || []).forEach((q, idx) => {
+      if (!q || !q.id) return;
       const dot = document.createElement('button');
       dot.className = 'nav-dot';
       dot.textContent = idx + 1;
@@ -293,12 +316,15 @@
     });
 
     const answeredCount = Object.keys(state.quiz.answers).length;
-    el.quizProgressText.textContent = `Đã làm ${answeredCount}/20 câu`;
+    if (el.quizProgressText) {
+      el.quizProgressText.textContent = `Đã làm ${answeredCount}/20 câu`;
+    }
   }
 
   function renderQuizQuestion() {
+    if (!el.quizQuestionContainer) return;
     const q = state.quiz.questions[state.quiz.currentIndex];
-    if (!q) {
+    if (!q || !q.id) {
       el.quizQuestionContainer.innerHTML = `
         <div style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
           <p style="font-size: 1.05rem; margin-bottom: 12px;">Đang tải nội dung câu hỏi hoặc chưa tìm thấy dữ liệu.</p>
@@ -309,14 +335,16 @@
     }
 
     const isFlagged = state.quiz.flags.has(q.id);
-    el.btnQuizFlag.classList.toggle('active', isFlagged);
-    el.btnQuizFlag.innerHTML = isFlagged 
-      ? `★ Đã đánh dấu <span class="kbd-hint">F</span>`
-      : `☆ Đánh dấu xem lại <span class="kbd-hint">F</span>`;
+    if (el.btnQuizFlag) {
+      el.btnQuizFlag.classList.toggle('active', isFlagged);
+      el.btnQuizFlag.innerHTML = isFlagged 
+        ? `★ Đã đánh dấu <span class="kbd-hint">F</span>`
+        : `☆ Đánh dấu xem lại <span class="kbd-hint">F</span>`;
+    }
 
     const selectedKey = state.quiz.answers[q.id];
 
-    let optionsHtml = q.options.map(opt => {
+    let optionsHtml = (q.options || []).map(opt => {
       const isSelected = selectedKey === opt.key;
       return `
         <button class="option-btn ${isSelected ? 'selected' : ''}" data-key="${opt.key}">
@@ -326,11 +354,13 @@
       `;
     }).join('');
 
+    const examBadgeText = q.examName ? `${q.examName} • Câu ${q.originalId}` : `Đề gốc • Câu ${q.originalId}`;
+
     el.quizQuestionContainer.innerHTML = `
       <div class="question-meta">
         <span class="topic-tag">${escapeHtml(q.topicName)}</span>
         <div>
-          ${q.isOriginal ? `<span class="orig-tag highlight">Câu ${q.originalId} • Đề gốc</span>` : `<span class="orig-tag">Ngân hàng đề</span>`}
+          <span class="orig-tag highlight">${escapeHtml(examBadgeText)}</span>
         </div>
       </div>
       <div class="question-title">
@@ -524,7 +554,7 @@
           <span class="topic-tag">${escapeHtml(q.topicName)}</span>
           <div style="display:flex; gap:6px; align-items:center;">
             ${userAns ? (isCorrect ? `<span style="color:var(--success-solid); font-weight:700">✓ Làm đúng</span>` : `<span style="color:var(--error-solid); font-weight:700">✗ Làm sai (Bạn chọn ${userAns})</span>`) : `<span style="color:var(--warn-solid); font-weight:700">Chưa làm</span>`}
-            ${q.isOriginal ? `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>` : `<span class="orig-tag">Ngân hàng</span>`}
+            ${q.examName ? `<span class="orig-tag highlight">${escapeHtml(q.examName)} • Câu ${q.originalId}</span>` : `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>`}
           </div>
         </div>
         <div class="question-title">
@@ -559,9 +589,10 @@
       // Topic
       if (topicFilter !== 'all' && q.topicId !== parseInt(topicFilter, 10)) return false;
 
-      // Origin
+      // Origin / Exam
+      if (originFilter === 'de101' && q.examId !== 'de101') return false;
+      if (originFilter === 'de_ontap' && q.examId !== 'de_ontap') return false;
       if (originFilter === 'original' && !q.isOriginal) return false;
-      if (originFilter === 'extra' && q.isOriginal) return false;
 
       // Status
       const userAns = state.practice.answers[q.id];
@@ -575,10 +606,11 @@
       // Search Query
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
-        const inQ = q.question.toLowerCase().includes(query);
-        const inExp = q.explanation.toLowerCase().includes(query);
-        const inOpts = q.options.some(o => o.text.toLowerCase().includes(query));
-        if (!inQ && !inExp && !inOpts) return false;
+        const inQ = (q.question || '').toLowerCase().includes(query);
+        const inExp = (q.explanation || '').toLowerCase().includes(query);
+        const inExam = (q.examName || '').toLowerCase().includes(query);
+        const inOpts = (q.options || []).some(o => (o.text || '').toLowerCase().includes(query));
+        if (!inQ && !inExp && !inExam && !inOpts) return false;
       }
 
       return true;
@@ -678,7 +710,8 @@
       const isAns = !!state.practice.answers[item.id];
       const isRight = state.practice.answers[item.id] === item.correct;
       const statusSymbol = isAns ? (isRight ? '✓' : '✗') : '•';
-      return `<option value="${idx}" ${idx === state.practice.currentIndex ? 'selected' : ''}>Câu ${item.id} (${statusSymbol}) - ${item.topicName.slice(0, 22)}...</option>`;
+      const examShort = item.examId === 'de101' ? 'Đề 101' : 'Đề ôn tập';
+      return `<option value="${idx}" ${idx === state.practice.currentIndex ? 'selected' : ''}>Câu ${item.id} [${examShort} C${item.originalId}] (${statusSymbol}) - ${item.topicName.slice(0, 18)}...</option>`;
     }).join('');
 
     el.practiceContentArea.innerHTML = `
@@ -686,7 +719,7 @@
         <div class="question-meta">
           <span class="topic-tag">${escapeHtml(q.topicName)}</span>
           <div style="display:flex; gap:8px; align-items:center;">
-            ${q.isOriginal ? `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>` : `<span class="orig-tag">Ngân hàng</span>`}
+            ${q.examName ? `<span class="orig-tag highlight">${escapeHtml(q.examName)} • Câu ${q.originalId}</span>` : `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>`}
             <button class="btn-flag ${isBookmarked ? 'active' : ''}" id="btnPracticeBookmark">
               ${isBookmarked ? '★ Đã lưu' : '☆ Lưu câu này'}
             </button>
@@ -694,7 +727,7 @@
         </div>
 
         <div class="question-title">
-          <strong>Câu ${q.id} / ${state.allQuestions.length || 300}.</strong> ${formatContent(q.question)}
+          <strong>Câu ${q.id} / ${state.allQuestions.length}.</strong> ${formatContent(q.question)}
         </div>
 
         <div class="options-list">
@@ -840,7 +873,7 @@
           <div class="question-meta">
             <span class="topic-tag">${escapeHtml(q.topicName)}</span>
             <div style="display:flex; gap:8px; align-items:center;">
-              ${q.isOriginal ? `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>` : `<span class="orig-tag">Ngân hàng</span>`}
+              ${q.examName ? `<span class="orig-tag highlight">${escapeHtml(q.examName)} • Câu ${q.originalId}</span>` : `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>`}
               <button class="btn-flag ${isBookmarked ? 'active' : ''}" data-bookmark-qid="${q.id}">
                 ${isBookmarked ? '★ Đã lưu' : '☆ Lưu'}
               </button>

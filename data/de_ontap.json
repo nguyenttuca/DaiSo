@@ -1,0 +1,1150 @@
+[
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 1,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho $A = \\begin{bmatrix} 1 & 0 & 0 \\\\ -3 & 1 & 0 \\\\ 2 & 1 & 3 \\end{bmatrix}$ và $B = \\begin{bmatrix} 2 & -1 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & 1 \\end{bmatrix}$. Tính $\\det(3AB)$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$162$"
+      },
+      {
+        "key": "B",
+        "text": "$18$"
+      },
+      {
+        "key": "C",
+        "text": "$6$"
+      },
+      {
+        "key": "D",
+        "text": "$20$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Vì $A$ và $B$ là các ma trận tam giác cấp 3 nên định thức của chúng bằng tích các phần tử trên đường chéo chính:\n  * $\\det A = 1 \\cdot 1 \\cdot 3 = 3$.\n  * $\\det B = 2 \\cdot 1 \\cdot 1 = 2$.\n* Theo tính chất định thức:\n  $$\\det(AB) = \\det A \\cdot \\det B = 3 \\cdot 2 = 6$$\n* Với ma trận vuông cấp $n = 3$:\n  $$\\det(3AB) = 3^3 \\cdot \\det(AB) = 27 \\cdot 6 = 162$$\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 2,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Gọi $V$ là không gian nghiệm của hệ phương trình thuần nhất:\n$$\\begin{cases} x_1 + x_2 + x_3 + x_4 + x_5 = 0 \\\\ 2x_1 + 3x_2 + 4x_3 + 5x_4 + 6x_5 = 0 \\\\ (m + 1)x_1 + 5x_2 + 6x_3 + 7x_4 + 2(m + 1)x_5 = 0 \\end{cases}$$\nTìm $m$ để $\\dim V$ đạt giá trị lớn nhất:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$m = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$m = 7$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 11$"
+      },
+      {
+        "key": "D",
+        "text": "$m = 3$"
+      }
+    ],
+    "correct": "D",
+    "explanation": "* Không gian nghiệm của hệ thuần nhất 5 ẩn có số chiều: $\\dim V = n - r(A) = 5 - r(A)$.\n* Để $\\dim V$ lớn nhất thì hạng $r(A)$ phải nhỏ nhất.\n* Biến đổi sơ cấp ma trận hệ số $A$:\n  $$h_2 \\to h_2 - 2h_1 \\implies (0, 1, 2, 3, 4)$$\n* Xét hàng 3: để $r(A) = 2$ (nhỏ nhất) thì hàng 3 phải là tổ hợp tuyến tính của hàng 1 và hàng 2.\n  * Cụ thể $h_3 = (m - 3) h_1 + (4 - m) h_2$. Ta thấy hệ số của $x_2$ là $5$ và $x_3$ là $6$:\n    $h_3 - 5h_2 = ((m+1) - 10) x_1 + (7 - 15) x_4 \\implies$ giải ra $m = 3$.\n  * Khi $m = 3$, hàng 3 trở thành: $4x_1 + 5x_2 + 6x_3 + 7x_4 + 8x_5 = 2(2x_1 + 3x_2 + 4x_3 + 5x_4 + 6x_5) - (x_1 + x_2 + x_3 + x_4 + x_5) = 2h_2 - h_1$.\n  * Do đó hàng 3 phụ thuộc tuyến tính vào 2 hàng đầu, suy ra $r(A) = 2$.\n* Khi $r(A) = 2$, $\\dim V = 5 - 2 = 3$ (lớn nhất).\n* **Chọn đáp án: D.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 3,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Cho hai hệ phương trình $AX = 0$ (1) và $AX = B$ (2) với $A_{m \\times n}$. Phát biểu nào dưới đây là **sai**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Nếu $m = n$ và (1) có duy nhất nghiệm thì (2) có duy nhất nghiệm"
+      },
+      {
+        "key": "B",
+        "text": "Nếu (1) có duy nhất nghiệm thì (2) có nghiệm"
+      },
+      {
+        "key": "C",
+        "text": "Nếu (1) có vô số nghiệm thì chưa chắc (2) có nghiệm"
+      },
+      {
+        "key": "D",
+        "text": "Nếu (2) có vô số nghiệm thì (1) có vô số nghiệm"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Xét khẳng định B: \"Nếu (1) có duy nhất nghiệm thì (2) có nghiệm\".\n  * (1) có duy nhất nghiệm $X = 0$ khi và chỉ khi $r(A) = n$ (các cột của $A$ độc lập tuyến tính).\n  * Nhưng nếu số phương trình $m > n$ (số hàng nhiều hơn số cột), thì ma trận mở rộng $\\bar{A} = [A \\mid B]$ có thể có hạng $r(\\bar{A}) = n + 1 > r(A)$, dẫn đến hệ (2) vô nghiệm!\n  * Do đó phát biểu B là **sai**.\n* Các khẳng định A, C, D đều đúng theo định lý Kronecker - Capelli.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 4,
+    "topicId": 4,
+    "topicName": "KHÔNG GIAN VÉC TƠ",
+    "question": "Hệ véc tơ nào sau đây **không phải** là một không gian con của $\\mathbb{R}^3$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$V = \\{(x - y, \\, y, \\, 0) \\mid x, y \\in \\mathbb{R}\\}$"
+      },
+      {
+        "key": "B",
+        "text": "$V = \\{(x - y + z, \\, z - y, \\, x) \\mid x, y, z \\in \\mathbb{R}\\}$"
+      },
+      {
+        "key": "C",
+        "text": "$V$ gồm tất cả các véc tơ sinh bởi hệ $\\{(1, 2, 1), (-2, 0, 1), (1, 2, -3), (3, -2, 1)\\}$"
+      },
+      {
+        "key": "D",
+        "text": "$V = \\{(x, \\, y, \\, xy) \\mid x, y \\in \\mathbb{R}\\}$"
+      }
+    ],
+    "correct": "D",
+    "explanation": "* Xét tập hợp D: Véc tơ có dạng $(x, y, xy)$.\n  * Lấy $u = (1, 0, 0) \\in V$ (vì $1 \\cdot 0 = 0$) và $v = (0, 1, 0) \\in V$ (vì $0 \\cdot 1 = 0$).\n  * Nhưng tổng $u + v = (1, 1, 0)$. Tọa độ thứ ba là $0$, trong khi tích hai tọa độ đầu là $1 \\cdot 1 = 1 \\neq 0$.\n  * Do đó $u + v \\notin V$, tập $V$ không đóng kín đối với phép cộng véc tơ nên **không phải là không gian con**.\n* **Chọn đáp án: D.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 5,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Cho hệ phương trình tuyến tính $A_{m \\times n} X = B$ với $r(A) = m$. Khi đó:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hệ luôn có nghiệm"
+      },
+      {
+        "key": "B",
+        "text": "Hệ vô nghiệm"
+      },
+      {
+        "key": "C",
+        "text": "Hệ có vô số nghiệm"
+      },
+      {
+        "key": "D",
+        "text": "Hệ có nghiệm duy nhất"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ma trận mở rộng $\\bar{A} = [A \\mid B]$ có cỡ $m \\times (n + 1)$, nên $r(\\bar{A}) \\le m$.\n* Mặt khác ta luôn có $r(\\bar{A}) \\ge r(A) = m$.\n* Do đó $r(\\bar{A}) = r(A) = m$ với **mọi cột vế phải $B$**.\n* Theo định lý Kronecker - Capelli, hệ phương trình luôn luôn có nghiệm.\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 6,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Hệ phương trình $\\begin{cases} 4x + 3y = -6 \\\\ 5x + 8y = 1 \\\\ a^2 x + 3ay = -9 \\end{cases}$ có đúng 1 nghiệm khi và chỉ khi:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a = -1$"
+      },
+      {
+        "key": "B",
+        "text": "$a = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$a = -1$ hoặc $a = 3$"
+      },
+      {
+        "key": "D",
+        "text": "$a \\neq -1, \\, a \\neq 3$"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Giải hệ hai phương trình đầu:\n  $$\\begin{cases} 4x + 3y = -6 \\\\ 5x + 8y = 1 \\end{cases} \\iff \\begin{cases} x = -3 \\\\ y = 2 \\end{cases}$$\n* Thay nghiệm duy nhất $(x = -3, y = 2)$ vào phương trình thứ ba:\n  $$a^2(-3) + 3a(2) = -9 \\iff -3a^2 + 6a + 9 = 0 \\iff a^2 - 2a - 3 = 0$$\n* Giải phương trình bậc hai:\n  $$(a + 1)(a - 3) = 0 \\iff a = -1 \\text{ hoặc } a = 3$$\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 7,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho $A$ là ma trận vuông cấp $n$ với $n \\ge 2$. Khẳng định nào dưới đây đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$|3A| = 3|A|$"
+      },
+      {
+        "key": "B",
+        "text": "$|-A| = |A|$"
+      },
+      {
+        "key": "C",
+        "text": "Nếu $|A| = 0$ thì một véc tơ cột của $A$ là tổ hợp tuyến tính của các véc tơ cột còn lại"
+      },
+      {
+        "key": "D",
+        "text": "Cả A, B, C đều sai"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Định lý về định thức và độc lập tuyến tính: $\\det A = 0$ khi và chỉ khi hệ các véc tơ cột của $A$ phụ thuộc tuyến tính, tức là tồn tại ít nhất một véc tơ cột biểu diễn tuyến tính được qua các véc tơ cột còn lại. Khẳng định C là **đúng**.\n* A sai vì $|3A| = 3^n |A|$; B sai vì $|-A| = (-1)^n |A|$ (khi $n$ lẻ thì $|-A| = -|A|$).\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 8,
+    "topicId": 4,
+    "topicName": "KHÔNG GIAN VÉC TƠ",
+    "question": "Trong không gian $\\mathbb{R}^3$, xét các tập hợp:\n$$W_1 = \\{(x, y, 1) \\mid x = 2y\\}, \\quad W_2 = \\{(x, y, z) \\mid z = 2x - y\\}, \\quad W_3 = \\{(x, y, z) \\mid x + y + z = 0\\}$$\nChọn mệnh đề đúng:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$W_1$ và $W_2$ là không gian con của $\\mathbb{R}^3$"
+      },
+      {
+        "key": "B",
+        "text": "$W_1$ và $W_3$ là không gian con của $\\mathbb{R}^3$"
+      },
+      {
+        "key": "C",
+        "text": "$W_2$ và $W_3$ là không gian con của $\\mathbb{R}^3$"
+      },
+      {
+        "key": "D",
+        "text": "Cả 3 mệnh đề đều sai"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* $W_1$ có tọa độ $z = 1 \\neq 0$, nên véc tơ không $\\vec{0} = (0, 0, 0) \\notin W_1 \\implies W_1$ không là không gian con.\n* $W_2$ và $W_3$ là các mặt phẳng đi qua gốc tọa độ trong $\\mathbb{R}^3$ (xác định bởi các phương trình tuyến tính thuần nhất $2x - y - z = 0$ và $x + y + z = 0$), nên $W_2$ và $W_3$ đều là các không gian véc tơ con.\n* Vậy $W_2$ và $W_3$ là không gian con của $\\mathbb{R}^3$.\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 9,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Với giá trị nào của $k$ thì hạng của ma trận $A$ lớn hơn hoặc bằng 4?\n$$A = \\begin{bmatrix} 1 & 0 & 0 & 0 & k + 5 \\\\ 2 & 3 & 0 & 0 & 4 \\\\ 4 & -2 & 5 & 0 & 6 \\\\ 2 & 1 & 7 & -1 & 8 \\\\ -1 & k + 1 & 4 & 2 & k + 5 \\end{bmatrix}$$",
+    "options": [
+      {
+        "key": "A",
+        "text": "Với mọi $k$"
+      },
+      {
+        "key": "B",
+        "text": "$k = -1$"
+      },
+      {
+        "key": "C",
+        "text": "$k = -5$"
+      },
+      {
+        "key": "D",
+        "text": "Đáp số khác"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét ma trận con cấp 4 tạo bởi 4 hàng đầu và 4 cột đầu tiên của $A$:\n  $$M_4 = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 2 & 3 & 0 & 0 \\\\ 4 & -2 & 5 & 0 \\\\ 2 & 1 & 7 & -1 \\end{bmatrix}$$\n* Đây là ma trận tam giác dưới, định thức bằng tích các phần tử trên đường chéo chính:\n  $$\\det M_4 = 1 \\cdot 3 \\cdot 5 \\cdot (-1) = -15 \\neq 0$$\n* Vì tồn tại một định thức con cấp 4 khác 0 nên hạng của ma trận luôn thỏa mãn:\n  $$r(A) \\ge 4 \\quad \\text{với mọi } k \\in \\mathbb{R}$$\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 10,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho ma trận $A = \\begin{bmatrix} 1 & 1 & 1 \\\\ 2 & 3 & 1 \\\\ 3 & 4 & 5 \\end{bmatrix} \\begin{bmatrix} 2 & 1 & m \\\\ 3 & 5 & 0 \\\\ -4 & 0 & 0 \\end{bmatrix}$. Tìm $m$ để $A$ khả nghịch:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$m \\neq 20$"
+      },
+      {
+        "key": "B",
+        "text": "$m \\neq 0$"
+      },
+      {
+        "key": "C",
+        "text": "Với mọi $m$"
+      },
+      {
+        "key": "D",
+        "text": "$m$ khác"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Ta có $\\det A = \\det(M_1) \\cdot \\det(M_2)$.\n* Tính $\\det M_1$:\n  $$\\det M_1 = 1(15 - 4) - 1(10 - 3) + 1(8 - 9) = 11 - 7 - 1 = 3 \\neq 0$$\n* Tính $\\det M_2$ (khai triển theo cột 3):\n  $$\\det M_2 = m \\cdot (-1)^{1+3} \\begin{vmatrix} 3 & 5 \\\\ -4 & 0 \\end{vmatrix} = m(0 - (-20)) = 20m$$\n* Do đó: $\\det A = 3 \\cdot 20m = 60m$.\n* Ma trận $A$ khả nghịch $\\iff \\det A \\neq 0 \\iff 60m \\neq 0 \\iff m \\neq 0$.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 11,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Tính hạng của ma trận $A = \\begin{bmatrix} 1 & 1 & 2 & -1 \\\\ 2 & 3 & 5 & 3 \\\\ 4 & 7 & 2 & 6 \\\\ 10 & 17 & 9 & 15 \\end{bmatrix}$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$r(A) = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$r(A) = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$r(A) = 4$"
+      },
+      {
+        "key": "D",
+        "text": "$r(A) = 2$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Khử Gauss ma trận $A$:\n  * $h_2 \\to h_2 - 2h_1: (0, 1, 1, 5)$.\n  * $h_3 \\to h_3 - 4h_1: (0, 3, -6, 10)$.\n  * $h_4 \\to h_4 - 10h_1: (0, 7, -11, 25)$.\n* Khử tiếp cột 2:\n  * $h_3 \\to h_3 - 3h_2: (0, 0, -9, -5)$.\n  * $h_4 \\to h_4 - 7h_2: (0, 0, -18, -10) = 2(0, 0, -9, -5)$.\n* Khử tiếp hàng 4:\n  * $h_4 \\to h_4 - 2h_3: (0, 0, 0, 0)$.\n* Ma trận bậc thang có đúng 3 hàng khác 0, suy ra $r(A) = 3$.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 12,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho $f(x) = 3x^2 - 2x$ và ma trận $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix}$. Tính ma trận $f(A)$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\begin{bmatrix} 19 & 5 \\\\ -6 & 13 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\begin{bmatrix} 19 & -4 \\\\ -6 & 23 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\begin{bmatrix} 19 & -4 \\\\ 8 & 21 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "A, B, C đều sai"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Tính $A^2$:\n  $$A^2 = \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 1(1) + 2(3) & 1(2) + 2(-1) \\\\ 3(1) + (-1)(3) & 3(2) + (-1)(-1) \\end{bmatrix} = \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} = 7I$$\n* Khi đó:\n  $$f(A) = 3A^2 - 2A = 3 \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} - 2 \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 21 & 0 \\\\ 0 & 21 \\end{bmatrix} - \\begin{bmatrix} 2 & 4 \\\\ 6 & -2 \\end{bmatrix} = \\begin{bmatrix} 19 & -4 \\\\ -6 & 23 \\end{bmatrix}$$\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 13,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho hai ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 2 & 0 & 4 \\end{bmatrix}$ và $B = \\begin{bmatrix} 1 & 1 & 0 \\\\ 2 & 0 & 0 \\\\ 3 & 4 & 0 \\end{bmatrix}$. Khẳng định nào dưới đây là **sai**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$AB = \\begin{bmatrix} 14 & 13 \\\\ 14 & 18 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$AB = \\begin{bmatrix} 14 & 13 & 0 \\\\ 14 & 18 & 1 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$BA$ xác định nhưng $AB$ không xác định"
+      },
+      {
+        "key": "D",
+        "text": "$AB = \\begin{bmatrix} 14 & 13 & 0 \\\\ 13 & 18 & 0 \\end{bmatrix}$"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* $A$ có cỡ $2 \\times 3$ và $B$ có cỡ $3 \\times 3$.\n  * Tích $AB$ hoàn toàn xác định vì số cột của $A$ ($3$) bằng số hàng của $B$ ($3$), ma trận tích $AB$ có cỡ $2 \\times 3$:\n    $$AB = \\begin{bmatrix} 1(1)+2(2)+3(3) & 1(1)+2(0)+3(4) & 0 \\\\ 2(1)+0(2)+4(3) & 2(1)+0(0)+4(4) & 0 \\end{bmatrix} = \\begin{bmatrix} 14 & 13 & 0 \\\\ 14 & 18 & 0 \\end{bmatrix}$$\n  * Trong khi đó, tích $BA$ ($3 \\times 3$ nhân $2 \\times 3$) không xác định vì số cột của $B$ ($3$) khác số hàng của $A$ ($2$).\n* Do đó khẳng định C \"$BA$ xác định nhưng $AB$ không xác định\" là **hoàn toàn sai**.\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 14,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho $f(x) = x^2 + 2x - 5$ và ma trận $A = \\begin{bmatrix} 1 & 1 \\\\ -1 & 2 \\end{bmatrix}$. Tính ma trận $f(A)$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\begin{bmatrix} -3 & 0 \\\\ -5 & 2 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\begin{bmatrix} -3 & 5 \\\\ -5 & 7 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\begin{bmatrix} 2 & 5 \\\\ -5 & 7 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\begin{bmatrix} -3 & 5 \\\\ -5 & 2 \\end{bmatrix}$"
+      }
+    ],
+    "correct": "D",
+    "explanation": "* Tính $A^2$:\n  $$A^2 = \\begin{bmatrix} 1 & 1 \\\\ -1 & 2 \\end{bmatrix} \\begin{bmatrix} 1 & 1 \\\\ -1 & 2 \\end{bmatrix} = \\begin{bmatrix} 1 - 1 & 1 + 2 \\\\ -1 - 2 & -1 + 4 \\end{bmatrix} = \\begin{bmatrix} 0 & 3 \\\\ -3 & 3 \\end{bmatrix}$$\n* $2A = \\begin{bmatrix} 2 & 2 \\\\ -2 & 4 \\end{bmatrix}$ và $5I = \\begin{bmatrix} 5 & 0 \\\\ 0 & 5 \\end{bmatrix}$.\n* Khi đó:\n  $$f(A) = A^2 + 2A - 5I = \\begin{bmatrix} 0 + 2 - 5 & 3 + 2 - 0 \\\\ -3 - 2 - 0 & 3 + 4 - 5 \\end{bmatrix} = \\begin{bmatrix} -3 & 5 \\\\ -5 & 2 \\end{bmatrix}$$\n* **Chọn đáp án: D.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 15,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho ma trận $A = \\begin{bmatrix} 1 & 0 & 2 \\\\ 2 & 3 & m \\\\ 3 & 4 & 2 \\end{bmatrix}$. Tìm $m$ để hạng của ma trận nghịch đảo $A^{-1}$ bằng 3:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cả 3 câu đều sai"
+      },
+      {
+        "key": "B",
+        "text": "$m \\neq 1$"
+      },
+      {
+        "key": "C",
+        "text": "$m \\neq 2$"
+      },
+      {
+        "key": "D",
+        "text": "$m = 3$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Ma trận vuông cấp 3 $A$ có ma trận nghịch đảo $A^{-1}$ khi và chỉ khi $A$ khả nghịch, tức là $\\det A \\neq 0$.\n* Khi $A$ khả nghịch thì $A^{-1}$ cũng là ma trận vuông cấp 3 khả nghịch, có hạng $r(A^{-1}) = 3$.\n* Tính định thức $\\det A$:\n  $$\\det A = 1(6 - 4m) - 0 + 2(8 - 9) = 6 - 4m - 2 = 4 - 4m$$\n* Để $A$ khả nghịch:\n  $$\\det A \\neq 0 \\iff 4 - 4m \\neq 0 \\iff m \\neq 1$$\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 16,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho ma trận $A = \\begin{bmatrix} 2 & 6 \\\\ 0 & 2 \\end{bmatrix}$. Tính ma trận $A^{100}$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\begin{bmatrix} 2^{100} & 300 \\\\ 0 & 2^{100} \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$2^{100} \\begin{bmatrix} 1 & 100 \\\\ 0 & 1 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$2^{100} \\begin{bmatrix} 1 & 300 \\\\ 0 & 1 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "Các đáp án đều sai"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Ta viết $A = 2 \\begin{bmatrix} 1 & 3 \\\\ 0 & 1 \\end{bmatrix}$.\n* Bằng quy nạp, ta có công thức lũy thừa ma trận tam giác:\n  $$\\begin{bmatrix} 1 & k \\\\ 0 & 1 \\end{bmatrix}^n = \\begin{bmatrix} 1 & n \\cdot k \\\\ 0 & 1 \\end{bmatrix}$$\n* Với $k = 3$ và $n = 100$:\n  $$\\begin{bmatrix} 1 & 3 \\\\ 0 & 1 \\end{bmatrix}^{100} = \\begin{bmatrix} 1 & 3 \\cdot 100 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 1 & 300 \\\\ 0 & 1 \\end{bmatrix}$$\n* Suy ra:\n  $$A^{100} = 2^{100} \\begin{bmatrix} 1 & 300 \\\\ 0 & 1 \\end{bmatrix}$$\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 17,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho ma trận $A = \\begin{bmatrix} 2 & 2 \\\\ 2 & 2 \\end{bmatrix}$. Đặt $B = \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix}$. Tính $A^{100}$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$2^{99} B$"
+      },
+      {
+        "key": "B",
+        "text": "$2^{100} B$"
+      },
+      {
+        "key": "C",
+        "text": "$2^{199} B$"
+      },
+      {
+        "key": "D",
+        "text": "$2^{200} B$"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Ta có $A = 2B$. Do đó $A^{100} = (2B)^{100} = 2^{100} B^{100}$.\n* Tính các lũy thừa của $B$:\n  $$B^2 = \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix} \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix} = \\begin{bmatrix} 2 & 2 \\\\ 2 & 2 \\end{bmatrix} = 2B$$\n* Bằng quy nạp: $B^n = 2^{n - 1} B$.\n* Với $n = 100 \\implies B^{100} = 2^{99} B$.\n* Vậy:\n  $$A^{100} = 2^{100} \\cdot 2^{99} B = 2^{199} B$$\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 18,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Tổng tất cả các phần tử trên đường chéo chính gọi là vết của ma trận. Cho $A = \\begin{bmatrix} 1 & 3 & 2 \\\\ 4 & 2 & 4 \\\\ 3 & 2 & 2 \\end{bmatrix}$ và $B = \\begin{bmatrix} 5 & -2 & 4 \\\\ 1 & 3 & 7 \\\\ 6 & 4 & 5 \\end{bmatrix}$. Tìm vết của ma trận $AB$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$70$"
+      },
+      {
+        "key": "B",
+        "text": "$46$"
+      },
+      {
+        "key": "C",
+        "text": "$65$"
+      },
+      {
+        "key": "D",
+        "text": "Cả 3 đáp án đều sai"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Vết của ma trận tích $AB$ là $\\operatorname{tr}(AB) = (AB)_{11} + (AB)_{22} + (AB)_{33}$.\n* Tính các phần tử trên đường chéo chính:\n  * $(AB)_{11} = 1(5) + 3(1) + 2(6) = 5 + 3 + 12 = 20$.\n  * $(AB)_{22} = 4(-2) + 2(3) + 4(4) = -8 + 6 + 16 = 14$.\n  * $(AB)_{33} = 3(4) + 2(7) + 2(5) = 12 + 14 + 10 = 36$.\n* Tổng: $\\operatorname{tr}(AB) = 20 + 14 + 36 = 70$.\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 19,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Tìm ma trận $X$ thỏa mãn phương trình:\n$$X \\begin{bmatrix} 2 & 5 \\\\ 1 & 3 \\end{bmatrix} = \\begin{bmatrix} 4 & 2 \\\\ 5 & 6 \\\\ -1 & 7 \\end{bmatrix}$$",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\begin{bmatrix} 9 & 15 \\\\ 7 & 12 \\\\ -1 & 6 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\begin{bmatrix} 10 & -16 \\\\ 9 & -18 \\\\ -10 & 19 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\begin{bmatrix} 10 & 7 \\\\ -8 & 16 \\\\ 0 & 12 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "Cả 3 đáp án đều sai"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Đặt $A = \\begin{bmatrix} 2 & 5 \\\\ 1 & 3 \\end{bmatrix}$. Ta có $\\det A = 2(3) - 5(1) = 1 \\neq 0$.\n* Nghịch đảo: $A^{-1} = \\begin{bmatrix} 3 & -5 \\\\ -1 & 2 \\end{bmatrix}$.\n* Phương trình có dạng $XA = B \\implies X = BA^{-1}$:\n  $$X = \\begin{bmatrix} 4 & 2 \\\\ 5 & 6 \\\\ -1 & 7 \\end{bmatrix} \\begin{bmatrix} 3 & -5 \\\\ -1 & 2 \\end{bmatrix} = \\begin{bmatrix} 4(3)+2(-1) & 4(-5)+2(2) \\\\ 5(3)+6(-1) & 5(-5)+6(2) \\\\ -1(3)+7(-1) & -1(-5)+7(2) \\end{bmatrix} = \\begin{bmatrix} 10 & -16 \\\\ 9 & -18 \\\\ -10 & 19 \\end{bmatrix}$$\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 20,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Tính định thức của ma trận $A = \\begin{bmatrix} 3 & 4 & 1 & -1 \\\\ 4 & 1 & 0 & 3 \\\\ 2 & 3 & -1 & -4 \\\\ 6 & 4 & 0 & 3 \\end{bmatrix}$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\det A = 53$"
+      },
+      {
+        "key": "B",
+        "text": "$\\det A = 14$"
+      },
+      {
+        "key": "C",
+        "text": "$\\det A = 20$"
+      },
+      {
+        "key": "D",
+        "text": "Cả A, B, C đều sai"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Cột 3 chỉ có 2 phần tử khác 0 ở hàng 1 ($1$) và hàng 3 ($-1$).\n* Biến đổi hàng $h_3 \\to h_3 + h_1$:\n  $$\\det A = \\begin{vmatrix} 3 & 4 & 1 & -1 \\\\ 4 & 1 & 0 & 3 \\\\ 5 & 7 & 0 & -5 \\\\ 6 & 4 & 0 & 3 \\end{vmatrix}$$\n* Khai triển theo cột 3:\n  $$\\det A = 1 \\cdot (-1)^{1+3} \\begin{vmatrix} 4 & 1 & 3 \\\\ 5 & 7 & -5 \\\\ 6 & 4 & 3 \\end{vmatrix}$$\n* Biến đổi hàng $h_3 \\to h_3 - h_1$:\n  $$\\begin{vmatrix} 4 & 1 & 3 \\\\ 5 & 7 & -5 \\\\ 2 & 3 & 0 \\end{vmatrix} = 2(-5 - 21) - 3(-20 - 15) = 2(-26) - 3(-35) = -52 + 105 = 53$$\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 21,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Giải phương trình định thức:\n$$\\begin{vmatrix} 1 & 1 & 1 & -1 \\\\ 2 & 0 & 3 & 1 \\\\ 4 & x & 1 & -1 \\\\ 1 & 0 & -1 & 2 \\end{vmatrix} = 0$$",
+    "options": [
+      {
+        "key": "A",
+        "text": "$x = 5$"
+      },
+      {
+        "key": "B",
+        "text": "$x = 1/3$"
+      },
+      {
+        "key": "C",
+        "text": "$x = 10/3$"
+      },
+      {
+        "key": "D",
+        "text": "Cả 3 đều sai"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Khai triển định thức theo cột 2 (chỉ có hàng 1 là $1$ và hàng 3 là $x$):\n  $$(-1)^{1+2} \\cdot 1 \\cdot \\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} + (-1)^{3+2} \\cdot x \\cdot \\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 0$$\n* Tính từng định thức con cấp 3:\n  * $\\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 2(2 - 1) - 3(8 + 1) + 1(-4 - 1) = 2 - 27 - 5 = -30$.\n  * $\\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 1(6 + 1) - 1(4 - 1) - 1(-2 - 3) = 7 - 3 + 5 = 9$.\n* Phương trình trở thành:\n  $$-1(-30) - x(9) = 0 \\iff 30 - 9x = 0 \\iff x = \\frac{30}{9} = \\frac{10}{3}$$\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 22,
+    "topicId": 1,
+    "topicName": "LOGIC MỆNH ĐỀ, TẬP HỢP VÀ ÁNH XẠ",
+    "question": "Ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ có công thức xác định $f(x) = 5x - 2|x|$. Khẳng định nào dưới đây đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Là đơn ánh"
+      },
+      {
+        "key": "B",
+        "text": "Là song ánh"
+      },
+      {
+        "key": "C",
+        "text": "Là toàn ánh"
+      },
+      {
+        "key": "D",
+        "text": "Là song ánh nhưng không toàn ánh"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Viết lại hàm số dưới dạng từng khúc:\n  $$f(x) = \\begin{cases} 5x - 2x = 3x & \\text{khi } x \\ge 0 \\\\ 5x - 2(-x) = 7x & \\text{khi } x < 0 \\end{cases}$$\n* Khảo sát:\n  * Với $x \\ge 0$: $f'(x) = 3 > 0$, hàm đồng biến từ $0$ đến $+\\infty$.\n  * Với $x < 0$: $f'(x) = 7 > 0$, hàm đồng biến từ $-\\infty$ đến $0$.\n* Hàm số liên tục và đồng biến nghiêm ngặt trên toàn $\\mathbb{R}$ $\\implies f$ là **đơn ánh**.\n* Tập giá trị của hàm là $\\operatorname{Im} f = (-\\infty, 0) \\cup [0, +\\infty) = \\mathbb{R} \\implies f$ là **toàn ánh**.\n* Vì $f$ vừa là đơn ánh vừa là toàn ánh nên $f$ là **song ánh**.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 23,
+    "topicId": 5,
+    "topicName": "ÁNH XẠ TUYẾN TÍNH",
+    "question": "Cho các ánh xạ $f, g, h, k, l, t: \\mathbb{R}^3 \\to \\mathbb{R}^3$ có công thức xác định như sau:\n$$f(x, y, z) = (z, -y, x); \\quad g(x, y, z) = (x^2, -y, z); \\quad h(x, y, z) = (x, y, 0);$$\n$$k(x, y, z) = (|x|, y, z); \\quad l(x, y, z) = (x + y, y + z, z + x); \\quad t(x, y, z) = (x, y, z)$$\nKhẳng định nào dưới đây đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f, h, l, t$ là các ánh xạ tuyến tính"
+      },
+      {
+        "key": "B",
+        "text": "$f, h, k, l, t$ là các ánh xạ tuyến tính"
+      },
+      {
+        "key": "C",
+        "text": "$f, g, h, k$ là các ánh xạ tuyến tính"
+      },
+      {
+        "key": "D",
+        "text": "$f, g, h, k, l, t$ là các ánh xạ tuyến tính"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét các ánh xạ phi tuyến:\n  * $g$ chứa $x^2$ (bậc hai) $\\implies$ không tuyến tính.\n  * $k$ chứa $|x|$ (trị tuyệt đối, $k(-u) \\neq -k(u)$) $\\implies$ không tuyến tính.\n* Các ánh xạ $f, h, l, t$ đều có các thành phần là đa thức bậc nhất thuần nhất đối với $(x, y, z)$, thỏa mãn $F(u + v) = F(u) + F(v)$ và $F(cu) = c F(u)$.\n* Vậy $f, h, l, t$ là các ánh xạ tuyến tính.\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 24,
+    "topicId": 1,
+    "topicName": "LOGIC MỆNH ĐỀ, TẬP HỢP VÀ ÁNH XẠ",
+    "question": "Rút gọn công thức đại số Boole sau:\n$$A = \\{[(x' \\wedge z) \\wedge (x \\vee z')] \\vee y\\} \\wedge (x \\vee y \\vee z) \\wedge \\{[(y' \\vee z) \\wedge (y \\vee z')] \\vee x\\}$$",
+    "options": [
+      {
+        "key": "A",
+        "text": "$A = (y \\vee z) \\wedge (x \\vee y) \\wedge (x \\vee z)$"
+      },
+      {
+        "key": "B",
+        "text": "$A = (y \\wedge z) \\vee (x \\wedge y) \\vee (x \\wedge z)$"
+      },
+      {
+        "key": "C",
+        "text": "$A = (x \\wedge z) \\wedge (x \\vee y)$"
+      },
+      {
+        "key": "D",
+        "text": "$A = (x \\vee z) \\vee (y \\vee z)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Rút gọn ngoặc thứ nhất:\n  $$(x' \\wedge z) \\wedge (x \\vee z') = (x' \\wedge z \\wedge x) \\vee (x' \\wedge z \\wedge z') = 0 \\vee 0 = 0$$\n  Do đó ngoặc thứ nhất là $0 \\vee y = y$.\n* Biểu thức trở thành:\n  $$A = y \\wedge (x \\vee y \\vee z) \\wedge \\{[(y' \\vee z) \\wedge (y \\vee z')] \\vee x\\}$$\n* Vì $y \\wedge (x \\vee y \\vee z) = y$, ta có:\n  $$A = y \\wedge \\{[(y' \\vee z) \\wedge (y \\vee z')] \\vee x\\} = \\{y \\wedge [(y' \\vee z) \\wedge (y \\vee z')]\\} \\vee (y \\wedge x)$$\n* Tiếp tục rút gọn:\n  $$y \\wedge (y' \\vee z) = (y \\wedge y') \\vee (y \\wedge z) = y \\wedge z$$\n  $$(y \\wedge z) \\wedge (y \\vee z') = (y \\wedge z \\wedge y) \\vee (y \\wedge z \\wedge z') = (y \\wedge z) \\vee 0 = y \\wedge z$$\n* Suy ra $A = (y \\wedge z) \\vee (y \\wedge x) = y \\wedge (x \\vee z) = (y \\vee z) \\wedge (x \\vee y) \\wedge (x \\vee z)$.\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 25,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Biểu diễn ma trận $A = \\begin{bmatrix} 4 & 1 \\\\ -3 & -3 \\end{bmatrix}$ theo tổ hợp tuyến tính của các ma trận $M_1 = \\begin{bmatrix} 2 & 1 \\\\ 2 & 1 \\end{bmatrix}, M_2 = \\begin{bmatrix} 7 & 1 \\\\ 1 & 1 \\end{bmatrix}, M_3 = \\begin{bmatrix} 13 & 5 \\\\ 3 & 3 \\end{bmatrix}, M_4 = \\begin{bmatrix} 5 & 2 \\\\ 2 & 4 \\end{bmatrix}$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$A = M_1 - 2M_2 + 0M_3 - M_4$"
+      },
+      {
+        "key": "B",
+        "text": "$A = -2M_1 + 0M_2 + M_3 - M_4$"
+      },
+      {
+        "key": "C",
+        "text": "$A = 4M_1 + M_2 - 3M_3 - 3M_4$"
+      },
+      {
+        "key": "D",
+        "text": "$A = 4M_1 - 3M_2 + M_3 - 3M_4$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Kiểm tra phương án B: $-2M_1 + 0M_2 + 1M_3 - 1M_4$:\n  $$-2 \\begin{bmatrix} 2 & 1 \\\\ 2 & 1 \\end{bmatrix} + \\begin{bmatrix} 13 & 5 \\\\ 3 & 3 \\end{bmatrix} - \\begin{bmatrix} 5 & 2 \\\\ 2 & 4 \\end{bmatrix} = \\begin{bmatrix} -4 + 13 - 5 & -2 + 5 - 2 \\\\ -4 + 3 - 2 & -2 + 3 - 4 \\end{bmatrix} = \\begin{bmatrix} 4 & 1 \\\\ -3 & -3 \\end{bmatrix} = A$$\n* Kết quả khớp chính xác với ma trận $A$.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 26,
+    "topicId": 4,
+    "topicName": "KHÔNG GIAN VÉCTƠ",
+    "question": "Tìm tất cả các giá trị của $m$ để $u = (7, -2, m)$ biểu diễn được thành tổ hợp tuyến tính của $v_1(2, 3, 5), v_2(3, 7, 8), v_3(1, -6, 1)$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$m = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$m = 15$"
+      },
+      {
+        "key": "C",
+        "text": "$m \\neq 15$"
+      },
+      {
+        "key": "D",
+        "text": "$m \\neq 2$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* $u$ biểu diễn được thành tổ hợp tuyến tính của $\\{v_1, v_2, v_3\\}$ khi và chỉ khi hệ phương trình $c_1 v_1 + c_2 v_2 + c_3 v_3 = u$ có nghiệm:\n  $$\\begin{cases} 2c_1 + 3c_2 + c_3 = 7 \\\\ 3c_1 + 7c_2 - 6c_3 = -2 \\\\ 5c_1 + 8c_2 + c_3 = m \\end{cases}$$\n* Xét ma trận hệ số mở rộng $\\bar{A}$:\n  $$\\bar{A} = \\begin{bmatrix} 2 & 3 & 1 & 7 \\\\ 3 & 7 & -6 & -2 \\\\ 5 & 8 & 1 & m \\end{bmatrix}$$\n* Nhận xét: $5 \\cdot (\\text{Hàng 3} - \\text{Hàng 1}) = 5(3, 5, 0, m - 7) = (15, 25, 0, 5m - 35)$.\n* Mặt khác: $6 \\cdot \\text{Hàng 1} + \\text{Hàng 2} = (12, 18, 6, 42) + (3, 7, -6, -2) = (15, 25, 0, 40)$.\n* Để hệ có nghiệm thì hàng thứ 3 phải có $5m - 35 = 40 \\iff 5m = 75 \\iff m = 15$.\n* Khi $m = 15$, $r(A) = r(\\bar{A}) = 2$, hệ có nghiệm.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 27,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Tìm tất cả $m$ để hệ phương trình sau vô nghiệm:\n$$\\begin{cases} x + y + z + t = 1 \\\\ 2x + 3y + 4z - t = 3 \\\\ 3x + y + 2z + 5t = 2 \\\\ 4x + 6y + 3z + mt = 1 \\end{cases}$$",
+    "options": [
+      {
+        "key": "A",
+        "text": "$m = 5$"
+      },
+      {
+        "key": "B",
+        "text": "$m = \\dfrac{14}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "Không tồn tại $m$"
+      },
+      {
+        "key": "D",
+        "text": "$m = 3$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Lập ma trận mở rộng và khử Gauss:\n  $$\\bar{A} = \\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\\\ 2 & 3 & 4 & -1 & 3 \\\\ 3 & 1 & 2 & 5 & 2 \\\\ 4 & 6 & 3 & m & 1 \\end{bmatrix}$$\n* Lấy $h_2 - 2h_1$, $h_3 - 3h_1$, $h_4 - 4h_1$:\n  $$\\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\\\ 0 & 1 & 2 & -3 & 1 \\\\ 0 & -2 & -1 & 2 & -1 \\\\ 0 & 2 & -1 & m-4 & -3 \\end{bmatrix}$$\n* Lấy $h_3 + 2h_2$, $h_4 - 2h_2$:\n  $$\\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\\\ 0 & 1 & 2 & -3 & 1 \\\\ 0 & 0 & 3 & -4 & 1 \\\\ 0 & 0 & -5 & m+2 & -5 \\end{bmatrix}$$\n* Lấy $3h_4 + 5h_3$:\n  Hàng cuối thành: $\\begin{bmatrix} 0 & 0 & 0 & 3(m+2) + 5(-4) & 3(-5) + 5(1) \\end{bmatrix} = \\begin{bmatrix} 0 & 0 & 0 & 3m - 14 & -10 \\end{bmatrix}$.\n* Hệ vô nghiệm khi và chỉ khi $r(A) < r(\\bar{A}) \\iff 3m - 14 = 0 \\iff m = \\dfrac{14}{3}$.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 28,
+    "topicId": 4,
+    "topicName": "KHÔNG GIAN VÉCTƠ",
+    "question": "Đặt $V_1, V_2$ lần lượt là hai không gian véctơ con của $\\mathbb{R}^4$ gồm các véctơ $v = (x_1, x_2, x_3, x_4)$ thoả mãn hệ phương trình (I) và hệ phương trình (II):\n$$(I) = \\begin{cases} 4x_1 + 5x_2 - 2x_3 + 3x_4 = 0 \\\\ 3x_1 + 5x_2 + 6x_3 - 4x_4 = 0 \\\\ x_1 + 2x_2 + 4x_3 - 3x_4 = 0 \\end{cases}, \\quad (II) = \\begin{cases} 2x_1 - 3x_2 - 3x_3 - 2x_4 = 0 \\\\ 4x_1 - 7x_2 - 5x_3 - 6x_4 = 0 \\\\ x_1 - 2x_2 - x_3 - 2x_4 = 0 \\end{cases}$$\nTìm số chiều của không gian con $V_1 + V_2$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\dim(V_1 + V_2) = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$\\dim(V_1 + V_2) = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$\\dim(V_1 + V_2) = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$\\dim(V_1 + V_2) = 4$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Áp dụng công thức số chiều Grassman:\n  $$\\dim(V_1 + V_2) = \\dim V_1 + \\dim V_2 - \\dim(V_1 \\cap V_2)$$\n* **Tính $\\dim V_1$:** Biến đổi ma trận hệ số của hệ (I):\n  Hạng ma trận $r(A_1) = 2 \\implies \\dim V_1 = 4 - r(A_1) = 4 - 2 = 2$.\n* **Tính $\\dim V_2$:** Biến đổi ma trận hệ số của hệ (II):\n  Hạng ma trận $r(A_2) = 2 \\implies \\dim V_2 = 4 - r(A_2) = 4 - 2 = 2$.\n* **Tính $\\dim(V_1 \\cap V_2)$:** $V_1 \\cap V_2$ là không gian nghiệm của hệ gồm cả 6 phương trình của (I) và (II).\n  Khử Gauss cho ma trận ghép gồm các hàng độc lập của (I) và (II) ta được hạng của hệ ghép là $r(A_1 \\cup A_2) = 3$.\n  Do đó $\\dim(V_1 \\cap V_2) = 4 - 3 = 1$.\n* Vậy $\\dim(V_1 + V_2) = 2 + 2 - 1 = 3$.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 29,
+    "topicId": 6,
+    "topicName": "DẠNG TOÀN PHƯƠNG VÀ KHÔNG GIAN EUCLID",
+    "question": "Cho dạng toàn phương $Q: \\mathbb{R}^3 \\to \\mathbb{R}$ xác định bởi:\n$$Q(x, y, z) = 4x^2 + 3y^2 - 8z^2 - 8xy + 8xz - 4yz$$\nTìm một dạng chính tắc của dạng toàn phương trên. Khẳng định nào đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$Q(x,y,z) = 4X^2 - Y^2 - 8Z^2$"
+      },
+      {
+        "key": "B",
+        "text": "$Q(x,y,z) = 4X^2 + Y^2 + 8Z^2$"
+      },
+      {
+        "key": "C",
+        "text": "$Q(x,y,z) = X^2 + Y^2 - Z^2$"
+      },
+      {
+        "key": "D",
+        "text": "$Q(x,y,z) = 4X^2 + Y^2 - 8Z^2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng phương pháp Lagrange làm xuất hiện bình phương đủ:\n  $$Q(x,y,z) = 4x^2 - 8x(y - z) + 3y^2 - 8z^2 - 4yz$$\n  $$= 4[x^2 - 2x(y - z) + (y - z)^2] - 4(y - z)^2 + 3y^2 - 8z^2 - 4yz$$\n  $$= 4(x - y + z)^2 - 4(y^2 - 2yz + z^2) + 3y^2 - 8z^2 - 4yz$$\n  $$= 4(x - y + z)^2 - y^2 + 4yz - 12z^2$$\n  $$= 4(x - y + z)^2 - (y^2 - 4yz + 4z^2) - 8z^2$$\n  $$= 4(x - y + z)^2 - (y - 2z)^2 - 8z^2$$\n* Đặt phép biến đổi tọa độ không suy biến:\n  $$\\begin{cases} X = x - y + z \\\\ Y = y - 2z \\\\ Z = z \\end{cases}$$\n* Khi đó ta thu được dạng chính tắc:\n  $$Q(x,y,z) = 4X^2 - Y^2 - 8Z^2$$\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 30,
+    "topicId": 4,
+    "topicName": "KHÔNG GIAN VÉCTƠ",
+    "question": "Tìm cơ sở của không gian véctơ $\\mathbb{R}^3$ trong các hệ véctơ dưới đây, khẳng định nào đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hệ $\\{(0, 2, -2), (-3, 5, -1), (-3, 7, -3)\\}$ là cơ sở"
+      },
+      {
+        "key": "B",
+        "text": "Hệ $\\{(2, -1, -1), (5, 7, -13), (-4, 2, 2)\\}$ là cơ sở"
+      },
+      {
+        "key": "C",
+        "text": "Hệ $\\{(1, 1, 0), (1, 0, 1), (0, 1, 1)\\}$ là cơ sở"
+      },
+      {
+        "key": "D",
+        "text": "Hệ $\\{(-1, 1, 0), (1, 0, 1), (-1, 0, -1)\\}$ là cơ sở"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Một hệ gồm 3 véctơ trong $\\mathbb{R}^3$ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi định thức ma trận tạo bởi tọa độ 3 véctơ đó khác $0$.\n* Xét hệ ở phương án **C**:\n  $$\\det \\begin{bmatrix} 1 & 1 & 0 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 1 \\end{bmatrix} = 1(0 - 1) - 1(1 - 0) + 0 = -2 \\neq 0$$\n  Do đó hệ gồm 3 véctơ độc lập tuyến tính, nên là một cơ sở của $\\mathbb{R}^3$.\n* Kiểm tra các phương án còn lại:\n  * Phương án A: $(0, 2, -2) + (-3, 5, -1) = (-3, 7, -3) \\implies$ phụ thuộc tuyến tính.\n  * Phương án B: $(-4, 2, 2) = -2(2, -1, -1) \\implies$ phụ thuộc tuyến tính.\n  * Phương án D: $(-1, 0, -1) = -(1, 0, 1) \\implies$ phụ thuộc tuyến tính.\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 31,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Cho hệ $m$ phương trình thuần nhất $n$ ẩn với ma trận hệ số có hạng $r(A) = p$. Khẳng định nào **không đúng**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hệ phương trình thuần nhất luôn tồn tại nghiệm"
+      },
+      {
+        "key": "B",
+        "text": "Tập hợp nghiệm là không gian con của $\\mathbb{R}^n$"
+      },
+      {
+        "key": "C",
+        "text": "Khi $p < n$ hệ vô nghiệm"
+      },
+      {
+        "key": "D",
+        "text": "Khi $p = n$ hệ có duy nhất nghiệm"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Hệ phương trình đại số tuyến tính thuần nhất $AX = 0$ luôn có nghiệm tầm thường $X = (0, 0, \\dots, 0)^T$, do đó hệ **luôn có nghiệm** (không bao giờ vô nghiệm).\n* Khi $p < n$, hệ có vô số nghiệm phụ thuộc vào $n - p$ ẩn tự do. Khẳng định \"Khi $p < n$ hệ vô nghiệm\" là hoàn toàn sai.\n* Các khẳng định A, B, D đều đúng theo định lý Kronecker-Capelli và tính chất hệ thuần nhất.\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 32,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho ma trận $A = \\begin{bmatrix} 3 & 1 & 5-m \\\\ m+1 & 1 & 3 \\\\ 3 & m-1 & 3 \\end{bmatrix}; m \\in \\mathbb{R}$. Với giá trị nào của $m$ thì tồn tại ma trận nghịch đảo $A^{-1}$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$m = 2, m = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$m \\neq 2, m \\neq 1$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$m = 2$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Ma trận vuông $A$ khả nghịch (tồn tại $A^{-1}$) khi và chỉ khi $\\det A \\neq 0$.\n* Khai triển định thức ma trận $A$:\n  $$\\det A = 3 \\begin{vmatrix} 1 & 3 \\\\ m-1 & 3 \\end{vmatrix} - 1 \\begin{vmatrix} m+1 & 3 \\\\ 3 & 3 \\end{vmatrix} + (5-m) \\begin{vmatrix} m+1 & 1 \\\\ 3 & m-1 \\end{vmatrix}$$\n  $$= 3(3 - 3m + 3) - (3m + 3 - 9) + (5-m)(m^2 - 1 - 3)$$\n  $$= 3(6 - 3m) - (3m - 6) + (5-m)(m^2 - 4)$$\n  $$= 18 - 9m - 3m + 6 + 5m^2 - 20 - m^3 + 4m$$\n  $$= -m^3 + 5m^2 - 8m + 4$$\n* Phân tích thành nhân tử:\n  $$\\det A = -(m - 1)(m^2 - 4m + 4) = -(m - 1)(m - 2)^2$$\n* Để tồn tại $A^{-1}$ thì $\\det A \\neq 0 \\iff m \\neq 1$ và $m \\neq 2$.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 33,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Cho ma trận $A = \\begin{bmatrix} 3 & 1 & 5-m \\\\ m+1 & 1 & 3 \\\\ 3 & m-1 & 3 \\end{bmatrix}$, với $m = -1$ tìm $A^{-1}$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$A^{-1} = \\dfrac{1}{18} \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$A^{-1} = \\dfrac{1}{9} \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$A^{-1} = \\dfrac{1}{18} \\begin{bmatrix} 2 & -6 & 2 \\\\ -3 & 8 & 2 \\\\ -6 & 1 & -5 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$A^{-1} = \\dfrac{1}{9} \\begin{bmatrix} 2 & -6 & 2 \\\\ -3 & 8 & 2 \\\\ -6 & 1 & -5 \\end{bmatrix}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $m = -1$, ma trận $A$ trở thành:\n  $$A = \\begin{bmatrix} 3 & 1 & 6 \\\\ 0 & 1 & 3 \\\\ 3 & -2 & 3 \\end{bmatrix}$$\n* Định thức: $\\det A = -(-1 - 1)(-1 - 2)^2 = -(-2)(9) = 18 \\neq 0$.\n* Tìm ma trận phần phụ đại số $C$:\n  * $C_{11} = +(3 - (-6)) = 9, \\quad C_{12} = -(0 - 9) = 9, \\quad C_{13} = +(0 - 3) = -3$\n  * $C_{21} = -(3 - (-12)) = -15, \\quad C_{22} = +(9 - 18) = -9, \\quad C_{23} = -(-6 - 3) = 9$\n  * $C_{31} = +(3 - 6) = -3, \\quad C_{32} = -(9 - 0) = -9, \\quad C_{33} = +(3 - 0) = 3$\n* Ma trận chuyển vị của các phần phụ đại số:\n  $$C^T = \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* Do đó:\n  $$A^{-1} = \\frac{1}{\\det A} C^T = \\frac{1}{18} \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 34,
+    "topicId": 5,
+    "topicName": "ÁNH XẠ TUYẾN TÍNH",
+    "question": "Cho ma trận $A = \\begin{bmatrix} 1 & 2 & 2 \\\\ 1 & 2 & -1 \\\\ -1 & 1 & 4 \\end{bmatrix}$, tìm ma trận $P$ sao cho $P^{-1}AP$ có dạng chéo:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$P = \\begin{bmatrix} -2 & 1 & 0 \\\\ 1 & 1 & -1 \\\\ -1 & 0 & 1 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$P = \\begin{bmatrix} 0 & 1 & -2 \\\\ -1 & 1 & 1 \\\\ 1 & 0 & -1 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$P = \\begin{bmatrix} 1 & 1 & -1 \\\\ 2 & 2 & 1 \\\\ 2 & -1 & 4 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$P = \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 3 \\end{bmatrix}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Phương trình đặc trưng của $A$:\n  $$\\det(A - \\lambda I) = \\begin{vmatrix} 1-\\lambda & 2 & 2 \\\\ 1 & 2-\\lambda & -1 \\\\ -1 & 1 & 4-\\lambda \\end{vmatrix} = (1 - \\lambda)(\\lambda - 3)^2 = 0$$\n  Suy ra ma trận có giá trị riêng $\\lambda_1 = 1$ (bội 1) và $\\lambda_2 = 3$ (bội 2).\n* **Với $\\lambda_1 = 1$:** Giải $(A - I)v = 0$:\n  $$\\begin{bmatrix} 0 & 2 & 2 \\\\ 1 & 1 & -1 \\\\ -1 & 1 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = 0 \\implies \\begin{cases} y + z = 0 \\\\ x + y - z = 0 \\end{cases} \\implies v_1 = (-2, 1, -1)^T$$\n* **Với $\\lambda_2 = 3$:** Giải $(A - 3I)v = 0$:\n  $$\\begin{bmatrix} -2 & 2 & 2 \\\\ 1 & -1 & -1 \\\\ -1 & 1 & 1 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = 0 \\iff -x + y + z = 0 \\iff x = y + z$$\n  Chọn 2 véctơ riêng độc lập tuyến tính:\n  * Cho $y = 1, z = 0 \\implies v_2 = (1, 1, 0)^T$\n  * Cho $y = -1, z = 1 \\implies v_3 = (0, -1, 1)^T$\n* Ghép 3 véctơ riêng thành các cột của ma trận $P$:\n  $$P = \\begin{bmatrix} -2 & 1 & 0 \\\\ 1 & 1 & -1 \\\\ -1 & 0 & 1 \\end{bmatrix}$$\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 35,
+    "topicId": 6,
+    "topicName": "DẠNG TOÀN PHƯƠNG VÀ KHÔNG GIAN EUCLID",
+    "question": "Trong $\\mathbb{R}^3$ xét họ 3 véctơ độc lập tuyến tính $u_1 = (1,1,0), u_2 = (0,1,1), u_3 = (1,1,1)$. Hãy trực chuẩn hoá Gram-Schmidt họ véctơ $S = \\{u_1, u_2, u_3\\}$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$v_1 = \\dfrac{1}{2}(1,1,0), v_2 = \\dfrac{1}{6}(-1,1,2), v_3 = \\dfrac{1}{3}(1,-1,1)$"
+      },
+      {
+        "key": "B",
+        "text": "$v_1 = \\dfrac{1}{\\sqrt{2}}(1,1,0), v_2 = \\dfrac{1}{\\sqrt{6}}(-1,1,2), v_3 = \\dfrac{1}{\\sqrt{3}}(1,-1,1)$"
+      },
+      {
+        "key": "C",
+        "text": "$v_1 = 2(1,1,0), v_2 = 6(-1,1,2), v_3 = 3(1,-1,1)$"
+      },
+      {
+        "key": "D",
+        "text": "$v_1 = \\sqrt{2}(1,1,0), v_2 = \\sqrt{6}(-1,1,2), v_3 = \\sqrt{3}(1,-1,1)$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Áp dụng thuật toán trực chuẩn hoá Gram-Schmidt:\n  1. $e_1 = u_1 = (1, 1, 0) \\implies \\|e_1\\| = \\sqrt{1^2 + 1^2 + 0} = \\sqrt{2}$.\n     Véctơ đơn vị: $v_1 = \\dfrac{e_1}{\\|e_1\\|} = \\dfrac{1}{\\sqrt{2}}(1, 1, 0)$.\n  2. $e_2 = u_2 - \\dfrac{\\langle u_2, e_1 \\rangle}{\\|e_1\\|^2} e_1 = (0, 1, 1) - \\dfrac{1}{2}(1, 1, 0) = \\left(-\\dfrac{1}{2}, \\dfrac{1}{2}, 1\\right) = \\dfrac{1}{2}(-1, 1, 2)$.\n     Độ dài $\\|e_2\\| = \\dfrac{\\sqrt{6}}{2} \\implies v_2 = \\dfrac{e_2}{\\|e_2\\|} = \\dfrac{1}{\\sqrt{6}}(-1, 1, 2)$.\n  3. $e_3 = u_3 - \\dfrac{\\langle u_3, e_1 \\rangle}{\\|e_1\\|^2} e_1 - \\dfrac{\\langle u_3, e_2 \\rangle}{\\|e_2\\|^2} e_2 = (1, 1, 1) - (1, 1, 0) - \\left(-\\dfrac{1}{3}, \\dfrac{1}{3}, \\dfrac{2}{3}\\right) = \\dfrac{1}{3}(1, -1, 1)$.\n     Độ dài $\\|e_3\\| = \\dfrac{\\sqrt{3}}{3} = \\dfrac{1}{\\sqrt{3}} \\implies v_3 = \\dfrac{e_3}{\\|e_3\\|} = \\dfrac{1}{\\sqrt{3}}(1, -1, 1)$.\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 36,
+    "topicId": 5,
+    "topicName": "ÁNH XẠ TUYẾN TÍNH",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^3 \\to \\mathbb{R}^3$ xác định bởi:\n$$f(x, y, z) = (-5x + 3y + 3z, -3x + y + 3z, -6x + 6y + 4z)$$\nHãy viết ma trận $A$ của ánh xạ $f$ trong cơ sở chính tắc:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$A = \\begin{bmatrix} -5 & 3 & 3 \\\\ -3 & 1 & 3 \\\\ -6 & 6 & 4 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$A = \\begin{bmatrix} -5 & -3 & -6 \\\\ 3 & 1 & 6 \\\\ 3 & 3 & 4 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$A = \\begin{bmatrix} -5 & 1 & 6 \\\\ 3 & 3 & 4 \\\\ 3 & -3 & -6 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$A = \\begin{bmatrix} -5 & 1 & 4 \\\\ 3 & 3 & -5 \\\\ -6 & 4 & 3 \\end{bmatrix}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Trong cơ sở chính tắc của $\\mathbb{R}^3$, ảnh của các véctơ cơ sở là:\n  $$f(e_1) = f(1, 0, 0) = (-5, -3, -6)$$\n  $$f(e_2) = f(0, 1, 0) = (3, 1, 6)$$\n  $$f(e_3) = f(0, 0, 1) = (3, 3, 4)$$\n* Theo quy ước biểu diễn dạng tọa độ của giáo trình PTIT:\n  $$\\begin{bmatrix} y_1 \\\\ y_2 \\\\ y_3 \\end{bmatrix} = \\begin{bmatrix} -5 & 3 & 3 \\\\ -3 & 1 & 3 \\\\ -6 & 6 & 4 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}$$\n* Do đó ma trận của ánh xạ tuyến tính $f$ là $A = \\begin{bmatrix} -5 & 3 & 3 \\\\ -3 & 1 & 3 \\\\ -6 & 6 & 4 \\end{bmatrix}$.\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 37,
+    "topicId": 4,
+    "topicName": "KHÔNG GIAN VÉCTƠ",
+    "question": "Cho ba véctơ $\\{x, y, z\\}$ là cơ sở của không gian véctơ $V$. Khẳng định nào sau đây **luôn đúng**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\{x, y, 2y\\}$ sinh ra $V$"
+      },
+      {
+        "key": "B",
+        "text": "$\\{x, 2y, z\\}$ phụ thuộc tuyến tính"
+      },
+      {
+        "key": "C",
+        "text": "Hạng của họ $\\{x, x+y, x-2y\\}$ bằng 2"
+      },
+      {
+        "key": "D",
+        "text": "$\\{x, y, x+y+z\\}$ không sinh ra $V$"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Vì $\\{x, y, z\\}$ là cơ sở của $V$ nên $\\{x, y, z\\}$ độc lập tuyến tính và $\\dim V = 3$.\n* **Xét phương án C:** Xét họ 3 véctơ $\\{x, x+y, x-2y\\}$.\n  Tọa độ của 3 véctơ đối với cơ sở $\\{x, y, z\\}$:\n  * $v_1 = x \\sim (1, 0, 0)$\n  * $v_2 = x + y \\sim (1, 1, 0)$\n  * $v_3 = x - 2y \\sim (1, -2, 0)$\n  Ma trận tọa độ có cột thứ 3 bằng $0$, và $v_3 = 3v_1 - 2v_2$. Do đó hạng của hệ véctơ này đúng bằng **2**.\n  *(Ghi chú: Bản in đề gốc có lỗi gõ nhầm chữ cái $x$ thành $z$ ở số hạng thứ 3: $z - 2y \\to x - 2y$ theo chuẩn ngân hàng câu hỏi PTIT).*\n* Các phương án khác:\n  * A sai vì $\\text{span}\\{x, y, 2y\\} = \\text{span}\\{x, y\\}$ chỉ có số chiều bằng 2, không sinh ra $V$.\n  * B sai vì $\\{x, 2y, z\\}$ độc lập tuyến tính.\n  * D sai vì $\\{x, y, x+y+z\\}$ là một cơ sở và sinh ra toàn bộ $V$.\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 38,
+    "topicId": 4,
+    "topicName": "KHÔNG GIAN VÉCTƠ",
+    "question": "Cho $V = \\langle (1,1,1), (2,1,0), (5,3,1) \\rangle$. Khẳng định nào sau đây **luôn đúng**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$(1,1,1), (0,0,1)$ là cơ sở của $V$"
+      },
+      {
+        "key": "B",
+        "text": "$\\dim V = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$(1, 0, -1) \\in V$"
+      },
+      {
+        "key": "D",
+        "text": "Tất cả đều sai"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Nhận xét quan hệ giữa các véctơ sinh của $V$:\n  $$(5, 3, 1) = 1 \\cdot (1, 1, 1) + 2 \\cdot (2, 1, 0)$$\n  Do đó véctơ thứ 3 là tổ hợp tuyến tính của 2 véctơ đầu, suy ra $\\dim V = 2$, với cơ sở là $\\{u_1 = (1, 1, 1), u_2 = (2, 1, 0)\\}$.\n* Kiểm tra véctơ $w = (1, 0, -1)$:\n  Ta có:\n  $$-1 \\cdot (1, 1, 1) + 1 \\cdot (2, 1, 0) = (-1 + 2, -1 + 1, -1 + 0) = (1, 0, -1)$$\n  Vì $(1, 0, -1)$ biểu diễn được thành tổ hợp tuyến tính của cơ sở của $V$, nên $(1, 0, -1) \\in V$.\n* **Chọn đáp án: C.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 39,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Cho hệ phương trình tuyến tính:\n$$\\begin{cases} 2x + 3y = -11 \\\\ 6x - 5y + z = 45 \\end{cases}$$\nMa trận bổ sung của hệ phương trình trên là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\begin{bmatrix} 2 & 3 & 0 & 11 \\\\ 6 & 0 & 1 & 45 \\end{bmatrix}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\begin{bmatrix} 2 & 3 & 0 & -11 \\\\ 6 & -5 & 1 & 45 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\begin{bmatrix} 2 & 6 \\\\ 3 & -5 \\\\ 0 & 1 \\\\ -11 & 45 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\begin{bmatrix} 2 & 6 \\\\ 3 & 0 \\\\ 0 & 1 \\\\ 11 & 45 \\end{bmatrix}$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Hệ phương trình có 3 ẩn $x, y, z$:\n  $$\\begin{cases} 2x + 3y + 0z = -11 \\\\ 6x - 5y + 1z = 45 \\end{cases}$$\n* Ma trận hệ số $A = \\begin{bmatrix} 2 & 3 & 0 \\\\ 6 & -5 & 1 \\end{bmatrix}$, cột số hạng tự do $B = \\begin{bmatrix} -11 \\\\ 45 \\end{bmatrix}$.\n* Ma trận bổ sung $\\bar{A} = [A | B]$ là:\n  $$\\bar{A} = \\begin{bmatrix} 2 & 3 & 0 & -11 \\\\ 6 & -5 & 1 & 45 \\end{bmatrix}$$\n* **Chọn đáp án: B.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 40,
+    "topicId": 3,
+    "topicName": "HỆ PHƯƠNG TRÌNH TUYẾN TÍNH",
+    "question": "Phương trình nào dưới đây có thể viết thành một phương trình tuyến tính với các ẩn $x, y$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$(\\sin \\pi) x^2 + y = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$(\\sin 0{,}5) xy + x + y = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$(\\cos \\pi) x^2 + y = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$(\\cos(\\sin \\pi)) x^2 + y = 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Phương trình tuyến tính với các ẩn $x, y$ là phương trình bậc nhất có dạng tổng quát $ax + by = c$, trong đó các ẩn không được nhân với nhau hoặc có số mũ khác $1$.\n* Xét phương án **A**: Ta có $\\sin \\pi = 0$, do đó:\n  $$(\\sin \\pi) x^2 + y = 2 \\iff 0 \\cdot x^2 + y = 2 \\iff y = 2$$\n  Đây là một phương trình bậc nhất đối với $x, y$ (dạng $0x + 1y = 2$).\n* Các phương án còn lại:\n  * B: Chứa tích $xy$ (bậc 2) nên là phi tuyến.\n  * C: $\\cos \\pi = -1 \\ne 0 \\implies -x^2 + y = 2$ (bậc 2 theo $x$).\n  * D: $\\sin \\pi = 0 \\implies \\cos 0 = 1 \\ne 0 \\implies x^2 + y = 2$ (bậc 2 theo $x$).\n* **Chọn đáp án: A.**"
+  },
+  {
+    "examId": "de_ontap",
+    "examName": "Đề ôn tập PTIT • 80 phút",
+    "examQuestionNo": 41,
+    "topicId": 2,
+    "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
+    "question": "Xét hai ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}; B = \\begin{bmatrix} 1 & 0 \\\\ 2 & 1 \\\\ -1 & 3 \\end{bmatrix}$. Kích cỡ của ma trận $AB$ là bao nhiêu?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$1 \\times 3$"
+      },
+      {
+        "key": "B",
+        "text": "$1 \\times 2$"
+      },
+      {
+        "key": "C",
+        "text": "$3 \\times 1$"
+      },
+      {
+        "key": "D",
+        "text": "$2 \\times 1$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* Ma trận $A$ gồm 1 hàng và 3 cột $\\implies$ kích cỡ $1 \\times 3$.\n* Ma trận $B$ gồm 3 hàng và 2 cột $\\implies$ kích cỡ $3 \\times 2$.\n* Tích ma trận $AB$ của ma trận kích cỡ $(1 \\times 3)$ với ma trận $(3 \\times 2)$ là một ma trận có kích cỡ:\n  $$(1 \\times 3) \\times (3 \\times 2) = 1 \\times 2$$\n* Cụ thể $AB = \\begin{bmatrix} 1\\cdot 1 + 2\\cdot 2 + 3(-1) & 1\\cdot 0 + 2\\cdot 1 + 3\\cdot 3 \\end{bmatrix} = \\begin{bmatrix} 2 & 11 \\end{bmatrix}$ (cỡ $1 \\times 2$).\n* **Chọn đáp án: B.**"
+  }
+]
