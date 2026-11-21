@@ -85,6 +85,14 @@
       currentIndex: 0
     },
 
+    // Type Practice State
+    typePractice: {
+      chapterId: 1,
+      subTypeId: 1,
+      docExpanded: true,
+      answers: JSON.parse(localStorage.getItem('tp_answers') || '{}')
+    },
+
     theme: localStorage.getItem('theme_mode') || 
            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
   };
@@ -93,13 +101,22 @@
   const el = {
     themeToggle: document.getElementById('themeToggle'),
     tabQuiz: document.getElementById('tabQuiz'),
+    tabTypePractice: document.getElementById('tabTypePractice'),
     tabPractice: document.getElementById('tabPractice'),
     tabSolo: document.getElementById('tabSolo'),
     quizView: document.getElementById('quizView'),
     reviewView: document.getElementById('reviewView'),
+    typePracticeView: document.getElementById('typePracticeView'),
     practiceView: document.getElementById('practiceView'),
     soloView: document.getElementById('soloView'),
     modalContainer: document.getElementById('modalContainer'),
+
+    // Type Practice Elements
+    tpChapterButtons: document.getElementById('tpChapterButtons'),
+    tpSubtypeButtons: document.getElementById('tpSubtypeButtons'),
+    tpTheoryDocWrapper: document.getElementById('tpTheoryDocWrapper'),
+    tpQuestionsBanner: document.getElementById('tpQuestionsBanner'),
+    tpQuestionsList: document.getElementById('tpQuestionsList'),
 
     // Quiz Start Screen
     quizStartScreen: document.getElementById('quizStartScreen'),
@@ -154,11 +171,13 @@
   function switchTab(tab) {
     state.currentTab = tab;
     el.tabQuiz.classList.toggle('active', tab === 'quiz' || tab === 'review');
+    if (el.tabTypePractice) el.tabTypePractice.classList.toggle('active', tab === 'typePractice');
     el.tabPractice.classList.toggle('active', tab === 'practice');
     if (el.tabSolo) el.tabSolo.classList.toggle('active', tab === 'solo');
 
     el.quizView.style.display = tab === 'quiz' ? 'block' : 'none';
     el.reviewView.style.display = tab === 'review' ? 'block' : 'none';
+    if (el.typePracticeView) el.typePracticeView.style.display = tab === 'typePractice' ? 'block' : 'none';
     el.practiceView.style.display = tab === 'practice' ? 'block' : 'none';
     if (el.soloView) el.soloView.style.display = tab === 'solo' ? 'block' : 'none';
 
@@ -171,6 +190,8 @@
         el.quizStartScreen.style.display = 'block';
         el.quizActiveScreen.style.display = 'none';
       }
+    } else if (tab === 'typePractice') {
+      renderTypePracticeView();
     } else if (tab === 'review') {
       renderReviewView();
     } else if (tab === 'practice') {
@@ -246,7 +267,7 @@
         ? 'Chưa chọn chương nào ⚠️' 
         : `Chương ${selectedChapters.sort((a,b)=>a-b).join(', ')} (${selectedChapters.length} chương)`;
 
-    let srcText = 'Toàn bộ 281 câu';
+    let srcText = `Toàn bộ ${state.allQuestions.length} câu`;
     if (source === 'original') srcText = 'Chỉ Đề thi gốc PTIT';
     if (source === 'extra') srcText = 'Chỉ Luyện tập mở rộng';
 
@@ -772,7 +793,326 @@
   }
 
   // ===================================================================
-  // PRACTICE MODE (Ôn tổng quát 200 câu - Làm câu nào chấm câu đó)
+  // TYPE PRACTICE VIEW & THEORY DOCS (24 Dạng bài có Doc Lý thuyết)
+  // ===================================================================
+
+  const CHAPTER_CONFIG = [
+    { id: 1, name: "Logic mệnh đề, Tập hợp, Ánh xạ & Boole", short: "Chương 1", count: 102, orig: 8, ext: 94 },
+    { id: 2, name: "Không gian véc tơ", short: "Chương 2", count: 102, orig: 13, ext: 89 },
+    { id: 3, name: "Ma trận và Định thức", short: "Chương 3", count: 102, orig: 28, ext: 74 },
+    { id: 4, name: "Hệ phương trình tuyến tính", short: "Chương 4", count: 102, orig: 14, ext: 88 },
+    { id: 5, name: "Ánh xạ tuyến tính", short: "Chương 5", count: 102, orig: 11, ext: 91 },
+    { id: 6, name: "Không gian véc tơ Euclide, Dạng toàn phương", short: "Chương 6", count: 102, orig: 7, ext: 95 }
+  ];
+
+  function getTheoryDocs() {
+    if (typeof window !== 'undefined' && window.THEORY_DOCS) {
+      return window.THEORY_DOCS;
+    }
+    return {};
+  }
+
+  function renderTypePracticeView() {
+    if (!el.typePracticeView) return;
+    
+    if (!state.allQuestions || state.allQuestions.length === 0) {
+      state.allQuestions = getQuestionsBank();
+    }
+
+    renderTpChapterSelector();
+    renderTpSubtypeSelector();
+    renderTpTheoryDoc();
+    renderTpQuestions();
+  }
+
+  function renderTpChapterSelector() {
+    if (!el.tpChapterButtons) return;
+    el.tpChapterButtons.innerHTML = '';
+
+    CHAPTER_CONFIG.forEach(ch => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `tp-chapter-btn ${ch.id === state.typePractice.chapterId ? 'active' : ''}`;
+      btn.innerHTML = `
+        <span class="tp-ch-badge">${ch.short}</span>
+        <span class="tp-ch-title">${escapeHtml(ch.name)}</span>
+        <span class="tp-ch-count">${ch.count} câu (${ch.orig} gốc • ${ch.ext} mở rộng)</span>
+      `;
+      btn.addEventListener('click', () => {
+        state.typePractice.chapterId = ch.id;
+        state.typePractice.subTypeId = 1;
+        renderTypePracticeView();
+      });
+      el.tpChapterButtons.appendChild(btn);
+    });
+  }
+
+  function renderTpSubtypeSelector() {
+    if (!el.tpSubtypeButtons) return;
+    el.tpSubtypeButtons.innerHTML = '';
+
+    const chId = state.typePractice.chapterId;
+    const allDocs = getTheoryDocs();
+    const chDoc = allDocs[String(chId)] || { types: [] };
+    const types = chDoc.types || [];
+
+    types.forEach((t, idx) => {
+      const subId = idx + 1;
+      const count = (state.allQuestions || []).filter(q => q.topicId === chId && q.subTypeId === subId).length;
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `tp-subtype-btn ${subId === state.typePractice.subTypeId ? 'active' : ''}`;
+      btn.innerHTML = `
+        <div class="tp-sub-left">
+          <span class="tp-sub-id">Dạng ${t.id}</span>
+          <span class="tp-sub-name">${escapeHtml(t.name)}</span>
+        </div>
+        <span class="tp-sub-count">${count} câu</span>
+      `;
+      btn.addEventListener('click', () => {
+        state.typePractice.subTypeId = subId;
+        renderTpSubtypeSelector();
+        renderTpTheoryDoc();
+        renderTpQuestions();
+      });
+      el.tpSubtypeButtons.appendChild(btn);
+    });
+  }
+
+  function formatDocText(text) {
+    if (!text) return '';
+    return text
+      .replace(/^(\s*)\*\s+/gm, '$1• ')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\n\n/g, '<div style="margin-bottom: 8px;"></div>')
+      .replace(/\n/g, '<br>');
+  }
+
+  function renderTpTheoryDoc() {
+    if (!el.tpTheoryDocWrapper) return;
+    const chId = state.typePractice.chapterId;
+    const subId = state.typePractice.subTypeId;
+    const allDocs = getTheoryDocs();
+    const chDoc = allDocs[String(chId)];
+    const t = (chDoc && chDoc.types) ? chDoc.types[subId - 1] : null;
+
+    if (!t) {
+      el.tpTheoryDocWrapper.innerHTML = '';
+      return;
+    }
+
+    const isExpanded = state.typePractice.docExpanded;
+    const toggleIcon = isExpanded ? '▲' : '▼';
+    const toggleText = isExpanded ? 'Thu gọn lý thuyết & mẹo' : 'Mở rộng lý thuyết & mẹo giải';
+
+    let bodyHtml = '';
+    if (isExpanded) {
+      bodyHtml = `
+        <div class="doc-body">
+          <div class="doc-box doc-box-theory">
+            <div class="doc-box-title">📌 1. LÝ THUYẾT CỐT LÕI CẦN ĐỂ GIẢI</div>
+            <div>${formatDocText(t.theory)}</div>
+          </div>
+
+          <div class="doc-box doc-box-formulas">
+            <div class="doc-box-title">⚡ 2. CÔNG THỨC & TÍNH CHẤT NỀN TẢNG</div>
+            <div>${formatDocText(t.formulas)}</div>
+          </div>
+
+          <div class="doc-box doc-box-tips">
+            <div class="doc-box-title">💡 3. PHƯƠNG PHÁP & MẸO GIẢI NHANH 30S</div>
+            <div>${formatDocText(t.quickTips)}</div>
+          </div>
+
+          <div class="doc-box doc-box-casio">
+            <div class="doc-box-title">📱 4. BẤM MÁY TÍNH CASIO FX 580VNX / 880BTG</div>
+            <div>${formatDocText(t.casioTricks)}</div>
+          </div>
+
+          <div class="doc-box doc-box-traps">
+            <div class="doc-box-title">⚠️ 5. CÁC BẪY ĐỀ THI HAY GẶP & LƯU Ý ĐẶC BIỆT</div>
+            <div>${formatDocText(t.traps)}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    el.tpTheoryDocWrapper.innerHTML = `
+      <div class="doc-card">
+        <div class="doc-header">
+          <div class="doc-header-title">
+            <span class="tp-sub-id" style="background:#3b82f6; color:#fff;">Dạng ${t.id}</span>
+            <div>
+              <h3 style="margin-bottom: 2px;">${escapeHtml(t.name)}</h3>
+              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">${escapeHtml(t.summary)}</p>
+            </div>
+          </div>
+          <button type="button" class="doc-toggle-btn" id="btnToggleTpDoc">
+            <span>${toggleIcon}</span> ${toggleText}
+          </button>
+        </div>
+        ${bodyHtml}
+      </div>
+    `;
+
+    const btnToggle = document.getElementById('btnToggleTpDoc');
+    if (btnToggle) {
+      btnToggle.addEventListener('click', () => {
+        state.typePractice.docExpanded = !state.typePractice.docExpanded;
+        renderTpTheoryDoc();
+      });
+    }
+
+    if (isExpanded) {
+      renderMath(el.tpTheoryDocWrapper);
+    }
+  }
+
+  function renderTpQuestions() {
+    if (!el.tpQuestionsList) return;
+    const chId = state.typePractice.chapterId;
+    const subId = state.typePractice.subTypeId;
+
+    const questions = (state.allQuestions || []).filter(q => q.topicId === chId && q.subTypeId === subId);
+    
+    // Calculate stats for this sub-type
+    let answeredCount = 0;
+    let correctCount = 0;
+    questions.forEach(q => {
+      const ans = state.typePractice.answers[q.id];
+      if (ans) {
+        answeredCount++;
+        if (ans === q.correct) correctCount++;
+      }
+    });
+
+    if (el.tpQuestionsBanner) {
+      const pct = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+      el.tpQuestionsBanner.innerHTML = `
+        <div class="tp-banner-stats">
+          <span>📝 <strong>${questions.length} câu hỏi</strong> Dạng ${chId}.${subId}</span>
+          <span style="color: var(--text-muted);">•</span>
+          <span>Đã làm: <strong>${answeredCount}/${questions.length}</strong> câu</span>
+          <span style="color: var(--text-muted);">•</span>
+          <span style="color: var(--success-solid);">Đúng: <strong>${correctCount}</strong> (${pct}%)</span>
+        </div>
+        <div>
+          <button type="button" class="btn" id="btnResetTpSubtype" style="font-size: 0.82rem; padding: 6px 12px; color: var(--error-text);">
+            Làm lại dạng này 🔄
+          </button>
+        </div>
+      `;
+
+      const btnReset = document.getElementById('btnResetTpSubtype');
+      if (btnReset) {
+        btnReset.addEventListener('click', () => {
+          if (confirm(`Bạn có chắc muốn xóa lịch sử làm bài của Dạng ${chId}.${subId} để luyện tập lại từ đầu?`)) {
+            questions.forEach(q => {
+              delete state.typePractice.answers[q.id];
+            });
+            localStorage.setItem('tp_answers', JSON.stringify(state.typePractice.answers));
+            renderTpQuestions();
+          }
+        });
+      }
+    }
+
+    el.tpQuestionsList.innerHTML = '';
+
+    if (questions.length === 0) {
+      el.tpQuestionsList.innerHTML = `
+        <div style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+          <p>Chưa có câu hỏi nào trong dạng bài này.</p>
+        </div>
+      `;
+      return;
+    }
+
+    questions.forEach((q, idx) => {
+      const card = document.createElement('div');
+      card.className = 'tp-q-card';
+      card.id = `tp-card-${q.id}`;
+
+      const userAns = state.typePractice.answers[q.id];
+      const isAnswered = !!userAns;
+
+      const isOrig = q.isOriginal === true;
+      const originTag = isOrig
+        ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')}</span>`
+        : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng PTIT</span>`;
+
+      let optionsHtml = (q.options || []).map(opt => {
+        let optClass = 'tp-option-btn';
+        if (isAnswered) {
+          if (opt.key === q.correct) {
+            optClass += ' opt-correct';
+          } else if (opt.key === userAns) {
+            optClass += ' opt-wrong';
+          }
+        }
+        return `
+          <button type="button" class="${optClass}" data-qid="${q.id}" data-key="${opt.key}" ${isAnswered ? 'disabled' : ''}>
+            <span class="tp-opt-key">${opt.key}</span>
+            <span class="tp-opt-text">${formatContent(opt.text)}</span>
+          </button>
+        `;
+      }).join('');
+
+      let explanationHtml = '';
+      if (isAnswered) {
+        const isRight = userAns === q.correct;
+        const statusBadge = isRight 
+          ? `<span style="color: var(--success-solid); font-weight: 700;">✅ Bạn đã trả lời ĐÚNG</span>`
+          : `<span style="color: var(--error-solid); font-weight: 700;">❌ Bạn trả lời SAI (Đáp án đúng: ${q.correct})</span>`;
+
+        explanationHtml = `
+          <div class="tp-explanation-box">
+            <div class="tp-exp-header">
+              ${statusBadge}
+            </div>
+            <div class="tp-exp-content">
+              ${formatContent(q.explanation)}
+            </div>
+          </div>
+        `;
+      }
+
+      card.innerHTML = `
+        <div class="tp-q-header">
+          <span class="tp-q-number">Câu ${idx + 1} / ${questions.length} (ID #${q.id})</span>
+          <div>${originTag}</div>
+        </div>
+        <div class="tp-q-body">
+          ${formatContent(q.question)}
+        </div>
+        <div class="tp-options-grid">
+          ${optionsHtml}
+        </div>
+        ${explanationHtml}
+      `;
+
+      // Bind option clicks
+      if (!isAnswered) {
+        card.querySelectorAll('.tp-option-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const chosenKey = btn.dataset.key;
+            state.typePractice.answers[q.id] = chosenKey;
+            localStorage.setItem('tp_answers', JSON.stringify(state.typePractice.answers));
+            renderTpQuestions();
+          });
+        });
+      }
+
+      el.tpQuestionsList.appendChild(card);
+    });
+
+    renderMath(el.tpQuestionsList);
+  }
+
+  // ===================================================================
+  // PRACTICE MODE (Ngân hàng 612 câu - Làm câu nào chấm câu đó)
   // ===================================================================
 
   function getFilteredPracticeQuestions() {
@@ -1350,6 +1690,7 @@
       switchTab('quiz');
     }
   });
+  if (el.tabTypePractice) el.tabTypePractice.addEventListener('click', () => switchTab('typePractice'));
   el.tabPractice.addEventListener('click', () => switchTab('practice'));
   if (el.tabSolo) el.tabSolo.addEventListener('click', () => switchTab('solo'));
 

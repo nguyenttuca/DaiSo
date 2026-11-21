@@ -1787,3 +1787,437 @@ body {
   color: #7dd3fc;
   border-color: #0284c7;
 }
+
+/* ===================================================================
+   TYPE PRACTICE & THEORY DOCS STYLES
+   =================================================================== */
+
+.tp-header-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tp-intro {
+  margin-bottom: 20px;
+}
+
+.tp-chapters-bar {
+  margin-bottom: 18px;
+}
+
+.tp-chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.tp-chapter-btn {
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tp-chapter-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-focus);
+}
+
+.tp-chapter-btn.active {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.tp-chapter-btn .tp-ch-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+.tp-chapter-btn .tp-ch-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.tp-chapter-btn .tp-ch-count {
+  font-size: 0.78rem;
+  opacity: 0.75;
+}
+
+.tp-subtypes-bar {
+  margin-top: 12px;
+}
+
+.tp-subtypes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.tp-subtype-btn {
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tp-subtype-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-focus);
+}
+
+.tp-subtype-btn.active {
+  background: var(--bg-card);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #3b82f633;
+}
+
+.tp-subtype-btn.active .tp-sub-id {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.tp-sub-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tp-sub-id {
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.tp-sub-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.tp-sub-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Theory Docs Box */
+.theory-doc-wrapper {
+  margin-bottom: 28px;
+}
+
+.doc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-header {
+  padding: 18px 24px;
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.doc-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc-header-title h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.doc-toggle-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doc-toggle-btn:hover {
+  background: var(--bg-hover);
+}
+
+.doc-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.doc-box {
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.doc-box-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doc-box-theory {
+  background-color: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  color: #14532d;
+}
+
+[data-theme="dark"] .doc-box-theory {
+  background-color: #052e1644;
+  color: #bbf7d0;
+  border-left-color: #22c55e;
+}
+
+.doc-box-formulas {
+  background-color: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  color: #1e3a8a;
+}
+
+[data-theme="dark"] .doc-box-formulas {
+  background-color: #17255444;
+  color: #bfdbfe;
+  border-left-color: #3b82f6;
+}
+
+.doc-box-tips {
+  background-color: #f5f3ff;
+  border-left: 4px solid #8b5cf6;
+  color: #4c1d95;
+}
+
+[data-theme="dark"] .doc-box-tips {
+  background-color: #2e106544;
+  color: #ddd6fe;
+  border-left-color: #8b5cf6;
+}
+
+.doc-box-casio {
+  background-color: #ecfeff;
+  border-left: 4px solid #06b6d4;
+  color: #164e63;
+}
+
+[data-theme="dark"] .doc-box-casio {
+  background-color: #08334444;
+  color: #a5f3fc;
+  border-left-color: #06b6d4;
+}
+
+.doc-box-traps {
+  background-color: #fff1f2;
+  border-left: 4px solid #f43f5e;
+  color: #881337;
+}
+
+[data-theme="dark"] .doc-box-traps {
+  background-color: #4c051944;
+  color: #fecdd3;
+  border-left-color: #f43f5e;
+}
+
+.doc-box p, .doc-box ul {
+  margin: 6px 0;
+}
+
+.doc-box ul {
+  padding-left: 20px;
+}
+
+.doc-box li {
+  margin-bottom: 6px;
+}
+
+/* Practice Questions under Type */
+.tp-questions-wrapper {
+  margin-top: 24px;
+}
+
+.tp-questions-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.tp-banner-stats {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tp-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tp-q-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease;
+}
+
+.tp-q-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.tp-q-number {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.tp-q-body {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: var(--text-main);
+}
+
+.tp-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tp-option-btn {
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.15s ease;
+  font-size: 0.95rem;
+}
+
+.tp-option-btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--border-focus);
+}
+
+.tp-option-btn .tp-opt-key {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.tp-option-btn.opt-correct {
+  background-color: var(--success-bg);
+  border-color: var(--success-solid);
+  color: var(--success-text);
+}
+
+.tp-option-btn.opt-correct .tp-opt-key {
+  background-color: var(--success-solid);
+  color: #ffffff;
+}
+
+.tp-option-btn.opt-wrong {
+  background-color: var(--error-bg);
+  border-color: var(--error-solid);
+  color: var(--error-text);
+}
+
+.tp-option-btn.opt-wrong .tp-opt-key {
+  background-color: var(--error-solid);
+  color: #ffffff;
+}
+
+.tp-option-btn.opt-target-reveal {
+  border: 2px dashed var(--success-solid);
+  background-color: var(--success-bg);
+}
+
+.tp-explanation-box {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border-left: 4px solid #3b82f6;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.tp-exp-header {
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
