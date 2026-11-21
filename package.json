@@ -1,0 +1,27 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "> **Mục tiêu:** Cung cấp đầy đủ lý thuyết trọng tâm, công thức bấm máy/tính nhẩm, quy trình xử lý nhanh và cách nhận diện bẫy để giải trọn vẹn 20 câu trắc nghiệm trong 25 phút một cách chính xác nhất.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenttuca/DaiSo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nguyenttuca/DaiSo/issues"
+  },
+  "homepage": "https://github.com/nguyenttuca/DaiSo#readme",
+  "dependencies": {
+    "express": "^5.3.0",
+    "ws": "^8.23.0"
+  }
+}

@@ -94,9 +94,11 @@
     themeToggle: document.getElementById('themeToggle'),
     tabQuiz: document.getElementById('tabQuiz'),
     tabPractice: document.getElementById('tabPractice'),
+    tabSolo: document.getElementById('tabSolo'),
     quizView: document.getElementById('quizView'),
     reviewView: document.getElementById('reviewView'),
     practiceView: document.getElementById('practiceView'),
+    soloView: document.getElementById('soloView'),
     modalContainer: document.getElementById('modalContainer'),
 
     // Quiz Start Screen
@@ -153,10 +155,12 @@
     state.currentTab = tab;
     el.tabQuiz.classList.toggle('active', tab === 'quiz' || tab === 'review');
     el.tabPractice.classList.toggle('active', tab === 'practice');
+    if (el.tabSolo) el.tabSolo.classList.toggle('active', tab === 'solo');
 
     el.quizView.style.display = tab === 'quiz' ? 'block' : 'none';
     el.reviewView.style.display = tab === 'review' ? 'block' : 'none';
     el.practiceView.style.display = tab === 'practice' ? 'block' : 'none';
+    if (el.soloView) el.soloView.style.display = tab === 'solo' ? 'block' : 'none';
 
     if (tab === 'quiz') {
       if (state.quiz.started && !state.quiz.submitted) {
@@ -171,14 +175,163 @@
       renderReviewView();
     } else if (tab === 'practice') {
       renderPracticeView();
+    } else if (tab === 'solo') {
+      if (window.SOLO_APP && typeof window.SOLO_APP.onTabActivated === 'function') {
+        window.SOLO_APP.onTabActivated();
+      }
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  window.switchAppTab = switchTab;
+
   // ===================================================================
-  // QUIZ LOGIC (Chỉ thi khi bấm Bắt đầu)
+  // CUSTOM EXAM MATRIX & QUIZ LOGIC
   // ===================================================================
+
+  function updateMatrixSummary() {
+    const summaryLiveEl = document.getElementById('matrixLiveSummary');
+    if (!summaryLiveEl) return;
+
+    if (!state.allQuestions || state.allQuestions.length === 0) {
+      state.allQuestions = getQuestionsBank();
+    }
+
+    const checkedChapterEls = document.querySelectorAll('input[name="quizChapter"]:checked');
+    const selectedChapters = Array.from(checkedChapterEls).map(el => parseInt(el.value, 10));
+
+    // Update active class on chapter cards
+    document.querySelectorAll('.chapter-check-card').forEach(card => {
+      const chVal = parseInt(card.dataset.ch, 10);
+      card.classList.toggle('active', selectedChapters.includes(chVal));
+    });
+
+    // Update active class on quick pills
+    const btnAll = document.getElementById('btnSelectAllChapters');
+    const btn123 = document.getElementById('btnSelectCh123');
+    const btn456 = document.getElementById('btnSelectCh456');
+    if (btnAll) btnAll.classList.toggle('active', selectedChapters.length === 6);
+    if (btn123) btn123.classList.toggle('active', selectedChapters.length === 3 && [1, 2, 3].every(c => selectedChapters.includes(c)));
+    if (btn456) btn456.classList.toggle('active', selectedChapters.length === 3 && [4, 5, 6].every(c => selectedChapters.includes(c)));
+
+    // Update active class on source radios
+    const sourceRadio = document.querySelector('input[name="quizSourceOption"]:checked');
+    const source = sourceRadio ? sourceRadio.value : 'all';
+    document.querySelectorAll('.source-radio-card').forEach(card => {
+      const r = card.querySelector('input[type="radio"]');
+      card.classList.toggle('active', r && r.checked);
+    });
+
+    // Update active class on size cards
+    const countRadio = document.querySelector('input[name="quizQuestionCount"]:checked');
+    const reqCount = countRadio ? parseInt(countRadio.value, 10) : 20;
+    const reqDur = countRadio ? parseInt(countRadio.dataset.duration || '25', 10) : 25;
+    document.querySelectorAll('.size-pill-card').forEach(card => {
+      const r = card.querySelector('input[type="radio"]');
+      card.classList.toggle('active', r && r.checked);
+    });
+
+    // Calculate pool
+    const pool = (state.allQuestions || []).filter(q => {
+      if (!selectedChapters.includes(q.topicId)) return false;
+      if (source === 'original') return q.isOriginal === true;
+      if (source === 'extra') return q.isOriginal === false;
+      return true;
+    });
+
+    const chText = selectedChapters.length === 6 
+      ? 'Tất cả 6 chương' 
+      : selectedChapters.length === 0 
+        ? 'Chưa chọn chương nào ⚠️' 
+        : `Chương ${selectedChapters.sort((a,b)=>a-b).join(', ')} (${selectedChapters.length} chương)`;
+
+    let srcText = 'Toàn bộ 281 câu';
+    if (source === 'original') srcText = 'Chỉ Đề thi gốc PTIT';
+    if (source === 'extra') srcText = 'Chỉ Luyện tập mở rộng';
+
+    const actualCount = Math.min(reqCount, pool.length);
+    const examText = `${actualCount} câu hỏi • ${reqDur}:00 phút`;
+
+    const summaryChaptersText = document.getElementById('summaryChaptersText');
+    const summarySourceText = document.getElementById('summarySourceText');
+    const summaryExamText = document.getElementById('summaryExamText');
+
+    if (summaryChaptersText) summaryChaptersText.textContent = chText;
+    if (summarySourceText) summarySourceText.textContent = `${pool.length} câu khả dụng (${srcText})`;
+    if (summaryExamText) summaryExamText.textContent = examText;
+
+    const btnStart = document.getElementById('btnStartExam');
+    if (btnStart) {
+      if (selectedChapters.length === 0) {
+        btnStart.textContent = '⚠️ Vui lòng chọn ít nhất 1 chương';
+        btnStart.disabled = true;
+      } else if (pool.length === 0) {
+        btnStart.textContent = '⚠️ Không có câu hỏi phù hợp';
+        btnStart.disabled = true;
+      } else {
+        btnStart.textContent = `⚡ Bắt đầu làm bài thi (${actualCount} câu • ${reqDur} phút)`;
+        btnStart.disabled = false;
+      }
+    }
+  }
+
+  function initMatrixUI() {
+    // Checkbox events
+    document.querySelectorAll('input[name="quizChapter"]').forEach(cb => {
+      cb.addEventListener('change', updateMatrixSummary);
+    });
+
+    // Radio events
+    document.querySelectorAll('input[name="quizSourceOption"]').forEach(r => {
+      r.addEventListener('change', updateMatrixSummary);
+    });
+    document.querySelectorAll('input[name="quizQuestionCount"]').forEach(r => {
+      r.addEventListener('change', updateMatrixSummary);
+    });
+
+    // Quick selection pills
+    const btnAll = document.getElementById('btnSelectAllChapters');
+    const btn123 = document.getElementById('btnSelectCh123');
+    const btn456 = document.getElementById('btnSelectCh456');
+    const btnClear = document.getElementById('btnClearChapters');
+
+    if (btnAll) {
+      btnAll.addEventListener('click', () => {
+        document.querySelectorAll('input[name="quizChapter"]').forEach(cb => { cb.checked = true; });
+        updateMatrixSummary();
+      });
+    }
+
+    if (btn123) {
+      btn123.addEventListener('click', () => {
+        document.querySelectorAll('input[name="quizChapter"]').forEach(cb => {
+          const val = parseInt(cb.value, 10);
+          cb.checked = (val === 1 || val === 2 || val === 3);
+        });
+        updateMatrixSummary();
+      });
+    }
+
+    if (btn456) {
+      btn456.addEventListener('click', () => {
+        document.querySelectorAll('input[name="quizChapter"]').forEach(cb => {
+          const val = parseInt(cb.value, 10);
+          cb.checked = (val === 4 || val === 5 || val === 6);
+        });
+        updateMatrixSummary();
+      });
+    }
+
+    if (btnClear) {
+      btnClear.addEventListener('click', () => {
+        document.querySelectorAll('input[name="quizChapter"]').forEach(cb => { cb.checked = false; });
+        updateMatrixSummary();
+      });
+    }
+
+    updateMatrixSummary();
+  }
 
   function startExam() {
     clearInterval(state.quiz.timerInterval);
@@ -191,53 +344,69 @@
       return;
     }
 
-    // Get source preference
+    // 1. Get Selected Chapters (1 to 6)
+    const checkedChapterEls = document.querySelectorAll('input[name="quizChapter"]:checked');
+    const selectedChapters = Array.from(checkedChapterEls).map(el => parseInt(el.value, 10));
+    if (selectedChapters.length === 0) {
+      alert("Vui lòng chọn ít nhất một chương để tạo đề thi!");
+      return;
+    }
+
+    // 2. Get Selected Source
     const sourceRadio = document.querySelector('input[name="quizSourceOption"]:checked');
     const source = sourceRadio ? sourceRadio.value : 'all';
 
-    let pool = [];
-    if (source === 'de101') {
-      pool = state.allQuestions.filter(q => q.examId === 'de101');
-      shuffleArray(pool);
-      state.quiz.questions = pool.slice(0, 20);
-    } else if (source === 'de_ontap') {
-      pool = state.allQuestions.filter(q => q.examId === 'de_ontap');
-      shuffleArray(pool);
-      state.quiz.questions = pool.slice(0, 20);
-    } else {
-      // Pick 20 questions balanced across 6 topics from all 81 authentic PTIT exam questions
-      const questionsByTopic = {};
-      for (let t = 1; t <= 6; t++) {
-        questionsByTopic[t] = state.allQuestions.filter(q => q.topicId === t);
-      }
+    // 3. Get Selected Question Count & Duration
+    const countRadio = document.querySelector('input[name="quizQuestionCount"]:checked');
+    const requestedCount = countRadio ? parseInt(countRadio.value, 10) : 20;
+    const requestedDuration = countRadio ? parseInt(countRadio.dataset.duration || '25', 10) : 25;
 
-      const selected = [];
-      // Topic 1: 2, Topic 2: 5, Topic 3: 4, Topic 4: 3, Topic 5: 3, Topic 6: 3 (sum = 20)
-      const counts = [2, 5, 4, 3, 3, 3];
-      for (let t = 1; t <= 6; t++) {
-        const topicQs = [...(questionsByTopic[t] || [])];
-        shuffleArray(topicQs);
-        const take = Math.min(counts[t - 1], topicQs.length);
-        selected.push(...topicQs.slice(0, take));
-      }
+    // 4. Filter Available Pool
+    const pool = state.allQuestions.filter(q => {
+      if (!selectedChapters.includes(q.topicId)) return false;
+      if (source === 'original') return q.isOriginal === true;
+      if (source === 'extra') return q.isOriginal === false;
+      return true;
+    });
 
-      // If selected is less than 20 for any reason, fill up from remaining pool
-      if (selected.length < 20) {
-        const selectedIds = new Set(selected.map(q => q.id));
-        const remaining = state.allQuestions.filter(q => !selectedIds.has(q.id));
-        shuffleArray(remaining);
-        selected.push(...remaining.slice(0, 20 - selected.length));
-      }
-
-      shuffleArray(selected);
-      state.quiz.questions = selected;
+    if (pool.length === 0) {
+      alert("Không tìm thấy câu hỏi nào phù hợp với ma trận đã chọn. Vui lòng chọn thêm chương hoặc nguồn câu hỏi!");
+      return;
     }
 
-    // Defensive check: ensure only valid question objects
-    state.quiz.questions = (state.quiz.questions || []).filter(q => q && q.id);
+    // 5. Balanced Sampling across selected chapters
+    const targetTotal = Math.min(requestedCount, pool.length);
+    const byChapter = {};
+    selectedChapters.forEach(ch => {
+      byChapter[ch] = pool.filter(q => q.topicId === ch);
+      shuffleArray(byChapter[ch]);
+    });
 
-    if (!state.quiz.questions || state.quiz.questions.length === 0) {
-      alert("Không thể khởi tạo danh sách câu hỏi thi. Vui lòng tải lại trang.");
+    const basePerChapter = Math.floor(targetTotal / selectedChapters.length);
+    let remainder = targetTotal % selectedChapters.length;
+    const selected = [];
+
+    // Distribute among selected chapters
+    selectedChapters.forEach(ch => {
+      const take = basePerChapter + (remainder > 0 ? 1 : 0);
+      if (remainder > 0) remainder--;
+      const fromChapter = byChapter[ch].slice(0, Math.min(take, byChapter[ch].length));
+      selected.push(...fromChapter);
+    });
+
+    // If some chapter had fewer questions than its quota, fill remainder from pool
+    if (selected.length < targetTotal) {
+      const selectedIds = new Set(selected.map(q => q.id));
+      const leftovers = pool.filter(q => !selectedIds.has(q.id));
+      shuffleArray(leftovers);
+      selected.push(...leftovers.slice(0, targetTotal - selected.length));
+    }
+
+    shuffleArray(selected);
+    state.quiz.questions = (selected || []).filter(q => q && q.id);
+
+    if (state.quiz.questions.length === 0) {
+      alert("Không thể khởi tạo danh sách câu hỏi thi. Vui lòng chọn lại ma trận!");
       return;
     }
 
@@ -246,8 +415,8 @@
     state.quiz.currentIndex = 0;
     state.quiz.answers = {};
     state.quiz.flags = new Set();
-    state.quiz.durationSeconds = 25 * 60;
-    state.quiz.timeLeft = 25 * 60;
+    state.quiz.durationSeconds = requestedDuration * 60;
+    state.quiz.timeLeft = requestedDuration * 60;
     state.quiz.score = 0;
     state.quiz.timeSpent = 0;
 
@@ -296,6 +465,8 @@
   function renderQuizNav() {
     if (!el.quizNavGrid) return;
     el.quizNavGrid.innerHTML = '';
+    const totalCount = state.quiz.questions.length || 20;
+
     (state.quiz.questions || []).forEach((q, idx) => {
       if (!q || !q.id) return;
       const dot = document.createElement('button');
@@ -317,74 +488,89 @@
 
     const answeredCount = Object.keys(state.quiz.answers).length;
     if (el.quizProgressText) {
-      el.quizProgressText.textContent = `Đã làm ${answeredCount}/20 câu`;
+      el.quizProgressText.textContent = `Đã làm ${answeredCount}/${totalCount} câu`;
     }
   }
 
   function renderQuizQuestion() {
     if (!el.quizQuestionContainer) return;
-    const q = state.quiz.questions[state.quiz.currentIndex];
-    if (!q || !q.id) {
+    try {
+      const questions = state.quiz.questions || [];
+      const q = questions[state.quiz.currentIndex];
+      if (!q || !q.id) {
+        el.quizQuestionContainer.innerHTML = `
+          <div style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+            <p style="font-size: 1.05rem; margin-bottom: 12px;">Đang tải nội dung câu hỏi hoặc chưa tìm thấy dữ liệu.</p>
+            <button class="btn btn-primary" onclick="location.reload()">Tải lại trang (F5)</button>
+          </div>
+        `;
+        return;
+      }
+
+      const isFlagged = state.quiz.flags.has(q.id);
+      if (el.btnQuizFlag) {
+        el.btnQuizFlag.classList.toggle('active', isFlagged);
+        el.btnQuizFlag.innerHTML = isFlagged 
+          ? `★ Đã đánh dấu <span class="kbd-hint">F</span>`
+          : `☆ Đánh dấu xem lại <span class="kbd-hint">F</span>`;
+      }
+
+      const selectedKey = state.quiz.answers[q.id];
+
+      let optionsHtml = (q.options || []).map(opt => {
+        const isSelected = selectedKey === opt.key;
+        return `
+          <button class="option-btn ${isSelected ? 'selected' : ''}" data-key="${opt.key}">
+            <span class="opt-badge">${opt.key}</span>
+            <span class="opt-text">${formatContent(opt.text)}</span>
+          </button>
+        `;
+      }).join('');
+
+      const isOrig = q.isOriginal === true;
+      const originBadgeHtml = isOrig
+        ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')}</span>`
+        : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng PTIT</span>`;
+
       el.quizQuestionContainer.innerHTML = `
-        <div style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
-          <p style="font-size: 1.05rem; margin-bottom: 12px;">Đang tải nội dung câu hỏi hoặc chưa tìm thấy dữ liệu.</p>
-          <button class="btn btn-primary" onclick="location.reload()">Tải lại trang (F5)</button>
+        <div class="question-meta">
+          <span class="topic-tag">${escapeHtml(q.topicName)}</span>
+          <div>
+            ${originBadgeHtml}
+          </div>
+        </div>
+        <div class="question-title">
+          <strong>Câu ${state.quiz.currentIndex + 1} / ${questions.length}.</strong> ${formatContent(q.question)}
+        </div>
+        <div class="options-list">
+          ${optionsHtml}
         </div>
       `;
-      return;
-    }
 
-    const isFlagged = state.quiz.flags.has(q.id);
-    if (el.btnQuizFlag) {
-      el.btnQuizFlag.classList.toggle('active', isFlagged);
-      el.btnQuizFlag.innerHTML = isFlagged 
-        ? `★ Đã đánh dấu <span class="kbd-hint">F</span>`
-        : `☆ Đánh dấu xem lại <span class="kbd-hint">F</span>`;
-    }
-
-    const selectedKey = state.quiz.answers[q.id];
-
-    let optionsHtml = (q.options || []).map(opt => {
-      const isSelected = selectedKey === opt.key;
-      return `
-        <button class="option-btn ${isSelected ? 'selected' : ''}" data-key="${opt.key}">
-          <span class="opt-badge">${opt.key}</span>
-          <span class="opt-text">${formatContent(opt.text)}</span>
-        </button>
-      `;
-    }).join('');
-
-    const examBadgeText = q.examName ? `${q.examName} • Câu ${q.originalId}` : `Đề gốc • Câu ${q.originalId}`;
-
-    el.quizQuestionContainer.innerHTML = `
-      <div class="question-meta">
-        <span class="topic-tag">${escapeHtml(q.topicName)}</span>
-        <div>
-          <span class="orig-tag highlight">${escapeHtml(examBadgeText)}</span>
-        </div>
-      </div>
-      <div class="question-title">
-        <strong>Câu ${state.quiz.currentIndex + 1}.</strong> ${formatContent(q.question)}
-      </div>
-      <div class="options-list">
-        ${optionsHtml}
-      </div>
-    `;
-
-    // Bind option click
-    el.quizQuestionContainer.querySelectorAll('.option-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const key = btn.dataset.key;
-        selectQuizOption(key);
+      // Bind option click
+      el.quizQuestionContainer.querySelectorAll('.option-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.key;
+          selectQuizOption(key);
+        });
       });
-    });
 
-    // Prev / Next button states
-    el.btnQuizPrev.disabled = state.quiz.currentIndex === 0;
-    el.btnQuizNext.disabled = state.quiz.currentIndex === state.quiz.questions.length - 1;
+      // Prev / Next button states
+      if (el.btnQuizPrev) el.btnQuizPrev.disabled = state.quiz.currentIndex === 0;
+      if (el.btnQuizNext) el.btnQuizNext.disabled = state.quiz.currentIndex === questions.length - 1;
 
-    renderQuizNav();
-    renderMath(el.quizQuestionContainer);
+      renderQuizNav();
+      renderMath(el.quizQuestionContainer);
+    } catch (err) {
+      console.error("Lỗi hiển thị câu hỏi:", err);
+      el.quizQuestionContainer.innerHTML = `
+        <div style="padding: 30px 20px; text-align: center; color: var(--error-text);">
+          <p style="font-weight: 600; margin-bottom: 8px;">Đã xảy ra lỗi khi kết xuất câu hỏi này:</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">${escapeHtml(err.message)}</p>
+          <button class="btn btn-primary" onclick="location.reload()">Làm mới trang (F5)</button>
+        </div>
+      `;
+    }
   }
 
   function selectQuizOption(key) {
@@ -433,13 +619,14 @@
   }
 
   function promptSubmitQuiz() {
+    const total = state.quiz.questions.length || 20;
     const answered = Object.keys(state.quiz.answers).length;
-    const unanswered = 20 - answered;
+    const unanswered = total - answered;
     const flagged = state.quiz.flags.size;
 
     showModal({
       title: 'Xác nhận nộp bài thi',
-      message: `Bạn đã hoàn thành <strong>${answered}/20</strong> câu.${unanswered > 0 ? ` Còn <strong style="color:var(--error-solid)">${unanswered} câu chưa trả lời</strong>.` : ''} ${flagged > 0 ? ` Có <strong>${flagged} câu đã đánh dấu xem lại</strong>.` : ''}<br><br>Bạn có chắc chắn muốn nộp bài để xem kết quả và lời giải chi tiết?`,
+      message: `Bạn đã hoàn thành <strong>${answered}/${total}</strong> câu.${unanswered > 0 ? ` Còn <strong style="color:var(--error-solid)">${unanswered} câu chưa trả lời</strong>.` : ''} ${flagged > 0 ? ` Có <strong>${flagged} câu đã đánh dấu xem lại</strong>.` : ''}<br><br>Bạn có chắc chắn muốn nộp bài để xem kết quả và lời giải chi tiết?`,
       confirmText: 'Nộp bài ngay',
       cancelText: 'Làm tiếp',
       onConfirm: () => submitQuiz(false)
@@ -450,7 +637,8 @@
     clearInterval(state.quiz.timerInterval);
     state.quiz.submitted = true;
     state.quiz.started = false;
-    state.quiz.timeSpent = (25 * 60) - Math.max(0, state.quiz.timeLeft);
+    const totalDuration = state.quiz.durationSeconds || (25 * 60);
+    state.quiz.timeSpent = totalDuration - Math.max(0, state.quiz.timeLeft);
 
     // Calculate score
     let correctCount = 0;
@@ -462,7 +650,7 @@
     state.quiz.score = correctCount;
 
     if (isAuto) {
-      showToast('Đã hết thời gian 25 phút! Hệ thống đã tự động thu bài.');
+      showToast('Đã hết thời gian làm bài! Hệ thống đã tự động thu bài.');
     }
 
     switchTab('review');
@@ -549,12 +737,17 @@
         `;
       }).join('');
 
+      const isOrig = q.isOriginal === true;
+      const originBadgeHtml = isOrig
+        ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')} • Câu ${q.originalId}</span>`
+        : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng • Câu ${q.originalId}</span>`;
+
       card.innerHTML = `
         <div class="question-meta">
           <span class="topic-tag">${escapeHtml(q.topicName)}</span>
           <div style="display:flex; gap:6px; align-items:center;">
             ${userAns ? (isCorrect ? `<span style="color:var(--success-solid); font-weight:700">✓ Làm đúng</span>` : `<span style="color:var(--error-solid); font-weight:700">✗ Làm sai (Bạn chọn ${userAns})</span>`) : `<span style="color:var(--warn-solid); font-weight:700">Chưa làm</span>`}
-            ${q.examName ? `<span class="orig-tag highlight">${escapeHtml(q.examName)} • Câu ${q.originalId}</span>` : `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>`}
+            ${originBadgeHtml}
           </div>
         </div>
         <div class="question-title">
@@ -593,6 +786,7 @@
       if (originFilter === 'de101' && q.examId !== 'de101') return false;
       if (originFilter === 'de_ontap' && q.examId !== 'de_ontap') return false;
       if (originFilter === 'original' && !q.isOriginal) return false;
+      if (originFilter === 'extra' && q.isOriginal) return false;
 
       // Status
       const userAns = state.practice.answers[q.id];
@@ -646,9 +840,12 @@
     });
     const wrongCount = answeredCount - correctCount;
     const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
-    const percentOverall = Math.round((answeredCount / total) * 100);
+    const percentOverall = total > 0 ? Math.round((answeredCount / total) * 100) : 0;
+    const origCount = state.allQuestions.filter(q => q.isOriginal).length;
+    const extraCount = state.allQuestions.filter(q => !q.isOriginal).length;
 
     el.practiceStatsText.innerHTML = `
+      <div class="stats-item">Tổng ngân hàng: <strong>${total} câu</strong> (${origCount} gốc • ${extraCount} mở rộng)</div>
       <div class="stats-item">Tiến độ: <strong>${answeredCount}/${total}</strong> (${percentOverall}%)</div>
       <div class="stats-item">Đúng: <strong style="color:var(--success-solid)">${correctCount}</strong></div>
       <div class="stats-item">Sai: <strong style="color:var(--error-solid)">${wrongCount}</strong></div>
@@ -710,16 +907,20 @@
       const isAns = !!state.practice.answers[item.id];
       const isRight = state.practice.answers[item.id] === item.correct;
       const statusSymbol = isAns ? (isRight ? '✓' : '✗') : '•';
-      const examShort = item.examId === 'de101' ? 'Đề 101' : 'Đề ôn tập';
-      return `<option value="${idx}" ${idx === state.practice.currentIndex ? 'selected' : ''}>Câu ${item.id} [${examShort} C${item.originalId}] (${statusSymbol}) - ${item.topicName.slice(0, 18)}...</option>`;
+      const originTag = item.isOriginal ? `[⭐️ Gốc C${item.originalId}]` : `[📚 Mở rộng C${item.originalId}]`;
+      return `<option value="${idx}" ${idx === state.practice.currentIndex ? 'selected' : ''}>Câu ${item.id} ${originTag} (${statusSymbol}) - ${item.topicName.slice(0, 18)}...</option>`;
     }).join('');
+
+    const originBadgeHtml = q.isOriginal 
+      ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')} • Câu ${q.originalId}</span>`
+      : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng • Câu ${q.originalId}</span>`;
 
     el.practiceContentArea.innerHTML = `
       <div class="question-card" style="margin-bottom:16px;">
         <div class="question-meta">
           <span class="topic-tag">${escapeHtml(q.topicName)}</span>
           <div style="display:flex; gap:8px; align-items:center;">
-            ${q.examName ? `<span class="orig-tag highlight">${escapeHtml(q.examName)} • Câu ${q.originalId}</span>` : `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>`}
+            ${originBadgeHtml}
             <button class="btn-flag ${isBookmarked ? 'active' : ''}" id="btnPracticeBookmark">
               ${isBookmarked ? '★ Đã lưu' : '☆ Lưu câu này'}
             </button>
@@ -868,12 +1069,17 @@
         `;
       }).join('');
 
+      const isOrig = q.isOriginal === true;
+      const originBadgeHtml = isOrig 
+        ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')} • Câu ${q.originalId}</span>`
+        : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng • Câu ${q.originalId}</span>`;
+
       return `
         <div class="practice-item ${isAnswered ? (isCorrect ? 'answered-correct' : 'answered-incorrect') : ''}" id="p-item-${q.id}">
           <div class="question-meta">
             <span class="topic-tag">${escapeHtml(q.topicName)}</span>
             <div style="display:flex; gap:8px; align-items:center;">
-              ${q.examName ? `<span class="orig-tag highlight">${escapeHtml(q.examName)} • Câu ${q.originalId}</span>` : `<span class="orig-tag highlight">Đề gốc C${q.originalId}</span>`}
+              ${originBadgeHtml}
               <button class="btn-flag ${isBookmarked ? 'active' : ''}" data-bookmark-qid="${q.id}">
                 ${isBookmarked ? '★ Đã lưu' : '☆ Lưu'}
               </button>
@@ -1145,6 +1351,7 @@
     }
   });
   el.tabPractice.addEventListener('click', () => switchTab('practice'));
+  if (el.tabSolo) el.tabSolo.addEventListener('click', () => switchTab('solo'));
 
   // Start Exam Button
   el.btnStartExam.addEventListener('click', startExam);
@@ -1234,6 +1441,7 @@
   el.quizStartScreen.style.display = 'block';
   el.quizActiveScreen.style.display = 'none';
   renderPracticeView();
+  initMatrixUI();
 
   // Asynchronous fallback if questions weren't loaded synchronously
   if (state.allQuestions.length === 0 && typeof fetch === 'function') {
@@ -1246,6 +1454,7 @@
           if (state.currentTab === 'practice') {
             renderPracticeView();
           }
+          updateMatrixSummary();
           console.log(`Async loaded ${data.length} questions from questions.json fallback.`);
         }
       })
@@ -1253,4 +1462,12 @@
   }
 
   console.log(`Initialized app with ${state.allQuestions.length} questions. Waiting for user to start.`);
+
+  // Auto-switch to Solo if room query parameter is present in URL
+  if (typeof window !== 'undefined' && window.location) {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('solo') || urlParams.has('room')) {
+      setTimeout(() => switchTab('solo'), 100);
+    }
+  }
 })();
