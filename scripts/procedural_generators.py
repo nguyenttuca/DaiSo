@@ -8,6 +8,67 @@ Mỗi dạng bài (sub 1..4 của 6 chương) hỗ trợ nhiều mode với tham
 
 import random
 import math
+import re
+
+def make_unique_options(cor, wrong_candidates):
+    cor_str = str(cor).strip()
+    seen = {cor_str}
+    distractors = []
+    
+    for w in wrong_candidates:
+        w_str = str(w).strip()
+        if w_str and w_str not in seen:
+            seen.add(w_str)
+            distractors.append(w_str)
+            if len(distractors) == 3:
+                break
+                
+    if len(distractors) < 3:
+        m = re.match(r"^\$(-?\d+)\$(\s*.*)$", cor_str)
+        if m:
+            base_num = int(m.group(1))
+            suffix = m.group(2)
+            deltas = [1, -1, 2, -2, 3, -3, 4, -4, 5, 6, 7]
+            for d in deltas:
+                cand = f"${base_num + d}${suffix}"
+                if cand not in seen:
+                    seen.add(cand)
+                    distractors.append(cand)
+                    if len(distractors) == 3:
+                        break
+        elif "(" in cor_str and ")" in cor_str:
+            nums = [int(x) for x in re.findall(r"-?\d+", cor_str)]
+            if len(nums) >= 2:
+                c1, c2 = nums[0], nums[1]
+                prefix = cor_str[:cor_str.index("(")]
+                suffix = cor_str[cor_str.rindex(")")+1:]
+                cand_coords = [
+                    f"{prefix}({c2}, {c1}){suffix}",
+                    f"{prefix}({c1 + 1}, {c2}){suffix}",
+                    f"{prefix}({c1}, {c2 + 1}){suffix}",
+                    f"{prefix}({c1 + 2}, {c2 - 1}){suffix}",
+                    f"{prefix}({c1 - 1}, {c2 + 2}){suffix}"
+                ]
+                for cand in cand_coords:
+                    if cand not in seen:
+                        seen.add(cand)
+                        distractors.append(cand)
+                        if len(distractors) == 3:
+                            break
+        k = 1
+        while len(distractors) < 3:
+            cand = f"Phương án {k}"
+            if cand not in seen:
+                seen.add(cand)
+                distractors.append(cand)
+            k += 1
+
+    return [
+        {"key": "A", "text": cor_str},
+        {"key": "B", "text": distractors[0]},
+        {"key": "C", "text": distractors[1]},
+        {"key": "D", "text": distractors[2]}
+    ]
 
 def shuffle_options_balanced(options, target_key):
     correct_opt = options[0]
@@ -89,7 +150,7 @@ def gen_ch1(sub, seed):
             w3 = "$p \\leftrightarrow \\bar{p}$"
             exp = f"{chosen_exp}. Biểu thức ${chosen_cor}$ luôn nhận giá trị Đúng với mọi giá trị của các biến."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 2: # 1.2 Đại số Boole & Biểu thức đối ngẫu
@@ -118,7 +179,7 @@ def gen_ch1(sub, seed):
             w3 = f"${v1}' \\wedge ({v2} \\vee {v3}')$"
             exp = f"Theo luật De Morgan: $(A \\vee B)' = A' \\wedge B'$. Ta có $( {v1} \\vee ({v2} \\wedge {v3}') )' = {v1}' \\wedge ({v2} \\wedge {v3}')' = {v1}' \\wedge ({v2}' \\vee {v3})$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 3: # 1.3 Tập hợp & Các phép toán
@@ -154,7 +215,7 @@ def gen_ch1(sub, seed):
             w3 = "$\\{" + ", ".join(map(str, sorted(list(s1 | s2)))) + "\\}}$"
             exp = f"Hiệu $A \\setminus B$ gồm các phần tử thuộc $A$ nhưng không thuộc $B$. Đối chiếu ta được $A \\setminus B = {cor}$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     else: # 1.4 Ánh xạ
@@ -182,7 +243,7 @@ def gen_ch1(sub, seed):
             w3 = "$f: \\mathbb{R} \\to \\mathbb{R}, \\, f(x) = x^3 - x$"
             exp = "Với $f(n) = 2n + 1$ trên $\\mathbb{N}$: nếu $2n_1 + 1 = 2n_2 + 1 \\implies n_1 = n_2$ (đơn ánh). Nhưng tập giá trị chỉ gồm các số tự nhiên lẻ, các số chẵn (như 0, 2, 4) không có nghịch ảnh nên không toàn ánh."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
 # ==============================================================================
@@ -219,7 +280,7 @@ def gen_ch2(sub, seed):
             w3 = "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x^2 + y^2 + z^2 = 1\\}}$"
             exp = "Không gian con của $\\mathbb{R}^3$ xác định bởi phương trình tuyến tính thuần nhất $ax + by + cz = 0$ (mặt phẳng đi qua gốc tọa độ)."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 2: # 2.2 Độc lập / Phụ thuộc tuyến tính
@@ -250,7 +311,7 @@ def gen_ch2(sub, seed):
             w3 = f"Luôn là một cơ sở của $\\mathbb{{R}}^{{{dim_space}}}$"
             exp = f"Số chiều của $\\mathbb{{R}}^{{{dim_space}}}$ bằng {dim_space}. Mọi hệ chứa số véc tơ lớn hơn số chiều không gian (tức ${count_v} > {dim_space}$) đều luôn **phụ thuộc tuyến tính**."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 3: # 2.3 Cơ sở & Số chiều
@@ -285,7 +346,7 @@ def gen_ch2(sub, seed):
             w3 = f"${ans - 1}$"
             exp = f"Số chiều của không gian ma trận $M_{{m \\times n}}$ luôn bằng tích số hàng và số cột: $m \\times n = {m_rows} \\times {n_cols} = {ans}$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     else: # 2.4 Tọa độ & Ma trận chuyển cơ sở
@@ -314,7 +375,7 @@ def gen_ch2(sub, seed):
             w3 = "Luôn là ma trận trực giao"
             exp = "Vì các véc tơ của cơ sở mới độc lập tuyến tính nên các cột của ma trận chuyển cơ sở độc lập tuyến tính, suy ra ma trận chuyển luôn vuông cấp $n$ và khả nghịch."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
 # ==============================================================================
@@ -351,7 +412,7 @@ def gen_ch3(sub, seed):
             w3 = "$(A^T)^T = A$"
             exp = "Vì phép nhân ma trận nói chung không có tính chất giao hoán ($AB \\neq BA$), nên $(A + B)^2 = A^2 + AB + BA + B^2 \\neq A^2 + 2AB + B^2$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 2: # 3.2 Định thức
@@ -382,7 +443,7 @@ def gen_ch3(sub, seed):
             w3 = "Nhân lên gấp đôi"
             exp = "Theo tính chất cơ bản của định thức, khi hoán vị hai hàng (hoặc hai cột) thì định thức đổi dấu."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 3: # 3.3 Ma trận nghịch đảo
@@ -412,7 +473,7 @@ def gen_ch3(sub, seed):
             w3 = f"$\\begin{{bmatrix}} 1 & 0 \\\\ {a} & 1 \\end{{bmatrix}}$"
             exp = f"Áp dụng công thức nghịch đảo cấp 2: $A^{{-1}} = \\dfrac{{1}}{{ad - bc}} \\begin{{bmatrix}} d & -b \\\\ -c & a \\end{{bmatrix}} = \\begin{{bmatrix}} 1 & {-a} \\\\ 0 & 1 \\end{{bmatrix}}$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     else: # 3.4 Hạng ma trận
@@ -443,7 +504,7 @@ def gen_ch3(sub, seed):
             w3 = "$r(AB) = r(A) + r(B)$"
             exp = "Bất đẳng thức Sylvester về hạng ma trận tích: hạng của ma trận tích luôn không vượt quá hạng của từng ma trận thừa số: $r(AB) \\le \\min(r(A), r(B))$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
 # ==============================================================================
@@ -479,7 +540,7 @@ def gen_ch4(sub, seed):
             w3 = "$r(A) > r(\\bar{A})$"
             exp = "Hệ phương trình tuyến tính có nghiệm khi $r(A) = r(\\bar{A})$ và vô nghiệm khi hạng ma trận hệ số nhỏ hơn hạng ma trận bổ sung: $r(A) < r(\\bar{A})$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 2: # 4.2 Phương pháp Cramer
@@ -509,7 +570,7 @@ def gen_ch4(sub, seed):
             w3 = "Có đúng 1 nghiệm bằng 0"
             exp = "Khi $D = 0$ mà có ít nhất một $D_j \\neq 0$ thì phương trình $0 \\cdot x_j = D_j$ vô nghiệm, do đó toàn hệ vô nghiệm."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 3: # 4.3 Khử Gauss
@@ -542,7 +603,7 @@ def gen_ch4(sub, seed):
             w3 = "Có nghiệm tầm thường"
             exp = f"Hàng $[0 \\dots 0 \\mid {p_extra}]$ tương đương $0 = {p_extra} \\neq 0$ (mâu thuẫn), do đó hệ vô nghiệm."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     else: # 4.4 Thuần nhất & Hệ nghiệm cơ bản
@@ -574,7 +635,7 @@ def gen_ch4(sub, seed):
             w3 = "Nghiệm không xác định"
             exp = "Mọi hệ phương trình thuần nhất $AX = 0$ luôn nhận véc tơ không làm nghiệm (gọi là nghiệm tầm thường)."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
 # ==============================================================================
@@ -613,7 +674,7 @@ def gen_ch5(sub, seed):
             w3 = "$f(\\theta_V) = -\\theta_W$"
             exp = "Tính chất cơ bản của ánh xạ tuyến tính: $f(\\theta) = f(0 \\cdot v) = 0 \\cdot f(v) = \\theta$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 2: # 5.2 Ker & Im
@@ -645,7 +706,7 @@ def gen_ch5(sub, seed):
             w3 = "$\\dim(\\text{Im} f) = 0$"
             exp = "Ánh xạ tuyến tính là đơn ánh khi và chỉ khi hạt nhân (nhân) chỉ chứa duy nhất véc tơ không: $\\ker(f) = \\{\\theta\\}}$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 3: # 5.3 Ma trận của f
@@ -672,7 +733,7 @@ def gen_ch5(sub, seed):
             w3 = "$B = A P$"
             exp = "Định nghĩa đồng dạng ma trận: $B = P^{-1} A P$. Hai ma trận đồng dạng biểu diễn cùng một toán tử tuyến tính trong hai cơ sở khác nhau."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     else: # 5.4 Trị riêng & Véc tơ riêng
@@ -702,7 +763,7 @@ def gen_ch5(sub, seed):
             w3 = "$v A = \\lambda v$"
             exp = "Định nghĩa véc tơ riêng và trị riêng: $A v = \\lambda v$ với $v \\neq \\theta$ (hoặc tương đương $(A - \\lambda I) v = \\theta$)."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
 # ==============================================================================
@@ -741,7 +802,7 @@ def gen_ch6(sub, seed):
             w3 = "$\\langle u, v \\rangle = \\|u\\| + \\|v\\|$"
             exp = "Bất đẳng thức Cauchy-Schwarz: $|\\langle u, v \\rangle| \\le \\|u\\| \\cdot \\|v\\|$. Dấu đẳng thức xảy ra khi và chỉ khi hai véc tơ phụ thuộc tuyến tính."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 2: # 6.2 Tính trực giao & Gram-Schmidt
@@ -767,14 +828,14 @@ def gen_ch6(sub, seed):
             w3 = f"$m = {u2 + u3}$"
             exp = f"Hai véc tơ vuông góc khi $\\langle u, v \\rangle = 1 \\cdot m + ({u2})(-1) + ({u3})(1) = 0 \\iff m - {u2} + {u3} = 0 \\iff m = {m_sol}$."
         else:
-            q_text = "Hệ véc tơ $\\{e_1, e_2, \\dots, e_n\\}}$ được gọi là một **hệ trực chuẩn** nếu thỏa mãn điều kiện:"
+            q_text = "Hệ véc tơ $\\{e_1, e_2, \\dots, e_n\\}$ được gọi là một **hệ trực chuẩn** nếu thỏa mãn điều kiện:"
             cor = "$\\langle e_i, e_j \\rangle = 1$ khi $i = j$ và $\\langle e_i, e_j \\rangle = 0$ khi $i \\neq j$"
             w1 = "$\\langle e_i, e_j \\rangle = 0$ với mọi $i, j$"
             w2 = "$\\langle e_i, e_j \\rangle = 1$ với mọi $i, j$"
             w3 = "$\\|e_i\\| = 0$ với mọi $i$"
             exp = "Hệ trực chuẩn là hệ gồm các véc tơ đôi một vuông góc (trực giao) và đều có chuẩn bằng 1 (chuẩn hóa): $\\langle e_i, e_j \\rangle = \\delta_{ij}$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     elif sub == 3: # 6.3 Dạng toàn phương & Ma trận đối xứng
@@ -802,7 +863,7 @@ def gen_ch6(sub, seed):
             w3 = "$A' = C A C^{-1}$"
             exp = "Công thức biến đổi ma trận của dạng toàn phương khi đổi cơ sở là quan hệ tương đẳng (congruent): $A' = C^T A C$."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
     else: # 6.4 Dấu của dạng toàn phương
@@ -833,7 +894,7 @@ def gen_ch6(sub, seed):
             w3 = "Không xác định dấu"
             exp = f"Ta có $Q = (x_1 + {b_coef}x_2)^2 \\ge 0$ với mọi $(x_1, x_2)$. Tuy nhiên, với các véc tơ khác không thỏa mãn $x_1 + {b_coef}x_2 = 0$ (chẳng hạn $({-b_coef}, 1) \\neq (0, 0)$) thì $Q = 0$. Vì tồn tại véc tơ khác không có $Q = 0$ nên $Q$ chỉ là nửa xác định dương."
 
-        options = [{"key": "A", "text": cor}, {"key": "B", "text": w1}, {"key": "C", "text": w2}, {"key": "D", "text": w3}]
+        options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
 
 # ==============================================================================

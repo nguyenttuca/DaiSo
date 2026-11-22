@@ -195,6 +195,18 @@ for ch in range(1, 7):
     TARGET_COUNTS[f"{ch}.3"] = 26
     TARGET_COUNTS[f"{ch}.4"] = 25
 
+def clean_katex_syntax(text):
+    if not text:
+        return text
+    # 1. Fix \} followed by extra }
+    cleaned = re.sub(r'\\\}\s*\}', r'\\}', text)
+    cleaned = cleaned.replace(r'\{\theta\}}', r'\{\theta\}')
+    cleaned = cleaned.replace(r'\{e_1, e_2, \dots, e_n\}}', r'\{e_1, e_2, \dots, e_n\}')
+    # 2. Fix Vietnamese text inside math mode
+    cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Đúng\s*\(1\)\$', r'mệnh đề $\1 1$ (Đúng)', cleaned)
+    cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Sai\s*\(0\)\$', r'mệnh đề $\1 0$ (Sai)', cleaned)
+    return cleaned
+
 # Import or define procedural generators
 from procedural_generators import generate_additional_questions
 
@@ -253,12 +265,51 @@ for q in final_questions:
         key_idx += 1
         
         curr_correct = q.get('correct', 'A').strip().upper()
-        opts_map = {opt['key']: opt['text'] for opt in q['options']}
+        opts_map = {opt['key']: clean_katex_syntax(opt['text']) for opt in q['options']}
         correct_text = opts_map.get(curr_correct, opts_map.get('A', ''))
         
-        other_texts = [opt['text'] for opt in q['options'] if opt['key'] != curr_correct]
-        while len(other_texts) < 3:
-            other_texts.append("Không có đáp án phù hợp")
+        seen_t = {correct_text.strip()}
+        other_texts = []
+        for opt in q['options']:
+            if opt['key'] != curr_correct:
+                t = clean_katex_syntax(opt['text']).strip()
+                if t and t not in seen_t:
+                    seen_t.add(t)
+                    other_texts.append(t)
+                    
+        # If fewer than 3 distractors, generate unique alternatives
+        if len(other_texts) < 3:
+            m = re.match(r'^\$(-?\d+)\$(\s*.*)$', correct_text)
+            if m:
+                base_num = int(m.group(1))
+                suffix = m.group(2)
+                for delta in [1, -1, 2, -2, 3, -3, 4, -4, 5, 6]:
+                    cand = f"${base_num + delta}${suffix}"
+                    if cand not in seen_t:
+                        seen_t.add(cand)
+                        other_texts.append(cand)
+                        if len(other_texts) == 3:
+                            break
+            elif "(" in correct_text and ")" in correct_text:
+                nums = [int(x) for x in re.findall(r'-?\d+', correct_text)]
+                if len(nums) >= 2:
+                    c1, c2 = nums[0], nums[1]
+                    pfx = correct_text[:correct_text.index('(')]
+                    sfx = correct_text[correct_text.rindex(')')+1:]
+                    for cand in [f"{pfx}({c2}, {c1}){sfx}", f"{pfx}({c1 + 1}, {c2}){sfx}", f"{pfx}({c1}, {c2 + 1}){sfx}", f"{pfx}({c1 + 2}, {c2 - 1}){sfx}"]:
+                        if cand not in seen_t:
+                            seen_t.add(cand)
+                            other_texts.append(cand)
+                            if len(other_texts) == 3:
+                                break
+            idx = 1
+            while len(other_texts) < 3:
+                cand = f"Phương án {idx}"
+                if cand not in seen_t:
+                    seen_t.add(cand)
+                    other_texts.append(cand)
+                idx += 1
+                
         random.shuffle(other_texts)
         
         new_opts = []
@@ -270,8 +321,11 @@ for q in final_questions:
                 new_opts.append({'key': k, 'text': other_texts[o_idx]})
                 o_idx += 1
                 
+        # Validate options are 100% unique
+        assert len(set(opt['text'].strip() for opt in new_opts)) == 4, f"Duplicate option in question {current_id}: {new_opts}"
+        
         # Update explanation
-        exp = q.get('explanation', '')
+        exp = clean_katex_syntax(q.get('explanation', ''))
         exp = re.sub(r'\*?\*?Chọn đáp án:\s*([A-D])\.?\*?\*?', f'**Chọn đáp án: {desired_key}.**', exp)
         if f'**Chọn đáp án: {desired_key}.**' not in exp:
             exp += f'\n\n* **Chọn đáp án: {desired_key}.**'
@@ -288,7 +342,7 @@ for q in final_questions:
             "typeName": q['typeName'],
             "examId": "extra",
             "examName": "Luyện tập mở rộng PTIT",
-            "question": q['question'].strip(),
+            "question": clean_katex_syntax(q['question'].strip()),
             "options": new_opts,
             "correct": desired_key,
             "explanation": exp.strip(),
@@ -296,6 +350,8 @@ for q in final_questions:
             "origin": "extra"
         }
     else:
+        cleaned_opts = [{'key': opt['key'], 'text': clean_katex_syntax(opt['text'])} for opt in q['options']]
+        assert len(set(opt['text'].strip() for opt in cleaned_opts)) == 4, f"Duplicate in authentic question {current_id}"
         processed_q = {
             "id": current_id,
             "originalId": q.get('originalId') or q.get('examQuestionNo') or current_id,
@@ -308,10 +364,10 @@ for q in final_questions:
             "typeName": q['typeName'],
             "examId": q.get('examId', 'de101'),
             "examName": q.get('examName', 'Đề thi gốc PTIT'),
-            "question": q['question'].strip(),
-            "options": q['options'],
+            "question": clean_katex_syntax(q['question'].strip()),
+            "options": cleaned_opts,
             "correct": q['correct'].strip().upper(),
-            "explanation": q['explanation'].strip(),
+            "explanation": clean_katex_syntax(q['explanation'].strip()),
             "isOriginal": True,
             "origin": "original"
         }

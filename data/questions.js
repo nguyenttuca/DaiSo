@@ -270,11 +270,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Sai (0)"
+        "text": "Luôn Đúng với mọi trường hợp"
       },
       {
         "key": "B",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Sai (0)"
       },
       {
         "key": "C",
@@ -286,7 +286,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Sai (0)$, $r = Đúng (1)$ vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: D.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  0$ (Sai), mệnh đề $r =  1$ (Đúng) vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -310,15 +310,15 @@
       },
       {
         "key": "B",
-        "text": "$36$ dòng"
+        "text": "$68$ dòng"
       },
       {
         "key": "C",
-        "text": "$12$ dòng"
+        "text": "$36$ dòng"
       },
       {
         "key": "D",
-        "text": "$68$ dòng"
+        "text": "$12$ dòng"
       }
     ],
     "correct": "A",
@@ -350,11 +350,11 @@
       },
       {
         "key": "C",
-        "text": "$p \\leftrightarrow \\bar{p}$"
+        "text": "$p \\wedge \\bar{p}$"
       },
       {
         "key": "D",
-        "text": "$p \\wedge \\bar{p}$"
+        "text": "$p \\leftrightarrow \\bar{p}$"
       }
     ],
     "correct": "B",
@@ -382,7 +382,7 @@
       },
       {
         "key": "B",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Sai (0)"
       },
       {
         "key": "C",
@@ -390,11 +390,11 @@
       },
       {
         "key": "D",
-        "text": "Sai (0)"
+        "text": "Luôn Đúng với mọi trường hợp"
       }
     ],
     "correct": "A",
-    "explanation": "* Thay chân trị: $p = Đúng (1)$, $q = Sai (0)$, $r = Đúng (1)$ vào công thức $p \\to (q \\vee r)$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: A.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  1$ (Đúng), mệnh đề $q =  0$ (Sai), mệnh đề $r =  1$ (Đúng) vào công thức $p \\to (q \\vee r)$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -414,15 +414,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$260$ dòng"
-      },
-      {
-        "key": "B",
         "text": "$64$ dòng"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$16$ dòng"
+      },
+      {
+        "key": "C",
+        "text": "$260$ dòng"
       },
       {
         "key": "D",
@@ -450,7 +450,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không xác định"
+        "text": "Sai (0)"
       },
       {
         "key": "B",
@@ -462,11 +462,11 @@
       },
       {
         "key": "D",
-        "text": "Sai (0)"
+        "text": "Không xác định"
       }
     ],
     "correct": "B",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Đúng (1)$, $r = Sai (0)$ vào công thức $(p \\wedge q) \\to r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: B.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  1$ (Đúng), mệnh đề $r =  0$ (Sai) vào công thức $(p \\wedge q) \\to r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -494,7 +494,7 @@
       },
       {
         "key": "C",
-        "text": "$16$ dòng"
+        "text": "$17$ dòng"
       },
       {
         "key": "D",
@@ -538,7 +538,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Đúng (1)$, $r = Đúng (1)$ vào công thức $(p \\wedge q) \\to r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: D.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  1$ (Đúng), mệnh đề $r =  1$ (Đúng) vào công thức $(p \\wedge q) \\to r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -558,11 +558,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$14$ dòng"
+        "text": "$132$ dòng"
       },
       {
         "key": "B",
-        "text": "$132$ dòng"
+        "text": "$14$ dòng"
       },
       {
         "key": "C",
@@ -598,11 +598,11 @@
       },
       {
         "key": "B",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Sai (0)"
       },
       {
         "key": "C",
-        "text": "Sai (0)"
+        "text": "Luôn Đúng với mọi trường hợp"
       },
       {
         "key": "D",
@@ -610,7 +610,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Đúng (1)$, $r = Đúng (1)$ vào công thức $p \\to (q \\vee r)$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: D.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  1$ (Đúng), mệnh đề $r =  1$ (Đúng) vào công thức $p \\to (q \\vee r)$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -630,7 +630,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$36$ dòng"
+        "text": "$10$ dòng"
       },
       {
         "key": "B",
@@ -638,7 +638,7 @@
       },
       {
         "key": "C",
-        "text": "$10$ dòng"
+        "text": "$36$ dòng"
       },
       {
         "key": "D",
@@ -666,7 +666,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Không xác định"
       },
       {
         "key": "B",
@@ -674,7 +674,7 @@
       },
       {
         "key": "C",
-        "text": "Không xác định"
+        "text": "Luôn Đúng với mọi trường hợp"
       },
       {
         "key": "D",
@@ -682,7 +682,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Thay chân trị: $p = Đúng (1)$, $q = Đúng (1)$, $r = Sai (0)$ vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: D.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  1$ (Đúng), mệnh đề $q =  1$ (Đúng), mệnh đề $r =  0$ (Sai) vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -706,7 +706,7 @@
       },
       {
         "key": "B",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Sai (0)"
       },
       {
         "key": "C",
@@ -714,11 +714,11 @@
       },
       {
         "key": "D",
-        "text": "Sai (0)"
+        "text": "Luôn Đúng với mọi trường hợp"
       }
     ],
     "correct": "C",
-    "explanation": "* Thay chân trị: $p = Đúng (1)$, $q = Đúng (1)$, $r = Sai (0)$ vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: C.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  1$ (Đúng), mệnh đề $q =  1$ (Đúng), mệnh đề $r =  0$ (Sai) vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -754,7 +754,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Sai (0)$, $r = Sai (0)$ vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: B.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  0$ (Sai), mệnh đề $r =  0$ (Sai) vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -774,15 +774,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Đúng (1)"
       },
       {
         "key": "B",
-        "text": "Không xác định"
+        "text": "Luôn Đúng với mọi trường hợp"
       },
       {
         "key": "C",
-        "text": "Đúng (1)"
+        "text": "Không xác định"
       },
       {
         "key": "D",
@@ -790,7 +790,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Sai (0)$, $r = Đúng (1)$ vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: D.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  0$ (Sai), mệnh đề $r =  1$ (Đúng) vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -810,7 +810,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Đúng (1)"
+        "text": "Luôn Đúng với mọi trường hợp"
       },
       {
         "key": "B",
@@ -822,11 +822,11 @@
       },
       {
         "key": "D",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Đúng (1)"
       }
     ],
     "correct": "C",
-    "explanation": "* Thay chân trị: $p = Đúng (1)$, $q = Sai (0)$, $r = Đúng (1)$ vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: C.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  1$ (Đúng), mệnh đề $q =  0$ (Sai), mệnh đề $r =  1$ (Đúng) vào công thức $(p \\vee q) \\wedge \\bar{r}$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -846,11 +846,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn Đúng với mọi trường hợp"
+        "text": "Sai (0)"
       },
       {
         "key": "B",
-        "text": "Sai (0)"
+        "text": "Không xác định"
       },
       {
         "key": "C",
@@ -858,11 +858,11 @@
       },
       {
         "key": "D",
-        "text": "Không xác định"
+        "text": "Luôn Đúng với mọi trường hợp"
       }
     ],
     "correct": "C",
-    "explanation": "* Thay chân trị: $p = Đúng (1)$, $q = Đúng (1)$, $r = Đúng (1)$ vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: C.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  1$ (Đúng), mệnh đề $q =  1$ (Đúng), mệnh đề $r =  1$ (Đúng) vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -898,7 +898,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Sai (0)$, $r = Sai (0)$ vào công thức $(p \\wedge q) \\to r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: A.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  0$ (Sai), mệnh đề $r =  0$ (Sai) vào công thức $(p \\wedge q) \\to r$, ta được chân trị là **Đúng (1)**.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -934,7 +934,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Thay chân trị: $p = Sai (0)$, $q = Sai (0)$, $r = Sai (0)$ vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: B.**",
+    "explanation": "* Thay chân trị: mệnh đề $p =  0$ (Sai), mệnh đề $q =  0$ (Sai), mệnh đề $r =  0$ (Sai) vào công thức $(p \\leftrightarrow q) \\wedge r$, ta được chân trị là **Sai (0)**.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1530,7 +1530,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(y \\wedge 0) \\vee (x \\wedge t')$"
+        "text": "$(y' \\vee 1) \\wedge (x' \\vee t)$"
       },
       {
         "key": "B",
@@ -1538,11 +1538,11 @@
       },
       {
         "key": "C",
-        "text": "$(y \\vee 1) \\wedge (x \\vee t)$"
+        "text": "$(y \\wedge 0) \\vee (x \\wedge t')$"
       },
       {
         "key": "D",
-        "text": "$(y' \\vee 1) \\wedge (x' \\vee t)$"
+        "text": "$(y \\vee 1) \\wedge (x \\vee t)$"
       }
     ],
     "correct": "B",
@@ -1570,7 +1570,7 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$z$"
       },
       {
         "key": "C",
@@ -1578,7 +1578,7 @@
       },
       {
         "key": "D",
-        "text": "$z$"
+        "text": "$1$"
       }
     ],
     "correct": "C",
@@ -1606,7 +1606,7 @@
       },
       {
         "key": "B",
-        "text": "$x' \\vee (u' \\wedge t)$"
+        "text": "$x \\wedge (u' \\vee t)$"
       },
       {
         "key": "C",
@@ -1614,7 +1614,7 @@
       },
       {
         "key": "D",
-        "text": "$x \\wedge (u' \\vee t)$"
+        "text": "$x' \\vee (u' \\wedge t)$"
       }
     ],
     "correct": "A",
@@ -1638,11 +1638,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(z \\wedge 0) \\vee (u \\wedge x')$"
+        "text": "$(z' \\vee 1) \\wedge (u' \\vee x)$"
       },
       {
         "key": "B",
-        "text": "$(z' \\vee 1) \\wedge (u' \\vee x)$"
+        "text": "$(z \\wedge 0) \\vee (u \\wedge x')$"
       },
       {
         "key": "C",
@@ -1678,11 +1678,11 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$t \\wedge u$"
       },
       {
         "key": "C",
-        "text": "$t \\wedge u$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -1710,11 +1710,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$t' \\vee (x' \\wedge z)$"
+        "text": "$t \\wedge (x' \\vee z)$"
       },
       {
         "key": "B",
-        "text": "$t \\wedge (x' \\vee z)$"
+        "text": "$t' \\wedge (x \\vee z')$"
       },
       {
         "key": "C",
@@ -1722,7 +1722,7 @@
       },
       {
         "key": "D",
-        "text": "$t' \\wedge (x \\vee z')$"
+        "text": "$t' \\vee (x' \\wedge z)$"
       }
     ],
     "correct": "C",
@@ -1750,11 +1750,11 @@
       },
       {
         "key": "B",
-        "text": "$(y \\vee 1) \\wedge (u \\vee z)$"
+        "text": "$(y' \\vee 1) \\wedge (u' \\vee z)$"
       },
       {
         "key": "C",
-        "text": "$(y' \\vee 1) \\wedge (u' \\vee z)$"
+        "text": "$(y \\vee 1) \\wedge (u \\vee z)$"
       },
       {
         "key": "D",
@@ -1782,11 +1782,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$t \\wedge (y' \\vee x)$"
+        "text": "$t' \\wedge (y \\vee x')$"
       },
       {
         "key": "B",
-        "text": "$t' \\wedge (y \\vee x')$"
+        "text": "$t \\wedge (y' \\vee x)$"
       },
       {
         "key": "C",
@@ -2502,7 +2502,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$12$"
+        "text": "$63$"
       },
       {
         "key": "B",
@@ -2510,11 +2510,11 @@
       },
       {
         "key": "C",
-        "text": "$63$"
+        "text": "$36$"
       },
       {
         "key": "D",
-        "text": "$36$"
+        "text": "$12$"
       }
     ],
     "correct": "B",
@@ -2550,7 +2550,7 @@
       },
       {
         "key": "D",
-        "text": "$34$"
+        "text": "$23$"
       }
     ],
     "correct": "B",
@@ -2574,23 +2574,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{9\\}}$"
+        "text": "$\\{12, 17, 18\\}$"
       },
       {
         "key": "B",
-        "text": "$\\{1, 6, 9, 12, 15, 17, 18\\}}$"
+        "text": "$\\{1, 6, 9, 12, 15, 17, 18\\}$"
       },
       {
         "key": "C",
-        "text": "$\\{12, 17, 18\\}}$"
+        "text": "$\\{9\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{1, 6, 15\\}}$"
+        "text": "$\\{1, 6, 15\\}$"
       }
     ],
     "correct": "D",
-    "explanation": "* Hiệu $A \\setminus B$ gồm các phần tử thuộc $A$ nhưng không thuộc $B$. Đối chiếu ta được $A \\setminus B = $\\{1, 6, 15\\}}$$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Hiệu $A \\setminus B$ gồm các phần tử thuộc $A$ nhưng không thuộc $B$. Đối chiếu ta được $A \\setminus B = $\\{1, 6, 15\\}$$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2658,7 +2658,7 @@
       },
       {
         "key": "D",
-        "text": "$35$"
+        "text": "$33$"
       }
     ],
     "correct": "A",
@@ -2682,23 +2682,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{2, 3, 4, 5, 7, 8, 11, 18\\}}$"
+        "text": "$\\{2, 4, 5, 8\\}$"
       },
       {
         "key": "B",
-        "text": "$\\emptyset$"
+        "text": "$\\{2, 3, 4, 5, 7, 8, 11, 18\\}$"
       },
       {
         "key": "C",
-        "text": "$\\{2, 4, 5, 8\\}}$"
+        "text": "$\\emptyset$"
       },
       {
         "key": "D",
-        "text": "$\\{3, 7, 11, 18\\}}$"
+        "text": "$\\{3, 7, 11, 18\\}$"
       }
     ],
     "correct": "D",
-    "explanation": "* Hiệu $A \\setminus B$ gồm các phần tử thuộc $A$ nhưng không thuộc $B$. Đối chiếu ta được $A \\setminus B = $\\{3, 7, 11, 18\\}}$$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Hiệu $A \\setminus B$ gồm các phần tử thuộc $A$ nhưng không thuộc $B$. Đối chiếu ta được $A \\setminus B = $\\{3, 7, 11, 18\\}$$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2718,7 +2718,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$49$"
+        "text": "$127$"
       },
       {
         "key": "B",
@@ -2730,7 +2730,7 @@
       },
       {
         "key": "D",
-        "text": "$127$"
+        "text": "$49$"
       }
     ],
     "correct": "C",
@@ -2754,15 +2754,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "$45$"
       },
       {
         "key": "B",
-        "text": "$45$"
+        "text": "$29$"
       },
       {
         "key": "C",
-        "text": "$45$"
+        "text": "$9$"
       },
       {
         "key": "D",
@@ -3190,15 +3190,15 @@
       },
       {
         "key": "B",
-        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
+        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
       },
       {
         "key": "C",
-        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
+        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
       },
       {
         "key": "D",
-        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
+        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
       }
     ],
     "correct": "A",
@@ -3258,7 +3258,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$f: \\mathbb{R} \\to \\mathbb{R}, \\, f(x) = 2x + 1$"
+        "text": "$f: \\mathbb{R} \\to \\mathbb{R}, \\, f(x) = x^2$"
       },
       {
         "key": "B",
@@ -3266,11 +3266,11 @@
       },
       {
         "key": "C",
-        "text": "$f: \\mathbb{R} \\to \\mathbb{R}, \\, f(x) = x^2$"
+        "text": "$f: \\mathbb{R} \\to \\mathbb{R}, \\, f(x) = x^3 - x$"
       },
       {
         "key": "D",
-        "text": "$f: \\mathbb{R} \\to \\mathbb{R}, \\, f(x) = x^3 - x$"
+        "text": "$f: \\mathbb{R} \\to \\mathbb{R}, \\, f(x) = 2x + 1$"
       }
     ],
     "correct": "B",
@@ -3294,11 +3294,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
+        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
       },
       {
         "key": "B",
-        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
+        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
       },
       {
         "key": "C",
@@ -3334,15 +3334,15 @@
       },
       {
         "key": "B",
-        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
+        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
       },
       {
         "key": "C",
-        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
+        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
       },
       {
         "key": "D",
-        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
+        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
       }
     ],
     "correct": "A",
@@ -3366,15 +3366,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$4x - -3$"
+        "text": "$4x + -2$"
       },
       {
         "key": "B",
-        "text": "$4(x - -3) + 1$"
+        "text": "$4x - -3$"
       },
       {
         "key": "C",
-        "text": "$4x + -2$"
+        "text": "$4(x - -3) + 1$"
       },
       {
         "key": "D",
@@ -3402,7 +3402,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
+        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
       },
       {
         "key": "B",
@@ -3414,7 +3414,7 @@
       },
       {
         "key": "D",
-        "text": "$f$ chỉ là toàn ánh, không phải đơn ánh"
+        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
       }
     ],
     "correct": "C",
@@ -3442,7 +3442,7 @@
       },
       {
         "key": "B",
-        "text": "$-2x - -3$"
+        "text": "$-2(x - -3) + 1$"
       },
       {
         "key": "C",
@@ -3450,7 +3450,7 @@
       },
       {
         "key": "D",
-        "text": "$-2(x - -3) + 1$"
+        "text": "$-2x - -3$"
       }
     ],
     "correct": "C",
@@ -3478,11 +3478,11 @@
       },
       {
         "key": "B",
-        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
+        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
       },
       {
         "key": "C",
-        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
+        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
       },
       {
         "key": "D",
@@ -3510,11 +3510,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-4(x - 2) + 1$"
+        "text": "$-4x + 3$"
       },
       {
         "key": "B",
-        "text": "$-4x + 3$"
+        "text": "$-4(x - 2) + 1$"
       },
       {
         "key": "C",
@@ -3554,11 +3554,11 @@
       },
       {
         "key": "C",
-        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
+        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
       },
       {
         "key": "D",
-        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
+        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
       }
     ],
     "correct": "B",
@@ -3586,7 +3586,7 @@
       },
       {
         "key": "B",
-        "text": "$-4x + 8$"
+        "text": "$-4(x - 7) + 1$"
       },
       {
         "key": "C",
@@ -3594,7 +3594,7 @@
       },
       {
         "key": "D",
-        "text": "$-4(x - 7) + 1$"
+        "text": "$-4x + 8$"
       }
     ],
     "correct": "A",
@@ -3626,11 +3626,11 @@
       },
       {
         "key": "C",
-        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
+        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
       },
       {
         "key": "D",
-        "text": "$f$ không phải là đơn ánh cũng không phải toàn ánh"
+        "text": "$f$ chỉ là đơn ánh, không phải toàn ánh"
       }
     ],
     "correct": "A",
@@ -3834,11 +3834,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Là không gian con vì phương trình là bậc nhất"
+        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
       },
       {
         "key": "B",
-        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
+        "text": "Là không gian con vì phương trình là bậc nhất"
       },
       {
         "key": "C",
@@ -3870,15 +3870,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$(6, 1)$"
+        "text": "$(10, 2)$"
       },
       {
         "key": "B",
-        "text": "$(2, 5)$"
+        "text": "$(6, 1)$"
       },
       {
         "key": "C",
-        "text": "$(10, 2)$"
+        "text": "$(2, 5)$"
       },
       {
         "key": "D",
@@ -3906,7 +3906,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x + 2y - z = 1\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x^2 + y^2 + z^2 = 1\\}$"
       },
       {
         "key": "B",
@@ -3914,11 +3914,11 @@
       },
       {
         "key": "C",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x^2 + y^2 + z^2 = 1\\}}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x + 2y - z = 1\\}$"
       },
       {
         "key": "D",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid xy = 0\\}}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid xy = 0\\}$"
       }
     ],
     "correct": "B",
@@ -3946,15 +3946,15 @@
       },
       {
         "key": "B",
-        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
-      },
-      {
-        "key": "C",
         "text": "Là không gian con vì phương trình là bậc nhất"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Là không gian con có số chiều bằng 2"
+      },
+      {
+        "key": "D",
+        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
       }
     ],
     "correct": "A",
@@ -3978,7 +3978,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(2, 1)$"
+        "text": "$(2, 2)$"
       },
       {
         "key": "B",
@@ -3990,7 +3990,7 @@
       },
       {
         "key": "D",
-        "text": "$(2, 2)$"
+        "text": "$(1, 3)$"
       }
     ],
     "correct": "B",
@@ -4014,7 +4014,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
+        "text": "Là không gian con vì phương trình là bậc nhất"
       },
       {
         "key": "B",
@@ -4022,11 +4022,11 @@
       },
       {
         "key": "C",
-        "text": "Là không gian con vì phương trình là bậc nhất"
+        "text": "Là không gian con có số chiều bằng 2"
       },
       {
         "key": "D",
-        "text": "Là không gian con có số chiều bằng 2"
+        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
       }
     ],
     "correct": "B",
@@ -4050,11 +4050,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(2, 6)$"
+        "text": "$(2, 5)$"
       },
       {
         "key": "B",
-        "text": "$(2, 5)$"
+        "text": "$(6, 1)$"
       },
       {
         "key": "C",
@@ -4062,7 +4062,7 @@
       },
       {
         "key": "D",
-        "text": "$(6, 1)$"
+        "text": "$(2, 6)$"
       }
     ],
     "correct": "C",
@@ -4086,15 +4086,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Là không gian con có số chiều bằng 2"
+        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
       },
       {
         "key": "B",
-        "text": "Là không gian con vì phương trình là bậc nhất"
+        "text": "Là không gian con có số chiều bằng 2"
       },
       {
         "key": "C",
-        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
+        "text": "Là không gian con vì phương trình là bậc nhất"
       },
       {
         "key": "D",
@@ -4122,7 +4122,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(4, 1)$"
+        "text": "$(2, 3)$"
       },
       {
         "key": "B",
@@ -4130,11 +4130,11 @@
       },
       {
         "key": "C",
-        "text": "$(6, 2)$"
+        "text": "$(4, 1)$"
       },
       {
         "key": "D",
-        "text": "$(2, 3)$"
+        "text": "$(6, 2)$"
       }
     ],
     "correct": "B",
@@ -4158,15 +4158,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$(6, 5)$"
-      },
-      {
-        "key": "B",
         "text": "$(10, 6)$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$(6, 5)$"
+      },
+      {
+        "key": "C",
+        "text": "$(6, 6)$"
       },
       {
         "key": "D",
@@ -4194,7 +4194,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
+        "text": "Là không gian con có số chiều bằng 2"
       },
       {
         "key": "B",
@@ -4202,7 +4202,7 @@
       },
       {
         "key": "C",
-        "text": "Là không gian con có số chiều bằng 2"
+        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
       },
       {
         "key": "D",
@@ -4230,11 +4230,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(4, 6)$"
+        "text": "$(12, 4)$"
       },
       {
         "key": "B",
-        "text": "$(12, 4)$"
+        "text": "$(7, 3)$"
       },
       {
         "key": "C",
@@ -4242,7 +4242,7 @@
       },
       {
         "key": "D",
-        "text": "$(7, 3)$"
+        "text": "$(4, 6)$"
       }
     ],
     "correct": "C",
@@ -4266,7 +4266,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Là không gian con vì phương trình là bậc nhất"
+        "text": "Là không gian con có số chiều bằng 2"
       },
       {
         "key": "B",
@@ -4274,7 +4274,7 @@
       },
       {
         "key": "C",
-        "text": "Là không gian con có số chiều bằng 2"
+        "text": "Là không gian con vì phương trình là bậc nhất"
       },
       {
         "key": "D",
@@ -4302,7 +4302,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(7, 0)$"
+        "text": "$(12, 1)$"
       },
       {
         "key": "B",
@@ -4310,7 +4310,7 @@
       },
       {
         "key": "C",
-        "text": "$(12, 1)$"
+        "text": "$(7, 0)$"
       },
       {
         "key": "D",
@@ -4338,7 +4338,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
+        "text": "Là không gian con có số chiều bằng 2"
       },
       {
         "key": "B",
@@ -4346,7 +4346,7 @@
       },
       {
         "key": "C",
-        "text": "Là không gian con có số chiều bằng 2"
+        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
       },
       {
         "key": "D",
@@ -4386,7 +4386,7 @@
       },
       {
         "key": "D",
-        "text": "$(4, 4)$"
+        "text": "$(5, 4)$"
       }
     ],
     "correct": "A",
@@ -4410,11 +4410,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Là không gian con có số chiều bằng 2"
+        "text": "Là không gian con vì phương trình là bậc nhất"
       },
       {
         "key": "B",
-        "text": "Là không gian con vì phương trình là bậc nhất"
+        "text": "Là không gian con có số chiều bằng 2"
       },
       {
         "key": "C",
@@ -4446,11 +4446,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(6, 6)$"
+        "text": "$(7, 5)$"
       },
       {
         "key": "B",
-        "text": "$(7, 5)$"
+        "text": "$(7, 6)$"
       },
       {
         "key": "C",
@@ -4482,11 +4482,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(2, 3)$"
+        "text": "$(2, 4)$"
       },
       {
         "key": "B",
-        "text": "$(2, 4)$"
+        "text": "$(2, 3)$"
       },
       {
         "key": "C",
@@ -4518,11 +4518,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
+        "text": "Là không gian con vì phương trình là bậc nhất"
       },
       {
         "key": "B",
-        "text": "Là không gian con có số chiều bằng 2"
+        "text": "Không phải, vì $W$ không đóng kín đối với phép nhân với số thực âm"
       },
       {
         "key": "C",
@@ -4530,7 +4530,7 @@
       },
       {
         "key": "D",
-        "text": "Là không gian con vì phương trình là bậc nhất"
+        "text": "Là không gian con có số chiều bằng 2"
       }
     ],
     "correct": "C",
@@ -4554,11 +4554,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(5, 1)$"
+        "text": "$(2, 4)$"
       },
       {
         "key": "B",
-        "text": "$(2, 4)$"
+        "text": "$(5, 1)$"
       },
       {
         "key": "C",
@@ -4590,15 +4590,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$(5, 0)$"
-      },
-      {
-        "key": "B",
         "text": "$(8, 1)$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$(1, 4)$"
+      },
+      {
+        "key": "C",
+        "text": "$(5, 0)$"
       },
       {
         "key": "D",
@@ -4918,15 +4918,15 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq -1$"
-      },
-      {
-        "key": "C",
         "text": "$m = 0$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$m = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$m \\neq -1$"
       }
     ],
     "correct": "A",
@@ -4950,7 +4950,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = -4$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -4958,7 +4958,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = -4$"
       },
       {
         "key": "D",
@@ -4986,7 +4986,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn độc lập tuyến tính"
+        "text": "Luôn là một cơ sở của $\\mathbb{R}^{2}$"
       },
       {
         "key": "B",
@@ -4994,11 +4994,11 @@
       },
       {
         "key": "C",
-        "text": "Luôn là một cơ sở của $\\mathbb{R}^{2}$"
+        "text": "Có thể độc lập tuyến tính nếu không chứa véc tơ không"
       },
       {
         "key": "D",
-        "text": "Có thể độc lập tuyến tính nếu không chứa véc tơ không"
+        "text": "Luôn độc lập tuyến tính"
       }
     ],
     "correct": "B",
@@ -5026,7 +5026,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = -6$"
       },
       {
         "key": "C",
@@ -5034,7 +5034,7 @@
       },
       {
         "key": "D",
-        "text": "$m = -6$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
@@ -5058,7 +5058,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m > -3$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -5066,7 +5066,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m > -3$"
       },
       {
         "key": "D",
@@ -5130,11 +5130,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m > 5$"
       },
       {
         "key": "B",
-        "text": "$m > 5$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -5170,15 +5170,15 @@
       },
       {
         "key": "B",
-        "text": "Luôn là một cơ sở của $\\mathbb{R}^{3}$"
-      },
-      {
-        "key": "C",
         "text": "Có thể độc lập tuyến tính nếu không chứa véc tơ không"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Luôn độc lập tuyến tính"
+      },
+      {
+        "key": "D",
+        "text": "Luôn là một cơ sở của $\\mathbb{R}^{3}$"
       }
     ],
     "correct": "A",
@@ -5202,15 +5202,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m \\neq 6$"
       },
       {
         "key": "B",
-        "text": "$m = -6$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m \\neq 6$"
+        "text": "$m = -6$"
       },
       {
         "key": "D",
@@ -5350,11 +5350,11 @@
       },
       {
         "key": "B",
-        "text": "Luôn độc lập tuyến tính"
+        "text": "Có thể độc lập tuyến tính nếu không chứa véc tơ không"
       },
       {
         "key": "C",
-        "text": "Có thể độc lập tuyến tính nếu không chứa véc tơ không"
+        "text": "Luôn độc lập tuyến tính"
       },
       {
         "key": "D",
@@ -5382,11 +5382,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq 6$"
+        "text": "$m = -6$"
       },
       {
         "key": "B",
-        "text": "$m = -6$"
+        "text": "$m \\neq 6$"
       },
       {
         "key": "C",
@@ -5418,7 +5418,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = -1$"
+        "text": "$m > -1$"
       },
       {
         "key": "B",
@@ -5426,11 +5426,11 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = -1$"
       },
       {
         "key": "D",
-        "text": "$m > -1$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "B",
@@ -5454,11 +5454,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn là một cơ sở của $\\mathbb{R}^{3}$"
+        "text": "Có thể độc lập tuyến tính nếu không chứa véc tơ không"
       },
       {
         "key": "B",
-        "text": "Có thể độc lập tuyến tính nếu không chứa véc tơ không"
+        "text": "Luôn là một cơ sở của $\\mathbb{R}^{3}$"
       },
       {
         "key": "C",
@@ -5494,7 +5494,7 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 3$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -5502,7 +5502,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m \\neq 3$"
       }
     ],
     "correct": "A",
@@ -7074,11 +7074,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$[x]_B = (7, 7)^T$"
+        "text": "$[x]_B = (8, 7)^T$"
       },
       {
         "key": "B",
-        "text": "$[x]_B = (28, 7)^T$"
+        "text": "$[x]_B = (7, 14)^T$"
       },
       {
         "key": "C",
@@ -7086,7 +7086,7 @@
       },
       {
         "key": "D",
-        "text": "$[x]_B = (7, 14)^T$"
+        "text": "$[x]_B = (28, 7)^T$"
       }
     ],
     "correct": "C",
@@ -7114,15 +7114,15 @@
       },
       {
         "key": "B",
-        "text": "$[x]_{B'} = P [x]_B$"
+        "text": "$[x]_B = P^{-1} [x]_{B'}$"
       },
       {
         "key": "C",
-        "text": "$[x]_B = P^T [x]_{B'}$"
+        "text": "$[x]_{B'} = P [x]_B$"
       },
       {
         "key": "D",
-        "text": "$[x]_B = P^{-1} [x]_{B'}$"
+        "text": "$[x]_B = P^T [x]_{B'}$"
       }
     ],
     "correct": "A",
@@ -7146,7 +7146,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn có định thức bằng 1"
+        "text": "Luôn là ma trận đối xứng"
       },
       {
         "key": "B",
@@ -7158,7 +7158,7 @@
       },
       {
         "key": "D",
-        "text": "Luôn là ma trận đối xứng"
+        "text": "Luôn có định thức bằng 1"
       }
     ],
     "correct": "C",
@@ -7190,11 +7190,11 @@
       },
       {
         "key": "C",
-        "text": "$[x]_B = (21, 4)^T$"
+        "text": "$[x]_B = (5, 9)^T$"
       },
       {
         "key": "D",
-        "text": "$[x]_B = (5, 9)^T$"
+        "text": "$[x]_B = (21, 4)^T$"
       }
     ],
     "correct": "A",
@@ -7218,7 +7218,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$[x]_B = (1, 7)^T$"
+        "text": "$[x]_B = (10, 1)^T$"
       },
       {
         "key": "B",
@@ -7226,11 +7226,11 @@
       },
       {
         "key": "C",
-        "text": "$[x]_B = (10, 1)^T$"
+        "text": "$[x]_B = (7, 8)^T$"
       },
       {
         "key": "D",
-        "text": "$[x]_B = (7, 8)^T$"
+        "text": "$[x]_B = (1, 7)^T$"
       }
     ],
     "correct": "B",
@@ -7258,15 +7258,15 @@
       },
       {
         "key": "B",
-        "text": "$[x]_B = (24, 6)^T$"
+        "text": "$[x]_B = (6, 12)^T$"
       },
       {
         "key": "C",
-        "text": "$[x]_B = (6, 6)^T$"
+        "text": "$[x]_B = (7, 6)^T$"
       },
       {
         "key": "D",
-        "text": "$[x]_B = (6, 12)^T$"
+        "text": "$[x]_B = (24, 6)^T$"
       }
     ],
     "correct": "A",
@@ -7326,15 +7326,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$[x]_B = (5, 5)^T$"
+        "text": "$[x]_B = (6, 5)^T$"
       },
       {
         "key": "B",
-        "text": "$[x]_B = (5, 10)^T$"
+        "text": "$[x]_B = (25, 5)^T$"
       },
       {
         "key": "C",
-        "text": "$[x]_B = (25, 5)^T$"
+        "text": "$[x]_B = (5, 10)^T$"
       },
       {
         "key": "D",
@@ -7902,7 +7902,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 6 & 48 \\\\ 0 & 6 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 8 \\\\ 0 & 1 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -7910,11 +7910,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 262144 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 6 & 48 \\\\ 0 & 6 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 1 & 8 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 262144 \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -7982,11 +7982,11 @@
       },
       {
         "key": "C",
-        "text": "$(AB)^T = B^T A^T$"
+        "text": "$(A^T)^T = A$"
       },
       {
         "key": "D",
-        "text": "$(A^T)^T = A$"
+        "text": "$(AB)^T = B^T A^T$"
       }
     ],
     "correct": "B",
@@ -8050,15 +8050,15 @@
       },
       {
         "key": "B",
-        "text": "$0$"
-      },
-      {
-        "key": "C",
         "text": "$2$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$7$"
+      },
+      {
+        "key": "D",
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -8086,11 +8086,11 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 1 & 243 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 3 \\\\ 0 & 1 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 3 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 243 \\\\ 0 & 1 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -8122,7 +8122,7 @@
       },
       {
         "key": "B",
-        "text": "$18$"
+        "text": "$-7$"
       },
       {
         "key": "C",
@@ -8130,7 +8130,7 @@
       },
       {
         "key": "D",
-        "text": "$-7$"
+        "text": "$18$"
       }
     ],
     "correct": "C",
@@ -8154,7 +8154,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 7 & 28 \\\\ 0 & 7 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -8166,7 +8166,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 7 & 28 \\\\ 0 & 7 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -8226,7 +8226,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 1 & 6 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 24 \\\\ 0 & 4 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -8234,11 +8234,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 1296 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 6 \\\\ 0 & 1 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 4 & 24 \\\\ 0 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 1296 \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -8262,7 +8262,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -8270,11 +8270,11 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$-14$"
       },
       {
         "key": "D",
-        "text": "$-14$"
+        "text": "$5$"
       }
     ],
     "correct": "B",
@@ -9886,15 +9886,15 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
-      },
-      {
-        "key": "C",
         "text": "$m \\neq 3$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$m = 15$"
+      },
+      {
+        "key": "D",
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
@@ -9918,7 +9918,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-3$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -9926,11 +9926,11 @@
       },
       {
         "key": "C",
-        "text": "$\\dfrac{-1}{-3}$"
+        "text": "$-3$"
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$\\dfrac{-1}{-3}$"
       }
     ],
     "correct": "B",
@@ -9954,11 +9954,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 1 & 7 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 0 \\\\ 7 & 1 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 1 & 0 \\\\ 7 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 7 \\\\ 0 & 1 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -9998,11 +9998,11 @@
       },
       {
         "key": "C",
-        "text": "$m \\neq -1$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m \\neq -1$"
       }
     ],
     "correct": "B",
@@ -10026,7 +10026,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$\\dfrac{-1}{4}$"
       },
       {
         "key": "B",
@@ -10034,7 +10034,7 @@
       },
       {
         "key": "C",
-        "text": "$\\dfrac{-1}{4}$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -10494,11 +10494,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "$6$"
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$9$"
       },
       {
         "key": "C",
@@ -10506,7 +10506,7 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$4$"
       }
     ],
     "correct": "C",
@@ -10530,7 +10530,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m \\neq 4$"
       },
       {
         "key": "B",
@@ -10542,7 +10542,7 @@
       },
       {
         "key": "D",
-        "text": "$m \\neq 4$"
+        "text": "$m = 1$"
       }
     ],
     "correct": "C",
@@ -10602,11 +10602,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$20$"
+        "text": "$5$"
       },
       {
         "key": "B",
-        "text": "$5$"
+        "text": "$20$"
       },
       {
         "key": "C",
@@ -10638,7 +10638,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 3$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -10646,7 +10646,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       },
       {
         "key": "D",
@@ -10674,11 +10674,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$3$"
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$5$"
       },
       {
         "key": "C",
@@ -10686,7 +10686,7 @@
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$6$"
       }
     ],
     "correct": "C",
@@ -10710,11 +10710,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m \\neq 6$"
       },
       {
         "key": "B",
-        "text": "$m \\neq 6$"
+        "text": "$m = 1$"
       },
       {
         "key": "C",
@@ -10746,7 +10746,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$7$"
       },
       {
         "key": "B",
@@ -10754,7 +10754,7 @@
       },
       {
         "key": "C",
-        "text": "$7$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -10782,15 +10782,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m \\neq 20$"
       },
       {
         "key": "B",
-        "text": "$m = 5$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m \\neq 20$"
+        "text": "$m = 5$"
       },
       {
         "key": "D",
@@ -10818,11 +10818,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$8$"
+        "text": "$4$"
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$8$"
       },
       {
         "key": "C",
@@ -10830,7 +10830,7 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$6$"
       }
     ],
     "correct": "C",
@@ -10854,15 +10854,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
-      },
-      {
-        "key": "B",
         "text": "$m = 5$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m \\neq 25$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -10898,11 +10898,11 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$8$"
       },
       {
         "key": "D",
-        "text": "$8$"
+        "text": "$5$"
       }
     ],
     "correct": "A",
@@ -10926,15 +10926,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 4$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
-        "text": "$m \\neq 12$"
+        "text": "$m = 4$"
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m \\neq 12$"
       },
       {
         "key": "D",
@@ -10962,7 +10962,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$9$"
       },
       {
         "key": "B",
@@ -10970,7 +10970,7 @@
       },
       {
         "key": "C",
-        "text": "$9$"
+        "text": "$5$"
       },
       {
         "key": "D",
@@ -11006,11 +11006,11 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = 2$"
       },
       {
         "key": "D",
-        "text": "$m = 2$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
@@ -11794,7 +11794,7 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq -2$"
+        "text": "$m = 3$"
       },
       {
         "key": "C",
@@ -11802,7 +11802,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 3$"
+        "text": "$m \\neq -2$"
       }
     ],
     "correct": "A",
@@ -11830,15 +11830,15 @@
       },
       {
         "key": "B",
-        "text": "$r(A) < r(\\bar{A})$"
-      },
-      {
-        "key": "C",
         "text": "$r(A) = r(\\bar{A}) < 5$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$r(A) = 5 + 1$"
+      },
+      {
+        "key": "D",
+        "text": "$r(A) < r(\\bar{A})$"
       }
     ],
     "correct": "A",
@@ -11866,15 +11866,15 @@
       },
       {
         "key": "B",
-        "text": "$r(A) = r(\\bar{A}) < n$"
+        "text": "$r(A) = r(\\bar{A}) = n$"
       },
       {
         "key": "C",
-        "text": "$r(A) > r(\\bar{A})$"
+        "text": "$r(A) = r(\\bar{A}) < n$"
       },
       {
         "key": "D",
-        "text": "$r(A) = r(\\bar{A}) = n$"
+        "text": "$r(A) > r(\\bar{A})$"
       }
     ],
     "correct": "A",
@@ -11934,7 +11934,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) = r(\\bar{A}) < 4$"
+        "text": "$r(A) < r(\\bar{A})$"
       },
       {
         "key": "B",
@@ -11946,7 +11946,7 @@
       },
       {
         "key": "D",
-        "text": "$r(A) < r(\\bar{A})$"
+        "text": "$r(A) = r(\\bar{A}) < 4$"
       }
     ],
     "correct": "C",
@@ -12258,7 +12258,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m > 2$"
+        "text": "$m = 2$"
       },
       {
         "key": "B",
@@ -12266,11 +12266,11 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m > 2$"
       },
       {
         "key": "D",
-        "text": "$m = 2$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "B",
@@ -12294,7 +12294,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = -15$"
+        "text": "$x = 5$"
       },
       {
         "key": "B",
@@ -12302,11 +12302,11 @@
       },
       {
         "key": "C",
-        "text": "$x = 3$"
+        "text": "$x = -15$"
       },
       {
         "key": "D",
-        "text": "$x = 5$"
+        "text": "$x = 3$"
       }
     ],
     "correct": "B",
@@ -12330,7 +12330,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có đúng 1 nghiệm bằng 0"
+        "text": "Chắc chắn có vô số nghiệm"
       },
       {
         "key": "B",
@@ -12338,11 +12338,11 @@
       },
       {
         "key": "C",
-        "text": "Có nghiệm duy nhất"
+        "text": "Có đúng 1 nghiệm bằng 0"
       },
       {
         "key": "D",
-        "text": "Chắc chắn có vô số nghiệm"
+        "text": "Có nghiệm duy nhất"
       }
     ],
     "correct": "B",
@@ -12370,11 +12370,11 @@
       },
       {
         "key": "B",
-        "text": "$m = -4$"
+        "text": "$m > -4$"
       },
       {
         "key": "C",
-        "text": "$m > -4$"
+        "text": "$m = -4$"
       },
       {
         "key": "D",
@@ -12402,7 +12402,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = -4$"
+        "text": "$x = -3$"
       },
       {
         "key": "B",
@@ -12410,7 +12410,7 @@
       },
       {
         "key": "C",
-        "text": "$x = -3$"
+        "text": "$x = -4$"
       },
       {
         "key": "D",
@@ -12442,7 +12442,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = 5$"
       },
       {
         "key": "C",
@@ -12450,7 +12450,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 5$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "C",
@@ -12514,15 +12514,15 @@
       },
       {
         "key": "B",
-        "text": "$m = -1$"
+        "text": "$m > -1$"
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = -1$"
       },
       {
         "key": "D",
-        "text": "$m > -1$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
@@ -12554,11 +12554,11 @@
       },
       {
         "key": "C",
-        "text": "$x = -2$"
+        "text": "$x = 4$"
       },
       {
         "key": "D",
-        "text": "$x = 4$"
+        "text": "Phương án 1"
       }
     ],
     "correct": "B",
@@ -12590,11 +12590,11 @@
       },
       {
         "key": "C",
-        "text": "$m > 3$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m > 3$"
       }
     ],
     "correct": "B",
@@ -12622,7 +12622,7 @@
       },
       {
         "key": "B",
-        "text": "$x = 4$"
+        "text": "Phương án 1"
       },
       {
         "key": "C",
@@ -12694,15 +12694,15 @@
       },
       {
         "key": "B",
-        "text": "$x = 12$"
+        "text": "$x = -3$"
       },
       {
         "key": "C",
-        "text": "$x = 4$"
+        "text": "$x = 12$"
       },
       {
         "key": "D",
-        "text": "$x = -3$"
+        "text": "$x = 4$"
       }
     ],
     "correct": "A",
@@ -12730,7 +12730,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = 4$"
       },
       {
         "key": "C",
@@ -12738,7 +12738,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 4$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
@@ -12762,11 +12762,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = 3$"
+        "text": "$x = -1$"
       },
       {
         "key": "B",
-        "text": "$x = -1$"
+        "text": "Phương án 1"
       },
       {
         "key": "C",
@@ -12798,11 +12798,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = 1$"
       },
       {
         "key": "C",
@@ -12834,11 +12834,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = -2$"
+        "text": "$x = 1$"
       },
       {
         "key": "B",
-        "text": "$x = 1$"
+        "text": "$x = 2$"
       },
       {
         "key": "C",
@@ -12846,7 +12846,7 @@
       },
       {
         "key": "D",
-        "text": "$x = 2$"
+        "text": "$x = -2$"
       }
     ],
     "correct": "C",
@@ -13230,11 +13230,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$2$"
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$0$"
       },
       {
         "key": "C",
@@ -13242,7 +13242,7 @@
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$3$"
       }
     ],
     "correct": "C",
@@ -13266,7 +13266,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -13274,7 +13274,7 @@
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -13338,15 +13338,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$7$"
-      },
-      {
-        "key": "B",
         "text": "$5$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$3$"
+      },
+      {
+        "key": "C",
+        "text": "$7$"
       },
       {
         "key": "D",
@@ -13374,11 +13374,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Có nghiệm duy nhất"
+        "text": "Có vô số nghiệm"
       },
       {
         "key": "B",
-        "text": "Có vô số nghiệm"
+        "text": "Có nghiệm tầm thường"
       },
       {
         "key": "C",
@@ -13386,7 +13386,7 @@
       },
       {
         "key": "D",
-        "text": "Có nghiệm tầm thường"
+        "text": "Có nghiệm duy nhất"
       }
     ],
     "correct": "C",
@@ -13410,7 +13410,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$2$"
       },
       {
         "key": "B",
@@ -13418,7 +13418,7 @@
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -13450,15 +13450,15 @@
       },
       {
         "key": "B",
-        "text": "$7$"
+        "text": "$1$"
       },
       {
         "key": "C",
-        "text": "$5$"
+        "text": "$7$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$5$"
       }
     ],
     "correct": "A",
@@ -13518,7 +13518,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -13526,7 +13526,7 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$2$"
       },
       {
         "key": "D",
@@ -13558,11 +13558,11 @@
       },
       {
         "key": "B",
-        "text": "Có nghiệm duy nhất"
+        "text": "Có nghiệm tầm thường"
       },
       {
         "key": "C",
-        "text": "Có nghiệm tầm thường"
+        "text": "Có nghiệm duy nhất"
       },
       {
         "key": "D",
@@ -13590,7 +13590,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -13598,7 +13598,7 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -13630,7 +13630,7 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$5$"
       },
       {
         "key": "C",
@@ -13638,7 +13638,7 @@
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -13666,15 +13666,15 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$2$"
       }
     ],
     "correct": "A",
@@ -13702,11 +13702,11 @@
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$7$"
       },
       {
         "key": "C",
-        "text": "$7$"
+        "text": "$2$"
       },
       {
         "key": "D",
@@ -13770,7 +13770,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -13782,7 +13782,7 @@
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$5$"
       }
     ],
     "correct": "C",
@@ -14530,15 +14530,15 @@
       },
       {
         "key": "B",
-        "text": "$6$"
-      },
-      {
-        "key": "C",
         "text": "$5$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$2$"
+      },
+      {
+        "key": "D",
+        "text": "$6$"
       }
     ],
     "correct": "A",
@@ -14562,7 +14562,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m > -2$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -14574,7 +14574,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m > -2$"
       }
     ],
     "correct": "C",
@@ -14638,7 +14638,7 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$2$"
       },
       {
         "key": "C",
@@ -14646,7 +14646,7 @@
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$3$"
       }
     ],
     "correct": "A",
@@ -14818,15 +14818,15 @@
       },
       {
         "key": "B",
-        "text": "$(4, 1)$"
-      },
-      {
-        "key": "C",
         "text": "$(5, 7)$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$(4, 3)$"
+      },
+      {
+        "key": "D",
+        "text": "$(4, 1)$"
       }
     ],
     "correct": "A",
@@ -14854,11 +14854,11 @@
       },
       {
         "key": "B",
-        "text": "$f: \\mathbb{R}^2 \\to \\mathbb{R}^2, \\, f(x, y) = (3x - y + 1, \\, x)$"
+        "text": "$f: \\mathbb{R}^2 \\to \\mathbb{R}^2, \\, f(x, y) = (xy, \\, x + y)$"
       },
       {
         "key": "C",
-        "text": "$f: \\mathbb{R}^2 \\to \\mathbb{R}^2, \\, f(x, y) = (xy, \\, x + y)$"
+        "text": "$f: \\mathbb{R}^2 \\to \\mathbb{R}^2, \\, f(x, y) = (3x - y + 1, \\, x)$"
       },
       {
         "key": "D",
@@ -14894,11 +14894,11 @@
       },
       {
         "key": "C",
-        "text": "$f(\\theta_V) \\neq \\theta_W$"
+        "text": "$f(\\theta_V) = -\\theta_W$"
       },
       {
         "key": "D",
-        "text": "$f(\\theta_V) = -\\theta_W$"
+        "text": "$f(\\theta_V) \\neq \\theta_W$"
       }
     ],
     "correct": "A",
@@ -14922,7 +14922,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(3, 14)$"
+        "text": "$(2, 4)$"
       },
       {
         "key": "B",
@@ -14930,11 +14930,11 @@
       },
       {
         "key": "C",
-        "text": "$(2, 4)$"
+        "text": "$(2, 12)$"
       },
       {
         "key": "D",
-        "text": "$(2, 12)$"
+        "text": "$(3, 14)$"
       }
     ],
     "correct": "B",
@@ -14994,7 +14994,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(8, 3)$"
+        "text": "$(11, 15)$"
       },
       {
         "key": "B",
@@ -15002,7 +15002,7 @@
       },
       {
         "key": "C",
-        "text": "$(11, 15)$"
+        "text": "$(8, 3)$"
       },
       {
         "key": "D",
@@ -15034,15 +15034,15 @@
       },
       {
         "key": "B",
-        "text": "$(8, 4)$"
-      },
-      {
-        "key": "C",
         "text": "$(8, 12)$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$(9, 20)$"
+      },
+      {
+        "key": "D",
+        "text": "$(8, 4)$"
       }
     ],
     "correct": "A",
@@ -15070,7 +15070,7 @@
       },
       {
         "key": "B",
-        "text": "$(11, 13)$"
+        "text": "$(10, 9)$"
       },
       {
         "key": "C",
@@ -15078,7 +15078,7 @@
       },
       {
         "key": "D",
-        "text": "$(10, 9)$"
+        "text": "$(11, 13)$"
       }
     ],
     "correct": "A",
@@ -15102,7 +15102,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(2, 5)$"
+        "text": "$(3, 17)$"
       },
       {
         "key": "B",
@@ -15110,11 +15110,11 @@
       },
       {
         "key": "C",
-        "text": "$(2, 15)$"
+        "text": "$(2, 5)$"
       },
       {
         "key": "D",
-        "text": "$(3, 17)$"
+        "text": "$(2, 15)$"
       }
     ],
     "correct": "B",
@@ -15138,11 +15138,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(10, 12)$"
+        "text": "$(11, 22)$"
       },
       {
         "key": "B",
-        "text": "$(11, 22)$"
+        "text": "$(10, 12)$"
       },
       {
         "key": "C",
@@ -15178,15 +15178,15 @@
       },
       {
         "key": "B",
-        "text": "$(4, 3)$"
-      },
-      {
-        "key": "C",
         "text": "$(7, 11)$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$(6, 9)$"
+      },
+      {
+        "key": "D",
+        "text": "$(4, 3)$"
       }
     ],
     "correct": "A",
@@ -15210,11 +15210,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(8, 6)$"
+        "text": "$(9, 16)$"
       },
       {
         "key": "B",
-        "text": "$(9, 16)$"
+        "text": "$(8, 6)$"
       },
       {
         "key": "C",
@@ -15246,7 +15246,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(7, 12)$"
+        "text": "$(6, 6)$"
       },
       {
         "key": "B",
@@ -15254,7 +15254,7 @@
       },
       {
         "key": "C",
-        "text": "$(6, 6)$"
+        "text": "$(7, 12)$"
       },
       {
         "key": "D",
@@ -15318,7 +15318,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(11, 21)$"
+        "text": "$(8, 5)$"
       },
       {
         "key": "B",
@@ -15330,7 +15330,7 @@
       },
       {
         "key": "D",
-        "text": "$(8, 5)$"
+        "text": "$(11, 21)$"
       }
     ],
     "correct": "B",
@@ -15354,15 +15354,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$(10, 3)$"
+        "text": "$(10, 9)$"
       },
       {
         "key": "B",
-        "text": "$(11, 19)$"
+        "text": "$(10, 3)$"
       },
       {
         "key": "C",
-        "text": "$(10, 9)$"
+        "text": "$(11, 19)$"
       },
       {
         "key": "D",
@@ -15394,15 +15394,15 @@
       },
       {
         "key": "B",
-        "text": "$(5, 5)$"
-      },
-      {
-        "key": "C",
         "text": "$(2, 15)$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$(3, 23)$"
+      },
+      {
+        "key": "D",
+        "text": "$(5, 5)$"
       }
     ],
     "correct": "A",
@@ -15426,11 +15426,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(6, 3)$"
+        "text": "$(4, 1)$"
       },
       {
         "key": "B",
-        "text": "$(4, 1)$"
+        "text": "$(6, 3)$"
       },
       {
         "key": "C",
@@ -15466,7 +15466,7 @@
       },
       {
         "key": "B",
-        "text": "$(2, 12)$"
+        "text": "$(6, 4)$"
       },
       {
         "key": "C",
@@ -15474,7 +15474,7 @@
       },
       {
         "key": "D",
-        "text": "$(6, 4)$"
+        "text": "$(2, 12)$"
       }
     ],
     "correct": "C",
@@ -15534,15 +15534,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$(8, 1)$"
+        "text": "$(11, 9)$"
       },
       {
         "key": "B",
-        "text": "$(10, 3)$"
+        "text": "$(8, 1)$"
       },
       {
         "key": "C",
-        "text": "$(11, 9)$"
+        "text": "$(10, 3)$"
       },
       {
         "key": "D",
@@ -15570,7 +15570,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(8, 12)$"
+        "text": "$(6, 4)$"
       },
       {
         "key": "B",
@@ -15578,11 +15578,11 @@
       },
       {
         "key": "C",
-        "text": "$(9, 16)$"
+        "text": "$(8, 12)$"
       },
       {
         "key": "D",
-        "text": "$(6, 4)$"
+        "text": "$(9, 16)$"
       }
     ],
     "correct": "B",
@@ -15610,7 +15610,7 @@
       },
       {
         "key": "B",
-        "text": "$(4, 9)$"
+        "text": "$(5, 13)$"
       },
       {
         "key": "C",
@@ -15618,7 +15618,7 @@
       },
       {
         "key": "D",
-        "text": "$(5, 13)$"
+        "text": "$(4, 9)$"
       }
     ],
     "correct": "A",
@@ -16186,7 +16186,7 @@
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$2$"
       },
       {
         "key": "C",
@@ -16222,15 +16222,15 @@
       },
       {
         "key": "B",
-        "text": "$2$"
-      },
-      {
-        "key": "C",
         "text": "$5$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$6$"
+      },
+      {
+        "key": "D",
+        "text": "$2$"
       }
     ],
     "correct": "A",
@@ -16258,7 +16258,7 @@
       },
       {
         "key": "B",
-        "text": "$\\ker(f) = \\{\\theta\\}}$ (tức $\\dim(\\ker f) = 0$)"
+        "text": "$\\ker(f) = \\{\\theta\\}$ (tức $\\dim(\\ker f) = 0$)"
       },
       {
         "key": "C",
@@ -16270,7 +16270,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Ánh xạ tuyến tính là đơn ánh khi và chỉ khi hạt nhân (nhân) chỉ chứa duy nhất véc tơ không: $\\ker(f) = \\{\\theta\\}}$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Ánh xạ tuyến tính là đơn ánh khi và chỉ khi hạt nhân (nhân) chỉ chứa duy nhất véc tơ không: $\\ker(f) = \\{\\theta\\}$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16290,15 +16290,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -16330,11 +16330,11 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$6$"
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$2$"
       },
       {
         "key": "D",
@@ -16370,7 +16370,7 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$3$"
       },
       {
         "key": "D",
@@ -16406,11 +16406,11 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -16438,15 +16438,15 @@
       },
       {
         "key": "B",
-        "text": "$7$"
-      },
-      {
-        "key": "C",
         "text": "$6$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$2$"
+      },
+      {
+        "key": "D",
+        "text": "$7$"
       }
     ],
     "correct": "A",
@@ -16474,7 +16474,7 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -16482,7 +16482,7 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$3$"
       }
     ],
     "correct": "A",
@@ -16510,7 +16510,7 @@
       },
       {
         "key": "B",
-        "text": "$7$"
+        "text": "$5$"
       },
       {
         "key": "C",
@@ -17014,11 +17014,11 @@
       },
       {
         "key": "B",
-        "text": "$A' = P^T A P$"
+        "text": "$A' = P A P^{-1}$"
       },
       {
         "key": "C",
-        "text": "$A' = P A P^{-1}$"
+        "text": "$A' = P^T A P$"
       },
       {
         "key": "D",
@@ -17046,7 +17046,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 4 & 5 \\\\ 2 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 1 \\\\ 4 & 2 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -17054,7 +17054,7 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 5 & 1 \\\\ 4 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 5 \\\\ 2 & 1 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -17090,11 +17090,11 @@
       },
       {
         "key": "C",
-        "text": "$B = P A P$"
+        "text": "$B = A P$"
       },
       {
         "key": "D",
-        "text": "$B = A P$"
+        "text": "$B = P A P$"
       }
     ],
     "correct": "B",
@@ -17118,15 +17118,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 3 & -1 \\\\ -4 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 5 \\\\ 3 & 4 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 1 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 & -1 \\\\ -4 & 5 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 5 \\\\ 3 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 1 & 3 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -17162,11 +17162,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 5 & 2 \\\\ 1 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & -1 \\\\ -2 & 5 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 4 & -1 \\\\ -2 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 2 \\\\ 1 & 4 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -17194,15 +17194,15 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 3 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 & -1 \\\\ -2 & 4 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 4 & 2 \\\\ 1 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 3 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 3 & -1 \\\\ -2 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 2 \\\\ 1 & 3 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -17234,11 +17234,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 2 & 4 \\\\ 5 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & -5 \\\\ -4 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 1 & -5 \\\\ -4 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 4 \\\\ 5 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -17262,11 +17262,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 2 & -3 \\\\ -4 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 & 1 \\\\ 2 & 4 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 3 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & -3 \\\\ -4 & 1 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -17274,7 +17274,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 3 & 1 \\\\ 2 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 3 & 2 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -17298,11 +17298,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 5 & -4 \\\\ -2 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 3 \\\\ 5 & 2 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 4 & 3 \\\\ 5 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 & 2 \\\\ 4 & 5 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -17310,7 +17310,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 3 & 2 \\\\ 4 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & -4 \\\\ -2 & 3 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -17334,7 +17334,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 5 & 2 \\\\ 1 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 3 \\\\ 5 & 1 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -17342,7 +17342,7 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 2 & 3 \\\\ 5 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 2 \\\\ 1 & 3 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -17378,11 +17378,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 3 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 1 \\\\ 5 & 3 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 4 & 1 \\\\ 5 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 3 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -17410,15 +17410,15 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 3 & -4 \\\\ -1 & 2 \\end{bmatrix}$"
-      },
-      {
-        "key": "C",
         "text": "$\\begin{bmatrix} 4 & 2 \\\\ 3 & 1 \\end{bmatrix}$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$\\begin{bmatrix} 2 & 1 \\\\ 4 & 3 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\begin{bmatrix} 3 & -4 \\\\ -1 & 2 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -18202,11 +18202,11 @@
       },
       {
         "key": "B",
-        "text": "$\\text{Tổng} = 9, \\, \\text{Tích} = --6$"
+        "text": "$\\text{Tổng} = -9, \\, \\text{Tích} = -6$"
       },
       {
         "key": "C",
-        "text": "$\\text{Tổng} = -9, \\, \\text{Tích} = -6$"
+        "text": "$\\text{Tổng} = 9, \\, \\text{Tích} = --6$"
       },
       {
         "key": "D",
@@ -18238,15 +18238,15 @@
       },
       {
         "key": "B",
-        "text": "$\\lambda = 0$"
+        "text": "$\\lambda_1 = 3, \\, \\lambda_2 = 0$"
       },
       {
         "key": "C",
-        "text": "$\\lambda_1 = -3, \\, \\lambda_2 = 3$"
+        "text": "$\\lambda = 0$"
       },
       {
         "key": "D",
-        "text": "$\\lambda_1 = 3, \\, \\lambda_2 = 0$"
+        "text": "$\\lambda_1 = -3, \\, \\lambda_2 = 3$"
       }
     ],
     "correct": "A",
@@ -18270,11 +18270,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$A v = \\theta$"
+        "text": "$A v = \\lambda I$"
       },
       {
         "key": "B",
-        "text": "$A v = \\lambda I$"
+        "text": "$A v = \\theta$"
       },
       {
         "key": "C",
@@ -18306,11 +18306,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\text{Tổng} = 8, \\, \\text{Tích} = 2$"
+        "text": "$\\text{Tổng} = -2, \\, \\text{Tích} = 8$"
       },
       {
         "key": "B",
-        "text": "$\\text{Tổng} = 2, \\, \\text{Tích} = -8$"
+        "text": "$\\text{Tổng} = 8, \\, \\text{Tích} = 2$"
       },
       {
         "key": "C",
@@ -18318,7 +18318,7 @@
       },
       {
         "key": "D",
-        "text": "$\\text{Tổng} = -2, \\, \\text{Tích} = 8$"
+        "text": "$\\text{Tổng} = 2, \\, \\text{Tích} = -8$"
       }
     ],
     "correct": "C",
@@ -18346,11 +18346,11 @@
       },
       {
         "key": "B",
-        "text": "$\\lambda = 9$"
+        "text": "$\\lambda_1 = 3, \\, \\lambda_2 = 0$"
       },
       {
         "key": "C",
-        "text": "$\\lambda_1 = 3, \\, \\lambda_2 = 0$"
+        "text": "$\\lambda = 9$"
       },
       {
         "key": "D",
@@ -18526,15 +18526,15 @@
       },
       {
         "key": "B",
-        "text": "$5$"
+        "text": "$17$"
       },
       {
         "key": "C",
-        "text": "$\\sqrt{5}$"
+        "text": "$5$"
       },
       {
         "key": "D",
-        "text": "$17$"
+        "text": "$\\sqrt{5}$"
       }
     ],
     "correct": "A",
@@ -18566,11 +18566,11 @@
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$-4$"
       },
       {
         "key": "D",
-        "text": "$-4$"
+        "text": "$6$"
       }
     ],
     "correct": "B",
@@ -18598,15 +18598,15 @@
       },
       {
         "key": "B",
-        "text": "$\\langle u, v \\rangle = \\|u\\| + \\|v\\|$"
-      },
-      {
-        "key": "C",
         "text": "$\\|u + v\\| = \\|u\\| + \\|v\\|$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$\\langle u, v \\rangle \\ge \\|u\\| \\cdot \\|v\\|$"
+      },
+      {
+        "key": "D",
+        "text": "$\\langle u, v \\rangle = \\|u\\| + \\|v\\|$"
       }
     ],
     "correct": "A",
@@ -18630,11 +18630,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\sqrt{10}$"
+        "text": "$68$"
       },
       {
         "key": "B",
-        "text": "$10$"
+        "text": "$\\sqrt{10}$"
       },
       {
         "key": "C",
@@ -18642,7 +18642,7 @@
       },
       {
         "key": "D",
-        "text": "$68$"
+        "text": "$10$"
       }
     ],
     "correct": "C",
@@ -18674,11 +18674,11 @@
       },
       {
         "key": "C",
-        "text": "$19$"
+        "text": "$17$"
       },
       {
         "key": "D",
-        "text": "$16$"
+        "text": "$19$"
       }
     ],
     "correct": "A",
@@ -18706,15 +18706,15 @@
       },
       {
         "key": "B",
-        "text": "$6$"
-      },
-      {
-        "key": "C",
         "text": "$\\sqrt{6}$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$26$"
+      },
+      {
+        "key": "D",
+        "text": "$6$"
       }
     ],
     "correct": "A",
@@ -18738,7 +18738,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-15$"
+        "text": "$-18$"
       },
       {
         "key": "B",
@@ -18746,7 +18746,7 @@
       },
       {
         "key": "C",
-        "text": "$-18$"
+        "text": "$-15$"
       },
       {
         "key": "D",
@@ -18778,15 +18778,15 @@
       },
       {
         "key": "B",
-        "text": "$5$"
-      },
-      {
-        "key": "C",
         "text": "$\\sqrt{3}$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$3$"
+      },
+      {
+        "key": "D",
+        "text": "$5$"
       }
     ],
     "correct": "A",
@@ -18810,7 +18810,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$21$"
+        "text": "$20$"
       },
       {
         "key": "B",
@@ -18818,7 +18818,7 @@
       },
       {
         "key": "C",
-        "text": "$19$"
+        "text": "$18$"
       },
       {
         "key": "D",
@@ -18850,7 +18850,7 @@
       },
       {
         "key": "B",
-        "text": "$89$"
+        "text": "$13$"
       },
       {
         "key": "C",
@@ -18858,7 +18858,7 @@
       },
       {
         "key": "D",
-        "text": "$13$"
+        "text": "$89$"
       }
     ],
     "correct": "C",
@@ -18882,11 +18882,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-14$"
+        "text": "$19$"
       },
       {
         "key": "B",
-        "text": "$19$"
+        "text": "$-14$"
       },
       {
         "key": "C",
@@ -18922,11 +18922,11 @@
       },
       {
         "key": "B",
-        "text": "$26$"
+        "text": "$6$"
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$26$"
       },
       {
         "key": "D",
@@ -18958,7 +18958,7 @@
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$-1$"
       },
       {
         "key": "C",
@@ -19026,15 +19026,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$-9$"
+        "text": "$13$"
       },
       {
         "key": "B",
-        "text": "$14$"
+        "text": "$-9$"
       },
       {
         "key": "C",
-        "text": "$12$"
+        "text": "$14$"
       },
       {
         "key": "D",
@@ -19066,15 +19066,15 @@
       },
       {
         "key": "B",
-        "text": "$9$"
-      },
-      {
-        "key": "C",
         "text": "$\\sqrt{9}$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$45$"
+      },
+      {
+        "key": "D",
+        "text": "$9$"
       }
     ],
     "correct": "A",
@@ -19098,7 +19098,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$24$"
+        "text": "$18$"
       },
       {
         "key": "B",
@@ -19110,7 +19110,7 @@
       },
       {
         "key": "D",
-        "text": "$18$"
+        "text": "$25$"
       }
     ],
     "correct": "C",
@@ -19134,7 +19134,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$53$"
+        "text": "$\\sqrt{9}$"
       },
       {
         "key": "B",
@@ -19142,7 +19142,7 @@
       },
       {
         "key": "C",
-        "text": "$\\sqrt{9}$"
+        "text": "$53$"
       },
       {
         "key": "D",
@@ -19170,11 +19170,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$10$"
       },
       {
         "key": "B",
-        "text": "$10$"
+        "text": "$2$"
       },
       {
         "key": "C",
@@ -19182,7 +19182,7 @@
       },
       {
         "key": "D",
-        "text": "$8$"
+        "text": "$9$"
       }
     ],
     "correct": "C",
@@ -19250,7 +19250,7 @@
       },
       {
         "key": "C",
-        "text": "$10$"
+        "text": "$11$"
       },
       {
         "key": "D",
@@ -19282,11 +19282,11 @@
       },
       {
         "key": "B",
-        "text": "$14$"
+        "text": "$100$"
       },
       {
         "key": "C",
-        "text": "$100$"
+        "text": "$14$"
       },
       {
         "key": "D",
@@ -19750,7 +19750,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = -2$"
       },
       {
         "key": "C",
@@ -19758,7 +19758,7 @@
       },
       {
         "key": "D",
-        "text": "$m = -2$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "C",
@@ -19778,11 +19778,11 @@
     "typeName": "Trực giao, Trực chuẩn & Quá trình Gram-Schmidt",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Hệ véc tơ $\\{e_1, e_2, \\dots, e_n\\}}$ được gọi là một **hệ trực chuẩn** nếu thỏa mãn điều kiện:",
+    "question": "Hệ véc tơ $\\{e_1, e_2, \\dots, e_n\\}$ được gọi là một **hệ trực chuẩn** nếu thỏa mãn điều kiện:",
     "options": [
       {
         "key": "A",
-        "text": "$\\langle e_i, e_j \\rangle = 1$ với mọi $i, j$"
+        "text": "$\\|e_i\\| = 0$ với mọi $i$"
       },
       {
         "key": "B",
@@ -19790,11 +19790,11 @@
       },
       {
         "key": "C",
-        "text": "$\\|e_i\\| = 0$ với mọi $i$"
+        "text": "$\\langle e_i, e_j \\rangle = 0$ với mọi $i, j$"
       },
       {
         "key": "D",
-        "text": "$\\langle e_i, e_j \\rangle = 0$ với mọi $i, j$"
+        "text": "$\\langle e_i, e_j \\rangle = 1$ với mọi $i, j$"
       }
     ],
     "correct": "B",
@@ -19826,11 +19826,11 @@
       },
       {
         "key": "C",
-        "text": "$m = 2$"
+        "text": "$m = -3$"
       },
       {
         "key": "D",
-        "text": "$m = -3$"
+        "text": "$m = 2$"
       }
     ],
     "correct": "B",
@@ -19858,15 +19858,15 @@
       },
       {
         "key": "B",
-        "text": "$m = -5$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m = 3$"
+        "text": "$m = -5$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       }
     ],
     "correct": "A",
@@ -19898,11 +19898,11 @@
       },
       {
         "key": "C",
-        "text": "$m = 5$"
+        "text": "$m = 1$"
       },
       {
         "key": "D",
-        "text": "$m = 1$"
+        "text": "$m = 5$"
       }
     ],
     "correct": "A",
@@ -19926,7 +19926,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = -2$"
+        "text": "$m = 5$"
       },
       {
         "key": "B",
@@ -19934,7 +19934,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 5$"
+        "text": "$m = -2$"
       },
       {
         "key": "D",
@@ -19970,11 +19970,11 @@
       },
       {
         "key": "C",
-        "text": "$m = -1$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = -1$"
       }
     ],
     "correct": "B",
@@ -20002,11 +20002,11 @@
       },
       {
         "key": "B",
-        "text": "$m = 4$"
+        "text": "$m = -4$"
       },
       {
         "key": "C",
-        "text": "$m = -4$"
+        "text": "Phương án 1"
       },
       {
         "key": "D",
@@ -20034,15 +20034,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       },
       {
         "key": "B",
-        "text": "$m = 1$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m = 3$"
+        "text": "$m = 1$"
       },
       {
         "key": "D",
@@ -20070,7 +20070,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 5$"
+        "text": "Phương án 1"
       },
       {
         "key": "B",
@@ -20078,11 +20078,11 @@
       },
       {
         "key": "C",
-        "text": "$m = -5$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = -5$"
       }
     ],
     "correct": "B",
@@ -20106,11 +20106,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = -4$"
+        "text": "$m = 6$"
       },
       {
         "key": "B",
-        "text": "$m = 6$"
+        "text": "$m = -4$"
       },
       {
         "key": "C",
@@ -20146,11 +20146,11 @@
       },
       {
         "key": "B",
-        "text": "$m = 1$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "Phương án 1"
       },
       {
         "key": "D",
@@ -20178,15 +20178,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 6$"
-      },
-      {
-        "key": "B",
         "text": "$m = -2$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 6$"
       },
       {
         "key": "D",
@@ -20726,11 +20726,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 5 & 6 \\\\ 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 6 \\\\ 6 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 5 & 6 \\\\ 6 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 6 \\\\ 0 & 2 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -20754,7 +20754,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn có định thức dương"
+        "text": "Luôn là ma trận tam giác"
       },
       {
         "key": "B",
@@ -20766,7 +20766,7 @@
       },
       {
         "key": "D",
-        "text": "Luôn là ma trận tam giác"
+        "text": "Luôn có định thức dương"
       }
     ],
     "correct": "C",
@@ -20794,11 +20794,11 @@
       },
       {
         "key": "B",
-        "text": "$A' = C A C^{-1}$"
+        "text": "$A' = C^{-1} A C$"
       },
       {
         "key": "C",
-        "text": "$A' = C^{-1} A C$"
+        "text": "$A' = C A C^{-1}$"
       },
       {
         "key": "D",
@@ -20826,15 +20826,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 5 & 10 \\\\ 10 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 10 \\\\ 0 & 4 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 5 & 5 \\\\ 4 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 10 \\\\ 10 & 4 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 5 & 10 \\\\ 0 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 5 \\\\ 4 & 5 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -20862,11 +20862,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 4 & 6 \\\\ 6 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 6 \\\\ 0 & 5 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 3 & 4 \\\\ 5 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 6 \\\\ 6 & 5 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -20874,7 +20874,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 4 & 6 \\\\ 0 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 & 4 \\\\ 5 & 3 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -20898,11 +20898,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 2 & 5 \\\\ 3 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 4 & 3 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 4 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 0 & 3 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -20910,7 +20910,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 5 & 4 \\\\ 0 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 5 \\\\ 3 & 2 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -20974,7 +20974,7 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 6 & 4 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 6 \\\\ 1 & 2 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -20982,7 +20982,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 2 & 6 \\\\ 1 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 6 & 4 \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -21006,7 +21006,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 5 & 6 \\\\ 6 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 & 5 \\\\ 4 & 3 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -21018,7 +21018,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 3 & 5 \\\\ 4 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 6 \\\\ 6 & 4 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -21042,11 +21042,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 4 & 8 \\\\ 8 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 8 \\\\ 0 & 5 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 4 & 8 \\\\ 0 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & 8 \\\\ 8 & 5 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -21086,11 +21086,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 2 & 10 \\\\ 10 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 10 \\\\ 0 & 3 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 2 & 10 \\\\ 0 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 10 \\\\ 10 & 3 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -21114,7 +21114,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 6 & 6 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 6 & 6 \\\\ 6 & 1 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -21126,7 +21126,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 6 & 6 \\\\ 6 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 6 & 6 \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -21906,7 +21906,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 2$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
@@ -21914,7 +21914,7 @@
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m = 2$"
       },
       {
         "key": "D",
@@ -21942,11 +21942,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 3$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
-        "text": "$m > 0$"
+        "text": "$m = 3$"
       },
       {
         "key": "C",
@@ -21986,11 +21986,11 @@
       },
       {
         "key": "C",
-        "text": "Xác định dương"
+        "text": "Xác định âm"
       },
       {
         "key": "D",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       }
     ],
     "correct": "B",
@@ -22014,7 +22014,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m < \\dfrac{1}{2}$"
       },
       {
         "key": "B",
@@ -22022,7 +22022,7 @@
       },
       {
         "key": "C",
-        "text": "$m < \\dfrac{1}{2}$"
+        "text": "$m = 1$"
       },
       {
         "key": "D",

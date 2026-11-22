@@ -36,7 +36,10 @@
   // --- Format Markdown Text Helper ---
   function formatContent(text) {
     if (text === null || text === undefined) return '';
-    return String(text)
+    let str = String(text);
+    // Sanitize any accidental double-closing brace in LaTeX \{... \}} -> \{... \}
+    str = str.replace(/\\\}\s*\}/g, '\\}');
+    return str
       .replace(/^(\s*)\*\s+/gm, '$1• ')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
