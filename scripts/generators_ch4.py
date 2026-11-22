@@ -45,12 +45,13 @@ def gen_ch4(sub, seed, make_unique_options):
             exp = "Khi khử Gauss xuất hiện hàng dạng $[0 \\; 0 \\; \\dots \\; 0 \\mid b]$ với $b \\neq 0$, khi đó $r(A) < r(\\bar{A})$ và hệ vô nghiệm."
         elif mode == 4:
             m_val = rng.choice([1, 2, 3, -1, -2, 4])
-            q_text = "Tìm tham số $m$ để hệ $\\begin{cases} x + y + z = 1 \\\\ 2x + 3y + z = 2 \\\\ x + 2y + (m - " + str(m_val) + ")z = 3 \\end{cases}$ có **nghiệm duy nhất**:"
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
+            q_text = "Tìm tham số $m$ để hệ $\\begin{cases} x + y + z = 1 \\\\ 2x + 3y + z = 2 \\\\ x + 2y + (" + m_shift_str + ")z = 3 \\end{cases}$ có **nghiệm duy nhất**:"
             cor = f"$m \\neq {m_val}$"
             w1 = f"$m = {m_val}$"
             w2 = "$m = 0$"
             w3 = "Mọi $m \\in \\mathbb{R}$"
-            exp = f"Tính định thức ma trận hệ số: $\\det A = m - {m_val}$. Hệ có nghiệm duy nhất $\\iff \\det A \\neq 0 \\iff m \\neq {m_val}$."
+            exp = f"Tính định thức ma trận hệ số: $\\det A = {m_shift_str}$. Hệ có nghiệm duy nhất $\\iff \\det A \\neq 0 \\iff m \\neq {m_val}$."
         elif mode == 5:
             m_eq = rng.choice([2, 3])
             n_var = m_eq + rng.choice([1, 2])
@@ -72,8 +73,9 @@ def gen_ch4(sub, seed, make_unique_options):
             exp = f"Số ẩn tự do trong không gian nghiệm bằng số ẩn trừ đi hạng: $k = n - r = {n} - {r} = {k}$."
         elif mode == 7:
             m_val = rng.choice([1, 2, 3, 4, 5, -1, -2])
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
             val_b = rng.choice([3, 5, 7])
-            q_text = "Sau khi biến đổi sơ cấp, ma trận bổ sung của hệ có dạng $\\begin{bmatrix} 1 & 2 & 1 & 3 \\\\ 0 & 1 & 2 & 1 \\\\ 0 & 0 & m - " + str(m_val) + " & " + str(val_b) + " \\end{bmatrix}$. Hệ vô nghiệm khi:"
+            q_text = "Sau khi biến đổi sơ cấp, ma trận bổ sung của hệ có dạng $\\begin{bmatrix} 1 & 2 & 1 & 3 \\\\ 0 & 1 & 2 & 1 \\\\ 0 & 0 & " + m_shift_str + " & " + str(val_b) + " \\end{bmatrix}$. Hệ vô nghiệm khi:"
             cor = f"$m = {m_val}$"
             w1 = f"$m \\neq {m_val}$"
             w2 = "$m = 0$"
@@ -367,12 +369,13 @@ def gen_ch4(sub, seed, make_unique_options):
             exp = f"Số ẩn là {n_dim}, số phương trình độc lập là 1 ($r = 1$). Số véc tơ trong hệ nghiệm cơ bản bằng $n - r = {n_dim} - 1 = {n_dim - 1}$ véc tơ."
         elif mode == 7:
             m_val = rng.choice([1, 2, 3, -1, -2, 4])
-            q_text = "Tìm tham số $m$ để hệ thuần nhất $\\begin{cases} x + 2y = 0 \\\\ 3x + (m - " + str(m_val) + ")y = 0 \\end{cases}$ có **nghiệm không tầm thường**:"
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
+            q_text = "Tìm tham số $m$ để hệ thuần nhất $\\begin{cases} x + 2y = 0 \\\\ 3x + (" + m_shift_str + ")y = 0 \\end{cases}$ có **nghiệm không tầm thường**:"
             cor = f"$m = {m_val + 6}$"
             w1 = f"$m \\neq {m_val + 6}$"
             w2 = f"$m = {m_val}$"
             w3 = "$m = 0$"
-            exp = f"Hệ thuần nhất có nghiệm không tầm thường khi $\\det A = 0 \\iff 1(m - {m_val}) - 2(3) = 0 \\iff m - {m_val} = 6 \\iff m = {m_val + 6}$."
+            exp = f"Hệ thuần nhất có nghiệm không tầm thường khi $\\det A = 0 \\iff 1({m_shift_str}) - 2(3) = 0 \\iff {m_shift_str} = 6 \\iff m = {m_val + 6}$."
         elif mode == 8:
             q_text = "Mối liên hệ giữa nghiệm tổng quát của hệ không thuần nhất $AX = B$ và hệ thuần nhất liên kết $AX = 0$ là:"
             cor = "$X = X_0 + X_{tn}$ (với $X_0$ là một nghiệm riêng và $X_{tn}$ là nghiệm tổng quát của hệ thuần nhất)"

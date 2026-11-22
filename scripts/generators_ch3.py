@@ -284,12 +284,13 @@ def gen_ch3(sub, seed, make_unique_options):
             exp = "Nghịch đảo của ma trận đường chéo là ma trận đường chéo chứa nghịch đảo của từng phần tử trên đường chéo."
         else:
             m_val = rng.choice([1, 2, 3, -1, -2, 4, 5])
-            q_text = "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & m - " + str(m_val) + " \\end{bmatrix}$ **KHÔNG khả nghịch**:"
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
+            q_text = "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 \\\\ 3 & " + m_shift_str + " \\end{bmatrix}$ **KHÔNG khả nghịch**:"
             cor = f"$m = {m_val + 6}$"
             w1 = f"$m \\neq {m_val + 6}$"
             w2 = f"$m = {m_val}$"
             w3 = "$m = 0$"
-            exp = f"Ma trận không khả nghịch khi $\\det A = 0 \\iff 1(m - {m_val}) - 2(3) = 0 \\iff m - {m_val} = 6 \\iff m = {m_val + 6}$."
+            exp = f"Ma trận không khả nghịch khi $\\det A = 0 \\iff 1({m_shift_str}) - 2(3) = 0 \\iff {m_shift_str} = 6 \\iff m = {m_val + 6}$."
 
         options = make_unique_options(cor, [w1, w2, w3])
         return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
@@ -351,12 +352,13 @@ def gen_ch3(sub, seed, make_unique_options):
             exp = f"Ma trận vuông cấp {n} có hạng đủ bằng {n} khi và chỉ khi định thức của nó khác 0: $\\det A \\neq 0$."
         elif mode == 7:
             m_val = rng.choice([1, 2, 3, -1, -2, 5, 4])
-            q_text = "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & m - " + str(m_val) + " \\end{bmatrix}$ có hạng $r(A) = 2$:"
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
+            q_text = "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & " + m_shift_str + " \\end{bmatrix}$ có hạng $r(A) = 2$:"
             cor = f"$m = {m_val}$"
             w1 = f"$m \\neq {m_val}$"
             w2 = f"$m = {m_val + 2}$"
             w3 = f"$m = {m_val - 1}$"
-            exp = f"Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là $m - {m_val} = 0 \\iff m = {m_val}$."
+            exp = f"Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là {m_shift_str} = 0 \\iff m = {m_val}."
         elif mode == 8:
             dim_v = rng.choice([2, 3, 4])
             q_text = f"Cho véc tơ cột $u \\neq \\theta$ và véc tơ hàng $v^T \\neq \\theta$ trong không gian $\\mathbb{{R}}^{{{dim_v}}}$. Hạng của ma trận tích ngoài $A = u v^T$ bằng:"

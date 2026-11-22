@@ -75,13 +75,15 @@ def gen_ch5(sub, seed, make_unique_options):
             # Hạt nhân Ker f của ánh xạ R^2 -> R^2
             a = rng.choice([1, 2, 3])
             b = rng.choice([2, -1, 3])
+            b_term = f"+ {b}y" if b > 0 else f"- {-b}y"
+            b_term_alt = f"- {b}y" if b > 0 else f"+ {-b}y"
             # f(x, y) = (ax + by, 0) => Ker f là ax + by = 0
-            q_text = f"Cho ánh xạ tuyến tính $f: \\mathbb{{R}}^2 \\to \\mathbb{{R}}^2$ xác định bởi $f(x, y) = ({a}x + ({b})y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:"
-            cor = "$\\{(x, y) \\in \\mathbb{R}^2 \\mid " + f"{a}x + ({b})y = 0" + "\\}$"
+            q_text = f"Cho ánh xạ tuyến tính $f: \\mathbb{{R}}^2 \\to \\mathbb{{R}}^2$ xác định bởi $f(x, y) = ({a}x {b_term}, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:"
+            cor = "$\\{(x, y) \\in \\mathbb{R}^2 \\mid " + f"{a}x {b_term} = 0" + "\\}$"
             w1 = "$\\{(0, 0)\\}$"
             w2 = "$\\mathbb{R}^2$"
-            w3 = "$\\{(x, y) \\in \\mathbb{R}^2 \\mid " + f"{a}x - ({b})y = 1" + "\\}$"
-            exp = f"Theo định nghĩa hạt nhân: $\\ker f = \\{{u \\in \\mathbb{{R}}^2 \\mid f(u) = (0, 0)\\}} \\iff ({a}x + ({b})y, 0) = (0, 0) \\iff {a}x + ({b})y = 0$."
+            w3 = "$\\{(x, y) \\in \\mathbb{R}^2 \\mid " + f"{a}x {b_term_alt} = 1" + "\\}$"
+            exp = f"Theo định nghĩa hạt nhân: $\\ker f = \\{{u \\in \\mathbb{{R}}^2 \\mid f(u) = (0, 0)\\}} \\iff ({a}x {b_term}, 0) = (0, 0) \\iff {a}x {b_term} = 0$."
         elif mode == 5:
             # Ảnh Im f
             a = rng.choice([1, 2])

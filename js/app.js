@@ -37,8 +37,18 @@
   function formatContent(text) {
     if (text === null || text === undefined) return '';
     let str = String(text);
-    // Sanitize any accidental double-closing brace in LaTeX \{... \}} -> \{... \}
+    // Sanitize accidental double-closing brace in LaTeX \{... \}} -> \{... \}
     str = str.replace(/\\\}\s*\}/g, '\\}');
+    // Sanitize double minus -- -> +
+    str = str.replace(/-\s*-\s*/g, '+ ');
+    // Sanitize plus minus + - -> -
+    str = str.replace(/\+\s*-\s*/g, '- ');
+    // Sanitize + (-num)var -> - num var
+    str = str.replace(/\+\s*\(\s*-\s*(\d+)\s*\)\s*([a-zA-Z])/g, '- $1$2');
+    str = str.replace(/\+\s*\(\s*(\d+)\s*\)\s*([a-zA-Z])/g, '+ $1$2');
+    str = str.replace(/\(\s*-\s*(\d+)\s*\)\s*([a-zA-Z])/g, '-$1$2');
+    str = str.replace(/\(\s*(\d+)\s*\)\s*([a-zA-Z])/g, '$1$2');
+    str = str.replace(/\+\s*\(\s*-\s*(\d+)\s*\)/g, '- $1');
     return str
       .replace(/^(\s*)\*\s+/gm, '$1• ')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');

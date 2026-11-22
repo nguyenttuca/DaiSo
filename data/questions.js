@@ -54,7 +54,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^2 > x$"
+        "text": "$\\exists x \\in \\mathbb{R}, \\, x^2 + 1 = 0$"
       },
       {
         "key": "B",
@@ -62,7 +62,7 @@
       },
       {
         "key": "C",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^2 + 1 = 0$"
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^2 > x$"
       },
       {
         "key": "D",
@@ -94,7 +94,7 @@
       },
       {
         "key": "B",
-        "text": "$P$ và $Q$ là điều kiện cần và đủ của nhau"
+        "text": "$P$ là điều kiện cần để có $Q$, và $Q$ là điều kiện đủ để có $P$"
       },
       {
         "key": "C",
@@ -102,7 +102,7 @@
       },
       {
         "key": "D",
-        "text": "$P$ là điều kiện cần để có $Q$, và $Q$ là điều kiện đủ để có $P$"
+        "text": "$P$ và $Q$ là điều kiện cần và đủ của nhau"
       }
     ],
     "correct": "A",
@@ -126,7 +126,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 4 < 0$"
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 4 < 0$"
       },
       {
         "key": "B",
@@ -134,7 +134,7 @@
       },
       {
         "key": "C",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 4 < 0$"
+        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 4 < 0$"
       },
       {
         "key": "D",
@@ -162,11 +162,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$p \\vee \\bar{p}$"
+        "text": "$p \\leftrightarrow p$"
       },
       {
         "key": "B",
-        "text": "$p \\to p$"
+        "text": "$p \\vee \\bar{p}$"
       },
       {
         "key": "C",
@@ -174,7 +174,7 @@
       },
       {
         "key": "D",
-        "text": "$p \\leftrightarrow p$"
+        "text": "$p \\to p$"
       }
     ],
     "correct": "C",
@@ -198,11 +198,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Đúng (1)"
+        "text": "Không xác định được"
       },
       {
         "key": "B",
-        "text": "Không xác định được"
+        "text": "Đúng (1)"
       },
       {
         "key": "C",
@@ -234,7 +234,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$68$ dòng"
+        "text": "$36$ dòng"
       },
       {
         "key": "B",
@@ -242,7 +242,7 @@
       },
       {
         "key": "C",
-        "text": "$36$ dòng"
+        "text": "$68$ dòng"
       },
       {
         "key": "D",
@@ -310,15 +310,15 @@
       },
       {
         "key": "B",
-        "text": "$p \\to \\bar{p}$"
+        "text": "$(p \\vee q) \\to (p \\wedge q)$"
       },
       {
         "key": "C",
-        "text": "$p \\wedge \\bar{p}$"
+        "text": "$p \\to \\bar{p}$"
       },
       {
         "key": "D",
-        "text": "$(p \\vee q) \\to (p \\wedge q)$"
+        "text": "$p \\wedge \\bar{p}$"
       }
     ],
     "correct": "A",
@@ -350,11 +350,11 @@
       },
       {
         "key": "C",
-        "text": "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
+        "text": "$((p \\to q) \\wedge q) \\implies p$"
       },
       {
         "key": "D",
-        "text": "$((p \\to q) \\wedge q) \\implies p$"
+        "text": "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
       }
     ],
     "correct": "B",
@@ -374,7 +374,7 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho biết mệnh đề $p$ nhận chân trị Sai (0) và $q$ nhận chân trị Đúng (1). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
+    "question": "Cho biết mệnh đề $p$ nhận chân trị Sai 0và $q$ nhận chân trị Đúng (1). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
     "options": [
       {
         "key": "A",
@@ -414,15 +414,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$((p \\vee q) \\wedge p) \\implies q$"
-      },
-      {
-        "key": "B",
         "text": "$((p \\to q) \\wedge q) \\implies p$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
+      },
+      {
+        "key": "C",
+        "text": "$((p \\vee q) \\wedge p) \\implies q$"
       },
       {
         "key": "D",
@@ -446,11 +446,11 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho biết mệnh đề $p$ nhận chân trị Đúng (1) và $q$ nhận chân trị Sai (0). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
+    "question": "Cho biết mệnh đề $p$ nhận chân trị Đúng 1và $q$ nhận chân trị Sai (0). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
     "options": [
       {
         "key": "A",
-        "text": "Không xác định được"
+        "text": "Luôn đúng với mọi $p, q$"
       },
       {
         "key": "B",
@@ -458,11 +458,11 @@
       },
       {
         "key": "C",
-        "text": "Đúng (1)"
+        "text": "Không xác định được"
       },
       {
         "key": "D",
-        "text": "Luôn đúng với mọi $p, q$"
+        "text": "Đúng (1)"
       }
     ],
     "correct": "B",
@@ -486,7 +486,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$((p \\to q) \\wedge q) \\implies p$"
+        "text": "$((p \\vee q) \\wedge p) \\implies q$"
       },
       {
         "key": "B",
@@ -494,7 +494,7 @@
       },
       {
         "key": "C",
-        "text": "$((p \\vee q) \\wedge p) \\implies q$"
+        "text": "$((p \\to q) \\wedge q) \\implies p$"
       },
       {
         "key": "D",
@@ -518,7 +518,7 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho biết mệnh đề $p$ nhận chân trị Sai (0) và $q$ nhận chân trị Sai (0). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
+    "question": "Cho biết mệnh đề $p$ nhận chân trị Sai 0và $q$ nhận chân trị Sai (0). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
     "options": [
       {
         "key": "A",
@@ -526,11 +526,11 @@
       },
       {
         "key": "B",
-        "text": "Không xác định được"
+        "text": "Sai (0)"
       },
       {
         "key": "C",
-        "text": "Sai (0)"
+        "text": "Không xác định được"
       },
       {
         "key": "D",
@@ -562,7 +562,7 @@
       },
       {
         "key": "B",
-        "text": "$3$ dòng"
+        "text": "$5$ dòng"
       },
       {
         "key": "C",
@@ -570,7 +570,7 @@
       },
       {
         "key": "D",
-        "text": "$5$ dòng"
+        "text": "$3$ dòng"
       }
     ],
     "correct": "C",
@@ -598,11 +598,11 @@
       },
       {
         "key": "B",
-        "text": "$x \\le 0 \\to x^2 \\le 0$"
+        "text": "$x^2 > 0 \\to x > 0$"
       },
       {
         "key": "C",
-        "text": "$x^2 > 0 \\to x > 0$"
+        "text": "$x \\le 0 \\to x^2 \\le 0$"
       },
       {
         "key": "D",
@@ -630,7 +630,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$p \\to \\bar{p}$"
+        "text": "$(p \\vee q) \\to (p \\wedge q)$"
       },
       {
         "key": "B",
@@ -638,7 +638,7 @@
       },
       {
         "key": "C",
-        "text": "$(p \\vee q) \\to (p \\wedge q)$"
+        "text": "$p \\to \\bar{p}$"
       },
       {
         "key": "D",
@@ -702,7 +702,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$20$ dòng"
+        "text": "$8$ dòng"
       },
       {
         "key": "B",
@@ -714,7 +714,7 @@
       },
       {
         "key": "D",
-        "text": "$8$ dòng"
+        "text": "$20$ dòng"
       }
     ],
     "correct": "C",
@@ -738,7 +738,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn đúng với mọi $p, q, r$"
+        "text": "Đúng (1)"
       },
       {
         "key": "B",
@@ -746,11 +746,11 @@
       },
       {
         "key": "C",
-        "text": "Không xác định được"
+        "text": "Luôn đúng với mọi $p, q, r$"
       },
       {
         "key": "D",
-        "text": "Đúng (1)"
+        "text": "Không xác định được"
       }
     ],
     "correct": "B",
@@ -774,7 +774,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$A$ và $B$ là điều kiện cần và đủ của nhau"
+        "text": "$A$ là điều kiện tương đương với $B$"
       },
       {
         "key": "B",
@@ -782,7 +782,7 @@
       },
       {
         "key": "C",
-        "text": "$A$ là điều kiện tương đương với $B$"
+        "text": "$A$ và $B$ là điều kiện cần và đủ của nhau"
       },
       {
         "key": "D",
@@ -810,7 +810,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
       },
       {
         "key": "B",
@@ -822,7 +822,7 @@
       },
       {
         "key": "D",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
+        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
       }
     ],
     "correct": "C",
@@ -846,11 +846,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$((p \\to q) \\wedge q) \\implies p$"
+        "text": "$((p \\vee q) \\wedge p) \\implies q$"
       },
       {
         "key": "B",
-        "text": "$((p \\vee q) \\wedge p) \\implies q$"
+        "text": "$((p \\to q) \\wedge q) \\implies p$"
       },
       {
         "key": "C",
@@ -918,7 +918,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$M$ là điều kiện tương đương với $N$"
+        "text": "$M$ và $N$ là điều kiện cần và đủ của nhau"
       },
       {
         "key": "B",
@@ -926,11 +926,11 @@
       },
       {
         "key": "C",
-        "text": "$M$ là điều kiện cần để có $N$, và $N$ là điều kiện đủ để có $M$"
+        "text": "$M$ là điều kiện tương đương với $N$"
       },
       {
         "key": "D",
-        "text": "$M$ và $N$ là điều kiện cần và đủ của nhau"
+        "text": "$M$ là điều kiện cần để có $N$, và $N$ là điều kiện đủ để có $M$"
       }
     ],
     "correct": "B",
@@ -1030,7 +1030,7 @@
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$8$"
       },
       {
         "key": "C",
@@ -1038,7 +1038,7 @@
       },
       {
         "key": "D",
-        "text": "$8$"
+        "text": "$6$"
       }
     ],
     "correct": "C",
@@ -1062,15 +1062,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Phản xạ, Đối xứng và Đầy đủ"
-      },
-      {
-        "key": "B",
         "text": "Phản xạ, Phản đối xứng và Bắc cầu"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+      },
+      {
+        "key": "C",
+        "text": "Phản xạ, Đối xứng và Đầy đủ"
       },
       {
         "key": "D",
@@ -1102,7 +1102,7 @@
       },
       {
         "key": "B",
-        "text": "$\\bar{x}$"
+        "text": "$x \\wedge 1$"
       },
       {
         "key": "C",
@@ -1110,7 +1110,7 @@
       },
       {
         "key": "D",
-        "text": "$x \\wedge 1$"
+        "text": "$\\bar{x}$"
       }
     ],
     "correct": "A",
@@ -1170,11 +1170,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$x \\wedge y$"
+        "text": "$y$"
       },
       {
         "key": "B",
-        "text": "$y$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "C",
@@ -1210,11 +1210,11 @@
       },
       {
         "key": "B",
-        "text": "Vì cổng NAND có tốc độ xử lý nhanh nhất trong vi mạch"
+        "text": "Vì cổng NAND tiêu thụ ít năng lượng nhất"
       },
       {
         "key": "C",
-        "text": "Vì cổng NAND tiêu thụ ít năng lượng nhất"
+        "text": "Vì cổng NAND có tốc độ xử lý nhanh nhất trong vi mạch"
       },
       {
         "key": "D",
@@ -1242,7 +1242,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x$"
+        "text": "$y$"
       },
       {
         "key": "B",
@@ -1250,11 +1250,11 @@
       },
       {
         "key": "C",
-        "text": "$x \\wedge y$"
+        "text": "$x$"
       },
       {
         "key": "D",
-        "text": "$y$"
+        "text": "$x \\wedge y$"
       }
     ],
     "correct": "B",
@@ -1278,7 +1278,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không có công thức đối ngẫu"
+        "text": "$(\\bar{x} \\vee 0) \\wedge (y \\vee 1)$"
       },
       {
         "key": "B",
@@ -1286,11 +1286,11 @@
       },
       {
         "key": "C",
-        "text": "$(x \\wedge 1) \\vee (y \\wedge 1)$"
+        "text": "Không có công thức đối ngẫu"
       },
       {
         "key": "D",
-        "text": "$(\\bar{x} \\vee 0) \\wedge (y \\vee 1)$"
+        "text": "$(x \\wedge 1) \\vee (y \\wedge 1)$"
       }
     ],
     "correct": "B",
@@ -1314,11 +1314,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$x \\vee y$"
+        "text": "$\\bar{x} \\wedge \\bar{y}$"
       },
       {
         "key": "B",
-        "text": "$\\bar{x} \\wedge \\bar{y}$"
+        "text": "$x \\vee y$"
       },
       {
         "key": "C",
@@ -1350,11 +1350,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Phản xạ, Đối xứng và Bắc cầu"
+        "text": "Không phản xạ, Đối xứng và Bắc cầu"
       },
       {
         "key": "B",
-        "text": "Không phản xạ, Đối xứng và Bắc cầu"
+        "text": "Phản xạ, Đối xứng và Bắc cầu"
       },
       {
         "key": "C",
@@ -1386,7 +1386,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x \\wedge y$"
+        "text": "$0$"
       },
       {
         "key": "B",
@@ -1394,7 +1394,7 @@
       },
       {
         "key": "C",
-        "text": "$0$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "D",
@@ -1422,11 +1422,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$x \\wedge y$"
+        "text": "$y$"
       },
       {
         "key": "B",
-        "text": "$x \\vee y$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "C",
@@ -1434,7 +1434,7 @@
       },
       {
         "key": "D",
-        "text": "$y$"
+        "text": "$x \\vee y$"
       }
     ],
     "correct": "C",
@@ -1458,7 +1458,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$8$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -1470,7 +1470,7 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$8$"
       }
     ],
     "correct": "B",
@@ -1494,7 +1494,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Phản xạ, Phản đối xứng và Bắc cầu"
+        "text": "Đối xứng, Phản đối xứng và Bắc cầu"
       },
       {
         "key": "B",
@@ -1502,11 +1502,11 @@
       },
       {
         "key": "C",
-        "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+        "text": "Phản xạ, Đối xứng và Đầy đủ"
       },
       {
         "key": "D",
-        "text": "Phản xạ, Đối xứng và Đầy đủ"
+        "text": "Phản xạ, Phản đối xứng và Bắc cầu"
       }
     ],
     "correct": "B",
@@ -1530,7 +1530,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(\\bar{x} \\wedge 1) \\vee (y \\wedge \\bar{z})$"
+        "text": "$(x \\vee 1) \\wedge (y \\vee \\bar{z})$"
       },
       {
         "key": "B",
@@ -1542,7 +1542,7 @@
       },
       {
         "key": "D",
-        "text": "$(x \\vee 1) \\wedge (y \\vee \\bar{z})$"
+        "text": "$(\\bar{x} \\wedge 1) \\vee (y \\wedge \\bar{z})$"
       }
     ],
     "correct": "B",
@@ -1566,11 +1566,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(x \\vee y) \\wedge (\\bar{x} \\vee z)$"
+        "text": "$(\\bar{x} \\wedge y) \\vee (\\bar{\\bar{x}} \\wedge z)$"
       },
       {
         "key": "B",
-        "text": "$(\\bar{x} \\wedge y) \\vee (\\bar{\\bar{x}} \\wedge z)$"
+        "text": "Không có công thức đối ngẫu"
       },
       {
         "key": "C",
@@ -1578,7 +1578,7 @@
       },
       {
         "key": "D",
-        "text": "Không có công thức đối ngẫu"
+        "text": "$(x \\vee y) \\wedge (\\bar{x} \\vee z)$"
       }
     ],
     "correct": "C",
@@ -1610,11 +1610,11 @@
       },
       {
         "key": "C",
-        "text": "$\\bar{x} \\vee \\bar{y}$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "D",
-        "text": "$x \\wedge y$"
+        "text": "$\\bar{x} \\vee \\bar{y}$"
       }
     ],
     "correct": "A",
@@ -1638,15 +1638,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Không phản xạ, Đối xứng và Bắc cầu"
-      },
-      {
-        "key": "B",
         "text": "Phản xạ, Đối xứng và Bắc cầu"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+      },
+      {
+        "key": "C",
+        "text": "Không phản xạ, Đối xứng và Bắc cầu"
       },
       {
         "key": "D",
@@ -1674,7 +1674,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "B",
@@ -1682,7 +1682,7 @@
       },
       {
         "key": "C",
-        "text": "$x \\wedge y$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -1750,7 +1750,7 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$0$"
       },
       {
         "key": "C",
@@ -1758,7 +1758,7 @@
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -1818,7 +1818,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x \\vee y$"
+        "text": "$x$"
       },
       {
         "key": "B",
@@ -1826,11 +1826,11 @@
       },
       {
         "key": "C",
-        "text": "$x$"
+        "text": "$y$"
       },
       {
         "key": "D",
-        "text": "$y$"
+        "text": "$x \\vee y$"
       }
     ],
     "correct": "B",
@@ -1962,11 +1962,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{2, 3\\}$"
+        "text": "$\\{2, 3, 4, 5, 6, 7\\}$"
       },
       {
         "key": "B",
-        "text": "$\\{4, 5\\}$"
+        "text": "$\\{2, 3\\}$"
       },
       {
         "key": "C",
@@ -1974,7 +1974,7 @@
       },
       {
         "key": "D",
-        "text": "$\\{2, 3, 4, 5, 6, 7\\}$"
+        "text": "$\\{4, 5\\}$"
       }
     ],
     "correct": "C",
@@ -1998,7 +1998,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{2, 3\\} \\subset S$"
+        "text": "$2 \\in S$"
       },
       {
         "key": "B",
@@ -2006,7 +2006,7 @@
       },
       {
         "key": "C",
-        "text": "$2 \\in S$"
+        "text": "$\\{2, 3\\} \\subset S$"
       },
       {
         "key": "D",
@@ -2034,7 +2034,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\bar{A} \\cup \\bar{B}$"
+        "text": "$\\overline{A \\cap B}$"
       },
       {
         "key": "B",
@@ -2042,7 +2042,7 @@
       },
       {
         "key": "C",
-        "text": "$\\overline{A \\cap B}$"
+        "text": "$\\bar{A} \\cup \\bar{B}$"
       },
       {
         "key": "D",
@@ -2070,7 +2070,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$32$"
+        "text": "$7$"
       },
       {
         "key": "B",
@@ -2082,7 +2082,7 @@
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$32$"
       }
     ],
     "correct": "C",
@@ -2106,7 +2106,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$20$"
       },
       {
         "key": "B",
@@ -2114,7 +2114,7 @@
       },
       {
         "key": "C",
-        "text": "$20$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -2146,11 +2146,11 @@
       },
       {
         "key": "B",
-        "text": "$(-2, 7)$"
+        "text": "$[2, 3)$"
       },
       {
         "key": "C",
-        "text": "$[2, 3)$"
+        "text": "$(-2, 7)$"
       },
       {
         "key": "D",
@@ -2186,11 +2186,11 @@
       },
       {
         "key": "C",
-        "text": "$38$"
+        "text": "$20$"
       },
       {
         "key": "D",
-        "text": "$20$"
+        "text": "$38$"
       }
     ],
     "correct": "B",
@@ -2222,11 +2222,11 @@
       },
       {
         "key": "C",
-        "text": "$\\{\\emptyset, a, b, \\{a, b\\}\\}$"
+        "text": "$\\{\\{a, b\\}\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{\\{a, b\\}\\}$"
+        "text": "$\\{\\emptyset, a, b, \\{a, b\\}\\}$"
       }
     ],
     "correct": "A",
@@ -2250,7 +2250,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$64$"
+        "text": "$30$"
       },
       {
         "key": "B",
@@ -2262,7 +2262,7 @@
       },
       {
         "key": "D",
-        "text": "$30$"
+        "text": "$64$"
       }
     ],
     "correct": "B",
@@ -2286,7 +2286,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$A \\cup (B \\cap C) = (A \\cup B) \\cap C$"
+        "text": "$A \\setminus B = B \\setminus A$"
       },
       {
         "key": "B",
@@ -2294,7 +2294,7 @@
       },
       {
         "key": "C",
-        "text": "$A \\setminus B = B \\setminus A$"
+        "text": "$A \\cup (B \\cap C) = (A \\cup B) \\cap C$"
       },
       {
         "key": "D",
@@ -2322,11 +2322,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$[0, 4)$"
+        "text": "$(0, 4)$"
       },
       {
         "key": "B",
-        "text": "$(0, 4)$"
+        "text": "$[0, 4)$"
       },
       {
         "key": "C",
@@ -2358,11 +2358,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$15$"
+        "text": "$45$"
       },
       {
         "key": "B",
-        "text": "$35$"
+        "text": "$15$"
       },
       {
         "key": "C",
@@ -2370,7 +2370,7 @@
       },
       {
         "key": "D",
-        "text": "$45$"
+        "text": "$35$"
       }
     ],
     "correct": "C",
@@ -2394,7 +2394,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{4, 5\\}$"
+        "text": "$\\{4, 5, 6, 7, 8, 9\\}$"
       },
       {
         "key": "B",
@@ -2402,11 +2402,11 @@
       },
       {
         "key": "C",
-        "text": "$\\{4, 5, 6, 7, 8, 9\\}$"
+        "text": "$\\{6, 7\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{6, 7\\}$"
+        "text": "$\\{4, 5\\}$"
       }
     ],
     "correct": "B",
@@ -2430,7 +2430,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$22$"
+        "text": "$18$"
       },
       {
         "key": "B",
@@ -2438,11 +2438,11 @@
       },
       {
         "key": "C",
-        "text": "$35$"
+        "text": "$22$"
       },
       {
         "key": "D",
-        "text": "$18$"
+        "text": "$35$"
       }
     ],
     "correct": "B",
@@ -2502,7 +2502,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$20$"
+        "text": "$26$"
       },
       {
         "key": "B",
@@ -2510,11 +2510,11 @@
       },
       {
         "key": "C",
-        "text": "$26$"
+        "text": "$35$"
       },
       {
         "key": "D",
-        "text": "$35$"
+        "text": "$20$"
       }
     ],
     "correct": "B",
@@ -2538,7 +2538,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{1, 2\\}$"
+        "text": "$\\{3, 4\\}$"
       },
       {
         "key": "B",
@@ -2546,11 +2546,11 @@
       },
       {
         "key": "C",
-        "text": "$\\{3, 4\\}$"
+        "text": "$\\{1, 2, 3, 4, 5, 6\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{1, 2, 3, 4, 5, 6\\}$"
+        "text": "$\\{1, 2\\}$"
       }
     ],
     "correct": "B",
@@ -2574,15 +2574,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$20$"
-      },
-      {
-        "key": "B",
         "text": "$32$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$47$"
+      },
+      {
+        "key": "C",
+        "text": "$20$"
       },
       {
         "key": "D",
@@ -2614,7 +2614,7 @@
       },
       {
         "key": "B",
-        "text": "$\\{3, 4\\}$"
+        "text": "$\\{5, 6\\}$"
       },
       {
         "key": "C",
@@ -2622,7 +2622,7 @@
       },
       {
         "key": "D",
-        "text": "$\\{5, 6\\}$"
+        "text": "$\\{3, 4\\}$"
       }
     ],
     "correct": "A",
@@ -2650,15 +2650,15 @@
       },
       {
         "key": "B",
-        "text": "$25$"
-      },
-      {
-        "key": "C",
         "text": "$40$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$20$"
+      },
+      {
+        "key": "D",
+        "text": "$25$"
       }
     ],
     "correct": "A",
@@ -2686,11 +2686,11 @@
       },
       {
         "key": "B",
-        "text": "$(-2, 6)$"
+        "text": "$[0, 4)$"
       },
       {
         "key": "C",
-        "text": "$[0, 4)$"
+        "text": "$(-2, 6)$"
       },
       {
         "key": "D",
@@ -2722,7 +2722,7 @@
       },
       {
         "key": "B",
-        "text": "$61$"
+        "text": "$24$"
       },
       {
         "key": "C",
@@ -2730,7 +2730,7 @@
       },
       {
         "key": "D",
-        "text": "$24$"
+        "text": "$61$"
       }
     ],
     "correct": "C",
@@ -2754,15 +2754,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$[2, 4)$"
-      },
-      {
-        "key": "B",
         "text": "$(2, 4)$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$(-1, 8)$"
+      },
+      {
+        "key": "C",
+        "text": "$[2, 4)$"
       },
       {
         "key": "D",
@@ -2902,7 +2902,7 @@
       },
       {
         "key": "B",
-        "text": "Không đơn ánh và không toàn ánh"
+        "text": "Toàn ánh nhưng không đơn ánh"
       },
       {
         "key": "C",
@@ -2910,7 +2910,7 @@
       },
       {
         "key": "D",
-        "text": "Toàn ánh nhưng không đơn ánh"
+        "text": "Không đơn ánh và không toàn ánh"
       }
     ],
     "correct": "C",
@@ -2934,7 +2934,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Song ánh"
+        "text": "Không đơn ánh và không toàn ánh"
       },
       {
         "key": "B",
@@ -2942,11 +2942,11 @@
       },
       {
         "key": "C",
-        "text": "Không đơn ánh và không toàn ánh"
+        "text": "Đơn ánh nhưng không là toàn ánh"
       },
       {
         "key": "D",
-        "text": "Đơn ánh nhưng không là toàn ánh"
+        "text": "Song ánh"
       }
     ],
     "correct": "B",
@@ -2974,11 +2974,11 @@
       },
       {
         "key": "B",
-        "text": "$f$ là một song ánh"
+        "text": "$g$ là một đơn ánh"
       },
       {
         "key": "C",
-        "text": "$g$ là một đơn ánh"
+        "text": "$f$ là một song ánh"
       },
       {
         "key": "D",
@@ -3010,11 +3010,11 @@
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = -4x + 7$"
+        "text": "$f^{-1}(x) = 4x + 7$"
       },
       {
         "key": "C",
-        "text": "$f^{-1}(x) = 4x + 7$"
+        "text": "$f^{-1}(x) = -4x + 7$"
       },
       {
         "key": "D",
@@ -3042,15 +3042,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$17$"
+        "text": "$18$"
       },
       {
         "key": "B",
-        "text": "$8$"
+        "text": "$17$"
       },
       {
         "key": "C",
-        "text": "$18$"
+        "text": "$8$"
       },
       {
         "key": "D",
@@ -3086,11 +3086,11 @@
       },
       {
         "key": "C",
-        "text": "$g$ là một song ánh"
+        "text": "$f$ là một đơn ánh"
       },
       {
         "key": "D",
-        "text": "$f$ là một đơn ánh"
+        "text": "$g$ là một song ánh"
       }
     ],
     "correct": "A",
@@ -3114,11 +3114,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$9x^2 - 1$"
+        "text": "$3x^2 - 1$"
       },
       {
         "key": "B",
-        "text": "$3x^2 - 1$"
+        "text": "$3x^2 + 12x - 1$"
       },
       {
         "key": "C",
@@ -3126,7 +3126,7 @@
       },
       {
         "key": "D",
-        "text": "$3x^2 + 12x - 1$"
+        "text": "$9x^2 - 1$"
       }
     ],
     "correct": "C",
@@ -3150,7 +3150,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$f(x) = |x|$"
+        "text": "$f(x) = x^2$"
       },
       {
         "key": "B",
@@ -3162,7 +3162,7 @@
       },
       {
         "key": "D",
-        "text": "$f(x) = x^2$"
+        "text": "$f(x) = |x|$"
       }
     ],
     "correct": "C",
@@ -3222,7 +3222,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "$10$"
       },
       {
         "key": "B",
@@ -3230,11 +3230,11 @@
       },
       {
         "key": "C",
-        "text": "$10$"
+        "text": "$6$"
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$9$"
       }
     ],
     "correct": "B",
@@ -3294,11 +3294,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "$28$"
       },
       {
         "key": "B",
-        "text": "$29$"
+        "text": "$9$"
       },
       {
         "key": "C",
@@ -3306,7 +3306,7 @@
       },
       {
         "key": "D",
-        "text": "$28$"
+        "text": "$29$"
       }
     ],
     "correct": "C",
@@ -3402,11 +3402,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$4x^2 - 1$"
+        "text": "$2x^2 - 1$"
       },
       {
         "key": "B",
-        "text": "$2x^2 - 1$"
+        "text": "$2x^2 + 4x - 1$"
       },
       {
         "key": "C",
@@ -3414,7 +3414,7 @@
       },
       {
         "key": "D",
-        "text": "$2x^2 + 4x - 1$"
+        "text": "$4x^2 - 1$"
       }
     ],
     "correct": "C",
@@ -3438,11 +3438,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$f^{-1}(x) = 3x + 7$"
+        "text": "$f^{-1}(x) = \\dfrac{x - 7}{3}$"
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = -3x + 7$"
+        "text": "$f^{-1}(x) = 3x + 7$"
       },
       {
         "key": "C",
@@ -3450,7 +3450,7 @@
       },
       {
         "key": "D",
-        "text": "$f^{-1}(x) = \\dfrac{x - 7}{3}$"
+        "text": "$f^{-1}(x) = -3x + 7$"
       }
     ],
     "correct": "C",
@@ -3474,15 +3474,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Song ánh"
-      },
-      {
-        "key": "B",
         "text": "Toàn ánh nhưng không đơn ánh"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không đơn ánh và không toàn ánh"
+      },
+      {
+        "key": "C",
+        "text": "Song ánh"
       },
       {
         "key": "D",
@@ -3510,7 +3510,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$9x^2 - 3$"
+        "text": "$3x^2 + 12x - 3$"
       },
       {
         "key": "B",
@@ -3522,7 +3522,7 @@
       },
       {
         "key": "D",
-        "text": "$3x^2 + 12x - 3$"
+        "text": "$9x^2 - 3$"
       }
     ],
     "correct": "C",
@@ -3586,7 +3586,7 @@
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = 2x + 7$"
+        "text": "$f^{-1}(x) = -2x + 7$"
       },
       {
         "key": "C",
@@ -3594,7 +3594,7 @@
       },
       {
         "key": "D",
-        "text": "$f^{-1}(x) = -2x + 7$"
+        "text": "$f^{-1}(x) = 2x + 7$"
       }
     ],
     "correct": "A",
@@ -3622,15 +3622,15 @@
       },
       {
         "key": "B",
-        "text": "$3x^2 + 6x - 3$"
-      },
-      {
-        "key": "C",
         "text": "$3x^2 - 3$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$9x^2 - 3$"
+      },
+      {
+        "key": "D",
+        "text": "$3x^2 + 6x - 3$"
       }
     ],
     "correct": "A",
@@ -3658,15 +3658,15 @@
       },
       {
         "key": "B",
-        "text": "$4x^2 - 1$"
-      },
-      {
-        "key": "C",
         "text": "$2x^2 - 1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$2x^2 + 8x - 1$"
+      },
+      {
+        "key": "D",
+        "text": "$4x^2 - 1$"
       }
     ],
     "correct": "A",
@@ -3726,11 +3726,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$W_1 \\perp W_2$"
+        "text": "$\\dim(W_1) = \\dim(W_2)$"
       },
       {
         "key": "B",
-        "text": "$\\dim(W_1) = \\dim(W_2)$"
+        "text": "$W_1 \\cup W_2 = V$"
       },
       {
         "key": "C",
@@ -3738,7 +3738,7 @@
       },
       {
         "key": "D",
-        "text": "$W_1 \\cup W_2 = V$"
+        "text": "$W_1 \\perp W_2$"
       }
     ],
     "correct": "C",
@@ -3762,11 +3762,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hợp $W_1 \\cup W_2$ luôn là một không gian con của $V$"
+        "text": "Phần bù của $W_1$ trong $V$ là một không gian con của $V$"
       },
       {
         "key": "B",
-        "text": "Phần bù của $W_1$ trong $V$ là một không gian con của $V$"
+        "text": "Hợp $W_1 \\cup W_2$ luôn là một không gian con của $V$"
       },
       {
         "key": "C",
@@ -3798,15 +3798,15 @@
     "options": [
       {
         "key": "A",
-        "text": "(-1, 0)"
-      },
-      {
-        "key": "B",
         "text": "(2, 1)"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "(1, -2)"
+      },
+      {
+        "key": "C",
+        "text": "(-1, 0)"
       },
       {
         "key": "D",
@@ -3834,11 +3834,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Tập các ma trận có vết $\\text{tr}(A) = 1$"
+        "text": "Tập các ma trận khả nghịch ($\\det A \\neq 0$)"
       },
       {
         "key": "B",
-        "text": "Tập các ma trận khả nghịch ($\\det A \\neq 0$)"
+        "text": "Tập các ma trận có $\\det A = 0$"
       },
       {
         "key": "C",
@@ -3846,7 +3846,7 @@
       },
       {
         "key": "D",
-        "text": "Tập các ma trận có $\\det A = 0$"
+        "text": "Tập các ma trận có vết $\\text{tr}(A) = 1$"
       }
     ],
     "correct": "C",
@@ -3866,7 +3866,7 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + (1)y + (1)z = -1\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + y + z = -1\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
@@ -3874,11 +3874,11 @@
       },
       {
         "key": "B",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "C",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "D",
@@ -3906,7 +3906,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 11$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -3914,11 +3914,11 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "Không tồn tại $m$"
       },
       {
         "key": "D",
-        "text": "Không tồn tại $m$"
+        "text": "$m = 11$"
       }
     ],
     "correct": "B",
@@ -3946,11 +3946,11 @@
       },
       {
         "key": "B",
-        "text": "$W = \\{p(x) \\in P_2[x] \\mid p'(0) = 2\\}$"
+        "text": "$W = \\{p(x) \\in P_2[x] \\mid \\deg p = 2\\}$"
       },
       {
         "key": "C",
-        "text": "$W = \\{p(x) \\in P_2[x] \\mid \\deg p = 2\\}$"
+        "text": "$W = \\{p(x) \\in P_2[x] \\mid p'(0) = 2\\}$"
       },
       {
         "key": "D",
@@ -3978,23 +3978,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid xy = 0\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x^2 + y^2 + z^2 \\le 1\\}$"
       },
       {
         "key": "B",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + (1)y + (-2)z = 0\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + y - 2z = 0\\}$"
       },
       {
         "key": "C",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x + y + z = 1\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid xy = 0\\}$"
       },
       {
         "key": "D",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x^2 + y^2 + z^2 \\le 1\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x + y + z = 1\\}$"
       }
     ],
     "correct": "B",
-    "explanation": "* Phương trình thuần nhất tuyến tính bậc nhất $3x + (1)y + (-2)z = 0$ luôn xác định một không gian con (chứa $\\theta$, đóng kín với phép cộng và nhân vô hướng).\n* **Chọn đáp án: B.**",
+    "explanation": "* Phương trình thuần nhất tuyến tính bậc nhất $3x + y - 2z = 0$ luôn xác định một không gian con (chứa $\\theta$, đóng kín với phép cộng và nhân vô hướng).\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4022,11 +4022,11 @@
       },
       {
         "key": "C",
-        "text": "Có, vì chứa véc tơ không $(0, 0)$"
+        "text": "Có, vì đóng kín với phép nhân vô hướng dương"
       },
       {
         "key": "D",
-        "text": "Có, vì đóng kín với phép nhân vô hướng dương"
+        "text": "Có, vì chứa véc tơ không $(0, 0)$"
       }
     ],
     "correct": "B",
@@ -4050,11 +4050,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Tập hợp các véc tơ độc lập tuyến tính trong $S$"
+        "text": "Tập hợp tất cả các véc tơ trực giao với $S$"
       },
       {
         "key": "B",
-        "text": "Tập hợp tất cả các véc tơ trực giao với $S$"
+        "text": "Không gian véc tơ lớn nhất chứa $S$"
       },
       {
         "key": "C",
@@ -4062,7 +4062,7 @@
       },
       {
         "key": "D",
-        "text": "Không gian véc tơ lớn nhất chứa $S$"
+        "text": "Tập hợp các véc tơ độc lập tuyến tính trong $S$"
       }
     ],
     "correct": "C",
@@ -4086,15 +4086,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 10$"
-      },
-      {
-        "key": "B",
         "text": "Không tồn tại $m$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 10$"
       },
       {
         "key": "D",
@@ -4118,11 +4118,11 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x + (4)y + (-3)z = 1\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x + 4y - 3z = 1\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "B",
@@ -4130,11 +4130,11 @@
       },
       {
         "key": "C",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "D",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       }
     ],
     "correct": "B",
@@ -4190,19 +4190,19 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x + (4)y + (5)z = 2\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x + 4y + 5z = 2\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "B",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "C",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "D",
@@ -4226,15 +4226,15 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid -2x + (-1)y + (5)z = 3\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid -2x - y + 5z = 3\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "B",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "C",
@@ -4262,11 +4262,11 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x + (4)y + (1)z = -1\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x + 4y + z = -1\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "B",
@@ -4274,11 +4274,11 @@
       },
       {
         "key": "C",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "D",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       }
     ],
     "correct": "B",
@@ -4302,15 +4302,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 6$"
-      },
-      {
-        "key": "B",
         "text": "$m = 0$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không tồn tại $m$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 6$"
       },
       {
         "key": "D",
@@ -4334,7 +4334,7 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + (4)y + (-3)z = 3\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + 4y - 3z = 3\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
@@ -4346,11 +4346,11 @@
       },
       {
         "key": "C",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "D",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Không, vì có số chiều bằng 3"
       }
     ],
     "correct": "B",
@@ -4370,7 +4370,7 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + (1)y + (5)z = 1\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + y + 5z = 1\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
@@ -4378,7 +4378,7 @@
       },
       {
         "key": "B",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "C",
@@ -4386,7 +4386,7 @@
       },
       {
         "key": "D",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       }
     ],
     "correct": "A",
@@ -4410,11 +4410,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m = 5$"
       },
       {
         "key": "B",
-        "text": "$m = 5$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -4442,11 +4442,11 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x + (-1)y + (1)z = 2\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x - y + z = 2\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "B",
@@ -4458,7 +4458,7 @@
       },
       {
         "key": "D",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       }
     ],
     "correct": "C",
@@ -4478,7 +4478,7 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid -2x + (1)y + (-3)z = 1\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid -2x + y - 3z = 1\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
@@ -4486,7 +4486,7 @@
       },
       {
         "key": "B",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "C",
@@ -4494,7 +4494,7 @@
       },
       {
         "key": "D",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       }
     ],
     "correct": "C",
@@ -4514,7 +4514,7 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + (1)y + (1)z = 1\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 3x + y + z = 1\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
@@ -4586,11 +4586,11 @@
     "typeName": "Không gian con & Tổ hợp tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid -2x + (1)y + (-3)z = 3\\}$ có phải là không gian con không?",
+    "question": "Trong không gian véc tơ $\\mathbb{R}^3$, tập hợp $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid -2x + y - 3z = 3\\}$ có phải là không gian con không?",
     "options": [
       {
         "key": "A",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "B",
@@ -4598,7 +4598,7 @@
       },
       {
         "key": "C",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "D",
@@ -4662,11 +4662,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ độc lập khi $u, v, w$ trực giao"
+        "text": "Phụ thuộc tuyến tính"
       },
       {
         "key": "B",
-        "text": "Phụ thuộc tuyến tính"
+        "text": "Chưa đủ dữ kiện để kết luận"
       },
       {
         "key": "C",
@@ -4674,7 +4674,7 @@
       },
       {
         "key": "D",
-        "text": "Chưa đủ dữ kiện để kết luận"
+        "text": "Chỉ độc lập khi $u, v, w$ trực giao"
       }
     ],
     "correct": "C",
@@ -4698,11 +4698,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Chắc chắn có hạng bằng 4"
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "B",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
+        "text": "Chắc chắn có hạng bằng 4"
       },
       {
         "key": "C",
@@ -4738,7 +4738,7 @@
       },
       {
         "key": "B",
-        "text": "Hệ $\\{u, v\\}$ tạo thành cơ sở của $\\mathbb{R}^3$"
+        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
       },
       {
         "key": "C",
@@ -4746,7 +4746,7 @@
       },
       {
         "key": "D",
-        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
+        "text": "Hệ $\\{u, v\\}$ tạo thành cơ sở của $\\mathbb{R}^3$"
       }
     ],
     "correct": "C",
@@ -4774,7 +4774,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 4$"
+        "text": "$m = 7$"
       },
       {
         "key": "C",
@@ -4782,7 +4782,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 7$"
+        "text": "$m = 4$"
       }
     ],
     "correct": "C",
@@ -4806,11 +4806,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ con $\\{u_1, u_2\\}$ là độc lập tuyến tính"
+        "text": "Không có véc tơ nào trong $S$ là tổ hợp tuyến tính của các véc tơ còn lại"
       },
       {
         "key": "B",
-        "text": "Không có véc tơ nào trong $S$ là tổ hợp tuyến tính của các véc tơ còn lại"
+        "text": "Hệ con $\\{u_1, u_2\\}$ là độc lập tuyến tính"
       },
       {
         "key": "C",
@@ -4846,7 +4846,7 @@
       },
       {
         "key": "B",
-        "text": "Chỉ độc lập tuyến tính khi số véc tơ nhỏ hơn số chiều"
+        "text": "Luôn luôn độc lập tuyến tính"
       },
       {
         "key": "C",
@@ -4854,7 +4854,7 @@
       },
       {
         "key": "D",
-        "text": "Luôn luôn độc lập tuyến tính"
+        "text": "Chỉ độc lập tuyến tính khi số véc tơ nhỏ hơn số chiều"
       }
     ],
     "correct": "C",
@@ -4918,15 +4918,15 @@
       },
       {
         "key": "B",
-        "text": "Không có véc tơ nào có tọa độ bằng 0"
-      },
-      {
-        "key": "C",
         "text": "Ba véc tơ này đôi một vuông góc với nhau"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Định thức của ma trận tạo bởi 3 véc tơ này bằng 0 ($\\det = 0$)"
+      },
+      {
+        "key": "D",
+        "text": "Không có véc tơ nào có tọa độ bằng 0"
       }
     ],
     "correct": "A",
@@ -4994,11 +4994,11 @@
       },
       {
         "key": "C",
-        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
+        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
       },
       {
         "key": "D",
-        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
+        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
       }
     ],
     "correct": "B",
@@ -5026,7 +5026,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 5$"
+        "text": "$m = 2$"
       },
       {
         "key": "C",
@@ -5034,7 +5034,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 2$"
+        "text": "$m = 5$"
       }
     ],
     "correct": "A",
@@ -5058,15 +5058,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ $\\{u, v\\}$ tạo thành cơ sở của $\\mathbb{R}^3$"
-      },
-      {
-        "key": "B",
         "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
+      },
+      {
+        "key": "C",
+        "text": "Hệ $\\{u, v\\}$ tạo thành cơ sở của $\\mathbb{R}^3$"
       },
       {
         "key": "D",
@@ -5090,7 +5090,7 @@
     "typeName": "Độc lập tuyến tính & Phụ thuộc tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 0, 0), \\, (0, 1, 0), \\, (2, 3, m - -1)\\}$ trong $\\mathbb{R}^3$ **phụ thuộc tuyến tính**:",
+    "question": "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 0, 0), \\, (0, 1, 0), \\, (2, 3, m + 1)\\}$ trong $\\mathbb{R}^3$ **phụ thuộc tuyến tính**:",
     "options": [
       {
         "key": "A",
@@ -5110,7 +5110,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - -1) = m - -1$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = -1$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m + 1) = m + 1$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = -1$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5130,15 +5130,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
-      },
-      {
-        "key": "B",
         "text": "$m \\neq 1$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -5162,7 +5162,7 @@
     "typeName": "Độc lập tuyến tính & Phụ thuộc tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 0, 0), \\, (0, 1, 0), \\, (2, 3, m - -2)\\}$ trong $\\mathbb{R}^3$ **phụ thuộc tuyến tính**:",
+    "question": "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 0, 0), \\, (0, 1, 0), \\, (2, 3, m + 2)\\}$ trong $\\mathbb{R}^3$ **phụ thuộc tuyến tính**:",
     "options": [
       {
         "key": "A",
@@ -5170,19 +5170,19 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m \\neq -2$"
       },
       {
         "key": "C",
-        "text": "$m = -3$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m \\neq -2$"
+        "text": "$m = -3$"
       }
     ],
     "correct": "A",
-    "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - -2) = m - -2$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = -2$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m + 2) = m + 2$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = -2$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5242,7 +5242,7 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 4$"
+        "text": "$m = 6$"
       },
       {
         "key": "C",
@@ -5250,7 +5250,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 6$"
+        "text": "$m \\neq 4$"
       }
     ],
     "correct": "C",
@@ -5278,7 +5278,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 1$"
+        "text": "$m \\neq 2$"
       },
       {
         "key": "C",
@@ -5286,7 +5286,7 @@
       },
       {
         "key": "D",
-        "text": "$m \\neq 2$"
+        "text": "$m = 1$"
       }
     ],
     "correct": "C",
@@ -5314,11 +5314,11 @@
       },
       {
         "key": "B",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
+        "text": "Chắc chắn tạo thành một cơ sở"
       },
       {
         "key": "C",
-        "text": "Chắc chắn tạo thành một cơ sở"
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "D",
@@ -5382,11 +5382,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Chắc chắn tạo thành một cơ sở"
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "B",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
+        "text": "Chắc chắn tạo thành một cơ sở"
       },
       {
         "key": "C",
@@ -5414,11 +5414,11 @@
     "typeName": "Độc lập tuyến tính & Phụ thuộc tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 1, 1), \\, (0, 1, 2), \\, (0, 0, m - -1)\\}$ trong $\\mathbb{R}^3$ **độc lập tuyến tính**:",
+    "question": "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 1, 1), \\, (0, 1, 2), \\, (0, 0, m + 1)\\}$ trong $\\mathbb{R}^3$ **độc lập tuyến tính**:",
     "options": [
       {
         "key": "A",
-        "text": "$m = -1$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -5426,7 +5426,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = -1$"
       },
       {
         "key": "D",
@@ -5434,7 +5434,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Định thức của ma trận tam giác trên là $1 \\cdot 1 \\cdot (m - -1) = m - -1$. Hệ độc lập tuyến tính khi $\\det \\neq 0 \\iff m \\neq -1$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Định thức của ma trận tam giác trên là $1 \\cdot 1 \\cdot (m + 1) = m + 1$. Hệ độc lập tuyến tính khi $\\det \\neq 0 \\iff m \\neq -1$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5454,15 +5454,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
-      },
-      {
-        "key": "B",
         "text": "Chắc chắn có hạng bằng 6"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Chắc chắn tạo thành một cơ sở"
+      },
+      {
+        "key": "C",
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "D",
@@ -5494,15 +5494,15 @@
       },
       {
         "key": "B",
-        "text": "Chắc chắn có hạng bằng 5"
-      },
-      {
-        "key": "C",
         "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Chắc chắn tạo thành một cơ sở"
+      },
+      {
+        "key": "D",
+        "text": "Chắc chắn có hạng bằng 5"
       }
     ],
     "correct": "A",
@@ -5670,7 +5670,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$12$"
+        "text": "$5$"
       },
       {
         "key": "B",
@@ -5682,7 +5682,7 @@
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$12$"
       }
     ],
     "correct": "B",
@@ -5702,7 +5702,7 @@
     "typeName": "Cơ sở & Số chiều của Không gian véc tơ",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm điều kiện của tham số $m$ để hệ véc tơ $B = \\{(1, 0, 0), \\, (1, 1, 0), \\, (1, 1, m - -1)\\}$ là một **cơ sở** của $\\mathbb{R}^3$:",
+    "question": "Tìm điều kiện của tham số $m$ để hệ véc tơ $B = \\{(1, 0, 0), \\, (1, 1, 0), \\, (1, 1, m + 1)\\}$ là một **cơ sở** của $\\mathbb{R}^3$:",
     "options": [
       {
         "key": "A",
@@ -5710,19 +5710,19 @@
       },
       {
         "key": "B",
-        "text": "$m > 0$"
-      },
-      {
-        "key": "C",
         "text": "$m = -1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Mọi $m \\in \\mathbb{R}$"
+      },
+      {
+        "key": "D",
+        "text": "$m > 0$"
       }
     ],
     "correct": "A",
-    "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m - -1) = m - -1$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq -1$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m + 1) = m + 1$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq -1$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5782,7 +5782,7 @@
       },
       {
         "key": "B",
-        "text": "Hệ đó chứa véc tơ không"
+        "text": "Hệ đó trực giao từng đôi một"
       },
       {
         "key": "C",
@@ -5790,7 +5790,7 @@
       },
       {
         "key": "D",
-        "text": "Hệ đó trực giao từng đôi một"
+        "text": "Hệ đó chứa véc tơ không"
       }
     ],
     "correct": "C",
@@ -5822,11 +5822,11 @@
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$3$"
       }
     ],
     "correct": "A",
@@ -5854,15 +5854,15 @@
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$5$"
       },
       {
         "key": "C",
-        "text": "$10$"
+        "text": "$4$"
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$10$"
       }
     ],
     "correct": "A",
@@ -5886,11 +5886,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m > 0$"
+        "text": "$m = 2$"
       },
       {
         "key": "B",
-        "text": "$m = 2$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       },
       {
         "key": "C",
@@ -5898,7 +5898,7 @@
       },
       {
         "key": "D",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "C",
@@ -5930,11 +5930,11 @@
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$7$"
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$6$"
       }
     ],
     "correct": "A",
@@ -5954,11 +5954,11 @@
     "typeName": "Cơ sở & Số chiều của Không gian véc tơ",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x - 1y + 3z = 0\\}$ bằng:",
+    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x - y + 3z = 0\\}$ bằng:",
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -5970,7 +5970,7 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$3$"
       }
     ],
     "correct": "C",
@@ -6034,7 +6034,7 @@
       },
       {
         "key": "B",
-        "text": "$16$"
+        "text": "$0$"
       },
       {
         "key": "C",
@@ -6042,7 +6042,7 @@
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$16$"
       }
     ],
     "correct": "C",
@@ -6066,7 +6066,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$7$"
       },
       {
         "key": "B",
@@ -6074,7 +6074,7 @@
       },
       {
         "key": "C",
-        "text": "$7$"
+        "text": "$3$"
       },
       {
         "key": "D",
@@ -6106,7 +6106,7 @@
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$3$"
       },
       {
         "key": "C",
@@ -6114,7 +6114,7 @@
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$6$"
       }
     ],
     "correct": "A",
@@ -6134,7 +6134,7 @@
     "typeName": "Cơ sở & Số chiều của Không gian véc tơ",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x - 1y + 5z = 0\\}$ bằng:",
+    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x - y + 5z = 0\\}$ bằng:",
     "options": [
       {
         "key": "A",
@@ -6142,15 +6142,15 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$0$"
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -6174,7 +6174,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -6182,11 +6182,11 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$2$"
       }
     ],
     "correct": "B",
@@ -6206,11 +6206,11 @@
     "typeName": "Cơ sở & Số chiều của Không gian véc tơ",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm điều kiện của tham số $m$ để hệ véc tơ $B = \\{(1, 0, 0), \\, (1, 1, 0), \\, (1, 1, m - -2)\\}$ là một **cơ sở** của $\\mathbb{R}^3$:",
+    "question": "Tìm điều kiện của tham số $m$ để hệ véc tơ $B = \\{(1, 0, 0), \\, (1, 1, 0), \\, (1, 1, m + 2)\\}$ là một **cơ sở** của $\\mathbb{R}^3$:",
     "options": [
       {
         "key": "A",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
@@ -6218,7 +6218,7 @@
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       },
       {
         "key": "D",
@@ -6226,7 +6226,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m - -2) = m - -2$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq -2$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m + 2) = m + 2$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq -2$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6250,15 +6250,15 @@
       },
       {
         "key": "B",
-        "text": "$16$"
+        "text": "$4$"
       },
       {
         "key": "C",
-        "text": "$9$"
+        "text": "$16$"
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$9$"
       }
     ],
     "correct": "A",
@@ -6278,11 +6278,11 @@
     "typeName": "Cơ sở & Số chiều của Không gian véc tơ",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x - 1y + 1z = 0\\}$ bằng:",
+    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 2x - y + z = 0\\}$ bằng:",
     "options": [
       {
         "key": "A",
-        "text": "$0$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -6290,11 +6290,11 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$0$"
       }
     ],
     "correct": "B",
@@ -6322,11 +6322,11 @@
       },
       {
         "key": "B",
-        "text": "$5$"
+        "text": "$2$"
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$5$"
       },
       {
         "key": "D",
@@ -6350,15 +6350,15 @@
     "typeName": "Cơ sở & Số chiều của Không gian véc tơ",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid 1x - 1y + 5z = 0\\}$ bằng:",
+    "question": "Số chiều của không gian véc tơ con nghiệm $W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x - y + 5z = 0\\}$ bằng:",
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "C",
@@ -6390,7 +6390,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -6398,11 +6398,11 @@
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$6$"
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$2$"
       }
     ],
     "correct": "B",
@@ -6426,7 +6426,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 3$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       },
       {
         "key": "B",
@@ -6434,7 +6434,7 @@
       },
       {
         "key": "C",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m = 3$"
       },
       {
         "key": "D",
@@ -6550,7 +6550,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Vì $\\dim P_2 = 3$, một hệ 3 véc tơ sinh ra $P_2$ khi và chỉ khi nó độc lập tuyến tính (tức định thức ma trận tọa độ khác 0).\n* Xét phương án D: Lập ma trận tọa độ theo cơ sở $\\{1, t, t^2\\}$:\n  $$M = \\begin{bmatrix} 3 & -1 & -1 \\\\ 1 & 1 & 5 \\\\ 2 & -2 & 3 \\end{bmatrix}$$\n  $$\\det M = 3(3 + 10) - (-1)(3 - 10) + (-1)(-2 - 2) = 39 - 7 + 4 = 36 \\neq 0$$\n* Vì $\\det M \\neq 0$, hệ độc lập tuyến tính và là hệ sinh của $P_2$.\n* Các phương án khác: A có véc tơ 2 gấp đôi véc tơ 1; B có $(4-3t+t^2) = 3(2-t+t^2) - 2(1+t^2)$; C chỉ có 2 véc tơ nên không thể sinh không gian 3 chiều.\n* **Chọn đáp án: D.**",
+    "explanation": "* Vì $\\dim P_2 = 3$, một hệ 3 véc tơ sinh ra $P_2$ khi và chỉ khi nó độc lập tuyến tính (tức định thức ma trận tọa độ khác 0).\n* Xét phương án D: Lập ma trận tọa độ theo cơ sở $\\{1, t, t^2\\}$:\n  $$M = \\begin{bmatrix} 3 & -1 & -1 \\\\ 1 & 1 & 5 \\\\ 2 & -2 & 3 \\end{bmatrix}$$\n  $$\\det M = 3(3 + 10) - (-1)(3 - 10) - 1(-2 - 2) = 39 - 7 + 4 = 36 \\neq 0$$\n* Vì $\\det M \\neq 0$, hệ độc lập tuyến tính và là hệ sinh của $P_2$.\n* Các phương án khác: A có véc tơ 2 gấp đôi véc tơ 1; B có $(4-3t+t^2) = 3(2-t+t^2) - 2(1+t^2)$; C chỉ có 2 véc tơ nên không thể sinh không gian 3 chiều.\n* **Chọn đáp án: D.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6750,7 +6750,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$[v]_B = (5, 1)^T$"
+        "text": "$[v]_B = (1, 4)^T$"
       },
       {
         "key": "B",
@@ -6762,7 +6762,7 @@
       },
       {
         "key": "D",
-        "text": "$[v]_B = (1, 4)^T$"
+        "text": "$[v]_B = (5, 1)^T$"
       }
     ],
     "correct": "B",
@@ -6794,11 +6794,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 2 \\\\ 2 & 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 3 \\\\ 1 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 2 & 3 \\\\ 1 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 2 \\\\ 2 & 3 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -6822,11 +6822,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$P_{B_1 \\to B_3} = P_{B_2 \\to B_3} \\cdot P_{B_1 \\to B_2}$"
+        "text": "$P_{B_1 \\to B_3} = P_{B_1 \\to B_2} + P_{B_2 \\to B_3}$"
       },
       {
         "key": "B",
-        "text": "$P_{B_1 \\to B_3} = (P_{B_1 \\to B_2})^{-1} \\cdot P_{B_2 \\to B_3}$"
+        "text": "$P_{B_1 \\to B_3} = P_{B_2 \\to B_3} \\cdot P_{B_1 \\to B_2}$"
       },
       {
         "key": "C",
@@ -6834,7 +6834,7 @@
       },
       {
         "key": "D",
-        "text": "$P_{B_1 \\to B_3} = P_{B_1 \\to B_2} + P_{B_2 \\to B_3}$"
+        "text": "$P_{B_1 \\to B_3} = (P_{B_1 \\to B_2})^{-1} \\cdot P_{B_2 \\to B_3}$"
       }
     ],
     "correct": "C",
@@ -6858,11 +6858,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn là ma trận đối xứng ($P^T = P$)"
+        "text": "Luôn là ma trận trực giao ($P^T P = I$)"
       },
       {
         "key": "B",
-        "text": "Luôn là ma trận trực giao ($P^T P = I$)"
+        "text": "Luôn là ma trận đối xứng ($P^T = P$)"
       },
       {
         "key": "C",
@@ -6894,15 +6894,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Nhân các véc tơ của $B$ với nhau"
-      },
-      {
-        "key": "B",
         "text": "Tìm ma trận nghịch đảo của cơ sở $E$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Xếp tọa độ các véc tơ của cơ sở $B$ thành các hàng của ma trận"
+      },
+      {
+        "key": "C",
+        "text": "Nhân các véc tơ của $B$ với nhau"
       },
       {
         "key": "D",
@@ -6934,7 +6934,7 @@
       },
       {
         "key": "B",
-        "text": "$[v]_B = (-2, 3)^T$"
+        "text": "$[v]_B = (4, -2)^T$"
       },
       {
         "key": "C",
@@ -6942,7 +6942,7 @@
       },
       {
         "key": "D",
-        "text": "$[v]_B = (4, -2)^T$"
+        "text": "$[v]_B = (-2, 3)^T$"
       }
     ],
     "correct": "A",
@@ -6970,11 +6970,11 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 2 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 0 & 2 \\\\ 2 & 4 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 0 & 2 \\\\ 2 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -7002,7 +7002,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$[x]_{B'} = P [x]_B$"
+        "text": "$[x]_B = P^{-1} [x]_{B'}$"
       },
       {
         "key": "B",
@@ -7010,11 +7010,11 @@
       },
       {
         "key": "C",
-        "text": "$[x]_B = P^T [x]_{B'}$"
+        "text": "$[x]_{B'} = P [x]_B$"
       },
       {
         "key": "D",
-        "text": "$[x]_B = P^{-1} [x]_{B'}$"
+        "text": "$[x]_B = P^T [x]_{B'}$"
       }
     ],
     "correct": "B",
@@ -7034,11 +7034,11 @@
     "typeName": "Tọa độ véc tơ & Ma trận chuyển cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong $P_2[x]$, tọa độ của đa thức $p(x) = 3 + (5)x + (1)x^2$ đối với cơ sở chính tắc $B = \\{1, x, x^2\\}$ là:",
+    "question": "Trong $P_2[x]$, tọa độ của đa thức $p(x) = 3 + 5x + x^2$ đối với cơ sở chính tắc $B = \\{1, x, x^2\\}$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$[p]_B = (1, 1, 1)^T$"
+        "text": "$[p]_B = (1, 5, 3)^T$"
       },
       {
         "key": "B",
@@ -7046,7 +7046,7 @@
       },
       {
         "key": "C",
-        "text": "$[p]_B = (1, 5, 3)^T$"
+        "text": "$[p]_B = (1, 1, 1)^T$"
       },
       {
         "key": "D",
@@ -7074,11 +7074,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$[v]_E = (1, 1, 1)^T$"
+        "text": "$[v]_E = (-1, 4, -2)^T$"
       },
       {
         "key": "B",
-        "text": "$[v]_E = (-1, 4, -2)^T$"
+        "text": "$[v]_E = (1, 1, 1)^T$"
       },
       {
         "key": "C",
@@ -7114,11 +7114,11 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -7150,7 +7150,7 @@
       },
       {
         "key": "B",
-        "text": "$P^2$"
+        "text": "$-P$"
       },
       {
         "key": "C",
@@ -7158,7 +7158,7 @@
       },
       {
         "key": "D",
-        "text": "$-P$"
+        "text": "$P^2$"
       }
     ],
     "correct": "C",
@@ -7186,11 +7186,11 @@
       },
       {
         "key": "B",
-        "text": "$[v]_B = (1, 3)^T$"
+        "text": "$[v]_B = (4, 1)^T$"
       },
       {
         "key": "C",
-        "text": "$[v]_B = (4, 1)^T$"
+        "text": "$[v]_B = (1, 3)^T$"
       },
       {
         "key": "D",
@@ -7218,7 +7218,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 0 & 1 \\\\ 2 & 4 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -7226,11 +7226,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 0 & 1 \\\\ 2 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -7262,11 +7262,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 11 \\\\ 6 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 11 \\\\ 6 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -7294,15 +7294,15 @@
       },
       {
         "key": "B",
-        "text": "$[v]_E = (2, 3, 1)^T$"
-      },
-      {
-        "key": "C",
         "text": "$[v]_E = (-1, -3, -2)^T$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$[v]_E = (1, 1, 1)^T$"
+      },
+      {
+        "key": "D",
+        "text": "$[v]_E = (2, 3, 1)^T$"
       }
     ],
     "correct": "A",
@@ -7322,11 +7322,11 @@
     "typeName": "Tọa độ véc tơ & Ma trận chuyển cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong $P_2[x]$, tọa độ của đa thức $p(x) = 2 + (-3)x + (-2)x^2$ đối với cơ sở chính tắc $B = \\{1, x, x^2\\}$ là:",
+    "question": "Trong $P_2[x]$, tọa độ của đa thức $p(x) = 2 - 3x - 2x^2$ đối với cơ sở chính tắc $B = \\{1, x, x^2\\}$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$[p]_B = (-2, -3, 2)^T$"
+        "text": "$[p]_B = (1, 1, 1)^T$"
       },
       {
         "key": "B",
@@ -7334,7 +7334,7 @@
       },
       {
         "key": "C",
-        "text": "$[p]_B = (1, 1, 1)^T$"
+        "text": "$[p]_B = (-2, -3, 2)^T$"
       },
       {
         "key": "D",
@@ -7414,7 +7414,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Tính $A^2$:\n  $$A^2 = \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 1(1) + 2(3) & 1(2) + 2(-1) \\\\ 3(1) + (-1)(3) & 3(2) + (-1)(-1) \\end{bmatrix} = \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} = 7I$$\n* Khi đó:\n  $$f(A) = 3A^2 - 2A = 3 \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} - 2 \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 21 & 0 \\\\ 0 & 21 \\end{bmatrix} - \\begin{bmatrix} 2 & 4 \\\\ 6 & -2 \\end{bmatrix} = \\begin{bmatrix} 19 & -4 \\\\ -6 & 23 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
+    "explanation": "* Tính $A^2$:\n  $$A^2 = \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 1(1) + 2(3) & 1(2) + 2(-1) \\\\ 3(1) - 1(3) & 3(2) - 1(-1) \\end{bmatrix} = \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} = 7I$$\n* Khi đó:\n  $$f(A) = 3A^2 - 2A = 3 \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} - 2 \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 21 & 0 \\\\ 0 & 21 \\end{bmatrix} - \\begin{bmatrix} 2 & 4 \\\\ 6 & -2 \\end{bmatrix} = \\begin{bmatrix} 19 & -4 \\\\ -6 & 23 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7686,15 +7686,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Vết của $A$ bằng 1"
+        "text": "Ma trận $A$ luôn khả nghịch"
       },
       {
         "key": "B",
-        "text": "Định thức $\\det A = 1$"
+        "text": "Vết của $A$ bằng 1"
       },
       {
         "key": "C",
-        "text": "Ma trận $A$ luôn khả nghịch"
+        "text": "Định thức $\\det A = 1$"
       },
       {
         "key": "D",
@@ -7758,7 +7758,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$(A + B)^T = A^T - B^T$"
+        "text": "$AB = BA$ với mọi cặp ma trận vuông"
       },
       {
         "key": "B",
@@ -7770,7 +7770,7 @@
       },
       {
         "key": "D",
-        "text": "$AB = BA$ với mọi cặp ma trận vuông"
+        "text": "$(A + B)^T = A^T - B^T$"
       }
     ],
     "correct": "B",
@@ -7810,7 +7810,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (1)(-1) + (-1)(-3) = -1 + 3 = 2$.\n* **Chọn đáp án: D.**",
+    "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (1)(-1) - 1(-3) = -1 + 3 = 2$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7830,7 +7830,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Hai ma trận $A$ và $B$ phải có cùng kích thước"
+        "text": "Cả hai ma trận phải là ma trận vuông cùng cấp"
       },
       {
         "key": "B",
@@ -7838,7 +7838,7 @@
       },
       {
         "key": "C",
-        "text": "Cả hai ma trận phải là ma trận vuông cùng cấp"
+        "text": "Hai ma trận $A$ và $B$ phải có cùng kích thước"
       },
       {
         "key": "D",
@@ -7870,7 +7870,7 @@
       },
       {
         "key": "B",
-        "text": "Tất cả đều là số âm"
+        "text": "Tất cả đều bằng 1"
       },
       {
         "key": "C",
@@ -7878,7 +7878,7 @@
       },
       {
         "key": "D",
-        "text": "Tất cả đều bằng 1"
+        "text": "Tất cả đều là số âm"
       }
     ],
     "correct": "A",
@@ -7910,11 +7910,11 @@
       },
       {
         "key": "C",
-        "text": "$9$"
+        "text": "$0$"
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$9$"
       }
     ],
     "correct": "B",
@@ -7942,7 +7942,7 @@
       },
       {
         "key": "B",
-        "text": "Không xác định được giá trị"
+        "text": "$4 \\times 4$"
       },
       {
         "key": "C",
@@ -7950,7 +7950,7 @@
       },
       {
         "key": "D",
-        "text": "$4 \\times 4$"
+        "text": "Không xác định được giá trị"
       }
     ],
     "correct": "A",
@@ -7982,11 +7982,11 @@
       },
       {
         "key": "C",
-        "text": "$\\text{tr}(AB) = -\\text{tr}(BA)$"
+        "text": "$\\text{tr}(AB) = \\text{tr}(A) \\cdot \\text{tr}(B)$"
       },
       {
         "key": "D",
-        "text": "$\\text{tr}(AB) = \\text{tr}(A) \\cdot \\text{tr}(B)$"
+        "text": "$\\text{tr}(AB) = -\\text{tr}(BA)$"
       }
     ],
     "correct": "B",
@@ -8010,11 +8010,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\operatorname{diag}(-1, 6)$"
+        "text": "$\\operatorname{diag}(-3, 6)$"
       },
       {
         "key": "B",
-        "text": "$\\operatorname{diag}(-3, 6)$"
+        "text": "$\\operatorname{diag}(-1, 6)$"
       },
       {
         "key": "C",
@@ -8050,7 +8050,7 @@
       },
       {
         "key": "B",
-        "text": "$13$"
+        "text": "$9$"
       },
       {
         "key": "C",
@@ -8058,11 +8058,11 @@
       },
       {
         "key": "D",
-        "text": "$9$"
+        "text": "$13$"
       }
     ],
     "correct": "A",
-    "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (3)(3) + (-1)(-3) = 9 + 3 = 12$.\n* **Chọn đáp án: A.**",
+    "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (3)(3) - 1(-3) = 9 + 3 = 12$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8086,15 +8086,15 @@
       },
       {
         "key": "B",
-        "text": "$\\operatorname{diag}(81, 20)$"
+        "text": "$\\operatorname{diag}(7, 9)$"
       },
       {
         "key": "C",
-        "text": "$\\operatorname{diag}(12, 20)$"
+        "text": "$\\operatorname{diag}(81, 20)$"
       },
       {
         "key": "D",
-        "text": "$\\operatorname{diag}(7, 9)$"
+        "text": "$\\operatorname{diag}(12, 20)$"
       }
     ],
     "correct": "A",
@@ -8122,7 +8122,7 @@
       },
       {
         "key": "B",
-        "text": "$7$"
+        "text": "$2$"
       },
       {
         "key": "C",
@@ -8130,7 +8130,7 @@
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$7$"
       }
     ],
     "correct": "C",
@@ -8154,7 +8154,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\operatorname{diag}(6, 5)$"
+        "text": "$\\operatorname{diag}(27, 6)$"
       },
       {
         "key": "B",
@@ -8162,11 +8162,11 @@
       },
       {
         "key": "C",
-        "text": "$\\operatorname{diag}(27, 6)$"
+        "text": "$\\operatorname{diag}(9, 6)$"
       },
       {
         "key": "D",
-        "text": "$\\operatorname{diag}(9, 6)$"
+        "text": "$\\operatorname{diag}(6, 5)$"
       }
     ],
     "correct": "B",
@@ -8190,11 +8190,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$12$"
       },
       {
         "key": "B",
-        "text": "$17$"
+        "text": "$3$"
       },
       {
         "key": "C",
@@ -8202,7 +8202,7 @@
       },
       {
         "key": "D",
-        "text": "$12$"
+        "text": "$17$"
       }
     ],
     "correct": "C",
@@ -8226,7 +8226,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\operatorname{diag}(6, 8)$"
+        "text": "$\\operatorname{diag}(9, 15)$"
       },
       {
         "key": "B",
@@ -8234,11 +8234,11 @@
       },
       {
         "key": "C",
-        "text": "$\\operatorname{diag}(27, 15)$"
+        "text": "$\\operatorname{diag}(6, 8)$"
       },
       {
         "key": "D",
-        "text": "$\\operatorname{diag}(9, 15)$"
+        "text": "$\\operatorname{diag}(27, 15)$"
       }
     ],
     "correct": "B",
@@ -8270,15 +8270,15 @@
       },
       {
         "key": "C",
-        "text": "$5$"
+        "text": "$10$"
       },
       {
         "key": "D",
-        "text": "$10$"
+        "text": "$5$"
       }
     ],
     "correct": "B",
-    "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (3)(3) + (-1)(1) = 9 + -1 = 8$.\n* **Chọn đáp án: B.**",
+    "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (3)(3) - 1(1) = 9 - 1 = 8$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8494,7 +8494,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Khai triển định thức theo cột 2 (chỉ có hàng 1 là $1$ và hàng 3 là $x$):\n  $$(-1)^{1+2} \\cdot 1 \\cdot \\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} + (-1)^{3+2} \\cdot x \\cdot \\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 0$$\n* Tính từng định thức con cấp 3:\n  * $\\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 2(2 - 1) - 3(8 + 1) + 1(-4 - 1) = 2 - 27 - 5 = -30$.\n  * $\\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 1(6 + 1) - 1(4 - 1) - 1(-2 - 3) = 7 - 3 + 5 = 9$.\n* Phương trình trở thành:\n  $$-1(-30) - x(9) = 0 \\iff 30 - 9x = 0 \\iff x = \\frac{30}{9} = \\frac{10}{3}$$\n* **Chọn đáp án: C.**",
+    "explanation": "* Khai triển định thức theo cột 2 (chỉ có hàng 1 là $1$ và hàng 3 là $x$):\n  $$(-1)^{1+2} \\cdot 1 \\cdot \\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} - 1^{3+2} \\cdot x \\cdot \\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 0$$\n* Tính từng định thức con cấp 3:\n  * $\\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 2(2 - 1) - 3(8 + 1) + 1(-4 - 1) = 2 - 27 - 5 = -30$.\n  * $\\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 1(6 + 1) - 1(4 - 1) - 1(-2 - 3) = 7 - 3 + 5 = 9$.\n* Phương trình trở thành:\n  $$-1(-30) - x(9) = 0 \\iff 30 - 9x = 0 \\iff x = \\frac{30}{9} = \\frac{10}{3}$$\n* **Chọn đáp án: C.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -8514,7 +8514,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$18$"
+        "text": "$-16$"
       },
       {
         "key": "B",
@@ -8526,7 +8526,7 @@
       },
       {
         "key": "D",
-        "text": "$-16$"
+        "text": "$18$"
       }
     ],
     "correct": "B",
@@ -8558,11 +8558,11 @@
       },
       {
         "key": "C",
-        "text": "Đổi dấu"
+        "text": "Bị nhân với hệ số bội"
       },
       {
         "key": "D",
-        "text": "Bị nhân với hệ số bội"
+        "text": "Đổi dấu"
       }
     ],
     "correct": "A",
@@ -8586,7 +8586,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-22$"
+        "text": "$5$"
       },
       {
         "key": "B",
@@ -8594,11 +8594,11 @@
       },
       {
         "key": "C",
-        "text": "$5$"
+        "text": "$0$"
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$-22$"
       }
     ],
     "correct": "B",
@@ -8662,15 +8662,15 @@
       },
       {
         "key": "B",
-        "text": "$-2$"
+        "text": "$-3$"
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$-2$"
       },
       {
         "key": "D",
-        "text": "$-3$"
+        "text": "$4$"
       }
     ],
     "correct": "A",
@@ -8694,15 +8694,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$83$"
-      },
-      {
-        "key": "B",
         "text": "$12$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$-81$"
+      },
+      {
+        "key": "C",
+        "text": "$83$"
       },
       {
         "key": "D",
@@ -8730,7 +8730,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-1$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -8742,7 +8742,7 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$-1$"
       }
     ],
     "correct": "B",
@@ -8766,7 +8766,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-7$"
+        "text": "$0$"
       },
       {
         "key": "B",
@@ -8774,7 +8774,7 @@
       },
       {
         "key": "C",
-        "text": "$0$"
+        "text": "$-7$"
       },
       {
         "key": "D",
@@ -8878,15 +8878,15 @@
       },
       {
         "key": "B",
-        "text": "$1$"
-      },
-      {
-        "key": "C",
         "text": "$-1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Không xác định"
+      },
+      {
+        "key": "D",
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -8954,11 +8954,11 @@
       },
       {
         "key": "C",
-        "text": "$9$"
+        "text": "$-27$"
       },
       {
         "key": "D",
-        "text": "$-27$"
+        "text": "$9$"
       }
     ],
     "correct": "A",
@@ -8982,7 +8982,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$12$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -8990,11 +8990,11 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$-10$"
       },
       {
         "key": "D",
-        "text": "$-10$"
+        "text": "$12$"
       }
     ],
     "correct": "B",
@@ -9058,15 +9058,15 @@
       },
       {
         "key": "B",
-        "text": "$7$"
+        "text": "$-12$"
       },
       {
         "key": "C",
-        "text": "$14$"
+        "text": "$7$"
       },
       {
         "key": "D",
-        "text": "$-12$"
+        "text": "$14$"
       }
     ],
     "correct": "A",
@@ -9090,11 +9090,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-6$"
+        "text": "$-9$"
       },
       {
         "key": "B",
-        "text": "$-9$"
+        "text": "$-6$"
       },
       {
         "key": "C",
@@ -9130,15 +9130,15 @@
       },
       {
         "key": "B",
-        "text": "$-3$"
+        "text": "$0$"
       },
       {
         "key": "C",
-        "text": "$0.03125$"
+        "text": "$-3$"
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$0.03125$"
       }
     ],
     "correct": "A",
@@ -9166,11 +9166,11 @@
       },
       {
         "key": "B",
-        "text": "$8$"
+        "text": "$516$"
       },
       {
         "key": "C",
-        "text": "$516$"
+        "text": "$8$"
       },
       {
         "key": "D",
@@ -9502,7 +9502,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Khi $m = -1$, ma trận $A$ trở thành:\n  $$A = \\begin{bmatrix} 3 & 1 & 6 \\\\ 0 & 1 & 3 \\\\ 3 & -2 & 3 \\end{bmatrix}$$\n* Định thức: $\\det A = -(-1 - 1)(-1 - 2)^2 = -(-2)(9) = 18 \\neq 0$.\n* Tìm ma trận phần phụ đại số $C$:\n  * $C_{11} = +(3 - (-6)) = 9, \\quad C_{12} = -(0 - 9) = 9, \\quad C_{13} = +(0 - 3) = -3$\n  * $C_{21} = -(3 - (-12)) = -15, \\quad C_{22} = +(9 - 18) = -9, \\quad C_{23} = -(-6 - 3) = 9$\n  * $C_{31} = +(3 - 6) = -3, \\quad C_{32} = -(9 - 0) = -9, \\quad C_{33} = +(3 - 0) = 3$\n* Ma trận chuyển vị của các phần phụ đại số:\n  $$C^T = \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* Do đó:\n  $$A^{-1} = \\frac{1}{\\det A} C^T = \\frac{1}{18} \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* **Chọn đáp án: A.**",
+    "explanation": "* Khi $m = -1$, ma trận $A$ trở thành:\n  $$A = \\begin{bmatrix} 3 & 1 & 6 \\\\ 0 & 1 & 3 \\\\ 3 & -2 & 3 \\end{bmatrix}$$\n* Định thức: $\\det A = -(-1 - 1)(-1 - 2)^2 = -(-2)(9) = 18 \\neq 0$.\n* Tìm ma trận phần phụ đại số $C$:\n  * $C_{11} = (3 - (-6)) = 9, \\quad C_{12} = -(0 - 9) = 9, \\quad C_{13} = (0 - 3) = -3$\n  * $C_{21} = -(3 - (-12)) = -15, \\quad C_{22} = (9 - 18) = -9, \\quad C_{23} = -(-6 - 3) = 9$\n  * $C_{31} = (3 - 6) = -3, \\quad C_{32} = -(9 - 0) = -9, \\quad C_{33} = (3 - 0) = 3$\n* Ma trận chuyển vị của các phần phụ đại số:\n  $$C^T = \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* Do đó:\n  $$A^{-1} = \\frac{1}{\\det A} C^T = \\frac{1}{18} \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* **Chọn đáp án: A.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9522,11 +9522,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Các phần tử trên đường chéo chính khác 0"
+        "text": "$A$ phải là ma trận đối xứng"
       },
       {
         "key": "B",
-        "text": "$A$ phải là ma trận đối xứng"
+        "text": "Các phần tử trên đường chéo chính khác 0"
       },
       {
         "key": "C",
@@ -9566,11 +9566,11 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 5 & 0 \\\\ 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1/10 & 0 \\\\ 0 & 1/10 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 1/10 & 0 \\\\ 0 & 1/10 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 0 \\\\ 0 & 2 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -9594,7 +9594,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$X = B A^{-1}$"
+        "text": "$X = A B^{-1}$"
       },
       {
         "key": "B",
@@ -9602,7 +9602,7 @@
       },
       {
         "key": "C",
-        "text": "$X = A B^{-1}$"
+        "text": "$X = B A^{-1}$"
       },
       {
         "key": "D",
@@ -9630,7 +9630,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$C_{ij} = -M_{ij}$"
+        "text": "$C_{ij} = (-1)^{i \\cdot j} M_{ij}$"
       },
       {
         "key": "B",
@@ -9638,11 +9638,11 @@
       },
       {
         "key": "C",
-        "text": "$C_{ij} = M_{ij}$"
+        "text": "$C_{ij} = -M_{ij}$"
       },
       {
         "key": "D",
-        "text": "$C_{ij} = (-1)^{i \\cdot j} M_{ij}$"
+        "text": "$C_{ij} = M_{ij}$"
       }
     ],
     "correct": "B",
@@ -9702,11 +9702,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$X = A B$"
+        "text": "$X = B A$"
       },
       {
         "key": "B",
-        "text": "$X = B A$"
+        "text": "$X = A B$"
       },
       {
         "key": "C",
@@ -9742,15 +9742,15 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$11$"
       },
       {
         "key": "C",
-        "text": "$10$"
+        "text": "$3$"
       },
       {
         "key": "D",
-        "text": "$11$"
+        "text": "$10$"
       }
     ],
     "correct": "A",
@@ -9774,11 +9774,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$14$"
+        "text": "$18$"
       },
       {
         "key": "B",
-        "text": "$18$"
+        "text": "$-12$"
       },
       {
         "key": "C",
@@ -9786,7 +9786,7 @@
       },
       {
         "key": "D",
-        "text": "$-12$"
+        "text": "$14$"
       }
     ],
     "correct": "C",
@@ -9810,7 +9810,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$7$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -9818,7 +9818,7 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$7$"
       },
       {
         "key": "D",
@@ -9850,7 +9850,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 4$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -9858,7 +9858,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = 4$"
       }
     ],
     "correct": "C",
@@ -9886,15 +9886,15 @@
       },
       {
         "key": "B",
-        "text": "$3$"
-      },
-      {
-        "key": "C",
         "text": "$1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$-3$"
+      },
+      {
+        "key": "D",
+        "text": "$3$"
       }
     ],
     "correct": "A",
@@ -9954,7 +9954,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$2$"
       },
       {
         "key": "B",
@@ -9962,15 +9962,15 @@
       },
       {
         "key": "C",
-        "text": "$\\dfrac{1}{-2}$"
+        "text": "$-\\dfrac{1}{2}$"
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$1$"
       }
     ],
     "correct": "C",
-    "explanation": "* Từ $A \\cdot A^{-1} = I \\implies \\det(A) \\cdot \\det(A^{-1}) = 1 \\implies \\det(A^{-1}) = \\dfrac{1}{\\det A} = \\dfrac{1}{-2}$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Từ $A \\cdot A^{-1} = I \\implies \\det(A) \\cdot \\det(A^{-1}) = 1 \\implies \\det(A^{-1}) = \\dfrac{1}{\\det A} = -\\dfrac{1}{2}$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9990,7 +9990,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 3$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -9998,7 +9998,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       },
       {
         "key": "D",
@@ -10026,15 +10026,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 1/9 & 0 \\\\ 0 & 1/9 \\end{bmatrix}$"
-      },
-      {
-        "key": "B",
         "text": "$\\begin{bmatrix} 3 & 0 \\\\ 0 & 3 \\end{bmatrix}$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$\\begin{bmatrix} -3 & 0 \\\\ 0 & -3 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\begin{bmatrix} 1/9 & 0 \\\\ 0 & 1/9 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -10066,11 +10066,11 @@
       },
       {
         "key": "B",
-        "text": "$17$"
+        "text": "$-13$"
       },
       {
         "key": "C",
-        "text": "$-13$"
+        "text": "$17$"
       },
       {
         "key": "D",
@@ -10098,15 +10098,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 7 & 0 \\\\ 0 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -5 & 0 \\\\ 0 & -7 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 1/35 & 0 \\\\ 0 & 1/35 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 7 & 0 \\\\ 0 & 5 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} -5 & 0 \\\\ 0 & -7 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1/35 & 0 \\\\ 0 & 1/35 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -10278,7 +10278,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$15$"
       },
       {
         "key": "B",
@@ -10290,7 +10290,7 @@
       },
       {
         "key": "D",
-        "text": "$15$"
+        "text": "$5$"
       }
     ],
     "correct": "B",
@@ -10314,15 +10314,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\min(m, n)$"
-      },
-      {
-        "key": "B",
         "text": "Không xác định"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\min(m, n)$"
       },
       {
         "key": "D",
@@ -10346,7 +10346,7 @@
     "typeName": "Hạng của ma trận (Rank)",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & m - -2 \\end{bmatrix}$ có hạng $r(A) = 2$:",
+    "question": "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & m + 2 \\end{bmatrix}$ có hạng $r(A) = 2$:",
     "options": [
       {
         "key": "A",
@@ -10366,7 +10366,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là $m - -2 = 0 \\iff m = -2$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m + 2 = 0 \\iff m = -2.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10386,11 +10386,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$2$"
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$1$"
       },
       {
         "key": "C",
@@ -10398,7 +10398,7 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$6$"
       }
     ],
     "correct": "C",
@@ -10426,7 +10426,7 @@
       },
       {
         "key": "B",
-        "text": "$r(AB) = r(A) + r(B)$"
+        "text": "$r(AB) \\ge r(A) + r(B)$"
       },
       {
         "key": "C",
@@ -10434,7 +10434,7 @@
       },
       {
         "key": "D",
-        "text": "$r(AB) \\ge r(A) + r(B)$"
+        "text": "$r(AB) = r(A) + r(B)$"
       }
     ],
     "correct": "C",
@@ -10458,7 +10458,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -10466,7 +10466,7 @@
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$2$"
       },
       {
         "key": "D",
@@ -10494,11 +10494,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\det(A) = 0$"
+        "text": "$A$ là ma trận đối xứng"
       },
       {
         "key": "B",
-        "text": "Vết của $A$ bằng 5"
+        "text": "$\\det(A) = 0$"
       },
       {
         "key": "C",
@@ -10506,7 +10506,7 @@
       },
       {
         "key": "D",
-        "text": "$A$ là ma trận đối xứng"
+        "text": "Vết của $A$ bằng 5"
       }
     ],
     "correct": "C",
@@ -10530,7 +10530,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Làm đổi dấu hạng của ma trận"
+        "text": "Luôn làm giảm hạng của ma trận"
       },
       {
         "key": "B",
@@ -10542,7 +10542,7 @@
       },
       {
         "key": "D",
-        "text": "Luôn làm giảm hạng của ma trận"
+        "text": "Làm đổi dấu hạng của ma trận"
       }
     ],
     "correct": "C",
@@ -10570,7 +10570,7 @@
       },
       {
         "key": "B",
-        "text": "$r(A^T) \\le r(A)$"
+        "text": "$r(A^T) + r(A) = n$"
       },
       {
         "key": "C",
@@ -10578,7 +10578,7 @@
       },
       {
         "key": "D",
-        "text": "$r(A^T) + r(A) = n$"
+        "text": "$r(A^T) \\le r(A)$"
       }
     ],
     "correct": "C",
@@ -10602,7 +10602,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Số phần tử khác 0 của ma trận $A$"
+        "text": "Số hàng có định thức bằng 0"
       },
       {
         "key": "B",
@@ -10614,7 +10614,7 @@
       },
       {
         "key": "D",
-        "text": "Số hàng có định thức bằng 0"
+        "text": "Số phần tử khác 0 của ma trận $A$"
       }
     ],
     "correct": "C",
@@ -10638,7 +10638,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$2$"
       },
       {
         "key": "B",
@@ -10650,7 +10650,7 @@
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$1$"
       }
     ],
     "correct": "B",
@@ -10670,15 +10670,15 @@
     "typeName": "Hạng của ma trận (Rank)",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & m - -1 \\end{bmatrix}$ có hạng $r(A) = 2$:",
+    "question": "Tìm tham số $m$ để ma trận $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & m + 1 \\end{bmatrix}$ có hạng $r(A) = 2$:",
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m = -2$"
       },
       {
         "key": "B",
-        "text": "$m \\neq -1$"
+        "text": "$m = 1$"
       },
       {
         "key": "C",
@@ -10686,11 +10686,11 @@
       },
       {
         "key": "D",
-        "text": "$m = -2$"
+        "text": "$m \\neq -1$"
       }
     ],
     "correct": "C",
-    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là $m - -1 = 0 \\iff m = -1$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m + 1 = 0 \\iff m = -1.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10710,7 +10710,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Vết của $A$ bằng 3"
+        "text": "$A$ là ma trận đối xứng"
       },
       {
         "key": "B",
@@ -10718,7 +10718,7 @@
       },
       {
         "key": "C",
-        "text": "$A$ là ma trận đối xứng"
+        "text": "Vết của $A$ bằng 3"
       },
       {
         "key": "D",
@@ -10746,15 +10746,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
-      },
-      {
-        "key": "B",
         "text": "$8$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$12$"
+      },
+      {
+        "key": "C",
+        "text": "$6$"
       },
       {
         "key": "D",
@@ -10782,7 +10782,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$A$ là ma trận đối xứng"
+        "text": "Vết của $A$ bằng 4"
       },
       {
         "key": "B",
@@ -10790,7 +10790,7 @@
       },
       {
         "key": "C",
-        "text": "Vết của $A$ bằng 4"
+        "text": "$A$ là ma trận đối xứng"
       },
       {
         "key": "D",
@@ -10822,7 +10822,7 @@
       },
       {
         "key": "B",
-        "text": "$25$"
+        "text": "$10$"
       },
       {
         "key": "C",
@@ -10830,7 +10830,7 @@
       },
       {
         "key": "D",
-        "text": "$10$"
+        "text": "$25$"
       }
     ],
     "correct": "C",
@@ -10854,7 +10854,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$8$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -10862,7 +10862,7 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$8$"
       },
       {
         "key": "D",
@@ -10898,15 +10898,15 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m \\neq 1$"
       },
       {
         "key": "D",
-        "text": "$m \\neq 1$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
-    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là $m - 1 = 0 \\iff m = 1$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m - 1 = 0 \\iff m = 1.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10930,11 +10930,11 @@
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$3$"
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -10962,15 +10962,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 2$"
-      },
-      {
-        "key": "B",
         "text": "$m = 5$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m \\neq 3$"
+      },
+      {
+        "key": "C",
+        "text": "$m = 2$"
       },
       {
         "key": "D",
@@ -10978,7 +10978,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là $m - 3 = 0 \\iff m = 3$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m - 3 = 0 \\iff m = 3.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11002,7 +11002,7 @@
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$7$"
       },
       {
         "key": "C",
@@ -11010,7 +11010,7 @@
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$4$"
       }
     ],
     "correct": "A",
@@ -11102,27 +11102,27 @@
     "typeName": "Định lý Kronecker-Capelli & Biện luận số nghiệm",
     "examId": "de_ontap",
     "examName": "Đề ôn tập PTIT • 80 phút",
-    "question": "Cho hai hệ phương trình $AX = 0$ (1) và $AX = B$ (2) với $A_{m \\times n}$. Phát biểu nào dưới đây là **sai**?",
+    "question": "Cho hai hệ phương trình $AX = 0$ 1và $AX = B$ 2với $A_{m \\times n}$. Phát biểu nào dưới đây là **sai**?",
     "options": [
       {
         "key": "A",
-        "text": "Nếu $m = n$ và (1) có duy nhất nghiệm thì (2) có duy nhất nghiệm"
+        "text": "Nếu $m = n$ và 1có duy nhất nghiệm thì 2có duy nhất nghiệm"
       },
       {
         "key": "B",
-        "text": "Nếu (1) có duy nhất nghiệm thì (2) có nghiệm"
+        "text": "Nếu 1có duy nhất nghiệm thì 2có nghiệm"
       },
       {
         "key": "C",
-        "text": "Nếu (1) có vô số nghiệm thì chưa chắc (2) có nghiệm"
+        "text": "Nếu 1có vô số nghiệm thì chưa chắc 2có nghiệm"
       },
       {
         "key": "D",
-        "text": "Nếu (2) có vô số nghiệm thì (1) có vô số nghiệm"
+        "text": "Nếu 2có vô số nghiệm thì 1có vô số nghiệm"
       }
     ],
     "correct": "B",
-    "explanation": "* Xét khẳng định B: \"Nếu (1) có duy nhất nghiệm thì (2) có nghiệm\".\n  * (1) có duy nhất nghiệm $X = 0$ khi và chỉ khi $r(A) = n$ (các cột của $A$ độc lập tuyến tính).\n  * Nhưng nếu số phương trình $m > n$ (số hàng nhiều hơn số cột), thì ma trận mở rộng $\\bar{A} = [A \\mid B]$ có thể có hạng $r(\\bar{A}) = n + 1 > r(A)$, dẫn đến hệ (2) vô nghiệm!\n  * Do đó phát biểu B là **sai**.\n* Các khẳng định A, C, D đều đúng theo định lý Kronecker - Capelli.\n* **Chọn đáp án: B.**",
+    "explanation": "* Xét khẳng định B: \"Nếu 1có duy nhất nghiệm thì 2có nghiệm\".\n  * 1có duy nhất nghiệm $X = 0$ khi và chỉ khi $r(A) = n$ (các cột của $A$ độc lập tuyến tính).\n  * Nhưng nếu số phương trình $m > n$ (số hàng nhiều hơn số cột), thì ma trận mở rộng $\\bar{A} = [A \\mid B]$ có thể có hạng $r(\\bar{A}) = n + 1 > r(A)$, dẫn đến hệ 2vô nghiệm!\n  * Do đó phát biểu B là **sai**.\n* Các khẳng định A, C, D đều đúng theo định lý Kronecker - Capelli.\n* **Chọn đáp án: B.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -11250,11 +11250,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ có nghiệm duy nhất"
+        "text": "Hệ có đúng 2 nghiệm phân biệt"
       },
       {
         "key": "B",
-        "text": "Hệ có đúng 2 nghiệm phân biệt"
+        "text": "Hệ có nghiệm duy nhất"
       },
       {
         "key": "C",
@@ -11294,11 +11294,11 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$5$"
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -11326,7 +11326,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 3$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -11334,7 +11334,7 @@
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       }
     ],
     "correct": "C",
@@ -11358,11 +11358,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) = r(\\bar{A}) = 5$"
+        "text": "$r(A) < r(\\bar{A})$"
       },
       {
         "key": "B",
-        "text": "$r(A) < r(\\bar{A})$"
+        "text": "$r(A) = r(\\bar{A}) = 5$"
       },
       {
         "key": "C",
@@ -11394,7 +11394,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) > r(\\bar{A})$"
+        "text": "$\\det(A) \\neq 0$"
       },
       {
         "key": "B",
@@ -11402,11 +11402,11 @@
       },
       {
         "key": "C",
-        "text": "$\\det(A) \\neq 0$"
+        "text": "$r(A) < r(\\bar{A})$"
       },
       {
         "key": "D",
-        "text": "$r(A) < r(\\bar{A})$"
+        "text": "$r(A) > r(\\bar{A})$"
       }
     ],
     "correct": "B",
@@ -11430,15 +11430,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ luôn luôn có nghiệm duy nhất"
-      },
-      {
-        "key": "B",
         "text": "Hệ luôn có đúng 3 nghiệm"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Hệ luôn luôn vô nghiệm"
+      },
+      {
+        "key": "C",
+        "text": "Hệ luôn luôn có nghiệm duy nhất"
       },
       {
         "key": "D",
@@ -11466,7 +11466,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) > r(\\bar{A})$"
+        "text": "$r(A) = r(\\bar{A})$"
       },
       {
         "key": "B",
@@ -11474,7 +11474,7 @@
       },
       {
         "key": "C",
-        "text": "$r(A) = r(\\bar{A})$"
+        "text": "$r(A) > r(\\bar{A})$"
       },
       {
         "key": "D",
@@ -11506,11 +11506,11 @@
       },
       {
         "key": "B",
-        "text": "$\\det A = 0$"
+        "text": "$r(A) = r(\\bar{A}) < 5$"
       },
       {
         "key": "C",
-        "text": "$r(A) = r(\\bar{A}) < 5$"
+        "text": "$\\det A = 0$"
       },
       {
         "key": "D",
@@ -11538,11 +11538,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Là ma trận chuyển vị của $A$"
+        "text": "Là ma trận nghịch đảo của $A$"
       },
       {
         "key": "B",
-        "text": "Là ma trận phụ hợp của $A$"
+        "text": "Là ma trận chuyển vị của $A$"
       },
       {
         "key": "C",
@@ -11550,7 +11550,7 @@
       },
       {
         "key": "D",
-        "text": "Là ma trận nghịch đảo của $A$"
+        "text": "Là ma trận phụ hợp của $A$"
       }
     ],
     "correct": "C",
@@ -11574,11 +11574,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m \\neq 1$"
       },
       {
         "key": "B",
-        "text": "$m \\neq 1$"
+        "text": "$m > 0$"
       },
       {
         "key": "C",
@@ -11586,7 +11586,7 @@
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "C",
@@ -11642,7 +11642,7 @@
     "typeName": "Định lý Kronecker-Capelli & Biện luận số nghiệm",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Sau khi biến đổi sơ cấp, ma trận bổ sung của hệ có dạng $\\begin{bmatrix} 1 & 2 & 1 & 3 \\\\ 0 & 1 & 2 & 1 \\\\ 0 & 0 & m - -2 & 7 \\end{bmatrix}$. Hệ vô nghiệm khi:",
+    "question": "Sau khi biến đổi sơ cấp, ma trận bổ sung của hệ có dạng $\\begin{bmatrix} 1 & 2 & 1 & 3 \\\\ 0 & 1 & 2 & 1 \\\\ 0 & 0 & m + 2 & 7 \\end{bmatrix}$. Hệ vô nghiệm khi:",
     "options": [
       {
         "key": "A",
@@ -11690,11 +11690,11 @@
       },
       {
         "key": "C",
-        "text": "$r(A) = r(\\bar{A}) = 3$"
+        "text": "$r(A) < r(\\bar{A})$"
       },
       {
         "key": "D",
-        "text": "$r(A) < r(\\bar{A})$"
+        "text": "$r(A) = r(\\bar{A}) = 3$"
       }
     ],
     "correct": "A",
@@ -11722,11 +11722,11 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m \\neq 4$"
       },
       {
         "key": "C",
-        "text": "$m \\neq 4$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -11758,7 +11758,7 @@
       },
       {
         "key": "B",
-        "text": "$7$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -11766,7 +11766,7 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$7$"
       }
     ],
     "correct": "C",
@@ -11786,7 +11786,7 @@
     "typeName": "Định lý Kronecker-Capelli & Biện luận số nghiệm",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm tham số $m$ để hệ $\\begin{cases} x + y + z = 1 \\\\ 2x + 3y + z = 2 \\\\ x + 2y + (m - -2)z = 3 \\end{cases}$ có **nghiệm duy nhất**:",
+    "question": "Tìm tham số $m$ để hệ $\\begin{cases} x + y + z = 1 \\\\ 2x + 3y + z = 2 \\\\ x + 2y + (m + 2)z = 3 \\end{cases}$ có **nghiệm duy nhất**:",
     "options": [
       {
         "key": "A",
@@ -11806,7 +11806,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Tính định thức ma trận hệ số: $\\det A = m - -2$. Hệ có nghiệm duy nhất $\\iff \\det A \\neq 0 \\iff m \\neq -2$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Tính định thức ma trận hệ số: $\\det A = m + 2$. Hệ có nghiệm duy nhất $\\iff \\det A \\neq 0 \\iff m \\neq -2$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11830,15 +11830,15 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 5$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq 5$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "A",
@@ -11866,15 +11866,15 @@
       },
       {
         "key": "B",
-        "text": "Hệ luôn có đúng 2 nghiệm"
-      },
-      {
-        "key": "C",
         "text": "Hệ luôn luôn vô nghiệm"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Hệ luôn luôn có nghiệm duy nhất"
+      },
+      {
+        "key": "D",
+        "text": "Hệ luôn có đúng 2 nghiệm"
       }
     ],
     "correct": "A",
@@ -11898,7 +11898,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
@@ -11906,11 +11906,11 @@
       },
       {
         "key": "C",
-        "text": "$m \\neq 3$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "$m \\neq 3$"
       }
     ],
     "correct": "B",
@@ -11934,11 +11934,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ luôn luôn có nghiệm duy nhất"
+        "text": "Hệ luôn luôn vô nghiệm"
       },
       {
         "key": "B",
-        "text": "Hệ luôn có đúng 2 nghiệm"
+        "text": "Hệ luôn luôn có nghiệm duy nhất"
       },
       {
         "key": "C",
@@ -11946,7 +11946,7 @@
       },
       {
         "key": "D",
-        "text": "Hệ luôn luôn vô nghiệm"
+        "text": "Hệ luôn có đúng 2 nghiệm"
       }
     ],
     "correct": "C",
@@ -12010,7 +12010,7 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -12018,7 +12018,7 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -12046,7 +12046,7 @@
       },
       {
         "key": "B",
-        "text": "$X = B A^{-1}$"
+        "text": "$X = B / A$"
       },
       {
         "key": "C",
@@ -12054,7 +12054,7 @@
       },
       {
         "key": "D",
-        "text": "$X = B / A$"
+        "text": "$X = B A^{-1}$"
       }
     ],
     "correct": "C",
@@ -12078,11 +12078,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Chắc chắn có nghiệm duy nhất bằng 0"
+        "text": "Chắc chắn có vô số nghiệm"
       },
       {
         "key": "B",
-        "text": "Chắc chắn có vô số nghiệm"
+        "text": "Chắc chắn vô nghiệm"
       },
       {
         "key": "C",
@@ -12090,7 +12090,7 @@
       },
       {
         "key": "D",
-        "text": "Chắc chắn vô nghiệm"
+        "text": "Chắc chắn có nghiệm duy nhất bằng 0"
       }
     ],
     "correct": "C",
@@ -12118,7 +12118,7 @@
       },
       {
         "key": "B",
-        "text": "Nhân định thức chính $D$ với hệ số tự do $b_j$"
+        "text": "Thay hàng thứ $j$ bằng hàng hệ số tự do"
       },
       {
         "key": "C",
@@ -12126,7 +12126,7 @@
       },
       {
         "key": "D",
-        "text": "Thay hàng thứ $j$ bằng hàng hệ số tự do"
+        "text": "Nhân định thức chính $D$ với hệ số tự do $b_j$"
       }
     ],
     "correct": "C",
@@ -12154,11 +12154,11 @@
       },
       {
         "key": "B",
-        "text": "$x = -2$"
+        "text": "$x = 1$"
       },
       {
         "key": "C",
-        "text": "$x = 1$"
+        "text": "$x = -2$"
       },
       {
         "key": "D",
@@ -12186,7 +12186,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$5$"
       },
       {
         "key": "B",
@@ -12198,7 +12198,7 @@
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$6$"
       }
     ],
     "correct": "C",
@@ -12222,15 +12222,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Có nghiệm tầm thường"
-      },
-      {
-        "key": "B",
         "text": "Chắc chắn có vô số nghiệm"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Có nghiệm duy nhất"
+      },
+      {
+        "key": "C",
+        "text": "Có nghiệm tầm thường"
       },
       {
         "key": "D",
@@ -12258,7 +12258,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$y = 2$"
+        "text": "$y = -3$"
       },
       {
         "key": "B",
@@ -12270,7 +12270,7 @@
       },
       {
         "key": "D",
-        "text": "$y = -3$"
+        "text": "$y = 2$"
       }
     ],
     "correct": "B",
@@ -12294,7 +12294,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Ma trận hệ số phải là ma trận đường chéo"
+        "text": "Số phương trình lớn hơn số ẩn"
       },
       {
         "key": "B",
@@ -12306,7 +12306,7 @@
       },
       {
         "key": "D",
-        "text": "Số phương trình lớn hơn số ẩn"
+        "text": "Ma trận hệ số phải là ma trận đường chéo"
       }
     ],
     "correct": "B",
@@ -12330,7 +12330,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Cramer không thể lập trình trên máy tính"
+        "text": "Gauss cho nghiệm chính xác tuyệt đối không có sai số"
       },
       {
         "key": "B",
@@ -12338,11 +12338,11 @@
       },
       {
         "key": "C",
-        "text": "Gauss cho nghiệm chính xác tuyệt đối không có sai số"
+        "text": "Gauss chỉ áp dụng được cho hệ có số phương trình bằng số ẩn"
       },
       {
         "key": "D",
-        "text": "Gauss chỉ áp dụng được cho hệ có số phương trình bằng số ẩn"
+        "text": "Cramer không thể lập trình trên máy tính"
       }
     ],
     "correct": "B",
@@ -12370,7 +12370,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m > 0$"
       },
       {
         "key": "C",
@@ -12378,7 +12378,7 @@
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
@@ -12410,15 +12410,15 @@
       },
       {
         "key": "C",
-        "text": "$x = -1$"
+        "text": "$x = 2$"
       },
       {
         "key": "D",
-        "text": "$x = 2$"
+        "text": "$x = -1$"
       }
     ],
     "correct": "B",
-    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{-2}{-2} = 1$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{2}{2} = 1$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12438,11 +12438,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$9$"
       },
       {
         "key": "B",
-        "text": "$5$"
+        "text": "$2$"
       },
       {
         "key": "C",
@@ -12450,7 +12450,7 @@
       },
       {
         "key": "D",
-        "text": "$9$"
+        "text": "$5$"
       }
     ],
     "correct": "C",
@@ -12474,11 +12474,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$y = 4$"
+        "text": "$y = -3$"
       },
       {
         "key": "B",
-        "text": "$y = -3$"
+        "text": "$y = 2$"
       },
       {
         "key": "C",
@@ -12486,7 +12486,7 @@
       },
       {
         "key": "D",
-        "text": "$y = 2$"
+        "text": "$y = 4$"
       }
     ],
     "correct": "C",
@@ -12518,15 +12518,15 @@
       },
       {
         "key": "C",
-        "text": "$x = -1$"
+        "text": "$x = -3$"
       },
       {
         "key": "D",
-        "text": "$x = -3$"
+        "text": "$x = -1$"
       }
     ],
     "correct": "A",
-    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{-4}{2} = -2$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = -\\dfrac{4}{2} = -2$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12546,7 +12546,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$2$"
       },
       {
         "key": "B",
@@ -12554,11 +12554,11 @@
       },
       {
         "key": "C",
-        "text": "$0$"
+        "text": "$3$"
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$0$"
       }
     ],
     "correct": "B",
@@ -12582,7 +12582,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = -4$"
+        "text": "$x = 5$"
       },
       {
         "key": "B",
@@ -12590,7 +12590,7 @@
       },
       {
         "key": "C",
-        "text": "$x = 5$"
+        "text": "$x = -4$"
       },
       {
         "key": "D",
@@ -12598,7 +12598,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{-8}{-2} = 4$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{8}{2} = 4$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12618,15 +12618,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
-      },
-      {
-        "key": "B",
         "text": "$6$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$4$"
+      },
+      {
+        "key": "C",
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -12654,7 +12654,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = 2$"
+        "text": "$x = -1$"
       },
       {
         "key": "B",
@@ -12662,15 +12662,15 @@
       },
       {
         "key": "C",
-        "text": "$x = -3$"
+        "text": "$x = 2$"
       },
       {
         "key": "D",
-        "text": "$x = -1$"
+        "text": "$x = -3$"
       }
     ],
     "correct": "B",
-    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{-10}{5} = -2$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = -\\dfrac{10}{5} = -2$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12730,15 +12730,15 @@
       },
       {
         "key": "B",
-        "text": "$x = 2$"
+        "text": "$x = 0$"
       },
       {
         "key": "C",
-        "text": "$x = -1$"
+        "text": "$x = 2$"
       },
       {
         "key": "D",
-        "text": "$x = 0$"
+        "text": "$x = -1$"
       }
     ],
     "correct": "A",
@@ -12762,11 +12762,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$2$"
       },
       {
         "key": "B",
-        "text": "$9$"
+        "text": "$5$"
       },
       {
         "key": "C",
@@ -12774,7 +12774,7 @@
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$9$"
       }
     ],
     "correct": "C",
@@ -12798,15 +12798,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = -1$"
+        "text": "$x = -3$"
       },
       {
         "key": "B",
-        "text": "$x = 2$"
+        "text": "$x = -1$"
       },
       {
         "key": "C",
-        "text": "$x = -3$"
+        "text": "$x = 2$"
       },
       {
         "key": "D",
@@ -12814,7 +12814,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{-8}{4} = -2$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = -\\dfrac{8}{4} = -2$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12834,7 +12834,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -12846,7 +12846,7 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$1$"
       }
     ],
     "correct": "C",
@@ -12886,7 +12886,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Cộng phương trình (1) và phương trình (2) theo từng vế:\n  $$(x - 2x) + (y + 2y) + (-5z + 2z) = -x + 3y - 3z = a + b$$\n* Vế trái chính là vế trái của phương trình (3): $-x + 3y - 3z = c$.\n* Để hệ có nghiệm, vế phải phải tương thích:\n  $$a + b = c \\iff a + b - c = 0$$\n* **Chọn đáp án: A.**",
+    "explanation": "* Cộng phương trình 1và phương trình 2theo từng vế:\n  $$(x - 2x) + (y + 2y) + (-5z + 2z) = -x + 3y - 3z = a + b$$\n* Vế trái chính là vế trái của phương trình (3): $-x + 3y - 3z = c$.\n* Để hệ có nghiệm, vế phải phải tương thích:\n  $$a + b = c \\iff a + b - c = 0$$\n* **Chọn đáp án: A.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -12922,7 +12922,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* Hệ phương trình có 3 ẩn $x, y, z$:\n  $$\\begin{cases} 2x + 3y + 0z = -11 \\\\ 6x - 5y + 1z = 45 \\end{cases}$$\n* Ma trận hệ số $A = \\begin{bmatrix} 2 & 3 & 0 \\\\ 6 & -5 & 1 \\end{bmatrix}$, cột số hạng tự do $B = \\begin{bmatrix} -11 \\\\ 45 \\end{bmatrix}$.\n* Ma trận bổ sung $\\bar{A} = [A | B]$ là:\n  $$\\bar{A} = \\begin{bmatrix} 2 & 3 & 0 & -11 \\\\ 6 & -5 & 1 & 45 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
+    "explanation": "* Hệ phương trình có 3 ẩn $x, y, z$:\n  $$\\begin{cases} 2x + 3y = -11 \\\\ 6x - 5y + z = 45 \\end{cases}$$\n* Ma trận hệ số $A = \\begin{bmatrix} 2 & 3 & 0 \\\\ 6 & -5 & 1 \\end{bmatrix}$, cột số hạng tự do $B = \\begin{bmatrix} -11 \\\\ 45 \\end{bmatrix}$.\n* Ma trận bổ sung $\\bar{A} = [A | B]$ là:\n  $$\\bar{A} = \\begin{bmatrix} 2 & 3 & 0 & -11 \\\\ 6 & -5 & 1 & 45 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -12958,7 +12958,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Phương trình tuyến tính với các ẩn $x, y$ là phương trình bậc nhất có dạng tổng quát $ax + by = c$, trong đó các ẩn không được nhân với nhau hoặc có số mũ khác $1$.\n* Xét phương án **A**: Ta có $\\sin \\pi = 0$, do đó:\n  $$(\\sin \\pi) x^2 + y = 2 \\iff 0 \\cdot x^2 + y = 2 \\iff y = 2$$\n  Đây là một phương trình bậc nhất đối với $x, y$ (dạng $0x + 1y = 2$).\n* Các phương án còn lại:\n  * B: Chứa tích $xy$ (bậc 2) nên là phi tuyến.\n  * C: $\\cos \\pi = -1 \\ne 0 \\implies -x^2 + y = 2$ (bậc 2 theo $x$).\n  * D: $\\sin \\pi = 0 \\implies \\cos 0 = 1 \\ne 0 \\implies x^2 + y = 2$ (bậc 2 theo $x$).\n* **Chọn đáp án: A.**",
+    "explanation": "* Phương trình tuyến tính với các ẩn $x, y$ là phương trình bậc nhất có dạng tổng quát $ax + by = c$, trong đó các ẩn không được nhân với nhau hoặc có số mũ khác $1$.\n* Xét phương án **A**: Ta có $\\sin \\pi = 0$, do đó:\n  $$(\\sin \\pi) x^2 + y = 2 \\iff 0 \\cdot x^2 + y = 2 \\iff y = 2$$\n  Đây là một phương trình bậc nhất đối với $x, y$ (dạng $y = 2$).\n* Các phương án còn lại:\n  * B: Chứa tích $xy$ (bậc 2) nên là phi tuyến.\n  * C: $\\cos \\pi = -1 \\ne 0 \\implies -x^2 + y = 2$ (bậc 2 theo $x$).\n  * D: $\\sin \\pi = 0 \\implies \\cos 0 = 1 \\ne 0 \\implies x^2 + y = 2$ (bậc 2 theo $x$).\n* **Chọn đáp án: A.**",
     "isOriginal": true,
     "origin": "original"
   },
@@ -12978,7 +12978,7 @@
     "options": [
       {
         "key": "A",
-        "text": "5 và 1"
+        "text": "6 và 5"
       },
       {
         "key": "B",
@@ -12986,11 +12986,11 @@
       },
       {
         "key": "C",
-        "text": "6 và 5"
+        "text": "1 và 6"
       },
       {
         "key": "D",
-        "text": "1 và 6"
+        "text": "5 và 1"
       }
     ],
     "correct": "B",
@@ -13050,11 +13050,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Có nghiệm bằng 0"
+        "text": "Có nghiệm duy nhất"
       },
       {
         "key": "B",
-        "text": "Có nghiệm duy nhất"
+        "text": "Có nghiệm bằng 0"
       },
       {
         "key": "C",
@@ -13086,15 +13086,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$x_1 = 7, \\, x_2 = 2t$"
-      },
-      {
-        "key": "B",
         "text": "$x_1 = t, \\, x_2 = 7 - 2t$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$x_1 = 7 + 2t, \\, x_2 = t$"
+      },
+      {
+        "key": "C",
+        "text": "$x_1 = 7, \\, x_2 = 2t$"
       },
       {
         "key": "D",
@@ -13122,7 +13122,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ số tự do"
+        "text": "Nghiệm tầm thường"
       },
       {
         "key": "B",
@@ -13130,11 +13130,11 @@
       },
       {
         "key": "C",
-        "text": "Ẩn tự do"
+        "text": "Hệ số tự do"
       },
       {
         "key": "D",
-        "text": "Nghiệm tầm thường"
+        "text": "Ẩn tự do"
       }
     ],
     "correct": "B",
@@ -13158,11 +13158,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Tiếp tục khử từ trái sang phải"
+        "text": "Đổi chỗ các cột của ma trận"
       },
       {
         "key": "B",
-        "text": "Đổi chỗ các cột của ma trận"
+        "text": "Tiếp tục khử từ trái sang phải"
       },
       {
         "key": "C",
@@ -13194,15 +13194,15 @@
     "options": [
       {
         "key": "A",
-        "text": "(2, 3, 2)"
-      },
-      {
-        "key": "B",
         "text": "(2, 3)"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "(4, 1, 2)"
+      },
+      {
+        "key": "C",
+        "text": "(2, 3, 2)"
       },
       {
         "key": "D",
@@ -13310,11 +13310,11 @@
       },
       {
         "key": "C",
-        "text": "Hệ có vô số nghiệm"
+        "text": "Hệ vô nghiệm"
       },
       {
         "key": "D",
-        "text": "Hệ vô nghiệm"
+        "text": "Hệ có vô số nghiệm"
       }
     ],
     "correct": "A",
@@ -13338,7 +13338,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Từ phương trình đầu tiên giải dần xuống dưới"
+        "text": "Giải đồng thời tất cả các phương trình cùng lúc"
       },
       {
         "key": "B",
@@ -13346,7 +13346,7 @@
       },
       {
         "key": "C",
-        "text": "Giải đồng thời tất cả các phương trình cùng lúc"
+        "text": "Từ phương trình đầu tiên giải dần xuống dưới"
       },
       {
         "key": "D",
@@ -13410,7 +13410,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$5$"
       },
       {
         "key": "B",
@@ -13418,7 +13418,7 @@
       },
       {
         "key": "C",
-        "text": "$5$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -13450,11 +13450,11 @@
       },
       {
         "key": "B",
-        "text": "(2, 1, 3)"
+        "text": "(1, 3, 2)"
       },
       {
         "key": "C",
-        "text": "(1, 3, 2)"
+        "text": "(2, 1, 3)"
       },
       {
         "key": "D",
@@ -13482,7 +13482,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x_1$ và $x_3$"
+        "text": "Không có ẩn tự do nào"
       },
       {
         "key": "B",
@@ -13490,7 +13490,7 @@
       },
       {
         "key": "C",
-        "text": "Không có ẩn tự do nào"
+        "text": "$x_1$ và $x_3$"
       },
       {
         "key": "D",
@@ -13526,11 +13526,11 @@
       },
       {
         "key": "C",
-        "text": "(2, 3, 1)"
+        "text": "(1, 1, 4)"
       },
       {
         "key": "D",
-        "text": "(1, 1, 4)"
+        "text": "(2, 3, 1)"
       }
     ],
     "correct": "B",
@@ -13590,11 +13590,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ có đúng 2 nghiệm"
+        "text": "Hệ vô nghiệm"
       },
       {
         "key": "B",
-        "text": "Hệ vô nghiệm"
+        "text": "Hệ có đúng 2 nghiệm"
       },
       {
         "key": "C",
@@ -13630,15 +13630,15 @@
       },
       {
         "key": "B",
-        "text": "$x_1 = 1, \\, x_2 = 2t$"
-      },
-      {
-        "key": "C",
         "text": "$x_1 = 1 + 2t, \\, x_2 = t$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$x_1 = t, \\, x_2 = 1 - 2t$"
+      },
+      {
+        "key": "D",
+        "text": "$x_1 = 1, \\, x_2 = 2t$"
       }
     ],
     "correct": "A",
@@ -13666,15 +13666,15 @@
       },
       {
         "key": "B",
-        "text": "Hệ có đúng 2 nghiệm"
-      },
-      {
-        "key": "C",
         "text": "Hệ có vô số nghiệm"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Hệ vô nghiệm"
+      },
+      {
+        "key": "D",
+        "text": "Hệ có đúng 2 nghiệm"
       }
     ],
     "correct": "A",
@@ -13702,15 +13702,15 @@
       },
       {
         "key": "B",
-        "text": "$x_1 = 5 + 2t, \\, x_2 = t$"
-      },
-      {
-        "key": "C",
         "text": "$x_1 = t, \\, x_2 = 5 - 2t$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$x_1 = 5, \\, x_2 = 2t$"
+      },
+      {
+        "key": "D",
+        "text": "$x_1 = 5 + 2t, \\, x_2 = t$"
       }
     ],
     "correct": "A",
@@ -13738,7 +13738,7 @@
       },
       {
         "key": "B",
-        "text": "5 và 2"
+        "text": "2 và 3"
       },
       {
         "key": "C",
@@ -13746,7 +13746,7 @@
       },
       {
         "key": "D",
-        "text": "2 và 3"
+        "text": "5 và 2"
       }
     ],
     "correct": "C",
@@ -13770,11 +13770,11 @@
     "options": [
       {
         "key": "A",
-        "text": "(2, 1)"
+        "text": "(2, 1, 1)"
       },
       {
         "key": "B",
-        "text": "(1, 1, 2)"
+        "text": "(2, 1)"
       },
       {
         "key": "C",
@@ -13782,7 +13782,7 @@
       },
       {
         "key": "D",
-        "text": "(2, 1, 1)"
+        "text": "(1, 1, 2)"
       }
     ],
     "correct": "C",
@@ -13950,7 +13950,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) = 5$"
+        "text": "$r(A) > 5$"
       },
       {
         "key": "B",
@@ -13958,11 +13958,11 @@
       },
       {
         "key": "C",
-        "text": "$\\det A \\neq 0$"
+        "text": "$r(A) = 5$"
       },
       {
         "key": "D",
-        "text": "$r(A) > 5$"
+        "text": "$\\det A \\neq 0$"
       }
     ],
     "correct": "B",
@@ -13986,11 +13986,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ phương trình thuần nhất luôn có nghiệm tầm thường"
+        "text": "Tổng của hai nghiệm của hệ thuần nhất cũng là một nghiệm của hệ thuần nhất"
       },
       {
         "key": "B",
-        "text": "Tổng của hai nghiệm của hệ thuần nhất cũng là một nghiệm của hệ thuần nhất"
+        "text": "Nếu số ẩn lớn hơn số phương trình ($n > m$) thì hệ thuần nhất luôn có nghiệm không tầm thường"
       },
       {
         "key": "C",
@@ -13998,7 +13998,7 @@
       },
       {
         "key": "D",
-        "text": "Nếu số ẩn lớn hơn số phương trình ($n > m$) thì hệ thuần nhất luôn có nghiệm không tầm thường"
+        "text": "Hệ phương trình thuần nhất luôn có nghiệm tầm thường"
       }
     ],
     "correct": "C",
@@ -14022,15 +14022,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       },
       {
         "key": "B",
-        "text": "$m \\neq 9$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m = 3$"
+        "text": "$m \\neq 9$"
       },
       {
         "key": "D",
@@ -14058,15 +14058,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$X = e_1 \\times e_2$"
+        "text": "$X = c_1 e_1 \\cdot c_2 e_2$"
       },
       {
         "key": "B",
-        "text": "$X = e_1 + e_2 + \\dots + e_k$"
+        "text": "$X = e_1 \\times e_2$"
       },
       {
         "key": "C",
-        "text": "$X = c_1 e_1 \\cdot c_2 e_2$"
+        "text": "$X = e_1 + e_2 + \\dots + e_k$"
       },
       {
         "key": "D",
@@ -14094,7 +14094,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$6$"
       },
       {
         "key": "B",
@@ -14106,7 +14106,7 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$4$"
       }
     ],
     "correct": "C",
@@ -14174,11 +14174,11 @@
       },
       {
         "key": "C",
-        "text": "$5$ véc tơ"
+        "text": "$1$ véc tơ"
       },
       {
         "key": "D",
-        "text": "$1$ véc tơ"
+        "text": "$5$ véc tơ"
       }
     ],
     "correct": "A",
@@ -14238,15 +14238,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Một mặt cầu trong $\\mathbb{R}^{5}$"
-      },
-      {
-        "key": "B",
         "text": "Một tập hợp hữu hạn các điểm"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
+      },
+      {
+        "key": "C",
+        "text": "Một mặt cầu trong $\\mathbb{R}^{5}$"
       },
       {
         "key": "D",
@@ -14386,11 +14386,11 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -14418,7 +14418,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) = 4$"
+        "text": "$r(A) > 4$"
       },
       {
         "key": "B",
@@ -14426,7 +14426,7 @@
       },
       {
         "key": "C",
-        "text": "$r(A) > 4$"
+        "text": "$r(A) = 4$"
       },
       {
         "key": "D",
@@ -14494,7 +14494,7 @@
       },
       {
         "key": "B",
-        "text": "$r(A) > 3$"
+        "text": "$\\det A \\neq 0$"
       },
       {
         "key": "C",
@@ -14502,7 +14502,7 @@
       },
       {
         "key": "D",
-        "text": "$\\det A \\neq 0$"
+        "text": "$r(A) > 3$"
       }
     ],
     "correct": "C",
@@ -14562,11 +14562,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$3$"
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -14638,15 +14638,15 @@
       },
       {
         "key": "B",
-        "text": "Một mặt cầu trong $\\mathbb{R}^{4}$"
+        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
       },
       {
         "key": "C",
-        "text": "Một tập hợp hữu hạn các điểm"
+        "text": "Một mặt cầu trong $\\mathbb{R}^{4}$"
       },
       {
         "key": "D",
-        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
+        "text": "Một tập hợp hữu hạn các điểm"
       }
     ],
     "correct": "A",
@@ -14670,7 +14670,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$2$"
       },
       {
         "key": "B",
@@ -14678,11 +14678,11 @@
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$5$"
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$6$"
       }
     ],
     "correct": "B",
@@ -14710,7 +14710,7 @@
       },
       {
         "key": "B",
-        "text": "Hệ ảnh luôn là một cơ sở của không gian đích $W$"
+        "text": "Hệ ảnh luôn có số véc tơ nhiều hơn hệ ban đầu"
       },
       {
         "key": "C",
@@ -14718,7 +14718,7 @@
       },
       {
         "key": "D",
-        "text": "Hệ ảnh luôn có số véc tơ nhiều hơn hệ ban đầu"
+        "text": "Hệ ảnh luôn là một cơ sở của không gian đích $W$"
       }
     ],
     "correct": "A",
@@ -14746,15 +14746,15 @@
       },
       {
         "key": "B",
-        "text": "Chỉ là không gian con khi $f$ là song ánh"
+        "text": "Luôn bằng $\\{\\theta\\}$"
       },
       {
         "key": "C",
-        "text": "Là một tập hợp hữu hạn các điểm"
+        "text": "Chỉ là không gian con khi $f$ là song ánh"
       },
       {
         "key": "D",
-        "text": "Luôn bằng $\\{\\theta\\}$"
+        "text": "Là một tập hợp hữu hạn các điểm"
       }
     ],
     "correct": "A",
@@ -14774,11 +14774,11 @@
     "typeName": "Định nghĩa & Tính chất Ánh xạ tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (3x + (3)y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (3x + 3y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
     "options": [
       {
         "key": "A",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - (3)y = 1\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - 3y = 1\\}$"
       },
       {
         "key": "B",
@@ -14786,7 +14786,7 @@
       },
       {
         "key": "C",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + (3)y = 0\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + 3y = 0\\}$"
       },
       {
         "key": "D",
@@ -14794,7 +14794,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x + (3)y, 0) = (0, 0) \\iff 3x + (3)y = 0$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x + 3y, 0) = (0, 0) \\iff 3x + 3y = 0$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14818,15 +14818,15 @@
       },
       {
         "key": "B",
-        "text": "Một đẳng cấu ma trận"
-      },
-      {
-        "key": "C",
         "text": "Một ánh xạ phi tuyến tính"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Chỉ tuyến tính khi $n = 1$"
+      },
+      {
+        "key": "D",
+        "text": "Một đẳng cấu ma trận"
       }
     ],
     "correct": "A",
@@ -14854,19 +14854,19 @@
       },
       {
         "key": "B",
-        "text": "$f(x, y) = (2x + -1y, \\, 2x)$"
+        "text": "$f(x, y) = (2x + y, \\, 0)$"
       },
       {
         "key": "C",
-        "text": "$f(x, y) = (2x - -1y, \\, 0)$"
+        "text": "$f(x, y) = (2x - y, \\, 2x)$"
       },
       {
         "key": "D",
-        "text": "$f(x, y) = (2x + -1y + 5, \\, x - y)$"
+        "text": "$f(x, y) = (2x - y + 5, \\, x - y)$"
       }
     ],
     "correct": "D",
-    "explanation": "* Ánh xạ $f(x, y) = (2x + -1y + 5, x - y)$ có $f(0, 0) = (5, 0) \\neq (0, 0)$ do có hằng số tự do $5 \\neq 0$. Mọi ánh xạ tuyến tính bắt buộc biến véc tơ không thành véc tơ không ($f(\\theta) = \\theta$). Do đó đây không phải ánh xạ tuyến tính.\n* **Chọn đáp án: D.**",
+    "explanation": "* Ánh xạ $f(x, y) = (2x - y + 5, x - y)$ có $f(0, 0) = (5, 0) \\neq (0, 0)$ do có hằng số tự do $5 \\neq 0$. Mọi ánh xạ tuyến tính bắt buộc biến véc tơ không thành véc tơ không ($f(\\theta) = \\theta$). Do đó đây không phải ánh xạ tuyến tính.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14890,7 +14890,7 @@
       },
       {
         "key": "B",
-        "text": "Hệ ảnh luôn là một cơ sở của không gian đích $W$"
+        "text": "Hệ ảnh luôn phụ thuộc tuyến tính kể cả khi $f$ là đẳng cấu"
       },
       {
         "key": "C",
@@ -14898,7 +14898,7 @@
       },
       {
         "key": "D",
-        "text": "Hệ ảnh luôn phụ thuộc tuyến tính kể cả khi $f$ là đẳng cấu"
+        "text": "Hệ ảnh luôn là một cơ sở của không gian đích $W$"
       }
     ],
     "correct": "A",
@@ -14922,7 +14922,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Là một tập hợp hữu hạn các điểm"
+        "text": "Luôn bằng $\\{\\theta\\}$"
       },
       {
         "key": "B",
@@ -14934,7 +14934,7 @@
       },
       {
         "key": "D",
-        "text": "Luôn bằng $\\{\\theta\\}$"
+        "text": "Là một tập hợp hữu hạn các điểm"
       }
     ],
     "correct": "B",
@@ -14954,7 +14954,7 @@
     "typeName": "Định nghĩa & Tính chất Ánh xạ tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (3x + (2)y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (3x + 2y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
     "options": [
       {
         "key": "A",
@@ -14962,19 +14962,19 @@
       },
       {
         "key": "B",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - (2)y = 1\\}$"
+        "text": "$\\{(0, 0)\\}$"
       },
       {
         "key": "C",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + (2)y = 0\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + 2y = 0\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{(0, 0)\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - 2y = 1\\}$"
       }
     ],
     "correct": "C",
-    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x + (2)y, 0) = (0, 0) \\iff 3x + (2)y = 0$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x + 2y, 0) = (0, 0) \\iff 3x + 2y = 0$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15034,15 +15034,15 @@
       },
       {
         "key": "B",
-        "text": "$3$"
-      },
-      {
-        "key": "C",
         "text": "$2$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$0$"
+      },
+      {
+        "key": "D",
+        "text": "$3$"
       }
     ],
     "correct": "A",
@@ -15070,11 +15070,11 @@
       },
       {
         "key": "B",
-        "text": "$0$"
+        "text": "$1$"
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$0$"
       },
       {
         "key": "D",
@@ -15102,7 +15102,7 @@
     "options": [
       {
         "key": "A",
-        "text": "(0, 7)"
+        "text": "(5, 2)"
       },
       {
         "key": "B",
@@ -15110,7 +15110,7 @@
       },
       {
         "key": "C",
-        "text": "(5, 2)"
+        "text": "(0, 7)"
       },
       {
         "key": "D",
@@ -15138,7 +15138,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì $f(0, 0) = (0, 0)$"
+        "text": "Chỉ tuyến tính khi $x \\ge 0$"
       },
       {
         "key": "B",
@@ -15146,7 +15146,7 @@
       },
       {
         "key": "C",
-        "text": "Chỉ tuyến tính khi $x \\ge 0$"
+        "text": "Có, vì $f(0, 0) = (0, 0)$"
       },
       {
         "key": "D",
@@ -15178,15 +15178,15 @@
       },
       {
         "key": "B",
-        "text": "Luôn là ánh xạ đồng nhất"
-      },
-      {
-        "key": "C",
         "text": "Không phải là ánh xạ tuyến tính"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Chỉ tuyến tính khi $U = W$"
+      },
+      {
+        "key": "D",
+        "text": "Luôn là ánh xạ đồng nhất"
       }
     ],
     "correct": "A",
@@ -15210,15 +15210,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
-      },
-      {
-        "key": "B",
         "text": "$4$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$1$"
+      },
+      {
+        "key": "C",
+        "text": "$2$"
       },
       {
         "key": "D",
@@ -15246,15 +15246,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
-      },
-      {
-        "key": "B",
         "text": "$1$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$0$"
+      },
+      {
+        "key": "C",
+        "text": "$3$"
       },
       {
         "key": "D",
@@ -15290,11 +15290,11 @@
       },
       {
         "key": "C",
-        "text": "(7, 7)"
+        "text": "(4, 10)"
       },
       {
         "key": "D",
-        "text": "(4, 10)"
+        "text": "(7, 7)"
       }
     ],
     "correct": "B",
@@ -15318,7 +15318,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì $f(0, 0) = (0, 0)$"
+        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
       },
       {
         "key": "B",
@@ -15326,7 +15326,7 @@
       },
       {
         "key": "C",
-        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
+        "text": "Có, vì $f(0, 0) = (0, 0)$"
       },
       {
         "key": "D",
@@ -15354,15 +15354,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn bằng $\\{\\theta\\}$"
+        "text": "Chỉ là không gian con khi $f$ là song ánh"
       },
       {
         "key": "B",
-        "text": "Là một tập hợp hữu hạn các điểm"
+        "text": "Luôn bằng $\\{\\theta\\}$"
       },
       {
         "key": "C",
-        "text": "Chỉ là không gian con khi $f$ là song ánh"
+        "text": "Là một tập hợp hữu hạn các điểm"
       },
       {
         "key": "D",
@@ -15386,27 +15386,27 @@
     "typeName": "Định nghĩa & Tính chất Ánh xạ tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (3x + (-1)y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (3x - y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
     "options": [
       {
         "key": "A",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + (-1)y = 0\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - y = 0\\}$"
       },
       {
         "key": "B",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - (-1)y = 1\\}$"
+        "text": "$\\{(0, 0)\\}$"
       },
       {
         "key": "C",
-        "text": "$\\mathbb{R}^2$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + y = 1\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{(0, 0)\\}$"
+        "text": "$\\mathbb{R}^2$"
       }
     ],
     "correct": "A",
-    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x + (-1)y, 0) = (0, 0) \\iff 3x + (-1)y = 0$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x - y, 0) = (0, 0) \\iff 3x - y = 0$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15426,11 +15426,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ tuyến tính khi $n = 1$"
+        "text": "Một ánh xạ phi tuyến tính"
       },
       {
         "key": "B",
-        "text": "Một đẳng cấu ma trận"
+        "text": "Chỉ tuyến tính khi $n = 1$"
       },
       {
         "key": "C",
@@ -15438,7 +15438,7 @@
       },
       {
         "key": "D",
-        "text": "Một ánh xạ phi tuyến tính"
+        "text": "Một đẳng cấu ma trận"
       }
     ],
     "correct": "C",
@@ -15458,11 +15458,11 @@
     "typeName": "Định nghĩa & Tính chất Ánh xạ tuyến tính",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (1x + (2)y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (x + 2y, \\, 0)$. Hạt nhân $\\ker f$ là tập hợp:",
     "options": [
       {
         "key": "A",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 1x - (2)y = 1\\}$"
+        "text": "$\\{(0, 0)\\}$"
       },
       {
         "key": "B",
@@ -15470,15 +15470,15 @@
       },
       {
         "key": "C",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 1x + (2)y = 0\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid x + 2y = 0\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{(0, 0)\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid x - 2y = 1\\}$"
       }
     ],
     "correct": "C",
-    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (1x + (2)y, 0) = (0, 0) \\iff 1x + (2)y = 0$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (x + 2y, 0) = (0, 0) \\iff x + 2y = 0$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15498,7 +15498,7 @@
     "options": [
       {
         "key": "A",
-        "text": "(3, 3)"
+        "text": "(4, 2)"
       },
       {
         "key": "B",
@@ -15506,7 +15506,7 @@
       },
       {
         "key": "C",
-        "text": "(4, 2)"
+        "text": "(3, 3)"
       },
       {
         "key": "D",
@@ -15534,7 +15534,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
+        "text": "Có, vì $f(0, 0) = (0, 0)$"
       },
       {
         "key": "B",
@@ -15542,7 +15542,7 @@
       },
       {
         "key": "C",
-        "text": "Có, vì $f(0, 0) = (0, 0)$"
+        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
       },
       {
         "key": "D",
@@ -15578,11 +15578,11 @@
       },
       {
         "key": "C",
-        "text": "(3, 9)"
+        "text": "(10, 2)"
       },
       {
         "key": "D",
-        "text": "(10, 2)"
+        "text": "(3, 9)"
       }
     ],
     "correct": "B",
@@ -15826,7 +15826,7 @@
       },
       {
         "key": "B",
-        "text": "$[v]_B = C^{-1} [v]_{B'}$"
+        "text": "$[v]_{B'} = C [v]_B$"
       },
       {
         "key": "C",
@@ -15834,7 +15834,7 @@
       },
       {
         "key": "D",
-        "text": "$[v]_{B'} = C [v]_B$"
+        "text": "$[v]_B = C^{-1} [v]_{B'}$"
       }
     ],
     "correct": "A",
@@ -15862,11 +15862,11 @@
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$2$"
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -15894,7 +15894,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 0 & 1 & 2 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -15902,7 +15902,7 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 0 & 1 & 2 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -15934,11 +15934,11 @@
       },
       {
         "key": "B",
-        "text": "$A' = C A C^T$"
+        "text": "$A' = C A C^{-1}$"
       },
       {
         "key": "C",
-        "text": "$A' = C A C^{-1}$"
+        "text": "$A' = C A C^T$"
       },
       {
         "key": "D",
@@ -15966,11 +15966,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$4 \\times 3$ (4 hàng, 3 cột)"
+        "text": "$4 \\times 4$"
       },
       {
         "key": "B",
-        "text": "$4 \\times 4$"
+        "text": "$4 \\times 3$ (4 hàng, 3 cột)"
       },
       {
         "key": "C",
@@ -16002,11 +16002,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Tích $A \\cdot B$"
+        "text": "Tổng $A + B$"
       },
       {
         "key": "B",
-        "text": "Tổng $A + B$"
+        "text": "Tích $A^T \\cdot B$"
       },
       {
         "key": "C",
@@ -16014,7 +16014,7 @@
       },
       {
         "key": "D",
-        "text": "Tích $A^T \\cdot B$"
+        "text": "Tích $A \\cdot B$"
       }
     ],
     "correct": "C",
@@ -16042,7 +16042,7 @@
       },
       {
         "key": "B",
-        "text": "$A$ và $B$ có cùng đa thức đặc trưng"
+        "text": "$\\text{tr}(A) = \\text{tr}(B)$"
       },
       {
         "key": "C",
@@ -16050,7 +16050,7 @@
       },
       {
         "key": "D",
-        "text": "$\\text{tr}(A) = \\text{tr}(B)$"
+        "text": "$A$ và $B$ có cùng đa thức đặc trưng"
       }
     ],
     "correct": "C",
@@ -16106,7 +16106,7 @@
     "typeName": "Ma trận của Ánh xạ tuyến tính & Đổi cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (1x + (6)y, \\, -1x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (x + 6y, \\, -x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
     "options": [
       {
         "key": "A",
@@ -16114,11 +16114,11 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} -1 & 9 \\\\ 1 & 6 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 9 & -1 \\\\ 6 & 1 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 9 & -1 \\\\ 6 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -1 & 9 \\\\ 1 & 6 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -16146,23 +16146,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$(4x + (-1)y, \\, -2x + 3y)$"
+        "text": "$(4x - y, \\, -2x + 3y)$"
       },
       {
         "key": "B",
-        "text": "$(4x + -2y, \\, -1x + 3y)$"
-      },
-      {
-        "key": "C",
         "text": "$(4x, \\, 3y)$"
       },
       {
+        "key": "C",
+        "text": "$(4x - 2y, \\, -x + 3y)$"
+      },
+      {
         "key": "D",
-        "text": "$(3x + -1y, \\, -2x + 4y)$"
+        "text": "$(3x - y, \\, -2x + 4y)$"
       }
     ],
     "correct": "A",
-    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 4 & -1 \\\\ -2 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 4x + (-1)y \\\\ -2x + 3y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 4 & -1 \\\\ -2 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 4x - y \\\\ -2x + 3y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16178,7 +16178,7 @@
     "typeName": "Ma trận của Ánh xạ tuyến tính & Đổi cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (2x + (5)y, \\, -2x + 7y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (2x + 5y, \\, -2x + 7y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
     "options": [
       {
         "key": "A",
@@ -16218,11 +16218,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$(3x + (2)y, \\, -2x + 5y)$"
+        "text": "$(3x + 2y, \\, -2x + 5y)$"
       },
       {
         "key": "B",
-        "text": "$(3x + -2y, \\, 2x + 5y)$"
+        "text": "$(5x + 2y, \\, -2x + 3y)$"
       },
       {
         "key": "C",
@@ -16230,11 +16230,11 @@
       },
       {
         "key": "D",
-        "text": "$(5x + 2y, \\, -2x + 3y)$"
+        "text": "$(3x - 2y, \\, 2x + 5y)$"
       }
     ],
     "correct": "A",
-    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 3 & 2 \\\\ -2 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 3x + (2)y \\\\ -2x + 5y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 3 & 2 \\\\ -2 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 3x + 2y \\\\ -2x + 5y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16250,11 +16250,11 @@
     "typeName": "Ma trận của Ánh xạ tuyến tính & Đổi cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (2x + (5)y, \\, -3x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (2x + 5y, \\, -3x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} -3 & 9 \\\\ 2 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 9 & -3 \\\\ 5 & 2 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -16262,7 +16262,7 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 9 & -3 \\\\ 5 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -3 & 9 \\\\ 2 & 5 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -16290,23 +16290,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$(3x + (-1)y, \\, 0x + 3y)$"
+        "text": "$(3x - y, \\, 3y)$"
       },
       {
         "key": "B",
-        "text": "$(3x, \\, 3y)$"
+        "text": "Không xác định"
       },
       {
         "key": "C",
-        "text": "$(3x + 0y, \\, -1x + 3y)$"
+        "text": "$(3x, \\, 3y)$"
       },
       {
         "key": "D",
-        "text": "$(3x + -1y, \\, 0x + 3y)$"
+        "text": "$(3x, \\, -x + 3y)$"
       }
     ],
     "correct": "A",
-    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 3 & -1 \\\\ 0 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 3x + (-1)y \\\\ 0x + 3y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 3 & -1 \\\\ 0 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 3x - y \\\\ 3y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16322,11 +16322,11 @@
     "typeName": "Ma trận của Ánh xạ tuyến tính & Đổi cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (1x + (5)y, \\, -2x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (x + 5y, \\, -2x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 1 & -2 \\\\ 5 & 9 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 9 & -2 \\\\ 5 & 1 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -16338,7 +16338,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 9 & -2 \\\\ 5 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & -2 \\\\ 5 & 9 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
@@ -16362,23 +16362,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$(2x + 0y, \\, -1x + 5y)$"
-      },
-      {
-        "key": "B",
         "text": "$(2x, \\, 5y)$"
       },
       {
+        "key": "B",
+        "text": "$(2x, \\, -x + 5y)$"
+      },
+      {
         "key": "C",
-        "text": "$(5x + -1y, \\, 0x + 2y)$"
+        "text": "$(5x - y, \\, 2y)$"
       },
       {
         "key": "D",
-        "text": "$(2x + (-1)y, \\, 0x + 5y)$"
+        "text": "$(2x - y, \\, 5y)$"
       }
     ],
     "correct": "D",
-    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & -1 \\\\ 0 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x + (-1)y \\\\ 0x + 5y \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & -1 \\\\ 0 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x - y \\\\ 5y \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16394,7 +16394,7 @@
     "typeName": "Ma trận của Ánh xạ tuyến tính & Đổi cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (2x + (6)y, \\, -2x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (2x + 6y, \\, -2x + 9y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
     "options": [
       {
         "key": "A",
@@ -16402,15 +16402,15 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 2 & -2 \\\\ 6 & 9 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 9 & -2 \\\\ 6 & 2 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} -2 & 9 \\\\ 2 & 6 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & -2 \\\\ 6 & 9 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 9 & -2 \\\\ 6 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -2 & 9 \\\\ 2 & 6 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -16434,23 +16434,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$(2x + 1y, \\, -1x + 2y)$"
+        "text": "Không xác định"
       },
       {
         "key": "B",
-        "text": "$(2x, \\, 2y)$"
+        "text": "$(2x + y, \\, -x + 2y)$"
       },
       {
         "key": "C",
-        "text": "$(2x + -1y, \\, 1x + 2y)$"
+        "text": "$(2x, \\, 2y)$"
       },
       {
         "key": "D",
-        "text": "$(2x + (-1)y, \\, 1x + 2y)$"
+        "text": "$(2x - y, \\, x + 2y)$"
       }
     ],
     "correct": "D",
-    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & -1 \\\\ 1 & 2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x + (-1)y \\\\ 1x + 2y \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & -1 \\\\ 1 & 2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x - y \\\\ x + 2y \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16466,7 +16466,7 @@
     "typeName": "Ma trận của Ánh xạ tuyến tính & Đổi cơ sở",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (1x + (5)y, \\, -1x + 7y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
+    "question": "Cho ánh xạ tuyến tính $f: \\mathbb{R}^2 \\to \\mathbb{R}^2$ xác định bởi $f(x, y) = (x + 5y, \\, -x + 7y)$. Ma trận của $f$ đối với cơ sở chính tắc của $\\mathbb{R}^2$ là:",
     "options": [
       {
         "key": "A",
@@ -16506,23 +16506,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$(2x + (1)y, \\, -2x + 5y)$"
+        "text": "$(2x + y, \\, -2x + 5y)$"
       },
       {
         "key": "B",
-        "text": "$(5x + 1y, \\, -2x + 2y)$"
-      },
-      {
-        "key": "C",
         "text": "$(2x, \\, 5y)$"
       },
       {
+        "key": "C",
+        "text": "$(5x + y, \\, -2x + 2y)$"
+      },
+      {
         "key": "D",
-        "text": "$(2x + -2y, \\, 1x + 5y)$"
+        "text": "$(2x - 2y, \\, x + 5y)$"
       }
     ],
     "correct": "A",
-    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & 1 \\\\ -2 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x + (1)y \\\\ -2x + 5y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & 1 \\\\ -2 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x + y \\\\ -2x + 5y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16690,11 +16690,11 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 0$"
+        "text": "$m = -4$"
       },
       {
         "key": "C",
-        "text": "$m = -4$"
+        "text": "$m \\neq 0$"
       },
       {
         "key": "D",
@@ -16730,11 +16730,11 @@
       },
       {
         "key": "C",
-        "text": "Có $\\dim(\\operatorname{im} f) = 5$"
+        "text": "Không bao giờ có thể là đơn ánh"
       },
       {
         "key": "D",
-        "text": "Không bao giờ có thể là đơn ánh"
+        "text": "Có $\\dim(\\operatorname{im} f) = 5$"
       }
     ],
     "correct": "A",
@@ -16758,7 +16758,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không phải đơn ánh"
+        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
       },
       {
         "key": "B",
@@ -16766,11 +16766,11 @@
       },
       {
         "key": "C",
-        "text": "Không có ánh xạ ngược"
+        "text": "Không phải đơn ánh"
       },
       {
         "key": "D",
-        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
+        "text": "Không có ánh xạ ngược"
       }
     ],
     "correct": "B",
@@ -16794,7 +16794,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -16802,11 +16802,11 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$3$"
       },
       {
         "key": "D",
-        "text": "$3$"
+        "text": "$1$"
       }
     ],
     "correct": "B",
@@ -16834,15 +16834,15 @@
       },
       {
         "key": "B",
-        "text": "Chúng cùng là không gian con của $\\mathbb{R}^n$"
+        "text": "Chúng có cùng cơ sở"
       },
       {
         "key": "C",
-        "text": "$\\dim V + \\dim W$ là số lẻ"
+        "text": "Chúng cùng là không gian con của $\\mathbb{R}^n$"
       },
       {
         "key": "D",
-        "text": "Chúng có cùng cơ sở"
+        "text": "$\\dim V + \\dim W$ là số lẻ"
       }
     ],
     "correct": "A",
@@ -16866,7 +16866,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn luôn là một đẳng cấu"
+        "text": "Không bao giờ có thể là toàn ánh"
       },
       {
         "key": "B",
@@ -16878,7 +16878,7 @@
       },
       {
         "key": "D",
-        "text": "Không bao giờ có thể là toàn ánh"
+        "text": "Luôn luôn là một đẳng cấu"
       }
     ],
     "correct": "B",
@@ -16902,7 +16902,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$f$ không thể là đẳng cấu"
+        "text": "$f$ có thể là đơn ánh nhưng không phải toàn ánh"
       },
       {
         "key": "B",
@@ -16910,11 +16910,11 @@
       },
       {
         "key": "C",
-        "text": "$f$ luôn luôn là một toàn ánh"
+        "text": "$f$ không thể là đẳng cấu"
       },
       {
         "key": "D",
-        "text": "$f$ có thể là đơn ánh nhưng không phải toàn ánh"
+        "text": "$f$ luôn luôn là một toàn ánh"
       }
     ],
     "correct": "B",
@@ -16938,7 +16938,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\dim V = \\dim(\\ker f)$"
+        "text": "$\\dim V \\le \\dim W$"
       },
       {
         "key": "B",
@@ -16950,7 +16950,7 @@
       },
       {
         "key": "D",
-        "text": "$\\dim V \\le \\dim W$"
+        "text": "$\\dim V = \\dim(\\ker f)$"
       }
     ],
     "correct": "C",
@@ -16978,7 +16978,7 @@
       },
       {
         "key": "B",
-        "text": "Hệ ảnh chỉ sinh ra $W$ nhưng phụ thuộc tuyến tính"
+        "text": "Hệ ảnh luôn phụ thuộc tuyến tính"
       },
       {
         "key": "C",
@@ -16986,7 +16986,7 @@
       },
       {
         "key": "D",
-        "text": "Hệ ảnh luôn phụ thuộc tuyến tính"
+        "text": "Hệ ảnh chỉ sinh ra $W$ nhưng phụ thuộc tuyến tính"
       }
     ],
     "correct": "C",
@@ -17010,15 +17010,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn có $\\ker f = \\{\\theta\\}$"
+        "text": "Luôn luôn là một đẳng cấu"
       },
       {
         "key": "B",
-        "text": "Không bao giờ có thể là toàn ánh"
+        "text": "Luôn có $\\ker f = \\{\\theta\\}$"
       },
       {
         "key": "C",
-        "text": "Luôn luôn là một đẳng cấu"
+        "text": "Không bao giờ có thể là toàn ánh"
       },
       {
         "key": "D",
@@ -17046,7 +17046,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$f$ có thể là đơn ánh nhưng không phải toàn ánh"
+        "text": "$f$ không thể là đẳng cấu"
       },
       {
         "key": "B",
@@ -17054,7 +17054,7 @@
       },
       {
         "key": "C",
-        "text": "$f$ không thể là đẳng cấu"
+        "text": "$f$ có thể là đơn ánh nhưng không phải toàn ánh"
       },
       {
         "key": "D",
@@ -17118,11 +17118,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Không phải đơn ánh"
+        "text": "Không có ánh xạ ngược"
       },
       {
         "key": "B",
-        "text": "Không có ánh xạ ngược"
+        "text": "Không phải đơn ánh"
       },
       {
         "key": "C",
@@ -17230,15 +17230,15 @@
       },
       {
         "key": "B",
-        "text": "$2$"
-      },
-      {
-        "key": "C",
         "text": "$5$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$4$"
+      },
+      {
+        "key": "D",
+        "text": "$2$"
       }
     ],
     "correct": "A",
@@ -17298,11 +17298,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$6$"
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$5$"
       },
       {
         "key": "C",
@@ -17334,7 +17334,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq 0$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
@@ -17342,7 +17342,7 @@
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq 0$"
       },
       {
         "key": "D",
@@ -17370,7 +17370,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không bao giờ có thể là đơn ánh"
+        "text": "Luôn luôn là một đẳng cấu"
       },
       {
         "key": "B",
@@ -17382,7 +17382,7 @@
       },
       {
         "key": "D",
-        "text": "Luôn luôn là một đẳng cấu"
+        "text": "Không bao giờ có thể là đơn ánh"
       }
     ],
     "correct": "B",
@@ -17410,11 +17410,11 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 0$"
+        "text": "$m > 0$"
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq 0$"
       },
       {
         "key": "D",
@@ -17446,15 +17446,15 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 0$"
+        "text": "$m = 6$"
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq 0$"
       },
       {
         "key": "D",
-        "text": "$m = 6$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "A",
@@ -17586,15 +17586,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$A - \\lambda I = O$"
+        "text": "$\\det(A) - \\lambda = 0$"
       },
       {
         "key": "B",
-        "text": "$\\text{tr}(A - \\lambda I) = 0$"
+        "text": "$A - \\lambda I = O$"
       },
       {
         "key": "C",
-        "text": "$\\det(A) - \\lambda = 0$"
+        "text": "$\\text{tr}(A - \\lambda I) = 0$"
       },
       {
         "key": "D",
@@ -17622,7 +17622,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn phụ thuộc tuyến tính"
+        "text": "Luôn trực giao với nhau"
       },
       {
         "key": "B",
@@ -17630,11 +17630,11 @@
       },
       {
         "key": "C",
-        "text": "Luôn trực giao với nhau"
+        "text": "Luôn có chuẩn bằng 1"
       },
       {
         "key": "D",
-        "text": "Luôn có chuẩn bằng 1"
+        "text": "Luôn phụ thuộc tuyến tính"
       }
     ],
     "correct": "B",
@@ -17662,11 +17662,11 @@
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$2$"
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$6$"
       },
       {
         "key": "D",
@@ -17702,11 +17702,11 @@
       },
       {
         "key": "C",
-        "text": "$\\lambda_1 = 4, \\, \\lambda_2 = 7$"
+        "text": "$\\lambda_1 = 0, \\, \\lambda_2 = 2$"
       },
       {
         "key": "D",
-        "text": "$\\lambda_1 = 0, \\, \\lambda_2 = 2$"
+        "text": "$\\lambda_1 = 4, \\, \\lambda_2 = 7$"
       }
     ],
     "correct": "B",
@@ -17730,11 +17730,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-5$"
+        "text": "$8$"
       },
       {
         "key": "B",
-        "text": "$8$"
+        "text": "$-9$"
       },
       {
         "key": "C",
@@ -17742,7 +17742,7 @@
       },
       {
         "key": "D",
-        "text": "$-9$"
+        "text": "$-5$"
       }
     ],
     "correct": "C",
@@ -17770,7 +17770,7 @@
       },
       {
         "key": "B",
-        "text": "Ma trận có vết bằng 0"
+        "text": "Ma trận là ma trận tam giác"
       },
       {
         "key": "C",
@@ -17778,7 +17778,7 @@
       },
       {
         "key": "D",
-        "text": "Ma trận là ma trận tam giác"
+        "text": "Ma trận có vết bằng 0"
       }
     ],
     "correct": "C",
@@ -17806,7 +17806,7 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$3^2$"
       },
       {
         "key": "C",
@@ -17814,7 +17814,7 @@
       },
       {
         "key": "D",
-        "text": "$3^2$"
+        "text": "$3$"
       }
     ],
     "correct": "A",
@@ -17846,11 +17846,11 @@
       },
       {
         "key": "C",
-        "text": "$\\lambda = 0$"
+        "text": "$\\lambda_1 = 1, \\, \\lambda_2 = 2, \\, \\lambda_3 = 3$"
       },
       {
         "key": "D",
-        "text": "$\\lambda_1 = 1, \\, \\lambda_2 = 2, \\, \\lambda_3 = 3$"
+        "text": "$\\lambda = 0$"
       }
     ],
     "correct": "B",
@@ -17874,11 +17874,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-7$"
+        "text": "$9$"
       },
       {
         "key": "B",
-        "text": "$9$"
+        "text": "$6$"
       },
       {
         "key": "C",
@@ -17886,11 +17886,11 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$-7$"
       }
     ],
     "correct": "C",
-    "explanation": "* Định lý: Tổng các giá trị riêng bằng vết ma trận: $\\lambda_1 + \\lambda_2 + \\lambda_3 = \\text{tr}(A) \\iff 3 + (-2) + \\lambda_3 = 8 \\implies \\lambda_3 = 7$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Định lý: Tổng các giá trị riêng bằng vết ma trận: $\\lambda_1 + \\lambda_2 + \\lambda_3 = \\text{tr}(A) \\iff 3 - 2 + \\lambda_3 = 8 \\implies \\lambda_3 = 7$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17918,11 +17918,11 @@
       },
       {
         "key": "C",
-        "text": "$A v = \\lambda^2 v$"
+        "text": "$\\det(A) = \\lambda$"
       },
       {
         "key": "D",
-        "text": "$\\det(A) = \\lambda$"
+        "text": "$A v = \\lambda^2 v$"
       }
     ],
     "correct": "B",
@@ -17982,7 +17982,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-2$"
+        "text": "$7$"
       },
       {
         "key": "B",
@@ -17990,11 +17990,11 @@
       },
       {
         "key": "C",
-        "text": "$-4$"
+        "text": "$-2$"
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$-4$"
       }
     ],
     "correct": "B",
@@ -18018,7 +18018,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-2$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -18026,7 +18026,7 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$-2$"
       },
       {
         "key": "D",
@@ -18054,11 +18054,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$-2$"
       },
       {
         "key": "B",
-        "text": "$-2$"
+        "text": "$-8$"
       },
       {
         "key": "C",
@@ -18066,7 +18066,7 @@
       },
       {
         "key": "D",
-        "text": "$-8$"
+        "text": "$2$"
       }
     ],
     "correct": "C",
@@ -18098,11 +18098,11 @@
       },
       {
         "key": "C",
-        "text": "$\\lambda_1 = 5, \\, \\lambda_2 = 7$"
+        "text": "$\\lambda_1 = 32, \\, \\lambda_2 = 0$"
       },
       {
         "key": "D",
-        "text": "$\\lambda_1 = 32, \\, \\lambda_2 = 0$"
+        "text": "$\\lambda_1 = 5, \\, \\lambda_2 = 7$"
       }
     ],
     "correct": "A",
@@ -18126,7 +18126,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$2$"
       },
       {
         "key": "B",
@@ -18134,11 +18134,11 @@
       },
       {
         "key": "C",
-        "text": "$-3$"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$-3$"
       }
     ],
     "correct": "B",
@@ -18162,11 +18162,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\lambda_1 = 2, \\, \\lambda_2 = 7$"
+        "text": "$\\lambda_1 = 8, \\, \\lambda_2 = 0$"
       },
       {
         "key": "B",
-        "text": "$\\lambda_1 = 8, \\, \\lambda_2 = 0$"
+        "text": "$\\lambda_1 = 2, \\, \\lambda_2 = 7$"
       },
       {
         "key": "C",
@@ -18202,11 +18202,11 @@
       },
       {
         "key": "B",
-        "text": "$8$"
+        "text": "$-5$"
       },
       {
         "key": "C",
-        "text": "$-5$"
+        "text": "$8$"
       },
       {
         "key": "D",
@@ -18238,15 +18238,15 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$0$"
       },
       {
         "key": "C",
-        "text": "$-1$"
+        "text": "$3$"
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$-1$"
       }
     ],
     "correct": "A",
@@ -18274,11 +18274,11 @@
       },
       {
         "key": "B",
-        "text": "$12$"
+        "text": "$3$"
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$12$"
       },
       {
         "key": "D",
@@ -18306,11 +18306,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$-2$"
       },
       {
         "key": "B",
-        "text": "$-2$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -18346,7 +18346,7 @@
       },
       {
         "key": "B",
-        "text": "$\\lambda = 0$"
+        "text": "$\\lambda_1 = 1, \\, \\lambda_2 = 2, \\, \\lambda_3 = 3$"
       },
       {
         "key": "C",
@@ -18354,7 +18354,7 @@
       },
       {
         "key": "D",
-        "text": "$\\lambda_1 = 1, \\, \\lambda_2 = 2, \\, \\lambda_3 = 3$"
+        "text": "$\\lambda = 0$"
       }
     ],
     "correct": "A",
@@ -18450,7 +18450,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\|u + v\\| \\ge \\|u\\| + \\|v\\|$"
+        "text": "$\\|u - v\\| \\ge \\|u\\| + \\|v\\|$"
       },
       {
         "key": "B",
@@ -18462,7 +18462,7 @@
       },
       {
         "key": "D",
-        "text": "$\\|u - v\\| \\ge \\|u\\| + \\|v\\|$"
+        "text": "$\\|u + v\\| \\ge \\|u\\| + \\|v\\|$"
       }
     ],
     "correct": "B",
@@ -18486,7 +18486,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$7$"
+        "text": "$26$"
       },
       {
         "key": "B",
@@ -18498,7 +18498,7 @@
       },
       {
         "key": "D",
-        "text": "$26$"
+        "text": "$7$"
       }
     ],
     "correct": "C",
@@ -18526,19 +18526,19 @@
       },
       {
         "key": "B",
-        "text": "$6$"
-      },
-      {
-        "key": "C",
         "text": "$-1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$-3$"
+      },
+      {
+        "key": "D",
+        "text": "$6$"
       }
     ],
     "correct": "A",
-    "explanation": "* $\\langle u, v \\rangle = (1)(2) + (1)(-1) + (-2)(-1) = 2 + (-1) + (2) = 3$.\n* **Chọn đáp án: A.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(2) + (1)(-1) - 2(-1) = 2 - 1 + (2) = 3$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18558,7 +18558,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\langle u, u \\rangle \\le 0$ với mọi $u$"
+        "text": "$\\langle u, u \\rangle = 1$ với mọi $u \\neq \\theta$"
       },
       {
         "key": "B",
@@ -18566,7 +18566,7 @@
       },
       {
         "key": "C",
-        "text": "$\\langle u, u \\rangle = 1$ với mọi $u \\neq \\theta$"
+        "text": "$\\langle u, u \\rangle \\le 0$ với mọi $u$"
       },
       {
         "key": "D",
@@ -18630,11 +18630,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\sin \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
+        "text": "$\\tan \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
       },
       {
         "key": "B",
-        "text": "$\\tan \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
+        "text": "$\\sin \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
       },
       {
         "key": "C",
@@ -18670,11 +18670,11 @@
       },
       {
         "key": "B",
-        "text": "$23$"
+        "text": "$19$"
       },
       {
         "key": "C",
-        "text": "$19$"
+        "text": "$23$"
       },
       {
         "key": "D",
@@ -18706,7 +18706,7 @@
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$-1$"
       },
       {
         "key": "C",
@@ -18714,11 +18714,11 @@
       },
       {
         "key": "D",
-        "text": "$-1$"
+        "text": "$2$"
       }
     ],
     "correct": "A",
-    "explanation": "* Thay số vào công thức tích vô hướng có trọng số: $\\langle u, v \\rangle = 3(1)(2) + 4(2)(-1) = 6 + (-8) = -2$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Thay số vào công thức tích vô hướng có trọng số: $\\langle u, v \\rangle = 3(1)(2) + 4(2)(-1) = 6 - 8 = -2$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18738,15 +18738,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\|u + v\\|^2 = \\|u\\|^2 - \\|v\\|^2$"
-      },
-      {
-        "key": "B",
         "text": "$\\|u + v\\|^2 = 2(\\|u\\|^2 + \\|v\\|^2)$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$\\|u + v\\| = \\|u\\| + \\|v\\|$"
+      },
+      {
+        "key": "C",
+        "text": "$\\|u + v\\|^2 = \\|u\\|^2 - \\|v\\|^2$"
       },
       {
         "key": "D",
@@ -18778,7 +18778,7 @@
       },
       {
         "key": "B",
-        "text": "$\\|u + v\\| = \\|u\\| + \\|v\\|$"
+        "text": "$|\\langle u, v \\rangle| \\ge \\|u\\| \\cdot \\|v\\|$"
       },
       {
         "key": "C",
@@ -18786,7 +18786,7 @@
       },
       {
         "key": "D",
-        "text": "$|\\langle u, v \\rangle| \\ge \\|u\\| \\cdot \\|v\\|$"
+        "text": "$\\|u + v\\| = \\|u\\| + \\|v\\|$"
       }
     ],
     "correct": "A",
@@ -18810,7 +18810,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$19$"
+        "text": "$6$"
       },
       {
         "key": "B",
@@ -18822,7 +18822,7 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$19$"
       }
     ],
     "correct": "B",
@@ -18862,7 +18862,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* $\\langle u, v \\rangle = (2)(-1) + (2)(1) + (-2)(4) = -2 + (2) + (-8) = -8$.\n* **Chọn đáp án: C.**",
+    "explanation": "* $\\langle u, v \\rangle = (2)(-1) + (2)(1) - 2(4) = -2 + (2) - 8 = -8$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18882,11 +18882,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$18$"
+        "text": "$19$"
       },
       {
         "key": "B",
-        "text": "$19$"
+        "text": "$6$"
       },
       {
         "key": "C",
@@ -18894,7 +18894,7 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$18$"
       }
     ],
     "correct": "C",
@@ -18926,15 +18926,15 @@
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$2$"
       }
     ],
     "correct": "A",
-    "explanation": "* $\\langle u, v \\rangle = (1)(3) + (-3)(1) + (1)(-1) = 3 + (-3) + (-1) = -1$.\n* **Chọn đáp án: A.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(3) - 3(1) + (1)(-1) = 3 - 3 - 1 = -1$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18958,7 +18958,7 @@
       },
       {
         "key": "B",
-        "text": "$7$"
+        "text": "$26$"
       },
       {
         "key": "C",
@@ -18966,7 +18966,7 @@
       },
       {
         "key": "D",
-        "text": "$26$"
+        "text": "$7$"
       }
     ],
     "correct": "A",
@@ -18990,11 +18990,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$10$"
+        "text": "$-7$"
       },
       {
         "key": "B",
-        "text": "$-7$"
+        "text": "$10$"
       },
       {
         "key": "C",
@@ -19006,7 +19006,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* $\\langle u, v \\rangle = (2)(3) + (2)(1) + (1)(-1) = 6 + (2) + (-1) = 7$.\n* **Chọn đáp án: C.**",
+    "explanation": "* $\\langle u, v \\rangle = (2)(3) + (2)(1) + (1)(-1) = 6 + (2) - 1 = 7$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19026,15 +19026,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$100$"
+        "text": "$12$"
       },
       {
         "key": "B",
-        "text": "$14$"
+        "text": "$100$"
       },
       {
         "key": "C",
-        "text": "$12$"
+        "text": "$14$"
       },
       {
         "key": "D",
@@ -19042,7 +19042,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Chuẩn Euclide: $\\|u\\| = \\sqrt{-6^2 + (-8)^2} = \\sqrt{100} = 10$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Chuẩn Euclide: $\\|u\\| = \\sqrt{-6^2 - 8^2} = \\sqrt{100} = 10$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19066,11 +19066,11 @@
       },
       {
         "key": "B",
-        "text": "$-2$"
+        "text": "$4$"
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$-2$"
       },
       {
         "key": "D",
@@ -19078,7 +19078,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Thay số vào công thức tích vô hướng có trọng số: $\\langle u, v \\rangle = 2(1)(2) + 1(2)(-1) = 4 + (-2) = 2$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Thay số vào công thức tích vô hướng có trọng số: $\\langle u, v \\rangle = 2(1)(2) + 1(2)(-1) = 4 - 2 = 2$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19098,11 +19098,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$25$"
+        "text": "$7$"
       },
       {
         "key": "B",
-        "text": "$7$"
+        "text": "$25$"
       },
       {
         "key": "C",
@@ -19114,7 +19114,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 1)^2 + (2 - -1)^2} = \\sqrt{25} = 5$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 1)^2 + (2 + 1)^2} = \\sqrt{25} = 5$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19138,11 +19138,11 @@
       },
       {
         "key": "B",
-        "text": "$-6$"
+        "text": "$9$"
       },
       {
         "key": "C",
-        "text": "$9$"
+        "text": "$-6$"
       },
       {
         "key": "D",
@@ -19150,7 +19150,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* $\\langle u, v \\rangle = (1)(3) + (-3)(-1) + (0)(-1) = 3 + (3) + (0) = 6$.\n* **Chọn đáp án: D.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(3) - 3(-1) + (0)(-1) = 3 + (3) + (0) = 6$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19170,11 +19170,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$8$"
+        "text": "$32$"
       },
       {
         "key": "B",
-        "text": "$32$"
+        "text": "$33$"
       },
       {
         "key": "C",
@@ -19182,11 +19182,11 @@
       },
       {
         "key": "D",
-        "text": "$33$"
+        "text": "$8$"
       }
     ],
     "correct": "C",
-    "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 1)^2 + (3 - -1)^2} = \\sqrt{32} = \\sqrt{32}$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 1)^2 + (3 + 1)^2} = \\sqrt{32} = \\sqrt{32}$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19210,7 +19210,7 @@
       },
       {
         "key": "B",
-        "text": "$-8$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -19218,11 +19218,11 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$-8$"
       }
     ],
     "correct": "C",
-    "explanation": "* $\\langle u, v \\rangle = (2)(2) + (2)(1) + (-2)(-1) = 4 + (2) + (2) = 8$.\n* **Chọn đáp án: C.**",
+    "explanation": "* $\\langle u, v \\rangle = (2)(2) + (2)(1) - 2(-1) = 4 + (2) + (2) = 8$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19278,11 +19278,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-5$"
+        "text": "$8$"
       },
       {
         "key": "B",
-        "text": "$8$"
+        "text": "$-5$"
       },
       {
         "key": "C",
@@ -19294,7 +19294,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* $\\langle u, v \\rangle = (2)(3) + (1)(-1) + (0)(2) = 6 + (-1) + (0) = 5$.\n* **Chọn đáp án: D.**",
+    "explanation": "* $\\langle u, v \\rangle = (2)(3) + (1)(-1) + (0)(2) = 6 - 1 + (0) = 5$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19394,11 +19394,11 @@
       },
       {
         "key": "C",
-        "text": "Có thể là số thực bất kỳ khác 0"
+        "text": "Luôn bằng 0"
       },
       {
         "key": "D",
-        "text": "Luôn bằng 0"
+        "text": "Có thể là số thực bất kỳ khác 0"
       }
     ],
     "correct": "B",
@@ -19422,7 +19422,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$c_i = \\|v - e_i\\|$"
+        "text": "$c_i = \\det(v, e_i)$"
       },
       {
         "key": "B",
@@ -19430,7 +19430,7 @@
       },
       {
         "key": "C",
-        "text": "$c_i = \\det(v, e_i)$"
+        "text": "$c_i = \\|v - e_i\\|$"
       },
       {
         "key": "D",
@@ -19462,7 +19462,7 @@
       },
       {
         "key": "B",
-        "text": "$(0, 1)$"
+        "text": "$\\left(-\\dfrac{1}{2}, \\dfrac{1}{2}\\right)$"
       },
       {
         "key": "C",
@@ -19470,7 +19470,7 @@
       },
       {
         "key": "D",
-        "text": "$\\left(-\\dfrac{1}{2}, \\dfrac{1}{2}\\right)$"
+        "text": "$(0, 1)$"
       }
     ],
     "correct": "C",
@@ -19494,11 +19494,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ độc lập tuyến tính khi số véc tơ bằng số chiều không gian"
+        "text": "Luôn là một cơ sở trực chuẩn"
       },
       {
         "key": "B",
-        "text": "Luôn là một cơ sở trực chuẩn"
+        "text": "Chỉ độc lập tuyến tính khi số véc tơ bằng số chiều không gian"
       },
       {
         "key": "C",
@@ -19530,23 +19530,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = -\\dfrac{1}{-2}$"
-      },
-      {
-        "key": "B",
         "text": "$m = 0$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m = 1$"
       },
       {
+        "key": "C",
+        "text": "$m = \\dfrac{1}{2}$"
+      },
+      {
         "key": "D",
-        "text": "$m = \\dfrac{1}{-2}$"
+        "text": "$m = -\\dfrac{1}{2}$"
       }
     ],
     "correct": "D",
-    "explanation": "* $\\langle u, v \\rangle = -1 + -2m = 0 \\iff m = \\dfrac{1}{-2}$.\n* **Chọn đáp án: D.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(2) + (3)(-1) - 2m = 0 \\iff m = m = -\\dfrac{1}{2}$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19574,11 +19574,11 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$4$"
       }
     ],
     "correct": "A",
@@ -19638,7 +19638,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ cần tất cả các véc tơ đều có độ dài bằng 1"
+        "text": "Chỉ cần trực giao từng đôi một ($\\langle e_i, e_j \\rangle = 0$ với mọi $i \\neq j$)"
       },
       {
         "key": "B",
@@ -19646,11 +19646,11 @@
       },
       {
         "key": "C",
-        "text": "Chỉ cần trực giao từng đôi một ($\\langle e_i, e_j \\rangle = 0$ với mọi $i \\neq j$)"
+        "text": "Hệ sinh ra toàn bộ không gian"
       },
       {
         "key": "D",
-        "text": "Hệ sinh ra toàn bộ không gian"
+        "text": "Chỉ cần tất cả các véc tơ đều có độ dài bằng 1"
       }
     ],
     "correct": "B",
@@ -19674,11 +19674,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$u + v = \\theta$"
+        "text": "$\\|u\\| = \\|v\\|$"
       },
       {
         "key": "B",
-        "text": "$\\|u\\| = \\|v\\|$"
+        "text": "$u + v = \\theta$"
       },
       {
         "key": "C",
@@ -19718,11 +19718,11 @@
       },
       {
         "key": "C",
-        "text": "$\\det A = 0$"
+        "text": "$A^T = -A$"
       },
       {
         "key": "D",
-        "text": "$A^T = -A$"
+        "text": "$\\det A = 0$"
       }
     ],
     "correct": "A",
@@ -19746,11 +19746,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$5$"
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "C",
@@ -19758,7 +19758,7 @@
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$1$"
       }
     ],
     "correct": "C",
@@ -19782,7 +19782,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 5$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -19790,15 +19790,15 @@
       },
       {
         "key": "C",
-        "text": "$m = -3$"
+        "text": "$m = 5$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = -3$"
       }
     ],
     "correct": "B",
-    "explanation": "* $\\langle u, v \\rangle = (1)(4) + (3)(2) + (2)m = 10 + 2m = 0 \\iff m = -5$.\n* **Chọn đáp án: B.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(4) + (3)(2) + 2m = 10 + 2m = 0 \\iff m = -5$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19818,7 +19818,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$0$"
       },
       {
         "key": "B",
@@ -19830,7 +19830,7 @@
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$2$"
       }
     ],
     "correct": "B",
@@ -19854,23 +19854,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = \\dfrac{-3}{-2}$"
+        "text": "$m = \\dfrac{3}{2}$"
       },
       {
         "key": "B",
-        "text": "$m = -\\dfrac{-3}{-2}$"
+        "text": "$m = -\\dfrac{3}{2}$"
       },
       {
         "key": "C",
-        "text": "$m = 1$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = 1$"
       }
     ],
     "correct": "A",
-    "explanation": "* $\\langle u, v \\rangle = 3 + -2m = 0 \\iff m = \\dfrac{-3}{-2}$.\n* **Chọn đáp án: A.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(2) - 1(-1) - 2m = 0 \\iff m = m = \\dfrac{3}{2}$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19894,11 +19894,11 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = -3$"
       },
       {
         "key": "C",
-        "text": "$m = -3$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -19906,7 +19906,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* $\\langle u, v \\rangle = (2)(4) + (-1)(2) + (-2)m = 6 + -2m = 0 \\iff m = 3$.\n* **Chọn đáp án: A.**",
+    "explanation": "* $\\langle u, v \\rangle = (2)(4) - 1(2) - 2m = 6 - 2m = 0 \\iff m = 3$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19926,7 +19926,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -19938,7 +19938,7 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$3$"
       }
     ],
     "correct": "B",
@@ -19962,23 +19962,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
-        "text": "$m = \\dfrac{-1}{2}$"
+        "text": "$m = -\\dfrac{1}{2}$"
       },
       {
         "key": "C",
-        "text": "$m = -\\dfrac{-1}{2}$"
+        "text": "$m = \\dfrac{1}{2}$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = 1$"
       }
     ],
     "correct": "B",
-    "explanation": "* $\\langle u, v \\rangle = 1 + 2m = 0 \\iff m = \\dfrac{-1}{2}$.\n* **Chọn đáp án: B.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(4) + (3)(-1) + 2m = 0 \\iff m = m = -\\dfrac{1}{2}$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20002,11 +20002,11 @@
       },
       {
         "key": "B",
-        "text": "$m = -4$"
+        "text": "$m = 6$"
       },
       {
         "key": "C",
-        "text": "$m = 6$"
+        "text": "$m = -4$"
       },
       {
         "key": "D",
@@ -20014,7 +20014,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* $\\langle u, v \\rangle = (1)(2) + (3)(2) + (-2)m = 8 + -2m = 0 \\iff m = 4$.\n* **Chọn đáp án: A.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(2) + (3)(2) - 2m = 8 - 2m = 0 \\iff m = 4$.\n* **Chọn đáp án: A.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20034,15 +20034,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
-      },
-      {
-        "key": "B",
         "text": "$1$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$2$"
+      },
+      {
+        "key": "C",
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -20086,7 +20086,7 @@
       }
     ],
     "correct": "B",
-    "explanation": "* $\\langle u, v \\rangle = (2)(2) + (3)(2) + (-2)m = 10 + -2m = 0 \\iff m = 5$.\n* **Chọn đáp án: B.**",
+    "explanation": "* $\\langle u, v \\rangle = (2)(2) + (3)(2) - 2m = 10 - 2m = 0 \\iff m = 5$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20110,11 +20110,11 @@
       },
       {
         "key": "B",
-        "text": "$m = -\\dfrac{-1}{2}$"
+        "text": "$m = \\dfrac{1}{2}$"
       },
       {
         "key": "C",
-        "text": "$m = \\dfrac{-1}{2}$"
+        "text": "$m = -\\dfrac{1}{2}$"
       },
       {
         "key": "D",
@@ -20122,7 +20122,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* $\\langle u, v \\rangle = 1 + 2m = 0 \\iff m = \\dfrac{-1}{2}$.\n* **Chọn đáp án: C.**",
+    "explanation": "* $\\langle u, v \\rangle = (2)(2) + (3)(-1) + 2m = 0 \\iff m = m = -\\dfrac{1}{2}$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20142,11 +20142,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m = \\dfrac{5}{2}$"
       },
       {
         "key": "B",
-        "text": "$m = -\\dfrac{-5}{2}$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -20154,11 +20154,11 @@
       },
       {
         "key": "D",
-        "text": "$m = \\dfrac{-5}{2}$"
+        "text": "$m = -\\dfrac{5}{2}$"
       }
     ],
     "correct": "D",
-    "explanation": "* $\\langle u, v \\rangle = 5 + 2m = 0 \\iff m = \\dfrac{-5}{2}$.\n* **Chọn đáp án: D.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(4) - 1(-1) + 2m = 0 \\iff m = m = -\\dfrac{5}{2}$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20178,15 +20178,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 3$"
+        "text": "$m = -1$"
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       },
       {
         "key": "C",
-        "text": "$m = -1$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -20194,7 +20194,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* $\\langle u, v \\rangle = (1)(4) + (-1)(2) + (-2)m = 2 + -2m = 0 \\iff m = 1$.\n* **Chọn đáp án: D.**",
+    "explanation": "* $\\langle u, v \\rangle = (1)(4) - 1(2) - 2m = 2 - 2m = 0 \\iff m = 1$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20282,7 +20282,7 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 5x_1^2 + -4x_1 x_2 + 1x_2^2$ là:",
+    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 5x_1^2 - 4x_1 x_2 + x_2^2$ là:",
     "options": [
       {
         "key": "A",
@@ -20298,7 +20298,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 5 & -2 \\\\ --2 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & -2 \\\\ + 2 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -20322,11 +20322,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = z_1^2 + \\dots + z_n^2$"
+        "text": "$Q = -z_1^2 - \\dots - z_n^2$"
       },
       {
         "key": "B",
-        "text": "$Q = -z_1^2 - \\dots - z_n^2$"
+        "text": "$Q = z_1^2 + \\dots + z_n^2$"
       },
       {
         "key": "C",
@@ -20362,7 +20362,7 @@
       },
       {
         "key": "B",
-        "text": "Nghịch đảo các giá trị riêng của $A$"
+        "text": "Các định thức con chính góc của $A$"
       },
       {
         "key": "C",
@@ -20370,7 +20370,7 @@
       },
       {
         "key": "D",
-        "text": "Các định thức con chính góc của $A$"
+        "text": "Nghịch đảo các giá trị riêng của $A$"
       }
     ],
     "correct": "C",
@@ -20394,15 +20394,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$p = 3, \\, q = 0$"
-      },
-      {
-        "key": "B",
         "text": "$p = 2, \\, q = 1$ và $\\text{rank}(Q) = 3$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$p = 1, \\, q = 2$ và $\\text{rank}(Q) = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$p = 3, \\, q = 0$"
       },
       {
         "key": "D",
@@ -20438,11 +20438,11 @@
       },
       {
         "key": "C",
-        "text": "Có ma trận biểu diễn là ma trận đơn vị"
+        "text": "Có tất cả các hệ số đều bằng 1"
       },
       {
         "key": "D",
-        "text": "Có tất cả các hệ số đều bằng 1"
+        "text": "Có ma trận biểu diễn là ma trận đơn vị"
       }
     ],
     "correct": "B",
@@ -20462,15 +20462,15 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 4x_1^2 + -4x_1 x_2 + -3x_2^2$ là:",
+    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 4x_1^2 - 4x_1 x_2 - 3x_2^2$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} -2 & 4 \\\\ -3 & -2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & -4 \\\\ -4 & -3 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 4 & -4 \\\\ -4 & -3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -2 & 4 \\\\ -3 & -2 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -20478,7 +20478,7 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 4 & -2 \\\\ --2 & -3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & -2 \\\\ + 2 & -3 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
@@ -20502,7 +20502,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$A' = C A C^{-1}$"
+        "text": "$A' = C A C^T$"
       },
       {
         "key": "B",
@@ -20510,7 +20510,7 @@
       },
       {
         "key": "C",
-        "text": "$A' = C A C^T$"
+        "text": "$A' = C A C^{-1}$"
       },
       {
         "key": "D",
@@ -20538,23 +20538,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 - 1y_2^2$"
+        "text": "$Q = y_1^2 + 2y_2^2$"
       },
       {
         "key": "B",
-        "text": "$Q = y_1^2 + 1y_2^2$ với $y_1 = x_1 + 1x_2, \\, y_2 = x_2$"
+        "text": "$Q = y_1^2 + y_2^2$ với $y_1 = x_1 + x_2, \\, y_2 = x_2$"
       },
       {
         "key": "C",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 - y_2^2$"
       },
       {
         "key": "D",
-        "text": "$Q = y_1^2 + 2y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       }
     ],
     "correct": "B",
-    "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + 1x_2^2) + (2 - 1)x_2^2 = (x_1 + 1x_2)^2 + 1x_2^2 = y_1^2 + 1y_2^2$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + x_2^2) + (2 - 1)x_2^2 = (x_1 + x_2)^2 + x_2^2 = y_1^2 + y_2^2$.\n* **Chọn đáp án: B.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20570,11 +20570,11 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 3x_1^2 + -1x_2^2 + 1x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
+    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 3x_1^2 - x_2^2 + x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
     "options": [
       {
         "key": "A",
-        "text": "$a_{12} = 1$ và $a_{23} = -1$"
+        "text": "$a_{12} = 4$ và $a_{23} = -6$"
       },
       {
         "key": "B",
@@ -20582,7 +20582,7 @@
       },
       {
         "key": "C",
-        "text": "$a_{12} = 4$ và $a_{23} = -6$"
+        "text": "$a_{12} = 1$ và $a_{23} = -1$"
       },
       {
         "key": "D",
@@ -20618,11 +20618,11 @@
       },
       {
         "key": "C",
-        "text": "$f(x_1, x_2) = 2x_1^2 - 3x_1 x_2 + 4x_2^2$"
+        "text": "$f(x_1, x_2, x_3) = x_1 x_2 + x_2 x_3 + x_3 x_1$"
       },
       {
         "key": "D",
-        "text": "$f(x_1, x_2, x_3) = x_1 x_2 + x_2 x_3 + x_3 x_1$"
+        "text": "$f(x_1, x_2) = 2x_1^2 - 3x_1 x_2 + 4x_2^2$"
       }
     ],
     "correct": "A",
@@ -20650,15 +20650,15 @@
       },
       {
         "key": "B",
-        "text": "$1$"
-      },
-      {
-        "key": "C",
         "text": "$4$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$0$"
+      },
+      {
+        "key": "D",
+        "text": "$1$"
       }
     ],
     "correct": "A",
@@ -20682,7 +20682,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 + 6y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       },
       {
         "key": "B",
@@ -20690,11 +20690,11 @@
       },
       {
         "key": "C",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 - 2y_2^2$"
       },
       {
         "key": "D",
-        "text": "$Q = y_1^2 - 2y_2^2$"
+        "text": "$Q = y_1^2 + 6y_2^2$"
       }
     ],
     "correct": "B",
@@ -20714,7 +20714,7 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 2x_1^2 + -1x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
+    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 2x_1^2 - x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
     "options": [
       {
         "key": "A",
@@ -20726,11 +20726,11 @@
       },
       {
         "key": "C",
-        "text": "$a_{12} = 1$ và $a_{23} = -1$"
+        "text": "$a_{12} = -2$ và $a_{23} = 3$"
       },
       {
         "key": "D",
-        "text": "$a_{12} = -2$ và $a_{23} = 3$"
+        "text": "$a_{12} = 1$ và $a_{23} = -1$"
       }
     ],
     "correct": "A",
@@ -20754,23 +20754,23 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 - y_2^2$"
       },
       {
         "key": "B",
-        "text": "$Q = y_1^2 + 10y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       },
       {
         "key": "C",
-        "text": "$Q = y_1^2 + 1y_2^2$ với $y_1 = x_1 + 3x_2, \\, y_2 = x_2$"
+        "text": "$Q = y_1^2 + y_2^2$ với $y_1 = x_1 + 3x_2, \\, y_2 = x_2$"
       },
       {
         "key": "D",
-        "text": "$Q = y_1^2 - 1y_2^2$"
+        "text": "$Q = y_1^2 + 10y_2^2$"
       }
     ],
     "correct": "C",
-    "explanation": "* Biến đổi: $Q = (x_1^2 + 6x_1 x_2 + 9x_2^2) + (10 - 9)x_2^2 = (x_1 + 3x_2)^2 + 1x_2^2 = y_1^2 + 1y_2^2$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Biến đổi: $Q = (x_1^2 + 6x_1 x_2 + 9x_2^2) + (10 - 9)x_2^2 = (x_1 + 3x_2)^2 + x_2^2 = y_1^2 + y_2^2$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20786,19 +20786,19 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 3x_1^2 + -1x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
+    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 3x_1^2 - x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
     "options": [
       {
         "key": "A",
-        "text": "$a_{12} = -2$ và $a_{23} = 3$"
-      },
-      {
-        "key": "B",
         "text": "$a_{12} = 4$ và $a_{23} = -6$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$a_{12} = 1$ và $a_{23} = -1$"
+      },
+      {
+        "key": "C",
+        "text": "$a_{12} = -2$ và $a_{23} = 3$"
       },
       {
         "key": "D",
@@ -20830,19 +20830,19 @@
       },
       {
         "key": "B",
-        "text": "$Q = (x_1 + x_2)^2$"
-      },
-      {
-        "key": "C",
         "text": "$Q = y_1^2 - 2y_2^2$"
       },
       {
+        "key": "C",
+        "text": "$Q = (x_1 + x_2)^2$"
+      },
+      {
         "key": "D",
-        "text": "$Q = y_1^2 + 2y_2^2$ với $y_1 = x_1 + 1x_2, \\, y_2 = x_2$"
+        "text": "$Q = y_1^2 + 2y_2^2$ với $y_1 = x_1 + x_2, \\, y_2 = x_2$"
       }
     ],
     "correct": "D",
-    "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + 1x_2^2) + (3 - 1)x_2^2 = (x_1 + 1x_2)^2 + 2x_2^2 = y_1^2 + 2y_2^2$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + x_2^2) + (3 - 1)x_2^2 = (x_1 + x_2)^2 + 2x_2^2 = y_1^2 + 2y_2^2$.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20858,7 +20858,7 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 1x_1^2 + 2x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
+    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = x_1^2 + 2x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
     "options": [
       {
         "key": "A",
@@ -20898,7 +20898,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 + 5y_2^2$"
+        "text": "$Q = y_1^2 - y_2^2$"
       },
       {
         "key": "B",
@@ -20906,15 +20906,15 @@
       },
       {
         "key": "C",
-        "text": "$Q = y_1^2 + 1y_2^2$ với $y_1 = x_1 + 2x_2, \\, y_2 = x_2$"
+        "text": "$Q = y_1^2 + y_2^2$ với $y_1 = x_1 + 2x_2, \\, y_2 = x_2$"
       },
       {
         "key": "D",
-        "text": "$Q = y_1^2 - 1y_2^2$"
+        "text": "$Q = y_1^2 + 5y_2^2$"
       }
     ],
     "correct": "C",
-    "explanation": "* Biến đổi: $Q = (x_1^2 + 4x_1 x_2 + 4x_2^2) + (5 - 4)x_2^2 = (x_1 + 2x_2)^2 + 1x_2^2 = y_1^2 + 1y_2^2$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Biến đổi: $Q = (x_1^2 + 4x_1 x_2 + 4x_2^2) + (5 - 4)x_2^2 = (x_1 + 2x_2)^2 + x_2^2 = y_1^2 + y_2^2$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20938,15 +20938,15 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}$"
-      },
-      {
-        "key": "C",
         "text": "$\\begin{bmatrix} 2 & 2 \\\\ 2 & 2 \\end{bmatrix}$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$\\begin{bmatrix} 1 & 2 \\\\ 2 & 1 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
@@ -20970,7 +20970,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 - 2y_2^2$"
       },
       {
         "key": "B",
@@ -20982,7 +20982,7 @@
       },
       {
         "key": "D",
-        "text": "$Q = y_1^2 - 2y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       }
     ],
     "correct": "C",
@@ -21002,7 +21002,7 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 5x_1^2 + 2x_1 x_2 + -3x_2^2$ là:",
+    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 5x_1^2 + 2x_1 x_2 - 3x_2^2$ là:",
     "options": [
       {
         "key": "A",
@@ -21042,15 +21042,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = (x_1 + x_2)^2$"
-      },
-      {
-        "key": "B",
         "text": "$Q = y_1^2 - 3y_2^2$"
       },
       {
+        "key": "B",
+        "text": "$Q = (x_1 + x_2)^2$"
+      },
+      {
         "key": "C",
-        "text": "$Q = y_1^2 + 3y_2^2$ với $y_1 = x_1 + 1x_2, \\, y_2 = x_2$"
+        "text": "$Q = y_1^2 + 3y_2^2$ với $y_1 = x_1 + x_2, \\, y_2 = x_2$"
       },
       {
         "key": "D",
@@ -21058,7 +21058,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + 1x_2^2) + (4 - 1)x_2^2 = (x_1 + 1x_2)^2 + 3x_2^2 = y_1^2 + 3y_2^2$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + x_2^2) + (4 - 1)x_2^2 = (x_1 + x_2)^2 + 3x_2^2 = y_1^2 + 3y_2^2$.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21074,7 +21074,7 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = 1x_1^2 + -1x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
+    "question": "Cho dạng toàn phương $Q(x_1, x_2, x_3) = x_1^2 - x_2^2 + 4x_3^2 + 4x_1 x_2 - 6x_2 x_3$. Phần tử ở hàng 1, cột 2 ($a_{12}$) và hàng 2, cột 3 ($a_{23}$) của ma trận biểu diễn lần lượt là:",
     "options": [
       {
         "key": "A",
@@ -21086,11 +21086,11 @@
       },
       {
         "key": "C",
-        "text": "$a_{12} = 4$ và $a_{23} = -6$"
+        "text": "$a_{12} = -2$ và $a_{23} = 3$"
       },
       {
         "key": "D",
-        "text": "$a_{12} = -2$ và $a_{23} = 3$"
+        "text": "$a_{12} = 4$ và $a_{23} = -6$"
       }
     ],
     "correct": "A",
@@ -21110,11 +21110,11 @@
     "typeName": "Dạng toàn phương & Thuật toán Lagrange",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 3x_1^2 + -4x_1 x_2 + -3x_2^2$ là:",
+    "question": "Ma trận đối xứng biểu diễn dạng toàn phương $Q(x_1, x_2) = 3x_1^2 - 4x_1 x_2 - 3x_2^2$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 3 & -2 \\\\ --2 & -3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 3 & -2 \\\\ + 2 & -3 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -21226,7 +21226,7 @@
       },
       {
         "key": "B",
-        "text": "Tất cả các định thức con chính góc đều âm: $\\Delta_k < 0$"
+        "text": "Đan dấu bắt đầu từ dương: $\\Delta_1 > 0, \\Delta_2 < 0$"
       },
       {
         "key": "C",
@@ -21234,7 +21234,7 @@
       },
       {
         "key": "D",
-        "text": "Đan dấu bắt đầu từ dương: $\\Delta_1 > 0, \\Delta_2 < 0$"
+        "text": "Tất cả các định thức con chính góc đều âm: $\\Delta_k < 0$"
       }
     ],
     "correct": "C",
@@ -21258,11 +21258,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m > 3$"
+        "text": "$m < \\dfrac{4}{3}$"
       },
       {
         "key": "B",
-        "text": "$m < \\dfrac{4}{3}$"
+        "text": "$m > 3$"
       },
       {
         "key": "C",
@@ -21330,7 +21330,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không xác định dấu"
+        "text": "Xác định dương"
       },
       {
         "key": "B",
@@ -21342,7 +21342,7 @@
       },
       {
         "key": "D",
-        "text": "Xác định dương"
+        "text": "Không xác định dấu"
       }
     ],
     "correct": "C",
@@ -21362,15 +21362,15 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = -4x_1^2 + (-2)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = -4x_1^2 - 2x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Không xác định dấu"
+        "text": "Xác định dương"
       },
       {
         "key": "B",
-        "text": "Xác định dương"
+        "text": "Không xác định dấu"
       },
       {
         "key": "C",
@@ -21382,7 +21382,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* $Q(x_1, x_2) = -4x_1^2 + (-2)x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: C.**",
+    "explanation": "* $Q(x_1, x_2) = -4x_1^2 - 2x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: C.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21402,7 +21402,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Điểm yên ngựa (không là cực trị)"
+        "text": "Giá trị nhỏ nhất toàn cục"
       },
       {
         "key": "B",
@@ -21414,7 +21414,7 @@
       },
       {
         "key": "D",
-        "text": "Giá trị nhỏ nhất toàn cục"
+        "text": "Điểm yên ngựa (không là cực trị)"
       }
     ],
     "correct": "C",
@@ -21438,11 +21438,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ cần giá trị riêng lớn nhất dương"
+        "text": "Tổng các giá trị riêng dương"
       },
       {
         "key": "B",
-        "text": "Tổng các giá trị riêng dương"
+        "text": "Chỉ cần giá trị riêng lớn nhất dương"
       },
       {
         "key": "C",
@@ -21470,15 +21470,15 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = 1x_1^2 + (-3)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = x_1^2 - 3x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Nửa xác định dương"
+        "text": "Xác định âm"
       },
       {
         "key": "B",
-        "text": "Xác định âm"
+        "text": "Nửa xác định dương"
       },
       {
         "key": "C",
@@ -21546,7 +21546,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Các định thức con chính góc đan dấu bắt đầu từ âm"
+        "text": "Chỉ cần định thức toàn phần $\\det A > 0$"
       },
       {
         "key": "B",
@@ -21558,7 +21558,7 @@
       },
       {
         "key": "D",
-        "text": "Chỉ cần định thức toàn phần $\\det A > 0$"
+        "text": "Các định thức con chính góc đan dấu bắt đầu từ âm"
       }
     ],
     "correct": "B",
@@ -21614,19 +21614,19 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = -2x_1^2 + (-1)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = -2x_1^2 - x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Không xác định dấu"
-      },
-      {
-        "key": "B",
         "text": "Nửa xác định âm"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Xác định dương"
+      },
+      {
+        "key": "C",
+        "text": "Không xác định dấu"
       },
       {
         "key": "D",
@@ -21634,7 +21634,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* $Q(x_1, x_2) = -2x_1^2 + (-1)x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: D.**",
+    "explanation": "* $Q(x_1, x_2) = -2x_1^2 - x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21686,11 +21686,11 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = 3x_1^2 + (-2)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = 3x_1^2 - 2x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       },
       {
         "key": "B",
@@ -21702,7 +21702,7 @@
       },
       {
         "key": "D",
-        "text": "Xác định dương"
+        "text": "Xác định âm"
       }
     ],
     "correct": "B",
@@ -21722,7 +21722,7 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm điều kiện của tham số $m$ để dạng toàn phương $Q(x_1, x_2) = 1x_1^2 + 4x_1 x_2 + m x_2^2$ **xác định dương**:",
+    "question": "Tìm điều kiện của tham số $m$ để dạng toàn phương $Q(x_1, x_2) = x_1^2 + 4x_1 x_2 + m x_2^2$ **xác định dương**:",
     "options": [
       {
         "key": "A",
@@ -21730,7 +21730,7 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 4$"
+        "text": "$m > 0$"
       },
       {
         "key": "C",
@@ -21738,7 +21738,7 @@
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "$m \\neq 4$"
       }
     ],
     "correct": "A",
@@ -21758,7 +21758,7 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Tìm điều kiện của tham số $m$ để dạng toàn phương $Q(x_1, x_2) = 1x_1^2 + 6x_1 x_2 + m x_2^2$ **xác định dương**:",
+    "question": "Tìm điều kiện của tham số $m$ để dạng toàn phương $Q(x_1, x_2) = x_1^2 + 6x_1 x_2 + m x_2^2$ **xác định dương**:",
     "options": [
       {
         "key": "A",
@@ -21766,15 +21766,15 @@
       },
       {
         "key": "B",
-        "text": "$m < 9$"
-      },
-      {
-        "key": "C",
         "text": "$m > 0$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$m \\neq 9$"
+      },
+      {
+        "key": "D",
+        "text": "$m < 9$"
       }
     ],
     "correct": "A",
@@ -21794,7 +21794,7 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = 1x_1^2 + (-1)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = x_1^2 - x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
@@ -21802,7 +21802,7 @@
       },
       {
         "key": "B",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       },
       {
         "key": "C",
@@ -21810,7 +21810,7 @@
       },
       {
         "key": "D",
-        "text": "Xác định dương"
+        "text": "Xác định âm"
       }
     ],
     "correct": "A",
@@ -21834,11 +21834,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq 2$"
+        "text": "$m < 2$"
       },
       {
         "key": "B",
-        "text": "$m < 2$"
+        "text": "$m \\neq 2$"
       },
       {
         "key": "C",
@@ -21866,15 +21866,15 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = 3x_1^2 + (-1)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = 3x_1^2 - x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       },
       {
         "key": "B",
-        "text": "Xác định dương"
+        "text": "Xác định âm"
       },
       {
         "key": "C",
@@ -21974,11 +21974,11 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = 1x_1^2 + (-2)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = x_1^2 - 2x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Nửa xác định dương"
+        "text": "Xác định âm"
       },
       {
         "key": "B",
@@ -21986,11 +21986,11 @@
       },
       {
         "key": "C",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       },
       {
         "key": "D",
-        "text": "Xác định dương"
+        "text": "Nửa xác định dương"
       }
     ],
     "correct": "B",
@@ -22010,7 +22010,7 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Dạng toàn phương $Q(x_1, x_2) = -4x_1^2 + (-1)x_2^2$ thuộc loại nào sau đây?",
+    "question": "Dạng toàn phương $Q(x_1, x_2) = -4x_1^2 - x_2^2$ thuộc loại nào sau đây?",
     "options": [
       {
         "key": "A",
@@ -22018,11 +22018,11 @@
       },
       {
         "key": "B",
-        "text": "Không xác định dấu"
+        "text": "Xác định dương"
       },
       {
         "key": "C",
-        "text": "Xác định dương"
+        "text": "Không xác định dấu"
       },
       {
         "key": "D",
@@ -22030,7 +22030,7 @@
       }
     ],
     "correct": "D",
-    "explanation": "* $Q(x_1, x_2) = -4x_1^2 + (-1)x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: D.**",
+    "explanation": "* $Q(x_1, x_2) = -4x_1^2 - x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: D.**",
     "isOriginal": false,
     "origin": "extra"
   }

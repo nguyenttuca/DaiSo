@@ -110,7 +110,30 @@ def clean_katex_syntax(text):
     cleaned = re.sub(r'\\\}\s*\}', r'\\}', text)
     cleaned = cleaned.replace(r'\{\theta\}}', r'\{\theta\}')
     cleaned = cleaned.replace(r'\{e_1, e_2, \dots, e_n\}}', r'\{e_1, e_2, \dots, e_n\}')
-    # 2. Fix Vietnamese text inside math mode
+    # 2. Fractions with negatives in numerator/denominator (do first!)
+    cleaned = re.sub(r'\\dfrac\{-(\d+)\}\{-(\d+)\}', lambda m: f"\\dfrac{{{m.group(1)}}}{{{m.group(2)}}}", cleaned)
+    cleaned = re.sub(r'\\dfrac\{(\d+)\}\{-(\d+)\}', lambda m: f"-\\dfrac{{{m.group(1)}}}{{{m.group(2)}}}", cleaned)
+    cleaned = re.sub(r'\\dfrac\{-(\d+)\}\{(\d+)\}', lambda m: f"-\\dfrac{{{m.group(1)}}}{{{m.group(2)}}}", cleaned)
+    # 3. Double minus: - - -> +
+    cleaned = re.sub(r'-\s*-\s*', '+ ', cleaned)
+    # 4. Plus minus: + - -> -
+    cleaned = re.sub(r'\+\s*-\s*', '- ', cleaned)
+    # 5. = + -> =
+    cleaned = re.sub(r'(=\s*)\+\s*', r'\1', cleaned)
+    # 6. Parenthesized numbers with variables:
+    cleaned = re.sub(r'\+\s*\(\s*-\s*(\d+)\s*\)\s*([a-zA-Z])', r'- \1\2', cleaned)
+    cleaned = re.sub(r'\+\s*\(\s*(\d+)\s*\)\s*([a-zA-Z])', r'+ \1\2', cleaned)
+    cleaned = re.sub(r'\(\s*-\s*(\d+)\s*\)\s*([a-zA-Z])', r'-\1\2', cleaned)
+    cleaned = re.sub(r'\(\s*(\d+)\s*\)\s*([a-zA-Z])', r'\1\2', cleaned)
+    # 7. Isolated + (-num) -> - num
+    cleaned = re.sub(r'\+\s*\(\s*-\s*(\d+)\s*\)', r'- \1', cleaned)
+    # 8. Unit coefficients: 1x -> x, -1x -> -x, 1x_1 -> x_1, -1x_1 -> -x_1
+    cleaned = re.sub(r'(?<![0-9a-zA-Z])1([xyz]|x_\d+|y_\d+|z_\d+)\b', r'\1', cleaned)
+    cleaned = re.sub(r'(?<![0-9a-zA-Z])-1([xyz]|x_\d+|y_\d+|z_\d+)\b', r'-\1', cleaned)
+    # 9. Zero terms: + 0x -> "", 0x + -> ""
+    cleaned = re.sub(r'\s*\+\s*0[xyz]\b', '', cleaned)
+    cleaned = re.sub(r'\b0[xyz]\s*\+\s*', '', cleaned)
+    # 10. Fix Vietnamese text inside math mode
     cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Đúng\s*\(1\)\$', r'mệnh đề $\1 1$ (Đúng)', cleaned)
     cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Sai\s*\(0\)\$', r'mệnh đề $\1 0$ (Sai)', cleaned)
     return cleaned

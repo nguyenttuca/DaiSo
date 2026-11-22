@@ -128,20 +128,22 @@ def gen_ch2(sub, seed, make_unique_options):
             exp = "Trong $\\mathbb{R}^n$, hệ gồm đúng $n$ véc tơ độc lập tuyến tính khi và chỉ khi ma trận vuông tương ứng có định thức khác 0."
         elif mode == 1:
             m_val = rng.choice([1, 2, 3, -1, -2, 4, 5])
-            q_text = "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 0, 0), \\, (0, 1, 0), \\, (2, 3, m - " + str(m_val) + ")\\}$ trong $\\mathbb{R}^3$ **phụ thuộc tuyến tính**:"
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
+            q_text = "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 0, 0), \\, (0, 1, 0), \\, (2, 3, " + m_shift_str + ")\\}$ trong $\\mathbb{R}^3$ **phụ thuộc tuyến tính**:"
             cor = f"$m = {m_val}$"
             w1 = f"$m \\neq {m_val}$"
             w2 = f"$m = {m_val + 2}$"
             w3 = f"$m = {m_val - 1}$"
-            exp = f"Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - {m_val}) = m - {m_val}$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = {m_val}$."
+            exp = f"Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot ({m_shift_str}) = {m_shift_str}$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = {m_val}$."
         elif mode == 2:
             m_val = rng.choice([1, 2, 3, -1, 4])
-            q_text = "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 1, 1), \\, (0, 1, 2), \\, (0, 0, m - " + str(m_val) + ")\\}$ trong $\\mathbb{R}^3$ **độc lập tuyến tính**:"
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
+            q_text = "Tìm tham số $m$ để hệ véc tơ $S = \\{(1, 1, 1), \\, (0, 1, 2), \\, (0, 0, " + m_shift_str + ")\\}$ trong $\\mathbb{R}^3$ **độc lập tuyến tính**:"
             cor = f"$m \\neq {m_val}$"
             w1 = f"$m = {m_val}$"
             w2 = f"$m > {m_val}$"
             w3 = f"$m = {m_val + 1}$"
-            exp = f"Định thức của ma trận tam giác trên là $1 \\cdot 1 \\cdot (m - {m_val}) = m - {m_val}$. Hệ độc lập tuyến tính khi $\\det \\neq 0 \\iff m \\neq {m_val}$."
+            exp = f"Định thức của ma trận tam giác trên là $1 \\cdot 1 \\cdot ({m_shift_str}) = {m_shift_str}$. Hệ độc lập tuyến tính khi $\\det \\neq 0 \\iff m \\neq {m_val}$."
         elif mode == 3:
             k = rng.choice([2, 3, 4, -2])
             q_text = f"Trong $\\mathbb{{R}}^3$, cho hai véc tơ $u = (1, 2, 3)$ và $v = ({k}, {2*k}, {3*k})$. Khẳng định nào sau đây là **ĐÚNG**?"
@@ -275,12 +277,13 @@ def gen_ch2(sub, seed, make_unique_options):
             exp = f"Đường chéo chính phải bằng 0. Số phần tử tự do là $\\dfrac{{n(n-1)}}{{2}} = {dim_skew}$."
         elif mode == 8:
             m_val = rng.choice([1, 2, 3, -1, -2, 5])
-            q_text = "Tìm điều kiện của tham số $m$ để hệ véc tơ $B = \\{(1, 0, 0), \\, (1, 1, 0), \\, (1, 1, m - " + str(m_val) + ")\\}$ là một **cơ sở** của $\\mathbb{R}^3$:"
+            m_shift_str = f"m - {m_val}" if m_val > 0 else (f"m + {-m_val}" if m_val < 0 else "m")
+            q_text = "Tìm điều kiện của tham số $m$ để hệ véc tơ $B = \\{(1, 0, 0), \\, (1, 1, 0), \\, (1, 1, " + m_shift_str + ")\\}$ là một **cơ sở** của $\\mathbb{R}^3$:"
             cor = f"$m \\neq {m_val}$"
             w1 = f"$m = {m_val}$"
             w2 = "$m > 0$"
             w3 = "Mọi $m \\in \\mathbb{R}$"
-            exp = f"Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m - {m_val}) = m - {m_val}$. Hệ là cơ sở của $\\mathbb{{R}}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq {m_val}$."
+            exp = f"Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot ({m_shift_str}) = {m_shift_str}$. Hệ là cơ sở của $\\mathbb{{R}}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq {m_val}$."
         else:
             q_text = "Khẳng định nào dưới đây về cơ sở và số chiều là **SAI**?"
             cor = "Một không gian véc tơ có thể có hai cơ sở với số phần tử khác nhau"

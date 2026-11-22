@@ -158,19 +158,25 @@ def gen_ch6(sub, seed, make_unique_options):
             v1, v2 = rng.choice([2, 4]), rng.choice([2, -1])
             # u1*v1 + u2*v2 + u3*m = 0 => m = -(u1*v1 + u2*v2)/u3
             num = -(u1*v1 + u2*v2)
-            if num % u3 == 0:
-                m_sol = num // u3
-                cor_m = f"$m = {m_sol}$"
-                w1_m = f"$m = {m_sol + 2}$"
-                w2_m = f"$m = {-m_sol}$"
-                w3_m = "$m = 0$"
-                exp_m = f"$\\langle u, v \\rangle = ({u1})({v1}) + ({u2})({v2}) + ({u3})m = {u1*v1 + u2*v2} + {u3}m = 0 \\iff m = {m_sol}$."
+            from math import gcd
+            g = gcd(abs(num), abs(u3))
+            p = abs(num) // g
+            q_den = abs(u3) // g
+            is_neg = (num * u3) < 0
+            if q_den == 1:
+                sol = -p if is_neg else p
+                cor_m = f"$m = {sol}$"
+                w1_m = f"$m = {sol + 2}$"
+                w2_m = f"$m = {-sol if sol != 0 else 3}$"
+                w3_m = "$m = 0$" if sol != 0 else "$m = 1$"
+                exp_m = f"$\\langle u, v \\rangle = ({u1})({v1}) + ({u2})({v2}) + ({u3})m = {u1*v1 + u2*v2} + ({u3})m = 0 \\iff m = {sol}$."
             else:
-                cor_m = f"$m = \\dfrac{{{num}}}{{{u3}}}$"
-                w1_m = f"$m = -\\dfrac{{{num}}}{{{u3}}}$"
+                frac_str = f"\\dfrac{{{p}}}{{{q_den}}}"
+                cor_m = f"$m = -{frac_str}$" if is_neg else f"$m = {frac_str}$"
+                w1_m = f"$m = {frac_str}$" if is_neg else f"$m = -{frac_str}$"
                 w2_m = "$m = 1$"
                 w3_m = "$m = 0$"
-                exp_m = f"$\\langle u, v \\rangle = {u1*v1 + u2*v2} + {u3}m = 0 \\iff m = \\dfrac{{{num}}}{{{u3}}}$."
+                exp_m = f"$\\langle u, v \\rangle = ({u1})({v1}) + ({u2})({v2}) + ({u3})m = 0 \\iff m = {cor_m.replace('$', '')}$."
             q_text = f"Tìm giá trị của tham số $m$ để hai véc tơ $u = ({u1}, {u2}, {u3})$ và $v = ({v1}, {v2}, m)$ trong $\\mathbb{{R}}^3$ **trực giao với nhau**:"
             cor = cor_m
             w1 = w1_m
