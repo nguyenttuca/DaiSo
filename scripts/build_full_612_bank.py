@@ -3,10 +3,11 @@
 build_full_612_bank.py
 Generates a complete, mathematically verified bank of 612 questions:
 - Exactly 102 questions per chapter across all 6 chapters (>= 100 questions per chapter)
-- Exactly 24 Dạng bài (4 types per chapter, ~25-26 questions per type)
-- Integrates the 81 authentic exam questions (isOriginal: true, origin: 'original')
-- Generated questions (isOriginal: false, origin: 'extra') with balanced A, B, C, D distribution (25% each)
-- Full step-by-step KaTeX explanations and 4 plausible options for every single question.
+- Exactly 24 Dạng bài (4 types per chapter, 25-26 questions per type)
+- Integrates the 81 authentic PTIT exam questions (isOriginal: true, origin: 'original')
+- Generates 531 unique, deep, mathematically diverse questions directly from the 240 modes in generators_ch1..ch6
+- Balanced A, B, C, D distribution (~25% each)
+- Step-by-step KaTeX explanations and 4 distinct, plausible options for every single question.
 """
 
 import json
@@ -14,6 +15,8 @@ import random
 import re
 import sys
 import os
+
+sys.path.insert(0, os.path.dirname(__file__))
 
 # 1. Load authentic exam questions (81 questions)
 with open('data/de101.json', 'r', encoding='utf-8') as f:
@@ -56,8 +59,8 @@ TYPE_NAMES = {
     "4.4": "Hệ thuần nhất & Hệ nghiệm cơ bản",
 
     "5.1": "Định nghĩa & Tính chất Ánh xạ tuyến tính",
-    "5.2": "Hạt nhân Ker(f), Ảnh Im(f) & Định lý số chiều",
-    "5.3": "Ma trận của Ánh xạ tuyến tính",
+    "5.2": "Ma trận của Ánh xạ tuyến tính & Đổi cơ sở",
+    "5.3": "Hạng, Định lý số chiều (Rank-Nullity), Đơn ánh & Toàn ánh",
     "5.4": "Trị riêng, Véc tơ riêng & Chéo hóa ma trận",
 
     "6.1": "Tích vô hướng, Độ dài (Chuẩn) & Góc",
@@ -90,8 +93,8 @@ def classify_question(q, ch):
         return '4.3'
     elif ch == 5:
         if any(w in txt for w in ['trị riêng', 'véc tơ riêng', 'chéo hóa', 'đặc trưng']): return '5.4'
-        if any(w in txt for w in ['ma trận của', 'ma trận biểu diễn']): return '5.3'
-        if any(w in txt for w in ['ker', 'im', 'hạt nhân', 'ảnh', 'số chiều']): return '5.2'
+        if any(w in txt for w in ['ma trận của', 'ma trận biểu diễn', 'đổi cơ sở']): return '5.2'
+        if any(w in txt for w in ['ker', 'im', 'hạt nhân', 'ảnh', 'số chiều', 'đơn ánh', 'toàn ánh', 'đẳng cấu']): return '5.3'
         return '5.1'
     elif ch == 6:
         if any(w in txt for w in ['sylvester', 'xác định dương', 'xác định âm', 'nửa xác định', 'quán tính']): return '6.4'
@@ -99,6 +102,18 @@ def classify_question(q, ch):
         if any(w in txt for w in ['trực giao', 'trực chuẩn', 'gram', 'hình chiếu']): return '6.2'
         return '6.1'
     return f'{ch}.1'
+
+def clean_katex_syntax(text):
+    if not text:
+        return text
+    # 1. Fix \} followed by extra }
+    cleaned = re.sub(r'\\\}\s*\}', r'\\}', text)
+    cleaned = cleaned.replace(r'\{\theta\}}', r'\{\theta\}')
+    cleaned = cleaned.replace(r'\{e_1, e_2, \dots, e_n\}}', r'\{e_1, e_2, \dots, e_n\}')
+    # 2. Fix Vietnamese text inside math mode
+    cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Đúng\s*\(1\)\$', r'mệnh đề $\1 1$ (Đúng)', cleaned)
+    cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Sai\s*\(0\)\$', r'mệnh đề $\1 0$ (Sai)', cleaned)
+    return cleaned
 
 # Collect questions by type
 questions_by_type = {f"{ch}.{sub}": [] for ch in range(1, 7) for sub in range(1, 5)}
@@ -139,54 +154,6 @@ for raw in de_ontap_raw:
 
 print(f"Loaded {sum(len(v) for v in questions_by_type.values())} authentic questions across types.")
 
-# Load existing extra candidate files
-sys.path.append('scripts')
-import gen_topic1, gen_topic2, gen_topic3, gen_topic4, gen_topic5, gen_topic6
-
-extra_sources = [
-    (1, gen_topic1.questions_topic1),
-    (2, gen_topic2.questions_topic2),
-    (3, gen_topic3.questions_topic3),
-    (4, gen_topic4.questions_topic4),
-    (5, gen_topic5.questions_topic5),
-    (6, gen_topic6.questions_topic6),
-]
-
-for t in range(1, 7):
-    p = f'scripts/topic{t}_extra.json'
-    if os.path.exists(p):
-        with open(p, 'r', encoding='utf-8') as f:
-            extra_sources.append((t, json.load(f)))
-
-p56 = 'scripts/topic5_6_extra.json'
-if os.path.exists(p56):
-    with open(p56, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-        extra_sources.append((5, [q for q in data if q.get('topicId') == 5]))
-        extra_sources.append((6, [q for q in data if q.get('topicId') == 6]))
-
-for old_t, q_list in extra_sources:
-    ch = OLD_MAP.get(old_t, 1)
-    for q in q_list:
-        norm_txt = re.sub(r'\s+', ' ', q['question']).strip().lower()
-        if norm_txt in seen_texts: continue
-        seen_texts.add(norm_txt)
-        tid = classify_question(q, ch)
-        q_copy = dict(q)
-        q_copy['isOriginal'] = False
-        q_copy['origin'] = 'extra'
-        q_copy['chapterId'] = ch
-        q_copy['chapterName'] = CHAPTER_NAMES[ch]
-        q_copy['typeId'] = tid
-        q_copy['typeName'] = TYPE_NAMES[tid]
-        q_copy['examName'] = 'Luyện tập mở rộng PTIT'
-        q_copy['examId'] = 'extra'
-        questions_by_type[tid].append(q_copy)
-
-print("Current counts per type after loading existing extras:")
-for tid in sorted(questions_by_type):
-    print(f"  Type {tid}: {len(questions_by_type[tid])}")
-
 # Procedural generators for each type to reach target (target: 26 for .1 and .3, 25 for .2 and .4 = 102 per chapter, total 612)
 TARGET_COUNTS = {}
 for ch in range(1, 7):
@@ -195,21 +162,9 @@ for ch in range(1, 7):
     TARGET_COUNTS[f"{ch}.3"] = 26
     TARGET_COUNTS[f"{ch}.4"] = 25
 
-def clean_katex_syntax(text):
-    if not text:
-        return text
-    # 1. Fix \} followed by extra }
-    cleaned = re.sub(r'\\\}\s*\}', r'\\}', text)
-    cleaned = cleaned.replace(r'\{\theta\}}', r'\{\theta\}')
-    cleaned = cleaned.replace(r'\{e_1, e_2, \dots, e_n\}}', r'\{e_1, e_2, \dots, e_n\}')
-    # 2. Fix Vietnamese text inside math mode
-    cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Đúng\s*\(1\)\$', r'mệnh đề $\1 1$ (Đúng)', cleaned)
-    cleaned = re.sub(r'\$(\s*[a-zA-Z]\s*=\s*)Sai\s*\(0\)\$', r'mệnh đề $\1 0$ (Sai)', cleaned)
-    return cleaned
-
-# Import or define procedural generators
 from procedural_generators import generate_additional_questions
 
+total_generated = 0
 for tid, target in TARGET_COUNTS.items():
     current_count = len(questions_by_type[tid])
     need = target - current_count
@@ -217,6 +172,7 @@ for tid, target in TARGET_COUNTS.items():
         ch = int(tid.split('.')[0])
         sub = int(tid.split('.')[1])
         generated = generate_additional_questions(ch, sub, need, seen_texts)
+        total_generated += len(generated)
         for g in generated:
             g['isOriginal'] = False
             g['origin'] = 'extra'
@@ -229,11 +185,11 @@ for tid, target in TARGET_COUNTS.items():
             questions_by_type[tid].append(g)
             seen_texts.add(re.sub(r'\s+', ' ', g['question']).strip().lower())
     elif current_count > target:
-        # Keep all authentic questions, trim extra questions to target if needed
-        # Actually keeping authentic first
         auth = [q for q in questions_by_type[tid] if q.get('isOriginal')]
         ext = [q for q in questions_by_type[tid] if not q.get('isOriginal')]
         questions_by_type[tid] = auth + ext[:target - len(auth)]
+
+print(f"Generated {total_generated} fresh questions from modular 10-mode generators.")
 
 # Assemble all 612 questions and balance answer keys
 final_questions = []
@@ -258,57 +214,32 @@ current_id = 1
 
 for q in final_questions:
     is_orig = q.get('isOriginal', False)
-    
-    # If not authentic, balance correct answer key
     if not is_orig:
         desired_key = keys_pool[key_idx % len(keys_pool)]
         key_idx += 1
         
-        curr_correct = q.get('correct', 'A').strip().upper()
-        opts_map = {opt['key']: clean_katex_syntax(opt['text']) for opt in q['options']}
-        correct_text = opts_map.get(curr_correct, opts_map.get('A', ''))
+        orig_opts = q['options']
+        orig_correct = q['correct']
+        correct_text = clean_katex_syntax(next(opt['text'] for opt in orig_opts if opt['key'] == orig_correct))
         
-        seen_t = {correct_text.strip()}
         other_texts = []
-        for opt in q['options']:
-            if opt['key'] != curr_correct:
-                t = clean_katex_syntax(opt['text']).strip()
-                if t and t not in seen_t:
-                    seen_t.add(t)
-                    other_texts.append(t)
+        seen_t = {correct_text.strip()}
+        for opt in orig_opts:
+            if opt['key'] != orig_correct:
+                clean_t = clean_katex_syntax(opt['text'])
+                if clean_t.strip() not in seen_t:
+                    seen_t.add(clean_t.strip())
+                    other_texts.append(clean_t)
                     
-        # If fewer than 3 distractors, generate unique alternatives
+        # Ensure 3 distinct incorrect options
         if len(other_texts) < 3:
-            m = re.match(r'^\$(-?\d+)\$(\s*.*)$', correct_text)
-            if m:
-                base_num = int(m.group(1))
-                suffix = m.group(2)
-                for delta in [1, -1, 2, -2, 3, -3, 4, -4, 5, 6]:
-                    cand = f"${base_num + delta}${suffix}"
-                    if cand not in seen_t:
-                        seen_t.add(cand)
-                        other_texts.append(cand)
-                        if len(other_texts) == 3:
-                            break
-            elif "(" in correct_text and ")" in correct_text:
-                nums = [int(x) for x in re.findall(r'-?\d+', correct_text)]
-                if len(nums) >= 2:
-                    c1, c2 = nums[0], nums[1]
-                    pfx = correct_text[:correct_text.index('(')]
-                    sfx = correct_text[correct_text.rindex(')')+1:]
-                    for cand in [f"{pfx}({c2}, {c1}){sfx}", f"{pfx}({c1 + 1}, {c2}){sfx}", f"{pfx}({c1}, {c2 + 1}){sfx}", f"{pfx}({c1 + 2}, {c2 - 1}){sfx}"]:
-                        if cand not in seen_t:
-                            seen_t.add(cand)
-                            other_texts.append(cand)
-                            if len(other_texts) == 3:
-                                break
-            idx = 1
-            while len(other_texts) < 3:
-                cand = f"Phương án {idx}"
-                if cand not in seen_t:
-                    seen_t.add(cand)
-                    other_texts.append(cand)
-                idx += 1
+            fallbacks = ["Không xác định", "Không tồn tại giá trị thỏa mãn", "Mọi giá trị đều thỏa mãn"]
+            for fb in fallbacks:
+                if len(other_texts) >= 3:
+                    break
+                if fb not in seen_t:
+                    seen_t.add(fb)
+                    other_texts.append(fb)
                 
         random.shuffle(other_texts)
         

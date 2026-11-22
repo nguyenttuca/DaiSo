@@ -1990,10 +1990,12 @@
     state.quiz.answers = {};
     state.quiz.flags = new Set();
     state.quiz.currentIndex = 0;
-    state.quiz.timeLeft = 25 * 60;
+    state.quiz.timeLeft = (state.quiz.durationSeconds || 25 * 60);
     state.quiz.submitted = false;
     state.quiz.started = true;
     startQuizTimer();
+    renderQuizNav();
+    renderQuizQuestion();
     switchTab('quiz');
   });
 
