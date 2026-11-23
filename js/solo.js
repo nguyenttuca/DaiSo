@@ -27,10 +27,32 @@
   }
 
   function formatContent(text) {
-    if (!text) return '';
-    return text
+    if (text === null || text === undefined) return '';
+    let str = String(text);
+    // Sanitize accidental double-closing brace in LaTeX \{... \}} -> \{... \}
+    str = str.replace(/\\\}\s*\}/g, '\\}');
+    // Sanitize double minus -- -> +
+    str = str.replace(/-\s*-\s*/g, '+ ');
+    // Sanitize plus minus + - -> -
+    str = str.replace(/\+\s*-\s*/g, '- ');
+    // Sanitize + (-num)var -> - num var
+    str = str.replace(/\+\s*\(\s*-\s*(\d+)\s*\)\s*([a-zA-Z])/g, '- $1$2');
+    str = str.replace(/\+\s*\(\s*(\d+)\s*\)\s*([a-zA-Z])/g, '+ $1$2');
+    str = str.replace(/\(\s*-\s*(\d+)\s*\)\s*([a-zA-Z])/g, '-$1$2');
+    str = str.replace(/\(\s*(\d+)\s*\)\s*([a-zA-Z])/g, '$1$2');
+    str = str.replace(/\+\s*\(\s*-\s*(\d+)\s*\)/g, '- $1');
+    return str
       .replace(/^(\s*)\*\s+/gm, '$1• ')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  }
+
+  function getDifficultyBadgeHtml(diff) {
+    if (diff === 'easy') {
+      return `<span class="diff-tag diff-easy" title="Mức độ Dễ">🟢 Dễ</span>`;
+    } else if (diff === 'hard') {
+      return `<span class="diff-tag diff-hard" title="Mức độ Khó">🔴 Khó</span>`;
+    }
+    return `<span class="diff-tag diff-medium" title="Mức độ Trung bình">🟡 Trung bình</span>`;
   }
 
   function escapeHtml(str) {
@@ -646,11 +668,13 @@
     }).join('');
 
     const examBadgeText = q.examName ? `${q.examName} • Câu ${q.originalId}` : `Đề gốc • Câu ${q.originalId}`;
+    const diffBadgeHtml = getDifficultyBadgeHtml(q.difficulty);
 
     soloEl.soloQuestionContainer.innerHTML = `
       <div class="question-meta">
         <span class="topic-tag">${escapeHtml(q.topicName)}</span>
-        <div>
+        <div style="display:flex; gap:6px; align-items:center;">
+          ${diffBadgeHtml}
           <span class="orig-tag highlight">${escapeHtml(examBadgeText)}</span>
         </div>
       </div>
@@ -866,7 +890,8 @@
           <div class="practice-item ${userAns ? (isCorrect ? 'answered-correct' : 'answered-incorrect') : ''}" style="margin-bottom:18px;">
             <div class="question-meta">
               <span class="topic-tag">${escapeHtml(q.topicName)}</span>
-              <div style="display:flex; gap:6px; align-items:center;">
+              <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+                ${getDifficultyBadgeHtml(q.difficulty)}
                 ${userAns ? (isCorrect ? `<span style="color:var(--success-solid); font-weight:700">✓ Bạn làm đúng</span>` : `<span style="color:var(--error-solid); font-weight:700">✗ Bạn chọn ${userAns} (Đáp án: ${q.correct})</span>`) : `<span style="color:var(--warn-solid); font-weight:700">Chưa làm</span>`}
                 <span class="orig-tag highlight">${escapeHtml(q.examName)} • C${q.originalId}</span>
               </div>

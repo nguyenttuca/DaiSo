@@ -2221,3 +2221,156 @@ body {
   align-items: center;
   gap: 6px;
 }
+
+/* ===================================================================
+   EXAM DIFFICULTY SELECTOR & DIFFICULTY BADGES
+   =================================================================== */
+
+.matrix-difficulty-box {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.matrix-diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 768px) {
+  .matrix-diff-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.diff-card {
+  position: relative;
+  display: flex;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.diff-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.diff-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.diff-card.active {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.diff-card-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.diff-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.diff-pill {
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.diff-percent-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.diff-card.active .diff-percent-tag {
+  background-color: #ffffff;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .diff-card.active .diff-percent-tag {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.4);
+}
+
+.diff-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Distinct Difficulty Badges for questions in Quiz, Review, Practice & Solo */
+.diff-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.diff-tag.diff-easy {
+  background-color: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+[data-theme="dark"] .diff-tag.diff-easy {
+  background-color: rgba(6, 78, 59, 0.4);
+  color: #6ee7b7;
+  border-color: #059669;
+}
+
+.diff-tag.diff-medium {
+  background-color: #fffbeb;
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+[data-theme="dark"] .diff-tag.diff-medium {
+  background-color: rgba(120, 53, 15, 0.4);
+  color: #fcd34d;
+  border-color: #d97706;
+}
+
+.diff-tag.diff-hard {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+[data-theme="dark"] .diff-tag.diff-hard {
+  background-color: rgba(127, 29, 29, 0.4);
+  color: #fca5a5;
+  border-color: #dc2626;
+}

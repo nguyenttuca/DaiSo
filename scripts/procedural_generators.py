@@ -159,6 +159,16 @@ def generate_additional_questions(topic_id, sub_type_id, count, seen_texts):
         exp = q_raw["explanation"]
         exp = exp.replace("**Chọn đáp án: A.**", f"**Chọn đáp án: {final_correct}.**")
 
+        mode = seed % 10
+        raw_diff = q_raw.get("difficulty")
+        if not raw_diff:
+            if mode in [0, 1, 2]:
+                raw_diff = "easy"
+            elif mode in [3, 4, 5, 6]:
+                raw_diff = "medium"
+            else:
+                raw_diff = "hard"
+
         new_q = {
             "topicId": topic_id,
             "topicName": TOPIC_NAMES[topic_id],
@@ -167,6 +177,7 @@ def generate_additional_questions(topic_id, sub_type_id, count, seen_texts):
             "options": shuffled_opts,
             "correct": final_correct,
             "explanation": exp,
+            "difficulty": raw_diff,
             "isOriginal": False,
             "origin": "extra"
         }

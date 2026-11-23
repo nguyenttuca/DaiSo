@@ -11,6 +11,12 @@ import random
 def gen_ch3(sub, seed, make_unique_options):
     rng = random.Random(seed * 53 + sub * 113)
     mode = seed % 10
+    if mode in [0, 1, 2]:
+        difficulty = "easy"
+    elif mode in [3, 4, 5, 6]:
+        difficulty = "medium"
+    else:
+        difficulty = "hard"
 
     if sub == 1: # 3.1 Các phép toán ma trận
         if mode == 0:
@@ -111,7 +117,7 @@ def gen_ch3(sub, seed, make_unique_options):
             exp = "Định lý vết ma trận: Vết của tích hai ma trận có tính giao hoán: $\\text{tr}(AB) = \\text{tr}(BA)$ (dù $AB \\neq BA$)."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 2: # 3.2 Định thức
         if mode == 0:
@@ -204,7 +210,7 @@ def gen_ch3(sub, seed, make_unique_options):
             exp = f"Áp dụng $\\det(A^k) = (\\det A)^k$: $\\det(A^{{{p}}}) = ({detA})^{{{p}}} = {res}$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 3: # 3.3 Ma trận nghịch đảo & Phần phụ đại số
         if mode == 0:
@@ -293,7 +299,7 @@ def gen_ch3(sub, seed, make_unique_options):
             exp = f"Ma trận không khả nghịch khi $\\det A = 0 \\iff 1({m_shift_str}) - 2(3) = 0 \\iff {m_shift_str} = 6 \\iff m = {m_val + 6}$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     else: # 3.4 Hạng ma trận
         if mode == 0:
@@ -376,4 +382,4 @@ def gen_ch3(sub, seed, make_unique_options):
             exp = "Theo quy ước và định nghĩa, ma trận không có hạng bằng 0 vì không có định thức con nào khác 0."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}

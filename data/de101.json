@@ -221,7 +221,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Ta có $(AB - BA)_{12} = (AB)_{12} - (BA)_{12}$.\n* Tính từng thành phần:\n  * $(AB)_{12} = (\\text{Hàng 1 của } A) \\cdot (\\text{Cột 2 của } B) = 1(1) + 2(2) + 1(2) = 1 + 4 + 2 = 7$.\n  * $(BA)_{12} = (\\text{Hàng 1 của } B) \\cdot (\\text{Cột 2 của } A) = 4(2) + 1(1) + 1(2) = 8 + 1 + 2 = 11$.\n* Suy ra: $(AB - BA)_{12} = 7 - 11 = -4$.\n* **Chọn đáp án: C.**"
+    "explanation": "* Ta có $(AB - BA)_{12} = (AB)_{12} - (BA)_{12}$.\n* Tính từng thành phần:\n  * $(AB)_{12} =$ (Hàng 1 của $A$) $\\cdot$ (Cột 2 của $B$) $= 1(1) + 2(2) + 1(2) = 1 + 4 + 2 = 7$.\n  * $(BA)_{12} =$ (Hàng 1 của $B$) $\\cdot$ (Cột 2 của $A$) $= 4(2) + 1(1) + 1(2) = 8 + 1 + 2 = 11$.\n* Suy ra: $(AB - BA)_{12} = 7 - 11 = -4$.\n* **Chọn đáp án: C.**"
   },
   {
     "examId": "de101",
@@ -865,7 +865,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Ma trận vuông $A$ khả nghịch khi và chỉ khi $\\det A \\neq 0$.\n* Tính định thức $\\det A$:\n  * Thực hiện phép biến đổi hàng $h_1 \\to h_1 + h_3$:\n    $$\\begin{bmatrix} m + 4 & -2 & m - 5 \\\\ -3 & m + 5 & -3 \\\\ 5 & -5 & m - 2 \\end{bmatrix}$$\n  * Khai triển hoặc tính định thức ta thu được:\n    $$\\det A = m(m - 2)(m + 2) \\quad \\text{hoặc} \\quad (m - 2)(m + 2)(m + \\dots)$$\n  * Phương trình $\\det A = 0$ có các nghiệm $m = \\pm 2$.\n  * Do đó điều kiện để $A$ có ma trận nghịch đảo là $m \\neq 2$ và $m \\neq -2$.\n* **Chọn đáp án: A.**"
+    "explanation": "* Ma trận vuông $A$ khả nghịch khi và chỉ khi $\\det A \\neq 0$.\n* Tính định thức $\\det A$:\n  * Thực hiện phép biến đổi hàng $h_1 \\to h_1 + h_3$:\n    $$\\begin{bmatrix} m + 4 & -2 & m - 5 \\\\ -3 & m + 5 & -3 \\\\ 5 & -5 & m - 2 \\end{bmatrix}$$\n  * Khai triển hoặc tính định thức ta thu được:\n    $$\\det A = (m - 2)(m + 2)^2$$\n  * Phương trình $\\det A = 0$ có các nghiệm $m = \\pm 2$.\n  * Do đó điều kiện để $A$ có ma trận nghịch đảo là $m \\neq 2$ và $m \\neq -2$.\n* **Chọn đáp án: A.**"
   },
   {
     "examId": "de101",
@@ -989,19 +989,19 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\text{ hoặc } m = -2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq -2 \\end{cases}$"
+        "text": "$r(A) = 3$ nếu $m = 0$ hoặc $m = -2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq -2$"
       },
       {
         "key": "B",
-        "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\\\ 4 & \\text{nếu } m \\neq 0 \\end{cases}$"
+        "text": "$r(A) = 3$ nếu $m = 0$; $r(A) = 4$ nếu $m \\neq 0$"
       },
       {
         "key": "C",
-        "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\text{ hoặc } m = 2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq 2 \\end{cases}$"
+        "text": "$r(A) = 3$ nếu $m = 0$ hoặc $m = 2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq 2$"
       },
       {
         "key": "D",
-        "text": "$r(A) = \\begin{cases} 2 & \\text{nếu } m = 0 \\text{ hoặc } m = -2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq -2 \\end{cases}$"
+        "text": "$r(A) = 2$ nếu $m = 0$ hoặc $m = -2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq -2$"
       }
     ],
     "correct": "A",

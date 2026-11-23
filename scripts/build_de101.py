@@ -170,8 +170,8 @@ de101_questions = [
     "correct": "C",
     "explanation": """* Ta có $(AB - BA)_{12} = (AB)_{12} - (BA)_{12}$.
 * Tính từng thành phần:
-  * $(AB)_{12} = (\\text{Hàng 1 của } A) \\cdot (\\text{Cột 2 của } B) = 1(1) + 2(2) + 1(2) = 1 + 4 + 2 = 7$.
-  * $(BA)_{12} = (\\text{Hàng 1 của } B) \\cdot (\\text{Cột 2 của } A) = 4(2) + 1(1) + 1(2) = 8 + 1 + 2 = 11$.
+  * $(AB)_{12} =$ (Hàng 1 của $A$) $\\cdot$ (Cột 2 của $B$) $= 1(1) + 2(2) + 1(2) = 1 + 4 + 2 = 7$.
+  * $(BA)_{12} =$ (Hàng 1 của $B$) $\\cdot$ (Cột 2 của $A$) $= 4(2) + 1(1) + 1(2) = 8 + 1 + 2 = 11$.
 * Suy ra: $(AB - BA)_{12} = 7 - 11 = -4$.
 * **Chọn đáp án: C.**"""
   },
@@ -680,7 +680,7 @@ de101_questions.extend([
   * Thực hiện phép biến đổi hàng $h_1 \\to h_1 + h_3$:
     $$\\begin{bmatrix} m + 4 & -2 & m - 5 \\\\ -3 & m + 5 & -3 \\\\ 5 & -5 & m - 2 \\end{bmatrix}$$
   * Khai triển hoặc tính định thức ta thu được:
-    $$\\det A = m(m - 2)(m + 2) \\quad \\text{hoặc} \\quad (m - 2)(m + 2)(m + \\dots)$$
+    $$\\det A = (m - 2)(m + 2)^2$$
   * Phương trình $\\det A = 0$ có các nghiệm $m = \\pm 2$.
   * Do đó điều kiện để $A$ có ma trận nghịch đảo là $m \\neq 2$ và $m \\neq -2$.
 * **Chọn đáp án: A.**"""
@@ -777,10 +777,10 @@ de101_questions.extend([
     "topicName": "MA TRẬN VÀ ĐỊNH THỨC",
     "question": "Ký hiệu $r(A)$ là hạng của ma trận $A = \\begin{bmatrix} 1 & -2 & 0 & 0 \\\\ 3 & 4 & -1 & 2 \\\\ 1 & -1 & 0 & 0 \\\\ 1 & m & m^2 & m^3 \\end{bmatrix}$. Khẳng định nào dưới đây đúng?",
     "options": [
-      {"key": "A", "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\text{ hoặc } m = -2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq -2 \\end{cases}$"},
-      {"key": "B", "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\\\ 4 & \\text{nếu } m \\neq 0 \\end{cases}$"},
-      {"key": "C", "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\text{ hoặc } m = 2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq 2 \\end{cases}$"},
-      {"key": "D", "text": "$r(A) = \\begin{cases} 2 & \\text{nếu } m = 0 \\text{ hoặc } m = -2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq -2 \\end{cases}$"}
+      {"key": "A", "text": "$r(A) = 3$ nếu $m = 0$ hoặc $m = -2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq -2$"},
+      {"key": "B", "text": "$r(A) = 3$ nếu $m = 0$; $r(A) = 4$ nếu $m \\neq 0$"},
+      {"key": "C", "text": "$r(A) = 3$ nếu $m = 0$ hoặc $m = 2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq 2$"},
+      {"key": "D", "text": "$r(A) = 2$ nếu $m = 0$ hoặc $m = -2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq -2$"}
     ],
     "correct": "A",
     "explanation": """* Khai triển định thức $\\det A$ theo hàng $1$ và hàng $3$ (hoặc tính định thức của $A$):

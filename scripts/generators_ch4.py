@@ -11,6 +11,12 @@ import random
 def gen_ch4(sub, seed, make_unique_options):
     rng = random.Random(seed * 67 + sub * 127)
     mode = seed % 10
+    if mode in [0, 1, 2]:
+        difficulty = "easy"
+    elif mode in [3, 4, 5, 6]:
+        difficulty = "medium"
+    else:
+        difficulty = "hard"
 
     if sub == 1: # 4.1 Kronecker-Capelli & Biện luận
         if mode == 0:
@@ -99,7 +105,7 @@ def gen_ch4(sub, seed, make_unique_options):
             exp = "Ma trận bổ sung ký hiệu $\\bar{A} = [A \\mid B]$, gồm $n$ cột của $A$ và cột thứ $n+1$ là cột tự do $B$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 2: # 4.2 Phương pháp Cramer
         if mode == 0:
@@ -187,7 +193,7 @@ def gen_ch4(sub, seed, make_unique_options):
             exp = f"$x = {Dx}/{D} = {x_ans}$, $y = {Dy}/{D} = {y_ans}$, $z = {Dz}/{D} = {z_ans}$. Tổng $x + y + z = {sum_ans}$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 3: # 4.3 Khử Gauss
         if mode == 0:
@@ -309,7 +315,7 @@ def gen_ch4(sub, seed, make_unique_options):
             exp = "Khi ma trận tam giác trên có các phần tử chéo khác 0 thì định thức $\\det A \\neq 0$, do đó hệ luôn có nghiệm duy nhất."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     else: # 4.4 Hệ thuần nhất
         if mode == 0:
@@ -392,4 +398,4 @@ def gen_ch4(sub, seed, make_unique_options):
             exp = "Khẳng định 'Hệ phương trình thuần nhất có thể vô nghiệm' là SAI vì hệ thuần nhất luôn luôn có nghiệm $X = 0$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}

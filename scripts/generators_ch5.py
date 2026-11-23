@@ -17,6 +17,12 @@ import random
 def gen_ch5(sub, seed, make_unique_options):
     rng = random.Random(seed * 71 + sub * 131)
     mode = seed % 10
+    if mode in [0, 1, 2]:
+        difficulty = "easy"
+    elif mode in [3, 4, 5, 6]:
+        difficulty = "medium"
+    else:
+        difficulty = "hard"
 
     if sub == 1: # 5.1 Định nghĩa, Tính chất & Ker/Im
         if mode == 0:
@@ -150,7 +156,7 @@ def gen_ch5(sub, seed, make_unique_options):
             exp = exp_c
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 2: # 5.2 Ma trận biểu diễn & Đổi cơ sở
         if mode == 0:
@@ -260,7 +266,7 @@ def gen_ch5(sub, seed, make_unique_options):
             exp = "Công thức chuyển tọa độ véc tơ: $[v]_B = C [v]_{B'}$ và $[v]_{B'} = C^{-1} [v]_B$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 3: # 5.3 Định lý số chiều, Đơn ánh, Toàn ánh & Đẳng cấu
         if mode == 0:
@@ -358,7 +364,7 @@ def gen_ch5(sub, seed, make_unique_options):
             exp = "Đẳng cấu tuyến tính bảo toàn tính độc lập tuyến tính và tính sinh, do đó luôn biến cơ sở thành cơ sở."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     else: # 5.4 Giá trị riêng, Véc tơ riêng & Chéo hóa
         if mode == 0:
@@ -443,13 +449,13 @@ def gen_ch5(sub, seed, make_unique_options):
             w3 = f"${l_val}$"
             exp = f"Nếu $Av = \\lambda v$ thì $A^k v = \\lambda^k v = ({l_val})^k v = {res_pow} v$."
         elif mode == 8:
-            # Điều kiện chéo hóa ma trận
-            q_text = "Điều kiện cần và đủ để một ma trận vuông cấp $n$ **chéo hóa được** là:"
-            cor = "Ma trận có đủ $n$ véc tơ riêng độc lập tuyến tính"
-            w1 = "Ma trận có $\\det A \\neq 0$"
-            w2 = "Ma trận có vết bằng 0"
-            w3 = "Ma trận là ma trận tam giác"
-            exp = "Định lý: Ma trận cấp $n$ chéo hóa được khi và chỉ khi nó có đủ $n$ véc tơ riêng độc lập tuyến tính."
+            # Điều kiện tham số m để ma trận chéo hóa được khi có trị riêng bội (Độ khó: Khó)
+            q_text = "Tìm điều kiện của tham số $m$ để ma trận $A = \\begin{bmatrix} 2 & 0 & 0 \\\\ 0 & 3 & m \\\\ 0 & 0 & 3 \\end{bmatrix}$ **chéo hóa được**:"
+            cor = "$m = 0$"
+            w1 = "$m \\neq 0$"
+            w2 = "$m = 3$"
+            w3 = "Chéo hóa được với mọi $m$"
+            exp = "Phương trình đặc trưng $\\det(A - \\lambda I) = (2 - \\lambda)(3 - \\lambda)^2 = 0 \\implies \\lambda_1 = 2$ (đơn), $\\lambda_2 = 3$ (bội 2). Để $A$ chéo hóa được, số bội hình học của $\\lambda = 3$ phải bằng 2, tức số chiều không gian con riêng $\\dim E_3 = 3 - r(A - 3I) = 2 \\iff r(A - 3I) = 1$. Ta có $A - 3I = \\begin{bmatrix} -1 & 0 & 0 \\\\ 0 & 0 & m \\\\ 0 & 0 & 0 \\end{bmatrix}$. Ma trận này có hạng bằng 1 khi và chỉ khi hàng 2 triệt tiêu, tức $m = 0$."
         else:
             # Véc tơ riêng ứng với các giá trị riêng phân biệt
             q_text = "Cho các véc tơ riêng $v_1, v_2, \\dots, v_k$ ứng với các giá trị riêng **phân biệt từng đôi một** của ma trận $A$. Hệ véc tơ này:"
@@ -460,4 +466,4 @@ def gen_ch5(sub, seed, make_unique_options):
             exp = "Định lý: Các véc tơ riêng ứng với các giá trị riêng phân biệt từng đôi một luôn luôn độc lập tuyến tính."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}

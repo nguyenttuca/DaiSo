@@ -165,7 +165,7 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Giải hệ hai phương trình đầu:\n  $$\\begin{cases} 4x + 3y = -6 \\\\ 5x + 8y = 1 \\end{cases} \\iff \\begin{cases} x = -3 \\\\ y = 2 \\end{cases}$$\n* Thay nghiệm duy nhất $(x = -3, y = 2)$ vào phương trình thứ ba:\n  $$a^2(-3) + 3a(2) = -9 \\iff -3a^2 + 6a + 9 = 0 \\iff a^2 - 2a - 3 = 0$$\n* Giải phương trình bậc hai:\n  $$(a + 1)(a - 3) = 0 \\iff a = -1 \\text{ hoặc } a = 3$$\n* **Chọn đáp án: C.**"
+    "explanation": "* Giải hệ hai phương trình đầu:\n  $$\\begin{cases} 4x + 3y = -6 \\\\ 5x + 8y = 1 \\end{cases} \\iff \\begin{cases} x = -3 \\\\ y = 2 \\end{cases}$$\n* Thay nghiệm duy nhất $(x = -3, y = 2)$ vào phương trình thứ ba:\n  $$a^2(-3) + 3a(2) = -9 \\iff -3a^2 + 6a + 9 = 0 \\iff a^2 - 2a - 3 = 0$$\n* Giải phương trình bậc hai:\n  $$(a + 1)(a - 3) = 0 \\iff a = -1$$ hoặc $$a = 3$$\n* **Chọn đáp án: C.**"
   },
   {
     "examId": "de_ontap",
@@ -249,7 +249,7 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Xét ma trận con cấp 4 tạo bởi 4 hàng đầu và 4 cột đầu tiên của $A$:\n  $$M_4 = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 2 & 3 & 0 & 0 \\\\ 4 & -2 & 5 & 0 \\\\ 2 & 1 & 7 & -1 \\end{bmatrix}$$\n* Đây là ma trận tam giác dưới, định thức bằng tích các phần tử trên đường chéo chính:\n  $$\\det M_4 = 1 \\cdot 3 \\cdot 5 \\cdot (-1) = -15 \\neq 0$$\n* Vì tồn tại một định thức con cấp 4 khác 0 nên hạng của ma trận luôn thỏa mãn:\n  $$r(A) \\ge 4 \\quad \\text{với mọi } k \\in \\mathbb{R}$$\n* **Chọn đáp án: A.**"
+    "explanation": "* Xét ma trận con cấp 4 tạo bởi 4 hàng đầu và 4 cột đầu tiên của $A$:\n  $$M_4 = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 2 & 3 & 0 & 0 \\\\ 4 & -2 & 5 & 0 \\\\ 2 & 1 & 7 & -1 \\end{bmatrix}$$\n* Đây là ma trận tam giác dưới, định thức bằng tích các phần tử trên đường chéo chính:\n  $$\\det M_4 = 1 \\cdot 3 \\cdot 5 \\cdot (-1) = -15 \\neq 0$$\n* Vì tồn tại một định thức con cấp 4 khác 0 nên hạng của ma trận luôn thỏa mãn:\n  $$r(A) \\ge 4, \\quad \\forall k \\in \\mathbb{R}$$\n* **Chọn đáp án: A.**"
   },
   {
     "examId": "de_ontap",

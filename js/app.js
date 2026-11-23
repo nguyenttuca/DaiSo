@@ -54,6 +54,16 @@
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
 
+  // --- Difficulty Badge Helper ---
+  function getDifficultyBadgeHtml(diff) {
+    if (diff === 'easy') {
+      return `<span class="diff-tag diff-easy" title="Mức độ Dễ">🟢 Dễ</span>`;
+    } else if (diff === 'hard') {
+      return `<span class="diff-tag diff-hard" title="Mức độ Khó">🔴 Khó</span>`;
+    }
+    return `<span class="diff-tag diff-medium" title="Mức độ Trung bình">🟡 Trung bình</span>`;
+  }
+
   // --- Data Provider Helper ---
   function getQuestionsBank() {
     if (typeof window !== 'undefined') {
@@ -285,6 +295,7 @@
       bookmarks: new Set(JSON.parse(localStorage.getItem('practice_bookmarks') || '[]')),
       topicFilter: 'all',
       originFilter: 'all',
+      difficultyFilter: 'all',
       statusFilter: 'all',
       searchQuery: '',
       viewMode: 'focus', // 'focus' (1-by-1) | 'list' (all filtered)
@@ -354,6 +365,7 @@
     practiceProgressFill: document.getElementById('practiceProgressFill'),
     practiceTopicSelect: document.getElementById('practiceTopicSelect'),
     practiceOriginSelect: document.getElementById('practiceOriginSelect'),
+    practiceDifficultySelect: document.getElementById('practiceDifficultySelect'),
     practiceStatusSelect: document.getElementById('practiceStatusSelect'),
     practiceSearchInput: document.getElementById('practiceSearchInput'),
     practiceContentArea: document.getElementById('practiceContentArea'),
@@ -460,6 +472,14 @@
       card.classList.toggle('active', r && r.checked);
     });
 
+    // Update active class on difficulty cards
+    const diffRadio = document.querySelector('input[name="quizDifficulty"]:checked');
+    const selectedDifficulty = diffRadio ? diffRadio.value : 'medium';
+    document.querySelectorAll('.diff-card').forEach(card => {
+      const r = card.querySelector('input[type="radio"]');
+      card.classList.toggle('active', r && r.checked);
+    });
+
     // Calculate pool
     const pool = (state.allQuestions || []).filter(q => {
       if (!selectedChapters.includes(q.topicId)) return false;
@@ -480,6 +500,26 @@
 
     const actualCount = Math.min(reqCount, pool.length);
     const examText = `${actualCount} câu hỏi • ${reqDur}:00 phút`;
+
+    // Calculate difficulty breakdown based on user requested ratios:
+    // Đề Dễ: 70% Dễ • 20% TB • 10% Khó
+    // Đề Trung bình: 50% Dễ • 30% TB • 20% Khó
+    // Đề Khó: 30% Dễ • 40% TB • 30% Khó
+    const DIFFICULTY_RATIOS = {
+      easy:   { easy: 0.70, medium: 0.20, hard: 0.10, name: 'Đề Dễ (70% Dễ - 20% TB - 10% Khó)' },
+      medium: { easy: 0.50, medium: 0.30, hard: 0.20, name: 'Đề Trung bình (50% Dễ - 30% TB - 20% Khó)' },
+      hard:   { easy: 0.30, medium: 0.40, hard: 0.30, name: 'Đề Khó (30% Dễ - 40% TB - 30% Khó)' }
+    };
+    const diffConfig = DIFFICULTY_RATIOS[selectedDifficulty] || DIFFICULTY_RATIOS.medium;
+    let expectedEasy = Math.round(actualCount * diffConfig.easy);
+    let expectedMedium = Math.round(actualCount * diffConfig.medium);
+    let expectedHard = actualCount - expectedEasy - expectedMedium;
+
+    const summaryDifficultyText = document.getElementById('summaryDifficultyText');
+    if (summaryDifficultyText) {
+      const diffTitle = selectedDifficulty === 'easy' ? 'Đề Dễ' : (selectedDifficulty === 'hard' ? 'Đề Khó' : 'Đề Trung bình');
+      summaryDifficultyText.textContent = `${diffTitle} (${expectedEasy} Dễ • ${expectedMedium} TB • ${expectedHard} Khó)`;
+    }
 
     // Calculate smart stats in pool
     let newInPool = 0;
@@ -539,6 +579,18 @@
     });
     document.querySelectorAll('input[name="quizQuestionCount"]').forEach(r => {
       r.addEventListener('change', updateMatrixSummary);
+    });
+    document.querySelectorAll('input[name="quizDifficulty"]').forEach(r => {
+      r.addEventListener('change', updateMatrixSummary);
+    });
+    document.querySelectorAll('.diff-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const r = card.querySelector('input[type="radio"]');
+        if (r && !r.checked) {
+          r.checked = true;
+          updateMatrixSummary();
+        }
+      });
     });
 
     // Quick selection pills
@@ -613,7 +665,11 @@
     const durVal = countRadio ? ((countRadio.dataset && countRadio.dataset.duration) || (countRadio.getAttribute ? countRadio.getAttribute('data-duration') : null) || '25') : '25';
     const requestedDuration = parseInt(durVal, 10) || 25;
 
-    // 4. Filter Available Pool
+    // 4. Get Selected Difficulty Preset
+    const diffRadio = document.querySelector('input[name="quizDifficulty"]:checked');
+    const selectedDifficulty = diffRadio ? diffRadio.value : 'medium';
+
+    // 5. Filter Available Pool
     const pool = state.allQuestions.filter(q => {
       if (!selectedChapters.includes(q.topicId)) return false;
       if (source === 'original') return q.isOriginal === true;
@@ -626,39 +682,104 @@
       return;
     }
 
-    // 5. Intelligent Balanced & Spaced Sampling across selected chapters
-    // Priorities:
-    //  1. Never attempted questions (New)
-    //  2. Previously answered incorrectly (Mistakes to reinforce)
-    //  3. Answered correctly long ago (Spaced repetition)
-    //  4. Avoid recently answered correct questions (Anti-repetition)
-    //  5. Subtype round-robin distribution to prevent topical clustering
+    // 6. Intelligent Sampling with Difficulty Ratios & Chapter Balancing:
+    // Presets:
+    // - Đề Dễ: 70% Dễ • 20% Trung bình • 10% Khó
+    // - Đề Trung bình: 50% Dễ • 30% Trung bình • 20% Khó
+    // - Đề Khó: 30% Dễ • 40% Trung bình • 30% Khó
     const targetTotal = Math.min(requestedCount, pool.length);
-    const byChapter = {};
-    selectedChapters.forEach(ch => {
-      byChapter[ch] = pool.filter(q => q.topicId === ch);
-    });
+    const DIFFICULTY_RATIOS = {
+      easy:   { easy: 0.70, medium: 0.20, hard: 0.10 },
+      medium: { easy: 0.50, medium: 0.30, hard: 0.20 },
+      hard:   { easy: 0.30, medium: 0.40, hard: 0.30 }
+    };
+    const ratios = DIFFICULTY_RATIOS[selectedDifficulty] || DIFFICULTY_RATIOS.medium;
 
-    const basePerChapter = Math.floor(targetTotal / selectedChapters.length);
-    let remainder = targetTotal % selectedChapters.length;
-    const selected = [];
-    const chosenIds = new Set();
+    let targetEasy = Math.round(targetTotal * ratios.easy);
+    let targetMedium = Math.round(targetTotal * ratios.medium);
+    let targetHard = targetTotal - targetEasy - targetMedium;
 
-    // Distribute among selected chapters using smart sampling
-    selectedChapters.forEach(ch => {
-      const take = basePerChapter + (remainder > 0 ? 1 : 0);
-      if (remainder > 0) remainder--;
-      const chQuestions = byChapter[ch] || [];
-      const fromChapter = sampleSmartQuestionsFromChapter(chQuestions, Math.min(take, chQuestions.length));
-      fromChapter.forEach(q => {
-        if (!chosenIds.has(q.id)) {
-          chosenIds.add(q.id);
-          selected.push(q);
-        }
+    // Sub-pools by difficulty
+    const poolEasy = pool.filter(q => q.difficulty === 'easy');
+    const poolMedium = pool.filter(q => q.difficulty === 'medium');
+    const poolHard = pool.filter(q => q.difficulty === 'hard');
+
+    // Dynamically adjust quotas if a bucket has fewer available questions
+    if (poolEasy.length < targetEasy) {
+      const def = targetEasy - poolEasy.length;
+      targetEasy = poolEasy.length;
+      targetMedium += Math.round(def * 0.6);
+      targetHard = targetTotal - targetEasy - targetMedium;
+    }
+    if (poolHard.length < targetHard) {
+      const def = targetHard - poolHard.length;
+      targetHard = poolHard.length;
+      targetMedium += def;
+    }
+    if (poolMedium.length < targetMedium) {
+      const def = targetMedium - poolMedium.length;
+      targetMedium = poolMedium.length;
+      targetEasy = targetTotal - targetMedium - targetHard;
+    }
+
+    // Helper: sample questions for a difficulty tier distributed evenly across selected chapters
+    function sampleTierQuestions(tierPool, countNeeded, chapters, chosenSet) {
+      if (countNeeded <= 0 || !tierPool || tierPool.length === 0) return [];
+      const available = tierPool.filter(q => !chosenSet.has(q.id));
+      if (available.length <= countNeeded) {
+        available.forEach(q => chosenSet.add(q.id));
+        return available;
+      }
+
+      const byCh = {};
+      chapters.forEach(ch => {
+        byCh[ch] = available.filter(q => q.topicId === ch);
       });
-    });
 
-    // If some chapter had fewer questions than its quota, fill remainder from remaining pool
+      const base = Math.floor(countNeeded / chapters.length);
+      let rem = countNeeded % chapters.length;
+      const tierSelected = [];
+
+      chapters.forEach(ch => {
+        const take = base + (rem > 0 ? 1 : 0);
+        if (rem > 0) rem--;
+        const chQuestions = byCh[ch] || [];
+        const fromCh = sampleSmartQuestionsFromChapter(chQuestions, Math.min(take, chQuestions.length));
+        fromCh.forEach(q => {
+          if (!chosenSet.has(q.id)) {
+            chosenSet.add(q.id);
+            tierSelected.push(q);
+          }
+        });
+      });
+
+      if (tierSelected.length < countNeeded) {
+        const leftovers = available.filter(q => !chosenSet.has(q.id));
+        leftovers.sort((a, b) => computeQuestionPriorityScore(a) - computeQuestionPriorityScore(b));
+        const needed = countNeeded - tierSelected.length;
+        leftovers.slice(0, needed).forEach(q => {
+          chosenSet.add(q.id);
+          tierSelected.push(q);
+        });
+      }
+
+      return tierSelected;
+    }
+
+    const chosenIds = new Set();
+    const selected = [];
+
+    // Sample from each difficulty tier according to exact quotas
+    const pickedEasy = sampleTierQuestions(poolEasy, targetEasy, selectedChapters, chosenIds);
+    selected.push(...pickedEasy);
+
+    const pickedMed = sampleTierQuestions(poolMedium, targetMedium, selectedChapters, chosenIds);
+    selected.push(...pickedMed);
+
+    const pickedHard = sampleTierQuestions(poolHard, targetHard, selectedChapters, chosenIds);
+    selected.push(...pickedHard);
+
+    // If still below targetTotal, fill remaining from pool with priority
     if (selected.length < targetTotal) {
       const leftovers = pool.filter(q => !chosenIds.has(q.id));
       leftovers.sort((a, b) => computeQuestionPriorityScore(a) - computeQuestionPriorityScore(b));
@@ -669,7 +790,7 @@
       });
     }
 
-    // Shuffle final selected questions so chapters are naturally interwoven
+    // Shuffle final selected questions so chapters and difficulty tiers are naturally interwoven
     shuffleArray(selected);
     state.quiz.questions = (selected || []).filter(q => q && q.id);
 
@@ -799,6 +920,7 @@
       const originBadgeHtml = isOrig
         ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')}</span>`
         : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng PTIT</span>`;
+      const diffBadgeHtml = getDifficultyBadgeHtml(q.difficulty);
 
       // Smart Learning Status Tag
       const h = getQuestionHistory(q.id);
@@ -817,6 +939,7 @@
         <div class="question-meta">
           <span class="topic-tag">${escapeHtml(q.topicName || q.chapterName || ('Chương ' + q.topicId))}</span>
           <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+            ${diffBadgeHtml}
             ${statusTagHtml}
             ${originBadgeHtml}
           </div>
@@ -1026,11 +1149,13 @@
       const originBadgeHtml = isOrig
         ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')} • Câu ${q.originalId}</span>`
         : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng • Câu ${q.originalId}</span>`;
+      const diffBadgeHtml = getDifficultyBadgeHtml(q.difficulty);
 
       card.innerHTML = `
         <div class="question-meta">
           <span class="topic-tag">${escapeHtml(q.topicName)}</span>
-          <div style="display:flex; gap:6px; align-items:center;">
+          <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+            ${diffBadgeHtml}
             ${userAns ? (isCorrect ? `<span style="color:var(--success-solid); font-weight:700">✓ Làm đúng</span>` : `<span style="color:var(--error-solid); font-weight:700">✗ Làm sai (Bạn chọn ${userAns})</span>`) : `<span style="color:var(--warn-solid); font-weight:700">Chưa làm</span>`}
             ${originBadgeHtml}
           </div>
@@ -1306,6 +1431,7 @@
       const originTag = isOrig
         ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')}</span>`
         : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng PTIT</span>`;
+      const diffTag = getDifficultyBadgeHtml(q.difficulty);
 
       let optionsHtml = (q.options || []).map(opt => {
         let optClass = 'tp-option-btn';
@@ -1346,7 +1472,10 @@
       card.innerHTML = `
         <div class="tp-q-header">
           <span class="tp-q-number">Câu ${idx + 1} / ${questions.length} (ID #${q.id})</span>
-          <div>${originTag}</div>
+          <div style="display:flex; gap:6px; align-items:center;">
+            ${diffTag}
+            ${originTag}
+          </div>
         </div>
         <div class="tp-q-body">
           ${formatContent(q.question)}
@@ -1382,7 +1511,7 @@
   // ===================================================================
 
   function getFilteredPracticeQuestions() {
-    const { topicFilter, originFilter, statusFilter, searchQuery } = state.practice;
+    const { topicFilter, originFilter, difficultyFilter, statusFilter, searchQuery } = state.practice;
 
     return state.allQuestions.filter(q => {
       // Topic
@@ -1393,6 +1522,9 @@
       if (originFilter === 'de_ontap' && q.examId !== 'de_ontap') return false;
       if (originFilter === 'original' && !q.isOriginal) return false;
       if (originFilter === 'extra' && q.isOriginal) return false;
+
+      // Difficulty
+      if (difficultyFilter && difficultyFilter !== 'all' && q.difficulty !== difficultyFilter) return false;
 
       // Status
       const userAns = state.practice.answers[q.id];
@@ -1520,12 +1652,14 @@
     const originBadgeHtml = q.isOriginal 
       ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')} • Câu ${q.originalId}</span>`
       : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng • Câu ${q.originalId}</span>`;
+    const diffBadgeHtml = getDifficultyBadgeHtml(q.difficulty);
 
     el.practiceContentArea.innerHTML = `
       <div class="question-card" style="margin-bottom:16px;">
         <div class="question-meta">
           <span class="topic-tag">${escapeHtml(q.topicName)}</span>
-          <div style="display:flex; gap:8px; align-items:center;">
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+            ${diffBadgeHtml}
             ${originBadgeHtml}
             <button class="btn-flag ${isBookmarked ? 'active' : ''}" id="btnPracticeBookmark">
               ${isBookmarked ? '★ Đã lưu' : '☆ Lưu câu này'}
@@ -1679,12 +1813,14 @@
       const originBadgeHtml = isOrig 
         ? `<span class="orig-tag orig-authentic">⭐️ Đề gốc PTIT • ${escapeHtml(q.examName || 'Đề gốc')} • Câu ${q.originalId}</span>`
         : `<span class="orig-tag orig-extra">📚 Luyện tập mở rộng • Câu ${q.originalId}</span>`;
+      const diffBadgeHtml = getDifficultyBadgeHtml(q.difficulty);
 
       return `
         <div class="practice-item ${isAnswered ? (isCorrect ? 'answered-correct' : 'answered-incorrect') : ''}" id="p-item-${q.id}">
           <div class="question-meta">
             <span class="topic-tag">${escapeHtml(q.topicName)}</span>
-            <div style="display:flex; gap:8px; align-items:center;">
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              ${diffBadgeHtml}
               ${originBadgeHtml}
               <button class="btn-flag ${isBookmarked ? 'active' : ''}" data-bookmark-qid="${q.id}">
                 ${isBookmarked ? '★ Đã lưu' : '☆ Lưu'}
@@ -1779,14 +1915,16 @@
   function resetPracticeFilters() {
     state.practice.topicFilter = 'all';
     state.practice.originFilter = 'all';
+    state.practice.difficultyFilter = 'all';
     state.practice.statusFilter = 'all';
     state.practice.searchQuery = '';
     state.practice.currentIndex = 0;
 
-    el.practiceTopicSelect.value = 'all';
-    el.practiceOriginSelect.value = 'all';
-    el.practiceStatusSelect.value = 'all';
-    el.practiceSearchInput.value = '';
+    if (el.practiceTopicSelect) el.practiceTopicSelect.value = 'all';
+    if (el.practiceOriginSelect) el.practiceOriginSelect.value = 'all';
+    if (el.practiceDifficultySelect) el.practiceDifficultySelect.value = 'all';
+    if (el.practiceStatusSelect) el.practiceStatusSelect.value = 'all';
+    if (el.practiceSearchInput) el.practiceSearchInput.value = '';
 
     renderPracticeView();
   }
@@ -2035,6 +2173,13 @@
     state.practice.currentIndex = 0;
     renderPracticeView();
   });
+  if (el.practiceDifficultySelect) {
+    el.practiceDifficultySelect.addEventListener('change', (e) => {
+      state.practice.difficultyFilter = e.target.value;
+      state.practice.currentIndex = 0;
+      renderPracticeView();
+    });
+  }
   el.practiceStatusSelect.addEventListener('change', (e) => {
     state.practice.statusFilter = e.target.value;
     state.practice.currentIndex = 0;

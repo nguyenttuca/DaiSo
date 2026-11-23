@@ -131,7 +131,7 @@ de_ontap_questions = [
 * Thay nghiệm duy nhất $(x = -3, y = 2)$ vào phương trình thứ ba:
   $$a^2(-3) + 3a(2) = -9 \\iff -3a^2 + 6a + 9 = 0 \\iff a^2 - 2a - 3 = 0$$
 * Giải phương trình bậc hai:
-  $$(a + 1)(a - 3) = 0 \\iff a = -1 \\text{ hoặc } a = 3$$
+  $$(a + 1)(a - 3) = 0 \\iff a = -1$$ hoặc $$a = 3$$
 * **Chọn đáp án: C.**"""
   },
   {
@@ -190,7 +190,7 @@ de_ontap_questions = [
 * Đây là ma trận tam giác dưới, định thức bằng tích các phần tử trên đường chéo chính:
   $$\\det M_4 = 1 \\cdot 3 \\cdot 5 \\cdot (-1) = -15 \\neq 0$$
 * Vì tồn tại một định thức con cấp 4 khác 0 nên hạng của ma trận luôn thỏa mãn:
-  $$r(A) \\ge 4 \\quad \\text{với mọi } k \\in \\mathbb{R}$$
+  $$r(A) \\ge 4, \\quad \\forall k \\in \\mathbb{R}$$
 * **Chọn đáp án: A.**"""
   },
   {

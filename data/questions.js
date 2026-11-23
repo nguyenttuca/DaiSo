@@ -35,6 +35,7 @@
     ],
     "correct": "A",
     "explanation": "* Kiểm tra mệnh đề A:\n  $$(p \\Rightarrow r) \\wedge (q \\Rightarrow r) \\equiv (\\bar{p} \\vee r) \\wedge (\\bar{q} \\vee r) \\equiv (\\bar{p} \\wedge \\bar{q}) \\vee r \\equiv \\overline{p \\vee q} \\vee r \\equiv (p \\vee q) \\Rightarrow r$$\n* Vế phải phải là $(p \\vee q) \\Rightarrow r$, chứ không phải $(p \\wedge q) \\Rightarrow r$.\n* Do đó phương án A là khẳng định **không đúng**.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -50,27 +51,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong các mệnh đề toán học sau đây, mệnh đề nào là một **mệnh đề Đúng**?",
+    "question": "Phủ định của mệnh đề phức hợp $p \\to (q \\to r)$ tương đương logic với mệnh đề nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^2 + 1 = 0$"
+        "text": "$\\bar{p} \\vee \\bar{q} \\vee r$"
       },
       {
         "key": "B",
-        "text": "$\\forall n \\in \\mathbb{N}, \\, n - 2 > 0$"
+        "text": "$p \\to (q \\wedge \\bar{r})$"
       },
       {
         "key": "C",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^2 > x$"
+        "text": "$\\bar{p} \\to (\\bar{q} \\to \\bar{r})$"
       },
       {
         "key": "D",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, |x| \\ge 0$"
+        "text": "$p \\wedge q \\wedge \\bar{r}$"
       }
     ],
     "correct": "D",
-    "explanation": "* Mệnh đề $\\forall x \\in \\mathbb{R}, \\, |x| \\ge 0$ là mệnh đề đúng vì Giá trị tuyệt đối luôn không âm.\n* **Chọn đáp án: D.**",
+    "explanation": "* Biến đổi phủ định theo luật logic: $\\neg[p \\to (q \\to r)] \\equiv \\neg[\\bar{p} \\vee (\\bar{q} \\vee r)] \\equiv \\neg \\bar{p} \\wedge \\neg(\\bar{q} \\vee r) \\equiv p \\wedge q \\wedge \\bar{r}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -94,11 +96,11 @@
       },
       {
         "key": "B",
-        "text": "$P$ là điều kiện cần để có $Q$, và $Q$ là điều kiện đủ để có $P$"
+        "text": "$P$ là điều kiện tương đương với $Q$"
       },
       {
         "key": "C",
-        "text": "$P$ là điều kiện tương đương với $Q$"
+        "text": "$P$ là điều kiện cần để có $Q$, và $Q$ là điều kiện đủ để có $P$"
       },
       {
         "key": "D",
@@ -107,6 +109,7 @@
     ],
     "correct": "A",
     "explanation": "* Trong mệnh đề $P \\to Q$, $P$ là tiền đề (điều kiện đủ để suy ra $Q$), còn $Q$ là kết luận (điều kiện cần để $P$ xảy ra).\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -126,15 +129,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 4 < 0$"
-      },
-      {
-        "key": "B",
         "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 4 \\le 0$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 4 < 0$"
+      },
+      {
+        "key": "C",
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 4 < 0$"
       },
       {
         "key": "D",
@@ -143,6 +146,7 @@
     ],
     "correct": "D",
     "explanation": "* Phủ định của lượng từ $\\forall$ là $\\exists$, và phủ định của dấu $>$ là $\\le$. Do đó phủ định là $\\exists x \\in \\mathbb{R}, x^4 + 4 \\le 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -162,11 +166,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$p \\leftrightarrow p$"
+        "text": "$p \\to p$"
       },
       {
         "key": "B",
-        "text": "$p \\vee \\bar{p}$"
+        "text": "$p \\leftrightarrow p$"
       },
       {
         "key": "C",
@@ -174,11 +178,12 @@
       },
       {
         "key": "D",
-        "text": "$p \\to p$"
+        "text": "$p \\vee \\bar{p}$"
       }
     ],
     "correct": "C",
     "explanation": "* Dạng mệnh đề $p \\leftrightarrow \\bar{p}$ luôn nhận chân trị 0 (Sai) trong mọi trường hợp (Phép tương đương giữa biến và phủ định).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -215,6 +220,7 @@
     ],
     "correct": "C",
     "explanation": "* Thay các chân trị đã cho vào mệnh đề $(p \\leftrightarrow q) \\wedge \\bar{r}$, ta tính được chân trị của biểu thức là **Sai (0)**.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -234,7 +240,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$36$ dòng"
+        "text": "$68$ dòng"
       },
       {
         "key": "B",
@@ -242,7 +248,7 @@
       },
       {
         "key": "C",
-        "text": "$68$ dòng"
+        "text": "$36$ dòng"
       },
       {
         "key": "D",
@@ -251,6 +257,7 @@
     ],
     "correct": "D",
     "explanation": "* Mỗi biến mệnh đề độc lập nhận 1 trong 2 giá trị (0 hoặc 1). Với 6 biến, số trường hợp chân trị là $2^{6} = 64$ dòng.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -287,6 +294,7 @@
     ],
     "correct": "D",
     "explanation": "* Mệnh đề phản đảo của $A \\to B$ là $\\bar{B} \\to \\bar{A}$. Do đó mệnh đề phản đảo là $\\bar{q} \\to \\bar{p}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -310,19 +318,20 @@
       },
       {
         "key": "B",
-        "text": "$(p \\vee q) \\to (p \\wedge q)$"
+        "text": "$p \\wedge \\bar{p}$"
       },
       {
         "key": "C",
-        "text": "$p \\to \\bar{p}$"
+        "text": "$(p \\vee q) \\to (p \\wedge q)$"
       },
       {
         "key": "D",
-        "text": "$p \\wedge \\bar{p}$"
+        "text": "$p \\to \\bar{p}$"
       }
     ],
     "correct": "A",
     "explanation": "* $((p \\to q) \\wedge \\bar{q}) \\to \\bar{p}$ luôn nhận chân trị 1 (Đúng) với mọi trường hợp của các biến mệnh đề. Đây là Quy tắc phủ định Modus Tollens.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -338,27 +347,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quy tắc suy luận hợp lệ ứng với **Tam đoạn luận tuyển (Disjunctive Syllogism)** là:",
+    "question": "Cho hệ ba tiền đề sau:\n1. $p \\to \\bar{q}$\n2. $r \\to q$\n3. $p$\nKhẳng định nào dưới đây là **kết luận hợp lý** (valid conclusion) suy ra từ hệ tiền đề trên?",
     "options": [
       {
         "key": "A",
-        "text": "$((p \\vee q) \\wedge p) \\implies q$"
+        "text": "$r$"
       },
       {
         "key": "B",
-        "text": "$((p \\vee q) \\wedge \\bar{p}) \\implies q$"
+        "text": "$\\bar{r}$"
       },
       {
         "key": "C",
-        "text": "$((p \\to q) \\wedge q) \\implies p$"
+        "text": "$\\bar{p}$"
       },
       {
         "key": "D",
-        "text": "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
+        "text": "$q$"
       }
     ],
     "correct": "B",
-    "explanation": "* Theo logic hình thức, quy tắc Tam đoạn luận tuyển (Disjunctive Syllogism) được phát biểu chính xác là $((p \\vee q) \\wedge \\bar{p}) \\implies q$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Từ tiền đề (1) $p \\to \\bar{q}$ và (3) $p$, theo quy tắc Modus Ponens ta suy ra $\\bar{q}$. Từ tiền đề (2) $r \\to q$, theo luật phản đảo tương đương với $\\bar{q} \\to \\bar{r}$. Kết hợp với $\\bar{q}$ vừa suy ra, theo Modus Ponens ta được kết luận $\\bar{r}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -374,27 +384,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho biết mệnh đề $p$ nhận chân trị Sai 0và $q$ nhận chân trị Đúng (1). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
+    "question": "Cho hai mệnh đề toán học với các lượng từ lồng nhau trên tập số thực $\\mathbb{R}$:\n$$P: \\forall x \\in \\mathbb{R}, \\, \\exists y \\in \\mathbb{R}: x + y = 0$$\n$$Q: \\exists y \\in \\mathbb{R}, \\, \\forall x \\in \\mathbb{R}: x + y = 0$$\nChân trị của $P$ và $Q$ lần lượt là:",
     "options": [
       {
         "key": "A",
-        "text": "Đúng (1)"
+        "text": "$P$ Đúng (1), $Q$ Sai (0)"
       },
       {
         "key": "B",
-        "text": "Không xác định được"
+        "text": "$P$ Sai (0), $Q$ Sai (0)"
       },
       {
         "key": "C",
-        "text": "Sai (0)"
+        "text": "$P$ Sai (0), $Q$ Đúng (1)"
       },
       {
         "key": "D",
-        "text": "Luôn đúng với mọi $p, q$"
+        "text": "$P$ Đúng (1), $Q$ Đúng (1)"
       }
     ],
     "correct": "A",
-    "explanation": "* Mệnh đề kéo theo $p \\to q$ chỉ nhận giá trị Sai khi $p = 1$ và $q = 0$. Ở đây $p = 0, q = 1$ nên chân trị là **Đúng (1)**.\n* **Chọn đáp án: A.**",
+    "explanation": "* Với $P$: Với mọi số thực $x$, ta luôn chọn được $y = -x \\in \\mathbb{R}$ để $x + (-x) = 0$, do đó $P$ nhận chân trị Đúng (1). Với $Q$: Không tồn tại số thực $y$ cố định nào mà cộng với mọi $x \\in \\mathbb{R}$ đều bằng 0 (chẳng hạn nếu chọn $x = 1 - y$ thì $x + y = 1 \\neq 0$), do đó $Q$ nhận chân trị Sai (0).\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -410,27 +421,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quy tắc suy luận hợp lệ ứng với **Phủ định kết luận (Modus Tollens)** là:",
+    "question": "Trong mệnh đề kéo theo $M \\to N$, khẳng định nào sau đây diễn đạt **chính xác** mối quan hệ điều kiện giữa $M$ và $N$?",
     "options": [
       {
         "key": "A",
-        "text": "$((p \\to q) \\wedge q) \\implies p$"
+        "text": "$M$ là điều kiện tương đương với $N$"
       },
       {
         "key": "B",
-        "text": "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
+        "text": "$M$ và $N$ là điều kiện cần và đủ của nhau"
       },
       {
         "key": "C",
-        "text": "$((p \\vee q) \\wedge p) \\implies q$"
+        "text": "$M$ là điều kiện cần để có $N$, và $N$ là điều kiện đủ để có $M$"
       },
       {
         "key": "D",
-        "text": "$((p \\to q) \\wedge \\bar{q}) \\implies \\bar{p}$"
+        "text": "$M$ là điều kiện đủ để có $N$, và $N$ là điều kiện cần để có $M$"
       }
     ],
     "correct": "D",
-    "explanation": "* Theo logic hình thức, quy tắc Phủ định kết luận (Modus Tollens) được phát biểu chính xác là $((p \\to q) \\wedge \\bar{q}) \\implies \\bar{p}$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Trong mệnh đề $M \\to N$, $M$ là tiền đề (điều kiện đủ để suy ra $N$), còn $N$ là kết luận (điều kiện cần để $M$ xảy ra).\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -446,27 +458,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho biết mệnh đề $p$ nhận chân trị Đúng 1và $q$ nhận chân trị Sai (0). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
+    "question": "Phủ định của mệnh đề $\\forall x \\in \\mathbb{R}, \\, x^2 + 3 > 0$ là mệnh đề nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Luôn đúng với mọi $p, q$"
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^2 + 3 \\le 0$"
       },
       {
         "key": "B",
-        "text": "Sai (0)"
+        "text": "$\\exists x \\in \\mathbb{R}, \\, x^2 + 3 \\le 0$"
       },
       {
         "key": "C",
-        "text": "Không xác định được"
+        "text": "$\\exists x \\in \\mathbb{R}, \\, x^2 + 3 < 0$"
       },
       {
         "key": "D",
-        "text": "Đúng (1)"
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^2 + 3 < 0$"
       }
     ],
     "correct": "B",
-    "explanation": "* Mệnh đề kéo theo $p \\to q$ chỉ nhận giá trị Sai khi $p = 1$ và $q = 0$. Ở đây $p = 1, q = 0$ nên chân trị là **Sai (0)**.\n* **Chọn đáp án: B.**",
+    "explanation": "* Phủ định của lượng từ $\\forall$ là $\\exists$, và phủ định của dấu $>$ là $\\le$. Do đó phủ định là $\\exists x \\in \\mathbb{R}, x^2 + 3 \\le 0$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -482,27 +495,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quy tắc suy luận hợp lệ ứng với **Tam đoạn luận giả định (Hypothetical Syllogism)** là:",
+    "question": "Trong mệnh đề kéo theo $A \\to B$, khẳng định nào sau đây diễn đạt **chính xác** mối quan hệ điều kiện giữa $A$ và $B$?",
     "options": [
       {
         "key": "A",
-        "text": "$((p \\vee q) \\wedge p) \\implies q$"
+        "text": "$A$ là điều kiện cần để có $B$, và $B$ là điều kiện đủ để có $A$"
       },
       {
         "key": "B",
-        "text": "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
+        "text": "$A$ là điều kiện tương đương với $B$"
       },
       {
         "key": "C",
-        "text": "$((p \\to q) \\wedge q) \\implies p$"
+        "text": "$A$ và $B$ là điều kiện cần và đủ của nhau"
       },
       {
         "key": "D",
-        "text": "$((p \\to q) \\wedge (q \\to r)) \\implies (p \\to r)$"
+        "text": "$A$ là điều kiện đủ để có $B$, và $B$ là điều kiện cần để có $A$"
       }
     ],
     "correct": "D",
-    "explanation": "* Theo logic hình thức, quy tắc Tam đoạn luận giả định (Hypothetical Syllogism) được phát biểu chính xác là $((p \\to q) \\wedge (q \\to r)) \\implies (p \\to r)$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Trong mệnh đề $A \\to B$, $A$ là tiền đề (điều kiện đủ để suy ra $B$), còn $B$ là kết luận (điều kiện cần để $A$ xảy ra).\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -518,27 +532,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho biết mệnh đề $p$ nhận chân trị Sai 0và $q$ nhận chân trị Sai (0). Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:",
+    "question": "Phủ định của mệnh đề $\\forall x \\in \\mathbb{R}, \\, x^4 + 3 > 0$ là mệnh đề nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "Luôn đúng với mọi $p, q$"
+        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
       },
       {
         "key": "B",
-        "text": "Sai (0)"
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
       },
       {
         "key": "C",
-        "text": "Không xác định được"
+        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 3 \\le 0$"
       },
       {
         "key": "D",
-        "text": "Đúng (1)"
+        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 3 \\le 0$"
       }
     ],
     "correct": "D",
-    "explanation": "* Mệnh đề kéo theo $p \\to q$ chỉ nhận giá trị Sai khi $p = 1$ và $q = 0$. Ở đây $p = 0, q = 0$ nên chân trị là **Đúng (1)**.\n* **Chọn đáp án: D.**",
+    "explanation": "* Phủ định của lượng từ $\\forall$ là $\\exists$, và phủ định của dấu $>$ là $\\le$. Do đó phủ định là $\\exists x \\in \\mathbb{R}, x^4 + 3 \\le 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -554,27 +569,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Bảng chân trị của một dạng mệnh đề chứa đúng 2 biến mệnh đề độc lập có tổng cộng bao nhiêu dòng (hàng) giá trị chân trị?",
+    "question": "Mệnh đề phản đảo của mệnh đề kéo theo $n \\text{ chia hết cho } 4 \\to n \\text{ chia hết cho } 2$ là mệnh đề nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "$8$ dòng"
+        "text": "Không có mệnh đề phản đảo"
       },
       {
         "key": "B",
-        "text": "$5$ dòng"
+        "text": "$n \\text{ không chia hết cho } 4 \\to n \\text{ không chia hết cho } 2$"
       },
       {
         "key": "C",
-        "text": "$4$ dòng"
+        "text": "$n \\text{ không chia hết cho } 2 \\to n \\text{ không chia hết cho } 4$"
       },
       {
         "key": "D",
-        "text": "$3$ dòng"
+        "text": "$n \\text{ chia hết cho } 2 \\to n \\text{ chia hết cho } 4$"
       }
     ],
     "correct": "C",
-    "explanation": "* Mỗi biến mệnh đề độc lập nhận 1 trong 2 giá trị (0 hoặc 1). Với 2 biến, số trường hợp chân trị là $2^{2} = 4$ dòng.\n* **Chọn đáp án: C.**",
+    "explanation": "* Mệnh đề phản đảo của $A \\to B$ là $\\bar{B} \\to \\bar{A}$. Do đó mệnh đề phản đảo là $n \\text{ không chia hết cho } 2 \\to n \\text{ không chia hết cho } 4$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -590,27 +606,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Mệnh đề phản đảo của mệnh đề kéo theo $x > 0 \\to x^2 > 0$ là mệnh đề nào sau đây?",
+    "question": "Trong logic mệnh đề, dạng mệnh đề nào dưới đây là một **hằng đúng** (tautology - ứng với Định nghĩa phép kéo theo)?",
     "options": [
       {
         "key": "A",
-        "text": "Không có mệnh đề phản đảo"
+        "text": "$p \\to \\bar{p}$"
       },
       {
         "key": "B",
-        "text": "$x^2 > 0 \\to x > 0$"
+        "text": "$(p \\vee q) \\to (p \\wedge q)$"
       },
       {
         "key": "C",
-        "text": "$x \\le 0 \\to x^2 \\le 0$"
+        "text": "$p \\wedge \\bar{p}$"
       },
       {
         "key": "D",
-        "text": "$x^2 \\le 0 \\to x \\le 0$"
+        "text": "$(p \\to q) \\leftrightarrow (\\bar{p} \\vee q)$"
       }
     ],
     "correct": "D",
-    "explanation": "* Mệnh đề phản đảo của $A \\to B$ là $\\bar{B} \\to \\bar{A}$. Do đó mệnh đề phản đảo là $x^2 \\le 0 \\to x \\le 0$.\n* **Chọn đáp án: D.**",
+    "explanation": "* $(p \\to q) \\leftrightarrow (\\bar{p} \\vee q)$ luôn nhận chân trị 1 (Đúng) với mọi trường hợp của các biến mệnh đề. Đây là Định nghĩa phép kéo theo.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -626,27 +643,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong logic mệnh đề, dạng mệnh đề nào dưới đây là một **hằng đúng** (tautology - ứng với Định nghĩa phép kéo theo)?",
+    "question": "Mệnh đề phản đảo của mệnh đề kéo theo $a = b \\to a^2 = b^2$ là mệnh đề nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "$(p \\vee q) \\to (p \\wedge q)$"
+        "text": "$a^2 = b^2 \\to a = b$"
       },
       {
         "key": "B",
-        "text": "$(p \\to q) \\leftrightarrow (\\bar{p} \\vee q)$"
+        "text": "$a^2 \\neq b^2 \\to a \\neq b$"
       },
       {
         "key": "C",
-        "text": "$p \\to \\bar{p}$"
+        "text": "$a \\neq b \\to a^2 \\neq b^2$"
       },
       {
         "key": "D",
-        "text": "$p \\wedge \\bar{p}$"
+        "text": "Không có mệnh đề phản đảo"
       }
     ],
     "correct": "B",
-    "explanation": "* $(p \\to q) \\leftrightarrow (\\bar{p} \\vee q)$ luôn nhận chân trị 1 (Đúng) với mọi trường hợp của các biến mệnh đề. Đây là Định nghĩa phép kéo theo.\n* **Chọn đáp án: B.**",
+    "explanation": "* Mệnh đề phản đảo của $A \\to B$ là $\\bar{B} \\to \\bar{A}$. Do đó mệnh đề phản đảo là $a^2 \\neq b^2 \\to a \\neq b$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -662,27 +680,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho các mệnh đề: $p$ nhận chân trị Đúng (1), $q$ nhận Đúng (1), $r$ nhận Sai (0). Chân trị của mệnh đề phức hợp $(p \\vee q) \\to r$ là:",
+    "question": "Bảng chân trị của một dạng mệnh đề chứa đúng 5 biến mệnh đề độc lập có tổng cộng bao nhiêu dòng (hàng) giá trị chân trị?",
     "options": [
       {
         "key": "A",
-        "text": "Không xác định được"
+        "text": "$25$ dòng"
       },
       {
         "key": "B",
-        "text": "Đúng (1)"
+        "text": "$10$ dòng"
       },
       {
         "key": "C",
-        "text": "Luôn đúng với mọi $p, q, r$"
+        "text": "$36$ dòng"
       },
       {
         "key": "D",
-        "text": "Sai (0)"
+        "text": "$32$ dòng"
       }
     ],
     "correct": "D",
-    "explanation": "* Thay các chân trị đã cho vào mệnh đề $(p \\vee q) \\to r$, ta tính được chân trị của biểu thức là **Sai (0)**.\n* **Chọn đáp án: D.**",
+    "explanation": "* Mỗi biến mệnh đề độc lập nhận 1 trong 2 giá trị (0 hoặc 1). Với 5 biến, số trường hợp chân trị là $2^{5} = 32$ dòng.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -698,27 +717,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Bảng chân trị của một dạng mệnh đề chứa đúng 4 biến mệnh đề độc lập có tổng cộng bao nhiêu dòng (hàng) giá trị chân trị?",
+    "question": "Cho các mệnh đề: $p$ nhận chân trị Sai (0), $q$ nhận Đúng (1), $r$ nhận Đúng (1). Chân trị của mệnh đề phức hợp $(p \\leftrightarrow q) \\wedge \\bar{r}$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$8$ dòng"
+        "text": "Không xác định được"
       },
       {
         "key": "B",
-        "text": "$17$ dòng"
+        "text": "Luôn đúng với mọi $p, q, r$"
       },
       {
         "key": "C",
-        "text": "$16$ dòng"
+        "text": "Sai (0)"
       },
       {
         "key": "D",
-        "text": "$20$ dòng"
+        "text": "Đúng (1)"
       }
     ],
     "correct": "C",
-    "explanation": "* Mỗi biến mệnh đề độc lập nhận 1 trong 2 giá trị (0 hoặc 1). Với 4 biến, số trường hợp chân trị là $2^{4} = 16$ dòng.\n* **Chọn đáp án: C.**",
+    "explanation": "* Thay các chân trị đã cho vào mệnh đề $(p \\leftrightarrow q) \\wedge \\bar{r}$, ta tính được chân trị của biểu thức là **Sai (0)**.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -734,27 +754,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho các mệnh đề: $p$ nhận chân trị Đúng (1), $q$ nhận Sai (0), $r$ nhận Sai (0). Chân trị của mệnh đề phức hợp $(p \\leftrightarrow q) \\wedge \\bar{r}$ là:",
+    "question": "Bảng chân trị của một dạng mệnh đề chứa đúng 3 biến mệnh đề độc lập có tổng cộng bao nhiêu dòng (hàng) giá trị chân trị?",
     "options": [
       {
         "key": "A",
-        "text": "Đúng (1)"
+        "text": "$12$ dòng"
       },
       {
         "key": "B",
-        "text": "Sai (0)"
+        "text": "$8$ dòng"
       },
       {
         "key": "C",
-        "text": "Luôn đúng với mọi $p, q, r$"
+        "text": "$9$ dòng"
       },
       {
         "key": "D",
-        "text": "Không xác định được"
+        "text": "$6$ dòng"
       }
     ],
     "correct": "B",
-    "explanation": "* Thay các chân trị đã cho vào mệnh đề $(p \\leftrightarrow q) \\wedge \\bar{r}$, ta tính được chân trị của biểu thức là **Sai (0)**.\n* **Chọn đáp án: B.**",
+    "explanation": "* Mỗi biến mệnh đề độc lập nhận 1 trong 2 giá trị (0 hoặc 1). Với 3 biến, số trường hợp chân trị là $2^{3} = 8$ dòng.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -770,27 +791,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong mệnh đề kéo theo $A \\to B$, khẳng định nào sau đây diễn đạt **chính xác** mối quan hệ điều kiện giữa $A$ và $B$?",
+    "question": "Cho các mệnh đề: $p$ nhận chân trị Sai (0), $q$ nhận Đúng (1), $r$ nhận Đúng (1). Chân trị của mệnh đề phức hợp $p \\to (q \\vee r)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$A$ là điều kiện tương đương với $B$"
+        "text": "Luôn đúng với mọi $p, q, r$"
       },
       {
         "key": "B",
-        "text": "$A$ là điều kiện cần để có $B$, và $B$ là điều kiện đủ để có $A$"
+        "text": "Sai (0)"
       },
       {
         "key": "C",
-        "text": "$A$ và $B$ là điều kiện cần và đủ của nhau"
+        "text": "Không xác định được"
       },
       {
         "key": "D",
-        "text": "$A$ là điều kiện đủ để có $B$, và $B$ là điều kiện cần để có $A$"
+        "text": "Đúng (1)"
       }
     ],
     "correct": "D",
-    "explanation": "* Trong mệnh đề $A \\to B$, $A$ là tiền đề (điều kiện đủ để suy ra $B$), còn $B$ là kết luận (điều kiện cần để $A$ xảy ra).\n* **Chọn đáp án: D.**",
+    "explanation": "* Thay các chân trị đã cho vào mệnh đề $p \\to (q \\vee r)$, ta tính được chân trị của biểu thức là **Đúng (1)**.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -806,27 +828,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Phủ định của mệnh đề $\\forall x \\in \\mathbb{R}, \\, x^4 + 3 > 0$ là mệnh đề nào sau đây?",
+    "question": "Bảng chân trị của một dạng mệnh đề chứa đúng 7 biến mệnh đề độc lập có tổng cộng bao nhiêu dòng (hàng) giá trị chân trị?",
     "options": [
       {
         "key": "A",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
+        "text": "$132$ dòng"
       },
       {
         "key": "B",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^4 + 3 \\le 0$"
+        "text": "$49$ dòng"
       },
       {
         "key": "C",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 3 \\le 0$"
+        "text": "$128$ dòng"
       },
       {
         "key": "D",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^4 + 3 < 0$"
+        "text": "$14$ dòng"
       }
     ],
     "correct": "C",
-    "explanation": "* Phủ định của lượng từ $\\forall$ là $\\exists$, và phủ định của dấu $>$ là $\\le$. Do đó phủ định là $\\exists x \\in \\mathbb{R}, x^4 + 3 \\le 0$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Mỗi biến mệnh đề độc lập nhận 1 trong 2 giá trị (0 hoặc 1). Với 7 biến, số trường hợp chân trị là $2^{7} = 128$ dòng.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -842,27 +865,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quy tắc suy luận hợp lệ ứng với **Khẳng định tiền đề (Modus Ponens)** là:",
+    "question": "Cho các mệnh đề: $p$ nhận chân trị Đúng (1), $q$ nhận Đúng (1), $r$ nhận Sai (0). Chân trị của mệnh đề phức hợp $p \\to (q \\wedge r)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$((p \\vee q) \\wedge p) \\implies q$"
+        "text": "Luôn đúng với mọi $p, q, r$"
       },
       {
         "key": "B",
-        "text": "$((p \\to q) \\wedge q) \\implies p$"
+        "text": "Không xác định được"
       },
       {
         "key": "C",
-        "text": "$((p \\to q) \\wedge p) \\implies q$"
+        "text": "Sai (0)"
       },
       {
         "key": "D",
-        "text": "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
+        "text": "Đúng (1)"
       }
     ],
     "correct": "C",
-    "explanation": "* Theo logic hình thức, quy tắc Khẳng định tiền đề (Modus Ponens) được phát biểu chính xác là $((p \\to q) \\wedge p) \\implies q$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Thay các chân trị đã cho vào mệnh đề $p \\to (q \\wedge r)$, ta tính được chân trị của biểu thức là **Sai (0)**.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -878,27 +902,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Phủ định của mệnh đề $\\forall x \\in \\mathbb{R}, \\, x^2 + 3 > 0$ là mệnh đề nào sau đây?",
+    "question": "Cho các mệnh đề: $p$ nhận chân trị Đúng (1), $q$ nhận Đúng (1), $r$ nhận Đúng (1). Chân trị của mệnh đề phức hợp $p \\to (q \\vee r)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^2 + 3 \\le 0$"
+        "text": "Đúng (1)"
       },
       {
         "key": "B",
-        "text": "$\\exists x \\in \\mathbb{R}, \\, x^2 + 3 < 0$"
+        "text": "Sai (0)"
       },
       {
         "key": "C",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^2 + 3 \\le 0$"
+        "text": "Không xác định được"
       },
       {
         "key": "D",
-        "text": "$\\forall x \\in \\mathbb{R}, \\, x^2 + 3 < 0$"
+        "text": "Luôn đúng với mọi $p, q, r$"
       }
     ],
     "correct": "A",
-    "explanation": "* Phủ định của lượng từ $\\forall$ là $\\exists$, và phủ định của dấu $>$ là $\\le$. Do đó phủ định là $\\exists x \\in \\mathbb{R}, x^2 + 3 \\le 0$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Thay các chân trị đã cho vào mệnh đề $p \\to (q \\vee r)$, ta tính được chân trị của biểu thức là **Đúng (1)**.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -914,27 +939,28 @@
     "typeName": "Chân trị & Các phép toán Mệnh đề",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong mệnh đề kéo theo $M \\to N$, khẳng định nào sau đây diễn đạt **chính xác** mối quan hệ điều kiện giữa $M$ và $N$?",
+    "question": "Mệnh đề phản đảo của mệnh đề kéo theo $x > 0 \\to x^2 > 0$ là mệnh đề nào sau đây?",
     "options": [
       {
         "key": "A",
-        "text": "$M$ và $N$ là điều kiện cần và đủ của nhau"
+        "text": "$x \\le 0 \\to x^2 \\le 0$"
       },
       {
         "key": "B",
-        "text": "$M$ là điều kiện đủ để có $N$, và $N$ là điều kiện cần để có $M$"
+        "text": "$x^2 \\le 0 \\to x \\le 0$"
       },
       {
         "key": "C",
-        "text": "$M$ là điều kiện tương đương với $N$"
+        "text": "$x^2 > 0 \\to x > 0$"
       },
       {
         "key": "D",
-        "text": "$M$ là điều kiện cần để có $N$, và $N$ là điều kiện đủ để có $M$"
+        "text": "Không có mệnh đề phản đảo"
       }
     ],
     "correct": "B",
-    "explanation": "* Trong mệnh đề $M \\to N$, $M$ là tiền đề (điều kiện đủ để suy ra $N$), còn $N$ là kết luận (điều kiện cần để $M$ xảy ra).\n* **Chọn đáp án: B.**",
+    "explanation": "* Mệnh đề phản đảo của $A \\to B$ là $\\bar{B} \\to \\bar{A}$. Do đó mệnh đề phản đảo là $x^2 \\le 0 \\to x \\le 0$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -971,6 +997,7 @@
     ],
     "correct": "D",
     "explanation": "* **Quy tắc tìm công thức đối ngẫu trong đại số Boole:**\n  * Giữ nguyên các biến và dấu phủ định của biến ($x' \\to x'$, $y' \\to y'$, $z \\to z$).\n  * Đổi phép hội $\\wedge$ thành phép tuyển $\\vee$ và ngược lại.\n  * Đổi hằng số $0 \\to 1$ và $1 \\to 0$.\n* Biến đổi:\n  $$(x' \\vee 0) \\wedge (y' \\wedge z) \\xrightarrow{\\text{đối ngẫu}} (x' \\wedge 1) \\vee (y' \\vee z)$$\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -1007,6 +1034,7 @@
     ],
     "correct": "A",
     "explanation": "* Rút gọn ngoặc thứ nhất:\n  $$(x' \\wedge z) \\wedge (x \\vee z') = (x' \\wedge z \\wedge x) \\vee (x' \\wedge z \\wedge z') = 0 \\vee 0 = 0$$\n  Do đó ngoặc thứ nhất là $0 \\vee y = y$.\n* Biểu thức trở thành:\n  $$A = y \\wedge (x \\vee y \\vee z) \\wedge \\{[(y' \\vee z) \\wedge (y \\vee z')] \\vee x\\}$$\n* Vì $y \\wedge (x \\vee y \\vee z) = y$, ta có:\n  $$A = y \\wedge \\{[(y' \\vee z) \\wedge (y \\vee z')] \\vee x\\} = \\{y \\wedge [(y' \\vee z) \\wedge (y \\vee z')]\\} \\vee (y \\wedge x)$$\n* Tiếp tục rút gọn:\n  $$y \\wedge (y' \\vee z) = (y \\wedge y') \\vee (y \\wedge z) = y \\wedge z$$\n  $$(y \\wedge z) \\wedge (y \\vee z') = (y \\wedge z \\wedge y) \\vee (y \\wedge z \\wedge z') = (y \\wedge z) \\vee 0 = y \\wedge z$$\n* Suy ra $A = (y \\wedge z) \\vee (y \\wedge x) = y \\wedge (x \\vee z) = (y \\vee z) \\wedge (x \\vee y) \\wedge (x \\vee z)$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -1022,19 +1050,19 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Có tổng cộng bao nhiêu hàm Boole $n$ biến phân biệt với $n = 3$?",
+    "question": "Có tất cả bao nhiêu **quan hệ tương đương** phân biệt (tương ứng với số phân hoạch) có thể xây dựng trên tập hợp $S = \\{a, b, c\\}$ gồm 3 phần tử?",
     "options": [
       {
         "key": "A",
-        "text": "$128$"
-      },
-      {
-        "key": "B",
         "text": "$8$"
       },
       {
+        "key": "B",
+        "text": "$4$"
+      },
+      {
         "key": "C",
-        "text": "$256$"
+        "text": "$5$"
       },
       {
         "key": "D",
@@ -1042,7 +1070,8 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Bảng chân trị có $2^{3} = 8$ hàng. Mỗi hàng có 2 cách chọn giá trị (0 hoặc 1), do đó số hàm Boole là $2^{2^{3}} = 2^{8} = 256$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Số quan hệ tương đương trên một tập hữu hạn $n$ phần tử chính là số Bell $B_n$. Với $n = 3$, số phân hoạch gồm: 1 phân hoạch 3 phần tử $\\{\\{a, b, c\\}\\}$, 3 phân hoạch dạng 2+1 $\\{\\{a, b\\}, \\{c\\}\\}, \\dots$, và 1 phân hoạch dạng 1+1+1 $\\{\\{a\\}, \\{b\\}, \\{c\\}\\}$. Tổng cộng: $1 + 3 + 1 = 5$ quan hệ tương đương (số Bell $B_3 = 5$).\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1058,27 +1087,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quan hệ đồng dư modulo $m$ ($a \\equiv b \\pmod{m}$) trên $\\mathbb{Z}$ là một quan hệ tương đương vì nó thỏa mãn 3 tính chất:",
+    "question": "Rút gọn biểu thức đại số Boole sau:\n$$F(x, y, z) = (x \\vee y) \\wedge (x \\vee \\bar{y}) \\wedge (\\bar{x} \\vee z)$$",
     "options": [
       {
         "key": "A",
-        "text": "Phản xạ, Phản đối xứng và Bắc cầu"
+        "text": "$\\bar{x} \\wedge z$"
       },
       {
         "key": "B",
-        "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+        "text": "$x \\wedge y \\wedge z$"
       },
       {
         "key": "C",
-        "text": "Phản xạ, Đối xứng và Đầy đủ"
+        "text": "$x \\vee z$"
       },
       {
         "key": "D",
-        "text": "Phản xạ, Đối xứng và Bắc cầu"
+        "text": "$x \\wedge z$"
       }
     ],
     "correct": "D",
-    "explanation": "* Mọi quan hệ tương đương bắt buộc phải thỏa mãn 3 tính chất: Phản xạ, Đối xứng và Bắc cầu.\n* **Chọn đáp án: D.**",
+    "explanation": "* Áp dụng luật phân phối cho hai thừa số đầu: $(x \\vee y) \\wedge (x \\vee \\bar{y}) = x \\vee (y \\wedge \\bar{y}) = x \\vee 0 = x$. Biểu thức trở thành: $F = x \\wedge (\\bar{x} \\vee z) = (x \\wedge \\bar{x}) \\vee (x \\wedge z) = 0 \\vee (x \\wedge z) = x \\wedge z$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1115,6 +1145,7 @@
     ],
     "correct": "A",
     "explanation": "* Theo định nghĩa phép XOR: $a \\oplus b = a\\bar{b} \\vee \\bar{a}b$, ta có $x \\oplus 0 = $x$$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1134,15 +1165,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$0$"
-      },
-      {
-        "key": "B",
         "text": "$1$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$x \\wedge y$"
+      },
+      {
+        "key": "C",
+        "text": "$0$"
       },
       {
         "key": "D",
@@ -1151,6 +1182,7 @@
     ],
     "correct": "D",
     "explanation": "* Áp dụng tính chất phân phối và $y \\vee \\bar{y} = 1$ (hoặc $y \\wedge \\bar{y} = 0$), ta rút gọn được $F = (x \\wedge y) \\vee (x \\wedge \\bar{y})$ thành $x$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1170,11 +1202,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$y$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "B",
-        "text": "$x \\wedge y$"
+        "text": "$x \\vee y$"
       },
       {
         "key": "C",
@@ -1182,11 +1214,12 @@
       },
       {
         "key": "D",
-        "text": "$x \\vee y$"
+        "text": "$y$"
       }
     ],
     "correct": "C",
     "explanation": "* Luật hấp thụ: $x \\wedge (x \\vee y) = x$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1206,15 +1239,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Vì cổng NAND có thể nhận vô số đầu vào cùng một lúc"
+        "text": "Vì cổng NAND (hoặc NOR) có tốc độ xử lý nhanh nhất trong vi mạch số"
       },
       {
         "key": "B",
-        "text": "Vì cổng NAND tiêu thụ ít năng lượng nhất"
+        "text": "Vì cổng NAND (hoặc NOR) tiêu thụ ít năng lượng nhất"
       },
       {
         "key": "C",
-        "text": "Vì cổng NAND có tốc độ xử lý nhanh nhất trong vi mạch"
+        "text": "Vì cổng NAND (hoặc NOR) có thể nhận vô số đầu vào cùng một lúc"
       },
       {
         "key": "D",
@@ -1222,7 +1255,8 @@
       }
     ],
     "correct": "D",
-    "explanation": "* Hệ {NAND} (hoặc {NOR}) là một hệ đầy đủ chức năng, do đó mọi phép toán logic cơ bản (NOT, AND, OR) và mọi hàm Boole đều có thể biểu diễn chỉ bằng cổng NAND.\n* **Chọn đáp án: D.**",
+    "explanation": "* Hệ {NAND (hoặc NOR)} là một hệ đầy đủ chức năng, do đó mọi phép toán logic cơ bản (NOT, AND, OR) và mọi hàm Boole đều có thể biểu diễn chỉ bằng cổng NAND (hoặc NOR).\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1238,15 +1272,15 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Rút gọn biểu thức Boole $F = x \\vee (\\bar{x} \\wedge y)$ ta được:",
+    "question": "Rút gọn biểu thức Boole $F = x \\wedge (\\bar{x} \\vee y)$ ta được:",
     "options": [
       {
         "key": "A",
-        "text": "$y$"
+        "text": "$x \\vee y$"
       },
       {
         "key": "B",
-        "text": "$x \\vee y$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "C",
@@ -1254,11 +1288,12 @@
       },
       {
         "key": "D",
-        "text": "$x \\wedge y$"
+        "text": "$y$"
       }
     ],
     "correct": "B",
-    "explanation": "* Áp dụng luật phân phối: $x \\vee (\\bar{x} \\wedge y) = (x \\vee \\bar{x}) \\wedge (x \\vee y) = 1 \\wedge (x \\vee y) = x \\vee y$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Áp dụng luật phân phối: $x \\wedge (\\bar{x} \\vee y) = (x \\wedge \\bar{x}) \\vee (x \\wedge y) = 0 \\vee (x \\wedge y) = x \\wedge y$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1274,27 +1309,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Nguyên lý đối ngẫu (Dual principle) của công thức Boole $(x \\wedge 1) \\vee (y \\wedge 0)$ là:",
+    "question": "Nguyên lý đối ngẫu (Dual principle) của công thức Boole $(x \\vee y) \\wedge (\\bar{x} \\vee z)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$(\\bar{x} \\vee 0) \\wedge (y \\vee 1)$"
+        "text": "$(\\bar{x} \\wedge y) \\vee (\\bar{\\bar{x}} \\wedge z)$"
       },
       {
         "key": "B",
-        "text": "$(x \\vee 0) \\wedge (y \\vee 1)$"
+        "text": "$(x \\wedge y) \\vee (\\bar{x} \\wedge z)$"
       },
       {
         "key": "C",
-        "text": "Không có công thức đối ngẫu"
+        "text": "$(x \\vee y) \\wedge (\\bar{x} \\vee z)$"
       },
       {
         "key": "D",
-        "text": "$(x \\wedge 1) \\vee (y \\wedge 1)$"
+        "text": "Không có công thức đối ngẫu"
       }
     ],
     "correct": "B",
     "explanation": "* Để tìm công thức đối ngẫu, hoán đổi các phép toán $\\vee \\leftrightarrow \\wedge$ và các hằng số $0 \\leftrightarrow 1$, giữ nguyên các biến và phủ định của biến.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1318,11 +1354,11 @@
       },
       {
         "key": "B",
-        "text": "$x \\vee y$"
+        "text": "$x \\wedge \\bar{y}$"
       },
       {
         "key": "C",
-        "text": "$x \\wedge \\bar{y}$"
+        "text": "$x \\vee y$"
       },
       {
         "key": "D",
@@ -1331,6 +1367,7 @@
     ],
     "correct": "D",
     "explanation": "* Luật De Morgan: Phủ định của một hội bằng tuyển các phủ định: $\\overline{x \\wedge y} = \\bar{x} \\vee \\bar{y}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1346,27 +1383,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quan hệ chia hết ($a \\mid b$) trên tập số nguyên dương $\\mathbb{N}^*$ là một quan hệ thứ tự (Poset) vì nó thỏa mãn 3 tính chất:",
+    "question": "Dạng chuẩn tắc nối rời chính tắc (SOP - Sum of Products) của hàm Boole $f(x, y) = x \\to y$ là:",
     "options": [
       {
         "key": "A",
-        "text": "Không phản xạ, Đối xứng và Bắc cầu"
+        "text": "$\\bar{x}\\bar{y} \\vee x\\bar{y}$"
       },
       {
         "key": "B",
-        "text": "Phản xạ, Đối xứng và Bắc cầu"
+        "text": "$\\bar{x}y \\vee xy$"
       },
       {
         "key": "C",
-        "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+        "text": "$x\\bar{y} \\vee xy$"
       },
       {
         "key": "D",
-        "text": "Phản xạ, Phản đối xứng và Bắc cầu"
+        "text": "$\\bar{x}\\bar{y} \\vee \\bar{x}y \\vee xy$"
       }
     ],
     "correct": "D",
-    "explanation": "* Quan hệ thứ tự (bán phần) thỏa mãn 3 tính chất: Phản xạ, Phản đối xứng và Bắc cầu.\n* **Chọn đáp án: D.**",
+    "explanation": "* Mệnh đề kéo theo $x \\to y \\equiv \\bar{x} \\vee y$. Mở rộng thành các hội đầy đủ (minterms): $\\bar{x} = \\bar{x}(y \\vee \\bar{y}) = \\bar{x}y \\vee \\bar{x}\\bar{y}$; $y = (x \\vee \\bar{x})y = xy \\vee \\bar{x}y$. Tuyển lại ta được: $f(x, y) = \\bar{x}\\bar{y} \\vee \\bar{x}y \\vee xy$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1382,27 +1420,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Rút gọn biểu thức logic Boole $F = (x \\vee y) \\wedge (\\bar{x} \\vee y)$ ta được:",
+    "question": "Tại sao cổng NAND được gọi là cổng logic vạn năng (Universal gate)?",
     "options": [
       {
         "key": "A",
-        "text": "$0$"
+        "text": "Vì cổng NAND có thể nhận vô số đầu vào cùng một lúc"
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "Vì cổng NAND tiêu thụ ít năng lượng nhất"
       },
       {
         "key": "C",
-        "text": "$x \\wedge y$"
+        "text": "Vì cổng NAND có tốc độ xử lý nhanh nhất trong vi mạch số"
       },
       {
         "key": "D",
-        "text": "$y$"
+        "text": "Vì hệ {NAND} là một hệ đầy đủ chức năng trong logic"
       }
     ],
     "correct": "D",
-    "explanation": "* Áp dụng tính chất phân phối và $y \\vee \\bar{y} = 1$ (hoặc $y \\wedge \\bar{y} = 0$), ta rút gọn được $F = (x \\vee y) \\wedge (\\bar{x} \\vee y)$ thành $y$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Hệ {NAND} là một hệ đầy đủ chức năng, do đó mọi phép toán logic cơ bản (NOT, AND, OR) và mọi hàm Boole đều có thể biểu diễn chỉ bằng cổng NAND.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1426,7 +1465,7 @@
       },
       {
         "key": "B",
-        "text": "$x \\wedge y$"
+        "text": "$x \\vee y$"
       },
       {
         "key": "C",
@@ -1434,11 +1473,12 @@
       },
       {
         "key": "D",
-        "text": "$x \\vee y$"
+        "text": "$x \\wedge y$"
       }
     ],
     "correct": "C",
     "explanation": "* Luật hấp thụ: $x \\vee (x \\wedge y) = x$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1454,27 +1494,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Có tổng cộng bao nhiêu hàm Boole $n$ biến phân biệt với $n = 2$?",
+    "question": "Rút gọn biểu thức logic Boole $F = (x \\wedge y) \\vee (\\bar{x} \\wedge y)$ ta được:",
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "B",
-        "text": "$16$"
+        "text": "$y$"
       },
       {
         "key": "C",
-        "text": "$17$"
+        "text": "$0$"
       },
       {
         "key": "D",
-        "text": "$8$"
+        "text": "$1$"
       }
     ],
     "correct": "B",
-    "explanation": "* Bảng chân trị có $2^{2} = 4$ hàng. Mỗi hàng có 2 cách chọn giá trị (0 hoặc 1), do đó số hàm Boole là $2^{2^{2}} = 2^{4} = 16$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Áp dụng tính chất phân phối và $y \\vee \\bar{y} = 1$ (hoặc $y \\wedge \\bar{y} = 0$), ta rút gọn được $F = (x \\wedge y) \\vee (\\bar{x} \\wedge y)$ thành $y$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1490,27 +1531,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quan hệ bằng nhau ($a = b$) trên tập số thực $\\mathbb{R}$ là một quan hệ tương đương vì nó thỏa mãn 3 tính chất:",
+    "question": "Trong đại số Boole, giá trị rút gọn của biểu thức $x \\oplus x \\oplus x$ (phép tuyển loại trừ XOR) là:",
     "options": [
       {
         "key": "A",
-        "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+        "text": "$x \\wedge 1$"
       },
       {
         "key": "B",
-        "text": "Phản xạ, Đối xứng và Bắc cầu"
+        "text": "$x$"
       },
       {
         "key": "C",
-        "text": "Phản xạ, Đối xứng và Đầy đủ"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "Phản xạ, Phản đối xứng và Bắc cầu"
+        "text": "$\\bar{x}$"
       }
     ],
     "correct": "B",
-    "explanation": "* Mọi quan hệ tương đương bắt buộc phải thỏa mãn 3 tính chất: Phản xạ, Đối xứng và Bắc cầu.\n* **Chọn đáp án: B.**",
+    "explanation": "* Theo định nghĩa phép XOR: $a \\oplus b = a\\bar{b} \\vee \\bar{a}b$, ta có $x \\oplus x \\oplus x = $x$$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1526,27 +1568,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Nguyên lý đối ngẫu (Dual principle) của công thức Boole $(x \\vee 0) \\wedge (y \\vee \\bar{z})$ là:",
+    "question": "Rút gọn biểu thức logic Boole $F = (x \\wedge y) \\vee (x \\wedge y \\wedge z)$ ta được:",
     "options": [
       {
         "key": "A",
-        "text": "$(x \\vee 1) \\wedge (y \\vee \\bar{z})$"
+        "text": "$x \\vee y$"
       },
       {
         "key": "B",
-        "text": "$(x \\wedge 1) \\vee (y \\wedge \\bar{z})$"
+        "text": "$x \\wedge y$"
       },
       {
         "key": "C",
-        "text": "Không có công thức đối ngẫu"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$(\\bar{x} \\wedge 1) \\vee (y \\wedge \\bar{z})$"
+        "text": "$0$"
       }
     ],
     "correct": "B",
-    "explanation": "* Để tìm công thức đối ngẫu, hoán đổi các phép toán $\\vee \\leftrightarrow \\wedge$ và các hằng số $0 \\leftrightarrow 1$, giữ nguyên các biến và phủ định của biến.\n* **Chọn đáp án: B.**",
+    "explanation": "* Áp dụng tính chất phân phối và $y \\vee \\bar{y} = 1$ (hoặc $y \\wedge \\bar{y} = 0$), ta rút gọn được $F = (x \\wedge y) \\vee (x \\wedge y \\wedge z)$ thành $x \\wedge y$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1562,27 +1605,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Nguyên lý đối ngẫu (Dual principle) của công thức Boole $(x \\vee y) \\wedge (\\bar{x} \\vee z)$ là:",
+    "question": "Nguyên lý đối ngẫu (Dual principle) của công thức Boole $(x \\vee \\bar{y}) \\wedge (z \\vee 0)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$(\\bar{x} \\wedge y) \\vee (\\bar{\\bar{x}} \\wedge z)$"
-      },
-      {
-        "key": "B",
         "text": "Không có công thức đối ngẫu"
       },
       {
+        "key": "B",
+        "text": "$(\\bar{x} \\wedge \\bar{y}) \\vee (z \\wedge 1)$"
+      },
+      {
         "key": "C",
-        "text": "$(x \\wedge y) \\vee (\\bar{x} \\wedge z)$"
+        "text": "$(x \\wedge \\bar{y}) \\vee (z \\wedge 1)$"
       },
       {
         "key": "D",
-        "text": "$(x \\vee y) \\wedge (\\bar{x} \\vee z)$"
+        "text": "$(x \\vee \\bar{y}) \\wedge (z \\vee 1)$"
       }
     ],
     "correct": "C",
     "explanation": "* Để tìm công thức đối ngẫu, hoán đổi các phép toán $\\vee \\leftrightarrow \\wedge$ và các hằng số $0 \\leftrightarrow 1$, giữ nguyên các biến và phủ định của biến.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1606,7 +1650,7 @@
       },
       {
         "key": "B",
-        "text": "$\\bar{x} \\vee y$"
+        "text": "$\\bar{x} \\vee \\bar{y}$"
       },
       {
         "key": "C",
@@ -1614,11 +1658,12 @@
       },
       {
         "key": "D",
-        "text": "$\\bar{x} \\vee \\bar{y}$"
+        "text": "$\\bar{x} \\vee y$"
       }
     ],
     "correct": "A",
     "explanation": "* Luật De Morgan: Phủ định của một tuyển bằng hội các phủ định: $\\overline{x \\vee y} = \\bar{x} \\wedge \\bar{y}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1634,27 +1679,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quan hệ bao hàm tập hợp ($\\subseteq$) trên tập lũy thừa $\\mathcal{P}(S)$ là một quan hệ thứ tự (Poset) vì nó thỏa mãn 3 tính chất:",
+    "question": "Trong đại số Boole, giá trị rút gọn của biểu thức $(x \\oplus 1) \\oplus 1$ (phép tuyển loại trừ XOR) là:",
     "options": [
       {
         "key": "A",
-        "text": "Phản xạ, Đối xứng và Bắc cầu"
+        "text": "$\\bar{x}$"
       },
       {
         "key": "B",
-        "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+        "text": "$x \\wedge 1$"
       },
       {
         "key": "C",
-        "text": "Không phản xạ, Đối xứng và Bắc cầu"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "Phản xạ, Phản đối xứng và Bắc cầu"
+        "text": "$x$"
       }
     ],
     "correct": "D",
-    "explanation": "* Quan hệ thứ tự (bán phần) thỏa mãn 3 tính chất: Phản xạ, Phản đối xứng và Bắc cầu.\n* **Chọn đáp án: D.**",
+    "explanation": "* Theo định nghĩa phép XOR: $a \\oplus b = a\\bar{b} \\vee \\bar{a}b$, ta có $(x \\oplus 1) \\oplus 1 = $x$$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1670,27 +1716,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Rút gọn biểu thức logic Boole $F = (x \\vee y) \\wedge (x \\vee \\bar{y})$ ta được:",
+    "question": "Rút gọn biểu thức logic Boole $F = (x \\vee y) \\wedge (\\bar{x} \\vee y)$ ta được:",
     "options": [
       {
         "key": "A",
-        "text": "$x \\wedge y$"
-      },
-      {
-        "key": "B",
-        "text": "$0$"
-      },
-      {
-        "key": "C",
         "text": "$1$"
       },
       {
+        "key": "B",
+        "text": "$x \\wedge y$"
+      },
+      {
+        "key": "C",
+        "text": "$0$"
+      },
+      {
         "key": "D",
-        "text": "$x$"
+        "text": "$y$"
       }
     ],
     "correct": "D",
-    "explanation": "* Áp dụng tính chất phân phối và $y \\vee \\bar{y} = 1$ (hoặc $y \\wedge \\bar{y} = 0$), ta rút gọn được $F = (x \\vee y) \\wedge (x \\vee \\bar{y})$ thành $x$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Áp dụng tính chất phân phối và $y \\vee \\bar{y} = 1$ (hoặc $y \\wedge \\bar{y} = 0$), ta rút gọn được $F = (x \\vee y) \\wedge (\\bar{x} \\vee y)$ thành $y$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1706,27 +1753,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Quan hệ nhỏ hơn hoặc bằng ($\\le$) trên tập số thực $\\mathbb{R}$ là một quan hệ thứ tự (Poset) vì nó thỏa mãn 3 tính chất:",
+    "question": "Trong đại số Boole, giá trị rút gọn của biểu thức $x \\oplus 1$ (phép tuyển loại trừ XOR) là:",
     "options": [
       {
         "key": "A",
-        "text": "Không phản xạ, Đối xứng và Bắc cầu"
+        "text": "$1$"
       },
       {
         "key": "B",
-        "text": "Phản xạ, Đối xứng và Bắc cầu"
+        "text": "$x \\wedge 1$"
       },
       {
         "key": "C",
-        "text": "Phản xạ, Phản đối xứng và Bắc cầu"
+        "text": "$\\bar{x}$"
       },
       {
         "key": "D",
-        "text": "Đối xứng, Phản đối xứng và Bắc cầu"
+        "text": "$x$"
       }
     ],
     "correct": "C",
-    "explanation": "* Quan hệ thứ tự (bán phần) thỏa mãn 3 tính chất: Phản xạ, Phản đối xứng và Bắc cầu.\n* **Chọn đáp án: C.**",
+    "explanation": "* Theo định nghĩa phép XOR: $a \\oplus b = a\\bar{b} \\vee \\bar{a}b$, ta có $x \\oplus 1 = $\\bar{x}$$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1742,27 +1790,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Rút gọn biểu thức logic Boole $F = (x \\wedge y) \\vee (\\bar{x} \\wedge y)$ ta được:",
+    "question": "Rút gọn biểu thức Boole $F = \\bar{x} \\vee (x \\wedge y)$ ta được:",
     "options": [
       {
         "key": "A",
-        "text": "$y$"
+        "text": "$\\bar{x} \\vee y$"
       },
       {
         "key": "B",
-        "text": "$0$"
+        "text": "$\\bar{x} \\wedge y$"
       },
       {
         "key": "C",
-        "text": "$x \\wedge y$"
+        "text": "$y$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$\\bar{x}$"
       }
     ],
     "correct": "A",
-    "explanation": "* Áp dụng tính chất phân phối và $y \\vee \\bar{y} = 1$ (hoặc $y \\wedge \\bar{y} = 0$), ta rút gọn được $F = (x \\wedge y) \\vee (\\bar{x} \\wedge y)$ thành $y$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Áp dụng luật phân phối: $\\bar{x} \\vee (x \\wedge y) = (\\bar{x} \\vee x) \\wedge (\\bar{x} \\vee y) = 1 \\wedge (\\bar{x} \\vee y) = \\bar{x} \\vee y$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1778,27 +1827,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trong đại số Boole, giá trị rút gọn của biểu thức $x \\oplus 1$ (phép tuyển loại trừ XOR) là:",
+    "question": "Nguyên lý đối ngẫu (Dual principle) của công thức Boole $(x \\vee 0) \\wedge (y \\vee \\bar{z})$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$x$"
+        "text": "$(\\bar{x} \\wedge 1) \\vee (y \\wedge \\bar{z})$"
       },
       {
         "key": "B",
-        "text": "$x \\wedge 1$"
+        "text": "Không có công thức đối ngẫu"
       },
       {
         "key": "C",
-        "text": "$\\bar{x}$"
+        "text": "$(x \\wedge 1) \\vee (y \\wedge \\bar{z})$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$(x \\vee 1) \\wedge (y \\vee \\bar{z})$"
       }
     ],
     "correct": "C",
-    "explanation": "* Theo định nghĩa phép XOR: $a \\oplus b = a\\bar{b} \\vee \\bar{a}b$, ta có $x \\oplus 1 = $\\bar{x}$$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Để tìm công thức đối ngẫu, hoán đổi các phép toán $\\vee \\leftrightarrow \\wedge$ và các hằng số $0 \\leftrightarrow 1$, giữ nguyên các biến và phủ định của biến.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1814,27 +1864,28 @@
     "typeName": "Tương đương Logic, Đại số Boole & Đối ngẫu",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Rút gọn biểu thức Boole $F = x \\wedge (\\bar{x} \\vee y)$ ta được:",
+    "question": "Nguyên lý đối ngẫu (Dual principle) của công thức Boole $(x \\wedge y) \\vee (\\bar{y} \\wedge 1)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$x$"
+        "text": "$(x \\wedge y) \\vee (\\bar{y} \\wedge 1)$"
       },
       {
         "key": "B",
-        "text": "$x \\wedge y$"
+        "text": "$(x \\vee y) \\wedge (\\bar{y} \\vee 0)$"
       },
       {
         "key": "C",
-        "text": "$y$"
+        "text": "$(\\bar{x} \\vee y) \\wedge (\\bar{y} \\vee 0)$"
       },
       {
         "key": "D",
-        "text": "$x \\vee y$"
+        "text": "Không có công thức đối ngẫu"
       }
     ],
     "correct": "B",
-    "explanation": "* Áp dụng luật phân phối: $x \\wedge (\\bar{x} \\vee y) = (x \\wedge \\bar{x}) \\vee (x \\wedge y) = 0 \\vee (x \\wedge y) = x \\wedge y$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Để tìm công thức đối ngẫu, hoán đổi các phép toán $\\vee \\leftrightarrow \\wedge$ và các hằng số $0 \\leftrightarrow 1$, giữ nguyên các biến và phủ định của biến.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1871,6 +1922,7 @@
     ],
     "correct": "D",
     "explanation": "* Phản ví dụ cho khẳng định D: Chọn $A = \\{1\\}, B = \\{2\\}, C = \\{1, 2\\}$.\n  * Khi đó $A \\cup C = \\{1, 2\\} = B \\cup C$, nhưng rõ ràng $A \\neq B$.\n  * Do đó khẳng định D là **không đúng**.\n* Các khẳng định A, B, C đều đúng theo định nghĩa giao, hiệu và tập con.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -1907,6 +1959,7 @@
     ],
     "correct": "A",
     "explanation": "* Tập hợp $\\{x\\}$ chỉ có một phần tử duy nhất là $x$.\n* Với $x$ bất kỳ, tập rỗng $\\emptyset$ là tập con của $\\{x\\}$ (tức $\\emptyset \\subset \\{x\\}$), chứ $\\emptyset$ không phải là một phần tử thuộc $\\{x\\}$ (tức $\\emptyset \\notin \\{x\\}$).\n* Do đó khẳng định A là **không đúng**.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -1943,6 +1996,7 @@
     ],
     "correct": "B",
     "explanation": "* Viết lại hàm số dưới dạng từng khúc:\n  $$f(x) = \\begin{cases} 5x - 2x = 3x & \\text{khi } x \\ge 0 \\\\ 5x - 2(-x) = 7x & \\text{khi } x < 0 \\end{cases}$$\n* Khảo sát:\n  * Với $x \\ge 0$: $f'(x) = 3 > 0$, hàm đồng biến từ $0$ đến $+\\infty$.\n  * Với $x < 0$: $f'(x) = 7 > 0$, hàm đồng biến từ $-\\infty$ đến $0$.\n* Hàm số liên tục và đồng biến nghiêm ngặt trên toàn $\\mathbb{R}$ $\\implies f$ là **đơn ánh**.\n* Tập giá trị của hàm là $\\operatorname{Im} f = (-\\infty, 0) \\cup [0, +\\infty) = \\mathbb{R} \\implies f$ là **toàn ánh**.\n* Vì $f$ vừa là đơn ánh vừa là toàn ánh nên $f$ là **song ánh**.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -1962,11 +2016,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{2, 3, 4, 5, 6, 7\\}$"
+        "text": "$\\{2, 3\\}$"
       },
       {
         "key": "B",
-        "text": "$\\{2, 3\\}$"
+        "text": "$\\{4, 5\\}$"
       },
       {
         "key": "C",
@@ -1974,11 +2028,12 @@
       },
       {
         "key": "D",
-        "text": "$\\{4, 5\\}$"
+        "text": "$\\{2, 3, 4, 5, 6, 7\\}$"
       }
     ],
     "correct": "C",
     "explanation": "* $A \\setminus B = \\{2, 3\\}, B \\setminus A = \\{6, 7\\}$. Do đó $A \\Delta B = \\{2, 3, 6, 7\\}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -1994,27 +2049,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho tập hợp $S = \\{1, \\{2, 3\\}, 4\\}$. Khẳng định nào sau đây là **ĐÚNG**?",
+    "question": "Cho hai tập hợp $A$ và $B$ bất kỳ. Khẳng định nào sau đây là **SAI**?",
     "options": [
       {
         "key": "A",
-        "text": "$2 \\in S$"
+        "text": "$|\\mathcal{P}(A \\times B)| = 2^{|A| \\cdot |B|}$ với $A, B$ hữu hạn"
       },
       {
         "key": "B",
-        "text": "$\\{2, 3\\} \\in S$"
+        "text": "$\\mathcal{P}(A) \\cup \\mathcal{P}(B) = \\mathcal{P}(A \\cup B)$"
       },
       {
         "key": "C",
-        "text": "$\\{2, 3\\} \\subset S$"
+        "text": "$\\mathcal{P}(A) \\cap \\mathcal{P}(B) = \\mathcal{P}(A \\cap B)$"
       },
       {
         "key": "D",
-        "text": "$3 \\in S$"
+        "text": "Nếu $A \\subseteq B$ thì $\\mathcal{P}(A) \\subseteq \\mathcal{P}(B)$"
       }
     ],
     "correct": "B",
-    "explanation": "* Tập con $\\{2, 3\\}$ đóng vai trò là một phần tử trực tiếp của tập $S$, do đó $\\{2, 3\\} \\in S$ là đúng. Còn $2$ và $3$ không phải là phần tử riêng lẻ của $S$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Khẳng định $\\mathcal{P}(A) \\cup \\mathcal{P}(B) = \\mathcal{P}(A \\cup B)$ là SAI. Phản ví dụ: Chọn $A = \\{1\\}, B = \\{2\\}$. Khi đó $A \\cup B = \\{1, 2\\} \\in \\mathcal{P}(A \\cup B)$, nhưng $\\{1, 2\\} \\notin \\mathcal{P}(A)$ và $\\{1, 2\\} \\notin \\mathcal{P}(B)$, do đó không thuộc vế trái.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2034,15 +2090,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\overline{A \\cap B}$"
+        "text": "$\\bar{A} \\cup \\bar{B}$"
       },
       {
         "key": "B",
-        "text": "$A \\cap B$"
+        "text": "$\\overline{A \\cap B}$"
       },
       {
         "key": "C",
-        "text": "$\\bar{A} \\cup \\bar{B}$"
+        "text": "$A \\cap B$"
       },
       {
         "key": "D",
@@ -2051,6 +2107,7 @@
     ],
     "correct": "D",
     "explanation": "* Luật De Morgan tập hợp: Phần bù của một hợp bằng giao các phần bù: $\\overline{A \\cup B} = \\bar{A} \\cap \\bar{B}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2070,11 +2127,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$7$"
+        "text": "$128$"
       },
       {
         "key": "B",
-        "text": "$128$"
+        "text": "$32$"
       },
       {
         "key": "C",
@@ -2082,11 +2139,12 @@
       },
       {
         "key": "D",
-        "text": "$32$"
+        "text": "$7$"
       }
     ],
     "correct": "C",
     "explanation": "* Số phần tử của tích Descartes bằng tích số phần tử: $|A \\times B| = |A| \\cdot |B| = 2 \\cdot 5 = 10$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2106,7 +2164,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$20$"
+        "text": "$12$"
       },
       {
         "key": "B",
@@ -2118,11 +2176,12 @@
       },
       {
         "key": "D",
-        "text": "$12$"
+        "text": "$20$"
       }
     ],
     "correct": "B",
     "explanation": "* Số tập con gồm 2 phần tử của tập 6 phần tử là tổ hợp chập 2 của 6: $C_{6}^{2} = \\dfrac{6!}{2!(6-2)!} = 15$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2138,27 +2197,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trên tập số thực $\\mathbb{R}$, giao của hai khoảng $(-2, 3]$ và $[2, 7)$ là:",
+    "question": "Trong một khóa học gồm 100 sinh viên: có 60 sinh viên học môn A, 50 sinh viên học môn B, 40 sinh viên học môn C; có 30 sinh viên học cả A và B, 25 sinh viên học cả A và C, 20 sinh viên học cả B và C; và có 15 sinh viên học cả ba môn A, B, C. Số sinh viên không học môn nào trong ba môn trên là:",
     "options": [
       {
         "key": "A",
-        "text": "$(2, 3)$"
+        "text": "$5$ sinh viên"
       },
       {
         "key": "B",
-        "text": "$[2, 3)$"
+        "text": "$15$ sinh viên"
       },
       {
         "key": "C",
-        "text": "$(-2, 7)$"
+        "text": "$20$ sinh viên"
       },
       {
         "key": "D",
-        "text": "$[2, 3]$"
+        "text": "$10$ sinh viên"
       }
     ],
     "correct": "D",
-    "explanation": "* Giao hai khoảng là tập các giá trị $x$ thỏa mãn: $-2 < x \\le 3$ và $2 \\le x < 7 \\iff 2 \\le x \\le 3$, tức là đoạn $[2, 3]$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Theo nguyên lý bù trừ: $|A \\cup B \\cup C| = |A| + |B| + |C| - (|A \\cap B| + |A \\cap C| + |B \\cap C|) + |A \\cap B \\cap C| = 60 + 50 + 40 - (30 + 25 + 20) + 15 = 150 - 75 + 15 = 90$. Số sinh viên không học môn nào là $100 - 90 = 10$ sinh viên.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2178,7 +2238,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$23$"
+        "text": "$20$"
       },
       {
         "key": "B",
@@ -2186,7 +2246,7 @@
       },
       {
         "key": "C",
-        "text": "$20$"
+        "text": "$23$"
       },
       {
         "key": "D",
@@ -2195,6 +2255,7 @@
     ],
     "correct": "B",
     "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 20 + 18 - 10 = 28$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2218,7 +2279,7 @@
       },
       {
         "key": "B",
-        "text": "$\\{\\{a\\}, \\{b\\}, \\{a, b\\}\\}$"
+        "text": "$\\{\\emptyset, a, b, \\{a, b\\}\\}$"
       },
       {
         "key": "C",
@@ -2226,11 +2287,12 @@
       },
       {
         "key": "D",
-        "text": "$\\{\\emptyset, a, b, \\{a, b\\}\\}$"
+        "text": "$\\{\\{a\\}, \\{b\\}, \\{a, b\\}\\}$"
       }
     ],
     "correct": "A",
     "explanation": "* Tập lũy thừa $\\mathcal{P}(A)$ chứa mọi tập con của $A$, kể cả tập rỗng $\\emptyset$ và chính $A$. Vì $|A|=2$ nên $|\\mathcal{P}(A)| = 2^2 = 4$ phần tử.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2250,7 +2312,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$30$"
+        "text": "$64$"
       },
       {
         "key": "B",
@@ -2258,15 +2320,16 @@
       },
       {
         "key": "C",
-        "text": "$12$"
+        "text": "$30$"
       },
       {
         "key": "D",
-        "text": "$64$"
+        "text": "$12$"
       }
     ],
     "correct": "B",
     "explanation": "* Số tập con của tập $n$ phần tử là $2^n = 64$. Số tập con thực sự loại trừ chính tập $X$ nên còn $2^n - 1 = 63$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2282,27 +2345,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho hai tập hợp $A, B$ bất kỳ. Khẳng định nào sau đây luôn **ĐÚNG**?",
+    "question": "Cho tập hợp $S$ gồm $6$ phần tử. Có tất cả bao nhiêu tập con của $S$ chứa đúng $3$ phần tử và bắt buộc phải chứa một phần tử cố định $x_0 \\in S$?",
     "options": [
       {
         "key": "A",
-        "text": "$A \\setminus B = B \\setminus A$"
+        "text": "$20$"
       },
       {
         "key": "B",
-        "text": "$A \\cap (A \\cup B) = B$"
+        "text": "$15$"
       },
       {
         "key": "C",
-        "text": "$A \\cup (B \\cap C) = (A \\cup B) \\cap C$"
+        "text": "$12$"
       },
       {
         "key": "D",
-        "text": "$A \\setminus B = A \\cap \\bar{B}$"
+        "text": "$10$"
       }
     ],
     "correct": "D",
-    "explanation": "* Hiệu của hai tập hợp $A \\setminus B$ chính là tập các phần tử thuộc $A$ và không thuộc $B$, tức là $A \\cap \\bar{B}$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Vì phần tử cố định $x_0$ chắc chắn đã nằm trong tập con, ta chỉ cần chọn thêm $3 - 1 = 2$ phần tử từ $6 - 1 = 5$ phần tử còn lại của $S$. Số cách chọn là tổ hợp: $C_5^2 = \\dfrac{5!}{2! 3!} = 10$ tập con.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2318,27 +2382,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trên tập số thực $\\mathbb{R}$, giao của hai khoảng $(-1, 4]$ và $[0, 7)$ là:",
+    "question": "Cho tập hợp $X$ gồm đúng 6 phần tử. Tổng số tập hợp con của $X$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$(0, 4)$"
+        "text": "$36$"
       },
       {
         "key": "B",
-        "text": "$[0, 4)$"
+        "text": "$63$"
       },
       {
         "key": "C",
-        "text": "$[0, 4]$"
+        "text": "$64$"
       },
       {
         "key": "D",
-        "text": "$(-1, 7)$"
+        "text": "$12$"
       }
     ],
     "correct": "C",
-    "explanation": "* Giao hai khoảng là tập các giá trị $x$ thỏa mãn: $-1 < x \\le 4$ và $0 \\le x < 7 \\iff 0 \\le x \\le 4$, tức là đoạn $[0, 4]$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Số tập con của tập $n$ phần tử là $2^n = 64$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2354,27 +2419,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Một lớp có 30 bạn thích Toán, 15 bạn thích Lý, và 5 bạn thích cả Toán lẫn Lý. Số bạn thích ít nhất một trong hai môn Toán hoặc Lý là:",
+    "question": "Theo luật De Morgan cho các phép toán tập hợp, phần bù của giao hai tập hợp $\\overline{A \\cap B}$ bằng:",
     "options": [
       {
         "key": "A",
-        "text": "$45$"
+        "text": "$A \\cup B$"
       },
       {
         "key": "B",
-        "text": "$15$"
+        "text": "$\\overline{A \\cup B}$"
       },
       {
         "key": "C",
-        "text": "$40$"
+        "text": "$\\bar{A} \\cup \\bar{B}$"
       },
       {
         "key": "D",
-        "text": "$35$"
+        "text": "$\\bar{A} \\cap \\bar{B}$"
       }
     ],
     "correct": "C",
-    "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 30 + 15 - 5 = 40$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Luật De Morgan tập hợp: Phần bù của một giao bằng hợp các phần bù: $\\overline{A \\cap B} = \\bar{A} \\cup \\bar{B}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2390,27 +2456,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho hai tập hợp $A = \\{4, 5, 6, 7\\}$ và $B = \\{6, 7, 8, 9\\}$. Hiệu đối xứng $A \\Delta B = (A \\setminus B) \\cup (B \\setminus A)$ là:",
+    "question": "Cho tập hợp $A$ có 5 phần tử và tập hợp $B$ có 4 phần tử. Số phần tử của tích Descartes $A \\times B$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$\\{4, 5, 6, 7, 8, 9\\}$"
+        "text": "$512$"
       },
       {
         "key": "B",
-        "text": "$\\{4, 5, 8, 9\\}$"
+        "text": "$20$"
       },
       {
         "key": "C",
-        "text": "$\\{6, 7\\}$"
+        "text": "$9$"
       },
       {
         "key": "D",
-        "text": "$\\{4, 5\\}$"
+        "text": "$625$"
       }
     ],
     "correct": "B",
-    "explanation": "* $A \\setminus B = \\{4, 5\\}, B \\setminus A = \\{8, 9\\}$. Do đó $A \\Delta B = \\{4, 5, 8, 9\\}$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Số phần tử của tích Descartes bằng tích số phần tử: $|A \\times B| = |A| \\cdot |B| = 5 \\cdot 4 = 20$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2426,27 +2493,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Một lớp có 20 bạn thích Toán, 15 bạn thích Lý, và 8 bạn thích cả Toán lẫn Lý. Số bạn thích ít nhất một trong hai môn Toán hoặc Lý là:",
+    "question": "Cho tập hợp $X$ có 8 phần tử. Số tập con gồm đúng 3 phần tử của $X$ bằng:",
     "options": [
       {
         "key": "A",
-        "text": "$18$"
+        "text": "$8$"
       },
       {
         "key": "B",
-        "text": "$27$"
+        "text": "$56$"
       },
       {
         "key": "C",
-        "text": "$22$"
+        "text": "$24$"
       },
       {
         "key": "D",
-        "text": "$35$"
+        "text": "$61$"
       }
     ],
     "correct": "B",
-    "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 20 + 15 - 8 = 27$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Số tập con gồm 3 phần tử của tập 8 phần tử là tổ hợp chập 3 của 8: $C_{8}^{3} = \\dfrac{8!}{3!(8-3)!} = 56$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2462,27 +2530,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trên tập số thực $\\mathbb{R}$, giao của hai khoảng $(-3, 5]$ và $[1, 7)$ là:",
+    "question": "Cho tập hợp $A$ có 3 phần tử và tập hợp $B$ có 3 phần tử. Số phần tử của tích Descartes $A \\times B$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$[1, 5]$"
+        "text": "$9$"
       },
       {
         "key": "B",
-        "text": "$(-3, 7)$"
+        "text": "$27$"
       },
       {
         "key": "C",
-        "text": "$[1, 5)$"
+        "text": "$6$"
       },
       {
         "key": "D",
-        "text": "$(1, 5)$"
+        "text": "$64$"
       }
     ],
     "correct": "A",
-    "explanation": "* Giao hai khoảng là tập các giá trị $x$ thỏa mãn: $-3 < x \\le 5$ và $1 \\le x < 7 \\iff 1 \\le x \\le 5$, tức là đoạn $[1, 5]$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Số phần tử của tích Descartes bằng tích số phần tử: $|A \\times B| = |A| \\cdot |B| = 3 \\cdot 3 = 9$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2498,27 +2567,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Một lớp có 20 bạn thích Toán, 15 bạn thích Lý, và 10 bạn thích cả Toán lẫn Lý. Số bạn thích ít nhất một trong hai môn Toán hoặc Lý là:",
+    "question": "Cho tập hợp $X$ có 7 phần tử. Số tập con gồm đúng 2 phần tử của $X$ bằng:",
     "options": [
       {
         "key": "A",
-        "text": "$26$"
+        "text": "$14$"
       },
       {
         "key": "B",
-        "text": "$25$"
+        "text": "$21$"
       },
       {
         "key": "C",
-        "text": "$35$"
+        "text": "$26$"
       },
       {
         "key": "D",
-        "text": "$20$"
+        "text": "$4$"
       }
     ],
     "correct": "B",
-    "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 20 + 15 - 10 = 25$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Số tập con gồm 2 phần tử của tập 7 phần tử là tổ hợp chập 2 của 7: $C_{7}^{2} = \\dfrac{7!}{2!(7-2)!} = 21$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2538,7 +2608,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{3, 4\\}$"
+        "text": "$\\{1, 2\\}$"
       },
       {
         "key": "B",
@@ -2546,15 +2616,16 @@
       },
       {
         "key": "C",
-        "text": "$\\{1, 2, 3, 4, 5, 6\\}$"
+        "text": "$\\{3, 4\\}$"
       },
       {
         "key": "D",
-        "text": "$\\{1, 2\\}$"
+        "text": "$\\{1, 2, 3, 4, 5, 6\\}$"
       }
     ],
     "correct": "B",
     "explanation": "* $A \\setminus B = \\{1, 2\\}, B \\setminus A = \\{5, 6\\}$. Do đó $A \\Delta B = \\{1, 2, 5, 6\\}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2574,15 +2645,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$32$"
-      },
-      {
-        "key": "B",
         "text": "$47$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$20$"
+      },
+      {
+        "key": "C",
+        "text": "$32$"
       },
       {
         "key": "D",
@@ -2591,6 +2662,7 @@
     ],
     "correct": "D",
     "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 25 + 22 - 10 = 37$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2614,11 +2686,11 @@
       },
       {
         "key": "B",
-        "text": "$\\{5, 6\\}$"
+        "text": "$\\{3, 4, 5, 6, 7, 8\\}$"
       },
       {
         "key": "C",
-        "text": "$\\{3, 4, 5, 6, 7, 8\\}$"
+        "text": "$\\{5, 6\\}$"
       },
       {
         "key": "D",
@@ -2627,6 +2699,7 @@
     ],
     "correct": "A",
     "explanation": "* $A \\setminus B = \\{3, 4\\}, B \\setminus A = \\{7, 8\\}$. Do đó $A \\Delta B = \\{3, 4, 7, 8\\}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2663,6 +2736,7 @@
     ],
     "correct": "A",
     "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 25 + 15 - 10 = 30$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2678,27 +2752,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trên tập số thực $\\mathbb{R}$, giao của hai khoảng $(-2, 4]$ và $[0, 6)$ là:",
+    "question": "Một lớp có 30 bạn thích Toán, 18 bạn thích Lý, và 10 bạn thích cả Toán lẫn Lý. Số bạn thích ít nhất một trong hai môn Toán hoặc Lý là:",
     "options": [
       {
         "key": "A",
-        "text": "$(0, 4)$"
+        "text": "$20$"
       },
       {
         "key": "B",
-        "text": "$[0, 4)$"
+        "text": "$48$"
       },
       {
         "key": "C",
-        "text": "$(-2, 6)$"
+        "text": "$33$"
       },
       {
         "key": "D",
-        "text": "$[0, 4]$"
+        "text": "$38$"
       }
     ],
     "correct": "D",
-    "explanation": "* Giao hai khoảng là tập các giá trị $x$ thỏa mãn: $-2 < x \\le 4$ và $0 \\le x < 6 \\iff 0 \\le x \\le 4$, tức là đoạn $[0, 4]$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 30 + 18 - 10 = 38$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2714,27 +2789,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho tập hợp $X$ có 8 phần tử. Số tập con gồm đúng 3 phần tử của $X$ bằng:",
+    "question": "Cho hai tập hợp $A = \\{4, 5, 6, 7\\}$ và $B = \\{6, 7, 8, 9\\}$. Hiệu đối xứng $A \\Delta B = (A \\setminus B) \\cup (B \\setminus A)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$8$"
+        "text": "$\\{4, 5\\}$"
       },
       {
         "key": "B",
-        "text": "$24$"
+        "text": "$\\{6, 7\\}$"
       },
       {
         "key": "C",
-        "text": "$56$"
+        "text": "$\\{4, 5, 8, 9\\}$"
       },
       {
         "key": "D",
-        "text": "$61$"
+        "text": "$\\{4, 5, 6, 7, 8, 9\\}$"
       }
     ],
     "correct": "C",
-    "explanation": "* Số tập con gồm 3 phần tử của tập 8 phần tử là tổ hợp chập 3 của 8: $C_{8}^{3} = \\dfrac{8!}{3!(8-3)!} = 56$.\n* **Chọn đáp án: C.**",
+    "explanation": "* $A \\setminus B = \\{4, 5\\}, B \\setminus A = \\{8, 9\\}$. Do đó $A \\Delta B = \\{4, 5, 8, 9\\}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2750,27 +2826,28 @@
     "typeName": "Tập hợp & Các phép toán Tập hợp",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Trên tập số thực $\\mathbb{R}$, giao của hai khoảng $(-1, 4]$ và $[2, 8)$ là:",
+    "question": "Một lớp có 25 bạn thích Toán, 18 bạn thích Lý, và 10 bạn thích cả Toán lẫn Lý. Số bạn thích ít nhất một trong hai môn Toán hoặc Lý là:",
     "options": [
       {
         "key": "A",
-        "text": "$(2, 4)$"
+        "text": "$20$"
       },
       {
         "key": "B",
-        "text": "$(-1, 8)$"
+        "text": "$43$"
       },
       {
         "key": "C",
-        "text": "$[2, 4)$"
+        "text": "$28$"
       },
       {
         "key": "D",
-        "text": "$[2, 4]$"
+        "text": "$33$"
       }
     ],
     "correct": "D",
-    "explanation": "* Giao hai khoảng là tập các giá trị $x$ thỏa mãn: $-1 < x \\le 4$ và $2 \\le x < 8 \\iff 2 \\le x \\le 4$, tức là đoạn $[2, 4]$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Áp dụng nguyên lý bao hàm - loại trừ: $|A \\cup B| = |A| + |B| - |A \\cap B| = 25 + 18 - 10 = 33$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2807,6 +2884,7 @@
     ],
     "correct": "D",
     "explanation": "* Xét phương án D: Với mọi $y \\in \\mathbb{R}$, phương trình $x^3 + 5 = y \\iff x = \\sqrt[3]{y - 5}$ luôn có nghiệm thực duy nhất $x \\in \\mathbb{R}$. Do đó $f$ là toàn ánh.\n* Các phương án khác không toàn ánh:\n  * A sai: ảnh của $f$ chỉ gồm các số chẵn, không nhận các số lẻ.\n  * B sai: hàm số không bao giờ nhận giá trị $y = 0 \\in \\mathbb{R}$.\n  * C sai: $x^2 + 2x = (x + 1)^2 - 1 \\ge -1$, không nhận các giá trị $y < -1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -2843,6 +2921,7 @@
     ],
     "correct": "A",
     "explanation": "* **Đơn ánh:** Giả sử $f(n_1) = f(n_2) \\iff n_1^2 + n_1 = n_2^2 + n_2 \\iff (n_1 - n_2)(n_1 + n_2 + 1) = 0$.\n  Vì $n_1, n_2 \\in \\mathbb{N}$ nên $n_1 + n_2 + 1 \\ge 1 > 0$, suy ra $n_1 = n_2$. Vậy $f$ là **đơn ánh**.\n* **Toàn ánh:** Với $y = 1 \\in \\mathbb{N}$, phương trình $n^2 + n = 1$ không có nghiệm trong $\\mathbb{N}$. Do đó $f$ **không là toàn ánh**.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -2879,6 +2958,7 @@
     ],
     "correct": "C",
     "explanation": "* Định nghĩa toàn ánh: $\\forall y \\in Y, \\exists x \\in X$ sao cho $f(x) = y$, nghĩa là tập ảnh $f(X) = Y$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2894,27 +2974,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Ánh xạ $f: \\mathbb{Z} \\to \\mathbb{Z}$ xác định bởi $f(n) = 3n$ là:",
+    "question": "Cho tập $A$ gồm $4$ phần tử và tập $B$ gồm $2$ phần tử. Có tất cả bao nhiêu **toàn ánh** từ tập $A$ vào tập $B$?",
     "options": [
       {
         "key": "A",
-        "text": "Song ánh"
+        "text": "$16$"
       },
       {
         "key": "B",
-        "text": "Toàn ánh nhưng không đơn ánh"
+        "text": "$12$"
       },
       {
         "key": "C",
-        "text": "Đơn ánh nhưng không toàn ánh"
+        "text": "$14$"
       },
       {
         "key": "D",
-        "text": "Không đơn ánh và không toàn ánh"
+        "text": "$8$"
       }
     ],
     "correct": "C",
-    "explanation": "* $3n_1 = 3n_2 \\implies n_1 = n_2$ nên $f$ là đơn ánh. Nhưng các số không chia hết cho 3 (như 1) không có tạo ảnh nguyên nên $f$ không toàn ánh.\n* **Chọn đáp án: C.**",
+    "explanation": "* Tổng số ánh xạ từ $A$ vào $B$ là $|B|^{|A|} = 2^4 = 16$. Một ánh xạ không là toàn ánh khi và chỉ khi toàn bộ 4 phần tử của $A$ đều ánh xạ vào duy nhất 1 phần tử của $B$ (có đúng 2 ánh xạ hằng như vậy). Vậy số toàn ánh là $16 - 2 = 14$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2930,27 +3011,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Ánh xạ $f: \\mathbb{R} \\to [0, +\\infty)$ xác định bởi $f(x) = x^2$ là:",
+    "question": "Cho ánh xạ song ánh $f: \\mathbb{R} \\setminus \\{2\\} \\to \\mathbb{R} \\setminus \\{1\\}$ xác định bởi $f(x) = \\dfrac{x + 1}{x - 2}$. Công thức của ánh xạ ngược $f^{-1}(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "Không đơn ánh và không toàn ánh"
+        "text": "$f^{-1}(x) = \\dfrac{2x - 1}{x + 1}$"
       },
       {
         "key": "B",
-        "text": "Toàn ánh nhưng không là đơn ánh"
+        "text": "$f^{-1}(x) = \\dfrac{2x + 1}{x - 1}$"
       },
       {
         "key": "C",
-        "text": "Đơn ánh nhưng không là toàn ánh"
+        "text": "$f^{-1}(x) = \\dfrac{x - 1}{2x + 1}$"
       },
       {
         "key": "D",
-        "text": "Song ánh"
+        "text": "$f^{-1}(x) = \\dfrac{x - 2}{x + 1}$"
       }
     ],
     "correct": "B",
-    "explanation": "* Tập giá trị của $x^2$ là $[0, +\\infty)$ nên $f$ là toàn ánh. Tuy nhiên $f(1) = f(-1) = 1$ nên $f$ không là đơn ánh.\n* **Chọn đáp án: B.**",
+    "explanation": "* Đặt $y = \\dfrac{x + 1}{x - 2} \\iff y(x - 2) = x + 1 \\iff x(y - 1) = 2y + 1 \\iff x = \\dfrac{2y + 1}{y - 1}$. Đổi biến ta được $f^{-1}(x) = \\dfrac{2x + 1}{x - 1}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -2978,15 +3060,16 @@
       },
       {
         "key": "C",
-        "text": "$f$ là một song ánh"
+        "text": "$g$ là một toàn ánh"
       },
       {
         "key": "D",
-        "text": "$g$ là một toàn ánh"
+        "text": "$f$ là một song ánh"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý ánh xạ hợp: Nếu $g \\circ f$ là đơn ánh thì ánh xạ trong $f$ bắt buộc phải là đơn ánh.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3010,11 +3093,11 @@
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = 4x + 7$"
+        "text": "$f^{-1}(x) = -4x + 7$"
       },
       {
         "key": "C",
-        "text": "$f^{-1}(x) = -4x + 7$"
+        "text": "$f^{-1}(x) = 4x + 7$"
       },
       {
         "key": "D",
@@ -3023,6 +3106,7 @@
     ],
     "correct": "D",
     "explanation": "* Đặt $y = 4x - 7 \\iff 4x = y + 7 \\iff x = \\dfrac{y + 7}{4}$. Vậy $f^{-1}(x) = \\dfrac{x + 7}{4}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3038,27 +3122,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho tập $A$ gồm 4 phần tử và tập $B$ gồm 2 phần tử. Có tất cả bao nhiêu ánh xạ từ $A$ vào $B$?",
+    "question": "Cho hai ánh xạ $f: A \\to B$ và $g: B \\to C$. Khẳng định nào sau đây là **LUÔN ĐÚNG**?",
     "options": [
       {
         "key": "A",
-        "text": "$18$"
+        "text": "Nếu $g \\circ f$ là đơn ánh thì $g$ bắt buộc phải là đơn ánh"
       },
       {
         "key": "B",
-        "text": "$17$"
+        "text": "Nếu $g \\circ f$ là toàn ánh thì $f$ bắt buộc phải là toàn ánh"
       },
       {
         "key": "C",
-        "text": "$8$"
+        "text": "Nếu $f$ toàn ánh thì $g \\circ f$ chắc chắn là toàn ánh"
       },
       {
         "key": "D",
-        "text": "$16$"
+        "text": "Nếu $g \\circ f$ là đơn ánh thì $f$ bắt buộc phải là đơn ánh"
       }
     ],
     "correct": "D",
-    "explanation": "* Mỗi phần tử của tập $A$ (4 phần tử) có 2 cách chọn ảnh trong tập $B$. Do đó tổng số ánh xạ là $|B|^{|A|} = 2^{4} = 16$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Định lý ánh xạ hợp: Giả sử $f(x_1) = f(x_2)$. Khi đó $g(f(x_1)) = g(f(x_2)) \\iff (g \\circ f)(x_1) = (g \\circ f)(x_2)$. Vì $g \\circ f$ là đơn ánh nên $x_1 = x_2$. Do đó $f$ bắt buộc phải là đơn ánh.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3082,11 +3167,11 @@
       },
       {
         "key": "B",
-        "text": "$f$ là một toàn ánh"
+        "text": "$f$ là một đơn ánh"
       },
       {
         "key": "C",
-        "text": "$f$ là một đơn ánh"
+        "text": "$f$ là một toàn ánh"
       },
       {
         "key": "D",
@@ -3095,6 +3180,7 @@
     ],
     "correct": "A",
     "explanation": "* Định lý ánh xạ hợp: Nếu $g \\circ f$ là toàn ánh thì ánh xạ ngoài $g$ bắt buộc phải là toàn ánh.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3114,7 +3200,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$3x^2 - 1$"
+        "text": "$9x^2 - 1$"
       },
       {
         "key": "B",
@@ -3126,11 +3212,12 @@
       },
       {
         "key": "D",
-        "text": "$9x^2 - 1$"
+        "text": "$3x^2 - 1$"
       }
     ],
     "correct": "C",
     "explanation": "* $(g \\circ f)(x) = g(f(x)) = (3x+2)^2 - 1 = 9x^2 + 12x + 4 - 1 = 9x^2 + 12x +3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3154,7 +3241,7 @@
       },
       {
         "key": "B",
-        "text": "$f(x) = \\sin x$"
+        "text": "$f(x) = |x|$"
       },
       {
         "key": "C",
@@ -3162,11 +3249,12 @@
       },
       {
         "key": "D",
-        "text": "$f(x) = |x|$"
+        "text": "$f(x) = \\sin x$"
       }
     ],
     "correct": "C",
     "explanation": "* Hàm bậc nhất $f(x) = 4x + 1$ có đạo hàm $f'(x) = 4 \\neq 0$ nên đơn điệu trên $\\mathbb{R}$ (đơn ánh) và có miền giá trị là $\\mathbb{R}$ (toàn ánh), do đó là song ánh.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3190,11 +3278,11 @@
       },
       {
         "key": "B",
-        "text": "$\\forall y \\in Y, \\, \\exists x \\in X: f(x) = y$"
+        "text": "$\\forall x_1, x_2 \\in X, \\, x_1 = x_2 \\implies f(x_1) = f(x_2)$"
       },
       {
         "key": "C",
-        "text": "$\\forall x_1, x_2 \\in X, \\, x_1 = x_2 \\implies f(x_1) = f(x_2)$"
+        "text": "$\\forall y \\in Y, \\, \\exists x \\in X: f(x) = y$"
       },
       {
         "key": "D",
@@ -3203,6 +3291,7 @@
     ],
     "correct": "A",
     "explanation": "* Định nghĩa đơn ánh: Hai phần tử khác nhau thì có ảnh khác nhau, tương đương $f(x_1) = f(x_2) \\implies x_1 = x_2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3218,33 +3307,145 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho tập $A$ gồm 3 phần tử và tập $B$ gồm 2 phần tử. Có tất cả bao nhiêu ánh xạ từ $A$ vào $B$?",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 5x - 1$. Ánh xạ ngược $f^{-1}(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$10$"
+        "text": "$f^{-1}(x) = -5x + 1$"
       },
       {
         "key": "B",
-        "text": "$8$"
+        "text": "$f^{-1}(x) = \\dfrac{x + 1}{5}$"
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$f^{-1}(x) = 5x + 1$"
       },
       {
         "key": "D",
-        "text": "$9$"
+        "text": "$f^{-1}(x) = \\dfrac{x - 1}{5}$"
       }
     ],
     "correct": "B",
-    "explanation": "* Mỗi phần tử của tập $A$ (3 phần tử) có 2 cách chọn ảnh trong tập $B$. Do đó tổng số ánh xạ là $|B|^{|A|} = 2^{3} = 8$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Đặt $y = 5x - 1 \\iff 5x = y + 1 \\iff x = \\dfrac{y + 1}{5}$. Vậy $f^{-1}(x) = \\dfrac{x + 1}{5}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
   {
     "id": 91,
     "originalId": 91,
+    "chapterId": 1,
+    "chapterName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
+    "topicId": 1,
+    "topicName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
+    "subTypeId": 4,
+    "typeId": "1.4",
+    "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
+    "examId": "extra",
+    "examName": "Luyện tập mở rộng PTIT",
+    "question": "Cho hai ánh xạ $f(x) = 2x + 1$ và $g(x) = x^2 - 1$ trên $\\mathbb{R}$. Công thức của ánh xạ hợp $(g \\circ f)(x)$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$4x^2 - 1$"
+      },
+      {
+        "key": "B",
+        "text": "$4x^2 + 4x +0$"
+      },
+      {
+        "key": "C",
+        "text": "$2x^2 + 4x - 1$"
+      },
+      {
+        "key": "D",
+        "text": "$2x^2 - 1$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "* $(g \\circ f)(x) = g(f(x)) = (2x+1)^2 - 1 = 4x^2 + 4x + 1 - 1 = 4x^2 + 4x +0$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
+    "isOriginal": false,
+    "origin": "extra"
+  },
+  {
+    "id": 92,
+    "originalId": 92,
+    "chapterId": 1,
+    "chapterName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
+    "topicId": 1,
+    "topicName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
+    "subTypeId": 4,
+    "typeId": "1.4",
+    "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
+    "examId": "extra",
+    "examName": "Luyện tập mở rộng PTIT",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 2x - 2$. Ánh xạ ngược $f^{-1}(x)$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f^{-1}(x) = -2x + 2$"
+      },
+      {
+        "key": "B",
+        "text": "$f^{-1}(x) = 2x + 2$"
+      },
+      {
+        "key": "C",
+        "text": "$f^{-1}(x) = \\dfrac{x + 2}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$f^{-1}(x) = \\dfrac{x - 2}{2}$"
+      }
+    ],
+    "correct": "C",
+    "explanation": "* Đặt $y = 2x - 2 \\iff 2x = y + 2 \\iff x = \\dfrac{y + 2}{2}$. Vậy $f^{-1}(x) = \\dfrac{x + 2}{2}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
+    "isOriginal": false,
+    "origin": "extra"
+  },
+  {
+    "id": 93,
+    "originalId": 93,
+    "chapterId": 1,
+    "chapterName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
+    "topicId": 1,
+    "topicName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
+    "subTypeId": 4,
+    "typeId": "1.4",
+    "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
+    "examId": "extra",
+    "examName": "Luyện tập mở rộng PTIT",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 4x - 1$. Ánh xạ ngược $f^{-1}(x)$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f^{-1}(x) = \\dfrac{x + 1}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$f^{-1}(x) = -4x + 1$"
+      },
+      {
+        "key": "C",
+        "text": "$f^{-1}(x) = \\dfrac{x - 1}{4}$"
+      },
+      {
+        "key": "D",
+        "text": "$f^{-1}(x) = 4x + 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $y = 4x - 1 \\iff 4x = y + 1 \\iff x = \\dfrac{y + 1}{4}$. Vậy $f^{-1}(x) = \\dfrac{x + 1}{4}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
+    "isOriginal": false,
+    "origin": "extra"
+  },
+  {
+    "id": 94,
+    "originalId": 94,
     "chapterId": 1,
     "chapterName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
     "topicId": 1,
@@ -3262,7 +3463,7 @@
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = \\dfrac{x + 7}{5}$"
+        "text": "$f^{-1}(x) = 5x + 7$"
       },
       {
         "key": "C",
@@ -3270,119 +3471,12 @@
       },
       {
         "key": "D",
-        "text": "$f^{-1}(x) = 5x + 7$"
-      }
-    ],
-    "correct": "B",
-    "explanation": "* Đặt $y = 5x - 7 \\iff 5x = y + 7 \\iff x = \\dfrac{y + 7}{5}$. Vậy $f^{-1}(x) = \\dfrac{x + 7}{5}$.\n* **Chọn đáp án: B.**",
-    "isOriginal": false,
-    "origin": "extra"
-  },
-  {
-    "id": 92,
-    "originalId": 92,
-    "chapterId": 1,
-    "chapterName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
-    "topicId": 1,
-    "topicName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
-    "subTypeId": 4,
-    "typeId": "1.4",
-    "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
-    "examId": "extra",
-    "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho tập $A$ gồm 3 phần tử và tập $B$ gồm 3 phần tử. Có tất cả bao nhiêu ánh xạ từ $A$ vào $B$?",
-    "options": [
-      {
-        "key": "A",
-        "text": "$28$"
-      },
-      {
-        "key": "B",
-        "text": "$9$"
-      },
-      {
-        "key": "C",
-        "text": "$27$"
-      },
-      {
-        "key": "D",
-        "text": "$29$"
-      }
-    ],
-    "correct": "C",
-    "explanation": "* Mỗi phần tử của tập $A$ (3 phần tử) có 3 cách chọn ảnh trong tập $B$. Do đó tổng số ánh xạ là $|B|^{|A|} = 3^{3} = 27$.\n* **Chọn đáp án: C.**",
-    "isOriginal": false,
-    "origin": "extra"
-  },
-  {
-    "id": 93,
-    "originalId": 93,
-    "chapterId": 1,
-    "chapterName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
-    "topicId": 1,
-    "topicName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
-    "subTypeId": 4,
-    "typeId": "1.4",
-    "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
-    "examId": "extra",
-    "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 3x - 1$. Ánh xạ ngược $f^{-1}(x)$ là:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$f^{-1}(x) = \\dfrac{x + 1}{3}$"
-      },
-      {
-        "key": "B",
-        "text": "$f^{-1}(x) = \\dfrac{x - 1}{3}$"
-      },
-      {
-        "key": "C",
-        "text": "$f^{-1}(x) = -3x + 1$"
-      },
-      {
-        "key": "D",
-        "text": "$f^{-1}(x) = 3x + 1$"
-      }
-    ],
-    "correct": "A",
-    "explanation": "* Đặt $y = 3x - 1 \\iff 3x = y + 1 \\iff x = \\dfrac{y + 1}{3}$. Vậy $f^{-1}(x) = \\dfrac{x + 1}{3}$.\n* **Chọn đáp án: A.**",
-    "isOriginal": false,
-    "origin": "extra"
-  },
-  {
-    "id": 94,
-    "originalId": 94,
-    "chapterId": 1,
-    "chapterName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
-    "topicId": 1,
-    "topicName": "Logic mệnh đề, Tập hợp, Ánh xạ & Boole",
-    "subTypeId": 4,
-    "typeId": "1.4",
-    "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
-    "examId": "extra",
-    "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho tập $A$ gồm 4 phần tử và tập $B$ gồm 3 phần tử. Có tất cả bao nhiêu ánh xạ từ $A$ vào $B$?",
-    "options": [
-      {
-        "key": "A",
-        "text": "$64$"
-      },
-      {
-        "key": "B",
-        "text": "$12$"
-      },
-      {
-        "key": "C",
-        "text": "$83$"
-      },
-      {
-        "key": "D",
-        "text": "$81$"
+        "text": "$f^{-1}(x) = \\dfrac{x + 7}{5}$"
       }
     ],
     "correct": "D",
-    "explanation": "* Mỗi phần tử của tập $A$ (4 phần tử) có 3 cách chọn ảnh trong tập $B$. Do đó tổng số ánh xạ là $|B|^{|A|} = 3^{4} = 81$.\n* **Chọn đáp án: D.**",
+    "explanation": "* Đặt $y = 5x - 7 \\iff 5x = y + 7 \\iff x = \\dfrac{y + 7}{5}$. Vậy $f^{-1}(x) = \\dfrac{x + 7}{5}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3398,27 +3492,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho hai ánh xạ $f(x) = 2x + 1$ và $g(x) = x^2 - 1$ trên $\\mathbb{R}$. Công thức của ánh xạ hợp $(g \\circ f)(x)$ là:",
+    "question": "Cho hai ánh xạ $f(x) = 3x + 1$ và $g(x) = x^2 - 1$ trên $\\mathbb{R}$. Công thức của ánh xạ hợp $(g \\circ f)(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$2x^2 - 1$"
+        "text": "$3x^2 - 1$"
       },
       {
         "key": "B",
-        "text": "$2x^2 + 4x - 1$"
+        "text": "$9x^2 - 1$"
       },
       {
         "key": "C",
-        "text": "$4x^2 + 4x +0$"
+        "text": "$9x^2 + 6x +0$"
       },
       {
         "key": "D",
-        "text": "$4x^2 - 1$"
+        "text": "$3x^2 + 6x - 1$"
       }
     ],
     "correct": "C",
-    "explanation": "* $(g \\circ f)(x) = g(f(x)) = (2x+1)^2 - 1 = 4x^2 + 4x + 1 - 1 = 4x^2 + 4x +0$.\n* **Chọn đáp án: C.**",
+    "explanation": "* $(g \\circ f)(x) = g(f(x)) = (3x+1)^2 - 1 = 9x^2 + 6x + 1 - 1 = 9x^2 + 6x +0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3434,27 +3529,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 3x - 7$. Ánh xạ ngược $f^{-1}(x)$ là:",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 3x - 1$. Ánh xạ ngược $f^{-1}(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$f^{-1}(x) = \\dfrac{x - 7}{3}$"
+        "text": "$f^{-1}(x) = \\dfrac{x - 1}{3}$"
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = 3x + 7$"
+        "text": "$f^{-1}(x) = 3x + 1$"
       },
       {
         "key": "C",
-        "text": "$f^{-1}(x) = \\dfrac{x + 7}{3}$"
+        "text": "$f^{-1}(x) = \\dfrac{x + 1}{3}$"
       },
       {
         "key": "D",
-        "text": "$f^{-1}(x) = -3x + 7$"
+        "text": "$f^{-1}(x) = -3x + 1$"
       }
     ],
     "correct": "C",
-    "explanation": "* Đặt $y = 3x - 7 \\iff 3x = y + 7 \\iff x = \\dfrac{y + 7}{3}$. Vậy $f^{-1}(x) = \\dfrac{x + 7}{3}$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Đặt $y = 3x - 1 \\iff 3x = y + 1 \\iff x = \\dfrac{y + 1}{3}$. Vậy $f^{-1}(x) = \\dfrac{x + 1}{3}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3470,27 +3566,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Ánh xạ $f: \\mathbb{Z} \\to \\mathbb{Z}$ xác định bởi $f(n) = 2n$ là:",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 3x - 2$. Ánh xạ ngược $f^{-1}(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "Toàn ánh nhưng không đơn ánh"
+        "text": "$f^{-1}(x) = 3x + 2$"
       },
       {
         "key": "B",
-        "text": "Không đơn ánh và không toàn ánh"
+        "text": "$f^{-1}(x) = \\dfrac{x - 2}{3}$"
       },
       {
         "key": "C",
-        "text": "Song ánh"
+        "text": "$f^{-1}(x) = -3x + 2$"
       },
       {
         "key": "D",
-        "text": "Đơn ánh nhưng không toàn ánh"
+        "text": "$f^{-1}(x) = \\dfrac{x + 2}{3}$"
       }
     ],
     "correct": "D",
-    "explanation": "* $2n_1 = 2n_2 \\implies n_1 = n_2$ nên $f$ là đơn ánh. Nhưng các số không chia hết cho 2 (như 1) không có tạo ảnh nguyên nên $f$ không toàn ánh.\n* **Chọn đáp án: D.**",
+    "explanation": "* Đặt $y = 3x - 2 \\iff 3x = y + 2 \\iff x = \\dfrac{y + 2}{3}$. Vậy $f^{-1}(x) = \\dfrac{x + 2}{3}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3506,27 +3603,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho hai ánh xạ $f(x) = 3x + 2$ và $g(x) = x^2 - 3$ trên $\\mathbb{R}$. Công thức của ánh xạ hợp $(g \\circ f)(x)$ là:",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 3x - 7$. Ánh xạ ngược $f^{-1}(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$3x^2 + 12x - 3$"
+        "text": "$f^{-1}(x) = -3x + 7$"
       },
       {
         "key": "B",
-        "text": "$3x^2 - 3$"
+        "text": "$f^{-1}(x) = 3x + 7$"
       },
       {
         "key": "C",
-        "text": "$9x^2 + 12x +1$"
+        "text": "$f^{-1}(x) = \\dfrac{x + 7}{3}$"
       },
       {
         "key": "D",
-        "text": "$9x^2 - 3$"
+        "text": "$f^{-1}(x) = \\dfrac{x - 7}{3}$"
       }
     ],
     "correct": "C",
-    "explanation": "* $(g \\circ f)(x) = g(f(x)) = (3x+2)^2 - 3 = 9x^2 + 12x + 4 - 3 = 9x^2 + 12x +1$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Đặt $y = 3x - 7 \\iff 3x = y + 7 \\iff x = \\dfrac{y + 7}{3}$. Vậy $f^{-1}(x) = \\dfrac{x + 7}{3}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3542,27 +3640,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 2x - 3$. Ánh xạ ngược $f^{-1}(x)$ là:",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 5x - 3$. Ánh xạ ngược $f^{-1}(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$f^{-1}(x) = \\dfrac{x - 3}{2}$"
+        "text": "$f^{-1}(x) = -5x + 3$"
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = \\dfrac{x + 3}{2}$"
+        "text": "$f^{-1}(x) = \\dfrac{x + 3}{5}$"
       },
       {
         "key": "C",
-        "text": "$f^{-1}(x) = 2x + 3$"
+        "text": "$f^{-1}(x) = 5x + 3$"
       },
       {
         "key": "D",
-        "text": "$f^{-1}(x) = -2x + 3$"
+        "text": "$f^{-1}(x) = \\dfrac{x - 3}{5}$"
       }
     ],
     "correct": "B",
-    "explanation": "* Đặt $y = 2x - 3 \\iff 2x = y + 3 \\iff x = \\dfrac{y + 3}{2}$. Vậy $f^{-1}(x) = \\dfrac{x + 3}{2}$.\n* **Chọn đáp án: B.**",
+    "explanation": "* Đặt $y = 5x - 3 \\iff 5x = y + 3 \\iff x = \\dfrac{y + 3}{5}$. Vậy $f^{-1}(x) = \\dfrac{x + 3}{5}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3578,27 +3677,28 @@
     "typeName": "Ánh xạ: Đơn ánh, Toàn ánh, Song ánh & Ánh xạ ngược",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 2x - 7$. Ánh xạ ngược $f^{-1}(x)$ là:",
+    "question": "Cho ánh xạ $f: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 5x - 2$. Ánh xạ ngược $f^{-1}(x)$ là:",
     "options": [
       {
         "key": "A",
-        "text": "$f^{-1}(x) = \\dfrac{x + 7}{2}$"
+        "text": "$f^{-1}(x) = \\dfrac{x + 2}{5}$"
       },
       {
         "key": "B",
-        "text": "$f^{-1}(x) = -2x + 7$"
+        "text": "$f^{-1}(x) = -5x + 2$"
       },
       {
         "key": "C",
-        "text": "$f^{-1}(x) = \\dfrac{x - 7}{2}$"
+        "text": "$f^{-1}(x) = 5x + 2$"
       },
       {
         "key": "D",
-        "text": "$f^{-1}(x) = 2x + 7$"
+        "text": "$f^{-1}(x) = \\dfrac{x - 2}{5}$"
       }
     ],
     "correct": "A",
-    "explanation": "* Đặt $y = 2x - 7 \\iff 2x = y + 7 \\iff x = \\dfrac{y + 7}{2}$. Vậy $f^{-1}(x) = \\dfrac{x + 7}{2}$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Đặt $y = 5x - 2 \\iff 5x = y + 2 \\iff x = \\dfrac{y + 2}{5}$. Vậy $f^{-1}(x) = \\dfrac{x + 2}{5}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3622,11 +3722,11 @@
       },
       {
         "key": "B",
-        "text": "$3x^2 - 3$"
+        "text": "$9x^2 - 3$"
       },
       {
         "key": "C",
-        "text": "$9x^2 - 3$"
+        "text": "$3x^2 - 3$"
       },
       {
         "key": "D",
@@ -3635,6 +3735,7 @@
     ],
     "correct": "A",
     "explanation": "* $(g \\circ f)(x) = g(f(x)) = (3x+1)^2 - 3 = 9x^2 + 6x + 1 - 3 = 9x^2 + 6x -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3658,19 +3759,20 @@
       },
       {
         "key": "B",
-        "text": "$2x^2 - 1$"
-      },
-      {
-        "key": "C",
         "text": "$2x^2 + 8x - 1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$4x^2 - 1$"
+      },
+      {
+        "key": "D",
+        "text": "$2x^2 - 1$"
       }
     ],
     "correct": "A",
     "explanation": "* $(g \\circ f)(x) = g(f(x)) = (2x+2)^2 - 1 = 4x^2 + 8x + 4 - 1 = 4x^2 + 8x +3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3707,6 +3809,7 @@
     ],
     "correct": "B",
     "explanation": "* $u$ biểu diễn được thành tổ hợp tuyến tính của $\\{v_1, v_2, v_3\\}$ khi và chỉ khi hệ phương trình $c_1 v_1 + c_2 v_2 + c_3 v_3 = u$ có nghiệm:\n  $$\\begin{cases} 2c_1 + 3c_2 + c_3 = 7 \\\\ 3c_1 + 7c_2 - 6c_3 = -2 \\\\ 5c_1 + 8c_2 + c_3 = m \\end{cases}$$\n* Xét ma trận hệ số mở rộng $\\bar{A}$:\n  $$\\bar{A} = \\begin{bmatrix} 2 & 3 & 1 & 7 \\\\ 3 & 7 & -6 & -2 \\\\ 5 & 8 & 1 & m \\end{bmatrix}$$\n* Nhận xét: $5 \\cdot (\\text{Hàng 3} - \\text{Hàng 1}) = 5(3, 5, 0, m - 7) = (15, 25, 0, 5m - 35)$.\n* Mặt khác: $6 \\cdot \\text{Hàng 1} + \\text{Hàng 2} = (12, 18, 6, 42) + (3, 7, -6, -2) = (15, 25, 0, 40)$.\n* Để hệ có nghiệm thì hàng thứ 3 phải có $5m - 35 = 40 \\iff 5m = 75 \\iff m = 15$.\n* Khi $m = 15$, $r(A) = r(\\bar{A}) = 2$, hệ có nghiệm.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -3726,7 +3829,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\dim(W_1) = \\dim(W_2)$"
+        "text": "$W_1 \\perp W_2$"
       },
       {
         "key": "B",
@@ -3738,11 +3841,12 @@
       },
       {
         "key": "D",
-        "text": "$W_1 \\perp W_2$"
+        "text": "$\\dim(W_1) = \\dim(W_2)$"
       }
     ],
     "correct": "C",
     "explanation": "* Tổng $W_1 + W_2$ là tổng trực tiếp khi và chỉ khi giao của chúng chỉ chứa duy nhất véc tơ không: $W_1 \\cap W_2 = \\{\\theta\\}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3762,11 +3866,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Phần bù của $W_1$ trong $V$ là một không gian con của $V$"
+        "text": "Hiệu $W_1 \\setminus W_2$ là một không gian con của $V$"
       },
       {
         "key": "B",
-        "text": "Hợp $W_1 \\cup W_2$ luôn là một không gian con của $V$"
+        "text": "Phần bù của $W_1$ trong $V$ là một không gian con của $V$"
       },
       {
         "key": "C",
@@ -3774,11 +3878,12 @@
       },
       {
         "key": "D",
-        "text": "Hiệu $W_1 \\setminus W_2$ là một không gian con của $V$"
+        "text": "Hợp $W_1 \\cup W_2$ luôn là một không gian con của $V$"
       }
     ],
     "correct": "C",
     "explanation": "* Giao của hai không gian con bất kỳ luôn đóng kín với phép cộng và nhân vô hướng nên luôn là không gian con. Còn hợp của hai không gian con chỉ là không gian con khi một trong hai tập chứa tập còn lại.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3815,6 +3920,7 @@
     ],
     "correct": "D",
     "explanation": "* Giải hệ: $c_1(1, 2) + c_2(0, 1) = (-2, -3) \\iff c_1 = -2$ và $2c_1 + c_2 = -3 \\implies c_1 = -2, c_2 = 1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3834,7 +3940,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Tập các ma trận khả nghịch ($\\det A \\neq 0$)"
+        "text": "Tập các ma trận có vết $\\text{tr}(A) = 1$"
       },
       {
         "key": "B",
@@ -3846,11 +3952,12 @@
       },
       {
         "key": "D",
-        "text": "Tập các ma trận có vết $\\text{tr}(A) = 1$"
+        "text": "Tập các ma trận khả nghịch ($\\det A \\neq 0$)"
       }
     ],
     "correct": "C",
     "explanation": "* Tập các ma trận phản đối xứng ($A^T = -A$) là không gian con vì Đóng kín với phép cộng và nhân số vô hướng và chứa ma trận không.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3870,15 +3977,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
-      },
-      {
-        "key": "B",
         "text": "Có, vì đóng kín với phép cộng"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không, vì có số chiều bằng 3"
+      },
+      {
+        "key": "C",
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "D",
@@ -3887,6 +3994,7 @@
     ],
     "correct": "D",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq -1$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3914,15 +4022,16 @@
       },
       {
         "key": "C",
-        "text": "Không tồn tại $m$"
+        "text": "$m = 11$"
       },
       {
         "key": "D",
-        "text": "$m = 11$"
+        "text": "Không tồn tại $m$"
       }
     ],
     "correct": "B",
     "explanation": "* Ta có $v = c_1 u_1 + c_2 u_2 \\implies m = c_1(1) + c_2(2) = 3 + 2(3) = 9$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3946,11 +4055,11 @@
       },
       {
         "key": "B",
-        "text": "$W = \\{p(x) \\in P_2[x] \\mid \\deg p = 2\\}$"
+        "text": "$W = \\{p(x) \\in P_2[x] \\mid p'(0) = 2\\}$"
       },
       {
         "key": "C",
-        "text": "$W = \\{p(x) \\in P_2[x] \\mid p'(0) = 2\\}$"
+        "text": "$W = \\{p(x) \\in P_2[x] \\mid \\deg p = 2\\}$"
       },
       {
         "key": "D",
@@ -3959,6 +4068,7 @@
     ],
     "correct": "A",
     "explanation": "* $W = \\{p(x) \\in P_2[x] \\mid \\int_0^1 p(x)dx = 0\\}$ là không gian con vì Tích phân bằng 0 có tính tuyến tính và chứa đa thức không.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -3978,7 +4088,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x^2 + y^2 + z^2 \\le 1\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x + y + z = 1\\}$"
       },
       {
         "key": "B",
@@ -3986,15 +4096,16 @@
       },
       {
         "key": "C",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid xy = 0\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x^2 + y^2 + z^2 \\le 1\\}$"
       },
       {
         "key": "D",
-        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid x + y + z = 1\\}$"
+        "text": "$W = \\{(x, y, z) \\in \\mathbb{R}^3 \\mid xy = 0\\}$"
       }
     ],
     "correct": "B",
     "explanation": "* Phương trình thuần nhất tuyến tính bậc nhất $3x + y - 2z = 0$ luôn xác định một không gian con (chứa $\\theta$, đóng kín với phép cộng và nhân vô hướng).\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4022,15 +4133,16 @@
       },
       {
         "key": "C",
-        "text": "Có, vì đóng kín với phép nhân vô hướng dương"
+        "text": "Có, vì chứa véc tơ không $(0, 0)$"
       },
       {
         "key": "D",
-        "text": "Có, vì chứa véc tơ không $(0, 0)$"
+        "text": "Có, vì đóng kín với phép nhân vô hướng dương"
       }
     ],
     "correct": "B",
     "explanation": "* Với $u = (1, 1) \\in W$ và $v = (-1, 1) \\in W$, tổng $u + v = (0, 2)$ có $y = 2 \\neq |0| = 0$, nên $u + v \\notin W$. Phép cộng không đóng kín.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4050,11 +4162,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Tập hợp tất cả các véc tơ trực giao với $S$"
+        "text": "Không gian véc tơ lớn nhất chứa $S$"
       },
       {
         "key": "B",
-        "text": "Không gian véc tơ lớn nhất chứa $S$"
+        "text": "Tập hợp tất cả các véc tơ trực giao với $S$"
       },
       {
         "key": "C",
@@ -4067,6 +4179,7 @@
     ],
     "correct": "C",
     "explanation": "* Theo định nghĩa, $\\operatorname{span}(S)$ là không gian con nhỏ nhất chứa $S$, bao gồm tất cả các tổ hợp tuyến tính có thể tạo ra từ các véc tơ của $S$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4086,15 +4199,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Không tồn tại $m$"
+        "text": "$m = 10$"
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "Không tồn tại $m$"
       },
       {
         "key": "C",
-        "text": "$m = 10$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -4103,6 +4216,7 @@
     ],
     "correct": "D",
     "explanation": "* Ta có $v = c_1 u_1 + c_2 u_2 \\implies m = c_1(1) + c_2(2) = 2 + 2(3) = 8$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4139,6 +4253,7 @@
     ],
     "correct": "B",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 1$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4158,7 +4273,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không tồn tại $m$"
+        "text": "$m = 7$"
       },
       {
         "key": "B",
@@ -4166,7 +4281,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 7$"
+        "text": "Không tồn tại $m$"
       },
       {
         "key": "D",
@@ -4175,6 +4290,7 @@
     ],
     "correct": "D",
     "explanation": "* Ta có $v = c_1 u_1 + c_2 u_2 \\implies m = c_1(1) + c_2(2) = 3 + 2(1) = 5$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4194,11 +4310,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "B",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "C",
@@ -4211,6 +4327,7 @@
     ],
     "correct": "D",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 2$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4230,7 +4347,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "B",
@@ -4242,11 +4359,12 @@
       },
       {
         "key": "D",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì đóng kín với phép cộng"
       }
     ],
     "correct": "C",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 3$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4266,7 +4384,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "B",
@@ -4274,15 +4392,16 @@
       },
       {
         "key": "C",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "D",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       }
     ],
     "correct": "B",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq -1$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4302,11 +4421,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "Không tồn tại $m$"
       },
       {
         "key": "B",
-        "text": "Không tồn tại $m$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -4319,6 +4438,7 @@
     ],
     "correct": "D",
     "explanation": "* Ta có $v = c_1 u_1 + c_2 u_2 \\implies m = c_1(1) + c_2(2) = 2 + 2(1) = 4$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4338,7 +4458,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "B",
@@ -4350,11 +4470,12 @@
       },
       {
         "key": "D",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì đóng kín với phép cộng"
       }
     ],
     "correct": "B",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 3$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4378,19 +4499,20 @@
       },
       {
         "key": "B",
-        "text": "Có, vì đóng kín với phép cộng"
-      },
-      {
-        "key": "C",
         "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Không, vì có số chiều bằng 3"
+      },
+      {
+        "key": "D",
+        "text": "Có, vì đóng kín với phép cộng"
       }
     ],
     "correct": "A",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 1$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4410,15 +4532,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 5$"
+        "text": "Không tồn tại $m$"
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = 5$"
       },
       {
         "key": "C",
-        "text": "Không tồn tại $m$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -4427,6 +4549,7 @@
     ],
     "correct": "D",
     "explanation": "* Ta có $v = c_1 u_1 + c_2 u_2 \\implies m = c_1(1) + c_2(2) = 1 + 2(1) = 3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4446,7 +4569,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       },
       {
         "key": "B",
@@ -4458,11 +4581,12 @@
       },
       {
         "key": "D",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì đóng kín với phép cộng"
       }
     ],
     "correct": "C",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 2$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4482,11 +4606,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Không, vì có số chiều bằng 3"
+        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
       },
       {
         "key": "B",
-        "text": "Có, vì là một mặt phẳng trong không gian 3 chiều"
+        "text": "Có, vì đóng kín với phép cộng"
       },
       {
         "key": "C",
@@ -4494,11 +4618,12 @@
       },
       {
         "key": "D",
-        "text": "Có, vì đóng kín với phép cộng"
+        "text": "Không, vì có số chiều bằng 3"
       }
     ],
     "correct": "C",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 1$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4535,6 +4660,7 @@
     ],
     "correct": "C",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 1$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4554,11 +4680,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 9$"
+        "text": "Không tồn tại $m$"
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m = 9$"
       },
       {
         "key": "C",
@@ -4566,11 +4692,12 @@
       },
       {
         "key": "D",
-        "text": "Không tồn tại $m$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "C",
     "explanation": "* Ta có $v = c_1 u_1 + c_2 u_2 \\implies m = c_1(1) + c_2(2) = 3 + 2(2) = 7$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4607,6 +4734,7 @@
     ],
     "correct": "D",
     "explanation": "* Véc tơ không $\\theta = (0, 0, 0)$ thay vào phương trình ta được $0 \\neq 3$, do đó $\\theta \\notin W$. Mọi không gian con bắt buộc phải chứa $\\theta$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4634,15 +4762,16 @@
       },
       {
         "key": "C",
-        "text": "Tất cả các véc tơ $u_i$ đều bằng nhau"
+        "text": "Đẳng thức $c_1 u_1 + \\dots + c_k u_k = \\theta$ chỉ xảy ra khi $c_1 = \\dots = c_k = 0$"
       },
       {
         "key": "D",
-        "text": "Đẳng thức $c_1 u_1 + \\dots + c_k u_k = \\theta$ chỉ xảy ra khi $c_1 = \\dots = c_k = 0$"
+        "text": "Tất cả các véc tơ $u_i$ đều bằng nhau"
       }
     ],
     "correct": "A",
     "explanation": "* Định nghĩa: Hệ phụ thuộc tuyến tính khi tồn tại một tổ hợp tuyến tính triệt tiêu mà ít nhất một hệ số khác 0.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4662,11 +4791,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Phụ thuộc tuyến tính"
+        "text": "Chưa đủ dữ kiện để kết luận"
       },
       {
         "key": "B",
-        "text": "Chưa đủ dữ kiện để kết luận"
+        "text": "Phụ thuộc tuyến tính"
       },
       {
         "key": "C",
@@ -4679,6 +4808,7 @@
     ],
     "correct": "C",
     "explanation": "* Ma trận chuyển hệ số là $\\begin{bmatrix} 1 & 1 & 0 \\\\ 0 & 1 & 1 \\\\ 1 & 0 & 1 \\end{bmatrix}$ có định thức $= 1(1) + 1(1) = 2 \\neq 0$. Do định thức khác 0 nên hệ mới vẫn độc lập tuyến tính.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4702,11 +4832,11 @@
       },
       {
         "key": "B",
-        "text": "Chắc chắn có hạng bằng 4"
+        "text": "Chắc chắn tạo thành một cơ sở"
       },
       {
         "key": "C",
-        "text": "Chắc chắn tạo thành một cơ sở"
+        "text": "Chắc chắn có hạng bằng 4"
       },
       {
         "key": "D",
@@ -4715,6 +4845,7 @@
     ],
     "correct": "D",
     "explanation": "* Số chiều của $\\mathbb{R}^{3}$ bằng 3. Theo định lý số véc tơ, mọi hệ chứa số véc tơ lớn hơn số chiều ($m > n$) đều bắt buộc phụ thuộc tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4738,7 +4869,7 @@
       },
       {
         "key": "B",
-        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
+        "text": "Hệ $\\{u, v\\}$ tạo thành cơ sở của $\\mathbb{R}^3$"
       },
       {
         "key": "C",
@@ -4746,11 +4877,12 @@
       },
       {
         "key": "D",
-        "text": "Hệ $\\{u, v\\}$ tạo thành cơ sở của $\\mathbb{R}^3$"
+        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
       }
     ],
     "correct": "C",
     "explanation": "* Vì $v = 4 u$ (hai véc tơ tỷ lệ nhau) nên hệ hai véc tơ này phụ thuộc tuyến tính.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4770,7 +4902,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq 5$"
+        "text": "$m = 4$"
       },
       {
         "key": "B",
@@ -4782,11 +4914,12 @@
       },
       {
         "key": "D",
-        "text": "$m = 4$"
+        "text": "$m \\neq 5$"
       }
     ],
     "correct": "C",
     "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - 5) = m - 5$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = 5$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4806,15 +4939,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Không có véc tơ nào trong $S$ là tổ hợp tuyến tính của các véc tơ còn lại"
+        "text": "Không có véc tơ nào trong $S$ bằng véc tơ không"
       },
       {
         "key": "B",
-        "text": "Hệ con $\\{u_1, u_2\\}$ là độc lập tuyến tính"
+        "text": "Không có véc tơ nào trong $S$ là tổ hợp tuyến tính của các véc tơ còn lại"
       },
       {
         "key": "C",
-        "text": "Không có véc tơ nào trong $S$ bằng véc tơ không"
+        "text": "Hệ con $\\{u_1, u_2\\}$ là độc lập tuyến tính"
       },
       {
         "key": "D",
@@ -4823,6 +4956,7 @@
     ],
     "correct": "D",
     "explanation": "* Hệ mở rộng có thể phụ thuộc tuyến tính (ví dụ thêm véc tơ không hoặc véc tơ phụ thuộc vào hệ).\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4842,11 +4976,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Có thể độc lập tuyến tính hoặc phụ thuộc tuyến tính"
+        "text": "Luôn luôn độc lập tuyến tính"
       },
       {
         "key": "B",
-        "text": "Luôn luôn độc lập tuyến tính"
+        "text": "Có thể độc lập tuyến tính hoặc phụ thuộc tuyến tính"
       },
       {
         "key": "C",
@@ -4859,6 +4993,7 @@
     ],
     "correct": "C",
     "explanation": "* Vì $1 \\cdot \\theta + 0 \\cdot u_1 + \\dots + 0 \\cdot u_k = \\theta$ là một tổ hợp tuyến tính bằng $\\theta$ với hệ số khác 0 (hệ số của $\\theta$ bằng 1), nên hệ luôn phụ thuộc tuyến tính.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4878,11 +5013,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m = 2$"
       },
       {
         "key": "B",
-        "text": "$m = 2$"
+        "text": "$m = 1$"
       },
       {
         "key": "C",
@@ -4895,6 +5030,7 @@
     ],
     "correct": "D",
     "explanation": "* Định thức của ma trận tam giác trên là $1 \\cdot 1 \\cdot (m - 1) = m - 1$. Hệ độc lập tuyến tính khi $\\det \\neq 0 \\iff m \\neq 1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4918,7 +5054,7 @@
       },
       {
         "key": "B",
-        "text": "Ba véc tơ này đôi một vuông góc với nhau"
+        "text": "Không có véc tơ nào có tọa độ bằng 0"
       },
       {
         "key": "C",
@@ -4926,11 +5062,12 @@
       },
       {
         "key": "D",
-        "text": "Không có véc tơ nào có tọa độ bằng 0"
+        "text": "Ba véc tơ này đôi một vuông góc với nhau"
       }
     ],
     "correct": "A",
     "explanation": "* Trong $\\mathbb{R}^n$, hệ gồm đúng $n$ véc tơ độc lập tuyến tính khi và chỉ khi ma trận vuông tương ứng có định thức khác 0.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4967,6 +5104,7 @@
     ],
     "correct": "B",
     "explanation": "* Phương trình $c_0 \\cdot 1 + c_1 x + c_2 x^2 = 0$ với mọi $x$ chỉ xảy ra khi $c_0 = c_1 = c_2 = 0$. Do đó hệ $S$ độc lập tuyến tính.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -4994,15 +5132,16 @@
       },
       {
         "key": "C",
-        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
+        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
       },
       {
         "key": "D",
-        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
+        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
       }
     ],
     "correct": "B",
     "explanation": "* Vì $v = -2 u$ (hai véc tơ tỷ lệ nhau) nên hệ hai véc tơ này phụ thuộc tuyến tính.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5026,7 +5165,7 @@
       },
       {
         "key": "B",
-        "text": "$m = 2$"
+        "text": "$m = 5$"
       },
       {
         "key": "C",
@@ -5034,11 +5173,12 @@
       },
       {
         "key": "D",
-        "text": "$m = 5$"
+        "text": "$m = 2$"
       }
     ],
     "correct": "A",
     "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - 3) = m - 3$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = 3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5058,11 +5198,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
+        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
       },
       {
         "key": "B",
-        "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
+        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
       },
       {
         "key": "C",
@@ -5075,6 +5215,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì $v = 3 u$ (hai véc tơ tỷ lệ nhau) nên hệ hai véc tơ này phụ thuộc tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5094,7 +5235,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq -1$"
+        "text": "$m = -2$"
       },
       {
         "key": "B",
@@ -5106,11 +5247,12 @@
       },
       {
         "key": "D",
-        "text": "$m = -2$"
+        "text": "$m \\neq -1$"
       }
     ],
     "correct": "C",
     "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m + 1) = m + 1$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = -1$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5130,15 +5272,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq 1$"
-      },
-      {
-        "key": "B",
         "text": "$m = 3$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$m \\neq 1$"
       },
       {
         "key": "D",
@@ -5147,6 +5289,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - 1) = m - 1$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = 1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5183,6 +5326,7 @@
     ],
     "correct": "A",
     "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m + 2) = m + 2$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5202,15 +5346,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
-      },
-      {
-        "key": "B",
         "text": "Hệ $\\{u, v\\}$ tạo thành cơ sở của $\\mathbb{R}^3$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không gian sinh bởi $\\{u, v\\}$ có số chiều bằng 2"
+      },
+      {
+        "key": "C",
+        "text": "Hệ $\\{u, v\\}$ độc lập tuyến tính"
       },
       {
         "key": "D",
@@ -5219,6 +5363,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì $v = 2 u$ (hai véc tơ tỷ lệ nhau) nên hệ hai véc tơ này phụ thuộc tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5238,7 +5383,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 3$"
+        "text": "$m \\neq 4$"
       },
       {
         "key": "B",
@@ -5250,11 +5395,12 @@
       },
       {
         "key": "D",
-        "text": "$m \\neq 4$"
+        "text": "$m = 3$"
       }
     ],
     "correct": "C",
     "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - 4) = m - 4$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = 4$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5274,11 +5420,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 4$"
+        "text": "$m \\neq 2$"
       },
       {
         "key": "B",
-        "text": "$m \\neq 2$"
+        "text": "$m = 4$"
       },
       {
         "key": "C",
@@ -5291,6 +5437,7 @@
     ],
     "correct": "C",
     "explanation": "* Ma trận của hệ là tam giác: $\\det = 1 \\cdot 1 \\cdot (m - 2) = m - 2$. Hệ phụ thuộc tuyến tính khi $\\det = 0 \\iff m = 2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5314,11 +5461,11 @@
       },
       {
         "key": "B",
-        "text": "Chắc chắn tạo thành một cơ sở"
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "C",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
+        "text": "Chắc chắn tạo thành một cơ sở"
       },
       {
         "key": "D",
@@ -5327,6 +5474,7 @@
     ],
     "correct": "D",
     "explanation": "* Số chiều của $\\mathbb{R}^{5}$ bằng 5. Theo định lý số véc tơ, mọi hệ chứa số véc tơ lớn hơn số chiều ($m > n$) đều bắt buộc phụ thuộc tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5363,6 +5511,7 @@
     ],
     "correct": "D",
     "explanation": "* Định thức của ma trận tam giác trên là $1 \\cdot 1 \\cdot (m - 2) = m - 2$. Hệ độc lập tuyến tính khi $\\det \\neq 0 \\iff m \\neq 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5382,11 +5531,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
+        "text": "Chắc chắn có hạng bằng 6"
       },
       {
         "key": "B",
-        "text": "Chắc chắn tạo thành một cơ sở"
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "C",
@@ -5394,11 +5543,12 @@
       },
       {
         "key": "D",
-        "text": "Chắc chắn có hạng bằng 6"
+        "text": "Chắc chắn tạo thành một cơ sở"
       }
     ],
     "correct": "C",
     "explanation": "* Số chiều của $\\mathbb{R}^{4}$ bằng 4. Theo định lý số véc tơ, mọi hệ chứa số véc tơ lớn hơn số chiều ($m > n$) đều bắt buộc phụ thuộc tuyến tính.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5426,15 +5576,16 @@
       },
       {
         "key": "C",
-        "text": "$m = -1$"
+        "text": "$m > -1$"
       },
       {
         "key": "D",
-        "text": "$m > -1$"
+        "text": "$m = -1$"
       }
     ],
     "correct": "B",
     "explanation": "* Định thức của ma trận tam giác trên là $1 \\cdot 1 \\cdot (m + 1) = m + 1$. Hệ độc lập tuyến tính khi $\\det \\neq 0 \\iff m \\neq -1$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5458,11 +5609,11 @@
       },
       {
         "key": "B",
-        "text": "Chắc chắn tạo thành một cơ sở"
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "C",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
+        "text": "Chắc chắn tạo thành một cơ sở"
       },
       {
         "key": "D",
@@ -5471,6 +5622,7 @@
     ],
     "correct": "D",
     "explanation": "* Số chiều của $\\mathbb{R}^{5}$ bằng 5. Theo định lý số véc tơ, mọi hệ chứa số véc tơ lớn hơn số chiều ($m > n$) đều bắt buộc phụ thuộc tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5494,11 +5646,11 @@
       },
       {
         "key": "B",
-        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
+        "text": "Chắc chắn tạo thành một cơ sở"
       },
       {
         "key": "C",
-        "text": "Chắc chắn tạo thành một cơ sở"
+        "text": "Có thể độc lập tuyến tính nếu không có véc tơ không"
       },
       {
         "key": "D",
@@ -5507,6 +5659,7 @@
     ],
     "correct": "A",
     "explanation": "* Số chiều của $\\mathbb{R}^{4}$ bằng 4. Theo định lý số véc tơ, mọi hệ chứa số véc tơ lớn hơn số chiều ($m > n$) đều bắt buộc phụ thuộc tuyến tính.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5543,6 +5696,7 @@
     ],
     "correct": "A",
     "explanation": "* Phương trình ràng buộc rút gọn thành: $x + 2y - 2z = 0$ (với $t$ hoàn toàn tự do).\n* Trong không gian 4 chiều $\\mathbb{R}^4$, tập nghiệm của một phương trình tuyến tính thuần nhất khác không luôn có số chiều bằng:\n  $$\\dim U = n - r = 4 - 1 = 3$$\n* 3 ẩn tự do có thể chọn là $y, z, t$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -5579,6 +5733,7 @@
     ],
     "correct": "A",
     "explanation": "* Xét phương án A:\n  * $W_1$ là mặt phẳng $z = 0$, có $\\dim W_1 = 2$.\n  * $W_2$ là mặt phẳng $x - y + 2z = 0$, có $\\dim W_2 = 2$.\n  * Giao $W_1 \\cap W_2$ gồm các véc tơ thỏa mãn $z = 0$ và $x - y = 0 \\implies x = y$.\n  * Véc tơ $(1, 1, 0) \\in W_1 \\cap W_2 \\implies W_1 \\cap W_2 \\neq \\{\\vec{0}\\}$.\n  * Vì giao khác $\\{\\vec{0}\\}$ (có số chiều bằng 1), $W_1 + W_2$ không thể là tổng trực tiếp $W_1 \\oplus W_2$.\n* Do đó khẳng định A là **không đúng**.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -5615,6 +5770,7 @@
     ],
     "correct": "B",
     "explanation": "* Áp dụng công thức số chiều Grassman:\n  $$\\dim(V_1 + V_2) = \\dim V_1 + \\dim V_2 - \\dim(V_1 \\cap V_2)$$\n* **Tính $\\dim V_1$:** Biến đổi ma trận hệ số của hệ (I):\n  Hạng ma trận $r(A_1) = 2 \\implies \\dim V_1 = 4 - r(A_1) = 4 - 2 = 2$.\n* **Tính $\\dim V_2$:** Biến đổi ma trận hệ số của hệ (II):\n  Hạng ma trận $r(A_2) = 2 \\implies \\dim V_2 = 4 - r(A_2) = 4 - 2 = 2$.\n* **Tính $\\dim(V_1 \\cap V_2)$:** $V_1 \\cap V_2$ là không gian nghiệm của hệ gồm cả 6 phương trình của (I) và (II).\n  Khử Gauss cho ma trận ghép gồm các hàng độc lập của (I) và (II) ta được hạng của hệ ghép là $r(A_1 \\cup A_2) = 3$.\n  Do đó $\\dim(V_1 \\cap V_2) = 4 - 3 = 1$.\n* Vậy $\\dim(V_1 + V_2) = 2 + 2 - 1 = 3$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -5651,6 +5807,7 @@
     ],
     "correct": "C",
     "explanation": "* Nhận xét quan hệ giữa các véctơ sinh của $V$:\n  $$(5, 3, 1) = 1 \\cdot (1, 1, 1) + 2 \\cdot (2, 1, 0)$$\n  Do đó véctơ thứ 3 là tổ hợp tuyến tính của 2 véctơ đầu, suy ra $\\dim V = 2$, với cơ sở là $\\{u_1 = (1, 1, 1), u_2 = (2, 1, 0)\\}$.\n* Kiểm tra véctơ $w = (1, 0, -1)$:\n  Ta có:\n  $$-1 \\cdot (1, 1, 1) + 1 \\cdot (2, 1, 0) = (-1 + 2, -1 + 1, -1 + 0) = (1, 0, -1)$$\n  Vì $(1, 0, -1)$ biểu diễn được thành tổ hợp tuyến tính của cơ sở của $V$, nên $(1, 0, -1) \\in V$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -5670,7 +5827,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$12$"
       },
       {
         "key": "B",
@@ -5678,15 +5835,16 @@
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$5$"
       },
       {
         "key": "D",
-        "text": "$12$"
+        "text": "$6$"
       }
     ],
     "correct": "B",
     "explanation": "* Cơ sở chính tắc của $P_{6}[x]$ là $\\{1, x, x^2, \\dots, x^{6}\\}$ gồm đúng 7 phần tử. Do đó $\\dim = 7$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5710,11 +5868,11 @@
       },
       {
         "key": "B",
-        "text": "$m = -1$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       },
       {
         "key": "C",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m = -1$"
       },
       {
         "key": "D",
@@ -5723,6 +5881,7 @@
     ],
     "correct": "A",
     "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m + 1) = m + 1$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq -1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5746,19 +5905,20 @@
       },
       {
         "key": "B",
-        "text": "$3$"
-      },
-      {
-        "key": "C",
         "text": "$9$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$5$"
+      },
+      {
+        "key": "D",
+        "text": "$3$"
       }
     ],
     "correct": "A",
     "explanation": "* Ma trận đối xứng cấp $n$ có $\\dfrac{n(n+1)}{2}$ phần tử tự do. Với $n=3$, số chiều là $\\dfrac{3 \\times 4}{2} = 6$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5778,11 +5938,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ đó có ít nhất $n+1$ véc tơ"
+        "text": "Hệ đó trực giao từng đôi một"
       },
       {
         "key": "B",
-        "text": "Hệ đó trực giao từng đôi một"
+        "text": "Hệ đó có ít nhất $n+1$ véc tơ"
       },
       {
         "key": "C",
@@ -5795,6 +5955,7 @@
     ],
     "correct": "C",
     "explanation": "* Trong không gian $n$ chiều, một hệ gồm đúng $n$ véc tơ chỉ cần thỏa mãn 1 trong 2 điều kiện (độc lập tuyến tính HOẶC là hệ sinh) thì tự động trở thành cơ sở.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5831,6 +5992,7 @@
     ],
     "correct": "A",
     "explanation": "* Số chiều của không gian nghiệm bằng số ẩn trừ đi hạng: $\\dim = n - r = 4 - 3 = 1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5867,6 +6029,7 @@
     ],
     "correct": "A",
     "explanation": "* Cơ sở chính tắc của $P_{5}[x]$ là $\\{1, x, x^2, \\dots, x^{5}\\}$ gồm đúng 6 phần tử. Do đó $\\dim = 6$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5886,11 +6049,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 2$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m = 2$"
       },
       {
         "key": "C",
@@ -5898,11 +6061,12 @@
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       }
     ],
     "correct": "C",
     "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m - 2) = m - 2$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq 2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5930,15 +6094,16 @@
       },
       {
         "key": "C",
-        "text": "$7$"
+        "text": "$6$"
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$7$"
       }
     ],
     "correct": "A",
     "explanation": "* Theo công thức Grassmann: $\\dim(U + W) = \\dim U + \\dim W - \\dim(U \\cap W) = 4 + 2 - 1 = 5$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5958,11 +6123,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$0$"
       },
       {
         "key": "B",
-        "text": "$0$"
+        "text": "$1$"
       },
       {
         "key": "C",
@@ -5975,6 +6140,7 @@
     ],
     "correct": "C",
     "explanation": "* Không gian nghiệm của 1 phương trình độc lập trong không gian 3 ẩn có số chiều bằng số ẩn trừ đi số phương trình: $\\dim W = 3 - 1 = 2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -5998,19 +6164,20 @@
       },
       {
         "key": "B",
-        "text": "Số chiều của không gian $\\{\\theta\\}$ bằng 0"
-      },
-      {
-        "key": "C",
         "text": "Mọi hệ độc lập tuyến tính trong không gian hữu hạn chiều đều có thể mở rộng thành cơ sở"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Mọi cơ sở của cùng một không gian véc tơ hữu hạn chiều đều có cùng số phần tử"
+      },
+      {
+        "key": "D",
+        "text": "Số chiều của không gian $\\{\\theta\\}$ bằng 0"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý: Mọi cơ sở của cùng một không gian véc tơ đều có cùng một số lượng phần tử (được gọi là số chiều của không gian đó).\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6047,6 +6214,7 @@
     ],
     "correct": "C",
     "explanation": "* Đường chéo chính phải bằng 0. Số phần tử tự do là $\\dfrac{n(n-1)}{2} = 6$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6066,7 +6234,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$7$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -6074,7 +6242,7 @@
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$7$"
       },
       {
         "key": "D",
@@ -6083,6 +6251,7 @@
     ],
     "correct": "B",
     "explanation": "* Cơ sở chính tắc gồm các ma trận đơn vị $E_{ij}$, tổng số chiều là $\\dim = 3 \\times 2 = 6$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6106,7 +6275,7 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$6$"
       },
       {
         "key": "C",
@@ -6114,11 +6283,12 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$3$"
       }
     ],
     "correct": "A",
     "explanation": "* Theo công thức Grassmann: $\\dim(U + W) = \\dim U + \\dim W - \\dim(U \\cap W) = 4 + 2 - 2 = 4$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6142,7 +6312,7 @@
       },
       {
         "key": "B",
-        "text": "$0$"
+        "text": "$1$"
       },
       {
         "key": "C",
@@ -6150,11 +6320,12 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$0$"
       }
     ],
     "correct": "A",
     "explanation": "* Không gian nghiệm của 1 phương trình độc lập trong không gian 3 ẩn có số chiều bằng số ẩn trừ đi số phương trình: $\\dim W = 3 - 1 = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6174,7 +6345,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$1$"
       },
       {
         "key": "B",
@@ -6182,15 +6353,16 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$2$"
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$4$"
       }
     ],
     "correct": "B",
     "explanation": "* Cơ sở chính tắc của $P_{2}[x]$ là $\\{1, x, x^2, \\dots, x^{2}\\}$ gồm đúng 3 phần tử. Do đó $\\dim = 3$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6214,11 +6386,11 @@
       },
       {
         "key": "B",
-        "text": "$m = -2$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       },
       {
         "key": "C",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m = -2$"
       },
       {
         "key": "D",
@@ -6227,6 +6399,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m + 2) = m + 2$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq -2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6254,15 +6427,16 @@
       },
       {
         "key": "C",
-        "text": "$16$"
+        "text": "$9$"
       },
       {
         "key": "D",
-        "text": "$9$"
+        "text": "$16$"
       }
     ],
     "correct": "A",
     "explanation": "* Ma trận đối xứng cấp $n$ có $\\dfrac{n(n+1)}{2}$ phần tử tự do. Với $n=4$, số chiều là $\\dfrac{4 \\times 5}{2} = 10$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6282,7 +6456,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -6290,15 +6464,16 @@
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$0$"
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$1$"
       }
     ],
     "correct": "B",
     "explanation": "* Không gian nghiệm của 1 phương trình độc lập trong không gian 3 ẩn có số chiều bằng số ẩn trừ đi số phương trình: $\\dim W = 3 - 1 = 2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6335,6 +6510,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận đối xứng cấp $n$ có $\\dfrac{n(n+1)}{2}$ phần tử tự do. Với $n=2$, số chiều là $\\dfrac{2 \\times 3}{2} = 3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6354,11 +6530,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "C",
@@ -6371,6 +6547,7 @@
     ],
     "correct": "D",
     "explanation": "* Không gian nghiệm của 1 phương trình độc lập trong không gian 3 ẩn có số chiều bằng số ẩn trừ đi số phương trình: $\\dim W = 3 - 1 = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6390,7 +6567,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$6$"
       },
       {
         "key": "B",
@@ -6398,7 +6575,7 @@
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$3$"
       },
       {
         "key": "D",
@@ -6407,6 +6584,7 @@
     ],
     "correct": "B",
     "explanation": "* Cơ sở chính tắc của $P_{3}[x]$ là $\\{1, x, x^2, \\dots, x^{3}\\}$ gồm đúng 4 phần tử. Do đó $\\dim = 4$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6426,7 +6604,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m = 3$"
       },
       {
         "key": "B",
@@ -6434,7 +6612,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 3$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       },
       {
         "key": "D",
@@ -6443,6 +6621,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận của hệ là tam giác, có định thức $\\det = 1 \\cdot 1 \\cdot (m - 3) = m - 3$. Hệ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi $\\det \\neq 0 \\iff m \\neq 3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6479,6 +6658,7 @@
     ],
     "correct": "B",
     "explanation": "* Ma trận chuyển từ cơ sở chính tắc $E$ sang cơ sở $B$ có các cột là tọa độ của các véc tơ trong $B$:\n  $$P_{E \\to B} = \\begin{bmatrix} 1 & -2 \\\\ -3 & 4 \\end{bmatrix}$$\n* Ma trận chuyển từ cơ sở $B$ sang cơ sở chính tắc $E$ là ma trận nghịch đảo:\n  $$P_{B \\to E} = (P_{E \\to B})^{-1}$$\n* Ta có $\\det P_{E \\to B} = 1(4) - (-2)(-3) = 4 - 6 = -2$.\n* Nghịch đảo:\n  $$(P_{E \\to B})^{-1} = -\\frac{1}{2} \\begin{bmatrix} 4 & 2 \\\\ 3 & 1 \\end{bmatrix} = \\begin{bmatrix} -2 & -1 \\\\ -3/2 & -1/2 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6515,6 +6695,7 @@
     ],
     "correct": "A",
     "explanation": "* Đặt $v_1 = (3, 1, 2), v_2 = (-1, 1, -2), v_3 = (2, -1, 3)$. Ta thấy:\n  $$v_1 + v_2 = (2, 2, 0) = (2, -1, 3) + (0, 3, -3)$$\n* Xét định thức lập bởi 3 véc tơ sinh:\n  $$\\begin{vmatrix} 3 & -1 & 2 \\\\ 1 & 1 & -1 \\\\ 2 & -2 & 3 \\end{vmatrix} = 3(3 - 2) - (-1)(3 + 2) + 2(-2 - 2) = 3 + 5 - 8 = 0$$\n  Suy ra 3 véc tơ này phụ thuộc tuyến tính, không gian sinh $W = \\operatorname{Span}\\{v_1, v_2\\}$ có số chiều bằng $2$.\n* Véc tơ pháp tuyến của mặt phẳng $W$: $n = v_1 \\times v_2 = (-4, 4, 4) \\sim (1, -1, -1)$.\n* Phương trình mặt phẳng $W$: $x - y - z = 0$.\n* Để $x = (1, 2, a) \\in W$, tọa độ phải thỏa mãn phương trình:\n  $$1 - 2 - a = 0 \\iff a = -1$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6551,6 +6732,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì $\\dim P_2 = 3$, một hệ 3 véc tơ sinh ra $P_2$ khi và chỉ khi nó độc lập tuyến tính (tức định thức ma trận tọa độ khác 0).\n* Xét phương án D: Lập ma trận tọa độ theo cơ sở $\\{1, t, t^2\\}$:\n  $$M = \\begin{bmatrix} 3 & -1 & -1 \\\\ 1 & 1 & 5 \\\\ 2 & -2 & 3 \\end{bmatrix}$$\n  $$\\det M = 3(3 + 10) - (-1)(3 - 10) - 1(-2 - 2) = 39 - 7 + 4 = 36 \\neq 0$$\n* Vì $\\det M \\neq 0$, hệ độc lập tuyến tính và là hệ sinh của $P_2$.\n* Các phương án khác: A có véc tơ 2 gấp đôi véc tơ 1; B có $(4-3t+t^2) = 3(2-t+t^2) - 2(1+t^2)$; C chỉ có 2 véc tơ nên không thể sinh không gian 3 chiều.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6587,6 +6769,7 @@
     ],
     "correct": "C",
     "explanation": "* Xét tập $A$: Chọn $u = (2, 0, 1) \\in A$ (vì $2 \\cdot 1 = 2 \\ge 0$) và $v = (-1, 0, -3) \\in A$ (vì $(-1)(-3) = 3 \\ge 0$).\n  * Nhưng tổng $u + v = (1, 0, -2)$ có tích $xz = 1 \\cdot (-2) = -2 < 0 \\implies u + v \\notin A$.\n  * Vậy $A$ không đóng kín với phép cộng, nên $A$ không phải là không gian con.\n* Xét tập $B$: Phương trình $x - 2z = 0$ là phương trình tuyến tính thuần nhất (mặt phẳng đi qua gốc tọa độ), nên $B$ là một không gian véc tơ con của $\\mathbb{R}^3$.\n* Kết luận: Chỉ có $B$ là không gian véc tơ con của $\\mathbb{R}^3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6623,6 +6806,7 @@
     ],
     "correct": "D",
     "explanation": "* Xét tập hợp D: Véc tơ có dạng $(x, y, xy)$.\n  * Lấy $u = (1, 0, 0) \\in V$ (vì $1 \\cdot 0 = 0$) và $v = (0, 1, 0) \\in V$ (vì $0 \\cdot 1 = 0$).\n  * Nhưng tổng $u + v = (1, 1, 0)$. Tọa độ thứ ba là $0$, trong khi tích hai tọa độ đầu là $1 \\cdot 1 = 1 \\neq 0$.\n  * Do đó $u + v \\notin V$, tập $V$ không đóng kín đối với phép cộng véc tơ nên **không phải là không gian con**.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6659,6 +6843,7 @@
     ],
     "correct": "C",
     "explanation": "* $W_1$ có tọa độ $z = 1 \\neq 0$, nên véc tơ không $\\vec{0} = (0, 0, 0) \\notin W_1 \\implies W_1$ không là không gian con.\n* $W_2$ và $W_3$ là các mặt phẳng đi qua gốc tọa độ trong $\\mathbb{R}^3$ (xác định bởi các phương trình tuyến tính thuần nhất $2x - y - z = 0$ và $x + y + z = 0$), nên $W_2$ và $W_3$ đều là các không gian véc tơ con.\n* Vậy $W_2$ và $W_3$ là không gian con của $\\mathbb{R}^3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6695,6 +6880,7 @@
     ],
     "correct": "C",
     "explanation": "* Một hệ gồm 3 véctơ trong $\\mathbb{R}^3$ là cơ sở của $\\mathbb{R}^3$ khi và chỉ khi định thức ma trận tạo bởi tọa độ 3 véctơ đó khác $0$.\n* Xét hệ ở phương án **C**:\n  $$\\det \\begin{bmatrix} 1 & 1 & 0 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 1 \\end{bmatrix} = 1(0 - 1) - 1(1 - 0) + 0 = -2 \\neq 0$$\n  Do đó hệ gồm 3 véctơ độc lập tuyến tính, nên là một cơ sở của $\\mathbb{R}^3$.\n* Kiểm tra các phương án còn lại:\n  * Phương án A: $(0, 2, -2) + (-3, 5, -1) = (-3, 7, -3) \\implies$ phụ thuộc tuyến tính.\n  * Phương án B: $(-4, 2, 2) = -2(2, -1, -1) \\implies$ phụ thuộc tuyến tính.\n  * Phương án D: $(-1, 0, -1) = -(1, 0, 1) \\implies$ phụ thuộc tuyến tính.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6731,6 +6917,7 @@
     ],
     "correct": "C",
     "explanation": "* Vì $\\{x, y, z\\}$ là cơ sở của $V$ nên $\\{x, y, z\\}$ độc lập tuyến tính và $\\dim V = 3$.\n* **Xét phương án C:** Xét họ 3 véctơ $\\{x, x+y, x-2y\\}$.\n  Tọa độ của 3 véctơ đối với cơ sở $\\{x, y, z\\}$:\n  * $v_1 = x \\sim (1, 0, 0)$\n  * $v_2 = x + y \\sim (1, 1, 0)$\n  * $v_3 = x - 2y \\sim (1, -2, 0)$\n  Ma trận tọa độ có cột thứ 3 bằng $0$, và $v_3 = 3v_1 - 2v_2$. Do đó hạng của hệ véctơ này đúng bằng **2**.\n  *(Ghi chú: Bản in đề gốc có lỗi gõ nhầm chữ cái $x$ thành $z$ ở số hạng thứ 3: $z - 2y \\to x - 2y$ theo chuẩn ngân hàng câu hỏi PTIT).*\n* Các phương án khác:\n  * A sai vì $\\text{span}\\{x, y, 2y\\} = \\text{span}\\{x, y\\}$ chỉ có số chiều bằng 2, không sinh ra $V$.\n  * B sai vì $\\{x, 2y, z\\}$ độc lập tuyến tính.\n  * D sai vì $\\{x, y, x+y+z\\}$ là một cơ sở và sinh ra toàn bộ $V$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -6750,7 +6937,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$[v]_B = (1, 4)^T$"
+        "text": "$[v]_B = (4, 5)^T$"
       },
       {
         "key": "B",
@@ -6758,7 +6945,7 @@
       },
       {
         "key": "C",
-        "text": "$[v]_B = (4, 5)^T$"
+        "text": "$[v]_B = (1, 4)^T$"
       },
       {
         "key": "D",
@@ -6767,6 +6954,7 @@
     ],
     "correct": "B",
     "explanation": "* Phân tích: $v = c_1 u_1 + c_2 u_2 \\iff (4, 5) = (c_1, c_1 + c_2) \\implies c_1 = 4, c_2 = 1$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6790,19 +6978,20 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$"
-      },
-      {
-        "key": "C",
         "text": "$\\begin{bmatrix} 2 & 3 \\\\ 1 & 2 \\end{bmatrix}$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$\\begin{bmatrix} 1 & 2 \\\\ 2 & 3 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
     "explanation": "* Xếp các véc tơ $u_1, u_2$ làm các cột của ma trận: cột 1 là $(2, 3)^T$, cột 2 là $(1, 2)^T$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6839,6 +7028,7 @@
     ],
     "correct": "C",
     "explanation": "* Tính chất tích ma trận chuyển cơ sở: $P_{B_1 \\to B_3} = P_{B_1 \\to B_2} \\cdot P_{B_2 \\to B_3}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6875,6 +7065,7 @@
     ],
     "correct": "C",
     "explanation": "* Vì cơ sở gồm các véc tơ độc lập tuyến tính, nên các cột của $P$ độc lập tuyến tính, suy ra ma trận vuông $P$ luôn khả nghịch ($\\det P \\neq 0$).\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6911,6 +7102,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo quy tắc: Ma trận chuyển cơ sở $P_{E \\to B}$ có cột thứ $j$ chính là tọa độ của véc tơ $u_j$ đối với cơ sở $E$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6938,15 +7130,16 @@
       },
       {
         "key": "C",
-        "text": "$[v]_B = (3, 1)^T$"
+        "text": "$[v]_B = (-2, 3)^T$"
       },
       {
         "key": "D",
-        "text": "$[v]_B = (-2, 3)^T$"
+        "text": "$[v]_B = (3, 1)^T$"
       }
     ],
     "correct": "A",
     "explanation": "* Phân tích: $v = c_1 u_1 + c_2 u_2 \\iff (3, 1) = (c_1, c_1 + c_2) \\implies c_1 = 3, c_2 = -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -6970,11 +7163,11 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 0 & 2 \\\\ 2 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 2 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 0 & 2 \\\\ 2 & 4 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -6983,6 +7176,7 @@
     ],
     "correct": "D",
     "explanation": "* Xếp các véc tơ $u_1, u_2$ làm các cột của ma trận: cột 1 là $(2, 4)^T$, cột 2 là $(0, 2)^T$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7010,15 +7204,16 @@
       },
       {
         "key": "C",
-        "text": "$[x]_{B'} = P [x]_B$"
+        "text": "$[x]_B = P^T [x]_{B'}$"
       },
       {
         "key": "D",
-        "text": "$[x]_B = P^T [x]_{B'}$"
+        "text": "$[x]_{B'} = P [x]_B$"
       }
     ],
     "correct": "B",
     "explanation": "* Công thức đổi tọa độ: $[x]_B = P_{B \\to B'} [x]_{B'}$ (hoặc tương đương $[x]_{B'} = P^{-1} [x]_B$).\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7038,7 +7233,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$[p]_B = (1, 5, 3)^T$"
+        "text": "$[p]_B = (1, 1, 1)^T$"
       },
       {
         "key": "B",
@@ -7046,7 +7241,7 @@
       },
       {
         "key": "C",
-        "text": "$[p]_B = (1, 1, 1)^T$"
+        "text": "$[p]_B = (1, 5, 3)^T$"
       },
       {
         "key": "D",
@@ -7055,6 +7250,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo thứ tự của cơ sở chính tắc, tọa độ là hệ số tự do 3, hệ số của $x$ là 5, hệ số của $x^2$ là 1.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7091,6 +7287,7 @@
     ],
     "correct": "C",
     "explanation": "* Đối với cơ sở chính tắc của $\\mathbb{R}^n$, tọa độ của một véc tơ chính là các thành phần của nó: $[v]_E = (-2, 4, -1)^T$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7114,19 +7311,20 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix}$"
-      },
-      {
-        "key": "C",
         "text": "$\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$\\begin{bmatrix} 5 \\\\ 7 \\end{bmatrix}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\begin{bmatrix} 8 \\\\ 4 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
     "explanation": "* $[x]_B = P [x]_{B'} = \\begin{bmatrix} 2 & 1 \\\\ 1 & 1 \\end{bmatrix} \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix} = \\begin{bmatrix} 7 \\\\ 5 \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7146,7 +7344,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$P^T$"
+        "text": "$P^2$"
       },
       {
         "key": "B",
@@ -7158,11 +7356,12 @@
       },
       {
         "key": "D",
-        "text": "$P^2$"
+        "text": "$P^T$"
       }
     ],
     "correct": "C",
     "explanation": "* Chuyển cơ sở ngược lại tương ứng với phép nghịch đảo ma trận: $P_{B' \\to B} = (P_{B \\to B'})^{-1} = P^{-1}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7186,7 +7385,7 @@
       },
       {
         "key": "B",
-        "text": "$[v]_B = (4, 1)^T$"
+        "text": "$[v]_B = (3, 4)^T$"
       },
       {
         "key": "C",
@@ -7194,11 +7393,12 @@
       },
       {
         "key": "D",
-        "text": "$[v]_B = (3, 4)^T$"
+        "text": "$[v]_B = (4, 1)^T$"
       }
     ],
     "correct": "A",
     "explanation": "* Phân tích: $v = c_1 u_1 + c_2 u_2 \\iff (3, 4) = (c_1, c_1 + c_2) \\implies c_1 = 3, c_2 = 1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7218,7 +7418,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 0 & 1 \\\\ 2 & 4 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -7226,7 +7426,7 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 4 \\\\ 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 0 & 1 \\\\ 2 & 4 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -7235,6 +7435,7 @@
     ],
     "correct": "B",
     "explanation": "* Xếp các véc tơ $u_1, u_2$ làm các cột của ma trận: cột 1 là $(1, 4)^T$, cột 2 là $(0, 2)^T$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7271,6 +7472,7 @@
     ],
     "correct": "A",
     "explanation": "* $[x]_B = P [x]_{B'} = \\begin{bmatrix} 2 & 1 \\\\ 1 & 1 \\end{bmatrix} \\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix} = \\begin{bmatrix} 10 \\\\ 7 \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7294,11 +7496,11 @@
       },
       {
         "key": "B",
-        "text": "$[v]_E = (-1, -3, -2)^T$"
+        "text": "$[v]_E = (1, 1, 1)^T$"
       },
       {
         "key": "C",
-        "text": "$[v]_E = (1, 1, 1)^T$"
+        "text": "$[v]_E = (-1, -3, -2)^T$"
       },
       {
         "key": "D",
@@ -7307,6 +7509,7 @@
     ],
     "correct": "A",
     "explanation": "* Đối với cơ sở chính tắc của $\\mathbb{R}^n$, tọa độ của một véc tơ chính là các thành phần của nó: $[v]_E = (-2, -3, -1)^T$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7326,15 +7529,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$[p]_B = (1, 1, 1)^T$"
+        "text": "$[p]_B = (-2, -3, 2)^T$"
       },
       {
         "key": "B",
-        "text": "$[p]_B = (2, -2, -3)^T$"
+        "text": "$[p]_B = (1, 1, 1)^T$"
       },
       {
         "key": "C",
-        "text": "$[p]_B = (-2, -3, 2)^T$"
+        "text": "$[p]_B = (2, -2, -3)^T$"
       },
       {
         "key": "D",
@@ -7343,6 +7546,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo thứ tự của cơ sở chính tắc, tọa độ là hệ số tự do 2, hệ số của $x$ là -3, hệ số của $x^2$ là -2.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7378,7 +7582,8 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Ta có $(AB - BA)_{12} = (AB)_{12} - (BA)_{12}$.\n* Tính từng thành phần:\n  * $(AB)_{12} = (\\text{Hàng 1 của } A) \\cdot (\\text{Cột 2 của } B) = 1(1) + 2(2) + 1(2) = 1 + 4 + 2 = 7$.\n  * $(BA)_{12} = (\\text{Hàng 1 của } B) \\cdot (\\text{Cột 2 của } A) = 4(2) + 1(1) + 1(2) = 8 + 1 + 2 = 11$.\n* Suy ra: $(AB - BA)_{12} = 7 - 11 = -4$.\n* **Chọn đáp án: C.**",
+    "explanation": "* Ta có $(AB - BA)_{12} = (AB)_{12} - (BA)_{12}$.\n* Tính từng thành phần:\n  * $(AB)_{12} =$ (Hàng 1 của $A$) $\\cdot$ (Cột 2 của $B$) $= 1(1) + 2(2) + 1(2) = 1 + 4 + 2 = 7$.\n  * $(BA)_{12} =$ (Hàng 1 của $B$) $\\cdot$ (Cột 2 của $A$) $= 4(2) + 1(1) + 1(2) = 8 + 1 + 2 = 11$.\n* Suy ra: $(AB - BA)_{12} = 7 - 11 = -4$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7415,6 +7620,7 @@
     ],
     "correct": "B",
     "explanation": "* Tính $A^2$:\n  $$A^2 = \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 1(1) + 2(3) & 1(2) + 2(-1) \\\\ 3(1) - 1(3) & 3(2) - 1(-1) \\end{bmatrix} = \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} = 7I$$\n* Khi đó:\n  $$f(A) = 3A^2 - 2A = 3 \\begin{bmatrix} 7 & 0 \\\\ 0 & 7 \\end{bmatrix} - 2 \\begin{bmatrix} 1 & 2 \\\\ 3 & -1 \\end{bmatrix} = \\begin{bmatrix} 21 & 0 \\\\ 0 & 21 \\end{bmatrix} - \\begin{bmatrix} 2 & 4 \\\\ 6 & -2 \\end{bmatrix} = \\begin{bmatrix} 19 & -4 \\\\ -6 & 23 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7451,6 +7657,7 @@
     ],
     "correct": "C",
     "explanation": "* $A$ có cỡ $2 \\times 3$ và $B$ có cỡ $3 \\times 3$.\n  * Tích $AB$ hoàn toàn xác định vì số cột của $A$ ($3$) bằng số hàng của $B$ ($3$), ma trận tích $AB$ có cỡ $2 \\times 3$:\n    $$AB = \\begin{bmatrix} 1(1)+2(2)+3(3) & 1(1)+2(0)+3(4) & 0 \\\\ 2(1)+0(2)+4(3) & 2(1)+0(0)+4(4) & 0 \\end{bmatrix} = \\begin{bmatrix} 14 & 13 & 0 \\\\ 14 & 18 & 0 \\end{bmatrix}$$\n  * Trong khi đó, tích $BA$ ($3 \\times 3$ nhân $2 \\times 3$) không xác định vì số cột của $B$ ($3$) khác số hàng của $A$ ($2$).\n* Do đó khẳng định C \"$BA$ xác định nhưng $AB$ không xác định\" là **hoàn toàn sai**.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7487,6 +7694,7 @@
     ],
     "correct": "D",
     "explanation": "* Tính $A^2$:\n  $$A^2 = \\begin{bmatrix} 1 & 1 \\\\ -1 & 2 \\end{bmatrix} \\begin{bmatrix} 1 & 1 \\\\ -1 & 2 \\end{bmatrix} = \\begin{bmatrix} 1 - 1 & 1 + 2 \\\\ -1 - 2 & -1 + 4 \\end{bmatrix} = \\begin{bmatrix} 0 & 3 \\\\ -3 & 3 \\end{bmatrix}$$\n* $2A = \\begin{bmatrix} 2 & 2 \\\\ -2 & 4 \\end{bmatrix}$ và $5I = \\begin{bmatrix} 5 & 0 \\\\ 0 & 5 \\end{bmatrix}$.\n* Khi đó:\n  $$f(A) = A^2 + 2A - 5I = \\begin{bmatrix} 0 + 2 - 5 & 3 + 2 - 0 \\\\ -3 - 2 - 0 & 3 + 4 - 5 \\end{bmatrix} = \\begin{bmatrix} -3 & 5 \\\\ -5 & 2 \\end{bmatrix}$$\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7523,6 +7731,7 @@
     ],
     "correct": "C",
     "explanation": "* Ta viết $A = 2 \\begin{bmatrix} 1 & 3 \\\\ 0 & 1 \\end{bmatrix}$.\n* Bằng quy nạp, ta có công thức lũy thừa ma trận tam giác:\n  $$\\begin{bmatrix} 1 & k \\\\ 0 & 1 \\end{bmatrix}^n = \\begin{bmatrix} 1 & n \\cdot k \\\\ 0 & 1 \\end{bmatrix}$$\n* Với $k = 3$ và $n = 100$:\n  $$\\begin{bmatrix} 1 & 3 \\\\ 0 & 1 \\end{bmatrix}^{100} = \\begin{bmatrix} 1 & 3 \\cdot 100 \\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 1 & 300 \\\\ 0 & 1 \\end{bmatrix}$$\n* Suy ra:\n  $$A^{100} = 2^{100} \\begin{bmatrix} 1 & 300 \\\\ 0 & 1 \\end{bmatrix}$$\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7559,6 +7768,7 @@
     ],
     "correct": "C",
     "explanation": "* Ta có $A = 2B$. Do đó $A^{100} = (2B)^{100} = 2^{100} B^{100}$.\n* Tính các lũy thừa của $B$:\n  $$B^2 = \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix} \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix} = \\begin{bmatrix} 2 & 2 \\\\ 2 & 2 \\end{bmatrix} = 2B$$\n* Bằng quy nạp: $B^n = 2^{n - 1} B$.\n* Với $n = 100 \\implies B^{100} = 2^{99} B$.\n* Vậy:\n  $$A^{100} = 2^{100} \\cdot 2^{99} B = 2^{199} B$$\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7595,6 +7805,7 @@
     ],
     "correct": "A",
     "explanation": "* Vết của ma trận tích $AB$ là $\\operatorname{tr}(AB) = (AB)_{11} + (AB)_{22} + (AB)_{33}$.\n* Tính các phần tử trên đường chéo chính:\n  * $(AB)_{11} = 1(5) + 3(1) + 2(6) = 5 + 3 + 12 = 20$.\n  * $(AB)_{22} = 4(-2) + 2(3) + 4(4) = -8 + 6 + 16 = 14$.\n  * $(AB)_{33} = 3(4) + 2(7) + 2(5) = 12 + 14 + 10 = 36$.\n* Tổng: $\\operatorname{tr}(AB) = 20 + 14 + 36 = 70$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7631,6 +7842,7 @@
     ],
     "correct": "B",
     "explanation": "* Kiểm tra phương án B: $-2M_1 + 0M_2 + 1M_3 - 1M_4$:\n  $$-2 \\begin{bmatrix} 2 & 1 \\\\ 2 & 1 \\end{bmatrix} + \\begin{bmatrix} 13 & 5 \\\\ 3 & 3 \\end{bmatrix} - \\begin{bmatrix} 5 & 2 \\\\ 2 & 4 \\end{bmatrix} = \\begin{bmatrix} -4 + 13 - 5 & -2 + 5 - 2 \\\\ -4 + 3 - 2 & -2 + 3 - 4 \\end{bmatrix} = \\begin{bmatrix} 4 & 1 \\\\ -3 & -3 \\end{bmatrix} = A$$\n* Kết quả khớp chính xác với ma trận $A$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7667,6 +7879,7 @@
     ],
     "correct": "B",
     "explanation": "* Ma trận $A$ gồm 1 hàng và 3 cột $\\implies$ kích cỡ $1 \\times 3$.\n* Ma trận $B$ gồm 3 hàng và 2 cột $\\implies$ kích cỡ $3 \\times 2$.\n* Tích ma trận $AB$ của ma trận kích cỡ $(1 \\times 3)$ với ma trận $(3 \\times 2)$ là một ma trận có kích cỡ:\n  $$(1 \\times 3) \\times (3 \\times 2) = 1 \\times 2$$\n* Cụ thể $AB = \\begin{bmatrix} 1\\cdot 1 + 2\\cdot 2 + 3(-1) & 1\\cdot 0 + 2\\cdot 1 + 3\\cdot 3 \\end{bmatrix} = \\begin{bmatrix} 2 & 11 \\end{bmatrix}$ (cỡ $1 \\times 2$).\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -7686,15 +7899,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Ma trận $A$ luôn khả nghịch"
+        "text": "Định thức $\\det A = 1$"
       },
       {
         "key": "B",
-        "text": "Vết của $A$ bằng 1"
+        "text": "Ma trận $A$ luôn khả nghịch"
       },
       {
         "key": "C",
-        "text": "Định thức $\\det A = 1$"
+        "text": "Vết của $A$ bằng 1"
       },
       {
         "key": "D",
@@ -7703,6 +7916,7 @@
     ],
     "correct": "D",
     "explanation": "* Từ $A^k = O \\implies (\\det A)^k = \\det(A^k) = 0 \\implies \\det A = 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7722,11 +7936,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} n & 5n \\\\ 0 & n \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 5 \\\\ 0 & 1 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 1 & 5^n \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} n & 5n \\\\ 0 & n \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -7734,11 +7948,12 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 1 & 5 \\\\ 0 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 5^n \\\\ 0 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
     "explanation": "* Quy nạp toán học: $A^2 = \\begin{bmatrix} 1 & 2(5) \\\\ 0 & 1 \\end{bmatrix}$, ..., $A^n = \\begin{bmatrix} 1 & 5n \\\\ 0 & 1 \\end{bmatrix}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7758,7 +7973,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$AB = BA$ với mọi cặp ma trận vuông"
+        "text": "$(AB)^T = A^T B^T$"
       },
       {
         "key": "B",
@@ -7766,7 +7981,7 @@
       },
       {
         "key": "C",
-        "text": "$(AB)^T = A^T B^T$"
+        "text": "$AB = BA$ với mọi cặp ma trận vuông"
       },
       {
         "key": "D",
@@ -7775,6 +7990,7 @@
     ],
     "correct": "B",
     "explanation": "* Tính chất chuyển vị của tích ma trận: $(AB)^T = B^T A^T$ (đổi thứ tự nhân).\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7794,11 +8010,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$-1$"
       },
       {
         "key": "B",
-        "text": "$-1$"
+        "text": "$3$"
       },
       {
         "key": "C",
@@ -7811,6 +8027,7 @@
     ],
     "correct": "D",
     "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (1)(-1) - 1(-3) = -1 + 3 = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7834,11 +8051,11 @@
       },
       {
         "key": "B",
-        "text": "Số hàng của $A$ phải bằng số hàng của $B$"
+        "text": "Hai ma trận $A$ và $B$ phải có cùng kích thước"
       },
       {
         "key": "C",
-        "text": "Hai ma trận $A$ và $B$ phải có cùng kích thước"
+        "text": "Số hàng của $A$ phải bằng số hàng của $B$"
       },
       {
         "key": "D",
@@ -7847,6 +8064,7 @@
     ],
     "correct": "D",
     "explanation": "* Để nhân $A_{m \\times p}$ với $B_{q \\times n}$, điều kiện bắt buộc là số cột của $A$ bằng số hàng của $B$ ($p = q$). Kết quả là $C_{m \\times n}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7870,19 +8088,20 @@
       },
       {
         "key": "B",
-        "text": "Tất cả đều bằng 1"
+        "text": "Tất cả đều là số âm"
       },
       {
         "key": "C",
-        "text": "Có tích bằng 1"
+        "text": "Tất cả đều bằng 1"
       },
       {
         "key": "D",
-        "text": "Tất cả đều là số âm"
+        "text": "Có tích bằng 1"
       }
     ],
     "correct": "A",
     "explanation": "* Từ $A^T = -A$, với các phần tử chéo ta có $a_{ii} = -a_{ii} \\iff 2a_{ii} = 0 \\iff a_{ii} = 0$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7902,7 +8121,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$0$"
       },
       {
         "key": "B",
@@ -7910,15 +8129,16 @@
       },
       {
         "key": "C",
-        "text": "$0$"
+        "text": "$9$"
       },
       {
         "key": "D",
-        "text": "$9$"
+        "text": "$6$"
       }
     ],
     "correct": "B",
     "explanation": "* Vết của ma trận là tổng các phần tử trên đường chéo chính: $\\text{tr}(A) = (5) + (0) + (2) = 7$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7955,6 +8175,7 @@
     ],
     "correct": "A",
     "explanation": "* Kích thước của ma trận tích: $(2 \\times 4) \\times (4 \\times 2) = 2 \\times 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -7974,7 +8195,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\text{tr}(AB) \\neq \\text{tr}(BA)$ nói chung"
+        "text": "$\\text{tr}(AB) = -\\text{tr}(BA)$"
       },
       {
         "key": "B",
@@ -7986,11 +8207,12 @@
       },
       {
         "key": "D",
-        "text": "$\\text{tr}(AB) = -\\text{tr}(BA)$"
+        "text": "$\\text{tr}(AB) \\neq \\text{tr}(BA)$ nói chung"
       }
     ],
     "correct": "B",
     "explanation": "* Định lý vết ma trận: Vết của tích hai ma trận có tính giao hoán: $\\text{tr}(AB) = \\text{tr}(BA)$ (dù $AB \\neq BA$).\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8014,7 +8236,7 @@
       },
       {
         "key": "B",
-        "text": "$\\operatorname{diag}(-1, 6)$"
+        "text": "$\\operatorname{diag}(2, 5)$"
       },
       {
         "key": "C",
@@ -8022,11 +8244,12 @@
       },
       {
         "key": "D",
-        "text": "$\\operatorname{diag}(2, 5)$"
+        "text": "$\\operatorname{diag}(-1, 6)$"
       }
     ],
     "correct": "C",
     "explanation": "* Lũy thừa ma trận đường chéo bằng lũy thừa từng phần tử chéo: $D^{3} = \\operatorname{diag}(-1^{3}, 2^{3}) = \\operatorname{diag}(-1, 8)$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8063,6 +8286,7 @@
     ],
     "correct": "A",
     "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (3)(3) - 1(-3) = 9 + 3 = 12$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8086,7 +8310,7 @@
       },
       {
         "key": "B",
-        "text": "$\\operatorname{diag}(7, 9)$"
+        "text": "$\\operatorname{diag}(12, 20)$"
       },
       {
         "key": "C",
@@ -8094,11 +8318,12 @@
       },
       {
         "key": "D",
-        "text": "$\\operatorname{diag}(12, 20)$"
+        "text": "$\\operatorname{diag}(7, 9)$"
       }
     ],
     "correct": "A",
     "explanation": "* Lũy thừa ma trận đường chéo bằng lũy thừa từng phần tử chéo: $D^{4} = \\operatorname{diag}(3^{4}, 5^{4}) = \\operatorname{diag}(81, 625)$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8118,11 +8343,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$2$"
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$3$"
       },
       {
         "key": "C",
@@ -8135,6 +8360,7 @@
     ],
     "correct": "C",
     "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (1)(3) + (2)(1) = 3 + 2 = 5$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8154,7 +8380,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\operatorname{diag}(27, 6)$"
+        "text": "$\\operatorname{diag}(9, 6)$"
       },
       {
         "key": "B",
@@ -8162,15 +8388,16 @@
       },
       {
         "key": "C",
-        "text": "$\\operatorname{diag}(9, 6)$"
+        "text": "$\\operatorname{diag}(6, 5)$"
       },
       {
         "key": "D",
-        "text": "$\\operatorname{diag}(6, 5)$"
+        "text": "$\\operatorname{diag}(27, 6)$"
       }
     ],
     "correct": "B",
     "explanation": "* Lũy thừa ma trận đường chéo bằng lũy thừa từng phần tử chéo: $D^{3} = \\operatorname{diag}(3^{3}, 2^{3}) = \\operatorname{diag}(27, 8)$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8190,11 +8417,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$12$"
+        "text": "$17$"
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$12$"
       },
       {
         "key": "C",
@@ -8202,11 +8429,12 @@
       },
       {
         "key": "D",
-        "text": "$17$"
+        "text": "$3$"
       }
     ],
     "correct": "C",
     "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (1)(3) + (3)(4) = 3 + 12 = 15$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8234,15 +8462,16 @@
       },
       {
         "key": "C",
-        "text": "$\\operatorname{diag}(6, 8)$"
+        "text": "$\\operatorname{diag}(27, 15)$"
       },
       {
         "key": "D",
-        "text": "$\\operatorname{diag}(27, 15)$"
+        "text": "$\\operatorname{diag}(6, 8)$"
       }
     ],
     "correct": "B",
     "explanation": "* Lũy thừa ma trận đường chéo bằng lũy thừa từng phần tử chéo: $D^{3} = \\operatorname{diag}(3^{3}, 5^{3}) = \\operatorname{diag}(27, 125)$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8262,7 +8491,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "$5$"
       },
       {
         "key": "B",
@@ -8270,15 +8499,16 @@
       },
       {
         "key": "C",
-        "text": "$10$"
+        "text": "$9$"
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$10$"
       }
     ],
     "correct": "B",
     "explanation": "* $c_{11} = a_{11}b_{11} + a_{12}b_{21} = (3)(3) - 1(1) = 9 - 1 = 8$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8315,6 +8545,7 @@
     ],
     "correct": "C",
     "explanation": "* Với ma trận vuông $A$ cấp $n = 3$, theo tính chất định thức:\n  $$\\det(kA) = k^n \\det A \\implies \\det(3A) = 3^3 \\det A = 27 \\det A$$\n* Do đó khẳng định $\\det(3A) = 3 \\det A$ ở phương án C là **sai**.\n* Các khẳng định khác đều đúng:\n  * A đúng: $\\det(A^t A) = \\det(A^t) \\det A = (\\det A)^2 = \\det(A^2)$.\n  * B đúng: định thức ma trận tam giác bằng tích các phần tử đường chéo chính.\n  * D đúng: $\\det(-A) = (-1)^3 \\det A = -\\det A$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -8351,6 +8582,7 @@
     ],
     "correct": "C",
     "explanation": "* Khai triển định thức Laplace theo các hàng $1$ và $3$ (chỉ có cột $1$ và cột $2$ khác 0):\n  $$D = (-1)^{(1+3)+(1+2)} \\begin{vmatrix} 1 & -2 \\\\ a & b \\end{vmatrix} \\cdot \\begin{vmatrix} -1 & 2 \\\\ 3 & 4 \\end{vmatrix}$$\n* Ta có:\n  * $(-1)^7 = -1$.\n  * $\\begin{vmatrix} 1 & -2 \\\\ a & b \\end{vmatrix} = b - (-2a) = 2a + b$.\n  * $\\begin{vmatrix} -1 & 2 \\\\ 3 & 4 \\end{vmatrix} = (-1)(4) - 2(3) = -4 - 6 = -10$.\n* Do đó:\n  $$D = (-1) \\cdot (2a + b) \\cdot (-10) = 10(2a + b)$$\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -8387,6 +8619,7 @@
     ],
     "correct": "A",
     "explanation": "* Vì $A$ và $B$ là các ma trận tam giác cấp 3 nên định thức của chúng bằng tích các phần tử trên đường chéo chính:\n  * $\\det A = 1 \\cdot 1 \\cdot 3 = 3$.\n  * $\\det B = 2 \\cdot 1 \\cdot 1 = 2$.\n* Theo tính chất định thức:\n  $$\\det(AB) = \\det A \\cdot \\det B = 3 \\cdot 2 = 6$$\n* Với ma trận vuông cấp $n = 3$:\n  $$\\det(3AB) = 3^3 \\cdot \\det(AB) = 27 \\cdot 6 = 162$$\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -8423,6 +8656,7 @@
     ],
     "correct": "C",
     "explanation": "* Định lý về định thức và độc lập tuyến tính: $\\det A = 0$ khi và chỉ khi hệ các véc tơ cột của $A$ phụ thuộc tuyến tính, tức là tồn tại ít nhất một véc tơ cột biểu diễn tuyến tính được qua các véc tơ cột còn lại. Khẳng định C là **đúng**.\n* A sai vì $|3A| = 3^n |A|$; B sai vì $|-A| = (-1)^n |A|$ (khi $n$ lẻ thì $|-A| = -|A|$).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -8459,6 +8693,7 @@
     ],
     "correct": "A",
     "explanation": "* Cột 3 chỉ có 2 phần tử khác 0 ở hàng 1 ($1$) và hàng 3 ($-1$).\n* Biến đổi hàng $h_3 \\to h_3 + h_1$:\n  $$\\det A = \\begin{vmatrix} 3 & 4 & 1 & -1 \\\\ 4 & 1 & 0 & 3 \\\\ 5 & 7 & 0 & -5 \\\\ 6 & 4 & 0 & 3 \\end{vmatrix}$$\n* Khai triển theo cột 3:\n  $$\\det A = 1 \\cdot (-1)^{1+3} \\begin{vmatrix} 4 & 1 & 3 \\\\ 5 & 7 & -5 \\\\ 6 & 4 & 3 \\end{vmatrix}$$\n* Biến đổi hàng $h_3 \\to h_3 - h_1$:\n  $$\\begin{vmatrix} 4 & 1 & 3 \\\\ 5 & 7 & -5 \\\\ 2 & 3 & 0 \\end{vmatrix} = 2(-5 - 21) - 3(-20 - 15) = 2(-26) - 3(-35) = -52 + 105 = 53$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -8495,6 +8730,7 @@
     ],
     "correct": "C",
     "explanation": "* Khai triển định thức theo cột 2 (chỉ có hàng 1 là $1$ và hàng 3 là $x$):\n  $$(-1)^{1+2} \\cdot 1 \\cdot \\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} - 1^{3+2} \\cdot x \\cdot \\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 0$$\n* Tính từng định thức con cấp 3:\n  * $\\begin{vmatrix} 2 & 3 & 1 \\\\ 4 & 1 & -1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 2(2 - 1) - 3(8 + 1) + 1(-4 - 1) = 2 - 27 - 5 = -30$.\n  * $\\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & 1 \\\\ 1 & -1 & 2 \\end{vmatrix} = 1(6 + 1) - 1(4 - 1) - 1(-2 - 3) = 7 - 3 + 5 = 9$.\n* Phương trình trở thành:\n  $$-1(-30) - x(9) = 0 \\iff 30 - 9x = 0 \\iff x = \\frac{30}{9} = \\frac{10}{3}$$\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -8514,7 +8750,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-16$"
+        "text": "$8$"
       },
       {
         "key": "B",
@@ -8522,7 +8758,7 @@
       },
       {
         "key": "C",
-        "text": "$8$"
+        "text": "$-16$"
       },
       {
         "key": "D",
@@ -8531,6 +8767,7 @@
     ],
     "correct": "B",
     "explanation": "* Áp dụng $\\det(A^k) = (\\det A)^k$: $\\det(A^{4}) = (2)^{4} = 16$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8554,7 +8791,7 @@
       },
       {
         "key": "B",
-        "text": "Tăng lên một lượng bằng hệ số bội"
+        "text": "Đổi dấu"
       },
       {
         "key": "C",
@@ -8562,11 +8799,12 @@
       },
       {
         "key": "D",
-        "text": "Đổi dấu"
+        "text": "Tăng lên một lượng bằng hệ số bội"
       }
     ],
     "correct": "A",
     "explanation": "* Phép biến đổi sơ cấp loại 3 ($h_i \\to h_i + k h_j$) không làm thay đổi giá trị của định thức.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8603,6 +8841,7 @@
     ],
     "correct": "B",
     "explanation": "* Định thức của ma trận tam giác bằng tích các phần tử trên đường chéo chính: $\\det A = (3) \\cdot (4) \\cdot (-2) = -24$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8622,7 +8861,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Nghịch đảo giá trị"
+        "text": "Bằng 0"
       },
       {
         "key": "B",
@@ -8630,15 +8869,16 @@
       },
       {
         "key": "C",
-        "text": "Bằng 0"
+        "text": "Không thay đổi"
       },
       {
         "key": "D",
-        "text": "Không thay đổi"
+        "text": "Nghịch đảo giá trị"
       }
     ],
     "correct": "B",
     "explanation": "* Tính chất cơ bản: Mỗi phép đổi chỗ hai hàng (hoặc hai cột) làm định thức đổi dấu.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8662,11 +8902,11 @@
       },
       {
         "key": "B",
-        "text": "$-3$"
+        "text": "$-2$"
       },
       {
         "key": "C",
-        "text": "$-2$"
+        "text": "$-3$"
       },
       {
         "key": "D",
@@ -8675,6 +8915,7 @@
     ],
     "correct": "A",
     "explanation": "* Định lý nhân định thức: $\\det(AB) = \\det(A) \\cdot \\det(B) = (-2) \\cdot (-1) = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8694,7 +8935,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$12$"
+        "text": "$83$"
       },
       {
         "key": "B",
@@ -8702,7 +8943,7 @@
       },
       {
         "key": "C",
-        "text": "$83$"
+        "text": "$12$"
       },
       {
         "key": "D",
@@ -8711,6 +8952,7 @@
     ],
     "correct": "D",
     "explanation": "* Áp dụng $\\det(A^k) = (\\det A)^k$: $\\det(A^{4}) = (3)^{4} = 81$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8730,7 +8972,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$-1$"
       },
       {
         "key": "B",
@@ -8738,15 +8980,16 @@
       },
       {
         "key": "C",
-        "text": "Bằng tích hệ số tỷ lệ"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$-1$"
+        "text": "Bằng tích hệ số tỷ lệ"
       }
     ],
     "correct": "B",
     "explanation": "* Khi hai hàng tỷ lệ, ta có thể triệt tiêu một hàng thành toàn số 0 bằng phép biến đổi sơ cấp, do đó $\\det = 0$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8770,11 +9013,11 @@
       },
       {
         "key": "B",
-        "text": "$0.14$"
+        "text": "$-7$"
       },
       {
         "key": "C",
-        "text": "$-7$"
+        "text": "$0.14$"
       },
       {
         "key": "D",
@@ -8783,6 +9026,7 @@
     ],
     "correct": "D",
     "explanation": "* Tính chất định thức: Định thức của ma trận chuyển vị bằng định thức của chính nó: $\\det(A^T) = \\det(A) = 7$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8802,7 +9046,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$16$"
+        "text": "$-28$"
       },
       {
         "key": "B",
@@ -8814,11 +9058,12 @@
       },
       {
         "key": "D",
-        "text": "$-28$"
+        "text": "$16$"
       }
     ],
     "correct": "B",
     "explanation": "* Theo tính chất định thức: với ma trận cấp $n = 2$, $\\det(k A) = k^n \\det(A) = (4)^{2} \\cdot (-2) = 16 \\cdot (-2) = -32$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8842,11 +9087,11 @@
       },
       {
         "key": "B",
-        "text": "$-2$"
+        "text": "$0$"
       },
       {
         "key": "C",
-        "text": "$0$"
+        "text": "$-2$"
       },
       {
         "key": "D",
@@ -8855,6 +9100,7 @@
     ],
     "correct": "A",
     "explanation": "* Định lý định thức ma trận khối tam giác: $\\det M = \\det A \\cdot \\det D = 3 \\cdot (-5) = -15$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8891,6 +9137,7 @@
     ],
     "correct": "A",
     "explanation": "* Vì $A^T = -A \\implies \\det(A) = \\det(A^T) = \\det(-A) = (-1)^n \\det(A)$. Khi $n$ lẻ, $\\det(A) = -\\det(A) \\implies 2\\det(A) = 0 \\implies \\det A = 0$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8910,7 +9157,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$0$"
+        "text": "$16$"
       },
       {
         "key": "B",
@@ -8918,7 +9165,7 @@
       },
       {
         "key": "C",
-        "text": "$16$"
+        "text": "$0$"
       },
       {
         "key": "D",
@@ -8927,6 +9174,7 @@
     ],
     "correct": "B",
     "explanation": "* Định lý nhân định thức: $\\det(AB) = \\det(A) \\cdot \\det(B) = (4) \\cdot (-4) = -16$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8950,7 +9198,7 @@
       },
       {
         "key": "B",
-        "text": "$29$"
+        "text": "$9$"
       },
       {
         "key": "C",
@@ -8958,11 +9206,12 @@
       },
       {
         "key": "D",
-        "text": "$9$"
+        "text": "$29$"
       }
     ],
     "correct": "A",
     "explanation": "* Áp dụng $\\det(A^k) = (\\det A)^k$: $\\det(A^{3}) = (3)^{3} = 27$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -8982,7 +9231,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$-10$"
       },
       {
         "key": "B",
@@ -8990,7 +9239,7 @@
       },
       {
         "key": "C",
-        "text": "$-10$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -8999,6 +9248,7 @@
     ],
     "correct": "B",
     "explanation": "* Định lý nhân định thức: $\\det(AB) = \\det(A) \\cdot \\det(B) = (4) \\cdot (-3) = -12$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9022,11 +9272,11 @@
       },
       {
         "key": "B",
-        "text": "$-25$"
+        "text": "$-9$"
       },
       {
         "key": "C",
-        "text": "$-9$"
+        "text": "$-25$"
       },
       {
         "key": "D",
@@ -9035,6 +9285,7 @@
     ],
     "correct": "D",
     "explanation": "* Áp dụng $\\det(A^k) = (\\det A)^k$: $\\det(A^{3}) = (-3)^{3} = -27$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9058,7 +9309,7 @@
       },
       {
         "key": "B",
-        "text": "$-12$"
+        "text": "$14$"
       },
       {
         "key": "C",
@@ -9066,11 +9317,12 @@
       },
       {
         "key": "D",
-        "text": "$14$"
+        "text": "$-12$"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý nhân định thức: $\\det(AB) = \\det(A) \\cdot \\det(B) = (3) \\cdot (4) = 12$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9090,11 +9342,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-9$"
+        "text": "$-6$"
       },
       {
         "key": "B",
-        "text": "$-6$"
+        "text": "$-9$"
       },
       {
         "key": "C",
@@ -9107,6 +9359,7 @@
     ],
     "correct": "C",
     "explanation": "* Áp dụng $\\det(A^k) = (\\det A)^k$: $\\det(A^{2}) = (-3)^{2} = 9$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9130,7 +9383,7 @@
       },
       {
         "key": "B",
-        "text": "$0$"
+        "text": "$0.03125$"
       },
       {
         "key": "C",
@@ -9138,11 +9391,12 @@
       },
       {
         "key": "D",
-        "text": "$0.03125$"
+        "text": "$0$"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý định thức ma trận khối tam giác: $\\det M = \\det A \\cdot \\det D = 2 \\cdot (-5) = -10$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9166,11 +9420,11 @@
       },
       {
         "key": "B",
-        "text": "$516$"
+        "text": "$8$"
       },
       {
         "key": "C",
-        "text": "$8$"
+        "text": "$516$"
       },
       {
         "key": "D",
@@ -9179,6 +9433,7 @@
     ],
     "correct": "A",
     "explanation": "* Theo tính chất định thức: với ma trận cấp $n = 4$, $\\det(k A) = k^n \\det(A) = (4)^{4} \\cdot (2) = 256 \\cdot (2) = 512$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9215,6 +9470,7 @@
     ],
     "correct": "D",
     "explanation": "* **Định nghĩa ma trận trực giao:** Ma trận vuông thực $A$ được gọi là trực giao nếu $A^t A = A A^t = I$.\n* Từ định nghĩa suy ra:\n  * $A$ luôn khả nghịch và ma trận nghịch đảo bằng chính ma trận chuyển vị: $A^{-1} = A^t$.\n  * $\\det(A^t A) = (\\det A)^2 = \\det I = 1 \\implies \\det A = \\pm 1$ (chứ không nhất thiết chỉ bằng $1$ hay $-1$).\n  * Các véc tơ hàng (và cột) của $A$ luôn tạo thành một hệ trực chuẩn.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9251,6 +9507,7 @@
     ],
     "correct": "A",
     "explanation": "* Đặt $A = \\begin{bmatrix} -2 & -1 \\\\ 2 & 3 \\end{bmatrix}$ và $B = \\begin{bmatrix} 0 & 1 \\\\ 2 & -1 \\end{bmatrix}$. Phương trình có dạng $XA = B \\implies X = BA^{-1}$.\n* Tính $\\det A = (-2)(3) - (-1)(2) = -6 + 2 = -4 \\neq 0$.\n* Ma trận nghịch đảo:\n  $$A^{-1} = -\\frac{1}{4} \\begin{bmatrix} 3 & 1 \\\\ -2 & -2 \\end{bmatrix}$$\n* Nhân ma trận:\n  $$X = \\begin{bmatrix} 0 & 1 \\\\ 2 & -1 \\end{bmatrix} \\left(-\\frac{1}{4}\\right) \\begin{bmatrix} 3 & 1 \\\\ -2 & -2 \\end{bmatrix} = -\\frac{1}{4} \\begin{bmatrix} -2 & -2 \\\\ 8 & 4 \\end{bmatrix} = \\begin{bmatrix} 1/2 & 1/2 \\\\ -2 & -1 \\end{bmatrix}$$\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9287,6 +9544,7 @@
     ],
     "correct": "B",
     "explanation": "* Xét phương án B: Ta có $\\det(A^2) = (\\det A)^2$. Nếu $A^2$ khả nghịch thì $\\det(A^2) \\neq 0 \\implies (\\det A)^2 \\neq 0 \\implies \\det A \\neq 0$, do đó $A$ khả nghịch. Đây là khẳng định đúng.\n* Các phương án khác đều sai:\n  * A sai: ví dụ ma trận lũy linh $A = \\begin{bmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix} \\neq 0$ nhưng $A^2 = 0$.\n  * C sai: ví dụ ma trận chiếu $A = \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix} \\neq 0$ có $A^2 = A$ nhưng $A \\neq I$.\n  * D sai: tổng mỗi hàng bằng 0 thì véc tơ cột $(1, 1, 1)^T$ là nghiệm của $AX = 0$, suy ra $\\det A = 0$ (không khả nghịch).\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9322,7 +9580,8 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Ma trận vuông $A$ khả nghịch khi và chỉ khi $\\det A \\neq 0$.\n* Tính định thức $\\det A$:\n  * Thực hiện phép biến đổi hàng $h_1 \\to h_1 + h_3$:\n    $$\\begin{bmatrix} m + 4 & -2 & m - 5 \\\\ -3 & m + 5 & -3 \\\\ 5 & -5 & m - 2 \\end{bmatrix}$$\n  * Khai triển hoặc tính định thức ta thu được:\n    $$\\det A = m(m - 2)(m + 2) \\quad \\text{hoặc} \\quad (m - 2)(m + 2)(m + \\dots)$$\n  * Phương trình $\\det A = 0$ có các nghiệm $m = \\pm 2$.\n  * Do đó điều kiện để $A$ có ma trận nghịch đảo là $m \\neq 2$ và $m \\neq -2$.\n* **Chọn đáp án: A.**",
+    "explanation": "* Ma trận vuông $A$ khả nghịch khi và chỉ khi $\\det A \\neq 0$.\n* Tính định thức $\\det A$:\n  * Thực hiện phép biến đổi hàng $h_1 \\to h_1 + h_3$:\n    $$\\begin{bmatrix} m + 4 & -2 & m - 5 \\\\ -3 & m + 5 & -3 \\\\ 5 & -5 & m - 2 \\end{bmatrix}$$\n  * Khai triển hoặc tính định thức ta thu được:\n    $$\\det A = (m - 2)(m + 2)^2$$\n  * Phương trình $\\det A = 0$ có các nghiệm $m = \\pm 2$.\n  * Do đó điều kiện để $A$ có ma trận nghịch đảo là $m \\neq 2$ và $m \\neq -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9359,6 +9618,7 @@
     ],
     "correct": "B",
     "explanation": "* Phần tử hàng 2, cột 1 của ma trận nghịch đảo $A^{-1}$ là:\n  $$(A^{-1})_{21} = \\frac{C_{12}}{\\det A} = \\frac{(-1)^{1+2} M_{12}}{\\det A}$$\n* Tính định thức $\\det A$ (khai triển theo hàng 2):\n  $$\\det A = -3 \\begin{vmatrix} 1 & -1 \\\\ 4 & 2 \\end{vmatrix} = -3(2 - (-4)) = -3(6) = -18$$\n* Tính $C_{12}$ (phần phụ đại số hàng 1, cột 2):\n  $$C_{12} = (-1)^3 \\begin{vmatrix} 0 & 3 \\\\ 4 & 0 \\end{vmatrix} = -(0 - 12) = 12$$\n* Do đó:\n  $$(A^{-1})_{21} = \\frac{12}{-18} = -\\frac{2}{3}$$\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9395,6 +9655,7 @@
     ],
     "correct": "B",
     "explanation": "* Ta có $\\det A = \\det(M_1) \\cdot \\det(M_2)$.\n* Tính $\\det M_1$:\n  $$\\det M_1 = 1(15 - 4) - 1(10 - 3) + 1(8 - 9) = 11 - 7 - 1 = 3 \\neq 0$$\n* Tính $\\det M_2$ (khai triển theo cột 3):\n  $$\\det M_2 = m \\cdot (-1)^{1+3} \\begin{vmatrix} 3 & 5 \\\\ -4 & 0 \\end{vmatrix} = m(0 - (-20)) = 20m$$\n* Do đó: $\\det A = 3 \\cdot 20m = 60m$.\n* Ma trận $A$ khả nghịch $\\iff \\det A \\neq 0 \\iff 60m \\neq 0 \\iff m \\neq 0$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9431,6 +9692,7 @@
     ],
     "correct": "B",
     "explanation": "* Đặt $A = \\begin{bmatrix} 2 & 5 \\\\ 1 & 3 \\end{bmatrix}$. Ta có $\\det A = 2(3) - 5(1) = 1 \\neq 0$.\n* Nghịch đảo: $A^{-1} = \\begin{bmatrix} 3 & -5 \\\\ -1 & 2 \\end{bmatrix}$.\n* Phương trình có dạng $XA = B \\implies X = BA^{-1}$:\n  $$X = \\begin{bmatrix} 4 & 2 \\\\ 5 & 6 \\\\ -1 & 7 \\end{bmatrix} \\begin{bmatrix} 3 & -5 \\\\ -1 & 2 \\end{bmatrix} = \\begin{bmatrix} 4(3)+2(-1) & 4(-5)+2(2) \\\\ 5(3)+6(-1) & 5(-5)+6(2) \\\\ -1(3)+7(-1) & -1(-5)+7(2) \\end{bmatrix} = \\begin{bmatrix} 10 & -16 \\\\ 9 & -18 \\\\ -10 & 19 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9467,6 +9729,7 @@
     ],
     "correct": "B",
     "explanation": "* Ma trận vuông $A$ khả nghịch (tồn tại $A^{-1}$) khi và chỉ khi $\\det A \\neq 0$.\n* Khai triển định thức ma trận $A$:\n  $$\\det A = 3 \\begin{vmatrix} 1 & 3 \\\\ m-1 & 3 \\end{vmatrix} - 1 \\begin{vmatrix} m+1 & 3 \\\\ 3 & 3 \\end{vmatrix} + (5-m) \\begin{vmatrix} m+1 & 1 \\\\ 3 & m-1 \\end{vmatrix}$$\n  $$= 3(3 - 3m + 3) - (3m + 3 - 9) + (5-m)(m^2 - 1 - 3)$$\n  $$= 3(6 - 3m) - (3m - 6) + (5-m)(m^2 - 4)$$\n  $$= 18 - 9m - 3m + 6 + 5m^2 - 20 - m^3 + 4m$$\n  $$= -m^3 + 5m^2 - 8m + 4$$\n* Phân tích thành nhân tử:\n  $$\\det A = -(m - 1)(m^2 - 4m + 4) = -(m - 1)(m - 2)^2$$\n* Để tồn tại $A^{-1}$ thì $\\det A \\neq 0 \\iff m \\neq 1$ và $m \\neq 2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9503,6 +9766,7 @@
     ],
     "correct": "A",
     "explanation": "* Khi $m = -1$, ma trận $A$ trở thành:\n  $$A = \\begin{bmatrix} 3 & 1 & 6 \\\\ 0 & 1 & 3 \\\\ 3 & -2 & 3 \\end{bmatrix}$$\n* Định thức: $\\det A = -(-1 - 1)(-1 - 2)^2 = -(-2)(9) = 18 \\neq 0$.\n* Tìm ma trận phần phụ đại số $C$:\n  * $C_{11} = (3 - (-6)) = 9, \\quad C_{12} = -(0 - 9) = 9, \\quad C_{13} = (0 - 3) = -3$\n  * $C_{21} = -(3 - (-12)) = -15, \\quad C_{22} = (9 - 18) = -9, \\quad C_{23} = -(-6 - 3) = 9$\n  * $C_{31} = (3 - 6) = -3, \\quad C_{32} = -(9 - 0) = -9, \\quad C_{33} = (3 - 0) = 3$\n* Ma trận chuyển vị của các phần phụ đại số:\n  $$C^T = \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* Do đó:\n  $$A^{-1} = \\frac{1}{\\det A} C^T = \\frac{1}{18} \\begin{bmatrix} 9 & -15 & -3 \\\\ 9 & -9 & -9 \\\\ -3 & 9 & 3 \\end{bmatrix}$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -9522,11 +9786,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$A$ phải là ma trận đối xứng"
+        "text": "Các phần tử trên đường chéo chính khác 0"
       },
       {
         "key": "B",
-        "text": "Các phần tử trên đường chéo chính khác 0"
+        "text": "$\\det(A) = 0$"
       },
       {
         "key": "C",
@@ -9534,11 +9798,12 @@
       },
       {
         "key": "D",
-        "text": "$\\det(A) = 0$"
+        "text": "$A$ phải là ma trận đối xứng"
       }
     ],
     "correct": "C",
     "explanation": "* Ma trận vuông $A$ khả nghịch khi và chỉ khi định thức của nó khác 0: $\\det(A) \\neq 0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9558,7 +9823,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} -2 & 0 \\\\ 0 & -5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1/10 & 0 \\\\ 0 & 1/10 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -9566,15 +9831,16 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1/10 & 0 \\\\ 0 & 1/10 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 0 \\\\ 0 & 2 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 5 & 0 \\\\ 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -2 & 0 \\\\ 0 & -5 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
     "explanation": "* Nghịch đảo của ma trận đường chéo là ma trận đường chéo chứa nghịch đảo của từng phần tử trên đường chéo.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9602,15 +9868,16 @@
       },
       {
         "key": "C",
-        "text": "$X = B A^{-1}$"
+        "text": "$X = B / A$"
       },
       {
         "key": "D",
-        "text": "$X = B / A$"
+        "text": "$X = B A^{-1}$"
       }
     ],
     "correct": "B",
     "explanation": "* Nhân cả hai vế về phía bên trái với $A^{-1}$: $A^{-1} (AX) = A^{-1} B \\iff X = A^{-1} B$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9630,7 +9897,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$C_{ij} = (-1)^{i \\cdot j} M_{ij}$"
+        "text": "$C_{ij} = -M_{ij}$"
       },
       {
         "key": "B",
@@ -9638,7 +9905,7 @@
       },
       {
         "key": "C",
-        "text": "$C_{ij} = -M_{ij}$"
+        "text": "$C_{ij} = (-1)^{i \\cdot j} M_{ij}$"
       },
       {
         "key": "D",
@@ -9647,6 +9914,7 @@
     ],
     "correct": "B",
     "explanation": "* Định nghĩa phần phụ đại số: $C_{ij} = (-1)^{i+j} M_{ij}$, trong đó $M_{ij}$ là định thức cấp $n-1$ thu được khi xóa hàng $i$ và cột $j$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9683,6 +9951,7 @@
     ],
     "correct": "C",
     "explanation": "* Công thức nghịch đảo của tích: $(AB)^{-1} = B^{-1} A^{-1}$ (đổi thứ tự các ma trận).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9702,11 +9971,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$X = B A$"
+        "text": "$X = A^{-1} B$"
       },
       {
         "key": "B",
-        "text": "$X = A B$"
+        "text": "$X = B A$"
       },
       {
         "key": "C",
@@ -9714,11 +9983,12 @@
       },
       {
         "key": "D",
-        "text": "$X = A^{-1} B$"
+        "text": "$X = A B$"
       }
     ],
     "correct": "C",
     "explanation": "* Nhân cả hai vế về phía bên phải với $A^{-1}$: $(XA) A^{-1} = B A^{-1} \\iff X = B A^{-1}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9755,6 +10025,7 @@
     ],
     "correct": "A",
     "explanation": "* Tính chất: $A \\cdot A^* = \\det(A) \\cdot I \\implies \\det(A^*) = (\\det A)^{n-1} = (3)^{2} = 9$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9774,7 +10045,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$18$"
+        "text": "$14$"
       },
       {
         "key": "B",
@@ -9786,11 +10057,12 @@
       },
       {
         "key": "D",
-        "text": "$14$"
+        "text": "$18$"
       }
     ],
     "correct": "C",
     "explanation": "* $\\det A = ad - bc = (3)(5) - (1)(3) = 15 - 3 = 12$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9818,15 +10090,16 @@
       },
       {
         "key": "C",
-        "text": "$7$"
+        "text": "$-7$"
       },
       {
         "key": "D",
-        "text": "$-7$"
+        "text": "$7$"
       }
     ],
     "correct": "B",
     "explanation": "* Từ $A \\cdot A^{-1} = I \\implies \\det(A) \\cdot \\det(A^{-1}) = 1 \\implies \\det(A^{-1}) = \\dfrac{1}{\\det A} = \\dfrac{1}{7}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9863,6 +10136,7 @@
     ],
     "correct": "C",
     "explanation": "* Ma trận không khả nghịch khi $\\det A = 0 \\iff 1(m - 4) - 2(3) = 0 \\iff m - 4 = 6 \\iff m = 10$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9886,11 +10160,11 @@
       },
       {
         "key": "B",
-        "text": "$1$"
+        "text": "$-3$"
       },
       {
         "key": "C",
-        "text": "$-3$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -9899,6 +10173,7 @@
     ],
     "correct": "A",
     "explanation": "* Từ $A \\cdot A^{-1} = I \\implies \\det(A) \\cdot \\det(A^{-1}) = 1 \\implies \\det(A^{-1}) = \\dfrac{1}{\\det A} = \\dfrac{1}{3}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9918,7 +10193,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$-2$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -9926,7 +10201,7 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$-2$"
       },
       {
         "key": "D",
@@ -9935,6 +10210,7 @@
     ],
     "correct": "B",
     "explanation": "* $\\det A = ad - bc = (1)(5) - (1)(3) = 5 - 3 = 2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9954,11 +10230,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$-2$"
       },
       {
         "key": "B",
-        "text": "$-2$"
+        "text": "$2$"
       },
       {
         "key": "C",
@@ -9971,6 +10247,7 @@
     ],
     "correct": "C",
     "explanation": "* Từ $A \\cdot A^{-1} = I \\implies \\det(A) \\cdot \\det(A^{-1}) = 1 \\implies \\det(A^{-1}) = \\dfrac{1}{\\det A} = -\\dfrac{1}{2}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -9990,7 +10267,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m = 3$"
       },
       {
         "key": "B",
@@ -9998,15 +10275,16 @@
       },
       {
         "key": "C",
-        "text": "$m = 3$"
+        "text": "$m \\neq 9$"
       },
       {
         "key": "D",
-        "text": "$m \\neq 9$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "B",
     "explanation": "* Ma trận không khả nghịch khi $\\det A = 0 \\iff 1(m - 3) - 2(3) = 0 \\iff m - 3 = 6 \\iff m = 9$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10043,6 +10321,7 @@
     ],
     "correct": "D",
     "explanation": "* Nghịch đảo của ma trận đường chéo là ma trận đường chéo chứa nghịch đảo của từng phần tử trên đường chéo.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10066,19 +10345,20 @@
       },
       {
         "key": "B",
-        "text": "$-13$"
+        "text": "$15$"
       },
       {
         "key": "C",
-        "text": "$17$"
+        "text": "$-13$"
       },
       {
         "key": "D",
-        "text": "$15$"
+        "text": "$17$"
       }
     ],
     "correct": "A",
     "explanation": "* $\\det A = ad - bc = (3)(5) - (2)(1) = 15 - 2 = 13$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10098,15 +10378,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} -5 & 0 \\\\ 0 & -7 \\end{bmatrix}$"
-      },
-      {
-        "key": "B",
         "text": "$\\begin{bmatrix} 7 & 0 \\\\ 0 & 5 \\end{bmatrix}$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$\\begin{bmatrix} 1/35 & 0 \\\\ 0 & 1/35 \\end{bmatrix}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\begin{bmatrix} -5 & 0 \\\\ 0 & -7 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -10115,6 +10395,7 @@
     ],
     "correct": "D",
     "explanation": "* Nghịch đảo của ma trận đường chéo là ma trận đường chéo chứa nghịch đảo của từng phần tử trên đường chéo.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10134,23 +10415,24 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\text{ hoặc } m = -2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq -2 \\end{cases}$"
+        "text": "$r(A) = 3$ nếu $m = 0$ hoặc $m = -2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq -2$"
       },
       {
         "key": "B",
-        "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\\\ 4 & \\text{nếu } m \\neq 0 \\end{cases}$"
+        "text": "$r(A) = 3$ nếu $m = 0$; $r(A) = 4$ nếu $m \\neq 0$"
       },
       {
         "key": "C",
-        "text": "$r(A) = \\begin{cases} 3 & \\text{nếu } m = 0 \\text{ hoặc } m = 2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq 2 \\end{cases}$"
+        "text": "$r(A) = 3$ nếu $m = 0$ hoặc $m = 2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq 2$"
       },
       {
         "key": "D",
-        "text": "$r(A) = \\begin{cases} 2 & \\text{nếu } m = 0 \\text{ hoặc } m = -2 \\\\ 4 & \\text{nếu } m \\neq 0 \\text{ và } m \\neq -2 \\end{cases}$"
+        "text": "$r(A) = 2$ nếu $m = 0$ hoặc $m = -2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq -2$"
       }
     ],
     "correct": "A",
     "explanation": "* Khai triển định thức $\\det A$ theo hàng $1$ và hàng $3$ (hoặc tính định thức của $A$):\n  $$\\det A = 2m^2(m + 2)$$\n* Do đó:\n  * Nếu $m \\neq 0$ và $m \\neq -2$ thì $\\det A \\neq 0 \\implies r(A) = 4$.\n  * Nếu $m = 0$ hoặc $m = -2$ thì $\\det A = 0$. Mặt khác định thức con cấp 3 tạo bởi 3 hàng đầu khác 0:\n    $$\\begin{vmatrix} 1 & -2 & 0 \\\\ 3 & 4 & -1 \\\\ 1 & -1 & 0 \\end{vmatrix} = -(-1) \\begin{vmatrix} 1 & -2 \\\\ 1 & -1 \\end{vmatrix} = -1 + 2 = 1 \\neq 0$$\n    Do đó hạng luôn bằng 3 khi $\\det A = 0$.\n* Kết luận: $r(A) = 3$ nếu $m = 0$ hoặc $m = -2$; $r(A) = 4$ nếu $m \\neq 0$ và $m \\neq -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -10186,7 +10468,8 @@
       }
     ],
     "correct": "A",
-    "explanation": "* Xét ma trận con cấp 4 tạo bởi 4 hàng đầu và 4 cột đầu tiên của $A$:\n  $$M_4 = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 2 & 3 & 0 & 0 \\\\ 4 & -2 & 5 & 0 \\\\ 2 & 1 & 7 & -1 \\end{bmatrix}$$\n* Đây là ma trận tam giác dưới, định thức bằng tích các phần tử trên đường chéo chính:\n  $$\\det M_4 = 1 \\cdot 3 \\cdot 5 \\cdot (-1) = -15 \\neq 0$$\n* Vì tồn tại một định thức con cấp 4 khác 0 nên hạng của ma trận luôn thỏa mãn:\n  $$r(A) \\ge 4 \\quad \\text{với mọi } k \\in \\mathbb{R}$$\n* **Chọn đáp án: A.**",
+    "explanation": "* Xét ma trận con cấp 4 tạo bởi 4 hàng đầu và 4 cột đầu tiên của $A$:\n  $$M_4 = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 2 & 3 & 0 & 0 \\\\ 4 & -2 & 5 & 0 \\\\ 2 & 1 & 7 & -1 \\end{bmatrix}$$\n* Đây là ma trận tam giác dưới, định thức bằng tích các phần tử trên đường chéo chính:\n  $$\\det M_4 = 1 \\cdot 3 \\cdot 5 \\cdot (-1) = -15 \\neq 0$$\n* Vì tồn tại một định thức con cấp 4 khác 0 nên hạng của ma trận luôn thỏa mãn:\n  $$r(A) \\ge 4, \\quad \\forall k \\in \\mathbb{R}$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -10223,6 +10506,7 @@
     ],
     "correct": "B",
     "explanation": "* Khử Gauss ma trận $A$:\n  * $h_2 \\to h_2 - 2h_1: (0, 1, 1, 5)$.\n  * $h_3 \\to h_3 - 4h_1: (0, 3, -6, 10)$.\n  * $h_4 \\to h_4 - 10h_1: (0, 7, -11, 25)$.\n* Khử tiếp cột 2:\n  * $h_3 \\to h_3 - 3h_2: (0, 0, -9, -5)$.\n  * $h_4 \\to h_4 - 7h_2: (0, 0, -18, -10) = 2(0, 0, -9, -5)$.\n* Khử tiếp hàng 4:\n  * $h_4 \\to h_4 - 2h_3: (0, 0, 0, 0)$.\n* Ma trận bậc thang có đúng 3 hàng khác 0, suy ra $r(A) = 3$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -10259,6 +10543,7 @@
     ],
     "correct": "B",
     "explanation": "* Ma trận vuông cấp 3 $A$ có ma trận nghịch đảo $A^{-1}$ khi và chỉ khi $A$ khả nghịch, tức là $\\det A \\neq 0$.\n* Khi $A$ khả nghịch thì $A^{-1}$ cũng là ma trận vuông cấp 3 khả nghịch, có hạng $r(A^{-1}) = 3$.\n* Tính định thức $\\det A$:\n  $$\\det A = 1(6 - 4m) - 0 + 2(8 - 9) = 6 - 4m - 2 = 4 - 4m$$\n* Để $A$ khả nghịch:\n  $$\\det A \\neq 0 \\iff 4 - 4m \\neq 0 \\iff m \\neq 1$$\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -10286,15 +10571,16 @@
       },
       {
         "key": "C",
-        "text": "$8$"
+        "text": "$5$"
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$8$"
       }
     ],
     "correct": "B",
     "explanation": "* Tính chất cơ bản: $r(A) \\le \\min(m, n) = \\min(3, 5) = 3$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10331,6 +10617,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo quy ước và định nghĩa, ma trận không có hạng bằng 0 vì không có định thức con nào khác 0.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10358,15 +10645,16 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m \\neq -2$"
       },
       {
         "key": "D",
-        "text": "$m \\neq -2$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "B",
     "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m + 2 = 0 \\iff m = -2.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10386,7 +10674,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$6$"
       },
       {
         "key": "B",
@@ -10398,11 +10686,12 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$2$"
       }
     ],
     "correct": "C",
     "explanation": "* Hạng của ma trận bậc thang bằng đúng số hàng khác không, tức là bằng 4.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10422,11 +10711,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(AB) = r(A) \\cdot r(B)$"
+        "text": "$r(AB) = r(A) + r(B)$"
       },
       {
         "key": "B",
-        "text": "$r(AB) \\ge r(A) + r(B)$"
+        "text": "$r(AB) = r(A) \\cdot r(B)$"
       },
       {
         "key": "C",
@@ -10434,11 +10723,12 @@
       },
       {
         "key": "D",
-        "text": "$r(AB) = r(A) + r(B)$"
+        "text": "$r(AB) \\ge r(A) + r(B)$"
       }
     ],
     "correct": "C",
     "explanation": "* Bất đẳng thức Sylvester: Hạng của một tích ma trận không vượt quá hạng của từng ma trận thành phần: $r(AB) \\le \\min(r(A), r(B))$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10458,15 +10748,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$3$"
-      },
-      {
-        "key": "B",
         "text": "$0$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$2$"
+      },
+      {
+        "key": "C",
+        "text": "$3$"
       },
       {
         "key": "D",
@@ -10475,6 +10765,7 @@
     ],
     "correct": "D",
     "explanation": "* Mọi cột của ma trận $A = u v^T$ đều là bội số của véc tơ cột $u$, do đó không gian cột có số chiều bằng 1, suy ra $r(A) = 1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10494,11 +10785,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$A$ là ma trận đối xứng"
+        "text": "$\\det(A) = 0$"
       },
       {
         "key": "B",
-        "text": "$\\det(A) = 0$"
+        "text": "$A$ là ma trận đối xứng"
       },
       {
         "key": "C",
@@ -10511,6 +10802,7 @@
     ],
     "correct": "C",
     "explanation": "* Ma trận vuông cấp 5 có hạng đủ bằng 5 khi và chỉ khi định thức của nó khác 0: $\\det A \\neq 0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10534,7 +10826,7 @@
       },
       {
         "key": "B",
-        "text": "Luôn làm tăng hạng của ma trận"
+        "text": "Làm đổi dấu hạng của ma trận"
       },
       {
         "key": "C",
@@ -10542,11 +10834,12 @@
       },
       {
         "key": "D",
-        "text": "Làm đổi dấu hạng của ma trận"
+        "text": "Luôn làm tăng hạng của ma trận"
       }
     ],
     "correct": "C",
     "explanation": "* Các phép biến đổi sơ cấp tương đương với việc nhân với ma trận khả nghịch, do đó bảo toàn hạng của ma trận.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10566,11 +10859,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A^T) = -r(A)$"
+        "text": "$r(A^T) \\le r(A)$"
       },
       {
         "key": "B",
-        "text": "$r(A^T) + r(A) = n$"
+        "text": "$r(A^T) = -r(A)$"
       },
       {
         "key": "C",
@@ -10578,11 +10871,12 @@
       },
       {
         "key": "D",
-        "text": "$r(A^T) \\le r(A)$"
+        "text": "$r(A^T) + r(A) = n$"
       }
     ],
     "correct": "C",
     "explanation": "* Định lý: Hạng của ma trận theo hàng bằng hạng theo cột, do đó $r(A^T) = r(A)$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10619,6 +10913,7 @@
     ],
     "correct": "C",
     "explanation": "* Định nghĩa chuẩn: Hạng của ma trận là cấp cao nhất của các định thức con khác không trích từ ma trận đó (hoặc số hàng khác không của ma trận bậc thang).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10646,15 +10941,16 @@
       },
       {
         "key": "C",
-        "text": "$5$"
+        "text": "$1$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$5$"
       }
     ],
     "correct": "B",
     "explanation": "* Hạng của ma trận bậc thang bằng đúng số hàng khác không, tức là bằng 3.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10674,7 +10970,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = -2$"
+        "text": "$m \\neq -1$"
       },
       {
         "key": "B",
@@ -10686,11 +10982,12 @@
       },
       {
         "key": "D",
-        "text": "$m \\neq -1$"
+        "text": "$m = -2$"
       }
     ],
     "correct": "C",
     "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m + 1 = 0 \\iff m = -1.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10710,7 +11007,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$A$ là ma trận đối xứng"
+        "text": "Vết của $A$ bằng 3"
       },
       {
         "key": "B",
@@ -10718,7 +11015,7 @@
       },
       {
         "key": "C",
-        "text": "Vết của $A$ bằng 3"
+        "text": "$A$ là ma trận đối xứng"
       },
       {
         "key": "D",
@@ -10727,6 +11024,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận vuông cấp 3 có hạng đủ bằng 3 khi và chỉ khi định thức của nó khác 0: $\\det A \\neq 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10746,15 +11044,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$8$"
-      },
-      {
-        "key": "B",
         "text": "$12$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$6$"
+      },
+      {
+        "key": "C",
+        "text": "$8$"
       },
       {
         "key": "D",
@@ -10763,6 +11061,7 @@
     ],
     "correct": "D",
     "explanation": "* Tính chất cơ bản: $r(A) \\le \\min(m, n) = \\min(2, 6) = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10782,11 +11081,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Vết của $A$ bằng 4"
+        "text": "$\\det(A) = 0$"
       },
       {
         "key": "B",
-        "text": "$\\det(A) = 0$"
+        "text": "Vết của $A$ bằng 4"
       },
       {
         "key": "C",
@@ -10799,6 +11098,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận vuông cấp 4 có hạng đủ bằng 4 khi và chỉ khi định thức của nó khác 0: $\\det A \\neq 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10835,6 +11135,7 @@
     ],
     "correct": "C",
     "explanation": "* Tính chất cơ bản: $r(A) \\le \\min(m, n) = \\min(5, 5) = 5$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10854,15 +11155,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$8$"
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$4$"
       },
       {
         "key": "C",
-        "text": "$8$"
+        "text": "$6$"
       },
       {
         "key": "D",
@@ -10871,6 +11172,7 @@
     ],
     "correct": "D",
     "explanation": "* Tính chất cơ bản: $r(A) \\le \\min(m, n) = \\min(2, 4) = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10907,6 +11209,7 @@
     ],
     "correct": "A",
     "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m - 1 = 0 \\iff m = 1.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10943,6 +11246,7 @@
     ],
     "correct": "D",
     "explanation": "* Hạng của ma trận bậc thang bằng đúng số hàng khác không, tức là bằng 2.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -10979,6 +11283,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận đã ở dạng bậc thang. Để có hạng bằng 2 thì hàng 3 phải là hàng toàn số 0, tức là m - 3 = 0 \\iff m = 3.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11006,15 +11311,16 @@
       },
       {
         "key": "C",
-        "text": "$12$"
+        "text": "$4$"
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$12$"
       }
     ],
     "correct": "A",
     "explanation": "* Tính chất cơ bản: $r(A) \\le \\min(m, n) = \\min(4, 3) = 3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11051,6 +11357,7 @@
     ],
     "correct": "B",
     "explanation": "* Xét ma trận hệ số $A$ và ma trận mở rộng $\\bar{A}$:\n  $$\\bar{A} = \\begin{bmatrix} 1 & 1 & -1 & 1 & 1 \\\\ 2 & 1 & 2 & -3 & -1 \\\\ 0 & 0 & 1 & 3 & 2 \\end{bmatrix}$$\n* $h_2 \\to h_2 - 2h_1$:\n  $$\\begin{bmatrix} 1 & 1 & -1 & 1 & 1 \\\\ 0 & -1 & 4 & -5 & -3 \\\\ 0 & 0 & 1 & 3 & 2 \\end{bmatrix}$$\n* Cả 3 hàng đều khác 0 và có dạng bậc thang, suy ra $r(A) = r(\\bar{A}) = 3$.\n* Hệ có nghiệm. Số ẩn là $n = 4$, số tham số tự do là $n - r = 4 - 3 = 1$.\n* Vậy hệ có vô số nghiệm phụ thuộc 1 tham số.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -11087,6 +11394,7 @@
     ],
     "correct": "B",
     "explanation": "* Ma trận hệ số $A$ có cỡ $5 \\times 7$ nên số ẩn số là $n = 7$.\n* Giả thiết $r(A) = r(\\bar{A}) = 4$, theo định lý Kronecker - Capelli:\n  * Vì $r(A) = r(\\bar{A})$ nên hệ có nghiệm.\n  * Vì $r(A) = 4 < 7$ (số ẩn), hệ có vô số nghiệm.\n  * Số tham số tự do của nghiệm là:\n    $$k = n - r(A) = 7 - 4 = 3$$\n* Do đó hệ phương trình có vô số nghiệm phụ thuộc 3 tham số.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -11123,6 +11431,7 @@
     ],
     "correct": "B",
     "explanation": "* Xét khẳng định B: \"Nếu 1có duy nhất nghiệm thì 2có nghiệm\".\n  * 1có duy nhất nghiệm $X = 0$ khi và chỉ khi $r(A) = n$ (các cột của $A$ độc lập tuyến tính).\n  * Nhưng nếu số phương trình $m > n$ (số hàng nhiều hơn số cột), thì ma trận mở rộng $\\bar{A} = [A \\mid B]$ có thể có hạng $r(\\bar{A}) = n + 1 > r(A)$, dẫn đến hệ 2vô nghiệm!\n  * Do đó phát biểu B là **sai**.\n* Các khẳng định A, C, D đều đúng theo định lý Kronecker - Capelli.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -11159,6 +11468,7 @@
     ],
     "correct": "A",
     "explanation": "* Ma trận mở rộng $\\bar{A} = [A \\mid B]$ có cỡ $m \\times (n + 1)$, nên $r(\\bar{A}) \\le m$.\n* Mặt khác ta luôn có $r(\\bar{A}) \\ge r(A) = m$.\n* Do đó $r(\\bar{A}) = r(A) = m$ với **mọi cột vế phải $B$**.\n* Theo định lý Kronecker - Capelli, hệ phương trình luôn luôn có nghiệm.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -11194,7 +11504,8 @@
       }
     ],
     "correct": "C",
-    "explanation": "* Giải hệ hai phương trình đầu:\n  $$\\begin{cases} 4x + 3y = -6 \\\\ 5x + 8y = 1 \\end{cases} \\iff \\begin{cases} x = -3 \\\\ y = 2 \\end{cases}$$\n* Thay nghiệm duy nhất $(x = -3, y = 2)$ vào phương trình thứ ba:\n  $$a^2(-3) + 3a(2) = -9 \\iff -3a^2 + 6a + 9 = 0 \\iff a^2 - 2a - 3 = 0$$\n* Giải phương trình bậc hai:\n  $$(a + 1)(a - 3) = 0 \\iff a = -1 \\text{ hoặc } a = 3$$\n* **Chọn đáp án: C.**",
+    "explanation": "* Giải hệ hai phương trình đầu:\n  $$\\begin{cases} 4x + 3y = -6 \\\\ 5x + 8y = 1 \\end{cases} \\iff \\begin{cases} x = -3 \\\\ y = 2 \\end{cases}$$\n* Thay nghiệm duy nhất $(x = -3, y = 2)$ vào phương trình thứ ba:\n  $$a^2(-3) + 3a(2) = -9 \\iff -3a^2 + 6a + 9 = 0 \\iff a^2 - 2a - 3 = 0$$\n* Giải phương trình bậc hai:\n  $$(a + 1)(a - 3) = 0 \\iff a = -1$$ hoặc $$a = 3$$\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -11231,6 +11542,7 @@
     ],
     "correct": "B",
     "explanation": "* Lập ma trận mở rộng và khử Gauss:\n  $$\\bar{A} = \\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\\\ 2 & 3 & 4 & -1 & 3 \\\\ 3 & 1 & 2 & 5 & 2 \\\\ 4 & 6 & 3 & m & 1 \\end{bmatrix}$$\n* Lấy $h_2 - 2h_1$, $h_3 - 3h_1$, $h_4 - 4h_1$:\n  $$\\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\\\ 0 & 1 & 2 & -3 & 1 \\\\ 0 & -2 & -1 & 2 & -1 \\\\ 0 & 2 & -1 & m-4 & -3 \\end{bmatrix}$$\n* Lấy $h_3 + 2h_2$, $h_4 - 2h_2$:\n  $$\\begin{bmatrix} 1 & 1 & 1 & 1 & 1 \\\\ 0 & 1 & 2 & -3 & 1 \\\\ 0 & 0 & 3 & -4 & 1 \\\\ 0 & 0 & -5 & m+2 & -5 \\end{bmatrix}$$\n* Lấy $3h_4 + 5h_3$:\n  Hàng cuối thành: $\\begin{bmatrix} 0 & 0 & 0 & 3(m+2) + 5(-4) & 3(-5) + 5(1) \\end{bmatrix} = \\begin{bmatrix} 0 & 0 & 0 & 3m - 14 & -10 \\end{bmatrix}$.\n* Hệ vô nghiệm khi và chỉ khi $r(A) < r(\\bar{A}) \\iff 3m - 14 = 0 \\iff m = \\dfrac{14}{3}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -11267,6 +11579,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo định lý Kronecker-Capelli, vì $r(A) = 2 < r(\\bar{A}) = 3$ nên hệ phương trình vô nghiệm.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11290,19 +11603,20 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "C",
-        "text": "$5$"
+        "text": "$3$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$5$"
       }
     ],
     "correct": "A",
     "explanation": "* Số ẩn tự do trong không gian nghiệm bằng số ẩn trừ đi hạng: $k = n - r = 5 - 3 = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11322,7 +11636,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Mọi $m \\in \\mathbb{R}$"
+        "text": "$m = 3$"
       },
       {
         "key": "B",
@@ -11334,11 +11648,12 @@
       },
       {
         "key": "D",
-        "text": "$m = 3$"
+        "text": "Mọi $m \\in \\mathbb{R}$"
       }
     ],
     "correct": "C",
     "explanation": "* Tính định thức ma trận hệ số: $\\det A = m - 3$. Hệ có nghiệm duy nhất $\\iff \\det A \\neq 0 \\iff m \\neq 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11362,7 +11677,7 @@
       },
       {
         "key": "B",
-        "text": "$r(A) = r(\\bar{A}) = 5$"
+        "text": "$r(A) > 5$"
       },
       {
         "key": "C",
@@ -11370,11 +11685,12 @@
       },
       {
         "key": "D",
-        "text": "$r(A) > 5$"
+        "text": "$r(A) = r(\\bar{A}) = 5$"
       }
     ],
     "correct": "C",
     "explanation": "* Hệ có vô số nghiệm khi hệ có nghiệm và hạng nhỏ hơn số ẩn: $r < n = 5$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11394,7 +11710,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\det(A) \\neq 0$"
+        "text": "$r(A) > r(\\bar{A})$"
       },
       {
         "key": "B",
@@ -11402,15 +11718,16 @@
       },
       {
         "key": "C",
-        "text": "$r(A) < r(\\bar{A})$"
+        "text": "$\\det(A) \\neq 0$"
       },
       {
         "key": "D",
-        "text": "$r(A) > r(\\bar{A})$"
+        "text": "$r(A) < r(\\bar{A})$"
       }
     ],
     "correct": "B",
     "explanation": "* Định lý Kronecker-Capelli: Hệ có nghiệm $\\iff r(A) = r(\\bar{A})$. Nếu $r(A) < r(\\bar{A})$ thì hệ vô nghiệm.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11430,15 +11747,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ luôn có đúng 3 nghiệm"
-      },
-      {
-        "key": "B",
         "text": "Hệ luôn luôn vô nghiệm"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Hệ luôn luôn có nghiệm duy nhất"
+      },
+      {
+        "key": "C",
+        "text": "Hệ luôn có đúng 3 nghiệm"
       },
       {
         "key": "D",
@@ -11447,6 +11764,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì $r(A) \\le 3 < 5$, nên nếu hệ có nghiệm ($r(A) = r(\\bar{A})$) thì $r < n$, do đó chắc chắn có ít nhất $n - r > 0$ ẩn tự do, suy ra có vô số nghiệm.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11483,6 +11801,7 @@
     ],
     "correct": "D",
     "explanation": "* Khi khử Gauss xuất hiện hàng dạng $[0 \\; 0 \\; \\dots \\; 0 \\mid b]$ với $b \\neq 0$, khi đó $r(A) < r(\\bar{A})$ và hệ vô nghiệm.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11506,7 +11825,7 @@
       },
       {
         "key": "B",
-        "text": "$r(A) = r(\\bar{A}) < 5$"
+        "text": "$r(A) < r(\\bar{A})$"
       },
       {
         "key": "C",
@@ -11514,11 +11833,12 @@
       },
       {
         "key": "D",
-        "text": "$r(A) < r(\\bar{A})$"
+        "text": "$r(A) = r(\\bar{A}) < 5$"
       }
     ],
     "correct": "A",
     "explanation": "* Hệ vuông có nghiệm duy nhất khi hạng của ma trận hệ số bằng hạng ma trận mở rộng và bằng đúng số ẩn $n = 5$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11542,7 +11862,7 @@
       },
       {
         "key": "B",
-        "text": "Là ma trận chuyển vị của $A$"
+        "text": "Là ma trận phụ hợp của $A$"
       },
       {
         "key": "C",
@@ -11550,11 +11870,12 @@
       },
       {
         "key": "D",
-        "text": "Là ma trận phụ hợp của $A$"
+        "text": "Là ma trận chuyển vị của $A$"
       }
     ],
     "correct": "C",
     "explanation": "* Ma trận bổ sung ký hiệu $\\bar{A} = [A \\mid B]$, gồm $n$ cột của $A$ và cột thứ $n+1$ là cột tự do $B$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11578,7 +11899,7 @@
       },
       {
         "key": "B",
-        "text": "$m > 0$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -11586,11 +11907,12 @@
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "C",
     "explanation": "* Khi $m = 1$, hàng cuối trở thành $[0 \\; 0 \\; 0 \\mid 7]$, tương đương $0 = 7$ (vô lý). Do đó $r(A) = 2 < r(\\bar{A}) = 3$, hệ vô nghiệm.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11610,7 +11932,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ luôn có đúng 3 nghiệm"
+        "text": "Hệ luôn luôn vô nghiệm"
       },
       {
         "key": "B",
@@ -11618,15 +11940,16 @@
       },
       {
         "key": "C",
-        "text": "Hệ luôn luôn vô nghiệm"
+        "text": "Hệ luôn luôn có nghiệm duy nhất"
       },
       {
         "key": "D",
-        "text": "Hệ luôn luôn có nghiệm duy nhất"
+        "text": "Hệ luôn có đúng 3 nghiệm"
       }
     ],
     "correct": "B",
     "explanation": "* Vì $r(A) \\le 3 < 4$, nên nếu hệ có nghiệm ($r(A) = r(\\bar{A})$) thì $r < n$, do đó chắc chắn có ít nhất $n - r > 0$ ẩn tự do, suy ra có vô số nghiệm.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11646,7 +11969,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq -2$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
@@ -11654,7 +11977,7 @@
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq -2$"
       },
       {
         "key": "D",
@@ -11663,6 +11986,7 @@
     ],
     "correct": "D",
     "explanation": "* Khi $m = -2$, hàng cuối trở thành $[0 \\; 0 \\; 0 \\mid 7]$, tương đương $0 = 7$ (vô lý). Do đó $r(A) = 2 < r(\\bar{A}) = 3$, hệ vô nghiệm.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11686,19 +12010,20 @@
       },
       {
         "key": "B",
-        "text": "$r(A) > 3$"
+        "text": "$r(A) = r(\\bar{A}) = 3$"
       },
       {
         "key": "C",
-        "text": "$r(A) < r(\\bar{A})$"
+        "text": "$r(A) > 3$"
       },
       {
         "key": "D",
-        "text": "$r(A) = r(\\bar{A}) = 3$"
+        "text": "$r(A) < r(\\bar{A})$"
       }
     ],
     "correct": "A",
     "explanation": "* Hệ có vô số nghiệm khi hệ có nghiệm và hạng nhỏ hơn số ẩn: $r < n = 3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11735,6 +12060,7 @@
     ],
     "correct": "A",
     "explanation": "* Khi $m = 4$, hàng cuối trở thành $[0 \\; 0 \\; 0 \\mid 3]$, tương đương $0 = 3$ (vô lý). Do đó $r(A) = 2 < r(\\bar{A}) = 3$, hệ vô nghiệm.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11754,11 +12080,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$4$"
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$7$"
       },
       {
         "key": "C",
@@ -11766,11 +12092,12 @@
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$2$"
       }
     ],
     "correct": "C",
     "explanation": "* Số ẩn tự do trong không gian nghiệm bằng số ẩn trừ đi hạng: $k = n - r = 7 - 4 = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11807,6 +12134,7 @@
     ],
     "correct": "A",
     "explanation": "* Tính định thức ma trận hệ số: $\\det A = m + 2$. Hệ có nghiệm duy nhất $\\iff \\det A \\neq 0 \\iff m \\neq -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11830,19 +12158,20 @@
       },
       {
         "key": "B",
-        "text": "$m = 0$"
+        "text": "$m > 0$"
       },
       {
         "key": "C",
-        "text": "$m \\neq 5$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "$m \\neq 5$"
       }
     ],
     "correct": "A",
     "explanation": "* Khi $m = 5$, hàng cuối trở thành $[0 \\; 0 \\; 0 \\mid 3]$, tương đương $0 = 3$ (vô lý). Do đó $r(A) = 2 < r(\\bar{A}) = 3$, hệ vô nghiệm.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11866,7 +12195,7 @@
       },
       {
         "key": "B",
-        "text": "Hệ luôn luôn vô nghiệm"
+        "text": "Hệ luôn có đúng 2 nghiệm"
       },
       {
         "key": "C",
@@ -11874,11 +12203,12 @@
       },
       {
         "key": "D",
-        "text": "Hệ luôn có đúng 2 nghiệm"
+        "text": "Hệ luôn luôn vô nghiệm"
       }
     ],
     "correct": "A",
     "explanation": "* Vì $r(A) \\le 2 < 4$, nên nếu hệ có nghiệm ($r(A) = r(\\bar{A})$) thì $r < n$, do đó chắc chắn có ít nhất $n - r > 0$ ẩn tự do, suy ra có vô số nghiệm.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11898,7 +12228,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m > 0$"
+        "text": "$m = 0$"
       },
       {
         "key": "B",
@@ -11906,15 +12236,16 @@
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m \\neq 3$"
       },
       {
         "key": "D",
-        "text": "$m \\neq 3$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "B",
     "explanation": "* Khi $m = 3$, hàng cuối trở thành $[0 \\; 0 \\; 0 \\mid 7]$, tương đương $0 = 7$ (vô lý). Do đó $r(A) = 2 < r(\\bar{A}) = 3$, hệ vô nghiệm.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11934,7 +12265,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ luôn luôn vô nghiệm"
+        "text": "Hệ luôn có đúng 2 nghiệm"
       },
       {
         "key": "B",
@@ -11946,11 +12277,12 @@
       },
       {
         "key": "D",
-        "text": "Hệ luôn có đúng 2 nghiệm"
+        "text": "Hệ luôn luôn vô nghiệm"
       }
     ],
     "correct": "C",
     "explanation": "* Vì $r(A) \\le 2 < 3$, nên nếu hệ có nghiệm ($r(A) = r(\\bar{A})$) thì $r < n$, do đó chắc chắn có ít nhất $n - r > 0$ ẩn tự do, suy ra có vô số nghiệm.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -11987,6 +12319,7 @@
     ],
     "correct": "B",
     "explanation": "* Tính định thức ma trận hệ số $A$:\n  $$\\det A = \\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 3 & m \\\\ 1 & m & 3 \\end{vmatrix} = 1(9 - m^2) - 1(6 - m) - 1(2m - 3) = -m^2 - m + 6$$\n* Giải $\\det A = 0 \\iff m^2 + m - 6 = 0 \\iff (m - 2)(m + 3) = 0 \\iff m = 2$ hoặc $m = -3$.\n* Theo quy tắc Cramer, hệ có nghiệm duy nhất khi và chỉ khi $\\det A \\neq 0 \\iff m \\neq 2$ và $m \\neq -3$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -12010,19 +12343,20 @@
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$1$"
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$3$"
       }
     ],
     "correct": "A",
     "explanation": "* $x = 2/2 = 1$, $y = -2/2 = -1$, $z = 4/2 = 2$. Tổng $x + y + z = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12042,7 +12376,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$X = A B$"
+        "text": "$X = B A^{-1}$"
       },
       {
         "key": "B",
@@ -12054,11 +12388,12 @@
       },
       {
         "key": "D",
-        "text": "$X = B A^{-1}$"
+        "text": "$X = A B$"
       }
     ],
     "correct": "C",
     "explanation": "* Nhân trái hai vế với $A^{-1}$: $A^{-1}AX = A^{-1}B \\iff X = A^{-1}B$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12078,7 +12413,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Chắc chắn có vô số nghiệm"
+        "text": "Chắc chắn có nghiệm duy nhất bằng 0"
       },
       {
         "key": "B",
@@ -12090,11 +12425,12 @@
       },
       {
         "key": "D",
-        "text": "Chắc chắn có nghiệm duy nhất bằng 0"
+        "text": "Chắc chắn có vô số nghiệm"
       }
     ],
     "correct": "C",
     "explanation": "* Bẫy Cramer: $D = 0$ và mọi $D_j = 0$ KHÔNG ĐỒNG NGHĨA với vô số nghiệm. Hệ vẫn có thể vô nghiệm. Cần dùng phương pháp khử Gauss để kết luận.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12114,7 +12450,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Xóa hàng $j$ và cột $j$ của ma trận hệ số $A$"
+        "text": "Nhân định thức chính $D$ với hệ số tự do $b_j$"
       },
       {
         "key": "B",
@@ -12126,11 +12462,12 @@
       },
       {
         "key": "D",
-        "text": "Nhân định thức chính $D$ với hệ số tự do $b_j$"
+        "text": "Xóa hàng $j$ và cột $j$ của ma trận hệ số $A$"
       }
     ],
     "correct": "C",
     "explanation": "* Định nghĩa định thức phụ: $D_j$ là định thức của ma trận thu được khi thay cột thứ $j$ của $A$ bằng cột vế phải $B$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12150,11 +12487,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = 3$"
+        "text": "$x = 1$"
       },
       {
         "key": "B",
-        "text": "$x = 1$"
+        "text": "$x = 3$"
       },
       {
         "key": "C",
@@ -12167,6 +12504,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{10}{5} = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12186,11 +12524,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$2$"
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$6$"
       },
       {
         "key": "C",
@@ -12198,11 +12536,12 @@
       },
       {
         "key": "D",
-        "text": "$6$"
+        "text": "$5$"
       }
     ],
     "correct": "C",
     "explanation": "* $x = 4/2 = 2$, $y = -4/2 = -2$, $z = 6/2 = 3$. Tổng $x + y + z = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12239,6 +12578,7 @@
     ],
     "correct": "D",
     "explanation": "* Nếu $D = 0$ mà $D_j \\neq 0$ thì phương trình tương ứng $0 \\cdot x_j = D_j \\neq 0$ vô nghiệm, dẫn đến toàn hệ vô nghiệm.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12258,7 +12598,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$y = -3$"
+        "text": "$y = 2$"
       },
       {
         "key": "B",
@@ -12266,15 +12606,16 @@
       },
       {
         "key": "C",
-        "text": "$y = 4$"
+        "text": "$y = -3$"
       },
       {
         "key": "D",
-        "text": "$y = 2$"
+        "text": "$y = 4$"
       }
     ],
     "correct": "B",
     "explanation": "* $y = \\dfrac{D_y}{D} = \\dfrac{9}{3} = 3$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12294,7 +12635,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Số phương trình lớn hơn số ẩn"
+        "text": "Định thức chính $D = 0$"
       },
       {
         "key": "B",
@@ -12302,7 +12643,7 @@
       },
       {
         "key": "C",
-        "text": "Định thức chính $D = 0$"
+        "text": "Số phương trình lớn hơn số ẩn"
       },
       {
         "key": "D",
@@ -12311,6 +12652,7 @@
     ],
     "correct": "B",
     "explanation": "* Quy tắc Cramer chỉ áp dụng cho hệ vuông ($n$ phương trình $n$ ẩn) có định thức chính khác 0 ($D \\neq 0$).\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12347,6 +12689,7 @@
     ],
     "correct": "B",
     "explanation": "* Độ phức tạp của Cramer bằng $(n+1)$ lần tính định thức cấp $n$, xấp xỉ $O(n!)$, trong khi khử Gauss chỉ tốn khoảng $\\frac{2}{3} n^3$ phép tính.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12370,7 +12713,7 @@
       },
       {
         "key": "B",
-        "text": "$m > 0$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -12378,11 +12721,12 @@
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "A",
     "explanation": "* Định thức chính $D = m - 5$. Hệ là hệ Cramer $\\iff D \\neq 0 \\iff m \\neq 5$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12402,7 +12746,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = 0$"
+        "text": "$x = -1$"
       },
       {
         "key": "B",
@@ -12410,15 +12754,16 @@
       },
       {
         "key": "C",
-        "text": "$x = 2$"
+        "text": "$x = 0$"
       },
       {
         "key": "D",
-        "text": "$x = -1$"
+        "text": "$x = 2$"
       }
     ],
     "correct": "B",
     "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{2}{2} = 1$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12438,7 +12783,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "$5$"
       },
       {
         "key": "B",
@@ -12450,11 +12795,12 @@
       },
       {
         "key": "D",
-        "text": "$5$"
+        "text": "$9$"
       }
     ],
     "correct": "C",
     "explanation": "* $x = 6/3 = 2$, $y = -6/3 = -2$, $z = 9/3 = 3$. Tổng $x + y + z = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12474,11 +12820,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$y = -3$"
+        "text": "$y = 2$"
       },
       {
         "key": "B",
-        "text": "$y = 2$"
+        "text": "$y = 4$"
       },
       {
         "key": "C",
@@ -12486,11 +12832,12 @@
       },
       {
         "key": "D",
-        "text": "$y = 4$"
+        "text": "$y = -3$"
       }
     ],
     "correct": "C",
     "explanation": "* $y = \\dfrac{D_y}{D} = \\dfrac{6}{2} = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12518,15 +12865,16 @@
       },
       {
         "key": "C",
-        "text": "$x = -3$"
+        "text": "$x = -1$"
       },
       {
         "key": "D",
-        "text": "$x = -1$"
+        "text": "$x = -3$"
       }
     ],
     "correct": "A",
     "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = -\\dfrac{4}{2} = -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12546,7 +12894,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$0$"
       },
       {
         "key": "B",
@@ -12558,11 +12906,12 @@
       },
       {
         "key": "D",
-        "text": "$0$"
+        "text": "$2$"
       }
     ],
     "correct": "B",
     "explanation": "* $x = 2/2 = 1$, $y = -4/2 = -2$, $z = 4/2 = 2$. Tổng $x + y + z = 1$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12582,7 +12931,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = 5$"
+        "text": "$x = -4$"
       },
       {
         "key": "B",
@@ -12590,15 +12939,16 @@
       },
       {
         "key": "C",
-        "text": "$x = -4$"
+        "text": "$x = 3$"
       },
       {
         "key": "D",
-        "text": "$x = 3$"
+        "text": "$x = 5$"
       }
     ],
     "correct": "B",
     "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{8}{2} = 4$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12618,11 +12968,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$4$"
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$6$"
       },
       {
         "key": "C",
@@ -12635,6 +12985,7 @@
     ],
     "correct": "D",
     "explanation": "* $x = 3/3 = 1$, $y = -3/3 = -1$, $z = 6/3 = 2$. Tổng $x + y + z = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12654,7 +13005,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = -1$"
+        "text": "$x = -3$"
       },
       {
         "key": "B",
@@ -12662,15 +13013,16 @@
       },
       {
         "key": "C",
-        "text": "$x = 2$"
+        "text": "$x = -1$"
       },
       {
         "key": "D",
-        "text": "$x = -3$"
+        "text": "$x = 2$"
       }
     ],
     "correct": "B",
     "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = -\\dfrac{10}{5} = -2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12694,19 +13046,20 @@
       },
       {
         "key": "B",
-        "text": "$m = 2$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m = 2$"
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "A",
     "explanation": "* Định thức chính $D = m - 2$. Hệ là hệ Cramer $\\iff D \\neq 0 \\iff m \\neq 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12730,7 +13083,7 @@
       },
       {
         "key": "B",
-        "text": "$x = 0$"
+        "text": "$x = -1$"
       },
       {
         "key": "C",
@@ -12738,11 +13091,12 @@
       },
       {
         "key": "D",
-        "text": "$x = -1$"
+        "text": "$x = 0$"
       }
     ],
     "correct": "A",
     "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = \\dfrac{2}{2} = 1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12762,7 +13116,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$2$"
+        "text": "$9$"
       },
       {
         "key": "B",
@@ -12774,11 +13128,12 @@
       },
       {
         "key": "D",
-        "text": "$9$"
+        "text": "$2$"
       }
     ],
     "correct": "C",
     "explanation": "* $x = 6/3 = 2$, $y = -3/3 = -1$, $z = 6/3 = 2$. Tổng $x + y + z = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12798,15 +13153,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$x = -3$"
-      },
-      {
-        "key": "B",
         "text": "$x = -1$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$x = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$x = -3$"
       },
       {
         "key": "D",
@@ -12815,6 +13170,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo công thức Cramer: $x = \\dfrac{D_x}{D} = -\\dfrac{8}{4} = -2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12834,11 +13190,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$1$"
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -12846,11 +13202,12 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$6$"
       }
     ],
     "correct": "C",
     "explanation": "* $x = 3/3 = 1$, $y = -6/3 = -2$, $z = 9/3 = 3$. Tổng $x + y + z = 2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -12887,6 +13244,7 @@
     ],
     "correct": "A",
     "explanation": "* Cộng phương trình 1và phương trình 2theo từng vế:\n  $$(x - 2x) + (y + 2y) + (-5z + 2z) = -x + 3y - 3z = a + b$$\n* Vế trái chính là vế trái của phương trình (3): $-x + 3y - 3z = c$.\n* Để hệ có nghiệm, vế phải phải tương thích:\n  $$a + b = c \\iff a + b - c = 0$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -12923,6 +13281,7 @@
     ],
     "correct": "B",
     "explanation": "* Hệ phương trình có 3 ẩn $x, y, z$:\n  $$\\begin{cases} 2x + 3y = -11 \\\\ 6x - 5y + z = 45 \\end{cases}$$\n* Ma trận hệ số $A = \\begin{bmatrix} 2 & 3 & 0 \\\\ 6 & -5 & 1 \\end{bmatrix}$, cột số hạng tự do $B = \\begin{bmatrix} -11 \\\\ 45 \\end{bmatrix}$.\n* Ma trận bổ sung $\\bar{A} = [A | B]$ là:\n  $$\\bar{A} = \\begin{bmatrix} 2 & 3 & 0 & -11 \\\\ 6 & -5 & 1 & 45 \\end{bmatrix}$$\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -12959,6 +13318,7 @@
     ],
     "correct": "A",
     "explanation": "* Phương trình tuyến tính với các ẩn $x, y$ là phương trình bậc nhất có dạng tổng quát $ax + by = c$, trong đó các ẩn không được nhân với nhau hoặc có số mũ khác $1$.\n* Xét phương án **A**: Ta có $\\sin \\pi = 0$, do đó:\n  $$(\\sin \\pi) x^2 + y = 2 \\iff 0 \\cdot x^2 + y = 2 \\iff y = 2$$\n  Đây là một phương trình bậc nhất đối với $x, y$ (dạng $y = 2$).\n* Các phương án còn lại:\n  * B: Chứa tích $xy$ (bậc 2) nên là phi tuyến.\n  * C: $\\cos \\pi = -1 \\ne 0 \\implies -x^2 + y = 2$ (bậc 2 theo $x$).\n  * D: $\\sin \\pi = 0 \\implies \\cos 0 = 1 \\ne 0 \\implies x^2 + y = 2$ (bậc 2 theo $x$).\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -12978,7 +13338,7 @@
     "options": [
       {
         "key": "A",
-        "text": "6 và 5"
+        "text": "1 và 6"
       },
       {
         "key": "B",
@@ -12986,7 +13346,7 @@
       },
       {
         "key": "C",
-        "text": "1 và 6"
+        "text": "6 và 5"
       },
       {
         "key": "D",
@@ -12995,6 +13355,7 @@
     ],
     "correct": "B",
     "explanation": "* Số ẩn cơ sở bằng số phần tử chốt (hạng $r = 1$). Số ẩn tự do bằng số ẩn trừ đi số ẩn cơ sở: $n - r = 6 - 1 = 5$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13018,11 +13379,11 @@
       },
       {
         "key": "B",
-        "text": "$[I \\mid A] \\longrightarrow [A^{-1} \\mid I]$"
+        "text": "$[A \\mid A^T] \\longrightarrow [I \\mid A^{-1}]$"
       },
       {
         "key": "C",
-        "text": "$[A \\mid A^T] \\longrightarrow [I \\mid A^{-1}]$"
+        "text": "$[I \\mid A] \\longrightarrow [A^{-1} \\mid I]$"
       },
       {
         "key": "D",
@@ -13031,6 +13392,7 @@
     ],
     "correct": "D",
     "explanation": "* Phương pháp Gauss-Jordan tìm nghịch đảo: Ghép ma trận đơn vị $I$ vào bên phải $A$, dùng biến đổi sơ cấp theo hàng đưa $A$ về $I$, khi đó phần bên phải tự động trở thành $A^{-1}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13050,11 +13412,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Có nghiệm duy nhất"
+        "text": "Có nghiệm bằng 0"
       },
       {
         "key": "B",
-        "text": "Có nghiệm bằng 0"
+        "text": "Có nghiệm duy nhất"
       },
       {
         "key": "C",
@@ -13067,6 +13429,7 @@
     ],
     "correct": "C",
     "explanation": "* Hàng $[0 \\dots 0 \\mid 11]$ tương đương với phương trình $0 = 11 \\neq 0$, phương trình này vô nghiệm nên toàn hệ vô nghiệm.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13090,11 +13453,11 @@
       },
       {
         "key": "B",
-        "text": "$x_1 = 7 + 2t, \\, x_2 = t$"
+        "text": "$x_1 = 7, \\, x_2 = 2t$"
       },
       {
         "key": "C",
-        "text": "$x_1 = 7, \\, x_2 = 2t$"
+        "text": "$x_1 = 7 + 2t, \\, x_2 = t$"
       },
       {
         "key": "D",
@@ -13103,6 +13466,7 @@
     ],
     "correct": "D",
     "explanation": "* Rút $x_1$ theo $x_2$: $x_1 = 7 - 2x_2 = 7 - 2t$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13122,7 +13486,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Nghiệm tầm thường"
+        "text": "Hệ số tự do"
       },
       {
         "key": "B",
@@ -13130,15 +13494,16 @@
       },
       {
         "key": "C",
-        "text": "Hệ số tự do"
+        "text": "Ẩn tự do"
       },
       {
         "key": "D",
-        "text": "Ẩn tự do"
+        "text": "Nghiệm tầm thường"
       }
     ],
     "correct": "B",
     "explanation": "* Ẩn ứng với cột có phần tử chốt gọi là ẩn cơ sở. Ẩn ứng với cột không có phần tử chốt gọi là ẩn tự do.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13175,6 +13540,7 @@
     ],
     "correct": "D",
     "explanation": "* Gauss-Jordan tiếp tục khử ngược từ dưới lên để biến các phần tử phía trên các phần tử chốt thành 0.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13211,6 +13577,7 @@
     ],
     "correct": "D",
     "explanation": "* Thế ngược từ dưới lên: $z = 2 \\implies y = 4 - 2 = 2 \\implies x = 7 - 4 = 3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13230,11 +13597,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Không có ẩn tự do nào"
+        "text": "Chỉ có $x_3$"
       },
       {
         "key": "B",
-        "text": "Chỉ có $x_3$"
+        "text": "$x_1$ và $x_2$"
       },
       {
         "key": "C",
@@ -13242,11 +13609,12 @@
       },
       {
         "key": "D",
-        "text": "$x_1$ và $x_2$"
+        "text": "Không có ẩn tự do nào"
       }
     ],
     "correct": "C",
     "explanation": "* Ẩn cơ sở là $x_1$ và $x_2$. Các cột 3 và 4 không chứa chốt nên $x_3, x_4$ là các ẩn tự do.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13274,15 +13642,16 @@
       },
       {
         "key": "C",
-        "text": "Chỉ có các phần tử trên hàng đầu tiên khác 0"
+        "text": "Tất cả các phần tử ngoài đường chéo chính đều bằng 1"
       },
       {
         "key": "D",
-        "text": "Tất cả các phần tử ngoài đường chéo chính đều bằng 1"
+        "text": "Chỉ có các phần tử trên hàng đầu tiên khác 0"
       }
     ],
     "correct": "B",
     "explanation": "* Định nghĩa RREF: Các phần tử chốt đều bằng 1 và trên cột chứa phần tử chốt, tất cả các phần tử còn lại đều bằng 0.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13319,6 +13688,7 @@
     ],
     "correct": "A",
     "explanation": "* Khi ma trận tam giác trên có các phần tử chéo khác 0 thì định thức $\\det A \\neq 0$, do đó hệ luôn có nghiệm duy nhất.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13342,11 +13712,11 @@
       },
       {
         "key": "B",
-        "text": "Từ giữa hệ phương trình giải ra hai bên"
+        "text": "Từ phương trình đầu tiên giải dần xuống dưới"
       },
       {
         "key": "C",
-        "text": "Từ phương trình đầu tiên giải dần xuống dưới"
+        "text": "Từ giữa hệ phương trình giải ra hai bên"
       },
       {
         "key": "D",
@@ -13355,6 +13725,7 @@
     ],
     "correct": "D",
     "explanation": "* Sau khi đưa về bậc thang, phương trình cuối có ít ẩn nhất, ta giải ẩn đó rồi thế ngược lên các phương trình trên.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13374,11 +13745,11 @@
     "options": [
       {
         "key": "A",
-        "text": "(2, 3, 1)"
+        "text": "(4, 1, 1)"
       },
       {
         "key": "B",
-        "text": "(4, 1, 1)"
+        "text": "(3, 1, 2)"
       },
       {
         "key": "C",
@@ -13386,11 +13757,12 @@
       },
       {
         "key": "D",
-        "text": "(3, 1, 2)"
+        "text": "(2, 3, 1)"
       }
     ],
     "correct": "C",
     "explanation": "* Thế ngược từ dưới lên: $z = 1 \\implies y = 3 - 1 = 2 \\implies x = 6 - 3 = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13410,15 +13782,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$1$"
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$5$"
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$3$"
       },
       {
         "key": "D",
@@ -13427,6 +13799,7 @@
     ],
     "correct": "D",
     "explanation": "* Số ẩn tự do bằng $n - r = 5 - 3 = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13463,6 +13836,7 @@
     ],
     "correct": "A",
     "explanation": "* Thế ngược từ dưới lên: $z = 3 \\implies y = 5 - 3 = 2 \\implies x = 6 - 5 = 1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13482,15 +13856,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Không có ẩn tự do nào"
-      },
-      {
-        "key": "B",
         "text": "Chỉ có $x_4$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$x_1$ và $x_3$"
+      },
+      {
+        "key": "C",
+        "text": "Không có ẩn tự do nào"
       },
       {
         "key": "D",
@@ -13499,6 +13873,7 @@
     ],
     "correct": "D",
     "explanation": "* Ẩn cơ sở là $x_1$ và $x_3$. Các ẩn còn lại $x_2, x_4$ là ẩn tự do.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13518,7 +13893,7 @@
     "options": [
       {
         "key": "A",
-        "text": "(4, 1, 1)"
+        "text": "(1, 1, 4)"
       },
       {
         "key": "B",
@@ -13526,7 +13901,7 @@
       },
       {
         "key": "C",
-        "text": "(1, 1, 4)"
+        "text": "(4, 1, 1)"
       },
       {
         "key": "D",
@@ -13535,6 +13910,7 @@
     ],
     "correct": "B",
     "explanation": "* Thế ngược từ dưới lên: $z = 1 \\implies y = 5 - 1 = 4 \\implies x = 6 - 5 = 1$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13558,7 +13934,7 @@
       },
       {
         "key": "B",
-        "text": "3 và 1"
+        "text": "2 và 3"
       },
       {
         "key": "C",
@@ -13566,11 +13942,12 @@
       },
       {
         "key": "D",
-        "text": "2 và 3"
+        "text": "3 và 1"
       }
     ],
     "correct": "A",
     "explanation": "* Số ẩn cơ sở bằng số phần tử chốt (hạng $r = 2$). Số ẩn tự do bằng số ẩn trừ đi số ẩn cơ sở: $n - r = 3 - 2 = 1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13594,11 +13971,11 @@
       },
       {
         "key": "B",
-        "text": "Hệ có đúng 2 nghiệm"
+        "text": "Hệ có vô số nghiệm"
       },
       {
         "key": "C",
-        "text": "Hệ có vô số nghiệm"
+        "text": "Hệ có đúng 2 nghiệm"
       },
       {
         "key": "D",
@@ -13607,6 +13984,7 @@
     ],
     "correct": "D",
     "explanation": "* Khi ma trận tam giác trên có các phần tử chéo khác 0 thì định thức $\\det A \\neq 0$, do đó hệ luôn có nghiệm duy nhất.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13630,19 +14008,20 @@
       },
       {
         "key": "B",
-        "text": "$x_1 = 1 + 2t, \\, x_2 = t$"
-      },
-      {
-        "key": "C",
         "text": "$x_1 = t, \\, x_2 = 1 - 2t$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$x_1 = 1, \\, x_2 = 2t$"
+      },
+      {
+        "key": "D",
+        "text": "$x_1 = 1 + 2t, \\, x_2 = t$"
       }
     ],
     "correct": "A",
     "explanation": "* Rút $x_1$ theo $x_2$: $x_1 = 1 - 2x_2 = 1 - 2t$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13670,15 +14049,16 @@
       },
       {
         "key": "C",
-        "text": "Hệ vô nghiệm"
+        "text": "Hệ có đúng 2 nghiệm"
       },
       {
         "key": "D",
-        "text": "Hệ có đúng 2 nghiệm"
+        "text": "Hệ vô nghiệm"
       }
     ],
     "correct": "A",
     "explanation": "* Khi ma trận tam giác trên có các phần tử chéo khác 0 thì định thức $\\det A \\neq 0$, do đó hệ luôn có nghiệm duy nhất.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13702,19 +14082,20 @@
       },
       {
         "key": "B",
-        "text": "$x_1 = t, \\, x_2 = 5 - 2t$"
-      },
-      {
-        "key": "C",
         "text": "$x_1 = 5, \\, x_2 = 2t$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$x_1 = 5 + 2t, \\, x_2 = t$"
+      },
+      {
+        "key": "D",
+        "text": "$x_1 = t, \\, x_2 = 5 - 2t$"
       }
     ],
     "correct": "A",
     "explanation": "* Rút $x_1$ theo $x_2$: $x_1 = 5 - 2x_2 = 5 - 2t$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13738,7 +14119,7 @@
       },
       {
         "key": "B",
-        "text": "2 và 3"
+        "text": "5 và 2"
       },
       {
         "key": "C",
@@ -13746,11 +14127,12 @@
       },
       {
         "key": "D",
-        "text": "5 và 2"
+        "text": "2 và 3"
       }
     ],
     "correct": "C",
     "explanation": "* Số ẩn cơ sở bằng số phần tử chốt (hạng $r = 3$). Số ẩn tự do bằng số ẩn trừ đi số ẩn cơ sở: $n - r = 5 - 3 = 2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13770,7 +14152,7 @@
     "options": [
       {
         "key": "A",
-        "text": "(2, 1, 1)"
+        "text": "(1, 1, 2)"
       },
       {
         "key": "B",
@@ -13782,11 +14164,12 @@
       },
       {
         "key": "D",
-        "text": "(1, 1, 2)"
+        "text": "(2, 1, 1)"
       }
     ],
     "correct": "C",
     "explanation": "* Thế ngược từ dưới lên: $z = 1 \\implies y = 3 - 1 = 2 \\implies x = 4 - 3 = 1$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13823,6 +14206,7 @@
     ],
     "correct": "A",
     "explanation": "* Hệ phương trình thuần nhất vuông có nghiệm không tầm thường khi và chỉ khi định thức của ma trận hệ số bằng 0:\n  $$\\det A = \\begin{vmatrix} 1 & 1 & -1 \\\\ 2 & 4 & a \\\\ 3 & 11 & 1 \\end{vmatrix} = 0$$\n* Khai triển:\n  $$\\det A = 1(4 - 11a) - 1(2 - 3a) - 1(22 - 12) = 4 - 11a - 2 + 3a - 10 = -8a - 8$$\n* $\\det A = 0 \\iff -8a - 8 = 0 \\iff a = -1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -13859,6 +14243,7 @@
     ],
     "correct": "B",
     "explanation": "* Hệ phương trình thuần nhất luôn luôn có nghiệm tầm thường $X = \\vec{0}$, nên không bao giờ vô nghiệm (loại C).\n* Ma trận hệ số $A$ có cỡ $3 \\times 6$, suy ra hạng $r(A) \\le 3$.\n* Số ẩn là $n = 6$.\n* Vì $r(A) \\le 3 < 6$ nên số chiều không gian nghiệm $\\dim S = n - r(A) \\ge 6 - 3 = 3 > 0$.\n* Do đó hệ luôn có vô số nghiệm phụ thuộc vào ít nhất 3 tham số tự do.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -13895,6 +14280,7 @@
     ],
     "correct": "D",
     "explanation": "* Không gian nghiệm của hệ thuần nhất 5 ẩn có số chiều: $\\dim V = n - r(A) = 5 - r(A)$.\n* Để $\\dim V$ lớn nhất thì hạng $r(A)$ phải nhỏ nhất.\n* Biến đổi sơ cấp ma trận hệ số $A$:\n  $$h_2 \\to h_2 - 2h_1 \\implies (0, 1, 2, 3, 4)$$\n* Xét hàng 3: để $r(A) = 2$ (nhỏ nhất) thì hàng 3 phải là tổ hợp tuyến tính của hàng 1 và hàng 2.\n  * Cụ thể $h_3 = (m - 3) h_1 + (4 - m) h_2$. Ta thấy hệ số của $x_2$ là $5$ và $x_3$ là $6$:\n    $h_3 - 5h_2 = ((m+1) - 10) x_1 + (7 - 15) x_4 \\implies$ giải ra $m = 3$.\n  * Khi $m = 3$, hàng 3 trở thành: $4x_1 + 5x_2 + 6x_3 + 7x_4 + 8x_5 = 2(2x_1 + 3x_2 + 4x_3 + 5x_4 + 6x_5) - (x_1 + x_2 + x_3 + x_4 + x_5) = 2h_2 - h_1$.\n  * Do đó hàng 3 phụ thuộc tuyến tính vào 2 hàng đầu, suy ra $r(A) = 2$.\n* Khi $r(A) = 2$, $\\dim V = 5 - 2 = 3$ (lớn nhất).\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -13931,6 +14317,7 @@
     ],
     "correct": "C",
     "explanation": "* Hệ phương trình đại số tuyến tính thuần nhất $AX = 0$ luôn có nghiệm tầm thường $X = (0, 0, \\dots, 0)^T$, do đó hệ **luôn có nghiệm** (không bao giờ vô nghiệm).\n* Khi $p < n$, hệ có vô số nghiệm phụ thuộc vào $n - p$ ẩn tự do. Khẳng định \"Khi $p < n$ hệ vô nghiệm\" là hoàn toàn sai.\n* Các khẳng định A, B, D đều đúng theo định lý Kronecker-Capelli và tính chất hệ thuần nhất.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -13950,7 +14337,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) > 5$"
+        "text": "$r(A) = 5$"
       },
       {
         "key": "B",
@@ -13958,15 +14345,16 @@
       },
       {
         "key": "C",
-        "text": "$r(A) = 5$"
+        "text": "$\\det A \\neq 0$"
       },
       {
         "key": "D",
-        "text": "$\\det A \\neq 0$"
+        "text": "$r(A) > 5$"
       }
     ],
     "correct": "B",
     "explanation": "* Hệ thuần nhất có nghiệm không tầm thường khi và chỉ khi hệ có vô số nghiệm, tức là hạng của ma trận hệ số nhỏ hơn số ẩn: $r(A) < 5$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -13986,11 +14374,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Tổng của hai nghiệm của hệ thuần nhất cũng là một nghiệm của hệ thuần nhất"
+        "text": "Hệ phương trình thuần nhất luôn có nghiệm tầm thường"
       },
       {
         "key": "B",
-        "text": "Nếu số ẩn lớn hơn số phương trình ($n > m$) thì hệ thuần nhất luôn có nghiệm không tầm thường"
+        "text": "Tổng của hai nghiệm của hệ thuần nhất cũng là một nghiệm của hệ thuần nhất"
       },
       {
         "key": "C",
@@ -13998,11 +14386,12 @@
       },
       {
         "key": "D",
-        "text": "Hệ phương trình thuần nhất luôn có nghiệm tầm thường"
+        "text": "Nếu số ẩn lớn hơn số phương trình ($n > m$) thì hệ thuần nhất luôn có nghiệm không tầm thường"
       }
     ],
     "correct": "C",
     "explanation": "* Khẳng định 'Hệ phương trình thuần nhất có thể vô nghiệm' là SAI vì hệ thuần nhất luôn luôn có nghiệm $X = 0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14039,6 +14428,7 @@
     ],
     "correct": "D",
     "explanation": "* Hệ thuần nhất có nghiệm không tầm thường khi $\\det A = 0 \\iff 1(m - 3) - 2(3) = 0 \\iff m - 3 = 6 \\iff m = 9$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14058,7 +14448,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$X = c_1 e_1 \\cdot c_2 e_2$"
+        "text": "$X = e_1 + e_2 + \\dots + e_k$"
       },
       {
         "key": "B",
@@ -14066,7 +14456,7 @@
       },
       {
         "key": "C",
-        "text": "$X = e_1 + e_2 + \\dots + e_k$"
+        "text": "$X = c_1 e_1 \\cdot c_2 e_2$"
       },
       {
         "key": "D",
@@ -14075,6 +14465,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì hệ nghiệm cơ bản là một cơ sở của không gian nghiệm, nên mọi nghiệm đều là tổ hợp tuyến tính duy nhất của các véc tơ cơ sở đó.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14094,7 +14485,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -14106,11 +14497,12 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$6$"
       }
     ],
     "correct": "C",
     "explanation": "* Số chiều của không gian nghiệm của hệ thuần nhất bằng số ẩn trừ đi hạng: $\\dim W = n - r(A) = 6 - 3 = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14130,7 +14522,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$X = X_0 \\cdot X_{tn}$"
+        "text": "$X = X_0$"
       },
       {
         "key": "B",
@@ -14138,15 +14530,16 @@
       },
       {
         "key": "C",
-        "text": "$X = X_{tn} - X_0$"
+        "text": "$X = X_0 \\cdot X_{tn}$"
       },
       {
         "key": "D",
-        "text": "$X = X_0$"
+        "text": "$X = X_{tn} - X_0$"
       }
     ],
     "correct": "B",
     "explanation": "* Định lý cấu trúc nghiệm: Nghiệm tổng quát của hệ không thuần nhất bằng tổng của một nghiệm riêng bất kỳ và nghiệm tổng quát của hệ thuần nhất liên kết.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14170,7 +14563,7 @@
       },
       {
         "key": "B",
-        "text": "Vô số véc tơ"
+        "text": "$5$ véc tơ"
       },
       {
         "key": "C",
@@ -14178,11 +14571,12 @@
       },
       {
         "key": "D",
-        "text": "$5$ véc tơ"
+        "text": "Vô số véc tơ"
       }
     ],
     "correct": "A",
     "explanation": "* Số ẩn là 5, số phương trình độc lập là 1 ($r = 1$). Số véc tơ trong hệ nghiệm cơ bản bằng $n - r = 5 - 1 = 4$ véc tơ.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14202,11 +14596,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Tập hợp các nghiệm có tọa độ nguyên"
+        "text": "Tập hợp tất cả các nghiệm của hệ"
       },
       {
         "key": "B",
-        "text": "Tập hợp tất cả các nghiệm của hệ"
+        "text": "Tập hợp các nghiệm có tọa độ nguyên"
       },
       {
         "key": "C",
@@ -14219,6 +14613,7 @@
     ],
     "correct": "C",
     "explanation": "* Theo định nghĩa, hệ nghiệm cơ bản chính là một cơ sở của không gian nghiệm, gồm đúng $n - r(A)$ véc tơ nghiệm độc lập tuyến tính.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14238,11 +14633,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Một tập hợp hữu hạn các điểm"
+        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
       },
       {
         "key": "B",
-        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
+        "text": "Một tập hợp hữu hạn các điểm"
       },
       {
         "key": "C",
@@ -14255,6 +14650,7 @@
     ],
     "correct": "D",
     "explanation": "* Nếu $AX_1 = 0$ và $AX_2 = 0$ thì $A(c_1 X_1 + c_2 X_2) = 0$, do đó tập nghiệm đóng kín với phép cộng và nhân vô hướng, tạo thành một không gian con (hạt nhân $\\ker A$).\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14274,7 +14670,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ có nghiệm khi ma trận $A$ khả nghịch"
+        "text": "Luôn luôn có vô số nghiệm"
       },
       {
         "key": "B",
@@ -14282,7 +14678,7 @@
       },
       {
         "key": "C",
-        "text": "Luôn luôn có vô số nghiệm"
+        "text": "Chỉ có nghiệm khi ma trận $A$ khả nghịch"
       },
       {
         "key": "D",
@@ -14291,6 +14687,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì $X = (0, 0, \\dots, 0)^T$ luôn thỏa mãn $A \\cdot 0 = 0$, nên hệ thuần nhất KHÔNG BAO GIỜ vô nghiệm.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14310,7 +14707,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Một tập hợp hữu hạn các điểm"
+        "text": "Một mặt cầu trong $\\mathbb{R}^{3}$"
       },
       {
         "key": "B",
@@ -14318,15 +14715,16 @@
       },
       {
         "key": "C",
-        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
+        "text": "Một tập hợp hữu hạn các điểm"
       },
       {
         "key": "D",
-        "text": "Một mặt cầu trong $\\mathbb{R}^{3}$"
+        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
       }
     ],
     "correct": "B",
     "explanation": "* Nếu $AX_1 = 0$ và $AX_2 = 0$ thì $A(c_1 X_1 + c_2 X_2) = 0$, do đó tập nghiệm đóng kín với phép cộng và nhân vô hướng, tạo thành một không gian con (hạt nhân $\\ker A$).\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14346,11 +14744,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq 10$"
+        "text": "$m = 4$"
       },
       {
         "key": "B",
-        "text": "$m = 4$"
+        "text": "$m \\neq 10$"
       },
       {
         "key": "C",
@@ -14363,6 +14761,7 @@
     ],
     "correct": "C",
     "explanation": "* Hệ thuần nhất có nghiệm không tầm thường khi $\\det A = 0 \\iff 1(m - 4) - 2(3) = 0 \\iff m - 4 = 6 \\iff m = 10$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14386,19 +14785,20 @@
       },
       {
         "key": "B",
-        "text": "$3$"
-      },
-      {
-        "key": "C",
         "text": "$1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$5$"
+      },
+      {
+        "key": "D",
+        "text": "$3$"
       }
     ],
     "correct": "A",
     "explanation": "* Số chiều của không gian nghiệm của hệ thuần nhất bằng số ẩn trừ đi hạng: $\\dim W = n - r(A) = 5 - 3 = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14418,15 +14818,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) > 4$"
+        "text": "$r(A) = 4$"
       },
       {
         "key": "B",
-        "text": "$\\det A \\neq 0$"
+        "text": "$r(A) > 4$"
       },
       {
         "key": "C",
-        "text": "$r(A) = 4$"
+        "text": "$\\det A \\neq 0$"
       },
       {
         "key": "D",
@@ -14435,6 +14835,7 @@
     ],
     "correct": "D",
     "explanation": "* Hệ thuần nhất có nghiệm không tầm thường khi và chỉ khi hệ có vô số nghiệm, tức là hạng của ma trận hệ số nhỏ hơn số ẩn: $r(A) < 4$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14454,7 +14855,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -14466,11 +14867,12 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$5$"
       }
     ],
     "correct": "C",
     "explanation": "* Số chiều của không gian nghiệm của hệ thuần nhất bằng số ẩn trừ đi hạng: $\\dim W = n - r(A) = 5 - 2 = 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14490,11 +14892,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$r(A) = 3$"
+        "text": "$\\det A \\neq 0$"
       },
       {
         "key": "B",
-        "text": "$\\det A \\neq 0$"
+        "text": "$r(A) = 3$"
       },
       {
         "key": "C",
@@ -14507,6 +14909,7 @@
     ],
     "correct": "C",
     "explanation": "* Hệ thuần nhất có nghiệm không tầm thường khi và chỉ khi hệ có vô số nghiệm, tức là hạng của ma trận hệ số nhỏ hơn số ẩn: $r(A) < 3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14530,11 +14933,11 @@
       },
       {
         "key": "B",
-        "text": "$1$ véc tơ"
+        "text": "$4$ véc tơ"
       },
       {
         "key": "C",
-        "text": "$4$ véc tơ"
+        "text": "$1$ véc tơ"
       },
       {
         "key": "D",
@@ -14543,6 +14946,7 @@
     ],
     "correct": "A",
     "explanation": "* Số ẩn là 4, số phương trình độc lập là 1 ($r = 1$). Số véc tơ trong hệ nghiệm cơ bản bằng $n - r = 4 - 1 = 3$ véc tơ.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14579,6 +14983,7 @@
     ],
     "correct": "C",
     "explanation": "* Số chiều của không gian nghiệm của hệ thuần nhất bằng số ẩn trừ đi hạng: $\\dim W = n - r(A) = 4 - 3 = 1$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14606,15 +15011,16 @@
       },
       {
         "key": "C",
-        "text": "$1$ véc tơ"
+        "text": "Vô số véc tơ"
       },
       {
         "key": "D",
-        "text": "Vô số véc tơ"
+        "text": "$1$ véc tơ"
       }
     ],
     "correct": "B",
     "explanation": "* Số ẩn là 3, số phương trình độc lập là 1 ($r = 1$). Số véc tơ trong hệ nghiệm cơ bản bằng $n - r = 3 - 1 = 2$ véc tơ.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14638,7 +15044,7 @@
       },
       {
         "key": "B",
-        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
+        "text": "Một tập hợp hữu hạn các điểm"
       },
       {
         "key": "C",
@@ -14646,11 +15052,12 @@
       },
       {
         "key": "D",
-        "text": "Một tập hợp hữu hạn các điểm"
+        "text": "Không phải là một không gian véc tơ vì không chứa véc tơ không"
       }
     ],
     "correct": "A",
     "explanation": "* Nếu $AX_1 = 0$ và $AX_2 = 0$ thì $A(c_1 X_1 + c_2 X_2) = 0$, do đó tập nghiệm đóng kín với phép cộng và nhân vô hướng, tạo thành một không gian con (hạt nhân $\\ker A$).\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14687,6 +15094,7 @@
     ],
     "correct": "B",
     "explanation": "* Số chiều của không gian nghiệm của hệ thuần nhất bằng số ẩn trừ đi hạng: $\\dim W = n - r(A) = 6 - 2 = 4$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14723,6 +15131,7 @@
     ],
     "correct": "A",
     "explanation": "* Mọi phần tử trong $\\operatorname{im} f$ đều là tổ hợp tuyến tính của $f(S)$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14746,19 +15155,20 @@
       },
       {
         "key": "B",
-        "text": "Luôn bằng $\\{\\theta\\}$"
+        "text": "Là một tập hợp hữu hạn các điểm"
       },
       {
         "key": "C",
-        "text": "Chỉ là không gian con khi $f$ là song ánh"
+        "text": "Luôn bằng $\\{\\theta\\}$"
       },
       {
         "key": "D",
-        "text": "Là một tập hợp hữu hạn các điểm"
+        "text": "Chỉ là không gian con khi $f$ là song ánh"
       }
     ],
     "correct": "A",
     "explanation": "* $\\operatorname{im} f = \\{f(v) \\mid v \\in V\\}$ là không gian con của $W$\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14778,11 +15188,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - 3y = 1\\}$"
+        "text": "$\\{(0, 0)\\}$"
       },
       {
         "key": "B",
-        "text": "$\\{(0, 0)\\}$"
+        "text": "$\\mathbb{R}^2$"
       },
       {
         "key": "C",
@@ -14790,11 +15200,12 @@
       },
       {
         "key": "D",
-        "text": "$\\mathbb{R}^2$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - 3y = 1\\}$"
       }
     ],
     "correct": "C",
     "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x + 3y, 0) = (0, 0) \\iff 3x + 3y = 0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14818,19 +15229,20 @@
       },
       {
         "key": "B",
-        "text": "Một ánh xạ phi tuyến tính"
-      },
-      {
-        "key": "C",
         "text": "Chỉ tuyến tính khi $n = 1$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Một đẳng cấu ma trận"
+      },
+      {
+        "key": "D",
+        "text": "Một ánh xạ phi tuyến tính"
       }
     ],
     "correct": "A",
     "explanation": "* Vết có tính chất $\\text{tr}(A+B) = \\text{tr}(A) + \\text{tr}(B)$ và $\\text{tr}(kA) = k\\text{tr}(A)$\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14850,7 +15262,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$f(x, y) = (y, \\, 2x)$"
+        "text": "$f(x, y) = (2x - y, \\, 2x)$"
       },
       {
         "key": "B",
@@ -14858,7 +15270,7 @@
       },
       {
         "key": "C",
-        "text": "$f(x, y) = (2x - y, \\, 2x)$"
+        "text": "$f(x, y) = (y, \\, 2x)$"
       },
       {
         "key": "D",
@@ -14867,6 +15279,7 @@
     ],
     "correct": "D",
     "explanation": "* Ánh xạ $f(x, y) = (2x - y + 5, x - y)$ có $f(0, 0) = (5, 0) \\neq (0, 0)$ do có hằng số tự do $5 \\neq 0$. Mọi ánh xạ tuyến tính bắt buộc biến véc tơ không thành véc tơ không ($f(\\theta) = \\theta$). Do đó đây không phải ánh xạ tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14890,7 +15303,7 @@
       },
       {
         "key": "B",
-        "text": "Hệ ảnh luôn phụ thuộc tuyến tính kể cả khi $f$ là đẳng cấu"
+        "text": "Hệ ảnh luôn là một cơ sở của không gian đích $W$"
       },
       {
         "key": "C",
@@ -14898,11 +15311,12 @@
       },
       {
         "key": "D",
-        "text": "Hệ ảnh luôn là một cơ sở của không gian đích $W$"
+        "text": "Hệ ảnh luôn phụ thuộc tuyến tính kể cả khi $f$ là đẳng cấu"
       }
     ],
     "correct": "A",
     "explanation": "* Vì $c_1 u_1 + \\dots + c_k u_k = \\theta_V$ nên $c_1 f(u_1) + \\dots + c_k f(u_k) = \\theta_W$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14939,6 +15353,7 @@
     ],
     "correct": "B",
     "explanation": "* $\\ker f = \\{v \\in V \\mid f(v) = \\theta_W\\}$ luôn chứa $\\theta_V$ và đóng kín với phép cộng, nhân vô hướng\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -14958,11 +15373,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\mathbb{R}^2$"
+        "text": "$\\{(0, 0)\\}$"
       },
       {
         "key": "B",
-        "text": "$\\{(0, 0)\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - 2y = 1\\}$"
       },
       {
         "key": "C",
@@ -14970,11 +15385,12 @@
       },
       {
         "key": "D",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x - 2y = 1\\}$"
+        "text": "$\\mathbb{R}^2$"
       }
     ],
     "correct": "C",
     "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x + 2y, 0) = (0, 0) \\iff 3x + 2y = 0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15002,15 +15418,16 @@
       },
       {
         "key": "C",
-        "text": "Một ánh xạ phi tuyến tính"
+        "text": "Chỉ tuyến tính khi $n = 1$"
       },
       {
         "key": "D",
-        "text": "Chỉ tuyến tính khi $n = 1$"
+        "text": "Một ánh xạ phi tuyến tính"
       }
     ],
     "correct": "B",
     "explanation": "* Tích phân xác định bảo toàn phép cộng và nhân vô hướng\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15034,11 +15451,11 @@
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$0$"
       },
       {
         "key": "C",
-        "text": "$0$"
+        "text": "$2$"
       },
       {
         "key": "D",
@@ -15047,6 +15464,7 @@
     ],
     "correct": "A",
     "explanation": "* Theo định lý số chiều: $\\dim V = \\dim(\\ker f) + \\dim(\\operatorname{im} f) \\iff 3 = \\dim(\\ker f) + 2 \\implies \\dim(\\ker f) = 3 - 2 = 1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15070,19 +15488,20 @@
       },
       {
         "key": "B",
-        "text": "$1$"
-      },
-      {
-        "key": "C",
         "text": "$0$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$3$"
+      },
+      {
+        "key": "D",
+        "text": "$1$"
       }
     ],
     "correct": "A",
     "explanation": "* Ta viết $f(x, y) = x(1, 2, 0) + y(0, 0, 4)$. Hai véc tơ $(1, 2, 0)$ và $(0, 0, 4)$ độc lập tuyến tính, nên $\\operatorname{im} f$ sinh bởi 2 véc tơ này và $\\dim(\\operatorname{im} f) = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15110,15 +15529,16 @@
       },
       {
         "key": "C",
-        "text": "(0, 7)"
+        "text": "(3, 4)"
       },
       {
         "key": "D",
-        "text": "(3, 4)"
+        "text": "(0, 7)"
       }
     ],
     "correct": "B",
     "explanation": "* Theo tính tuyến tính: $f(-1u_1 + 2u_2) = -1f(u_1) + 2f(u_2) = -1(2, 1) + 2(2, 3) = (2, 5)$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15142,11 +15562,11 @@
       },
       {
         "key": "B",
-        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
+        "text": "Có, vì $f(0, 0) = (0, 0)$"
       },
       {
         "key": "C",
-        "text": "Có, vì $f(0, 0) = (0, 0)$"
+        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
       },
       {
         "key": "D",
@@ -15155,6 +15575,7 @@
     ],
     "correct": "D",
     "explanation": "* Xét $u = (1, 0)$ với $k = 2$: $f(k u) = f(2, 0) = (2^3, 0) = (8, 0)$, trong khi $k f(u) = 2(1, 0) = (2, 0) \\neq (8, 0)$. Vì $f(ku) \\neq k f(u)$ nên không tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15178,11 +15599,11 @@
       },
       {
         "key": "B",
-        "text": "Không phải là ánh xạ tuyến tính"
+        "text": "Chỉ tuyến tính khi $U = W$"
       },
       {
         "key": "C",
-        "text": "Chỉ tuyến tính khi $U = W$"
+        "text": "Không phải là ánh xạ tuyến tính"
       },
       {
         "key": "D",
@@ -15191,6 +15612,7 @@
     ],
     "correct": "A",
     "explanation": "* Hợp thành hai toàn ánh là một toàn ánh\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15210,7 +15632,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$2$"
       },
       {
         "key": "B",
@@ -15218,7 +15640,7 @@
       },
       {
         "key": "C",
-        "text": "$2$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -15227,6 +15649,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo định lý số chiều: $\\dim V = \\dim(\\ker f) + \\dim(\\operatorname{im} f) \\iff 4 = \\dim(\\ker f) + 1 \\implies \\dim(\\ker f) = 4 - 1 = 3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15246,15 +15669,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
-      },
-      {
-        "key": "B",
         "text": "$0$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$3$"
+      },
+      {
+        "key": "C",
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -15263,6 +15686,7 @@
     ],
     "correct": "D",
     "explanation": "* Ta viết $f(x, y) = x(1, 2, 0) + y(0, 0, 3)$. Hai véc tơ $(1, 2, 0)$ và $(0, 0, 3)$ độc lập tuyến tính, nên $\\operatorname{im} f$ sinh bởi 2 véc tơ này và $\\dim(\\operatorname{im} f) = 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15290,15 +15714,16 @@
       },
       {
         "key": "C",
-        "text": "(4, 10)"
+        "text": "(7, 7)"
       },
       {
         "key": "D",
-        "text": "(7, 7)"
+        "text": "(4, 10)"
       }
     ],
     "correct": "B",
     "explanation": "* Theo tính tuyến tính: $f(2u_1 + 2u_2) = 2f(u_1) + 2f(u_2) = 2(3, 2) + 2(0, 2) = (6, 8)$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15318,7 +15743,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
+        "text": "Có, vì $f(0, 0) = (0, 0)$"
       },
       {
         "key": "B",
@@ -15326,7 +15751,7 @@
       },
       {
         "key": "C",
-        "text": "Có, vì $f(0, 0) = (0, 0)$"
+        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
       },
       {
         "key": "D",
@@ -15335,6 +15760,7 @@
     ],
     "correct": "B",
     "explanation": "* Xét $u = (1, 0)$ với $k = 2$: $f(k u) = f(2, 0) = (2^2, 0) = (4, 0)$, trong khi $k f(u) = 2(1, 0) = (2, 0) \\neq (4, 0)$. Vì $f(ku) \\neq k f(u)$ nên không tuyến tính.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15371,6 +15797,7 @@
     ],
     "correct": "D",
     "explanation": "* Do $f(\\theta) = f(0 \\cdot v) = 0 \\cdot f(v) = \\theta_W$\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15394,11 +15821,11 @@
       },
       {
         "key": "B",
-        "text": "$\\{(0, 0)\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + y = 1\\}$"
       },
       {
         "key": "C",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid 3x + y = 1\\}$"
+        "text": "$\\{(0, 0)\\}$"
       },
       {
         "key": "D",
@@ -15407,6 +15834,7 @@
     ],
     "correct": "A",
     "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (3x - y, 0) = (0, 0) \\iff 3x - y = 0$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15426,11 +15854,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Một ánh xạ phi tuyến tính"
+        "text": "Chỉ tuyến tính khi $n = 1$"
       },
       {
         "key": "B",
-        "text": "Chỉ tuyến tính khi $n = 1$"
+        "text": "Một ánh xạ phi tuyến tính"
       },
       {
         "key": "C",
@@ -15443,6 +15871,7 @@
     ],
     "correct": "C",
     "explanation": "* Đạo hàm có tính chất $(p+q)' = p'+q'$ và $(kp)' = kp'$\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15462,7 +15891,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\{(0, 0)\\}$"
+        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid x - 2y = 1\\}$"
       },
       {
         "key": "B",
@@ -15474,11 +15903,12 @@
       },
       {
         "key": "D",
-        "text": "$\\{(x, y) \\in \\mathbb{R}^2 \\mid x - 2y = 1\\}$"
+        "text": "$\\{(0, 0)\\}$"
       }
     ],
     "correct": "C",
     "explanation": "* Theo định nghĩa hạt nhân: $\\ker f = \\{u \\in \\mathbb{R}^2 \\mid f(u) = (0, 0)\\} \\iff (x + 2y, 0) = (0, 0) \\iff x + 2y = 0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15498,7 +15928,7 @@
     "options": [
       {
         "key": "A",
-        "text": "(4, 2)"
+        "text": "(3, 3)"
       },
       {
         "key": "B",
@@ -15506,7 +15936,7 @@
       },
       {
         "key": "C",
-        "text": "(3, 3)"
+        "text": "(4, 2)"
       },
       {
         "key": "D",
@@ -15515,6 +15945,7 @@
     ],
     "correct": "D",
     "explanation": "* Theo tính tuyến tính: $f(2u_1 + 2u_2) = 2f(u_1) + 2f(u_2) = 2(1, 1) + 2(0, 1) = (2, 4)$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15534,7 +15965,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Có, vì $f(0, 0) = (0, 0)$"
+        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
       },
       {
         "key": "B",
@@ -15542,7 +15973,7 @@
       },
       {
         "key": "C",
-        "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
+        "text": "Có, vì $f(0, 0) = (0, 0)$"
       },
       {
         "key": "D",
@@ -15551,6 +15982,7 @@
     ],
     "correct": "D",
     "explanation": "* Xét $u = (1, 0)$ với $k = 2$: $f(k u) = f(2, 0) = (2^2, 0) = (4, 0)$, trong khi $k f(u) = 2(1, 0) = (2, 0) \\neq (4, 0)$. Vì $f(ku) \\neq k f(u)$ nên không tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15578,15 +16010,16 @@
       },
       {
         "key": "C",
-        "text": "(10, 2)"
+        "text": "(3, 9)"
       },
       {
         "key": "D",
-        "text": "(3, 9)"
+        "text": "(10, 2)"
       }
     ],
     "correct": "B",
     "explanation": "* Theo tính tuyến tính: $f(3u_1 + 3u_2) = 3f(u_1) + 3f(u_2) = 3(1, -1) + 3(2, 2) = (9, 3)$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15610,19 +16043,20 @@
       },
       {
         "key": "B",
-        "text": "Chỉ tuyến tính khi $x \\ge 0$"
-      },
-      {
-        "key": "C",
         "text": "Có, vì $f(0, 0) = (0, 0)$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "Có, vì là một song ánh từ $\\mathbb{R}^2 \\to \\mathbb{R}^2$"
+      },
+      {
+        "key": "D",
+        "text": "Chỉ tuyến tính khi $x \\ge 0$"
       }
     ],
     "correct": "A",
     "explanation": "* Xét $u = (1, 0)$ với $k = 2$: $f(k u) = f(2, 0) = (2^3, 0) = (8, 0)$, trong khi $k f(u) = 2(1, 0) = (2, 0) \\neq (8, 0)$. Vì $f(ku) \\neq k f(u)$ nên không tuyến tính.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15659,6 +16093,7 @@
     ],
     "correct": "A",
     "explanation": "* Ánh xạ từ $\\mathbb{R}^3$ sang $\\mathbb{R}^2$ có ma trận cỡ $2 \\times 3$.\n* Tính ảnh của từng véc tơ trong cơ sở $B_1$:\n  * $f(0, 1, 1) = (-2, 0) = c_1(1, 1) + c_2(1, 2) \\implies \\begin{cases} c_1 + c_2 = -2 \\\\ c_1 + 2c_2 = 0 \\end{cases} \\implies c_2 = 2, c_1 = -4 \\implies \\begin{bmatrix} -4 \\\\ 2 \\end{bmatrix}$.\n  * $f(1, 1, 1) = (-1, 1) = c_1(1, 1) + c_2(1, 2) \\implies \\begin{cases} c_1 + c_2 = -1 \\\\ c_1 + 2c_2 = 1 \\end{cases} \\implies c_2 = 2, c_1 = -3 \\implies \\begin{bmatrix} -3 \\\\ 2 \\end{bmatrix}$.\n  * $f(1, 1, 0) = (0, 2) = c_1(1, 1) + c_2(1, 2) \\implies \\begin{cases} c_1 + c_2 = 0 \\\\ c_1 + 2c_2 = 2 \\end{cases} \\implies c_2 = 2, c_1 = -2 \\implies \\begin{bmatrix} -2 \\\\ 2 \\end{bmatrix}$.\n* Ghép các cột lại ta được:\n  $$[f] = \\begin{bmatrix} -4 & -3 & -2 \\\\ 2 & 2 & 2 \\end{bmatrix}$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -15695,6 +16130,7 @@
     ],
     "correct": "C",
     "explanation": "* Xét ma trận biểu diễn của $f$:\n  $$A = \\begin{bmatrix} 1 & -2 & -1 & -1 \\\\ 0 & 1 & 2 & 3 \\\\ 1 & -1 & 3 & 0 \\end{bmatrix}$$\n* Khử Gauss: $h_3 \\to h_3 - h_1$:\n  $$\\begin{bmatrix} 0 & 1 & 4 & 1 \\end{bmatrix}$$\n* $h_3 \\to h_3 - h_2$:\n  $$\\begin{bmatrix} 0 & 0 & 2 & -2 \\end{bmatrix}$$\n* Ma trận có 3 hàng khác 0, suy ra hạng $r(A) = 3$.\n* Theo định lý số chiều:\n  $$\\dim \\operatorname{Ker} f = \\dim \\mathbb{R}^4 - r(A) = 4 - 3 = 1$$\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -15731,6 +16167,7 @@
     ],
     "correct": "C",
     "explanation": "* Một toán tử tuyến tính trên $\\mathbb{R}^2$ là đẳng cấu khi và chỉ khi định thức của ma trận biểu diễn khác 0:\n  * Xét phương án C: ma trận biểu diễn là $A = \\begin{bmatrix} 1 & -2 \\\\ -2 & 4 \\end{bmatrix}$.\n  * Định thức $\\det A = 1(4) - (-2)(-2) = 4 - 4 = 0$.\n  * Vì $\\det A = 0$, $f$ không khả nghịch, do đó **không là đẳng cấu**.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -15767,6 +16204,7 @@
     ],
     "correct": "B",
     "explanation": "* Ma trận của $f$ trong cơ sở chính tắc $\\{1, x, x^2\\}$:\n  $$A = \\begin{bmatrix} 1 & 1 & m \\\\ 1 & m & 1 \\\\ m & 1 & 1 \\end{bmatrix}$$\n* Ta có $\\dim(\\operatorname{Im} f) = r(A)$. Để $r(A) = 2$, ma trận phải có $\\det A = 0$ và ít nhất một định thức con cấp 2 khác 0.\n* Tính định thức:\n  $$\\det A = -(m - 1)^2 (m + 2)$$\n  * Nếu $m = 1$: ma trận có 3 hàng giống hệt nhau $\\implies r(A) = 1$.\n  * Nếu $m = -2$: $\\det A = 0$ và $\\begin{vmatrix} 1 & 1 \\\\ 1 & -2 \\end{vmatrix} = -3 \\neq 0 \\implies r(A) = 2$.\n* Vậy điều kiện để $\\dim(\\operatorname{Im} f) = 2$ là $m = -2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -15803,6 +16241,7 @@
     ],
     "correct": "A",
     "explanation": "* Trong cơ sở chính tắc của $\\mathbb{R}^3$, ảnh của các véctơ cơ sở là:\n  $$f(e_1) = f(1, 0, 0) = (-5, -3, -6)$$\n  $$f(e_2) = f(0, 1, 0) = (3, 1, 6)$$\n  $$f(e_3) = f(0, 0, 1) = (3, 3, 4)$$\n* Theo quy ước biểu diễn dạng tọa độ của giáo trình PTIT:\n  $$\\begin{bmatrix} y_1 \\\\ y_2 \\\\ y_3 \\end{bmatrix} = \\begin{bmatrix} -5 & 3 & 3 \\\\ -3 & 1 & 3 \\\\ -6 & 6 & 4 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix}$$\n* Do đó ma trận của ánh xạ tuyến tính $f$ là $A = \\begin{bmatrix} -5 & 3 & 3 \\\\ -3 & 1 & 3 \\\\ -6 & 6 & 4 \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -15826,19 +16265,20 @@
       },
       {
         "key": "B",
-        "text": "$[v]_{B'} = C [v]_B$"
+        "text": "$[v]_B = C^{-1} [v]_{B'}$"
       },
       {
         "key": "C",
-        "text": "$[v]_B = C^T [v]_{B'}$"
+        "text": "$[v]_{B'} = C [v]_B$"
       },
       {
         "key": "D",
-        "text": "$[v]_B = C^{-1} [v]_{B'}$"
+        "text": "$[v]_B = C^T [v]_{B'}$"
       }
     ],
     "correct": "A",
     "explanation": "* Công thức chuyển tọa độ véc tơ: $[v]_B = C [v]_{B'}$ và $[v]_{B'} = C^{-1} [v]_B$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15862,19 +16302,20 @@
       },
       {
         "key": "B",
-        "text": "$2$"
-      },
-      {
-        "key": "C",
         "text": "$4$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$0$"
+      },
+      {
+        "key": "D",
+        "text": "$2$"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý: Hạng của ánh xạ tuyến tính chính bằng hạng của ma trận biểu diễn nó: $\\dim(\\operatorname{im} f) = \\text{rank}(A) = 3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15894,7 +16335,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 0 & 1 & 2 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 2 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -15902,7 +16343,7 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 0 & 1 & 2 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -15911,6 +16352,7 @@
     ],
     "correct": "B",
     "explanation": "* $D(1) = 0 \\implies [0, 0, 0]^T$; $D(x) = 1 \\implies [1, 0, 0]^T$; $D(x^2) = 2x \\implies [0, 2, 0]^T$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15934,19 +16376,20 @@
       },
       {
         "key": "B",
-        "text": "$A' = C A C^{-1}$"
+        "text": "$A' = C^T A C$"
       },
       {
         "key": "C",
-        "text": "$A' = C A C^T$"
+        "text": "$A' = C A C^{-1}$"
       },
       {
         "key": "D",
-        "text": "$A' = C^T A C$"
+        "text": "$A' = C A C^T$"
       }
     ],
     "correct": "A",
     "explanation": "* Công thức biến đổi ma trận của toán tử tuyến tính khi đổi cơ sở: $A' = C^{-1} A C$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -15970,11 +16413,11 @@
       },
       {
         "key": "B",
-        "text": "$4 \\times 3$ (4 hàng, 3 cột)"
+        "text": "$3 \\times 3$"
       },
       {
         "key": "C",
-        "text": "$3 \\times 3$"
+        "text": "$4 \\times 3$ (4 hàng, 3 cột)"
       },
       {
         "key": "D",
@@ -15983,6 +16426,7 @@
     ],
     "correct": "D",
     "explanation": "* Quy tắc chuẩn: Ánh xạ từ không gian $n$ chiều vào không gian $m$ chiều ($f: \\mathbb{R}^n \\to \\mathbb{R}^m$) có ma trận kích thước $m \\times n$ (số hàng = số chiều đích, số cột = số chiều nguồn).\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16002,7 +16446,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Tổng $A + B$"
+        "text": "Tích $A \\cdot B$"
       },
       {
         "key": "B",
@@ -16014,11 +16458,12 @@
       },
       {
         "key": "D",
-        "text": "Tích $A \\cdot B$"
+        "text": "Tổng $A + B$"
       }
     ],
     "correct": "C",
     "explanation": "* Ta có $[(g \\circ f)(u)] = [g(f(u))] = B [f(u)] = B (A [u]) = (BA) [u]$. Vậy ma trận của $g \\circ f$ là $B A$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16038,7 +16483,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\det A = \\det B$"
+        "text": "$A$ và $B$ có cùng đa thức đặc trưng"
       },
       {
         "key": "B",
@@ -16050,11 +16495,12 @@
       },
       {
         "key": "D",
-        "text": "$A$ và $B$ có cùng đa thức đặc trưng"
+        "text": "$\\det A = \\det B$"
       }
     ],
     "correct": "C",
     "explanation": "* Hai ma trận đồng dạng có cùng đa thức đặc trưng, cùng định thức, cùng vết và cùng các giá trị riêng, nhưng các véc tơ riêng nói chung khác nhau (véc tơ riêng được biến đổi qua ma trận chuyển $P$).\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16078,11 +16524,11 @@
       },
       {
         "key": "B",
-        "text": "$(6, -5)$"
+        "text": "$(4, -6)$"
       },
       {
         "key": "C",
-        "text": "$(4, -6)$"
+        "text": "$(6, -5)$"
       },
       {
         "key": "D",
@@ -16091,6 +16537,7 @@
     ],
     "correct": "A",
     "explanation": "* Ta nhân ma trận: $[f(v)] = A [v] = \\begin{bmatrix} 1 & 0 \\\\ -1 & -2 \\end{bmatrix} \\begin{bmatrix} 3 \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 3 \\\\ -5 \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16127,6 +16574,7 @@
     ],
     "correct": "A",
     "explanation": "* Cơ sở chính tắc $e_1 = (1, 0), e_2 = (0, 1)$. Ta có $f(e_1) = (1, -1)$ (cột 1) và $f(e_2) = (6, 9)$ (cột 2). Vậy ma trận là $\\begin{bmatrix} 1 & 6 \\\\ -1 & 9 \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16150,11 +16598,11 @@
       },
       {
         "key": "B",
-        "text": "$(4x, \\, 3y)$"
+        "text": "$(4x - 2y, \\, -x + 3y)$"
       },
       {
         "key": "C",
-        "text": "$(4x - 2y, \\, -x + 3y)$"
+        "text": "$(4x, \\, 3y)$"
       },
       {
         "key": "D",
@@ -16163,6 +16611,7 @@
     ],
     "correct": "A",
     "explanation": "* Nhân ma trận: $\\begin{bmatrix} 4 & -1 \\\\ -2 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 4x - y \\\\ -2x + 3y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16199,6 +16648,7 @@
     ],
     "correct": "D",
     "explanation": "* Cơ sở chính tắc $e_1 = (1, 0), e_2 = (0, 1)$. Ta có $f(e_1) = (2, -2)$ (cột 1) và $f(e_2) = (5, 7)$ (cột 2). Vậy ma trận là $\\begin{bmatrix} 2 & 5 \\\\ -2 & 7 \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16222,19 +16672,20 @@
       },
       {
         "key": "B",
-        "text": "$(5x + 2y, \\, -2x + 3y)$"
-      },
-      {
-        "key": "C",
         "text": "$(3x, \\, 5y)$"
       },
       {
-        "key": "D",
+        "key": "C",
         "text": "$(3x - 2y, \\, 2x + 5y)$"
+      },
+      {
+        "key": "D",
+        "text": "$(5x + 2y, \\, -2x + 3y)$"
       }
     ],
     "correct": "A",
     "explanation": "* Nhân ma trận: $\\begin{bmatrix} 3 & 2 \\\\ -2 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 3x + 2y \\\\ -2x + 5y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16258,11 +16709,11 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 2 & -3 \\\\ 5 & 9 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -3 & 9 \\\\ 2 & 5 \\end{bmatrix}$"
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} -3 & 9 \\\\ 2 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & -3 \\\\ 5 & 9 \\end{bmatrix}$"
       },
       {
         "key": "D",
@@ -16271,6 +16722,7 @@
     ],
     "correct": "D",
     "explanation": "* Cơ sở chính tắc $e_1 = (1, 0), e_2 = (0, 1)$. Ta có $f(e_1) = (2, -3)$ (cột 1) và $f(e_2) = (5, 9)$ (cột 2). Vậy ma trận là $\\begin{bmatrix} 2 & 5 \\\\ -3 & 9 \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16307,6 +16759,7 @@
     ],
     "correct": "A",
     "explanation": "* Nhân ma trận: $\\begin{bmatrix} 3 & -1 \\\\ 0 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 3x - y \\\\ 3y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16326,7 +16779,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 9 & -2 \\\\ 5 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & -2 \\\\ 5 & 9 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -16334,15 +16787,16 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} -2 & 9 \\\\ 1 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 9 & -2 \\\\ 5 & 1 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 1 & -2 \\\\ 5 & 9 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -2 & 9 \\\\ 1 & 5 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
     "explanation": "* Cơ sở chính tắc $e_1 = (1, 0), e_2 = (0, 1)$. Ta có $f(e_1) = (1, -2)$ (cột 1) và $f(e_2) = (5, 9)$ (cột 2). Vậy ma trận là $\\begin{bmatrix} 1 & 5 \\\\ -2 & 9 \\end{bmatrix}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16379,6 +16833,7 @@
     ],
     "correct": "D",
     "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & -1 \\\\ 0 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x - y \\\\ 5y \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16406,15 +16861,16 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 2 & -2 \\\\ 6 & 9 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -2 & 9 \\\\ 2 & 6 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} -2 & 9 \\\\ 2 & 6 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & -2 \\\\ 6 & 9 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
     "explanation": "* Cơ sở chính tắc $e_1 = (1, 0), e_2 = (0, 1)$. Ta có $f(e_1) = (2, -2)$ (cột 1) và $f(e_2) = (6, 9)$ (cột 2). Vậy ma trận là $\\begin{bmatrix} 2 & 6 \\\\ -2 & 9 \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16438,11 +16894,11 @@
       },
       {
         "key": "B",
-        "text": "$(2x + y, \\, -x + 2y)$"
+        "text": "$(2x, \\, 2y)$"
       },
       {
         "key": "C",
-        "text": "$(2x, \\, 2y)$"
+        "text": "$(2x + y, \\, -x + 2y)$"
       },
       {
         "key": "D",
@@ -16451,6 +16907,7 @@
     ],
     "correct": "D",
     "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & -1 \\\\ 1 & 2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x - y \\\\ x + 2y \\end{bmatrix}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16478,15 +16935,16 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} -1 & 7 \\\\ 1 & 5 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & -1 \\\\ 5 & 7 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 1 & -1 \\\\ 5 & 7 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -1 & 7 \\\\ 1 & 5 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
     "explanation": "* Cơ sở chính tắc $e_1 = (1, 0), e_2 = (0, 1)$. Ta có $f(e_1) = (1, -1)$ (cột 1) và $f(e_2) = (5, 7)$ (cột 2). Vậy ma trận là $\\begin{bmatrix} 1 & 5 \\\\ -1 & 7 \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16510,19 +16968,20 @@
       },
       {
         "key": "B",
-        "text": "$(2x, \\, 5y)$"
+        "text": "$(2x - 2y, \\, x + 5y)$"
       },
       {
         "key": "C",
-        "text": "$(5x + y, \\, -2x + 2y)$"
+        "text": "$(2x, \\, 5y)$"
       },
       {
         "key": "D",
-        "text": "$(2x - 2y, \\, x + 5y)$"
+        "text": "$(5x + y, \\, -2x + 2y)$"
       }
     ],
     "correct": "A",
     "explanation": "* Nhân ma trận: $\\begin{bmatrix} 2 & 1 \\\\ -2 & 5 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2x + y \\\\ -2x + 5y \\end{bmatrix}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16559,6 +17018,7 @@
     ],
     "correct": "A",
     "explanation": "* Không gian ảnh $\\operatorname{Im} f$ được sinh bởi các véc tơ cột của ma trận chính tắc:\n  $$u_1 = \\begin{bmatrix} 1 \\\\ -2 \\end{bmatrix}, \\quad u_2 = \\begin{bmatrix} -2 \\\\ 4 \\end{bmatrix} = -2 u_1$$\n* Vì $u_2$ tỉ lệ với $u_1$, mọi véc tơ thuộc $\\operatorname{Im} f$ đều có dạng $k(1, -2) = (k, -2k)$ với $k \\in \\mathbb{R}$.\n* Xét các phương án:\n  * Phương án A: $(3, -6) = 3(1, -2)$ (thỏa mãn với $k = 3$).\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -16595,6 +17055,7 @@
     ],
     "correct": "C",
     "explanation": "* Xét phương án C: Các hệ số của đa thức ảnh là $a_1, -2a_0, a_1 + a_2$ đều là biểu thức bậc nhất thuần nhất đối với các tọa độ $(a_0, a_1, a_2)$, và $f(0) = 0$. Do đó $f$ là ánh xạ tuyến tính.\n* Các phương án khác vi phạm:\n  * A sai vì có số hạng tự do $+1$ ở hệ số của $x$ ($f(0) = -x \\neq 0$).\n  * B sai vì có số hạng bậc hai $-z^2$.\n  * D sai vì có tích hai biến $xy$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -16631,6 +17092,7 @@
     ],
     "correct": "A",
     "explanation": "* Xét các ánh xạ phi tuyến:\n  * $g$ chứa $x^2$ (bậc hai) $\\implies$ không tuyến tính.\n  * $k$ chứa $|x|$ (trị tuyệt đối, $k(-u) \\neq -k(u)$) $\\implies$ không tuyến tính.\n* Các ánh xạ $f, h, l, t$ đều có các thành phần là đa thức bậc nhất thuần nhất đối với $(x, y, z)$, thỏa mãn $F(u + v) = F(u) + F(v)$ và $F(cu) = c F(u)$.\n* Vậy $f, h, l, t$ là các ánh xạ tuyến tính.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": true,
     "origin": "original"
   },
@@ -16654,7 +17116,7 @@
       },
       {
         "key": "B",
-        "text": "$\\operatorname{im} f = W$"
+        "text": "$\\det A = 0$"
       },
       {
         "key": "C",
@@ -16662,11 +17124,12 @@
       },
       {
         "key": "D",
-        "text": "$\\det A = 0$"
+        "text": "$\\operatorname{im} f = W$"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý: Ánh xạ tuyến tính $f$ là đơn ánh khi và chỉ khi $\\ker f = \\{\\theta_V\\}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16703,6 +17166,7 @@
     ],
     "correct": "A",
     "explanation": "* $f$ là đẳng cấu $\\iff \\det A \\neq 0 \\iff 1\\cdot m - 2(-2) \\neq 0 \\iff m \\neq -4$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16726,7 +17190,7 @@
       },
       {
         "key": "B",
-        "text": "Luôn luôn là một đẳng cấu"
+        "text": "Có $\\dim(\\operatorname{im} f) = 5$"
       },
       {
         "key": "C",
@@ -16734,11 +17198,12 @@
       },
       {
         "key": "D",
-        "text": "Có $\\dim(\\operatorname{im} f) = 5$"
+        "text": "Luôn luôn là một đẳng cấu"
       }
     ],
     "correct": "A",
     "explanation": "* Vì $\\dim(\\operatorname{im} f) \\le \\dim(\\mathbb{R}^3) = 3 < 5 = \\dim(\\mathbb{R}^5)$, tập ảnh không thể phủ kín không gian đích. Do đó $f$ không thể là toàn ánh.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16775,6 +17240,7 @@
     ],
     "correct": "B",
     "explanation": "* Vì $\\det A = 4 \\neq 0$, ma trận $A$ khả nghịch, do đó $f$ là một đẳng cấu tuyến tính.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16794,7 +17260,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -16802,7 +17268,7 @@
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -16811,6 +17277,7 @@
     ],
     "correct": "B",
     "explanation": "* Theo định lý số chiều: $\\dim V = \\dim(\\ker f) + \\dim(\\operatorname{im} f) \\iff 4 = \\dim(\\ker f) + 2 \\implies \\dim(\\ker f) = 2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16838,15 +17305,16 @@
       },
       {
         "key": "C",
-        "text": "Chúng cùng là không gian con của $\\mathbb{R}^n$"
+        "text": "$\\dim V + \\dim W$ là số lẻ"
       },
       {
         "key": "D",
-        "text": "$\\dim V + \\dim W$ là số lẻ"
+        "text": "Chúng cùng là không gian con của $\\mathbb{R}^n$"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý phân loại: Hai không gian véc tơ hữu hạn chiều trên trường $\\mathbb{R}$ đẳng cấu khi và chỉ khi $\\dim V = \\dim W$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16874,15 +17342,16 @@
       },
       {
         "key": "C",
-        "text": "Luôn có $\\ker f = \\{\\theta\\}$"
+        "text": "Luôn luôn là một đẳng cấu"
       },
       {
         "key": "D",
-        "text": "Luôn luôn là một đẳng cấu"
+        "text": "Luôn có $\\ker f = \\{\\theta\\}$"
       }
     ],
     "correct": "B",
     "explanation": "* Vì $\\dim(\\operatorname{im} f) \\le 2$, theo định lý số chiều $\\dim(\\ker f) = 4 - \\dim(\\operatorname{im} f) \\ge 4 - 2 > 0$. Do $\\ker f \\neq \\{\\theta\\}$, $f$ không thể là đơn ánh.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16919,6 +17388,7 @@
     ],
     "correct": "B",
     "explanation": "* Trong không gian cùng số chiều hữu hạn ($3 = 3$), ba mệnh đề sau là tương đương: $f$ đơn ánh $\\iff f$ toàn ánh $\\iff f$ đẳng cấu.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16938,11 +17408,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\dim V \\le \\dim W$"
+        "text": "$\\dim V = \\dim(\\ker f)$"
       },
       {
         "key": "B",
-        "text": "$\\ker f = \\{\\theta_V\\}$"
+        "text": "$\\dim V \\le \\dim W$"
       },
       {
         "key": "C",
@@ -16950,11 +17420,12 @@
       },
       {
         "key": "D",
-        "text": "$\\dim V = \\dim(\\ker f)$"
+        "text": "$\\ker f = \\{\\theta_V\\}$"
       }
     ],
     "correct": "C",
     "explanation": "* Định lý: Ánh xạ tuyến tính $f$ là toàn ánh khi và chỉ khi $\\operatorname{im} f = W$ (tương đương $\\dim(\\operatorname{im} f) = \\dim W$).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -16974,11 +17445,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Hệ ảnh chỉ độc lập tuyến tính nhưng không sinh ra $W$"
+        "text": "Hệ ảnh luôn phụ thuộc tuyến tính"
       },
       {
         "key": "B",
-        "text": "Hệ ảnh luôn phụ thuộc tuyến tính"
+        "text": "Hệ ảnh chỉ độc lập tuyến tính nhưng không sinh ra $W$"
       },
       {
         "key": "C",
@@ -16991,6 +17462,7 @@
     ],
     "correct": "C",
     "explanation": "* Đẳng cấu tuyến tính bảo toàn tính độc lập tuyến tính và tính sinh, do đó luôn biến cơ sở thành cơ sở.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17010,11 +17482,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn luôn là một đẳng cấu"
+        "text": "Luôn có $\\ker f = \\{\\theta\\}$"
       },
       {
         "key": "B",
-        "text": "Luôn có $\\ker f = \\{\\theta\\}$"
+        "text": "Luôn luôn là một đẳng cấu"
       },
       {
         "key": "C",
@@ -17027,6 +17499,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì $\\dim(\\operatorname{im} f) \\le 3$, theo định lý số chiều $\\dim(\\ker f) = 4 - \\dim(\\operatorname{im} f) \\ge 4 - 3 > 0$. Do $\\ker f \\neq \\{\\theta\\}$, $f$ không thể là đơn ánh.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17046,7 +17519,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$f$ không thể là đẳng cấu"
+        "text": "$f$ luôn luôn là một toàn ánh"
       },
       {
         "key": "B",
@@ -17054,15 +17527,16 @@
       },
       {
         "key": "C",
-        "text": "$f$ có thể là đơn ánh nhưng không phải toàn ánh"
+        "text": "$f$ không thể là đẳng cấu"
       },
       {
         "key": "D",
-        "text": "$f$ luôn luôn là một toàn ánh"
+        "text": "$f$ có thể là đơn ánh nhưng không phải toàn ánh"
       }
     ],
     "correct": "B",
     "explanation": "* Trong không gian cùng số chiều hữu hạn ($4 = 4$), ba mệnh đề sau là tương đương: $f$ đơn ánh $\\iff f$ toàn ánh $\\iff f$ đẳng cấu.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17082,7 +17556,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m \\neq 0$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
@@ -17090,7 +17564,7 @@
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq 0$"
       },
       {
         "key": "D",
@@ -17099,6 +17573,7 @@
     ],
     "correct": "B",
     "explanation": "* $f$ là đẳng cấu $\\iff \\det A \\neq 0 \\iff 1\\cdot m - 2(2) \\neq 0 \\iff m \\neq 4$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17118,15 +17593,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Không có ánh xạ ngược"
+        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
       },
       {
         "key": "B",
-        "text": "Không phải đơn ánh"
+        "text": "Không có ánh xạ ngược"
       },
       {
         "key": "C",
-        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
+        "text": "Không phải đơn ánh"
       },
       {
         "key": "D",
@@ -17135,6 +17610,7 @@
     ],
     "correct": "D",
     "explanation": "* Vì $\\det A = -7 \\neq 0$, ma trận $A$ khả nghịch, do đó $f$ là một đẳng cấu tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17171,6 +17647,7 @@
     ],
     "correct": "A",
     "explanation": "* Vì $\\dim(\\operatorname{im} f) \\le \\dim(\\mathbb{R}^3) = 3 < 4 = \\dim(\\mathbb{R}^4)$, tập ảnh không thể phủ kín không gian đích. Do đó $f$ không thể là toàn ánh.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17194,19 +17671,20 @@
       },
       {
         "key": "B",
-        "text": "Không có ánh xạ ngược"
+        "text": "Không phải đơn ánh"
       },
       {
         "key": "C",
-        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
+        "text": "Không có ánh xạ ngược"
       },
       {
         "key": "D",
-        "text": "Không phải đơn ánh"
+        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
       }
     ],
     "correct": "A",
     "explanation": "* Vì $\\det A = 3 \\neq 0$, ma trận $A$ khả nghịch, do đó $f$ là một đẳng cấu tuyến tính.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17243,6 +17721,7 @@
     ],
     "correct": "A",
     "explanation": "* Theo định lý số chiều: $\\dim V = \\dim(\\ker f) + \\dim(\\operatorname{im} f) \\iff 5 = \\dim(\\ker f) + 2 \\implies \\dim(\\ker f) = 3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17266,7 +17745,7 @@
       },
       {
         "key": "B",
-        "text": "Không phải đơn ánh"
+        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
       },
       {
         "key": "C",
@@ -17274,11 +17753,12 @@
       },
       {
         "key": "D",
-        "text": "Chỉ là đơn ánh chứ không phải toàn ánh"
+        "text": "Không phải đơn ánh"
       }
     ],
     "correct": "C",
     "explanation": "* Vì $\\det A = 5 \\neq 0$, ma trận $A$ khả nghịch, do đó $f$ là một đẳng cấu tuyến tính.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17298,11 +17778,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$5$"
       },
       {
         "key": "B",
-        "text": "$5$"
+        "text": "$6$"
       },
       {
         "key": "C",
@@ -17315,6 +17795,7 @@
     ],
     "correct": "C",
     "explanation": "* Theo định lý số chiều: $\\dim V = \\dim(\\ker f) + \\dim(\\operatorname{im} f) \\iff 6 = \\dim(\\ker f) + 2 \\implies \\dim(\\ker f) = 4$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17338,11 +17819,11 @@
       },
       {
         "key": "B",
-        "text": "$m = -3$"
+        "text": "$m \\neq 0$"
       },
       {
         "key": "C",
-        "text": "$m \\neq 0$"
+        "text": "$m = -3$"
       },
       {
         "key": "D",
@@ -17351,6 +17832,7 @@
     ],
     "correct": "D",
     "explanation": "* $f$ là đẳng cấu $\\iff \\det A \\neq 0 \\iff 1\\cdot m - 3(-1) \\neq 0 \\iff m \\neq -3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17370,7 +17852,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn luôn là một đẳng cấu"
+        "text": "Không bao giờ có thể là đơn ánh"
       },
       {
         "key": "B",
@@ -17382,11 +17864,12 @@
       },
       {
         "key": "D",
-        "text": "Không bao giờ có thể là đơn ánh"
+        "text": "Luôn luôn là một đẳng cấu"
       }
     ],
     "correct": "B",
     "explanation": "* Vì $\\dim(\\operatorname{im} f) \\le \\dim(\\mathbb{R}^2) = 2 < 5 = \\dim(\\mathbb{R}^5)$, tập ảnh không thể phủ kín không gian đích. Do đó $f$ không thể là toàn ánh.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17414,15 +17897,16 @@
       },
       {
         "key": "C",
-        "text": "$m \\neq 0$"
+        "text": "$m = 6$"
       },
       {
         "key": "D",
-        "text": "$m = 6$"
+        "text": "$m \\neq 0$"
       }
     ],
     "correct": "A",
     "explanation": "* $f$ là đẳng cấu $\\iff \\det A \\neq 0 \\iff 1\\cdot m - 3(2) \\neq 0 \\iff m \\neq 6$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17459,6 +17943,7 @@
     ],
     "correct": "A",
     "explanation": "* $f$ là đẳng cấu $\\iff \\det A \\neq 0 \\iff 1\\cdot m - 2(3) \\neq 0 \\iff m \\neq 6$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17495,6 +17980,7 @@
     ],
     "correct": "C",
     "explanation": "* Ma trận của $f$ trong cơ sở chính tắc: $A = \\begin{bmatrix} 3 & 2 \\\\ 4 & 1 \\end{bmatrix}$.\n* Phương trình đặc trưng:\n  $$\\det(A - \\lambda I) = (3 - \\lambda)(1 - \\lambda) - 8 = \\lambda^2 - 4\\lambda - 5 = 0 \\iff \\lambda_1 = -1, \\, \\lambda_2 = 5$$\n* Với $\\lambda_1 = -1$: giải $(A + I)v = 0 \\iff \\begin{bmatrix} 4 & 2 \\\\ 4 & 2 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = 0 \\iff 2x + y = 0$. Chọn $v_1 = (1, -2)$.\n* Với $\\lambda_2 = 5$: giải $(A - 5I)v = 0 \\iff \\begin{bmatrix} -2 & 2 \\\\ 4 & -4 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = 0 \\iff x - y = 0$. Chọn $v_2 = (1, 1)$.\n* Cơ sở gồm các véc tơ riêng: $\\{v_1 = (1, -2), v_2 = (1, 1)\\}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -17531,6 +18017,7 @@
     ],
     "correct": "A",
     "explanation": "* Véc tơ $v$ là véc tơ riêng ứng với $\\lambda = 9$ khi và chỉ khi $(A - 9I)v = 0$.\n* Ta có $A - 9I = \\begin{bmatrix} -1 & -2 & 2 \\\\ -2 & -4 & 4 \\\\ 2 & 4 & -4 \\end{bmatrix}$.\n* Cả 3 hàng đều tỉ lệ với $(-1, -2, 2)$, tương đương với phương trình: $-x - 2y + 2z = 0$.\n  * Kiểm tra $(2, 1, 2)$: $-2 - 2(1) + 2(2) = 0$ (thỏa mãn $\\implies$ là véc tơ riêng).\n  * Kiểm tra $(-2, 1, 0)$: $-(-2) - 2(1) + 0 = 0$ (thỏa mãn $\\implies$ là véc tơ riêng).\n  * Kiểm tra $(3, 2, 3)$: $-3 - 2(2) + 2(3) = -1 \\neq 0$ (KHÔNG thỏa mãn).\n* Vậy $(3, 2, 3)$ không phải là véc tơ riêng, khẳng định A là **không đúng**.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -17567,6 +18054,7 @@
     ],
     "correct": "A",
     "explanation": "* Phương trình đặc trưng của $A$:\n  $$\\det(A - \\lambda I) = \\begin{vmatrix} 1-\\lambda & 2 & 2 \\\\ 1 & 2-\\lambda & -1 \\\\ -1 & 1 & 4-\\lambda \\end{vmatrix} = (1 - \\lambda)(\\lambda - 3)^2 = 0$$\n  Suy ra ma trận có giá trị riêng $\\lambda_1 = 1$ (bội 1) và $\\lambda_2 = 3$ (bội 2).\n* **Với $\\lambda_1 = 1$:** Giải $(A - I)v = 0$:\n  $$\\begin{bmatrix} 0 & 2 & 2 \\\\ 1 & 1 & -1 \\\\ -1 & 1 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = 0 \\implies \\begin{cases} y + z = 0 \\\\ x + y - z = 0 \\end{cases} \\implies v_1 = (-2, 1, -1)^T$$\n* **Với $\\lambda_2 = 3$:** Giải $(A - 3I)v = 0$:\n  $$\\begin{bmatrix} -2 & 2 & 2 \\\\ 1 & -1 & -1 \\\\ -1 & 1 & 1 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = 0 \\iff -x + y + z = 0 \\iff x = y + z$$\n  Chọn 2 véctơ riêng độc lập tuyến tính:\n  * Cho $y = 1, z = 0 \\implies v_2 = (1, 1, 0)^T$\n  * Cho $y = -1, z = 1 \\implies v_3 = (0, -1, 1)^T$\n* Ghép 3 véctơ riêng thành các cột của ma trận $P$:\n  $$P = \\begin{bmatrix} -2 & 1 & 0 \\\\ 1 & 1 & -1 \\\\ -1 & 0 & 1 \\end{bmatrix}$$\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -17586,15 +18074,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\det(A) - \\lambda = 0$"
+        "text": "$\\text{tr}(A - \\lambda I) = 0$"
       },
       {
         "key": "B",
-        "text": "$A - \\lambda I = O$"
+        "text": "$\\det(A) - \\lambda = 0$"
       },
       {
         "key": "C",
-        "text": "$\\text{tr}(A - \\lambda I) = 0$"
+        "text": "$A - \\lambda I = O$"
       },
       {
         "key": "D",
@@ -17603,6 +18091,7 @@
     ],
     "correct": "D",
     "explanation": "* Phương trình đặc trưng: $\\det(A - \\lambda I) = 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17622,7 +18111,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn trực giao với nhau"
+        "text": "Luôn có chuẩn bằng 1"
       },
       {
         "key": "B",
@@ -17630,15 +18119,16 @@
       },
       {
         "key": "C",
-        "text": "Luôn có chuẩn bằng 1"
+        "text": "Luôn phụ thuộc tuyến tính"
       },
       {
         "key": "D",
-        "text": "Luôn phụ thuộc tuyến tính"
+        "text": "Luôn trực giao với nhau"
       }
     ],
     "correct": "B",
     "explanation": "* Định lý: Các véc tơ riêng ứng với các giá trị riêng phân biệt từng đôi một luôn luôn độc lập tuyến tính.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17662,11 +18152,11 @@
       },
       {
         "key": "B",
-        "text": "$2$"
+        "text": "$6$"
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$2$"
       },
       {
         "key": "D",
@@ -17675,6 +18165,7 @@
     ],
     "correct": "D",
     "explanation": "* Nếu $Av = \\lambda v$ thì $A^k v = \\lambda^k v = (2)^k v = 8 v$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17694,7 +18185,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\lambda_1 = 24, \\, \\lambda_2 = 0$"
+        "text": "$\\lambda_1 = 4, \\, \\lambda_2 = 7$"
       },
       {
         "key": "B",
@@ -17706,11 +18197,12 @@
       },
       {
         "key": "D",
-        "text": "$\\lambda_1 = 4, \\, \\lambda_2 = 7$"
+        "text": "$\\lambda_1 = 24, \\, \\lambda_2 = 0$"
       }
     ],
     "correct": "B",
     "explanation": "* Ma trận tam giác dưới có các giá trị riêng nằm trực tiếp trên đường chéo chính: $\\lambda_1 = 3, \\lambda_2 = 8$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17730,11 +18222,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$8$"
+        "text": "$-9$"
       },
       {
         "key": "B",
-        "text": "$-9$"
+        "text": "$8$"
       },
       {
         "key": "C",
@@ -17747,6 +18239,7 @@
     ],
     "correct": "C",
     "explanation": "* Định lý: Tích các giá trị riêng bằng định thức: $\\lambda_1 \\cdot \\lambda_2 \\cdot \\lambda_3 = \\det(A) \\iff (3)(-3)\\lambda_3 = -45 \\implies \\lambda_3 = 5$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17762,27 +18255,28 @@
     "typeName": "Trị riêng, Véc tơ riêng & Chéo hóa ma trận",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Điều kiện cần và đủ để một ma trận vuông cấp $n$ **chéo hóa được** là:",
+    "question": "Tìm điều kiện của tham số $m$ để ma trận $A = \\begin{bmatrix} 2 & 0 & 0 \\\\ 0 & 3 & m \\\\ 0 & 0 & 3 \\end{bmatrix}$ **chéo hóa được**:",
     "options": [
       {
         "key": "A",
-        "text": "Ma trận có $\\det A \\neq 0$"
+        "text": "Chéo hóa được với mọi $m$"
       },
       {
         "key": "B",
-        "text": "Ma trận là ma trận tam giác"
+        "text": "$m \\neq 0$"
       },
       {
         "key": "C",
-        "text": "Ma trận có đủ $n$ véc tơ riêng độc lập tuyến tính"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
-        "text": "Ma trận có vết bằng 0"
+        "text": "$m = 3$"
       }
     ],
     "correct": "C",
-    "explanation": "* Định lý: Ma trận cấp $n$ chéo hóa được khi và chỉ khi nó có đủ $n$ véc tơ riêng độc lập tuyến tính.\n* **Chọn đáp án: C.**",
+    "explanation": "* Phương trình đặc trưng $\\det(A - \\lambda I) = (2 - \\lambda)(3 - \\lambda)^2 = 0 \\implies \\lambda_1 = 2$ (đơn), $\\lambda_2 = 3$ (bội 2). Để $A$ chéo hóa được, số bội hình học của $\\lambda = 3$ phải bằng 2, tức số chiều không gian con riêng $\\dim E_3 = 3 - r(A - 3I) = 2 \\iff r(A - 3I) = 1$. Ta có $A - 3I = \\begin{bmatrix} -1 & 0 & 0 \\\\ 0 & 0 & m \\\\ 0 & 0 & 0 \\end{bmatrix}$. Ma trận này có hạng bằng 1 khi và chỉ khi hàng 2 triệt tiêu, tức $m = 0$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17806,11 +18300,11 @@
       },
       {
         "key": "B",
-        "text": "$3^2$"
+        "text": "$-3$"
       },
       {
         "key": "C",
-        "text": "$-3$"
+        "text": "$3^2$"
       },
       {
         "key": "D",
@@ -17819,6 +18313,7 @@
     ],
     "correct": "A",
     "explanation": "* Từ $Av = \\lambda v \\iff A^{-1} v = \\dfrac{1}{\\lambda} v$. Giá trị riêng tương ứng của $A^{-1}$ là $1/3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17855,6 +18350,7 @@
     ],
     "correct": "B",
     "explanation": "* Đối với ma trận tam giác, các giá trị riêng chính là các phần tử trên đường chéo chính: $5, 6, -4$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17874,11 +18370,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "$6$"
       },
       {
         "key": "B",
-        "text": "$6$"
+        "text": "$-7$"
       },
       {
         "key": "C",
@@ -17886,11 +18382,12 @@
       },
       {
         "key": "D",
-        "text": "$-7$"
+        "text": "$9$"
       }
     ],
     "correct": "C",
     "explanation": "* Định lý: Tổng các giá trị riêng bằng vết ma trận: $\\lambda_1 + \\lambda_2 + \\lambda_3 = \\text{tr}(A) \\iff 3 - 2 + \\lambda_3 = 8 \\implies \\lambda_3 = 7$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17910,7 +18407,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$v^T A v = \\lambda$"
+        "text": "$A v = \\lambda^2 v$"
       },
       {
         "key": "B",
@@ -17918,15 +18415,16 @@
       },
       {
         "key": "C",
-        "text": "$\\det(A) = \\lambda$"
+        "text": "$v^T A v = \\lambda$"
       },
       {
         "key": "D",
-        "text": "$A v = \\lambda^2 v$"
+        "text": "$\\det(A) = \\lambda$"
       }
     ],
     "correct": "B",
     "explanation": "* Định nghĩa: $Av = \\lambda v$ với điều kiện véc tơ riêng $v$ phải khác véc tơ không ($v \\neq \\theta$).\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17946,11 +18444,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\lambda_1 = 2, \\, \\lambda_2 = 4$"
+        "text": "$\\lambda_1 = 5, \\, \\lambda_2 = 0$"
       },
       {
         "key": "B",
-        "text": "$\\lambda_1 = 5, \\, \\lambda_2 = 0$"
+        "text": "$\\lambda_1 = 2, \\, \\lambda_2 = 4$"
       },
       {
         "key": "C",
@@ -17963,6 +18461,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận tam giác dưới có các giá trị riêng nằm trực tiếp trên đường chéo chính: $\\lambda_1 = 1, \\lambda_2 = 5$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -17982,7 +18481,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$7$"
+        "text": "$-2$"
       },
       {
         "key": "B",
@@ -17990,7 +18489,7 @@
       },
       {
         "key": "C",
-        "text": "$-2$"
+        "text": "$7$"
       },
       {
         "key": "D",
@@ -17999,6 +18498,7 @@
     ],
     "correct": "B",
     "explanation": "* Định lý: Tích các giá trị riêng bằng định thức: $\\lambda_1 \\cdot \\lambda_2 \\cdot \\lambda_3 = \\det(A) \\iff (2)(-1)\\lambda_3 = -8 \\implies \\lambda_3 = 4$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18018,7 +18518,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -18030,11 +18530,12 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$1$"
       }
     ],
     "correct": "B",
     "explanation": "* Định lý: Tổng các giá trị riêng bằng vết ma trận: $\\lambda_1 + \\lambda_2 + \\lambda_3 = \\text{tr}(A) \\iff 2 + (5) + \\lambda_3 = 9 \\implies \\lambda_3 = 2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18054,11 +18555,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-2$"
+        "text": "$2$"
       },
       {
         "key": "B",
-        "text": "$-8$"
+        "text": "$-2$"
       },
       {
         "key": "C",
@@ -18066,11 +18567,12 @@
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$-8$"
       }
     ],
     "correct": "C",
     "explanation": "* Nếu $Av = \\lambda v$ thì $A^k v = \\lambda^k v = (-2)^k v = 16 v$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18107,6 +18609,7 @@
     ],
     "correct": "A",
     "explanation": "* Ma trận tam giác dưới có các giá trị riêng nằm trực tiếp trên đường chéo chính: $\\lambda_1 = 4, \\lambda_2 = 8$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18134,15 +18637,16 @@
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$-3$"
       },
       {
         "key": "D",
-        "text": "$-3$"
+        "text": "$1$"
       }
     ],
     "correct": "B",
     "explanation": "* Định lý: Tích các giá trị riêng bằng định thức: $\\lambda_1 \\cdot \\lambda_2 \\cdot \\lambda_3 = \\det(A) \\iff (3)(-1)\\lambda_3 = 6 \\implies \\lambda_3 = -2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18166,11 +18670,11 @@
       },
       {
         "key": "B",
-        "text": "$\\lambda_1 = 2, \\, \\lambda_2 = 7$"
+        "text": "$\\lambda_1 = 0, \\, \\lambda_2 = 2$"
       },
       {
         "key": "C",
-        "text": "$\\lambda_1 = 0, \\, \\lambda_2 = 2$"
+        "text": "$\\lambda_1 = 2, \\, \\lambda_2 = 7$"
       },
       {
         "key": "D",
@@ -18179,6 +18683,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận tam giác dưới có các giá trị riêng nằm trực tiếp trên đường chéo chính: $\\lambda_1 = 1, \\lambda_2 = 8$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18198,15 +18703,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$4$"
+        "text": "$8$"
       },
       {
         "key": "B",
-        "text": "$-5$"
+        "text": "$4$"
       },
       {
         "key": "C",
-        "text": "$8$"
+        "text": "$-5$"
       },
       {
         "key": "D",
@@ -18215,6 +18720,7 @@
     ],
     "correct": "D",
     "explanation": "* Định lý: Tích các giá trị riêng bằng định thức: $\\lambda_1 \\cdot \\lambda_2 \\cdot \\lambda_3 = \\det(A) \\iff (1)(4)\\lambda_3 = 20 \\implies \\lambda_3 = 5$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18251,6 +18757,7 @@
     ],
     "correct": "A",
     "explanation": "* Định lý: Tổng các giá trị riêng bằng vết ma trận: $\\lambda_1 + \\lambda_2 + \\lambda_3 = \\text{tr}(A) \\iff 2 + (5) + \\lambda_3 = 8 \\implies \\lambda_3 = 1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18274,11 +18781,11 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$12$"
       },
       {
         "key": "C",
-        "text": "$12$"
+        "text": "$3$"
       },
       {
         "key": "D",
@@ -18287,6 +18794,7 @@
     ],
     "correct": "D",
     "explanation": "* Nếu $Av = \\lambda v$ thì $A^k v = \\lambda^k v = (3)^k v = 81 v$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18306,11 +18814,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-2$"
+        "text": "$1$"
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$-2$"
       },
       {
         "key": "C",
@@ -18318,11 +18826,12 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$4$"
       }
     ],
     "correct": "C",
     "explanation": "* Định lý: Tổng các giá trị riêng bằng vết ma trận: $\\lambda_1 + \\lambda_2 + \\lambda_3 = \\text{tr}(A) \\iff 3 + (5) + \\lambda_3 = 10 \\implies \\lambda_3 = 2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18359,6 +18868,7 @@
     ],
     "correct": "A",
     "explanation": "* Đối với ma trận tam giác, các giá trị riêng chính là các phần tử trên đường chéo chính: $3, 6, -4$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18395,6 +18905,7 @@
     ],
     "correct": "A",
     "explanation": "* Chuẩn (độ dài) của véc tơ $v$ cảm sinh bởi tích vô hướng $\\eta$ được tính bởi:\n  $$\\|v\\| = \\sqrt{\\eta(v, v)}$$\n* Thay $v = (1, 2)$ vào biểu thức:\n  $$\\eta(v, v) = 1(1) - 2(1)(2) - 2(2)(1) + 5(2)(2) = 1 - 4 - 4 + 20 = 13$$\n* Suy ra $\\|v\\| = \\sqrt{13}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -18418,11 +18929,11 @@
       },
       {
         "key": "B",
-        "text": "$(1, 2)$"
+        "text": "$(1, 1)$"
       },
       {
         "key": "C",
-        "text": "$(1, 1)$"
+        "text": "$(1, 2)$"
       },
       {
         "key": "D",
@@ -18431,6 +18942,7 @@
     ],
     "correct": "A",
     "explanation": "* Véc tơ đơn vị cùng hướng thu được bằng cách chia cho chuẩn: $v = \\dfrac{u}{\\|u\\|} = \\dfrac{(1, 2)}{\\sqrt{5}} = \\left(\\dfrac{1}{\\sqrt{5}}, \\dfrac{2}{\\sqrt{5}}\\right)$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18458,15 +18970,16 @@
       },
       {
         "key": "C",
-        "text": "$\\|u + v\\|^2 = \\|u\\|^2 + \\|v\\|^2$"
+        "text": "$\\|u + v\\| \\ge \\|u\\| + \\|v\\|$"
       },
       {
         "key": "D",
-        "text": "$\\|u + v\\| \\ge \\|u\\| + \\|v\\|$"
+        "text": "$\\|u + v\\|^2 = \\|u\\|^2 + \\|v\\|^2$"
       }
     ],
     "correct": "B",
     "explanation": "* Bất đẳng thức tam giác: Chuẩn của tổng không vượt quá tổng các chuẩn: $\\|u + v\\| \\le \\|u\\| + \\|v\\|$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18486,11 +18999,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$26$"
+        "text": "$25$"
       },
       {
         "key": "B",
-        "text": "$25$"
+        "text": "$7$"
       },
       {
         "key": "C",
@@ -18498,11 +19011,12 @@
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$26$"
       }
     ],
     "correct": "C",
     "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 2)^2 + (5 - 1)^2} = \\sqrt{25} = 5$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18539,6 +19053,7 @@
     ],
     "correct": "A",
     "explanation": "* $\\langle u, v \\rangle = (1)(2) + (1)(-1) - 2(-1) = 2 - 1 + (2) = 3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18558,7 +19073,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\langle u, u \\rangle = 1$ với mọi $u \\neq \\theta$"
+        "text": "$\\langle u, u \\rangle \\le 0$ với mọi $u$"
       },
       {
         "key": "B",
@@ -18566,7 +19081,7 @@
       },
       {
         "key": "C",
-        "text": "$\\langle u, u \\rangle \\le 0$ với mọi $u$"
+        "text": "$\\langle u, u \\rangle = 1$ với mọi $u \\neq \\theta$"
       },
       {
         "key": "D",
@@ -18575,6 +19090,7 @@
     ],
     "correct": "B",
     "explanation": "* Tiên đề xác định dương là bắt buộc: Bình phương vô hướng của mọi véc tơ luôn không âm, và bằng 0 khi và chỉ khi nó là véc tơ không.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18611,6 +19127,7 @@
     ],
     "correct": "A",
     "explanation": "* Véc tơ đơn vị cùng hướng thu được bằng cách chia cho chuẩn: $v = \\dfrac{u}{\\|u\\|} = \\dfrac{(1, 1)}{\\sqrt{2}} = \\left(\\dfrac{1}{\\sqrt{2}}, \\dfrac{1}{\\sqrt{2}}\\right)$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18630,11 +19147,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\tan \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
+        "text": "$\\sin \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
       },
       {
         "key": "B",
-        "text": "$\\sin \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
+        "text": "$\\tan \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\cdot \\|v\\|}$"
       },
       {
         "key": "C",
@@ -18647,6 +19164,7 @@
     ],
     "correct": "C",
     "explanation": "* Định nghĩa góc trong không gian Euclide: $\\cos \\theta = \\dfrac{\\langle u, v \\rangle}{\\|u\\| \\|v\\|}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18670,7 +19188,7 @@
       },
       {
         "key": "B",
-        "text": "$19$"
+        "text": "$289$"
       },
       {
         "key": "C",
@@ -18678,11 +19196,12 @@
       },
       {
         "key": "D",
-        "text": "$289$"
+        "text": "$19$"
       }
     ],
     "correct": "A",
     "explanation": "* Chuẩn Euclide: $\\|u\\| = \\sqrt{-8^2 + (15)^2} = \\sqrt{289} = 17$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18719,6 +19238,7 @@
     ],
     "correct": "A",
     "explanation": "* Thay số vào công thức tích vô hướng có trọng số: $\\langle u, v \\rangle = 3(1)(2) + 4(2)(-1) = 6 - 8 = -2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18738,15 +19258,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\|u + v\\|^2 = 2(\\|u\\|^2 + \\|v\\|^2)$"
-      },
-      {
-        "key": "B",
         "text": "$\\|u + v\\| = \\|u\\| + \\|v\\|$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$\\|u + v\\|^2 = \\|u\\|^2 - \\|v\\|^2$"
+      },
+      {
+        "key": "C",
+        "text": "$\\|u + v\\|^2 = 2(\\|u\\|^2 + \\|v\\|^2)$"
       },
       {
         "key": "D",
@@ -18755,6 +19275,7 @@
     ],
     "correct": "D",
     "explanation": "* Khai triển: $\\|u + v\\|^2 = \\langle u+v, u+v \\rangle = \\|u\\|^2 + 2\\langle u, v \\rangle + \\|v\\|^2$. Vì $\\langle u, v \\rangle = 0$ nên $\\|u + v\\|^2 = \\|u\\|^2 + \\|v\\|^2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18791,6 +19312,7 @@
     ],
     "correct": "A",
     "explanation": "* Bất đẳng thức Cauchy-Schwarz: $|\\langle u, v \\rangle| \\le \\|u\\| \\|v\\|$. Dấu bằng xảy ra khi và chỉ khi một véc tơ là bội số của véc tơ kia.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18810,7 +19332,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$19$"
       },
       {
         "key": "B",
@@ -18822,11 +19344,12 @@
       },
       {
         "key": "D",
-        "text": "$19$"
+        "text": "$6$"
       }
     ],
     "correct": "B",
     "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(3 - 0)^2 + (4 - 1)^2} = \\sqrt{18} = \\sqrt{18}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18846,11 +19369,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-5$"
+        "text": "$-12$"
       },
       {
         "key": "B",
-        "text": "$8$"
+        "text": "$-5$"
       },
       {
         "key": "C",
@@ -18858,11 +19381,12 @@
       },
       {
         "key": "D",
-        "text": "$-12$"
+        "text": "$8$"
       }
     ],
     "correct": "C",
     "explanation": "* $\\langle u, v \\rangle = (2)(-1) + (2)(1) - 2(4) = -2 + (2) - 8 = -8$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18899,6 +19423,7 @@
     ],
     "correct": "C",
     "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 2)^2 + (4 - 1)^2} = \\sqrt{18} = \\sqrt{18}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18922,19 +19447,20 @@
       },
       {
         "key": "B",
-        "text": "$-5$"
+        "text": "$2$"
       },
       {
         "key": "C",
-        "text": "$1$"
+        "text": "$-5$"
       },
       {
         "key": "D",
-        "text": "$2$"
+        "text": "$1$"
       }
     ],
     "correct": "A",
     "explanation": "* $\\langle u, v \\rangle = (1)(3) - 3(1) + (1)(-1) = 3 - 3 - 1 = -1$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18958,7 +19484,7 @@
       },
       {
         "key": "B",
-        "text": "$26$"
+        "text": "$7$"
       },
       {
         "key": "C",
@@ -18966,11 +19492,12 @@
       },
       {
         "key": "D",
-        "text": "$7$"
+        "text": "$26$"
       }
     ],
     "correct": "A",
     "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 2)^2 + (7 - 3)^2} = \\sqrt{25} = 5$.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -18990,11 +19517,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$-7$"
+        "text": "$10$"
       },
       {
         "key": "B",
-        "text": "$10$"
+        "text": "$-7$"
       },
       {
         "key": "C",
@@ -19007,6 +19534,7 @@
     ],
     "correct": "C",
     "explanation": "* $\\langle u, v \\rangle = (2)(3) + (2)(1) + (1)(-1) = 6 + (2) - 1 = 7$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19026,11 +19554,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$12$"
+        "text": "$100$"
       },
       {
         "key": "B",
-        "text": "$100$"
+        "text": "$12$"
       },
       {
         "key": "C",
@@ -19043,6 +19571,7 @@
     ],
     "correct": "D",
     "explanation": "* Chuẩn Euclide: $\\|u\\| = \\sqrt{-6^2 - 8^2} = \\sqrt{100} = 10$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19066,11 +19595,11 @@
       },
       {
         "key": "B",
-        "text": "$4$"
+        "text": "$-2$"
       },
       {
         "key": "C",
-        "text": "$-2$"
+        "text": "$4$"
       },
       {
         "key": "D",
@@ -19079,6 +19608,7 @@
     ],
     "correct": "A",
     "explanation": "* Thay số vào công thức tích vô hướng có trọng số: $\\langle u, v \\rangle = 2(1)(2) + 1(2)(-1) = 4 - 2 = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19098,11 +19628,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$7$"
+        "text": "$26$"
       },
       {
         "key": "B",
-        "text": "$25$"
+        "text": "$7$"
       },
       {
         "key": "C",
@@ -19110,11 +19640,12 @@
       },
       {
         "key": "D",
-        "text": "$26$"
+        "text": "$25$"
       }
     ],
     "correct": "C",
     "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 1)^2 + (2 + 1)^2} = \\sqrt{25} = 5$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19151,6 +19682,7 @@
     ],
     "correct": "D",
     "explanation": "* $\\langle u, v \\rangle = (1)(3) - 3(-1) + (0)(-1) = 3 + (3) + (0) = 6$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19187,6 +19719,7 @@
     ],
     "correct": "C",
     "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 1)^2 + (3 + 1)^2} = \\sqrt{32} = \\sqrt{32}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19223,6 +19756,7 @@
     ],
     "correct": "C",
     "explanation": "* $\\langle u, v \\rangle = (2)(2) + (2)(1) - 2(-1) = 4 + (2) + (2) = 8$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19259,6 +19793,7 @@
     ],
     "correct": "B",
     "explanation": "* Khoảng cách $d(u, v) = \\|u - v\\| = \\sqrt{(5 - 1)^2 + (5 - 1)^2} = \\sqrt{32} = \\sqrt{32}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19278,11 +19813,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$8$"
+        "text": "$-5$"
       },
       {
         "key": "B",
-        "text": "$-5$"
+        "text": "$8$"
       },
       {
         "key": "C",
@@ -19295,6 +19830,7 @@
     ],
     "correct": "D",
     "explanation": "* $\\langle u, v \\rangle = (2)(3) + (1)(-1) + (0)(2) = 6 - 1 + (0) = 5$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19331,6 +19867,7 @@
     ],
     "correct": "A",
     "explanation": "* Vì $B$ là một cơ sở trực giao, tọa độ thứ nhất $x$ được tính trực tiếp bằng công thức hệ số Fourier:\n  $$x = \\frac{\\langle u, u_1 \\rangle}{\\|u_1\\|^2} = \\frac{a(1) + b(1) + c(1)}{1^2 + 1^2 + 1^2} = \\frac{a + b + c}{3}$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -19367,6 +19904,7 @@
     ],
     "correct": "B",
     "explanation": "* Áp dụng thuật toán trực chuẩn hoá Gram-Schmidt:\n  1. $e_1 = u_1 = (1, 1, 0) \\implies \\|e_1\\| = \\sqrt{1^2 + 1^2 + 0} = \\sqrt{2}$.\n     Véctơ đơn vị: $v_1 = \\dfrac{e_1}{\\|e_1\\|} = \\dfrac{1}{\\sqrt{2}}(1, 1, 0)$.\n  2. $e_2 = u_2 - \\dfrac{\\langle u_2, e_1 \\rangle}{\\|e_1\\|^2} e_1 = (0, 1, 1) - \\dfrac{1}{2}(1, 1, 0) = \\left(-\\dfrac{1}{2}, \\dfrac{1}{2}, 1\\right) = \\dfrac{1}{2}(-1, 1, 2)$.\n     Độ dài $\\|e_2\\| = \\dfrac{\\sqrt{6}}{2} \\implies v_2 = \\dfrac{e_2}{\\|e_2\\|} = \\dfrac{1}{\\sqrt{6}}(-1, 1, 2)$.\n  3. $e_3 = u_3 - \\dfrac{\\langle u_3, e_1 \\rangle}{\\|e_1\\|^2} e_1 - \\dfrac{\\langle u_3, e_2 \\rangle}{\\|e_2\\|^2} e_2 = (1, 1, 1) - (1, 1, 0) - \\left(-\\dfrac{1}{3}, \\dfrac{1}{3}, \\dfrac{2}{3}\\right) = \\dfrac{1}{3}(1, -1, 1)$.\n     Độ dài $\\|e_3\\| = \\dfrac{\\sqrt{3}}{3} = \\dfrac{1}{\\sqrt{3}} \\implies v_3 = \\dfrac{e_3}{\\|e_3\\|} = \\dfrac{1}{\\sqrt{3}}(1, -1, 1)$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -19386,7 +19924,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Luôn bằng 1"
+        "text": "Có thể là số thực bất kỳ khác 0"
       },
       {
         "key": "B",
@@ -19394,15 +19932,16 @@
       },
       {
         "key": "C",
-        "text": "Luôn bằng 0"
+        "text": "Luôn bằng 1"
       },
       {
         "key": "D",
-        "text": "Có thể là số thực bất kỳ khác 0"
+        "text": "Luôn bằng 0"
       }
     ],
     "correct": "B",
     "explanation": "* Từ $A^T A = I \\implies \\det(A^T A) = (\\det A)^2 = \\det I = 1 \\implies \\det A = \\pm 1$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19422,7 +19961,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$c_i = \\det(v, e_i)$"
+        "text": "$c_i = \\dfrac{\\langle v, e_i \\rangle}{\\|v\\|}$"
       },
       {
         "key": "B",
@@ -19430,15 +19969,16 @@
       },
       {
         "key": "C",
-        "text": "$c_i = \\|v - e_i\\|$"
+        "text": "$c_i = \\det(v, e_i)$"
       },
       {
         "key": "D",
-        "text": "$c_i = \\dfrac{\\langle v, e_i \\rangle}{\\|v\\|}$"
+        "text": "$c_i = \\|v - e_i\\|$"
       }
     ],
     "correct": "B",
     "explanation": "* Công thức khai triển Fourier trong cơ sở trực chuẩn: Tọa độ của $v$ chính là tích vô hướng với véc tơ cơ sở: $c_i = \\langle v, e_i \\rangle$ (vì $\\|e_i\\| = 1$).\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19462,7 +20002,7 @@
       },
       {
         "key": "B",
-        "text": "$\\left(-\\dfrac{1}{2}, \\dfrac{1}{2}\\right)$"
+        "text": "$(0, 1)$"
       },
       {
         "key": "C",
@@ -19470,11 +20010,12 @@
       },
       {
         "key": "D",
-        "text": "$(0, 1)$"
+        "text": "$\\left(-\\dfrac{1}{2}, \\dfrac{1}{2}\\right)$"
       }
     ],
     "correct": "C",
     "explanation": "* Ta có $\\|e_1\\|^2 = 2$, $\\langle u_2, e_1 \\rangle = 1$. Do đó $e_2 = u_2 - \\dfrac{1}{2} e_1 = (1, 0) - \\dfrac{1}{2}(1, 1) = \\left(\\dfrac{1}{2}, -\\dfrac{1}{2}\\right)$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19498,11 +20039,11 @@
       },
       {
         "key": "B",
-        "text": "Chỉ độc lập tuyến tính khi số véc tơ bằng số chiều không gian"
+        "text": "Luôn luôn phụ thuộc tuyến tính"
       },
       {
         "key": "C",
-        "text": "Luôn luôn phụ thuộc tuyến tính"
+        "text": "Chỉ độc lập tuyến tính khi số véc tơ bằng số chiều không gian"
       },
       {
         "key": "D",
@@ -19511,6 +20052,7 @@
     ],
     "correct": "D",
     "explanation": "* Định lý cơ bản: Mọi hệ trực giao gồm các véc tơ khác không đều độc lập tuyến tính.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19534,11 +20076,11 @@
       },
       {
         "key": "B",
-        "text": "$m = 1$"
+        "text": "$m = \\dfrac{1}{2}$"
       },
       {
         "key": "C",
-        "text": "$m = \\dfrac{1}{2}$"
+        "text": "$m = 1$"
       },
       {
         "key": "D",
@@ -19547,6 +20089,7 @@
     ],
     "correct": "D",
     "explanation": "* $\\langle u, v \\rangle = (1)(2) + (3)(-1) - 2m = 0 \\iff m = m = -\\dfrac{1}{2}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19570,7 +20113,7 @@
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$4$"
       },
       {
         "key": "C",
@@ -19578,11 +20121,12 @@
       },
       {
         "key": "D",
-        "text": "$4$"
+        "text": "$3$"
       }
     ],
     "correct": "A",
     "explanation": "* Định lý phân tích trực giao: $V = W \\oplus W^\\perp$, do đó $\\dim V = \\dim W + \\dim W^\\perp \\implies \\dim W^\\perp = 3 - 1 = 2$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19602,15 +20146,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$e_2 = u_2 + \\dfrac{\\langle u_2, e_1 \\rangle}{\\|e_1\\|^2} e_1$"
-      },
-      {
-        "key": "B",
         "text": "$e_2 = u_2 - \\dfrac{\\langle u_2, e_1 \\rangle}{\\|e_1\\|} e_1$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$e_2 = \\dfrac{u_2}{\\|u_2\\|}$"
+      },
+      {
+        "key": "C",
+        "text": "$e_2 = u_2 + \\dfrac{\\langle u_2, e_1 \\rangle}{\\|e_1\\|^2} e_1$"
       },
       {
         "key": "D",
@@ -19619,6 +20163,7 @@
     ],
     "correct": "D",
     "explanation": "* Công thức Gram-Schmidt: Trừ đi hình chiếu trực giao của $u_2$ lên $e_1$: $e_2 = u_2 - \\dfrac{\\langle u_2, e_1 \\rangle}{\\|e_1\\|^2} e_1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19646,15 +20191,16 @@
       },
       {
         "key": "C",
-        "text": "Hệ sinh ra toàn bộ không gian"
+        "text": "Chỉ cần tất cả các véc tơ đều có độ dài bằng 1"
       },
       {
         "key": "D",
-        "text": "Chỉ cần tất cả các véc tơ đều có độ dài bằng 1"
+        "text": "Hệ sinh ra toàn bộ không gian"
       }
     ],
     "correct": "B",
     "explanation": "* Định nghĩa hệ trực chuẩn: $\\langle e_i, e_j \\rangle = \\delta_{ij}$ (bằng 1 nếu $i = j$, bằng 0 nếu $i \\neq j$).\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19691,6 +20237,7 @@
     ],
     "correct": "D",
     "explanation": "* Định nghĩa: Hai véc tơ trực giao khi và chỉ khi tích vô hướng của chúng bằng 0: $\\langle u, v \\rangle = 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19714,11 +20261,11 @@
       },
       {
         "key": "B",
-        "text": "$A^2 = I$"
+        "text": "$A^T = -A$"
       },
       {
         "key": "C",
-        "text": "$A^T = -A$"
+        "text": "$A^2 = I$"
       },
       {
         "key": "D",
@@ -19727,6 +20274,7 @@
     ],
     "correct": "A",
     "explanation": "* Định nghĩa ma trận trực giao: Ma trận khả nghịch thỏa mãn $A^{-1} = A^T$, tức $A^T A = I$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19746,11 +20294,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$5$"
+        "text": "$3$"
       },
       {
         "key": "B",
-        "text": "$3$"
+        "text": "$1$"
       },
       {
         "key": "C",
@@ -19758,11 +20306,12 @@
       },
       {
         "key": "D",
-        "text": "$1$"
+        "text": "$5$"
       }
     ],
     "correct": "C",
     "explanation": "* Định lý phân tích trực giao: $V = W \\oplus W^\\perp$, do đó $\\dim V = \\dim W + \\dim W^\\perp \\implies \\dim W^\\perp = 5 - 1 = 4$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19799,6 +20348,7 @@
     ],
     "correct": "B",
     "explanation": "* $\\langle u, v \\rangle = (1)(4) + (3)(2) + 2m = 10 + 2m = 0 \\iff m = -5$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19818,7 +20368,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$0$"
+        "text": "$3$"
       },
       {
         "key": "B",
@@ -19826,7 +20376,7 @@
       },
       {
         "key": "C",
-        "text": "$3$"
+        "text": "$0$"
       },
       {
         "key": "D",
@@ -19835,6 +20385,7 @@
     ],
     "correct": "B",
     "explanation": "* Định lý phân tích trực giao: $V = W \\oplus W^\\perp$, do đó $\\dim V = \\dim W + \\dim W^\\perp \\implies \\dim W^\\perp = 3 - 2 = 1$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19858,19 +20409,20 @@
       },
       {
         "key": "B",
-        "text": "$m = -\\dfrac{3}{2}$"
+        "text": "$m = 1$"
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = -\\dfrac{3}{2}$"
       },
       {
         "key": "D",
-        "text": "$m = 1$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "A",
     "explanation": "* $\\langle u, v \\rangle = (1)(2) - 1(-1) - 2m = 0 \\iff m = m = \\dfrac{3}{2}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19894,11 +20446,11 @@
       },
       {
         "key": "B",
-        "text": "$m = -3$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
-        "text": "$m = 0$"
+        "text": "$m = -3$"
       },
       {
         "key": "D",
@@ -19907,6 +20459,7 @@
     ],
     "correct": "A",
     "explanation": "* $\\langle u, v \\rangle = (2)(4) - 1(2) - 2m = 6 - 2m = 0 \\iff m = 3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19943,6 +20496,7 @@
     ],
     "correct": "B",
     "explanation": "* Định lý phân tích trực giao: $V = W \\oplus W^\\perp$, do đó $\\dim V = \\dim W + \\dim W^\\perp \\implies \\dim W^\\perp = 4 - 2 = 2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -19962,7 +20516,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m = \\dfrac{1}{2}$"
       },
       {
         "key": "B",
@@ -19970,7 +20524,7 @@
       },
       {
         "key": "C",
-        "text": "$m = \\dfrac{1}{2}$"
+        "text": "$m = 0$"
       },
       {
         "key": "D",
@@ -19979,6 +20533,7 @@
     ],
     "correct": "B",
     "explanation": "* $\\langle u, v \\rangle = (1)(4) + (3)(-1) + 2m = 0 \\iff m = m = -\\dfrac{1}{2}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20015,6 +20570,7 @@
     ],
     "correct": "A",
     "explanation": "* $\\langle u, v \\rangle = (1)(2) + (3)(2) - 2m = 8 - 2m = 0 \\iff m = 4$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20034,7 +20590,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$1$"
+        "text": "$4$"
       },
       {
         "key": "B",
@@ -20042,7 +20598,7 @@
       },
       {
         "key": "C",
-        "text": "$4$"
+        "text": "$1$"
       },
       {
         "key": "D",
@@ -20051,6 +20607,7 @@
     ],
     "correct": "D",
     "explanation": "* Định lý phân tích trực giao: $V = W \\oplus W^\\perp$, do đó $\\dim V = \\dim W + \\dim W^\\perp \\implies \\dim W^\\perp = 4 - 1 = 3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20070,7 +20627,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 0$"
+        "text": "$m = -5$"
       },
       {
         "key": "B",
@@ -20078,15 +20635,16 @@
       },
       {
         "key": "C",
-        "text": "$m = -5$"
+        "text": "$m = 7$"
       },
       {
         "key": "D",
-        "text": "$m = 7$"
+        "text": "$m = 0$"
       }
     ],
     "correct": "B",
     "explanation": "* $\\langle u, v \\rangle = (2)(2) + (3)(2) - 2m = 10 - 2m = 0 \\iff m = 5$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20106,11 +20664,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = 1$"
+        "text": "$m = \\dfrac{1}{2}$"
       },
       {
         "key": "B",
-        "text": "$m = \\dfrac{1}{2}$"
+        "text": "$m = 0$"
       },
       {
         "key": "C",
@@ -20118,11 +20676,12 @@
       },
       {
         "key": "D",
-        "text": "$m = 0$"
+        "text": "$m = 1$"
       }
     ],
     "correct": "C",
     "explanation": "* $\\langle u, v \\rangle = (2)(2) + (3)(-1) + 2m = 0 \\iff m = m = -\\dfrac{1}{2}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20142,7 +20701,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = \\dfrac{5}{2}$"
+        "text": "$m = 1$"
       },
       {
         "key": "B",
@@ -20150,7 +20709,7 @@
       },
       {
         "key": "C",
-        "text": "$m = 1$"
+        "text": "$m = \\dfrac{5}{2}$"
       },
       {
         "key": "D",
@@ -20159,6 +20718,7 @@
     ],
     "correct": "D",
     "explanation": "* $\\langle u, v \\rangle = (1)(4) - 1(-1) + 2m = 0 \\iff m = m = -\\dfrac{5}{2}$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20178,15 +20738,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$m = -1$"
-      },
-      {
-        "key": "B",
         "text": "$m = 3$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$m = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$m = -1$"
       },
       {
         "key": "D",
@@ -20195,6 +20755,7 @@
     ],
     "correct": "D",
     "explanation": "* $\\langle u, v \\rangle = (1)(4) - 1(2) - 2m = 2 - 2m = 0 \\iff m = 1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20231,6 +20792,7 @@
     ],
     "correct": "C",
     "explanation": "* **Quy tắc lập ma trận đối xứng của dạng toàn phương:**\n  * Đường chéo chính: hệ số của $x^2, y^2, z^2 \\implies a_{11} = 1, a_{22} = 2, a_{33} = -1$.\n  * Hệ số $xy = 2 \\implies a_{12} = a_{21} = 1$.\n  * Hệ số $yz = 2 \\implies a_{23} = a_{32} = 1$.\n  * Không có $xz \\implies a_{13} = a_{31} = 0$.\n* Ma trận đối xứng thu được:\n  $$A = \\begin{bmatrix} 1 & 1 & 0 \\\\ 1 & 2 & 1 \\\\ 0 & 1 & -1 \\end{bmatrix}$$\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -20267,6 +20829,7 @@
     ],
     "correct": "A",
     "explanation": "* Áp dụng phương pháp Lagrange làm xuất hiện bình phương đủ:\n  $$Q(x,y,z) = 4x^2 - 8x(y - z) + 3y^2 - 8z^2 - 4yz$$\n  $$= 4[x^2 - 2x(y - z) + (y - z)^2] - 4(y - z)^2 + 3y^2 - 8z^2 - 4yz$$\n  $$= 4(x - y + z)^2 - 4(y^2 - 2yz + z^2) + 3y^2 - 8z^2 - 4yz$$\n  $$= 4(x - y + z)^2 - y^2 + 4yz - 12z^2$$\n  $$= 4(x - y + z)^2 - (y^2 - 4yz + 4z^2) - 8z^2$$\n  $$= 4(x - y + z)^2 - (y - 2z)^2 - 8z^2$$\n* Đặt phép biến đổi tọa độ không suy biến:\n  $$\\begin{cases} X = x - y + z \\\\ Y = y - 2z \\\\ Z = z \\end{cases}$$\n* Khi đó ta thu được dạng chính tắc:\n  $$Q(x,y,z) = 4X^2 - Y^2 - 8Z^2$$\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -20286,11 +20849,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 5 & -4 \\\\ -4 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -2 & 5 \\\\ 1 & -2 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} -2 & 5 \\\\ 1 & -2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & -2 \\\\ + 2 & 1 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -20298,11 +20861,12 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 5 & -2 \\\\ + 2 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & -4 \\\\ -4 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
     "explanation": "* Phần tử trên đường chéo chính là hệ số của các bình phương ($a_{11} = 5, a_{22} = 1$); phần tử ngoài đường chéo là một nửa hệ số của tích chéo ($a_{12} = a_{21} = \\frac{-4}{2} = -2$).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20326,11 +20890,11 @@
       },
       {
         "key": "B",
-        "text": "$Q = z_1^2 + \\dots + z_n^2$"
+        "text": "$Q = z_1 z_2 + z_3 z_4$"
       },
       {
         "key": "C",
-        "text": "$Q = z_1 z_2 + z_3 z_4$"
+        "text": "$Q = z_1^2 + \\dots + z_n^2$"
       },
       {
         "key": "D",
@@ -20339,6 +20903,7 @@
     ],
     "correct": "D",
     "explanation": "* Sau khi đưa về chính tắc, đặt $z_i = \\sqrt{|c_i|} y_i$, các hệ số khác không đều được chuẩn hóa về $+1$ hoặc $-1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20358,7 +20923,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Các phần tử trên đường chéo chính của ma trận $A$"
+        "text": "Nghịch đảo các giá trị riêng của $A$"
       },
       {
         "key": "B",
@@ -20370,11 +20935,12 @@
       },
       {
         "key": "D",
-        "text": "Nghịch đảo các giá trị riêng của $A$"
+        "text": "Các phần tử trên đường chéo chính của ma trận $A$"
       }
     ],
     "correct": "C",
     "explanation": "* Định lý phổ cho ma trận đối xứng: Tồn tại ma trận trực giao $P$ sao cho $P^T A P = \\text{diag}(\\lambda_1, \\dots, \\lambda_n)$. Do đó các hệ số chính tắc chính là các giá trị riêng của $A$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20394,15 +20960,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$p = 2, \\, q = 1$ và $\\text{rank}(Q) = 3$"
+        "text": "$p = 3, \\, q = 0$"
       },
       {
         "key": "B",
-        "text": "$p = 1, \\, q = 2$ và $\\text{rank}(Q) = 1$"
+        "text": "$p = 2, \\, q = 1$ và $\\text{rank}(Q) = 3$"
       },
       {
         "key": "C",
-        "text": "$p = 3, \\, q = 0$"
+        "text": "$p = 1, \\, q = 2$ và $\\text{rank}(Q) = 1$"
       },
       {
         "key": "D",
@@ -20411,6 +20977,7 @@
     ],
     "correct": "D",
     "explanation": "* Định lý quán tính Sylvester: Số hệ số dương $p = 1$, số hệ số âm $q = 2$, và hạng của dạng toàn phương bằng tổng số hệ số khác không: $r = p + q = 3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20430,7 +20997,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ chứa các tích chéo của hai biến khác nhau"
+        "text": "Có tất cả các hệ số đều bằng 1"
       },
       {
         "key": "B",
@@ -20438,15 +21005,16 @@
       },
       {
         "key": "C",
-        "text": "Có tất cả các hệ số đều bằng 1"
+        "text": "Có ma trận biểu diễn là ma trận đơn vị"
       },
       {
         "key": "D",
-        "text": "Có ma trận biểu diễn là ma trận đơn vị"
+        "text": "Chỉ chứa các tích chéo của hai biến khác nhau"
       }
     ],
     "correct": "B",
     "explanation": "* Định nghĩa dạng chính tắc: Biểu thức chỉ gồm tổng đại số của các bình phương: $Q(y) = c_1 y_1^2 + c_2 y_2^2 + \\dots + c_n y_n^2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20466,11 +21034,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 4 & -4 \\\\ -4 & -3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} -2 & 4 \\\\ -3 & -2 \\end{bmatrix}$"
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} -2 & 4 \\\\ -3 & -2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & -2 \\\\ + 2 & -3 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -20478,11 +21046,12 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 4 & -2 \\\\ + 2 & -3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 4 & -4 \\\\ -4 & -3 \\end{bmatrix}$"
       }
     ],
     "correct": "C",
     "explanation": "* Phần tử trên đường chéo chính là hệ số của các bình phương ($a_{11} = 4, a_{22} = -3$); phần tử ngoài đường chéo là một nửa hệ số của tích chéo ($a_{12} = a_{21} = \\frac{-4}{2} = -2$).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20519,6 +21088,7 @@
     ],
     "correct": "B",
     "explanation": "* Biến đổi dạng toàn phương: $Q = X^T A X = (CY)^T A (CY) = Y^T (C^T A C) Y$. Do đó ma trận mới là $A' = C^T A C$ (quan hệ tương đẳng / congruence).\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20538,7 +21108,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 + 2y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       },
       {
         "key": "B",
@@ -20550,11 +21120,12 @@
       },
       {
         "key": "D",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 + 2y_2^2$"
       }
     ],
     "correct": "B",
     "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + x_2^2) + (2 - 1)x_2^2 = (x_1 + x_2)^2 + x_2^2 = y_1^2 + y_2^2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20578,11 +21149,11 @@
       },
       {
         "key": "B",
-        "text": "$a_{12} = -2$ và $a_{23} = 3$"
+        "text": "$a_{12} = 1$ và $a_{23} = -1$"
       },
       {
         "key": "C",
-        "text": "$a_{12} = 1$ và $a_{23} = -1$"
+        "text": "$a_{12} = -2$ và $a_{23} = 3$"
       },
       {
         "key": "D",
@@ -20591,6 +21162,7 @@
     ],
     "correct": "D",
     "explanation": "* Hệ số ngoài đường chéo bằng một nửa hệ số trong biểu thức: $a_{12} = 4/2 = 2$ và $a_{23} = -6/2 = -3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20627,6 +21199,7 @@
     ],
     "correct": "A",
     "explanation": "* Dạng toàn phương là một đa thức thuần nhất bậc 2. Biểu thức $x_1^2 + 2x_1 x_2 + 3x_2 + 1$ có chứa số hạng bậc nhất ($3x_2$) và hằng số tự do ($1$) nên không phải dạng toàn phương.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20663,6 +21236,7 @@
     ],
     "correct": "A",
     "explanation": "* Hạng của dạng toàn phương bất biến dưới phép đổi biến không suy biến và bằng đúng số lượng hệ số khác không trong dạng chính tắc, tức bằng $3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20682,7 +21256,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 + 6y_2^2$"
       },
       {
         "key": "B",
@@ -20694,11 +21268,12 @@
       },
       {
         "key": "D",
-        "text": "$Q = y_1^2 + 6y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       }
     ],
     "correct": "B",
     "explanation": "* Biến đổi: $Q = (x_1^2 + 4x_1 x_2 + 4x_2^2) + (6 - 4)x_2^2 = (x_1 + 2x_2)^2 + 2x_2^2 = y_1^2 + 2y_2^2$.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20726,15 +21301,16 @@
       },
       {
         "key": "C",
-        "text": "$a_{12} = -2$ và $a_{23} = 3$"
+        "text": "$a_{12} = 1$ và $a_{23} = -1$"
       },
       {
         "key": "D",
-        "text": "$a_{12} = 1$ và $a_{23} = -1$"
+        "text": "$a_{12} = -2$ và $a_{23} = 3$"
       }
     ],
     "correct": "A",
     "explanation": "* Hệ số ngoài đường chéo bằng một nửa hệ số trong biểu thức: $a_{12} = 4/2 = 2$ và $a_{23} = -6/2 = -3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20754,11 +21330,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 - y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       },
       {
         "key": "B",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 - y_2^2$"
       },
       {
         "key": "C",
@@ -20771,6 +21347,7 @@
     ],
     "correct": "C",
     "explanation": "* Biến đổi: $Q = (x_1^2 + 6x_1 x_2 + 9x_2^2) + (10 - 9)x_2^2 = (x_1 + 3x_2)^2 + x_2^2 = y_1^2 + y_2^2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20790,15 +21367,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$a_{12} = 4$ và $a_{23} = -6$"
-      },
-      {
-        "key": "B",
         "text": "$a_{12} = 1$ và $a_{23} = -1$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$a_{12} = -2$ và $a_{23} = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$a_{12} = 4$ và $a_{23} = -6$"
       },
       {
         "key": "D",
@@ -20807,6 +21384,7 @@
     ],
     "correct": "D",
     "explanation": "* Hệ số ngoài đường chéo bằng một nửa hệ số trong biểu thức: $a_{12} = 4/2 = 2$ và $a_{23} = -6/2 = -3$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20826,15 +21404,15 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 + 3y_2^2$"
-      },
-      {
-        "key": "B",
         "text": "$Q = y_1^2 - 2y_2^2$"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "$Q = (x_1 + x_2)^2$"
+      },
+      {
+        "key": "C",
+        "text": "$Q = y_1^2 + 3y_2^2$"
       },
       {
         "key": "D",
@@ -20843,6 +21421,7 @@
     ],
     "correct": "D",
     "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + x_2^2) + (3 - 1)x_2^2 = (x_1 + x_2)^2 + 2x_2^2 = y_1^2 + 2y_2^2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20862,11 +21441,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$a_{12} = -2$ và $a_{23} = 3$"
+        "text": "$a_{12} = 4$ và $a_{23} = -6$"
       },
       {
         "key": "B",
-        "text": "$a_{12} = 4$ và $a_{23} = -6$"
+        "text": "$a_{12} = -2$ và $a_{23} = 3$"
       },
       {
         "key": "C",
@@ -20879,6 +21458,7 @@
     ],
     "correct": "C",
     "explanation": "* Hệ số ngoài đường chéo bằng một nửa hệ số trong biểu thức: $a_{12} = 4/2 = 2$ và $a_{23} = -6/2 = -3$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20902,7 +21482,7 @@
       },
       {
         "key": "B",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 + 5y_2^2$"
       },
       {
         "key": "C",
@@ -20910,11 +21490,12 @@
       },
       {
         "key": "D",
-        "text": "$Q = y_1^2 + 5y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       }
     ],
     "correct": "C",
     "explanation": "* Biến đổi: $Q = (x_1^2 + 4x_1 x_2 + 4x_2^2) + (5 - 4)x_2^2 = (x_1 + 2x_2)^2 + x_2^2 = y_1^2 + y_2^2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20938,7 +21519,7 @@
       },
       {
         "key": "B",
-        "text": "$\\begin{bmatrix} 2 & 2 \\\\ 2 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}$"
       },
       {
         "key": "C",
@@ -20946,11 +21527,12 @@
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 2 & 2 \\\\ 2 & 2 \\end{bmatrix}$"
       }
     ],
     "correct": "A",
     "explanation": "* Phần tử trên đường chéo chính là hệ số của các bình phương ($a_{11} = 2, a_{22} = 2$); phần tử ngoài đường chéo là một nửa hệ số của tích chéo ($a_{12} = a_{21} = \\frac{2}{2} = 1$).\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -20970,11 +21552,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 - 2y_2^2$"
+        "text": "$Q = y_1^2 + 11y_2^2$"
       },
       {
         "key": "B",
-        "text": "$Q = y_1^2 + 11y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       },
       {
         "key": "C",
@@ -20982,11 +21564,12 @@
       },
       {
         "key": "D",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 - 2y_2^2$"
       }
     ],
     "correct": "C",
     "explanation": "* Biến đổi: $Q = (x_1^2 + 6x_1 x_2 + 9x_2^2) + (11 - 9)x_2^2 = (x_1 + 3x_2)^2 + 2x_2^2 = y_1^2 + 2y_2^2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21006,7 +21589,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{bmatrix} 5 & 1 \\\\ -1 & -3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 2 \\\\ 2 & -3 \\end{bmatrix}$"
       },
       {
         "key": "B",
@@ -21014,15 +21597,16 @@
       },
       {
         "key": "C",
-        "text": "$\\begin{bmatrix} 1 & 5 \\\\ -3 & 1 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 5 & 1 \\\\ -1 & -3 \\end{bmatrix}$"
       },
       {
         "key": "D",
-        "text": "$\\begin{bmatrix} 5 & 2 \\\\ 2 & -3 \\end{bmatrix}$"
+        "text": "$\\begin{bmatrix} 1 & 5 \\\\ -3 & 1 \\end{bmatrix}$"
       }
     ],
     "correct": "B",
     "explanation": "* Phần tử trên đường chéo chính là hệ số của các bình phương ($a_{11} = 5, a_{22} = -3$); phần tử ngoài đường chéo là một nửa hệ số của tích chéo ($a_{12} = a_{21} = \\frac{2}{2} = 1$).\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21042,11 +21626,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$Q = y_1^2 - 3y_2^2$"
+        "text": "$Q = (x_1 + x_2)^2$"
       },
       {
         "key": "B",
-        "text": "$Q = (x_1 + x_2)^2$"
+        "text": "$Q = y_1^2 - 3y_2^2$"
       },
       {
         "key": "C",
@@ -21059,6 +21643,7 @@
     ],
     "correct": "C",
     "explanation": "* Biến đổi: $Q = (x_1^2 + 2x_1 x_2 + x_2^2) + (4 - 1)x_2^2 = (x_1 + x_2)^2 + 3x_2^2 = y_1^2 + 3y_2^2$.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21082,7 +21667,7 @@
       },
       {
         "key": "B",
-        "text": "$a_{12} = 1$ và $a_{23} = -1$"
+        "text": "$a_{12} = 4$ và $a_{23} = -6$"
       },
       {
         "key": "C",
@@ -21090,11 +21675,12 @@
       },
       {
         "key": "D",
-        "text": "$a_{12} = 4$ và $a_{23} = -6$"
+        "text": "$a_{12} = 1$ và $a_{23} = -1$"
       }
     ],
     "correct": "A",
     "explanation": "* Hệ số ngoài đường chéo bằng một nửa hệ số trong biểu thức: $a_{12} = 4/2 = 2$ và $a_{23} = -6/2 = -3$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21131,6 +21717,7 @@
     ],
     "correct": "C",
     "explanation": "* Phần tử trên đường chéo chính là hệ số của các bình phương ($a_{11} = 3, a_{22} = -3$); phần tử ngoài đường chéo là một nửa hệ số của tích chéo ($a_{12} = a_{21} = \\frac{-4}{2} = -2$).\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21167,6 +21754,7 @@
     ],
     "correct": "D",
     "explanation": "* **Phương pháp Lagrange đưa về dạng chính tắc:**\n  $$Q = (x^2 + 2xy + y^2) + y^2 + 2yz - z^2 = (x + y)^2 + (y^2 + 2yz + z^2) - 2z^2 = (x + y)^2 + (y + z)^2 - 2z^2$$\n* Đặt $\\begin{cases} X = x + y \\\\ Y = y + z \\\\ Z = z \\end{cases}$, ta thu được dạng chính tắc:\n  $$Q = X^2 + Y^2 - 2Z^2$$\n* Có $2$ hệ số dương ($+1, +1$) và $1$ hệ số âm ($-2$).\n* Do đó chỉ số quán tính dương $p = 2$ và chỉ số quán tính âm $q = 1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": true,
     "origin": "original"
   },
@@ -21203,6 +21791,7 @@
     ],
     "correct": "A",
     "explanation": "* **Tính đối xứng:** Ma trận biểu diễn của $\\eta$ là $A = \\begin{bmatrix} 1 & -3 \\\\ 1 & 4 \\end{bmatrix}$. Vì $a_{12} = -3 \\neq a_{21} = 1$ nên $\\eta$ **không đối xứng**.\n* **Tính xác định dương:** Với mọi $u = (x_1, x_2) \\neq (0, 0)$:\n  $$\\eta(u, u) = x_1^2 - 3x_1 x_2 + x_2 x_1 + 4x_2^2 = x_1^2 - 2x_1 x_2 + 4x_2^2 = (x_1 - x_2)^2 + 3x_2^2 > 0$$\n  Do đó $\\eta$ là **xác định dương**.\n* Kết luận: $\\eta$ xác định dương nhưng không đối xứng.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": true,
     "origin": "original"
   },
@@ -21239,6 +21828,7 @@
     ],
     "correct": "C",
     "explanation": "* Quy tắc Sylvester xác định âm: $(-1)^k \\Delta_k > 0$ với mọi $k$. Tức $\\Delta_1 < 0, \\Delta_2 > 0, \\Delta_3 < 0, \\dots$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21258,11 +21848,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m < \\dfrac{4}{3}$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
-        "text": "$m > 3$"
+        "text": "$m < \\dfrac{4}{3}$"
       },
       {
         "key": "C",
@@ -21270,11 +21860,12 @@
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "$m > 3$"
       }
     ],
     "correct": "C",
     "explanation": "* Theo Sylvester: $\\Delta_1 = 3 > 0$ và $\\Delta_2 = 3m - 4 > 0 \\iff m > \\dfrac{4}{3}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21290,27 +21881,28 @@
     "typeName": "Phân loại dấu Dạng toàn phương & Tiêu chuẩn Sylvester",
     "examId": "extra",
     "examName": "Luyện tập mở rộng PTIT",
-    "question": "Nếu một dạng toàn phương hai biến có ma trận đối xứng $A$ thỏa mãn $\\det A < 0$, thì dạng toàn phương đó:",
+    "question": "Tìm điều kiện của tham số $m$ để dạng toàn phương $Q(x_1, x_2, x_3) = x_1^2 + 2x_2^2 + m x_3^2 + 2x_1 x_2 - 2x_2 x_3$ là **xác định dương**:",
     "options": [
       {
         "key": "A",
-        "text": "Chắc chắn xác định âm"
+        "text": "$m < 1$"
       },
       {
         "key": "B",
-        "text": "Chắc chắn xác định dương"
+        "text": "$m > 0$"
       },
       {
         "key": "C",
-        "text": "Chắc chắn nửa xác định âm"
+        "text": "$m > 2$"
       },
       {
         "key": "D",
-        "text": "Chắc chắn không xác định dấu"
+        "text": "$m > 1$"
       }
     ],
     "correct": "D",
-    "explanation": "* Vì $\\det A = \\lambda_1 \\lambda_2 < 0$ nên hai giá trị riêng trái dấu nhau (một âm, một dương). Do đó dạng toàn phương nhận cả giá trị âm và dương, tức là không xác định dấu.\n* **Chọn đáp án: D.**",
+    "explanation": "* Ma trận đối xứng của $Q$ là $A = \\begin{bmatrix} 1 & 1 & 0 \\\\ 1 & 2 & -1 \\\\ 0 & -1 & m \\end{bmatrix}$. Theo tiêu chuẩn Sylvester, $Q$ xác định dương khi:\n* $\\Delta_1 = 1 > 0$\n* $\\Delta_2 = \\begin{vmatrix} 1 & 1 \\\\ 1 & 2 \\end{vmatrix} = 2 - 1 = 1 > 0$\n* $\\Delta_3 = \\det A = 1(2m - 1) - 1(m - 0) = 2m - 1 - m = m - 1 > 0 \\iff m > 1$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21330,11 +21922,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Xác định dương"
+        "text": "Không xác định dấu"
       },
       {
         "key": "B",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       },
       {
         "key": "C",
@@ -21342,11 +21934,12 @@
       },
       {
         "key": "D",
-        "text": "Không xác định dấu"
+        "text": "Xác định âm"
       }
     ],
     "correct": "C",
     "explanation": "* $Q = (x_1 + 2x_2)^2 \\ge 0$ với mọi véc tơ. Tuy nhiên với véc tơ khác không $(-2, 1) \\neq (0, 0)$ thì $Q = 0$. Vì tồn tại $v \\neq \\theta$ mà $Q(v) = 0$ nên $Q$ chỉ là nửa xác định dương.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21383,6 +21976,7 @@
     ],
     "correct": "C",
     "explanation": "* $Q(x_1, x_2) = -4x_1^2 - 2x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21406,7 +22000,7 @@
       },
       {
         "key": "B",
-        "text": "Cực tiểu địa phương tại $M_0$"
+        "text": "Điểm yên ngựa (không là cực trị)"
       },
       {
         "key": "C",
@@ -21414,11 +22008,12 @@
       },
       {
         "key": "D",
-        "text": "Điểm yên ngựa (không là cực trị)"
+        "text": "Cực tiểu địa phương tại $M_0$"
       }
     ],
     "correct": "C",
     "explanation": "* Ứng dụng giải tích: Nếu ma trận vi phân cấp 2 (Hessian) xác định âm thì hàm số đạt cực đại địa phương; xác định dương thì đạt cực tiểu địa phương.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21442,11 +22037,11 @@
       },
       {
         "key": "B",
-        "text": "Chỉ cần giá trị riêng lớn nhất dương"
+        "text": "$\\lambda_i \\ge 0$ với mọi $i$"
       },
       {
         "key": "C",
-        "text": "$\\lambda_i \\ge 0$ với mọi $i$"
+        "text": "Chỉ cần giá trị riêng lớn nhất dương"
       },
       {
         "key": "D",
@@ -21455,6 +22050,7 @@
     ],
     "correct": "D",
     "explanation": "* Định lý: $Q$ xác định dương $\\iff$ mọi giá trị riêng $\\lambda_i > 0$. $Q$ xác định âm $\\iff$ mọi $\\lambda_i < 0$.\n* **Chọn đáp án: D.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21474,11 +22070,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Xác định âm"
+        "text": "Nửa xác định dương"
       },
       {
         "key": "B",
-        "text": "Nửa xác định dương"
+        "text": "Xác định âm"
       },
       {
         "key": "C",
@@ -21491,6 +22087,7 @@
     ],
     "correct": "D",
     "explanation": "* $Q(1, 0) = 1 > 0$ nhưng $Q(0, 1) = -3 < 0$. Do nhận cả giá trị dương và âm nên không xác định dấu.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21510,11 +22107,11 @@
     "options": [
       {
         "key": "A",
-        "text": "$m < \\dfrac{1}{3}$"
+        "text": "$m \\neq \\dfrac{1}{3}$"
       },
       {
         "key": "B",
-        "text": "$m \\neq \\dfrac{1}{3}$"
+        "text": "$m < \\dfrac{1}{3}$"
       },
       {
         "key": "C",
@@ -21527,6 +22124,7 @@
     ],
     "correct": "C",
     "explanation": "* Ma trận $A = \\begin{bmatrix} 3 & 1 \\\\ 1 & m \\end{bmatrix}$. Theo Sylvester: $\\Delta_1 = 3 > 0$ và $\\Delta_2 = 3m - 1 > 0 \\iff m > \\dfrac{1}{3}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21546,7 +22144,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Chỉ cần định thức toàn phần $\\det A > 0$"
+        "text": "Các định thức con chính góc đan dấu bắt đầu từ âm"
       },
       {
         "key": "B",
@@ -21558,11 +22156,12 @@
       },
       {
         "key": "D",
-        "text": "Các định thức con chính góc đan dấu bắt đầu từ âm"
+        "text": "Chỉ cần định thức toàn phần $\\det A > 0$"
       }
     ],
     "correct": "B",
     "explanation": "* Tiêu chuẩn Sylvester cho xác định dương: Mọi định thức con chính góc phải dương nghiêm ngặt: $\\Delta_1 > 0, \\Delta_2 > 0, \\dots, \\Delta_n > 0$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21582,7 +22181,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Không xác định dấu"
+        "text": "Xác định âm"
       },
       {
         "key": "B",
@@ -21590,15 +22189,16 @@
       },
       {
         "key": "C",
-        "text": "Xác định dương"
+        "text": "Không xác định dấu"
       },
       {
         "key": "D",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       }
     ],
     "correct": "B",
     "explanation": "* $Q = (x_1 + 3x_2)^2 \\ge 0$ với mọi véc tơ. Tuy nhiên với véc tơ khác không $(-3, 1) \\neq (0, 0)$ thì $Q = 0$. Vì tồn tại $v \\neq \\theta$ mà $Q(v) = 0$ nên $Q$ chỉ là nửa xác định dương.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21618,15 +22218,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Nửa xác định âm"
-      },
-      {
-        "key": "B",
         "text": "Xác định dương"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không xác định dấu"
+      },
+      {
+        "key": "C",
+        "text": "Nửa xác định âm"
       },
       {
         "key": "D",
@@ -21635,6 +22235,7 @@
     ],
     "correct": "D",
     "explanation": "* $Q(x_1, x_2) = -2x_1^2 - x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21658,19 +22259,20 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq \\dfrac{9}{2}$"
+        "text": "$m < \\dfrac{9}{2}$"
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq \\dfrac{9}{2}$"
       },
       {
         "key": "D",
-        "text": "$m < \\dfrac{9}{2}$"
+        "text": "$m > 0$"
       }
     ],
     "correct": "A",
     "explanation": "* Ma trận $A = \\begin{bmatrix} 2 & 3 \\\\ 3 & m \\end{bmatrix}$. Theo Sylvester: $\\Delta_1 = 2 > 0$ và $\\Delta_2 = 2m - 9 > 0 \\iff m > \\dfrac{9}{2}$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21690,7 +22292,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Xác định dương"
+        "text": "Xác định âm"
       },
       {
         "key": "B",
@@ -21702,11 +22304,12 @@
       },
       {
         "key": "D",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       }
     ],
     "correct": "B",
     "explanation": "* $Q(1, 0) = 3 > 0$ nhưng $Q(0, 1) = -2 < 0$. Do nhận cả giá trị dương và âm nên không xác định dấu.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21730,19 +22333,20 @@
       },
       {
         "key": "B",
-        "text": "$m > 0$"
+        "text": "$m \\neq 4$"
       },
       {
         "key": "C",
-        "text": "$m < 4$"
+        "text": "$m > 0$"
       },
       {
         "key": "D",
-        "text": "$m \\neq 4$"
+        "text": "$m < 4$"
       }
     ],
     "correct": "A",
     "explanation": "* Ma trận $A = \\begin{bmatrix} 1 & 2 \\\\ 2 & m \\end{bmatrix}$. Theo Sylvester: $\\Delta_1 = 1 > 0$ và $\\Delta_2 = 1m - 4 > 0 \\iff m > 4$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21766,19 +22370,20 @@
       },
       {
         "key": "B",
-        "text": "$m > 0$"
+        "text": "$m < 9$"
       },
       {
         "key": "C",
-        "text": "$m \\neq 9$"
+        "text": "$m > 0$"
       },
       {
         "key": "D",
-        "text": "$m < 9$"
+        "text": "$m \\neq 9$"
       }
     ],
     "correct": "A",
     "explanation": "* Ma trận $A = \\begin{bmatrix} 1 & 3 \\\\ 3 & m \\end{bmatrix}$. Theo Sylvester: $\\Delta_1 = 1 > 0$ và $\\Delta_2 = 1m - 9 > 0 \\iff m > 9$.\n* **Chọn đáp án: A.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21802,7 +22407,7 @@
       },
       {
         "key": "B",
-        "text": "Xác định dương"
+        "text": "Xác định âm"
       },
       {
         "key": "C",
@@ -21810,11 +22415,12 @@
       },
       {
         "key": "D",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       }
     ],
     "correct": "A",
     "explanation": "* $Q(1, 0) = 1 > 0$ nhưng $Q(0, 1) = -1 < 0$. Do nhận cả giá trị dương và âm nên không xác định dấu.\n* **Chọn đáp án: A.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21838,11 +22444,11 @@
       },
       {
         "key": "B",
-        "text": "$m \\neq 2$"
+        "text": "$m > 0$"
       },
       {
         "key": "C",
-        "text": "$m > 0$"
+        "text": "$m \\neq 2$"
       },
       {
         "key": "D",
@@ -21851,6 +22457,7 @@
     ],
     "correct": "D",
     "explanation": "* Ma trận $A = \\begin{bmatrix} 2 & 2 \\\\ 2 & m \\end{bmatrix}$. Theo Sylvester: $\\Delta_1 = 2 > 0$ và $\\Delta_2 = 2m - 4 > 0 \\iff m > 2$.\n* **Chọn đáp án: D.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21870,7 +22477,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Xác định dương"
+        "text": "Nửa xác định dương"
       },
       {
         "key": "B",
@@ -21882,11 +22489,12 @@
       },
       {
         "key": "D",
-        "text": "Nửa xác định dương"
+        "text": "Xác định dương"
       }
     ],
     "correct": "C",
     "explanation": "* $Q(1, 0) = 3 > 0$ nhưng $Q(0, 1) = -1 < 0$. Do nhận cả giá trị dương và âm nên không xác định dấu.\n* **Chọn đáp án: C.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21923,6 +22531,7 @@
     ],
     "correct": "B",
     "explanation": "* Ma trận $A = \\begin{bmatrix} 2 & 1 \\\\ 1 & m \\end{bmatrix}$. Theo Sylvester: $\\Delta_1 = 2 > 0$ và $\\Delta_2 = 2m - 1 > 0 \\iff m > \\dfrac{1}{2}$.\n* **Chọn đáp án: B.**",
+    "difficulty": "easy",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21942,7 +22551,7 @@
     "options": [
       {
         "key": "A",
-        "text": "$m > 5$"
+        "text": "$m > 0$"
       },
       {
         "key": "B",
@@ -21954,11 +22563,12 @@
       },
       {
         "key": "D",
-        "text": "$m > 0$"
+        "text": "$m > 5$"
       }
     ],
     "correct": "C",
     "explanation": "* Theo Sylvester: $\\Delta_1 = 5 > 0$ và $\\Delta_2 = 5m - 4 > 0 \\iff m > \\dfrac{4}{5}$.\n* **Chọn đáp án: C.**",
+    "difficulty": "hard",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -21978,7 +22588,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Xác định âm"
+        "text": "Xác định dương"
       },
       {
         "key": "B",
@@ -21986,15 +22596,16 @@
       },
       {
         "key": "C",
-        "text": "Xác định dương"
+        "text": "Nửa xác định dương"
       },
       {
         "key": "D",
-        "text": "Nửa xác định dương"
+        "text": "Xác định âm"
       }
     ],
     "correct": "B",
     "explanation": "* $Q(1, 0) = 1 > 0$ nhưng $Q(0, 1) = -2 < 0$. Do nhận cả giá trị dương và âm nên không xác định dấu.\n* **Chọn đáp án: B.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   },
@@ -22014,15 +22625,15 @@
     "options": [
       {
         "key": "A",
-        "text": "Nửa xác định âm"
-      },
-      {
-        "key": "B",
         "text": "Xác định dương"
       },
       {
-        "key": "C",
+        "key": "B",
         "text": "Không xác định dấu"
+      },
+      {
+        "key": "C",
+        "text": "Nửa xác định âm"
       },
       {
         "key": "D",
@@ -22031,6 +22642,7 @@
     ],
     "correct": "D",
     "explanation": "* $Q(x_1, x_2) = -4x_1^2 - x_2^2 < 0$ với mọi $(x_1, x_2) \\neq (0, 0)$ vì các hệ số đều âm nghiêm ngặt.\n* **Chọn đáp án: D.**",
+    "difficulty": "medium",
     "isOriginal": false,
     "origin": "extra"
   }

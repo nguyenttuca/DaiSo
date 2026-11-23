@@ -10,6 +10,12 @@ import random
 def gen_ch2(sub, seed, make_unique_options):
     rng = random.Random(seed * 47 + sub * 109)
     mode = seed % 10
+    if mode in [0, 1, 2]:
+        difficulty = "easy"
+    elif mode in [3, 4, 5, 6]:
+        difficulty = "medium"
+    else:
+        difficulty = "hard"
 
     if sub == 1: # 2.1 Không gian con & Tổ hợp tuyến tính
         if mode == 0:
@@ -114,7 +120,7 @@ def gen_ch2(sub, seed, make_unique_options):
             exp = "Với $u = (1, 1) \\in W$ và $v = (-1, 1) \\in W$, tổng $u + v = (0, 2)$ có $y = 2 \\neq |0| = 0$, nên $u + v \\notin W$. Phép cộng không đóng kín."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 2: # 2.2 Độc lập tuyến tính & Phụ thuộc tuyến tính
         if mode == 0:
@@ -198,7 +204,7 @@ def gen_ch2(sub, seed, make_unique_options):
             exp = "Định nghĩa: Hệ phụ thuộc tuyến tính khi tồn tại một tổ hợp tuyến tính triệt tiêu mà ít nhất một hệ số khác 0."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 3: # 2.3 Cơ sở & Số chiều
         if mode == 0:
@@ -293,7 +299,7 @@ def gen_ch2(sub, seed, make_unique_options):
             exp = "Định lý: Mọi cơ sở của cùng một không gian véc tơ đều có cùng một số lượng phần tử (được gọi là số chiều của không gian đó)."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     else: # 2.4 Tọa độ & Ma trận chuyển cơ sở
         if mode == 0:
@@ -380,4 +386,4 @@ def gen_ch2(sub, seed, make_unique_options):
             exp = f"Xếp các véc tơ $u_1, u_2$ làm các cột của ma trận: cột 1 là $({u11}, {u12})^T$, cột 2 là $({u21}, {u22})^T$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}

@@ -271,6 +271,10 @@
                   <strong id="summaryChaptersText">6/6 chương</strong>
                 </div>
                 <div class="summary-line">
+                  <span>Mức độ đề:</span>
+                  <strong id="summaryDifficultyText" style="color: var(--primary);">Trung bình (10 Dễ • 6 TB • 4 Khó)</strong>
+                </div>
+                <div class="summary-line">
                   <span>Nguồn khả dụng:</span>
                   <strong id="summarySourceText">612 câu hỏi</strong>
                 </div>
@@ -283,6 +287,53 @@
                   <strong id="summaryDistributionText" style="color: var(--primary);">Ưu tiên câu mới & câu cần ôn</strong>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <!-- Bước 4: Chọn mức độ đề thi (Độ khó) -->
+          <div class="matrix-difficulty-box">
+            <label class="matrix-setting-label">
+              <span>📊</span> Bước 4: Chọn mức độ đề thi (Tỷ lệ phân bổ độ khó):
+            </label>
+            <div class="matrix-diff-grid">
+              <label class="diff-card" data-diff="easy">
+                <input type="radio" name="quizDifficulty" value="easy">
+                <div class="diff-card-inner">
+                  <div class="diff-card-top">
+                    <span class="diff-pill pill-easy">🟢 Đề Dễ</span>
+                    <span class="diff-percent-tag">70% Dễ • 20% TB • 10% Khó</span>
+                  </div>
+                  <div class="diff-card-desc">
+                    Luyện tập cơ bản, kiểm tra lý thuyết và các công thức nền tảng
+                  </div>
+                </div>
+              </label>
+
+              <label class="diff-card active" data-diff="medium">
+                <input type="radio" name="quizDifficulty" value="medium" checked>
+                <div class="diff-card-inner">
+                  <div class="diff-card-top">
+                    <span class="diff-pill pill-medium">🟡 Đề Trung bình (Chuẩn)</span>
+                    <span class="diff-percent-tag">50% Dễ • 30% TB • 20% Khó</span>
+                  </div>
+                  <div class="diff-card-desc">
+                    Cấu trúc chuẩn đề thi kết thúc học phần PTIT, cân bằng lý thuyết & tính toán
+                  </div>
+                </div>
+              </label>
+
+              <label class="diff-card" data-diff="hard">
+                <input type="radio" name="quizDifficulty" value="hard">
+                <div class="diff-card-inner">
+                  <div class="diff-card-top">
+                    <span class="diff-pill pill-hard">🔴 Đề Khó</span>
+                    <span class="diff-percent-tag">30% Dễ • 40% TB • 30% Khó</span>
+                  </div>
+                  <div class="diff-card-desc">
+                    Thử thách điểm 9-10: nhiều bài toán chứa tham số m, bẫy định lý nâng cao
+                  </div>
+                </div>
+              </label>
             </div>
           </div>
         </div>
@@ -467,6 +518,14 @@
           <option value="extra">📚 Chỉ 531 câu Luyện tập mở rộng</option>
           <option value="de101">Đề minh họa 101 • PTIT (40 câu gốc)</option>
           <option value="de_ontap">Đề ôn tập PTIT • 80 phút (41 câu gốc)</option>
+        </select>
+
+        <!-- Difficulty Select -->
+        <select class="select-filter" id="practiceDifficultySelect">
+          <option value="all">Tất cả mức độ (Dễ, TB, Khó)</option>
+          <option value="easy">🟢 Mức độ Dễ</option>
+          <option value="medium">🟡 Mức độ Trung bình</option>
+          <option value="hard">🔴 Mức độ Khó</option>
         </select>
 
         <!-- Status Select -->

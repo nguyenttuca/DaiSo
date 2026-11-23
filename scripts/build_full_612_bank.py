@@ -142,6 +142,22 @@ def clean_katex_syntax(text):
 questions_by_type = {f"{ch}.{sub}": [] for ch in range(1, 7) for sub in range(1, 5)}
 seen_texts = set()
 
+HARD_DE101 = {4, 5, 6, 9, 13, 16, 17, 19, 26, 30, 31, 34, 38, 39}
+EASY_DE101 = {1, 2, 10, 14, 20, 21, 23, 25, 28, 29, 37, 40}
+
+HARD_ONTAP = {2, 9, 14, 20, 21, 24, 26, 27, 28, 29, 32, 33, 35, 36, 37, 38}
+EASY_ONTAP = {3, 5, 7, 18, 22, 23, 31, 40}
+
+def classify_authentic_difficulty(exam_id, no):
+    if exam_id == 'de101':
+        if no in HARD_DE101: return 'hard'
+        if no in EASY_DE101: return 'easy'
+        return 'medium'
+    else:
+        if no in HARD_ONTAP: return 'hard'
+        if no in EASY_ONTAP: return 'easy'
+        return 'medium'
+
 # Load Authentic Questions
 for raw in de101_raw:
     norm_txt = re.sub(r'\s+', ' ', raw['question']).strip().lower()
@@ -157,6 +173,7 @@ for raw in de101_raw:
     raw['typeName'] = TYPE_NAMES[tid]
     raw['examName'] = 'Đề minh họa 101 • PTIT'
     raw['examId'] = 'de101'
+    raw['difficulty'] = classify_authentic_difficulty('de101', raw.get('examQuestionNo', 0))
     questions_by_type[tid].append(raw)
 
 for raw in de_ontap_raw:
@@ -173,6 +190,7 @@ for raw in de_ontap_raw:
     raw['typeName'] = TYPE_NAMES[tid]
     raw['examName'] = 'Đề ôn tập PTIT • 80 phút'
     raw['examId'] = 'de_ontap'
+    raw['difficulty'] = classify_authentic_difficulty('de_ontap', raw.get('examQuestionNo', 0))
     questions_by_type[tid].append(raw)
 
 print(f"Loaded {sum(len(v) for v in questions_by_type.values())} authentic questions across types.")
@@ -300,6 +318,7 @@ for q in final_questions:
             "options": new_opts,
             "correct": desired_key,
             "explanation": exp.strip(),
+            "difficulty": q.get('difficulty', 'medium'),
             "isOriginal": False,
             "origin": "extra"
         }
@@ -322,6 +341,7 @@ for q in final_questions:
             "options": cleaned_opts,
             "correct": q['correct'].strip().upper(),
             "explanation": clean_katex_syntax(q['explanation'].strip()),
+            "difficulty": q.get('difficulty', 'medium'),
             "isOriginal": True,
             "origin": "original"
         }
@@ -332,11 +352,21 @@ for q in final_questions:
 # Verification & Statistics
 print("\n=== FINAL VERIFICATION ===")
 print(f"Total Bank Questions: {len(processed_bank)}")
+
+diff_counts = {}
+for q in processed_bank:
+    d = q.get('difficulty', 'medium')
+    diff_counts[d] = diff_counts.get(d, 0) + 1
+print(f"\nOverall Difficulty Distribution: {diff_counts} (Easy: {diff_counts.get('easy', 0)/len(processed_bank):.1%}, Medium: {diff_counts.get('medium', 0)/len(processed_bank):.1%}, Hard: {diff_counts.get('hard', 0)/len(processed_bank):.1%})")
+
 for ch in range(1, 7):
     ch_items = [q for q in processed_bank if q['chapterId'] == ch]
     auth_cnt = sum(1 for q in ch_items if q['isOriginal'])
     ext_cnt = sum(1 for q in ch_items if not q['isOriginal'])
-    print(f"Chương {ch} ({CHAPTER_NAMES[ch]}): {len(ch_items)} câu ({auth_cnt} gốc + {ext_cnt} mở rộng)")
+    ch_easy = sum(1 for q in ch_items if q.get('difficulty') == 'easy')
+    ch_med = sum(1 for q in ch_items if q.get('difficulty') == 'medium')
+    ch_hard = sum(1 for q in ch_items if q.get('difficulty') == 'hard')
+    print(f"Chương {ch} ({CHAPTER_NAMES[ch]}): {len(ch_items)} câu ({auth_cnt} gốc + {ext_cnt} mở rộng) -> [Dễ: {ch_easy}, TB: {ch_med}, Khó: {ch_hard}]")
     for sub in range(1, 5):
         tid = f"{ch}.{sub}"
         t_cnt = sum(1 for q in ch_items if q['typeId'] == tid)

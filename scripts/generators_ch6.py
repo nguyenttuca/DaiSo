@@ -17,6 +17,12 @@ import random
 def gen_ch6(sub, seed, make_unique_options):
     rng = random.Random(seed * 79 + sub * 137)
     mode = seed % 10
+    if mode in [0, 1, 2]:
+        difficulty = "easy"
+    elif mode in [3, 4, 5]:
+        difficulty = "medium"
+    else:
+        difficulty = "hard"
 
     if sub == 1: # 6.1 Tích vô hướng, Chuẩn & Góc
         if mode == 0:
@@ -141,7 +147,7 @@ def gen_ch6(sub, seed, make_unique_options):
             exp = f"Thay số vào công thức tích vô hướng có trọng số: $\\langle u, v \\rangle = {w_x}({u_pt[0]})({v_pt[0]}) + {w_y}({u_pt[1]})({v_pt[1]}) = {w_x * u_pt[0] * v_pt[0]} + ({w_y * u_pt[1] * v_pt[1]}) = {dot_val}$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 2: # 6.2 Hệ trực giao, Trực chuẩn & Gram-Schmidt
         if mode == 0:
@@ -256,7 +262,7 @@ def gen_ch6(sub, seed, make_unique_options):
             exp = "Từ $A^T A = I \\implies \\det(A^T A) = (\\det A)^2 = \\det I = 1 \\implies \\det A = \\pm 1$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 3: # 6.3 Dạng toàn phương & Đưa về chính tắc
         if mode == 0:
@@ -355,7 +361,7 @@ def gen_ch6(sub, seed, make_unique_options):
             exp = "Dạng toàn phương là một đa thức thuần nhất bậc 2. Biểu thức $x_1^2 + 2x_1 x_2 + 3x_2 + 1$ có chứa số hạng bậc nhất ($3x_2$) và hằng số tự do ($1$) nên không phải dạng toàn phương."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     else: # 6.4 Dấu của dạng toàn phương & Tiêu chuẩn Sylvester
         if mode == 0:
@@ -430,13 +436,13 @@ def gen_ch6(sub, seed, make_unique_options):
             w3 = "Tổng các giá trị riêng dương"
             exp = "Định lý: $Q$ xác định dương $\\iff$ mọi giá trị riêng $\\lambda_i > 0$. $Q$ xác định âm $\\iff$ mọi $\\lambda_i < 0$."
         elif mode == 7:
-            # Định thức âm suy ra không xác định dấu
-            q_text = "Nếu một dạng toàn phương hai biến có ma trận đối xứng $A$ thỏa mãn $\\det A < 0$, thì dạng toàn phương đó:"
-            cor = "Chắc chắn không xác định dấu"
-            w1 = "Chắc chắn xác định dương"
-            w2 = "Chắc chắn xác định âm"
-            w3 = "Chắc chắn nửa xác định âm"
-            exp = "Vì $\\det A = \\lambda_1 \\lambda_2 < 0$ nên hai giá trị riêng trái dấu nhau (một âm, một dương). Do đó dạng toàn phương nhận cả giá trị âm và dương, tức là không xác định dấu."
+            # Tiêu chuẩn Sylvester 3 biến chứa tham số m (Độ khó: Khó)
+            q_text = "Tìm điều kiện của tham số $m$ để dạng toàn phương $Q(x_1, x_2, x_3) = x_1^2 + 2x_2^2 + m x_3^2 + 2x_1 x_2 - 2x_2 x_3$ là **xác định dương**:"
+            cor = "$m > 1$"
+            w1 = "$m > 0$"
+            w2 = "$m < 1$"
+            w3 = "$m > 2$"
+            exp = "Ma trận đối xứng của $Q$ là $A = \\begin{bmatrix} 1 & 1 & 0 \\\\ 1 & 2 & -1 \\\\ 0 & -1 & m \\end{bmatrix}$. Theo tiêu chuẩn Sylvester, $Q$ xác định dương khi:\n* $\\Delta_1 = 1 > 0$\n* $\\Delta_2 = \\begin{vmatrix} 1 & 1 \\\\ 1 & 2 \\end{vmatrix} = 2 - 1 = 1 > 0$\n* $\\Delta_3 = \\det A = 1(2m - 1) - 1(m - 0) = 2m - 1 - m = m - 1 > 0 \\iff m > 1$."
         elif mode == 8:
             # Ứng dụng Hessian trong cực trị
             q_text = "Trong bài toán cực trị hàm nhiều biến, nếu tại điểm dừng $M_0$ ma trận Hessian $H$ xác định âm thì hàm số đạt:"
@@ -458,4 +464,4 @@ def gen_ch6(sub, seed, make_unique_options):
             exp = f"Theo Sylvester: $\\Delta_1 = {a11} > 0$ và $\\Delta_2 = {a11}m - {a12**2} > 0 \\iff m > {thresh_frac}$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}

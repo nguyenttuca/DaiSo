@@ -395,8 +395,10 @@ part2_questions = [
 
 # Load existing build_de_ontap.py and append these, then save data/de_ontap.json
 import importlib.util
+import os
 
-spec = importlib.util.spec_from_file_location("build_de_ontap", "build_de_ontap.py")
+base_dir = os.path.dirname(os.path.abspath(__file__))
+spec = importlib.util.spec_from_file_location("build_de_ontap", os.path.join(base_dir, "build_de_ontap.py"))
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 

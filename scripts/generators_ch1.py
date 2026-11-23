@@ -12,6 +12,12 @@ import math
 def gen_ch1(sub, seed, make_unique_options):
     rng = random.Random(seed * 31 + sub * 101)
     mode = seed % 10
+    if mode in [0, 1, 2]:
+        difficulty = "easy"
+    elif mode in [3, 4, 5]:
+        difficulty = "medium"
+    else:
+        difficulty = "hard"
 
     if sub == 1: # 1.1 Chân trị & Các phép toán Mệnh đề
         if mode == 0:
@@ -120,49 +126,32 @@ def gen_ch1(sub, seed, make_unique_options):
             w3 = f"${left}$ là điều kiện tương đương với ${right}$"
             exp = f"Trong mệnh đề ${form}$, ${left}$ là tiền đề (điều kiện đủ để suy ra ${right}$), còn ${right}$ là kết luận (điều kiện cần để ${left}$ xảy ra)."
         elif mode == 7:
-            p_val = rng.choice([1, 0])
-            q_val = 0 if p_val == 1 else rng.choice([0, 1])
-            is_false = (p_val == 1 and q_val == 0)
-            res_str = "Sai (0)" if is_false else "Đúng (1)"
-            p_text = "Đúng (1)" if p_val == 1 else "Sai (0)"
-            q_text_val = "Sai (0)" if q_val == 0 else "Đúng (1)"
-            q_text = f"Cho biết mệnh đề $p$ nhận chân trị {p_text} và $q$ nhận chân trị {q_text_val}. Khi đó chân trị của mệnh đề kéo theo $p \\to q$ là:"
-            cor = res_str
-            w1 = "Sai (0)" if res_str == "Đúng (1)" else "Đúng (1)"
-            w2 = "Không xác định được"
-            w3 = "Luôn đúng với mọi $p, q$"
-            exp = f"Mệnh đề kéo theo $p \\to q$ chỉ nhận giá trị Sai khi $p = 1$ và $q = 0$. Ở đây $p = {p_val}, q = {q_val}$ nên chân trị là **{res_str}**."
+            # Bài toán lượng từ lồng nhau phức hợp (Độ khó: Khó)
+            q_text = "Cho hai mệnh đề toán học với các lượng từ lồng nhau trên tập số thực $\\mathbb{R}$:\n$$P: \\forall x \\in \\mathbb{R}, \\, \\exists y \\in \\mathbb{R}: x + y = 0$$\n$$Q: \\exists y \\in \\mathbb{R}, \\, \\forall x \\in \\mathbb{R}: x + y = 0$$\nChân trị của $P$ và $Q$ lần lượt là:"
+            cor = "$P$ Đúng (1), $Q$ Sai (0)"
+            w1 = "$P$ Đúng (1), $Q$ Đúng (1)"
+            w2 = "$P$ Sai (0), $Q$ Sai (0)"
+            w3 = "$P$ Sai (0), $Q$ Đúng (1)"
+            exp = "Với $P$: Với mọi số thực $x$, ta luôn chọn được $y = -x \\in \\mathbb{R}$ để $x + (-x) = 0$, do đó $P$ nhận chân trị Đúng (1). Với $Q$: Không tồn tại số thực $y$ cố định nào mà cộng với mọi $x \\in \\mathbb{R}$ đều bằng 0 (chẳng hạn nếu chọn $x = 1 - y$ thì $x + y = 1 \\neq 0$), do đó $Q$ nhận chân trị Sai (0)."
         elif mode == 8:
-            true_maths = [
-                ("$\\forall x \\in \\mathbb{R}, \\, x^2 + 1 > 0$", "Bình phương cộng 1 luôn dương"),
-                ("$\\forall x \\in \\mathbb{R}, \\, |x| \\ge 0$", "Giá trị tuyệt đối luôn không âm"),
-                ("$\\exists x \\in \\mathbb{R}, \\, x^2 - 2 = 0$", "Tồn tại số vô tỉ $\\sqrt{2}$"),
-                ("$\\forall n \\in \\mathbb{N}, \\, n(n+1) \\text{ là số chẵn}$", "Tích hai số tự nhiên liên tiếp luôn chẵn")
-            ]
-            t_stat, t_exp = rng.choice(true_maths)
-            q_text = f"Trong các mệnh đề toán học sau đây, mệnh đề nào là một **mệnh đề Đúng**?"
-            cor = f"{t_stat}"
-            w1 = "$\\exists x \\in \\mathbb{R}, \\, x^2 + 1 = 0$"
-            w2 = "$\\forall x \\in \\mathbb{R}, \\, x^2 > x$"
-            w3 = "$\\forall n \\in \\mathbb{N}, \\, n - 2 > 0$"
-            exp = f"Mệnh đề {t_stat} là mệnh đề đúng vì {t_exp}."
+            # Phủ định của mệnh đề kéo theo lồng nhau (Độ khó: Khó)
+            q_text = "Phủ định của mệnh đề phức hợp $p \\to (q \\to r)$ tương đương logic với mệnh đề nào sau đây?"
+            cor = "$p \\wedge q \\wedge \\bar{r}$"
+            w1 = "$\\bar{p} \\to (\\bar{q} \\to \\bar{r})$"
+            w2 = "$p \\to (q \\wedge \\bar{r})$"
+            w3 = "$\\bar{p} \\vee \\bar{q} \\vee r$"
+            exp = "Biến đổi phủ định theo luật logic: $\\neg[p \\to (q \\to r)] \\equiv \\neg[\\bar{p} \\vee (\\bar{q} \\vee r)] \\equiv \\neg \\bar{p} \\wedge \\neg(\\bar{q} \\vee r) \\equiv p \\wedge q \\wedge \\bar{r}$."
         else:
-            syllogisms = [
-                ("$((p \\vee q) \\wedge \\bar{p}) \\implies q$", "Tam đoạn luận tuyển (Disjunctive Syllogism)"),
-                ("$((p \\to q) \\wedge (q \\to r)) \\implies (p \\to r)$", "Tam đoạn luận giả định (Hypothetical Syllogism)"),
-                ("$((p \\to q) \\wedge p) \\implies q$", "Khẳng định tiền đề (Modus Ponens)"),
-                ("$((p \\to q) \\wedge \\bar{q}) \\implies \\bar{p}$", "Phủ định kết luận (Modus Tollens)")
-            ]
-            rule_form, rule_name = rng.choice(syllogisms)
-            q_text = f"Quy tắc suy luận hợp lệ ứng với **{rule_name}** là:"
-            cor = f"{rule_form}"
-            w1 = "$((p \\vee q) \\wedge p) \\implies q$"
-            w2 = "$((p \\to q) \\wedge q) \\implies p$"
-            w3 = "$((p \\wedge q) \\wedge \\bar{p}) \\implies q$"
-            exp = f"Theo logic hình thức, quy tắc {rule_name} được phát biểu chính xác là {rule_form}."
+            # Suy diễn logic hình thức đa bước (Độ khó: Khó)
+            q_text = "Cho hệ ba tiền đề sau:\n1. $p \\to \\bar{q}$\n2. $r \\to q$\n3. $p$\nKhẳng định nào dưới đây là **kết luận hợp lý** (valid conclusion) suy ra từ hệ tiền đề trên?"
+            cor = "$\\bar{r}$"
+            w1 = "$r$"
+            w2 = "$q$"
+            w3 = "$\\bar{p}$"
+            exp = "Từ tiền đề (1) $p \\to \\bar{q}$ và (3) $p$, theo quy tắc Modus Ponens ta suy ra $\\bar{q}$. Từ tiền đề (2) $r \\to q$, theo luật phản đảo tương đương với $\\bar{q} \\to \\bar{r}$. Kết hợp với $\\bar{q}$ vừa suy ra, theo Modus Ponens ta được kết luận $\\bar{r}$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 2: # 1.2 Boole & Tương đương Logic
         if mode == 0:
@@ -201,7 +190,11 @@ def gen_ch1(sub, seed, make_unique_options):
             duals = [
                 ("$(x \\vee 0) \\wedge (y \\vee \\bar{z})$", "$(x \\wedge 1) \\vee (y \\wedge \\bar{z})$"),
                 ("$(x \\wedge 1) \\vee (y \\wedge 0)$", "$(x \\vee 0) \\wedge (y \\vee 1)$"),
-                ("$(x \\vee y) \\wedge (\\bar{x} \\vee z)$", "$(x \\wedge y) \\vee (\\bar{x} \\wedge z)$")
+                ("$(x \\vee y) \\wedge (\\bar{x} \\vee z)$", "$(x \\wedge y) \\vee (\\bar{x} \\wedge z)$"),
+                ("$(x \\wedge y) \\vee (\\bar{y} \\wedge 1)$", "$(x \\vee y) \\wedge (\\bar{y} \\vee 0)$"),
+                ("$(x \\vee 1) \\wedge (y \\vee 0)$", "$(x \\wedge 0) \\vee (y \\wedge 1)$"),
+                ("$(x \\vee \\bar{y}) \\wedge (z \\vee 0)$", "$(x \\wedge \\bar{y}) \\vee (z \\wedge 1)$"),
+                ("(\\bar{x} \\wedge y) \\vee (x \\wedge \\bar{z})", "(\\bar{x} \\vee y) \\wedge (x \\vee \\bar{z})")
             ]
             orig_f, dual_f = rng.choice(duals)
             q_text = f"Nguyên lý đối ngẫu (Dual principle) của công thức Boole {orig_f} là:"
@@ -215,17 +208,21 @@ def gen_ch1(sub, seed, make_unique_options):
                 ("$F = (x \\wedge y) \\vee (x \\wedge \\bar{y})$", "$x$"),
                 ("$F = (x \\vee y) \\wedge (x \\vee \\bar{y})$", "$x$"),
                 ("$F = (x \\wedge y) \\vee (\\bar{x} \\wedge y)$", "$y$"),
-                ("$F = (x \\vee y) \\wedge (\\bar{x} \\vee y)$", "$y$")
+                ("$F = (x \\vee y) \\wedge (\\bar{x} \\vee y)$", "$y$"),
+                ("$F = (x \\wedge y) \\vee (x \\wedge y \\wedge z)$", "$x \\wedge y$"),
+                ("$F = (x \\vee y) \\wedge (x \\vee y \\vee z)$", "$x \\vee y$"),
+                ("$F = (x \\wedge \\bar{y}) \\vee (x \\wedge y)$", "$x$"),
+                ("$F = (\\bar{x} \\wedge \\bar{y}) \\vee (\\bar{x} \\wedge y)$", "$\\bar{x}$")
             ]
             f_expr, f_ans = rng.choice(simplifications)
             q_text = f"Rút gọn biểu thức logic Boole {f_expr} ta được:"
             cor = f"{f_ans}"
-            w1 = "$x \\wedge y$"
+            w1 = "$x \\wedge y$" if f_ans != "$x \\wedge y$" else "$x \\vee y$"
             w2 = "$1$"
             w3 = "$0$"
             exp = f"Áp dụng tính chất phân phối và $y \\vee \\bar{{y}} = 1$ (hoặc $y \\wedge \\bar{{y}} = 0$), ta rút gọn được {f_expr} thành {f_ans}."
         elif mode == 4:
-            var_choice = rng.choice([0, 1])
+            var_choice = rng.choice([0, 1, 2, 3])
             if var_choice == 0:
                 q_text = "Rút gọn biểu thức Boole $F = x \\vee (\\bar{x} \\wedge y)$ ta được:"
                 cor = "$x \\vee y$"
@@ -233,72 +230,84 @@ def gen_ch1(sub, seed, make_unique_options):
                 w2 = "$x$"
                 w3 = "$y$"
                 exp = "Áp dụng luật phân phối: $x \\vee (\\bar{x} \\wedge y) = (x \\vee \\bar{x}) \\wedge (x \\vee y) = 1 \\wedge (x \\vee y) = x \\vee y$."
-            else:
+            elif var_choice == 1:
                 q_text = "Rút gọn biểu thức Boole $F = x \\wedge (\\bar{x} \\vee y)$ ta được:"
                 cor = "$x \\wedge y$"
                 w1 = "$x \\vee y$"
                 w2 = "$x$"
                 w3 = "$y$"
                 exp = "Áp dụng luật phân phối: $x \\wedge (\\bar{x} \\vee y) = (x \\wedge \\bar{x}) \\vee (x \\wedge y) = 0 \\vee (x \\wedge y) = x \\wedge y$."
+            elif var_choice == 2:
+                q_text = "Rút gọn biểu thức Boole $F = \\bar{x} \\vee (x \\wedge y)$ ta được:"
+                cor = "$\\bar{x} \\vee y$"
+                w1 = "$\\bar{x} \\wedge y$"
+                w2 = "$\\bar{x}$"
+                w3 = "$y$"
+                exp = "Áp dụng luật phân phối: $\\bar{x} \\vee (x \\wedge y) = (\\bar{x} \\vee x) \\wedge (\\bar{x} \\vee y) = 1 \\wedge (\\bar{x} \\vee y) = \\bar{x} \\vee y$."
+            else:
+                q_text = "Rút gọn biểu thức Boole $F = (x \\vee y) \\wedge (x \\vee \\bar{y})$ ta được:"
+                cor = "$x$"
+                w1 = "$y$"
+                w2 = "$x \\vee y$"
+                w3 = "$x \\wedge y$"
+                exp = "Áp dụng luật phân phối: $(x \\vee y) \\wedge (x \\vee \\bar{y}) = x \\vee (y \\wedge \\bar{y}) = x \\vee 0 = x$."
         elif mode == 5:
             xor_cases = [
                 ("x \\oplus 0", "$x$"),
                 ("x \\oplus 1", "$\\bar{x}$"),
                 ("x \\oplus x", "$0$"),
-                ("x \\oplus \\bar{x}", "$1$")
+                ("x \\oplus \\bar{x}", "$1$"),
+                ("(x \\oplus y) \\oplus y", "$x$"),
+                ("(x \\oplus 1) \\oplus 1", "$x$"),
+                ("x \\oplus x \\oplus x", "$x$")
             ]
             in_x, out_x = rng.choice(xor_cases)
             q_text = f"Trong đại số Boole, giá trị rút gọn của biểu thức ${in_x}$ (phép tuyển loại trừ XOR) là:"
             cor = f"{out_x}"
             w1 = "$x$" if out_x != "$x$" else "$\\bar{x}$"
             w2 = "$1$" if out_x != "$1$" else "$0$"
-            w3 = "$x \\wedge 1$"
+            w3 = "$x \\wedge 1$" if out_x != "$x \\wedge 1$" else "$\\bar{x} \\vee 1$"
             exp = f"Theo định nghĩa phép XOR: $a \\oplus b = a\\bar{{b}} \\vee \\bar{{a}}b$, ta có ${in_x} = {out_x}$."
         elif mode == 6:
-            q_text = "Tại sao cổng NAND (hoặc NOR) được gọi là cổng logic vạn năng (Universal gate)?"
-            cor = "Vì mọi hàm Boole đều có thể được thiết kế chỉ bằng các cổng NAND (hoặc NOR)"
-            w1 = "Vì cổng NAND có tốc độ xử lý nhanh nhất trong vi mạch"
-            w2 = "Vì cổng NAND tiêu thụ ít năng lượng nhất"
-            w3 = "Vì cổng NAND có thể nhận vô số đầu vào cùng một lúc"
-            exp = "Hệ {NAND} (hoặc {NOR}) là một hệ đầy đủ chức năng, do đó mọi phép toán logic cơ bản (NOT, AND, OR) và mọi hàm Boole đều có thể biểu diễn chỉ bằng cổng NAND."
+            gate_cases = [
+                ("NAND (hoặc NOR)", "Vì mọi hàm Boole đều có thể được thiết kế chỉ bằng các cổng NAND (hoặc NOR)"),
+                ("NAND", "Vì hệ {NAND} là một hệ đầy đủ chức năng trong logic"),
+                ("NOR", "Vì hệ {NOR} là một hệ đầy đủ chức năng trong logic")
+            ]
+            g_name, g_exp = rng.choice(gate_cases)
+            q_text = f"Tại sao cổng {g_name} được gọi là cổng logic vạn năng (Universal gate)?"
+            cor = f"{g_exp}"
+            w1 = f"Vì cổng {g_name} có tốc độ xử lý nhanh nhất trong vi mạch số"
+            w2 = f"Vì cổng {g_name} tiêu thụ ít năng lượng nhất"
+            w3 = f"Vì cổng {g_name} có thể nhận vô số đầu vào cùng một lúc"
+            exp = f"Hệ {{{g_name}}} là một hệ đầy đủ chức năng, do đó mọi phép toán logic cơ bản (NOT, AND, OR) và mọi hàm Boole đều có thể biểu diễn chỉ bằng cổng {g_name}."
         elif mode == 7:
-            eq_relations = [
-                ("Quan hệ đồng dư modulo $m$ ($a \\equiv b \\pmod{m}$) trên $\\mathbb{Z}$", "Phản xạ, Đối xứng và Bắc cầu"),
-                ("Quan hệ bằng nhau ($a = b$) trên tập số thực $\\mathbb{R}$", "Phản xạ, Đối xứng và Bắc cầu"),
-                ("Quan hệ song song giữa các đường thẳng trong mặt phẳng", "Phản xạ, Đối xứng và Bắc cầu")
-            ]
-            rel_name, rel_prop = rng.choice(eq_relations)
-            q_text = f"{rel_name} là một quan hệ tương đương vì nó thỏa mãn 3 tính chất:"
-            cor = f"{rel_prop}"
-            w1 = "Phản xạ, Phản đối xứng và Bắc cầu"
-            w2 = "Đối xứng, Phản đối xứng và Bắc cầu"
-            w3 = "Phản xạ, Đối xứng và Đầy đủ"
-            exp = f"Mọi quan hệ tương đương bắt buộc phải thỏa mãn 3 tính chất: {rel_prop}."
+            # Rút gọn biểu thức Boole 3 biến (Độ khó: Khó)
+            q_text = "Rút gọn biểu thức đại số Boole sau:\n$$F(x, y, z) = (x \\vee y) \\wedge (x \\vee \\bar{y}) \\wedge (\\bar{x} \\vee z)$$"
+            cor = "$x \\wedge z$"
+            w1 = "$x \\vee z$"
+            w2 = "$\\bar{x} \\wedge z$"
+            w3 = "$x \\wedge y \\wedge z$"
+            exp = "Áp dụng luật phân phối cho hai thừa số đầu: $(x \\vee y) \\wedge (x \\vee \\bar{y}) = x \\vee (y \\wedge \\bar{y}) = x \\vee 0 = x$. Biểu thức trở thành: $F = x \\wedge (\\bar{x} \\vee z) = (x \\wedge \\bar{x}) \\vee (x \\wedge z) = 0 \\vee (x \\wedge z) = x \\wedge z$."
         elif mode == 8:
-            order_relations = [
-                ("Quan hệ chia hết ($a \\mid b$) trên tập số nguyên dương $\\mathbb{N}^*$", "Phản xạ, Phản đối xứng và Bắc cầu"),
-                ("Quan hệ nhỏ hơn hoặc bằng ($\\le$) trên tập số thực $\\mathbb{R}$", "Phản xạ, Phản đối xứng và Bắc cầu"),
-                ("Quan hệ bao hàm tập hợp ($\\subseteq$) trên tập lũy thừa $\\mathcal{P}(S)$", "Phản xạ, Phản đối xứng và Bắc cầu")
-            ]
-            rel_name, rel_prop = rng.choice(order_relations)
-            q_text = f"{rel_name} là một quan hệ thứ tự (Poset) vì nó thỏa mãn 3 tính chất:"
-            cor = f"{rel_prop}"
-            w1 = "Phản xạ, Đối xứng và Bắc cầu"
-            w2 = "Không phản xạ, Đối xứng và Bắc cầu"
-            w3 = "Đối xứng, Phản đối xứng và Bắc cầu"
-            exp = f"Quan hệ thứ tự (bán phần) thỏa mãn 3 tính chất: {rel_prop}."
+            # Dạng chuẩn tắc nối rời (SOP - MinTerm) (Độ khó: Khó)
+            q_text = "Dạng chuẩn tắc nối rời chính tắc (SOP - Sum of Products) của hàm Boole $f(x, y) = x \\to y$ là:"
+            cor = "$\\bar{x}\\bar{y} \\vee \\bar{x}y \\vee xy$"
+            w1 = "$\\bar{x}y \\vee xy$"
+            w2 = "$x\\bar{y} \\vee xy$"
+            w3 = "$\\bar{x}\\bar{y} \\vee x\\bar{y}$"
+            exp = "Mệnh đề kéo theo $x \\to y \\equiv \\bar{x} \\vee y$. Mở rộng thành các hội đầy đủ (minterms): $\\bar{x} = \\bar{x}(y \\vee \\bar{y}) = \\bar{x}y \\vee \\bar{x}\\bar{y}$; $y = (x \\vee \\bar{x})y = xy \\vee \\bar{x}y$. Tuyển lại ta được: $f(x, y) = \\bar{x}\\bar{y} \\vee \\bar{x}y \\vee xy$."
         else:
-            n = rng.choice([1, 2, 3])
-            num_funcs = 2**(2**n)
-            q_text = f"Có tổng cộng bao nhiêu hàm Boole $n$ biến phân biệt với $n = {n}$?"
-            cor = f"${num_funcs}$"
-            w1 = f"${2**n}$"
-            w2 = f"${2*n}$"
-            w3 = f"${num_funcs // 2}$"
-            exp = f"Bảng chân trị có $2^{{{n}}} = {2**n}$ hàng. Mỗi hàng có 2 cách chọn giá trị (0 hoặc 1), do đó số hàm Boole là $2^{{2^{{{n}}}}} = 2^{{{2**n}}} = {num_funcs}$."
+            # Số lượng quan hệ tương đương (Số Bell) (Độ khó: Khó)
+            q_text = "Có tất cả bao nhiêu **quan hệ tương đương** phân biệt (tương ứng với số phân hoạch) có thể xây dựng trên tập hợp $S = \\{a, b, c\\}$ gồm 3 phần tử?"
+            cor = "$5$"
+            w1 = "$4$"
+            w2 = "$6$"
+            w3 = "$8$"
+            exp = "Số quan hệ tương đương trên một tập hữu hạn $n$ phần tử chính là số Bell $B_n$. Với $n = 3$, số phân hoạch gồm: 1 phân hoạch 3 phần tử $\\{\\{a, b, c\\}\\}$, 3 phân hoạch dạng 2+1 $\\{\\{a, b\\}, \\{c\\}\\}, \\dots$, và 1 phân hoạch dạng 1+1+1 $\\{\\{a\\}, \\{b\\}, \\{c\\}\\}$. Tổng cộng: $1 + 3 + 1 = 5$ quan hệ tương đương (số Bell $B_3 = 5$)."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     elif sub == 3: # 1.3 Tập hợp & Phép toán tập hợp
         if mode == 0:
@@ -391,34 +400,32 @@ def gen_ch1(sub, seed, make_unique_options):
                 w3 = "$\\overline{A \\cap B}$"
                 exp = "Luật De Morgan tập hợp: Phần bù của một hợp bằng giao các phần bù: $\\overline{A \\cup B} = \\bar{A} \\cap \\bar{B}$."
         elif mode == 7:
-            a1 = rng.choice([-3, -2, -1])
-            a2 = rng.choice([3, 4, 5])
-            b1 = rng.choice([0, 1, 2])
-            b2 = rng.choice([6, 7, 8])
-            # Inter of (a1, a2] and [b1, b2) is [b1, a2]
-            q_text = f"Trên tập số thực $\\mathbb{{R}}$, giao của hai khoảng $({a1}, {a2}]$ và $[{b1}, {b2})$ là:"
-            cor = f"$[{b1}, {a2}]$"
-            w1 = f"$({a1}, {b2})$"
-            w2 = f"$({b1}, {a2})$"
-            w3 = f"$[{b1}, {a2})$"
-            exp = f"Giao hai khoảng là tập các giá trị $x$ thỏa mãn: ${a1} < x \\le {a2}$ và ${b1} \\le x < {b2} \\iff {b1} \\le x \\le {a2}$, tức là đoạn $[{b1}, {a2}]$."
+            # Nguyên lý bù trừ (Inclusion-Exclusion) 3 tập hợp (Độ khó: Khó)
+            q_text = "Trong một khóa học gồm 100 sinh viên: có 60 sinh viên học môn A, 50 sinh viên học môn B, 40 sinh viên học môn C; có 30 sinh viên học cả A và B, 25 sinh viên học cả A và C, 20 sinh viên học cả B và C; và có 15 sinh viên học cả ba môn A, B, C. Số sinh viên không học môn nào trong ba môn trên là:"
+            cor = "$10$ sinh viên"
+            w1 = "$15$ sinh viên"
+            w2 = "$5$ sinh viên"
+            w3 = "$20$ sinh viên"
+            exp = "Theo nguyên lý bù trừ: $|A \\cup B \\cup C| = |A| + |B| + |C| - (|A \\cap B| + |A \\cap C| + |B \\cap C|) + |A \\cap B \\cap C| = 60 + 50 + 40 - (30 + 25 + 20) + 15 = 150 - 75 + 15 = 90$. Số sinh viên không học môn nào là $100 - 90 = 10$ sinh viên."
         elif mode == 8:
-            q_text = "Cho tập hợp $S = \\{1, \\{2, 3\\}, 4\\}$. Khẳng định nào sau đây là **ĐÚNG**?"
-            cor = "$\\{2, 3\\} \\in S$"
-            w1 = "$\\{2, 3\\} \\subset S$"
-            w2 = "$2 \\in S$"
-            w3 = "$3 \\in S$"
-            exp = "Tập con $\\{2, 3\\}$ đóng vai trò là một phần tử trực tiếp của tập $S$, do đó $\\{2, 3\\} \\in S$ là đúng. Còn $2$ và $3$ không phải là phần tử riêng lẻ của $S$."
+            # Tập lũy thừa & Các khẳng định sâu (Độ khó: Khó)
+            q_text = "Cho hai tập hợp $A$ và $B$ bất kỳ. Khẳng định nào sau đây là **SAI**?"
+            cor = "$\\mathcal{P}(A) \\cup \\mathcal{P}(B) = \\mathcal{P}(A \\cup B)$"
+            w1 = "$\\mathcal{P}(A) \\cap \\mathcal{P}(B) = \\mathcal{P}(A \\cap B)$"
+            w2 = "Nếu $A \\subseteq B$ thì $\\mathcal{P}(A) \\subseteq \\mathcal{P}(B)$"
+            w3 = "$|\\mathcal{P}(A \\times B)| = 2^{|A| \\cdot |B|}$ với $A, B$ hữu hạn"
+            exp = "Khẳng định $\\mathcal{P}(A) \\cup \\mathcal{P}(B) = \\mathcal{P}(A \\cup B)$ là SAI. Phản ví dụ: Chọn $A = \\{1\\}, B = \\{2\\}$. Khi đó $A \\cup B = \\{1, 2\\} \\in \\mathcal{P}(A \\cup B)$, nhưng $\\{1, 2\\} \\notin \\mathcal{P}(A)$ và $\\{1, 2\\} \\notin \\mathcal{P}(B)$, do đó không thuộc vế trái."
         else:
-            q_text = "Cho hai tập hợp $A, B$ bất kỳ. Khẳng định nào sau đây luôn **ĐÚNG**?"
-            cor = "$A \\setminus B = A \\cap \\bar{B}$"
-            w1 = "$A \\setminus B = B \\setminus A$"
-            w2 = "$A \\cup (B \\cap C) = (A \\cup B) \\cap C$"
-            w3 = "$A \\cap (A \\cup B) = B$"
-            exp = "Hiệu của hai tập hợp $A \\setminus B$ chính là tập các phần tử thuộc $A$ và không thuộc $B$, tức là $A \\cap \\bar{B}$."
+            # Số lượng tập con thỏa mãn điều kiện (Độ khó: Khó)
+            q_text = "Cho tập hợp $S$ gồm $6$ phần tử. Có tất cả bao nhiêu tập con của $S$ chứa đúng $3$ phần tử và bắt buộc phải chứa một phần tử cố định $x_0 \\in S$?"
+            cor = "$10$"
+            w1 = "$20$"
+            w2 = "$15$"
+            w3 = "$12$"
+            exp = "Vì phần tử cố định $x_0$ chắc chắn đã nằm trong tập con, ta chỉ cần chọn thêm $3 - 1 = 2$ phần tử từ $6 - 1 = 5$ phần tử còn lại của $S$. Số cách chọn là tổ hợp: $C_5^2 = \\dfrac{5!}{2! 3!} = 10$ tập con."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
 
     else: # 1.4 Ánh xạ
         if mode == 0:
@@ -481,30 +488,29 @@ def gen_ch1(sub, seed, make_unique_options):
             w3 = "$g$ là một song ánh"
             exp = "Định lý ánh xạ hợp: Nếu $g \\circ f$ là toàn ánh thì ánh xạ ngoài $g$ bắt buộc phải là toàn ánh."
         elif mode == 7:
-            q_text = "Ánh xạ $f: \\mathbb{R} \\to [0, +\\infty)$ xác định bởi $f(x) = x^2$ là:"
-            cor = "Toàn ánh nhưng không là đơn ánh"
-            w1 = "Đơn ánh nhưng không là toàn ánh"
-            w2 = "Song ánh"
-            w3 = "Không đơn ánh và không toàn ánh"
-            exp = "Tập giá trị của $x^2$ là $[0, +\\infty)$ nên $f$ là toàn ánh. Tuy nhiên $f(1) = f(-1) = 1$ nên $f$ không là đơn ánh."
+            # Ánh xạ ngược của hàm phân thức (Độ khó: Khó)
+            q_text = "Cho ánh xạ song ánh $f: \\mathbb{R} \\setminus \\{2\\} \\to \\mathbb{R} \\setminus \\{1\\}$ xác định bởi $f(x) = \\dfrac{x + 1}{x - 2}$. Công thức của ánh xạ ngược $f^{-1}(x)$ là:"
+            cor = "$f^{-1}(x) = \\dfrac{2x + 1}{x - 1}$"
+            w1 = "$f^{-1}(x) = \\dfrac{x - 2}{x + 1}$"
+            w2 = "$f^{-1}(x) = \\dfrac{x - 1}{2x + 1}$"
+            w3 = "$f^{-1}(x) = \\dfrac{2x - 1}{x + 1}$"
+            exp = "Đặt $y = \\dfrac{x + 1}{x - 2} \\iff y(x - 2) = x + 1 \\iff x(y - 1) = 2y + 1 \\iff x = \\dfrac{2y + 1}{y - 1}$. Đổi biến ta được $f^{-1}(x) = \\dfrac{2x + 1}{x - 1}$."
         elif mode == 8:
-            m_sz = rng.choice([2, 3, 4])
-            n_sz = rng.choice([2, 3])
-            total_maps = n_sz ** m_sz
-            q_text = f"Cho tập $A$ gồm {m_sz} phần tử và tập $B$ gồm {n_sz} phần tử. Có tất cả bao nhiêu ánh xạ từ $A$ vào $B$?"
-            cor = f"${total_maps}$"
-            w1 = f"${m_sz * n_sz}$"
-            w2 = f"${m_sz**n_sz}$"
-            w3 = f"${total_maps + 2}$"
-            exp = f"Mỗi phần tử của tập $A$ ({m_sz} phần tử) có {n_sz} cách chọn ảnh trong tập $B$. Do đó tổng số ánh xạ là $|B|^{{|A|}} = {n_sz}^{{{m_sz}}} = {total_maps}$."
+            # Tính chất ánh xạ hợp g o f (Độ khó: Khó)
+            q_text = "Cho hai ánh xạ $f: A \\to B$ và $g: B \\to C$. Khẳng định nào sau đây là **LUÔN ĐÚNG**?"
+            cor = "Nếu $g \\circ f$ là đơn ánh thì $f$ bắt buộc phải là đơn ánh"
+            w1 = "Nếu $g \\circ f$ là đơn ánh thì $g$ bắt buộc phải là đơn ánh"
+            w2 = "Nếu $g \\circ f$ là toàn ánh thì $f$ bắt buộc phải là toàn ánh"
+            w3 = "Nếu $f$ toàn ánh thì $g \\circ f$ chắc chắn là toàn ánh"
+            exp = "Định lý ánh xạ hợp: Giả sử $f(x_1) = f(x_2)$. Khi đó $g(f(x_1)) = g(f(x_2)) \\iff (g \\circ f)(x_1) = (g \\circ f)(x_2)$. Vì $g \\circ f$ là đơn ánh nên $x_1 = x_2$. Do đó $f$ bắt buộc phải là đơn ánh."
         else:
-            k = rng.choice([2, 3, 4])
-            q_text = f"Ánh xạ $f: \\mathbb{{Z}} \\to \\mathbb{{Z}}$ xác định bởi $f(n) = {k}n$ là:"
-            cor = "Đơn ánh nhưng không toàn ánh"
-            w1 = "Toàn ánh nhưng không đơn ánh"
-            w2 = "Song ánh"
-            w3 = "Không đơn ánh và không toàn ánh"
-            exp = f"${k}n_1 = {k}n_2 \\implies n_1 = n_2$ nên $f$ là đơn ánh. Nhưng các số không chia hết cho {k} (như 1) không có tạo ảnh nguyên nên $f$ không toàn ánh."
+            # Số lượng toàn ánh (Độ khó: Khó)
+            q_text = "Cho tập $A$ gồm $4$ phần tử và tập $B$ gồm $2$ phần tử. Có tất cả bao nhiêu **toàn ánh** từ tập $A$ vào tập $B$?"
+            cor = "$14$"
+            w1 = "$16$"
+            w2 = "$12$"
+            w3 = "$8$"
+            exp = "Tổng số ánh xạ từ $A$ vào $B$ là $|B|^{|A|} = 2^4 = 16$. Một ánh xạ không là toàn ánh khi và chỉ khi toàn bộ 4 phần tử của $A$ đều ánh xạ vào duy nhất 1 phần tử của $B$ (có đúng 2 ánh xạ hằng như vậy). Vậy số toàn ánh là $16 - 2 = 14$."
 
         options = make_unique_options(cor, [w1, w2, w3])
-        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**"}
+        return {"question": q_text, "options": options, "correct": "A", "explanation": f"* {exp}\n* **Chọn đáp án: A.**", "difficulty": difficulty}
