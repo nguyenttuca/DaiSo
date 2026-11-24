@@ -55,20 +55,26 @@
   <header class="app-header">
     <div class="header-container">
       <div class="brand">
-        <h1 class="brand-title">Đại Số Tuyến Tính & Toán Rời Rạc PTIT</h1>
-        <span class="brand-badge" id="brandTotalBadge">612 Câu (81 Đề Gốc PTIT)</span>
+        <h1 class="brand-title">Luyện Thi Toán Trắc Nghiệm PTIT</h1>
+        <span class="brand-badge" id="brandTotalBadge">739 Câu (Chuẩn CLO PTIT)</span>
       </div>
 
       <!-- Mode Switcher Tabs -->
       <nav class="nav-modes">
         <button class="nav-tab active" id="tabQuiz">
-          <span>⚡</span> Thi thử (Tùy biến Ma trận)
+          <span>⚡</span> Thi thử & Chuẩn CLO
         </button>
         <button class="nav-tab" id="tabTypePractice">
-          <span>🎯</span> Luyện tập theo Dạng bài
+          <span>🎯</span> Luyện theo Dạng bài
         </button>
         <button class="nav-tab" id="tabPractice">
-          <span id="tabPracticeLabel"><span>📖</span> Ngân hàng 612 câu</span>
+          <span id="tabPracticeLabel"><span>📖</span> Ngân hàng đề</span>
+        </button>
+        <button class="nav-tab" id="tabMistakes">
+          <span>📕</span> Sổ tay câu sai
+        </button>
+        <button class="nav-tab" id="tabBankManager">
+          <span>⚙️</span> Quản lý & Nhập đề
         </button>
         <button class="nav-tab" id="tabSolo">
           <span>⚔️</span> Đấu Solo <span class="tab-badge-live">LIVE</span>
@@ -90,16 +96,37 @@
   <main class="main-content">
 
     <!-- ============================================================== -->
-    <!-- VIEW 1: QUIZ MODE (Thi thử 35 phút / 20 câu) -->
+    <!-- PTIT SUBJECT SWITCHER BAR -->
+    <!-- ============================================================== -->
+    <div class="subject-switcher-container">
+      <div class="subject-switcher-header">
+        <div class="subject-switcher-title">
+          <span>📐</span> <strong>Chọn Môn Toán Học Phần PTIT:</strong>
+        </div>
+        <div style="font-size:0.82rem; color:var(--text-muted);">
+          Quyết định 292/QĐ-HV • Thang Rubric 5 mức • Chuẩn đầu ra CLO1, CLO2, CLO3
+        </div>
+      </div>
+      <div class="subject-chips-grid" id="subjectChipsGrid">
+        <!-- Dynamically rendered -->
+      </div>
+      <!-- Dynamic CLO Info and Guidelines -->
+      <div class="clo-info-box" id="subjectCloInfoBox">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 1: QUIZ MODE (Thi thử & Chuẩn CLO PTIT) -->
     <!-- ============================================================== -->
     <section id="quizView">
       <!-- 1A. START SCREEN (Chỉ bắt đầu khi người dùng bấm nút) -->
       <div id="quizStartScreen" class="start-exam-card">
         <div class="start-header">
-          <div class="start-badge">📐 Tùy Biến Ma Trận Đề Thi • Ngân Hàng 612 Câu</div>
-          <h2 class="start-title">Thi Thử Đại Số Tuyến Tính & Toán Rời Rạc PTIT</h2>
-          <p class="start-subtitle">
-            Tự do tùy biến ma trận đề thi: chọn bất kỳ tổ hợp chương nào (Chương 1 đến Chương 6), chọn nguồn câu hỏi (81 câu Đề thi gốc hoặc 531 câu Luyện tập mở rộng), và chọn số lượng câu thi mong muốn.
+          <div class="start-badge" id="startExamBadge">📐 Tùy Biến Ma Trận Đề Thi • Chuẩn CLO PTIT</div>
+          <h2 class="start-title" id="startExamTitle">Thi Thử Đại Số Tuyến Tính & Toán Rời Rạc PTIT</h2>
+          <p class="start-subtitle" id="startExamSubtitle">
+            Tự do tùy biến ma trận đề thi: chọn bất kỳ tổ hợp chương nào của môn học, thiết lập số lượng câu (20 - 40 câu) và thời gian (20 - 60 phút) cùng thuật toán bốc đề thông minh phân bổ theo tỷ lệ chuẩn CLO1, CLO2, CLO3.
           </p>
         </div>
 
@@ -113,90 +140,19 @@
               </div>
               <!-- Quick Select Buttons -->
               <div class="matrix-quick-pills">
-                <button type="button" class="matrix-pill active" id="btnSelectAllChapters">Tất cả 6 chương</button>
-                <button type="button" class="matrix-pill" id="btnSelectCh123">Chương 1 + 2 + 3</button>
-                <button type="button" class="matrix-pill" id="btnSelectCh456">Chương 4 + 5 + 6</button>
+                <button type="button" class="matrix-pill active" id="btnSelectAllChapters">Tất cả các chương</button>
+                <button type="button" class="matrix-pill" id="btnSelectHalfChapters">Nửa đầu học phần</button>
                 <button type="button" class="matrix-pill" id="btnClearChapters">Bỏ chọn</button>
               </div>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
-              Đánh dấu chọn các chương bạn muốn kiểm tra. Đề thi sẽ được bốc ngẫu nhiên cân bằng đều qua các chương đã chọn.
+              Đánh dấu chọn các chương bạn muốn kiểm tra. Thuật toán bốc đề sẽ phân bổ đều câu hỏi qua các chương đã chọn.
             </p>
           </div>
 
-          <!-- 6 Chapter Checkbox Cards Grid -->
-          <div class="matrix-chapters-grid">
-            <label class="chapter-check-card active" data-ch="1">
-              <input type="checkbox" class="chapter-cb" name="quizChapter" value="1" checked>
-              <div class="ch-card-body">
-                <div class="ch-top">
-                  <span class="ch-badge">Chương 1</span>
-                  <span class="ch-tag-count">102 câu</span>
-                </div>
-                <div class="ch-name">Logic mệnh đề, Tập hợp, Ánh xạ & Boole</div>
-                <div class="ch-sub">8 câu gốc • 94 câu mở rộng</div>
-              </div>
-            </label>
-
-            <label class="chapter-check-card active" data-ch="2">
-              <input type="checkbox" class="chapter-cb" name="quizChapter" value="2" checked>
-              <div class="ch-card-body">
-                <div class="ch-top">
-                  <span class="ch-badge">Chương 2</span>
-                  <span class="ch-tag-count">102 câu</span>
-                </div>
-                <div class="ch-name">Không gian véc tơ</div>
-                <div class="ch-sub">13 câu gốc • 89 câu mở rộng</div>
-              </div>
-            </label>
-
-            <label class="chapter-check-card active" data-ch="3">
-              <input type="checkbox" class="chapter-cb" name="quizChapter" value="3" checked>
-              <div class="ch-card-body">
-                <div class="ch-top">
-                  <span class="ch-badge">Chương 3</span>
-                  <span class="ch-tag-count">102 câu</span>
-                </div>
-                <div class="ch-name">Ma trận và Định thức</div>
-                <div class="ch-sub">28 câu gốc • 74 câu mở rộng</div>
-              </div>
-            </label>
-
-            <label class="chapter-check-card active" data-ch="4">
-              <input type="checkbox" class="chapter-cb" name="quizChapter" value="4" checked>
-              <div class="ch-card-body">
-                <div class="ch-top">
-                  <span class="ch-badge">Chương 4</span>
-                  <span class="ch-tag-count">102 câu</span>
-                </div>
-                <div class="ch-name">Hệ phương trình tuyến tính</div>
-                <div class="ch-sub">14 câu gốc • 88 câu mở rộng</div>
-              </div>
-            </label>
-
-            <label class="chapter-check-card active" data-ch="5">
-              <input type="checkbox" class="chapter-cb" name="quizChapter" value="5" checked>
-              <div class="ch-card-body">
-                <div class="ch-top">
-                  <span class="ch-badge">Chương 5</span>
-                  <span class="ch-tag-count">102 câu</span>
-                </div>
-                <div class="ch-name">Ánh xạ tuyến tính</div>
-                <div class="ch-sub">11 câu gốc • 91 câu mở rộng</div>
-              </div>
-            </label>
-
-            <label class="chapter-check-card active" data-ch="6">
-              <input type="checkbox" class="chapter-cb" name="quizChapter" value="6" checked>
-              <div class="ch-card-body">
-                <div class="ch-top">
-                  <span class="ch-badge">Chương 6</span>
-                  <span class="ch-tag-count">102 câu</span>
-                </div>
-                <div class="ch-name">Không gian véc tơ Euclide, Dạng toàn phương</div>
-                <div class="ch-sub">7 câu gốc • 95 câu mở rộng</div>
-              </div>
-            </label>
+          <!-- Dynamic Chapter Checkbox Cards Grid -->
+          <div class="matrix-chapters-grid" id="matrixChaptersGrid">
+            <!-- Dynamically populated per active subject -->
           </div>
 
           <!-- Matrix Settings: Nguồn câu hỏi & Số lượng câu -->
@@ -210,22 +166,22 @@
                 <label class="source-radio-card active">
                   <input type="radio" name="quizSourceOption" value="all" checked>
                   <div class="source-info">
-                    <strong>🔄 Toàn bộ ngân hàng (612 câu)</strong>
-                    <span>Kết hợp cả Đề gốc PTIT và Luyện tập mở rộng</span>
+                    <strong>🔄 Toàn bộ ngân hàng môn học</strong>
+                    <span>Bao gồm cả đề thi chuẩn PTIT, đề mở rộng & câu tự nhập</span>
                   </div>
                 </label>
                 <label class="source-radio-card">
                   <input type="radio" name="quizSourceOption" value="original">
                   <div class="source-info">
-                    <strong>⭐️ Chỉ 81 câu Đề thi gốc PTIT</strong>
-                    <span>Chuẩn hóa từ Đề minh họa 101 và Đề ôn tập 80 phút</span>
+                    <strong>⭐️ Chỉ câu chuẩn đề thi PTIT</strong>
+                    <span>Bộ câu hỏi chuẩn hóa từ đề thi kết thúc học phần</span>
                   </div>
                 </label>
                 <label class="source-radio-card">
                   <input type="radio" name="quizSourceOption" value="extra">
                   <div class="source-info">
-                    <strong>📚 Chỉ 531 câu Luyện tập mở rộng</strong>
-                    <span>Bộ câu hỏi bổ trợ đa dạng bám sát slide giáo trình</span>
+                    <strong>📚 Câu hỏi luyện tập & mở rộng</strong>
+                    <span>Bộ câu hỏi phân loại mở rộng bám sát đề cương chi tiết</span>
                   </div>
                 </label>
               </div>
@@ -234,20 +190,12 @@
             <!-- Col 2: Số lượng câu & Thời gian -->
             <div class="matrix-setting-col">
               <label class="matrix-setting-label">
-                <span>⏱</span> Bước 3: Quy mô đề thi & Thời gian:
+                <span>⏱</span> Bước 3: Quy mô đề thi (20 - 40 câu) & Thời gian (20 - 60 phút):
               </label>
               <div class="matrix-size-grid">
-                <label class="size-pill-card">
-                  <input type="radio" name="quizQuestionCount" value="10" data-duration="15">
-                  <span class="size-text">10 câu • 15 phút</span>
-                </label>
-                <label class="size-pill-card">
-                  <input type="radio" name="quizQuestionCount" value="15" data-duration="20">
-                  <span class="size-text">15 câu • 20 phút</span>
-                </label>
                 <label class="size-pill-card active">
                   <input type="radio" name="quizQuestionCount" value="20" data-duration="25" checked>
-                  <span class="size-text">20 câu • 25 phút (Chuẩn)</span>
+                  <span class="size-text">20 câu • 25 phút (Chuẩn PTIT)</span>
                 </label>
                 <label class="size-pill-card">
                   <input type="radio" name="quizQuestionCount" value="25" data-duration="30">
@@ -258,66 +206,89 @@
                   <span class="size-text">30 câu • 40 phút</span>
                 </label>
                 <label class="size-pill-card">
-                  <input type="radio" name="quizQuestionCount" value="40" data-duration="50">
-                  <span class="size-text">40 câu • 50 phút</span>
+                  <input type="radio" name="quizQuestionCount" value="35" data-duration="50">
+                  <span class="size-text">35 câu • 50 phút</span>
                 </label>
+                <label class="size-pill-card">
+                  <input type="radio" name="quizQuestionCount" value="40" data-duration="60">
+                  <span class="size-text">40 câu • 60 phút (Toàn diện)</span>
+                </label>
+                <label class="size-pill-card" id="cardCustomSize">
+                  <input type="radio" name="quizQuestionCount" value="custom">
+                  <span class="size-text">⚙️ Tự chỉnh linh hoạt</span>
+                </label>
+              </div>
+
+              <!-- Custom Sliders (shown when selected or customized) -->
+              <div class="custom-range-wrapper" id="customRangeWrapper" style="display: none;">
+                <div class="range-control-row">
+                  <span>Số lượng câu hỏi:</span>
+                  <strong id="sliderCountVal" style="color:var(--primary); font-family:var(--font-mono);">25 câu</strong>
+                </div>
+                <input type="range" class="range-slider" id="sliderQuestionCount" min="20" max="40" value="25" step="1">
+
+                <div class="range-control-row" style="margin-top: 10px;">
+                  <span>Thời gian làm bài:</span>
+                  <strong id="sliderDurationVal" style="color:var(--primary); font-family:var(--font-mono);">30 phút</strong>
+                </div>
+                <input type="range" class="range-slider" id="sliderDuration" min="20" max="60" value="30" step="5">
               </div>
 
               <!-- Live Matrix Summary Status -->
               <div class="matrix-live-summary" id="matrixLiveSummary">
                 <!-- Calculated dynamically in app.js -->
                 <div class="summary-line">
-                  <span>Ma trận đã chọn:</span>
-                  <strong id="summaryChaptersText">6/6 chương</strong>
+                  <span>Môn học & Ma trận:</span>
+                  <strong id="summaryChaptersText">Đang tải...</strong>
                 </div>
                 <div class="summary-line">
-                  <span>Mức độ đề:</span>
-                  <strong id="summaryDifficultyText" style="color: var(--primary);">Trung bình (10 Dễ • 6 TB • 4 Khó)</strong>
+                  <span>Cấu trúc chuẩn CLO:</span>
+                  <strong id="summaryDifficultyText" style="color: var(--primary);">40% CLO1 • 40% CLO2 • 20% CLO3</strong>
                 </div>
                 <div class="summary-line">
                   <span>Nguồn khả dụng:</span>
-                  <strong id="summarySourceText">612 câu hỏi</strong>
+                  <strong id="summarySourceText">Đang tính toán...</strong>
                 </div>
                 <div class="summary-line highlight">
-                  <span>Cấu trúc đề thi tạo ra:</span>
+                  <span>Quy mô đề tạo ra:</span>
                   <strong id="summaryExamText">20 câu hỏi • 25:00 phút</strong>
                 </div>
                 <div class="summary-line" style="border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 6px;">
-                  <span>🧠 Phân phối thông minh:</span>
-                  <strong id="summaryDistributionText" style="color: var(--primary);">Ưu tiên câu mới & câu cần ôn</strong>
+                  <span>🧠 Thuật toán thông minh:</span>
+                  <strong id="summaryDistributionText" style="color: var(--primary);">Ưu tiên câu mới & câu cần ôn tập (Chống lặp)</strong>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Bước 4: Chọn mức độ đề thi (Độ khó) -->
+          <!-- Bước 4: Chọn cấu trúc đề thi & Chuẩn CLO -->
           <div class="matrix-difficulty-box">
             <label class="matrix-setting-label">
-              <span>📊</span> Bước 4: Chọn mức độ đề thi (Tỷ lệ phân bổ độ khó):
+              <span>📊</span> Bước 4: Chọn mức độ & Cấu trúc chuẩn CLO PTIT:
             </label>
             <div class="matrix-diff-grid">
-              <label class="diff-card" data-diff="easy">
-                <input type="radio" name="quizDifficulty" value="easy">
-                <div class="diff-card-inner">
-                  <div class="diff-card-top">
-                    <span class="diff-pill pill-easy">🟢 Đề Dễ</span>
-                    <span class="diff-percent-tag">70% Dễ • 20% TB • 10% Khó</span>
-                  </div>
-                  <div class="diff-card-desc">
-                    Luyện tập cơ bản, kiểm tra lý thuyết và các công thức nền tảng
-                  </div>
-                </div>
-              </label>
-
               <label class="diff-card active" data-diff="medium">
                 <input type="radio" name="quizDifficulty" value="medium" checked>
                 <div class="diff-card-inner">
                   <div class="diff-card-top">
-                    <span class="diff-pill pill-medium">🟡 Đề Trung bình (Chuẩn)</span>
-                    <span class="diff-percent-tag">50% Dễ • 30% TB • 20% Khó</span>
+                    <span class="diff-pill pill-medium">🟡 Chuẩn PTIT (Khuyên dùng)</span>
+                    <span class="diff-percent-tag">40% CLO1 • 40% CLO2 • 20% CLO3</span>
                   </div>
                   <div class="diff-card-desc">
-                    Cấu trúc chuẩn đề thi kết thúc học phần PTIT, cân bằng lý thuyết & tính toán
+                    80% điểm câu hỏi chuẩn mẫu CLO1 + CLO2 (đảm bảo chắc chắn qua môn), 20% CLO3 phân loại điểm 8–10.
+                  </div>
+                </div>
+              </label>
+
+              <label class="diff-card" data-diff="easy">
+                <input type="radio" name="quizDifficulty" value="easy">
+                <div class="diff-card-inner">
+                  <div class="diff-card-top">
+                    <span class="diff-pill pill-easy">🟢 Đề Nền tảng (Dễ)</span>
+                    <span class="diff-percent-tag">50% CLO1 • 40% CLO2 • 10% CLO3</span>
+                  </div>
+                  <div class="diff-card-desc">
+                    Kiểm tra lý thuyết, công thức cơ bản và các bài tính toán mẫu quen thuộc.
                   </div>
                 </div>
               </label>
@@ -326,11 +297,11 @@
                 <input type="radio" name="quizDifficulty" value="hard">
                 <div class="diff-card-inner">
                   <div class="diff-card-top">
-                    <span class="diff-pill pill-hard">🔴 Đề Khó</span>
-                    <span class="diff-percent-tag">30% Dễ • 40% TB • 30% Khó</span>
+                    <span class="diff-pill pill-hard">🔴 Đề Khó (Phân loại 9-10)</span>
+                    <span class="diff-percent-tag">25% CLO1 • 45% CLO2 • 30% CLO3</span>
                   </div>
                   <div class="diff-card-desc">
-                    Thử thách điểm 9-10: nhiều bài toán chứa tham số m, bẫy định lý nâng cao
+                    Nhiều câu hỏi chứa tham số $m$, bài toán mô hình hóa và bẫy định lý nâng cao.
                   </div>
                 </div>
               </label>
@@ -339,7 +310,7 @@
         </div>
 
         <div class="start-notes" style="background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success-solid); margin-bottom: 20px;">
-          <p><strong style="color: var(--success-solid);">🧠 Bốc đề Thông minh (Spaced Repetition & Chống lặp):</strong> Hệ thống không chọn ngẫu nhiên thuần túy mà ưu tiên: <strong>1. Câu chưa từng làm</strong> ➔ <strong>2. Câu từng làm sai</strong> ➔ <strong>3. Câu đã làm từ lâu</strong> để ôn lại. Phân bổ đồng đều các dạng bài trong chương và tuyệt đối không lặp lại ngay các câu vừa làm đúng.</p>
+          <p><strong style="color: var(--success-solid);">🧠 Bốc đề Thông minh & Chống trùng lặp (Spaced Repetition):</strong> Hệ thống tự động phân loại: <strong>1. Câu chưa từng làm</strong> ➔ <strong>2. Câu từng làm sai</strong> ➔ <strong>3. Câu làm từ lâu</strong> để củng cố trí nhớ dài hạn. Tuyệt đối không lặp lại câu vừa làm đúng và tự động cân bằng khi ngân hàng đề có giới hạn.</p>
           <p style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted);">Hỗ trợ phím tắt: <span class="kbd-hint">1-4</span> / <span class="kbd-hint">A-D</span> chọn đáp án • <span class="kbd-hint">←</span> <span class="kbd-hint">→</span> chuyển câu • <span class="kbd-hint">F</span> đánh dấu xem lại.</p>
         </div>
 
@@ -418,14 +389,22 @@
         </div>
       </div>
 
+      <!-- PTIT Decision 292/QĐ-HV Rubric CLO Evaluation Section -->
+      <div class="clo-assessment-container" id="cloAssessmentContainer">
+        <!-- Rendered dynamically -->
+      </div>
+
       <!-- Filter review questions -->
       <div class="review-filter-bar">
         <h3 style="font-size:1.05rem; font-weight:700;">Chi tiết bài làm & Lời giải</h3>
         <div class="filter-group">
-          <button class="filter-chip review-filter-chip active" data-filter="all">Tất cả (20)</button>
+          <button class="filter-chip review-filter-chip active" data-filter="all">Tất cả</button>
           <button class="filter-chip review-filter-chip" data-filter="wrong">Chỉ câu sai</button>
           <button class="filter-chip review-filter-chip" data-filter="right">Chỉ câu đúng</button>
-          <button class="filter-chip review-filter-chip" data-filter="unanswered">Chưa trả lời</button>
+          <button class="filter-chip review-filter-chip" data-filter="unanswered">Chưa làm</button>
+          <button class="filter-chip review-filter-chip" data-filter="clo1">CLO1 (Nền tảng)</button>
+          <button class="filter-chip review-filter-chip" data-filter="clo2">CLO2 (Tính toán)</button>
+          <button class="filter-chip review-filter-chip" data-filter="clo3">CLO3 (Vận dụng cao)</button>
         </div>
       </div>
 
@@ -440,10 +419,10 @@
       <!-- Header bar with Chapter selector -->
       <div class="tp-header-card">
         <div class="tp-intro">
-          <div class="start-badge">🎯 ÔN TẬP CHUYÊN SÂU • 24 DẠNG BÀI TOÁN RỜI RẠC & ĐẠI SỐ TUYẾN TÍNH</div>
-          <h2 style="font-size: 1.45rem; font-weight: 700; margin: 8px 0 6px;">Luyện Tập Theo Dạng Bài (Kèm Doc Lý Thuyết & Bí Kíp Giải Nhanh)</h2>
-          <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
-            Hệ thống hóa toàn bộ 6 chương thành <strong>24 dạng bài trọng tâm PTIT</strong>. Mỗi dạng bài tích hợp <strong>Doc Lý thuyết cốt lõi, Phương pháp giải nhanh 30s, Bấm máy Casio, Bẫy đề thi</strong> và <strong>ngân hàng 25-26 câu hỏi</strong> luyện tập trực tiếp (chấm điểm ngay, KaTeX chi tiết).
+          <div class="start-badge" id="tpIntroBadge">🎯 ÔN TẬP CHUYÊN SÂU • THEO CHƯƠNG & DẠNG BÀI</div>
+          <h2 id="tpIntroTitle" style="font-size: 1.45rem; font-weight: 700; margin: 8px 0 6px;">Luyện Tập Theo Dạng Bài (Chuẩn CLO PTIT)</h2>
+          <p id="tpIntroDesc" style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+            Hệ thống hóa toàn bộ các chương và dạng bài trọng tâm theo chuẩn đề cương PTIT. Tự động chấm điểm ngay, hiển thị công thức toán KaTeX chi tiết và phân loại theo từng chuẩn năng lực CLO1, CLO2, CLO3.
           </p>
         </div>
 
@@ -553,6 +532,259 @@
 
       <!-- Dynamic Practice Questions Content -->
       <div id="practiceContentArea"></div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW: SỔ TAY CÂU SAI (Luyện tập lại các câu đã làm sai) -->
+    <!-- ============================================================== -->
+    <section id="mistakesView" style="display: none;">
+      <div class="mistakes-container">
+        <div class="start-header">
+          <div class="start-badge" style="background:#fee2e2; color:#991b1b;">📕 CỦNG CỐ KIẾN THỨC • SỔ TAY CÂU SAI</div>
+          <h2 class="start-title" id="mistakesTitle">Sổ Tay Câu Sai - Môn Học</h2>
+          <p class="start-subtitle">
+            Tổng hợp tất cả các câu hỏi bạn từng làm sai trong quá trình thi thử và luyện tập. Luyện lại các câu này là phương pháp hiệu quả nhất để nâng cao điểm chuẩn CLO và chuẩn bị cho kỳ thi!
+          </p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+          <div id="mistakesStatsText" style="font-weight: 600; color: var(--text-main);">
+            Đang tải dữ liệu câu sai...
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-primary" id="btnPracticeMistakes">
+              ⚡ Luyện tập lại các câu sai này
+            </button>
+            <button class="btn" id="btnClearMistakes" style="color: var(--error-text);">
+              Xóa lịch sử sai
+            </button>
+          </div>
+        </div>
+        <div id="mistakesListContainer">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW: QUẢN LÝ & NHẬP NGÂN HÀNG ĐỀ (Import / Export Bank) -->
+    <!-- ============================================================== -->
+    <section id="bankManagerView" style="display: none;">
+      <div class="bank-manager-card">
+        <div class="start-header">
+          <div class="start-badge" style="background:#e0f2fe; color:#0369a1;">⚙️ QUẢN TRỊ DỮ LIỆU • NGÂN HÀNG CÂU HỎI</div>
+          <h2 class="start-title">Quản Lý & Nhập Ngân Hàng Đề Thi</h2>
+          <p class="start-subtitle">
+            Hỗ trợ xem thống kê ngân hàng 4 môn, nhập thêm câu hỏi từ file JSON, dán đề dạng Text/Markdown tự động phân tích câu hỏi, thêm câu hỏi thủ công có Live KaTeX Preview, và xuất file sao lưu.
+          </p>
+        </div>
+
+        <!-- Sub tabs -->
+        <div class="bank-tabs-bar">
+          <button class="bank-tab-btn active" data-bank-pane="bankStats">📊 Thống kê ngân hàng</button>
+          <button class="bank-tab-btn" data-bank-pane="bankImportJson">📥 Nhập file JSON / Dán JSON</button>
+          <button class="bank-tab-btn" data-bank-pane="bankImportText">📝 Nhập nhanh dạng Text/Markdown</button>
+          <button class="bank-tab-btn" data-bank-pane="bankAddManual">➕ Thêm câu hỏi thủ công</button>
+          <button class="bank-tab-btn" data-bank-pane="bankExport">📤 Xuất & Sao lưu</button>
+        </div>
+
+        <!-- Pane 1: Stats -->
+        <div class="bank-pane active" id="paneBankStats">
+          <div id="bankStatsContent">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Pane 2: Import JSON -->
+        <div class="bank-pane" id="paneBankImportJson">
+          <div class="bank-file-drop" id="bankJsonDropzone">
+            <p style="font-size: 1.1rem; font-weight: 700; margin: 0 0 6px;">Kéo & Thả file .JSON câu hỏi vào đây hoặc bấm để chọn file</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Hỗ trợ mảng câu hỏi trắc nghiệm (id, question, options, correct, explanation...)</p>
+            <input type="file" id="bankFileInput" accept=".json" style="display: none;">
+          </div>
+          <div style="margin-bottom: 12px;">
+            <label style="font-size: 0.88rem; font-weight: 600; display: block; margin-bottom: 6px;">Hoặc dán trực tiếp mã JSON vào đây:</label>
+            <textarea class="bank-textarea" id="bankJsonTextarea" placeholder='[
+  {
+    "subjectId": "giai_tich_1",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Phép tính vi phân hàm một biến",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "question": "Tính $\\lim_{x \\to 0} \\frac{\\sin x}{x}$.",
+    "options": [
+      {"key": "A", "text": "1"},
+      {"key": "B", "text": "0"},
+      {"key": "C", "text": "2"},
+      {"key": "D", "text": "-1"}
+    ],
+    "correct": "A",
+    "explanation": "Theo giới hạn cơ bản, kết quả bằng 1."
+  }
+]'></textarea>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <select class="select-filter" id="bankImportTargetSubject">
+              <option value="auto">Tự động nhận diện môn học</option>
+              <option value="dai_so">Đại số tuyến tính (BAS1201)</option>
+              <option value="giai_tich_1">Giải tích 1 (BAS1203)</option>
+              <option value="giai_tich_2">Giải tích 2 (BAS1204)</option>
+              <option value="toan_roi_rac">Toán rời rạc (INT1358)</option>
+            </select>
+            <button class="btn btn-primary" id="btnExecuteImportJson">
+              📥 Nạp câu hỏi vào ngân hàng
+            </button>
+            <div id="bankJsonStatus" style="font-size: 0.88rem; font-weight: 600;"></div>
+          </div>
+        </div>
+
+        <!-- Pane 3: Import Text/Markdown -->
+        <div class="bank-pane" id="paneBankImportText">
+          <div style="background: var(--bg-subtle); padding: 12px 16px; border-radius: var(--radius-md); margin-bottom: 14px; font-size: 0.85rem; line-height: 1.5;">
+            <strong>💡 Cú pháp nhận dạng thông minh:</strong> Bạn chỉ cần copy paste câu hỏi dạng văn bản. Hệ thống tự động phân tách câu, phương án A/B/C/D, đáp án đúng và lời giải:<br>
+            <code>[Câu 1] [Chương 1] [CLO1] [Dễ]</code><br>
+            <code>Nội dung câu hỏi có công thức LaTeX: $\lim_{x \to 0} \frac{\sin x}{x}$</code><br>
+            <code>A. $1$</code><br>
+            <code>B. $0$</code><br>
+            <code>C. $2$</code><br>
+            <code>D. $-1$</code><br>
+            <code>Đáp án: A</code><br>
+            <code>Lời giải: Lời giải chi tiết ở đây...</code>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 8px;">
+              <select class="select-filter" id="bankTextTargetSubject">
+                <option value="dai_so">Đại số tuyến tính (BAS1201)</option>
+                <option value="giai_tich_1">Giải tích 1 (BAS1203)</option>
+                <option value="giai_tich_2">Giải tích 2 (BAS1204)</option>
+                <option value="toan_roi_rac">Toán rời rạc (INT1358)</option>
+              </select>
+              <button class="btn" id="btnFillSampleText">Dán văn bản mẫu</button>
+            </div>
+            <textarea class="bank-textarea" id="bankRawTextarea" placeholder="Dán văn bản các câu hỏi trắc nghiệm vào đây..."></textarea>
+          </div>
+          <button class="btn btn-primary" id="btnParseRawText">
+            ⚡ Phân tích & Nạp vào ngân hàng
+          </button>
+          <div id="bankTextStatus" style="margin-top: 8px; font-size: 0.88rem; font-weight: 600;"></div>
+        </div>
+
+        <!-- Pane 4: Add Question Manually -->
+        <div class="bank-pane" id="paneBankAddManual">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 14px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Môn học:</label>
+              <select class="select-filter" id="manualSubjectSelect" style="width:100%;">
+                <option value="dai_so">Đại số tuyến tính (BAS1201)</option>
+                <option value="giai_tich_1">Giải tích 1 (BAS1203)</option>
+                <option value="giai_tich_2">Giải tích 2 (BAS1204)</option>
+                <option value="toan_roi_rac">Toán rời rạc (INT1358)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Chương:</label>
+              <select class="select-filter" id="manualChapterSelect" style="width:100%;"></select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Chuẩn CLO:</label>
+              <select class="select-filter" id="manualCloSelect" style="width:100%;">
+                <option value="CLO1">CLO1 - Hiểu kiến thức nền tảng</option>
+                <option value="CLO2" selected>CLO2 - Kỹ năng tính toán cơ bản</option>
+                <option value="CLO3">CLO3 - Kỹ năng phân tích, vận dụng nâng cao</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Mức độ khó:</label>
+              <select class="select-filter" id="manualDiffSelect" style="width:100%;">
+                <option value="easy">🟢 Dễ</option>
+                <option value="medium" selected>🟡 Trung bình</option>
+                <option value="hard">🔴 Khó</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 12px;">
+            <label style="font-size:0.82rem; font-weight:600;">Nội dung câu hỏi (hỗ trợ công thức LaTeX giữa dấu $...$):</label>
+            <textarea class="bank-textarea" id="manualQuestionText" style="min-height:90px;" placeholder="Ví dụ: Tính tích phân $I = \int_{0}^{1} x dx$."></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Phương án A:</label>
+              <input type="text" class="input-search" id="manualOptA" style="width:100%;" placeholder="Phương án A">
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Phương án B:</label>
+              <input type="text" class="input-search" id="manualOptB" style="width:100%;" placeholder="Phương án B">
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Phương án C:</label>
+              <input type="text" class="input-search" id="manualOptC" style="width:100%;" placeholder="Phương án C">
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Phương án D:</label>
+              <input type="text" class="input-search" id="manualOptD" style="width:100%;" placeholder="Phương án D">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Đáp án đúng:</label>
+              <select class="select-filter" id="manualCorrectSelect" style="width:100%;">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:600;">Lời giải chi tiết:</label>
+              <input type="text" class="input-search" id="manualExplanationText" style="width:100%;" placeholder="Trình bày các bước giải hoặc bấm máy...">
+            </div>
+          </div>
+
+          <!-- Live preview button & box -->
+          <div style="margin-bottom: 12px;">
+            <button class="btn" id="btnPreviewManualQuestion" style="margin-bottom: 8px;">
+              👁️ Xem trước hiển thị công thức KaTeX
+            </button>
+            <div class="bank-preview-box" id="manualPreviewBox">
+              <em>(Bấm nút trên để xem trước giao diện và công thức toán)</em>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="btnSaveManualQuestion">
+            💾 Lưu câu hỏi vào ngân hàng đề
+          </button>
+          <span id="manualSaveStatus" style="margin-left: 10px; font-weight: 600;"></span>
+        </div>
+
+        <!-- Pane 5: Export & Backup -->
+        <div class="bank-pane" id="paneBankExport">
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 16px;">
+            Tải xuống file dữ liệu JSON hoàn chỉnh chứa các câu hỏi để sao lưu hoặc chuyển sang máy tính khác.
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+            <button class="btn btn-primary" id="btnExportAllJson">
+              📤 Xuất Toàn Bộ Ngân Hàng (Tất cả 4 môn)
+            </button>
+            <button class="btn" id="btnExportCurrentSubjectJson">
+              📤 Xuất Ngân Hàng Môn Đang Chọn
+            </button>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;">
+
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--error-text); margin-bottom: 8px;">
+            ⚠️ Vùng nguy hiểm: Khôi phục ngân hàng đề
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+            Xóa toàn bộ các câu hỏi do bạn tự thêm hoặc import vào và khôi phục về ngân hàng đề chuẩn PTIT ban đầu.
+          </p>
+          <button class="btn" id="btnResetToDefaultBank" style="color: var(--error-text); border-color: var(--error-border);">
+            🔄 Khôi phục về ngân hàng câu hỏi gốc mặc định
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================== -->

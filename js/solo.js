@@ -159,6 +159,10 @@
 
   // --- WebSocket Setup ---
   function connectWebSocket(callback) {
+    if (window.location.protocol === 'file:' || window.location.hostname.endsWith('github.io')) {
+      // GitHub Pages / Static hosting doesn't run WebSocket backend
+      return;
+    }
     if (soloState.ws && (soloState.ws.readyState === WebSocket.OPEN || soloState.ws.readyState === WebSocket.CONNECTING)) {
       if (callback) callback();
       return;
@@ -218,6 +222,10 @@
   }
 
   function sendWsMessage(data) {
+    if (window.location.protocol === 'file:' || window.location.hostname.endsWith('github.io')) {
+      showToast('⚠️ Chế độ Đấu Solo PvP trực tiếp cần WebSocket server (chạy local qua "npm start"). Trên GitHub Pages, bạn hãy dùng các chế độ Thi thử & Luyện tập!');
+      return;
+    }
     if (soloState.ws && soloState.ws.readyState === WebSocket.OPEN) {
       soloState.ws.send(JSON.stringify(data));
     } else {
@@ -431,6 +439,10 @@
 
   function fetchActiveRooms() {
     if (!soloEl.activeRoomsList) return;
+    if (window.location.protocol === 'file:' || window.location.hostname.endsWith('github.io')) {
+      soloEl.activeRoomsList.innerHTML = `<div style="padding: 10px 0; color: var(--text-muted); font-size: 0.85rem;">ℹ️ GitHub Pages là máy chủ tĩnh. Để thi đấu PvP nhiều người chơi qua WebSocket, bạn có thể khởi chạy server local bằng lệnh <code>npm start</code>.</div>`;
+      return;
+    }
     fetch('/api/rooms/active')
       .then(res => res.json())
       .then(rooms => {
@@ -465,6 +477,10 @@
 
   function fetchMatchHistory() {
     if (!soloEl.historyList) return;
+    if (window.location.protocol === 'file:' || window.location.hostname.endsWith('github.io')) {
+      soloEl.historyList.innerHTML = `<div style="padding: 10px 0; color: var(--text-muted); font-size: 0.85rem;">Chưa có lịch sử đấu trên server.</div>`;
+      return;
+    }
     fetch('/api/history')
       .then(res => res.json())
       .then(history => {

@@ -1,3 +1,89 @@
+# HỆ THỐNG TRẮC NGHIỆM TOÁN ĐẠI HỌC CHUẨN CLO - PTIT
+*(Giải tích 1, Giải tích 2, Đại số tuyến tính, Toán rời rạc)*
+
+Hệ thống ôn luyện trắc nghiệm và thi thử trực tuyến dành cho sinh viên Học viện Công nghệ Bưu chính Viễn thông (PTIT). Nền tảng được thiết kế trực quan, hiện đại, tích hợp thuật toán sinh đề thông minh chống lặp và đánh giá chuẩn đầu ra **CLO (Course Learning Outcomes)** theo **Quyết định 292/QĐ-HV**.
+
+---
+
+## 🚀 HƯỚNG DẪN KHỞI CHẠY NHANH
+
+### Cách 1: Chạy trực tiếp trên trình duyệt (Không cần cài đặt)
+* Mở trực tiếp file `index.html` bằng bất kỳ trình duyệt nào (Chrome, Safari, Edge, Firefox).
+* Ứng dụng chạy hoàn toàn phía client (Front-end 100%), hỗ trợ offline và deploy dễ dàng lên GitHub Pages / Vercel / Netlify.
+
+### Cách 2: Khởi chạy bằng Node.js Server (Tích hợp Đấu Solo WebSocket)
+```bash
+# Cài đặt thư viện (nếu chưa cài)
+npm install
+
+# Kiểm tra toàn bộ tính năng và ngân hàng câu hỏi
+npm test
+
+# Khởi chạy máy chủ
+npm start
+# Truy cập tại: http://localhost:3000
+```
+
+---
+
+## 🌟 TÍNH NĂNG NỔI BẬT
+
+1. **Bộ chuyển đổi môn học tức thì (Subject Switcher):**
+   * **Đại số tuyến tính (BAS1201):** 612 câu hỏi đầy đủ 6 chuyên đề.
+   * **Giải tích 1 (BAS1203):** 44 câu hỏi (Giới hạn, Đạo hàm - Khảo sát hàm số, Tích phân & Chuỗi số).
+   * **Giải tích 2 (BAS1204):** 44 câu hỏi (Hàm nhiều biến, Tích phân kép & bội 3, Tích phân đường & mặt, Phương trình vi phân).
+   * **Toán rời rạc (INT1358):** 39 câu hỏi (Đại số Boole & Đếm, Đồ thị, Cây khung & Đường đi ngắn nhất, Thuật toán quay lui/tham lam).
+
+2. **Tạo đề thi tùy biến linh hoạt:**
+   * Số lượng câu: **20 đến 40 câu** (có thanh trượt và nút chọn nhanh 20, 25, 30, 40 câu).
+   * Thời gian thi: **20 đến 60 phút** (có thanh trượt và nút chọn nhanh 20, 25, 45, 60 phút).
+   * Chọn linh hoạt các chương cần ôn tập.
+   * **Preset tỉ lệ CLO / Độ khó:**
+     * *Chuẩn PTIT (40% CLO1 - 40% CLO2 - 20% CLO3)*: Tối ưu cho thi học kỳ.
+     * *Cơ bản & Qua môn (50% CLO1 - 40% CLO2 - 10% CLO3)*: Đạt an toàn điểm 5–7.
+     * *Nâng cao & Điểm A (25% CLO1 - 45% CLO2 - 30% CLO3)*: Phân loại điểm 8–10.
+
+3. **Thuật toán sinh đề & Chống trùng lặp thông minh (Spaced Repetition Fallback):**
+   * Ưu tiên câu **Chưa từng làm** (Tier 1).
+   * Tiếp theo ưu tiên câu **Làm sai gần đây** (Tier 2).
+   * Câu **Đã làm đúng** sẽ có độ trễ lặp lại (Tier 3 - Recency Penalty).
+   * **Tự động phân bổ lại khi ngân hàng đề giới hạn:** Khi người dùng yêu cầu số lượng câu lớn hơn số câu khả dụng ở một chuyên đề/CLO cụ thể, thuật toán sẽ tự động phân bổ bù phần thiếu sang các chuyên đề/CLO lân cận, đảm bảo luôn tạo đủ số lượng câu yêu cầu mà không bị crash hay vòng lặp vô hạn.
+
+4. **Đánh giá Rubric 5 mức theo Quyết định 292/QĐ-HV:**
+   * Phân tích chi tiết điểm số theo từng chuẩn $CLO_1, CLO_2, CLO_3$.
+   * Tính điểm chuẩn đầu ra học phần: $CLO_{HP} = \frac{CLO_1 + CLO_2 + CLO_3}{3}$.
+   * Xếp loại theo 5 mức chuẩn PTIT:
+     * **Mức 1 (< 4.0):** Chưa đạt yêu cầu.
+     * **Mức 2 (4.0 – < 5.5):** Đạt mức thấp (Đủ điều kiện qua môn theo Điều 8).
+     * **Mức 3 (5.5 – < 7.0):** Đạt yêu cầu.
+     * **Mức 4 (7.0 – < 8.5):** Đạt tốt.
+     * **Mức 5 (≥ 8.5):** Đạt xuất sắc.
+   * Đưa ra lời khuyên học tập cá nhân hóa từ Cố vấn học tập PTIT.
+
+5. **Trình Quản lý & Nhập Ngân hàng đề (Bank Manager):**
+   * **Xem & Quản lý:** Thống kê chi tiết số câu, phân loại CLO và độ khó theo từng môn.
+   * **Nhập file JSON:** Hỗ trợ kéo thả hoặc chọn file `.json`.
+   * **Nhập văn bản/Markdown thông minh:** Tự động phân tích câu hỏi dạng văn bản theo cú pháp:
+     ```text
+     [Câu 1] [Chương 1] [CLO1] [Dễ]
+     Tính giới hạn \lim_{x \to 0} \frac{\sin x}{x}.
+     A. 0
+     B. 1
+     C. \infty
+     D. Không tồn tại
+     Đáp án: B
+     Lời giải: Theo giới hạn cơ bản, \lim_{x \to 0} \frac{\sin x}{x} = 1.
+     ```
+   * **Thêm câu hỏi thủ công:** Form nhập liệu có Live Preview công thức toán KaTeX thời gian thực.
+   * **Xuất & Sao lưu:** Tải toàn bộ ngân hàng câu hỏi về máy dưới định dạng `.json`.
+   * Toàn bộ câu hỏi tùy chỉnh được lưu an toàn trong `localStorage` của trình duyệt.
+
+6. **Luyện tập theo Dạng bài & Sổ tay câu sai:**
+   * Cho phép chọn luyện riêng từng chương với phản hồi đáp án và lời giải chi tiết tức thì.
+   * Tự động thu thập các câu trả lời sai vào "Sổ tay câu sai" để luyện tập lại.
+
+---
+
 # CẨM NANG ÔN THI & MẸO GIẢI NHANH TRẮC NGHIỆM: ĐẠI SỐ TUYẾN TÍNH & TOÁN RỜI RẠC
 
 > **Mục tiêu:** Cung cấp đầy đủ lý thuyết trọng tâm, công thức bấm máy/tính nhẩm, quy trình xử lý nhanh và cách nhận diện bẫy để giải trọn vẹn 20 câu trắc nghiệm trong 25 phút một cách chính xác nhất.
