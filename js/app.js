@@ -45,16 +45,18 @@
       name: "Giải tích 1",
       fullName: "Giải tích 1 (BAS1203)",
       icon: "📈",
-      desc: "Phép tính vi phân, tích phân hàm một biến, chuỗi số & chuỗi lũy thừa",
+      desc: "Giới hạn dãy số, hàm số 1 biến, vi phân, tích phân & lý thuyết chuỗi",
       cloDesc: {
-        CLO1: "Hiểu kiến thức nền tảng: giới hạn, liên tục, đạo hàm, vi phân hàm một biến, nguyên hàm, tích phân xác định, suy rộng, chuỗi số & chuỗi lũy thừa.",
-        CLO2: "Kỹ năng tính toán cơ bản: tính giới hạn, đạo hàm, vi phân, tích phân hàm một biến; khảo sát hàm số và ứng dụng tính diện tích, thể tích.",
-        CLO3: "Kỹ năng phân tích, vận dụng nâng cao: khảo sát hội tụ chuỗi số, tìm bán kính & miền hội tụ chuỗi lũy thừa, khai triển Taylor/Maclaurin."
+        CLO1: "Hiểu kiến thức nền tảng: giới hạn dãy số, tính liên tục hàm 1 biến, đạo hàm, vi phân, nguyên hàm, tích phân, chuỗi số & chuỗi lũy thừa.",
+        CLO2: "Kỹ năng tính toán cơ bản: tính giới hạn, đạo hàm, vi phân, tích phân đổi biến/từng phần, bán kính hội tụ chuỗi lũy thừa.",
+        CLO3: "Kỹ năng phân tích, vận dụng nâng cao: khảo sát hội tụ chuỗi số phức tạp, tích phân suy rộng có tham số, chuỗi Fourier, khai triển Taylor/Maclaurin."
       },
       chapters: [
-        { id: 1, name: "Phép tính vi phân hàm một biến", short: "Chương 1" },
-        { id: 2, name: "Phép tính tích phân hàm một biến", short: "Chương 2" },
-        { id: 3, name: "Chuỗi số và Chuỗi lũy thừa", short: "Chương 3" }
+        { id: 1, name: "Giới hạn của dãy số", short: "Chương 1" },
+        { id: 2, name: "Hàm số 1 biến", short: "Chương 2" },
+        { id: 3, name: "Đạo hàm và vi phân", short: "Chương 3" },
+        { id: 4, name: "Phép tính tích phân", short: "Chương 4" },
+        { id: 5, name: "Lý thuyết chuỗi", short: "Chương 5" }
       ]
     },
     giai_tich_2: {

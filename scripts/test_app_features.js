@@ -44,7 +44,7 @@ questions.forEach(q => {
 
 console.log("[STATS] Thống kê môn học và chuẩn CLO:", JSON.stringify(subjectStats, null, 2));
 if (invalidCount === 0) {
-  console.log("[PASS] Tất cả 739 câu hỏi có đầy đủ CLO1/2/3, 4 phương án và đáp án A-D hợp lệ!");
+  console.log(`[PASS] Tất cả ${questions.length} câu hỏi có đầy đủ CLO1/2/3, 4 phương án và đáp án A-D hợp lệ!`);
 } else {
   console.error(`[FAIL] Có ${invalidCount} câu hỏi có trường không hợp lệ!`);
   process.exit(1);
