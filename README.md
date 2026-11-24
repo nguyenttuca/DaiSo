@@ -30,7 +30,7 @@ npm start
 
 1. **Bộ chuyển đổi môn học tức thì (Subject Switcher):**
    * **Đại số tuyến tính (BAS1201):** 612 câu hỏi đầy đủ 6 chuyên đề.
-   * **Giải tích 1 (BAS1203):** 188 câu hỏi chuẩn khảo thí PTIT gồm 5 chương: Chương 1 (Giới hạn của dãy số - 35 câu), Chương 2 (Hàm số 1 biến - 23 câu), Chương 3 (Đạo hàm và vi phân - 32 câu), Chương 4 (Phép tính tích phân - 50 câu), Chương 5 (Lý thuyết chuỗi - 48 câu). Tích hợp toàn diện từ ngân hàng ôn tập và Đề minh họa 102 kèm lời giải KaTeX chi tiết.
+   * **Giải tích 1 (BAS1203):** 388 câu hỏi chuẩn khảo thí PTIT gồm 5 chương: Chương 1 (Giới hạn của dãy số - 75 câu), Chương 2 (Hàm số 1 biến - 63 câu), Chương 3 (Đạo hàm và vi phân - 72 câu), Chương 4 (Phép tính tích phân - 90 câu), Chương 5 (Lý thuyết chuỗi - 88 câu). Tích hợp 188 câu từ ngân hàng đề gốc và mở rộng thêm 200 câu đa dạng, bám sát ma trận thi cử kèm lời giải KaTeX chi tiết.
    * **Giải tích 2 (BAS1204):** 44 câu hỏi (Hàm nhiều biến, Tích phân kép & bội 3, Tích phân đường & mặt, Phương trình vi phân).
    * **Toán rời rạc (INT1358):** 39 câu hỏi (Đại số Boole & Đếm, Đồ thị, Cây khung & Đường đi ngắn nhất, Thuật toán quay lui/tham lam).
 

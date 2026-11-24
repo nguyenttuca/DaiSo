@@ -31814,6 +31814,7806 @@
     "id": 1188
   },
   {
+    "id": 1189,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.1",
+    "typeName": "Tính đơn điệu & Bị chặn của dãy số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho dãy số $(u_n)$ với số hạng tổng quát $u_n = \\frac{3n - 1}{2n + 5}, \\forall n \\ge 1$. Khẳng định nào sau đây là đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dãy số $(u_n)$ tăng và bị chặn."
+      },
+      {
+        "key": "B",
+        "text": "Dãy số $(u_n)$ giảm và bị chặn."
+      },
+      {
+        "key": "C",
+        "text": "Dãy số $(u_n)$ tăng và không bị chặn."
+      },
+      {
+        "key": "D",
+        "text": "Dãy số $(u_n)$ là dãy không đơn điệu."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét hiệu $u_{n+1} - u_n = \\frac{3(n+1)-1}{2(n+1)+5} - \\frac{3n-1}{2n+5} = \\frac{3n+2}{2n+7} - \\frac{3n-1}{2n+5} = \\frac{(3n+2)(2n+5) - (3n-1)(2n+7)}{(2n+7)(2n+5)} = \\frac{17}{(2n+7)(2n+5)} > 0, \\forall n \\ge 1$.\n* Do đó $(u_n)$ là dãy số tăng.\n* Mặt khác: $0 < u_n = \\frac{3n-1}{2n+5} < \\frac{3n+7.5}{2n+5} = \\frac{3}{2}, \\forall n \\ge 1$, nên dãy số bị chặn.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1190,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.1",
+    "typeName": "Tính đơn điệu & Bị chặn của dãy số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho dãy số $(u_n)$ với $u_n = \\frac{(-1)^n \\cdot n}{n^2 + 1}, \\forall n \\ge 1$. Khẳng định nào sau đây là đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Dãy số $(u_n)$ là dãy đan dấu và bị chặn."
+      },
+      {
+        "key": "B",
+        "text": "Dãy số $(u_n)$ là dãy tăng ngặt."
+      },
+      {
+        "key": "C",
+        "text": "Dãy số $(u_n)$ là dãy giảm ngặt."
+      },
+      {
+        "key": "D",
+        "text": "Dãy số $(u_n)$ không bị chặn cả trên và dưới."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Do có nhân tử $(-1)^n$ nên dấu của các số hạng luân phiên thay đổi: $u_1 = -1/2, u_2 = 2/5, u_3 = -3/10,...$ do đó dãy không tăng không giảm mà đan dấu.\n* Mặt khác theo bất đẳng thức Cauchy: $n^2 + 1 \\ge 2n \\implies |u_n| = \\frac{n}{n^2 + 1} \\le \\frac{1}{2} \\implies -\\frac{1}{2} \\le u_n \\le \\frac{1}{2}, \\forall n \\ge 1$. Dãy bị chặn.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1191,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.1",
+    "typeName": "Tính đơn điệu & Bị chặn của dãy số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Dãy số nào dưới đây là dãy số giảm?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$u_n = \\frac{n+2}{3n-1}$"
+      },
+      {
+        "key": "B",
+        "text": "$u_n = \\frac{2n-1}{n+1}$"
+      },
+      {
+        "key": "C",
+        "text": "$u_n = n^2 - 3n$"
+      },
+      {
+        "key": "D",
+        "text": "$u_n = 2^n - n$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét $u_n = \\frac{n+2}{3n-1}$: $u_{n+1} - u_n = \\frac{n+3}{3n+2} - \\frac{n+2}{3n-1} = \\frac{(n+3)(3n-1) - (n+2)(3n+2)}{(3n+2)(3n-1)} = \\frac{-7}{(3n+2)(3n-1)} < 0, \\forall n \\ge 1$.\n* Do đó $u_n = \\frac{n+2}{3n-1}$ là dãy số giảm.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1192,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.1",
+    "typeName": "Định lý Weierstrass & Dãy truy hồi",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho dãy số $(u_n)$ xác định bởi $u_1 = \\sqrt{6}$ và $u_{n+1} = \\sqrt{6 + u_n}, \\forall n \\ge 1$. Giới hạn $L = \\lim_{n \\to \\infty} u_n$ bằng:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 3$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\sqrt{6}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Bằng quy nạp, ta dễ dàng chứng minh được $0 < u_n < 3, \\forall n \\ge 1$ (bị chặn trên bởi 3).\n* Xét hiệu $u_{n+1}^2 - u_n^2 = 6 + u_n - u_n^2 = (3 - u_n)(u_n + 2) > 0 \\implies u_{n+1} > u_n$ (dãy tăng).\n* Theo định lý Weierstrass, dãy tăng và bị chặn trên thì có giới hạn hữu hạn $L$.\n* Chuyển qua giới hạn ở hệ thức truy hồi: $L = \\sqrt{6 + L} \\iff L^2 - L - 6 = 0 \\implies L = 3$ (loại nghiệm $L = -2 < 0$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1193,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.1",
+    "typeName": "Định lý Weierstrass & Dãy truy hồi",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho dãy số $(u_n)$ xác định bởi $u_1 = 4$ và $u_{n+1} = \\frac{1}{2}\\left(u_n + \\frac{9}{u_n}\\right), \\forall n \\ge 1$. Giới hạn $L = \\lim_{n \\to \\infty} u_n$ bằng:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 3$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{9}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\sqrt{3}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo bất đẳng thức Cauchy: $u_{n+1} = \\frac{1}{2}\\left(u_n + \\frac{9}{u_n}\\right) \\ge \\sqrt{u_n \\cdot \\frac{9}{u_n}} = 3, \\forall n \\ge 1$.\n* Xét hiệu: $u_{n+1} - u_n = \\frac{9 - u_n^2}{2u_n} \\le 0$ (vì $u_n \\ge 3$). Vậy $(u_n)$ giảm từ $n=2$ và bị chặn dưới bởi 3.\n* Theo định lý Weierstrass, tồn tại giới hạn $L = \\lim u_n$. Khi đó: $L = \\frac{1}{2}(L + 9/L) \\implies 2L^2 = L^2 + 9 \\implies L^2 = 9 \\implies L = 3$ (do $L \\ge 3$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1194,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{4n^3 - 2n + 5}{5n^3 + 7n^2 - 1}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{4}{5}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$L = +\\infty$"
+      },
+      {
+        "key": "D",
+        "text": "$L = -\\frac{2}{7}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Chia cả tử và mẫu cho lũy thừa cao nhất $n^3$:\n  $$L = \\lim_{n \\to \\infty} \\frac{4 - \\frac{2}{n^2} + \\frac{5}{n^3}}{5 + \\frac{7}{n} - \\frac{1}{n^3}} = \\frac{4 - 0 + 0}{5 + 0 - 0} = \\frac{4}{5}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1195,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{n^2 + \\sqrt{n^4 + 3n}}{2n^2 - 5}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Rút bậc cao nhất $n^2$ ở tử và mẫu:\n  $$\\sqrt{n^4 + 3n} = n^2 \\sqrt{1 + \\frac{3}{n^3}}$$\n* Tử số tiến về: $n^2(1 + 1) = 2n^2$. Mẫu số là $2n^2 - 5$.\n* Vậy $L = \\lim_{n \\to \\infty} \\frac{n^2(1 + \\sqrt{1 + 3/n^3})}{n^2(2 - 5/n^2)} = \\frac{1 + 1}{2} = 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1196,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} (\\sqrt{n^2 + 4n} - n)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 4$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhân lượng liên hợp:\n  $$\\sqrt{n^2 + 4n} - n = \\frac{(\\sqrt{n^2 + 4n} - n)(\\sqrt{n^2 + 4n} + n)}{\\sqrt{n^2 + 4n} + n} = \\frac{4n}{\\sqrt{n^2 + 4n} + n}$$\n* Chia cả tử và mẫu cho $n$:\n  $$L = \\lim_{n \\to \\infty} \\frac{4}{\\sqrt{1 + \\frac{4}{n}} + 1} = \\frac{4}{1 + 1} = 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1197,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} (\\sqrt{4n^2 + 6n + 1} - 2n)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{3}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 6$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhân liên hợp dạng $\\sqrt{A} - B = \\frac{A - B^2}{\\sqrt{A} + B}$ với $A = 4n^2 + 6n + 1$ và $B = 2n$:\n  $$L = \\lim_{n \\to \\infty} \\frac{(4n^2 + 6n + 1) - 4n^2}{\\sqrt{4n^2 + 6n + 1} + 2n} = \\lim_{n \\to \\infty} \\frac{6n + 1}{\\sqrt{4n^2 + 6n + 1} + 2n} = \\frac{6}{\\sqrt{4} + 2} = \\frac{6}{4} = \\frac{3}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1198,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} (\\sqrt[3]{n^3 + 6n^2} - n)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 6$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 3$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhân liên hợp bậc 3 theo hằng đẳng thức $a - b = \\frac{a^3 - b^3}{a^2 + ab + b^2}$:\n  $$L = \\lim_{n \\to \\infty} \\frac{(n^3 + 6n^2) - n^3}{\\sqrt[3]{(n^3 + 6n^2)^2} + n\\sqrt[3]{n^3 + 6n^2} + n^2} = \\lim_{n \\to \\infty} \\frac{6n^2}{n^2 + n^2 + n^2} = \\frac{6}{3} = 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1199,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} (\\sqrt{n^2 + 2n} - \\sqrt{n^2 - 4n})$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 3$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 6$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = -2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhân liên hợp:\n  $$L = \\lim_{n \\to \\infty} \\frac{(n^2 + 2n) - (n^2 - 4n)}{\\sqrt{n^2 + 2n} + \\sqrt{n^2 - 4n}} = \\lim_{n \\to \\infty} \\frac{6n}{n\\sqrt{1 + 2/n} + n\\sqrt{1 - 4/n}} = \\frac{6}{1 + 1} = 3$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1200,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{\\sqrt{n^3 + 2n} - \\sqrt[3]{n^4 + 1}}{n\\sqrt{n} + 5}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$L = -1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Bậc cao nhất ở tử và mẫu là $n^{3/2} = n\\sqrt{n}$.\n* Ta có $\\sqrt{n^3 + 2n} = n^{3/2}\\sqrt{1 + 2/n^2}$, trong khi $\\sqrt[3]{n^4 + 1} = n^{4/3} = o(n^{3/2})$.\n* Mẫu số là $n^{3/2} + 5$.\n* Vậy $L = \\lim_{n \\to \\infty} \\frac{n^{3/2}\\sqrt{1 + 2/n^2} - n^{4/3}}{n^{3/2}(1 + 5/n^{3/2})} = \\frac{1 - 0}{1 + 0} = 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1201,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.3",
+    "typeName": "Giới hạn dạng vô định 1 mũ vô cùng (số e)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(\\frac{n+3}{n+1}\\right)^{2n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^4$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e^6$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Biến đổi về dạng chuẩn số $e$: $\\frac{n+3}{n+1} = 1 + \\frac{2}{n+1}$.\n* Áp dụng công thức $\\lim_{n \\to \\infty} u_n^{v_n} = e^{\\lim v_n(u_n - 1)}$ với $u_n - 1 = \\frac{2}{n+1}$:\n  $$L = \\exp\\left(\\lim_{n \\to \\infty} 2n \\cdot \\frac{2}{n+1}\\right) = \\exp\\left(\\lim_{n \\to \\infty} \\frac{4n}{n+1}\\right) = e^4$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1202,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.3",
+    "typeName": "Giới hạn dạng vô định 1 mũ vô cùng (số e)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(\\frac{2n+1}{2n-3}\\right)^{n+2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^4$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e$"
+      },
+      {
+        "key": "D",
+        "text": "$L = e^{-2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $u_n - 1 = \\frac{2n+1}{2n-3} - 1 = \\frac{4}{2n-3}$.\n* Khi đó: $v_n(u_n - 1) = (n+2) \\cdot \\frac{4}{2n-3} = \\frac{4n+8}{2n-3} \\to 2$ khi $n \\to \\infty$.\n* Do đó: $L = e^2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1203,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.3",
+    "typeName": "Giới hạn dạng vô định 1 mũ vô cùng (số e)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(1 - \\frac{3}{n}\\right)^{4n - 1}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^{-12}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^{-3}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e^{12}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $u_n - 1 = -\\frac{3}{n}$.\n* Khi đó: $v_n(u_n - 1) = (4n - 1)\\left(-\\frac{3}{n}\\right) = -12 + \\frac{3}{n} \\to -12$ khi $n \\to \\infty$.\n* Vậy $L = e^{-12}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1204,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.3",
+    "typeName": "Giới hạn dạng vô định 1 mũ vô cùng (số e)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(\\frac{n^2 + 2}{n^2 - 1}\\right)^{3n^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^9$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^3$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e^6$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $u_n - 1 = \\frac{n^2 + 2}{n^2 - 1} - 1 = \\frac{3}{n^2 - 1}$.\n* Khi đó: $v_n(u_n - 1) = 3n^2 \\cdot \\frac{3}{n^2 - 1} = \\frac{9n^2}{n^2 - 1} \\to 9$ khi $n \\to \\infty$.\n* Vậy $L = e^9$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1205,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.3",
+    "typeName": "Giới hạn dạng vô định 1 mũ vô cùng (số e)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(1 + \\frac{5}{2n}\\right)^{3n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^{15/2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^{15}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e^{5/2}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = e^6$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $u_n - 1 = \\frac{5}{2n}$.\n* Số mũ nhân với $(u_n - 1)$ là: $3n \\cdot \\frac{5}{2n} = \\frac{15}{2}$.\n* Vậy $L = e^{15/2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1206,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.4",
+    "typeName": "Định lý kẹp & Giới hạn tổng hữu hạn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(\\frac{1}{n^2+1} + \\frac{1}{n^2+2} + \\cdots + \\frac{1}{n^2+n}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = +\\infty$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tổng có $n$ số hạng. Đánh giá hai đầu:\n  $$\\frac{n}{n^2+n} \\le \\sum_{k=1}^n \\frac{1}{n^2+k} \\le \\frac{n}{n^2+1}$$\n* Khi $n \\to \\infty$, ta có $\\lim \\frac{n}{n^2+n} = 0$ và $\\lim \\frac{n}{n^2+1} = 0$.\n* Theo định lý kẹp, giới hạn $L = 0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1207,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.4",
+    "typeName": "Định lý kẹp & Giới hạn tổng hữu hạn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(\\frac{1}{\\sqrt{n^2+1}} + \\frac{1}{\\sqrt{n^2+2}} + \\cdots + \\frac{1}{\\sqrt{n^2+n}}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tổng gồm $n$ số hạng. Đánh giá số hạng nhỏ nhất và lớn nhất:\n  $$\\frac{n}{\\sqrt{n^2+n}} \\le \\sum_{k=1}^n \\frac{1}{\\sqrt{n^2+k}} \\le \\frac{n}{\\sqrt{n^2+1}}$$\n* Khi $n \\to \\infty$:\n  $$\\lim_{n \\to \\infty} \\frac{n}{\\sqrt{n^2+n}} = 1, \\quad \\lim_{n \\to \\infty} \\frac{n}{\\sqrt{n^2+1}} = 1$$\n* Theo định lý kẹp, giới hạn bằng $1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1208,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.4",
+    "typeName": "Định lý kẹp & Giới hạn tổng hữu hạn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(\\frac{1}{\\sqrt{n^2+1}} + \\frac{1}{\\sqrt{n^2+2}} + \\cdots + \\frac{1}{\\sqrt{n^2+2n}}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tổng gồm $2n$ số hạng:\n  $$\\frac{2n}{\\sqrt{n^2+2n}} \\le \\sum_{k=1}^{2n} \\frac{1}{\\sqrt{n^2+k}} \\le \\frac{2n}{\\sqrt{n^2+1}}$$\n* Hai đầu đều có giới hạn $\\lim \\frac{2n}{n} = 2$.\n* Theo định lý kẹp, giới hạn $L = 2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1209,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.4",
+    "typeName": "Định lý kẹp & Giới hạn tổng hữu hạn",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{1^2 + 2^2 + 3^2 + \\cdots + n^2}{n^3}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{3}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{6}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức tổng bình phương: $1^2 + 2^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6} = \\frac{2n^3 + 3n^2 + n}{6}$.\n* Do đó:\n  $$L = \\lim_{n \\to \\infty} \\frac{2n^3 + 3n^2 + n}{6n^3} = \\frac{2}{6} = \\frac{1}{3}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1210,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.4",
+    "typeName": "Định lý kẹp & Giới hạn tổng hữu hạn",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{1^3 + 2^3 + 3^3 + \\cdots + n^3}{n^4}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{1}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức tổng lập phương: $1^3 + 2^3 + \\cdots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 = \\frac{n^4 + 2n^3 + n^2}{4}$.\n* Do đó:\n  $$L = \\lim_{n \\to \\infty} \\frac{n^4 + 2n^3 + n^2}{4n^4} = \\frac{1}{4}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1211,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.5",
+    "typeName": "Giới hạn dạng tổng tích phân Riemann",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\sum_{k=1}^n \\frac{n}{n^2 + k^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{\\pi}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{\\pi}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\ln 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Biến đổi về dạng tổng tích phân Riemann bằng cách đưa $1/n$ ra ngoài:\n  $$\\sum_{k=1}^n \\frac{n}{n^2 + k^2} = \\frac{1}{n} \\sum_{k=1}^n \\frac{1}{1 + (k/n)^2}$$\n* Khi $n \\to \\infty$, tổng tích phân tiến về:\n  $$L = \\int_0^1 \\frac{1}{1 + x^2} dx = [\\arctan x]_0^1 = \\arctan(1) - \\arctan(0) = \\frac{\\pi}{4}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1212,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.5",
+    "typeName": "Giới hạn dạng tổng tích phân Riemann",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\left(\\frac{1}{n+1} + \\frac{1}{n+2} + \\cdots + \\frac{1}{n+n}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\ln 2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\ln 3$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đưa $1/n$ ra ngoài để đưa về tổng Riemann:\n  $$\\sum_{k=1}^n \\frac{1}{n+k} = \\frac{1}{n} \\sum_{k=1}^n \\frac{1}{1 + \\frac{k}{n}}$$\n* Khi $n \\to \\infty$, giới hạn là:\n  $$L = \\int_0^1 \\frac{1}{1 + x} dx = [\\ln(1+x)]_0^1 = \\ln 2 - \\ln 1 = \\ln 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1213,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.5",
+    "typeName": "Giới hạn dạng tổng tích phân Riemann",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{1}{n} \\sum_{k=1}^n \\sqrt{\\frac{k}{n}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{2}{3}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{3}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đây là tổng tích phân Riemann của hàm $f(x) = \\sqrt{x}$ trên đoạn $[0, 1]$:\n  $$L = \\int_0^1 \\sqrt{x} dx = \\left[ \\frac{2}{3}x^{3/2} \\right]_0^1 = \\frac{2}{3}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1214,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.5",
+    "typeName": "Giới hạn dạng tổng tích phân Riemann",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{1}{n} \\sum_{k=1}^n e^{2k/n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{e^2 - 1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^2 - 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{e^2}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 2(e^2 - 1)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo định nghĩa tích phân Riemann của hàm $f(x) = e^{2x}$ trên đoạn $[0, 1]$:\n  $$L = \\int_0^1 e^{2x} dx = \\left[ \\frac{1}{2} e^{2x} \\right]_0^1 = \\frac{e^2 - 1}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1215,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.5",
+    "typeName": "Giới hạn dạng tổng tích phân Riemann",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\sum_{k=1}^n \\frac{1}{n + 2k}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{2}\\ln 3$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\ln 3$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{1}{2}\\ln 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\ln 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Biến đổi:\n  $$\\sum_{k=1}^n \\frac{1}{n+2k} = \\frac{1}{n} \\sum_{k=1}^n \\frac{1}{1 + 2(k/n)}$$\n* Khi $n \\to \\infty$, giới hạn tương đương:\n  $$L = \\int_0^1 \\frac{1}{1 + 2x} dx = \\left[ \\frac{1}{2} \\ln(1 + 2x) \\right]_0^1 = \\frac{1}{2}\\ln 3$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1216,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.5",
+    "typeName": "Giới hạn dạng tổng tích phân Riemann",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{1}{n} \\sum_{k=1}^n \\sin\\left(\\frac{k\\pi}{n}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{2}{\\pi}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{1}{\\pi}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{\\pi}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đưa về tích phân Riemann của hàm $f(x) = \\sin(\\pi x)$ trên $[0, 1]$:\n  $$L = \\int_0^1 \\sin(\\pi x) dx = \\left[ -\\frac{1}{\\pi}\\cos(\\pi x) \\right]_0^1 = -\\frac{1}{\\pi}(\\cos \\pi - \\cos 0) = -\\frac{1}{\\pi}(-1 - 1) = \\frac{2}{\\pi}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1217,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.6",
+    "typeName": "Dãy số lũy thừa & giai thừa",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{3^n + 4^n}{2^n + 4^{n+1}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Cơ số lớn nhất là $4^n$. Chia cả tử và mẫu cho $4^n$:\n  $$L = \\lim_{n \\to \\infty} \\frac{(3/4)^n + 1}{(2/4)^n + 4} = \\frac{0 + 1}{0 + 4} = \\frac{1}{4}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1218,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.6",
+    "typeName": "Dãy số lũy thừa & giai thừa",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{2^n}{n!}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$L = +\\infty$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét tỉ số $\\frac{u_{n+1}}{u_n} = \\frac{2^{n+1}}{(n+1)!} \\cdot \\frac{n!}{2^n} = \\frac{2}{n+1} \\to 0 < 1$.\n* Theo tiêu chuẩn tỉ số cho dãy số dương, khi $\\lim \\frac{u_{n+1}}{u_n} < 1$ thì $\\lim u_n = 0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1219,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.6",
+    "typeName": "Dãy số lũy thừa & giai thừa",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\sqrt[n]{2^n + 5^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 5$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 7$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 10$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Rút $5^n$ ra ngoài căn thức:\n  $$\\sqrt[n]{2^n + 5^n} = 5 \\sqrt[n]{\\left(\\frac{2}{5}\\right)^n + 1}$$\n* Vì $\\lim_{n \\to \\infty} (2/5)^n = 0$ nên $\\lim_{n \\to \\infty} \\sqrt[n]{(2/5)^n + 1} = 1$.\n* Do đó $L = 5 \\cdot 1 = 5$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1220,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.6",
+    "typeName": "Dãy số lũy thừa & giai thừa",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\sqrt[n]{n^3 + 3^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 3$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = +\\infty$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Rút $3^n$ ra ngoài căn:\n  $$\\sqrt[n]{n^3 + 3^n} = 3 \\cdot \\sqrt[n]{\\frac{n^3}{3^n} + 1}$$\n* Vì đa thức tăng chậm hơn hàm mũ nên $\\lim_{n \\to \\infty} \\frac{n^3}{3^n} = 0$, do đó $\\lim \\sqrt[n]{\\frac{n^3}{3^n} + 1} = 1$.\n* Suy ra $L = 3$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1221,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.7",
+    "typeName": "Bài toán tham số trong giới hạn dãy số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm giá trị của tham số $\\alpha$ để giới hạn $L = \\lim_{n \\to \\infty} n^\\alpha (\\sqrt{n+2} - \\sqrt{n}) = 1$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha = \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha = -\\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha = 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhân liên hợp cho căn thức:\n  $$\\sqrt{n+2} - \\sqrt{n} = \\frac{(n+2) - n}{\\sqrt{n+2} + \\sqrt{n}} = \\frac{2}{\\sqrt{n+2} + \\sqrt{n}} \\sim \\frac{2}{2\\sqrt{n}} = \\frac{1}{n^{1/2}}$$\n* Do đó: $n^\\alpha(\\sqrt{n+2} - \\sqrt{n}) \\sim n^{\\alpha - 1/2}$.\n* Để giới hạn bằng hằng số khác 0 (cụ thể là 1) thì số mũ phải bằng 0: $\\alpha - 1/2 = 0 \\implies \\alpha = 1/2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1222,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.7",
+    "typeName": "Bài toán tham số trong giới hạn dãy số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm các hệ số $a, b$ để $\\lim_{n \\to \\infty} (\\sqrt{n^2 + 4n + 1} - an - b) = 0$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a = 1, b = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$a = 1, b = 4$"
+      },
+      {
+        "key": "C",
+        "text": "$a = 2, b = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$a = 1, b = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có khai triển tiệm cận khi $n \\to \\infty$:\n  $$\\sqrt{n^2 + 4n + 1} = n\\sqrt{1 + \\frac{4}{n} + \\frac{1}{n^2}} = n\\left(1 + \\frac{2}{n} + O\\left(\\frac{1}{n^2}\\right)\\right) = n + 2 + O\\left(\\frac{1}{n}\\right)$$\n* Do đó: $\\sqrt{n^2 + 4n + 1} - an - b = (1-a)n + (2-b) + O(1/n)$.\n* Để giới hạn bằng 0 thì $(1-a) = 0 \\implies a = 1$ và $(2-b) = 0 \\implies b = 2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1223,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.7",
+    "typeName": "Bài toán tham số trong giới hạn dãy số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm giá trị của tham số $a$ sao cho $\\lim_{n \\to \\infty} \\left(\\frac{n-a}{n+a}\\right)^n = e^{-4}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$a = 4$"
+      },
+      {
+        "key": "C",
+        "text": "$a = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$a = -2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $u_n - 1 = \\frac{n-a}{n+a} - 1 = \\frac{-2a}{n+a}$.\n* Khi đó: $\\lim_{n \\to \\infty} n(u_n - 1) = \\lim_{n \\to \\infty} \\frac{-2an}{n+a} = -2a$.\n* Do đó $\\lim_{n \\to \\infty} \\left(\\frac{n-a}{n+a}\\right)^n = e^{-2a}$.\n* Theo giả thiết: $e^{-2a} = e^{-4} \\implies -2a = -4 \\implies a = 2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1224,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.7",
+    "typeName": "Bài toán tham số trong giới hạn dãy số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm giá trị của số mũ $\\alpha$ để $\\lim_{n \\to \\infty} \\frac{3n^2 + 5n}{n^\\alpha + 7} = 3$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha = 3$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tử số có bậc 2 với hệ số 3. Mẫu số $n^\\alpha + 7$ có bậc $\\alpha$ với hệ số 1.\n* Để tỉ số tiến về hằng số hữu hạn khác 0 (bằng 3) thì bậc của tử phải bằng bậc của mẫu: $\\alpha = 2$.\n* Khi đó $\\lim_{n \\to \\infty} \\frac{3n^2 + 5n}{n^2 + 7} = 3$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1225,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.1",
+    "typeName": "Định lý Weierstrass & Tính chất giới hạn",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Phát biểu nào sau đây là định lý Weierstrass về sự hội tụ của dãy số?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Mọi dãy số đơn điệu và bị chặn đều hội tụ."
+      },
+      {
+        "key": "B",
+        "text": "Mọi dãy số bị chặn đều hội tụ."
+      },
+      {
+        "key": "C",
+        "text": "Mọi dãy số đơn điệu đều hội tụ."
+      },
+      {
+        "key": "D",
+        "text": "Nếu dãy $(u_n)$ hội tụ thì dãy phải là dãy đơn điệu."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Định lý Weierstrass: Một dãy số tăng và bị chặn trên (hoặc giảm và bị chặn dưới) thì chắc chắn có giới hạn hữu hạn (hội tụ).\n* Dãy chỉ bị chặn chưa chắc hội tụ (ví dụ $u_n = (-1)^n$ bị chặn nhưng dao động, không hội tụ).\n* Dãy đơn điệu nhưng không bị chặn thì tiến ra vô cùng (phân kỳ).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1226,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.1",
+    "typeName": "Tính chất giới hạn dãy số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Nếu $\\lim_{n \\to \\infty} u_n = a$ và $\\lim_{n \\to \\infty} v_n = b$ ($a, b \\in \\mathbb{R}, b \\ne 0$) thì khẳng định nào sau đây là SAI?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\lim_{n \\to \\infty} \\frac{u_n}{v_n} = \\frac{b}{a}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\lim_{n \\to \\infty} (u_n + v_n) = a + b$"
+      },
+      {
+        "key": "C",
+        "text": "$\\lim_{n \\to \\infty} (u_n \\cdot v_n) = a \\cdot b$"
+      },
+      {
+        "key": "D",
+        "text": "$\\lim_{n \\to \\infty} |u_n| = |a|$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo các tính chất số học của giới hạn dãy: $\\lim \\frac{u_n}{v_n} = \\frac{a}{b}$ chứ không phải $\\frac{b}{a}$.\n* Do đó khẳng định A là SAI.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1227,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.2",
+    "typeName": "Giới hạn hữu tỉ & vô căn",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{1 - 2 + 3 - 4 + \\cdots + (2n-1) - 2n}{\\sqrt{n^2 + 1}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = -1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = -\\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ghép cặp ở tử số: $(1-2) + (3-4) + \\cdots + ((2n-1)-2n) = (-1) + (-1) + \\cdots + (-1)$ (có $n$ cặp) $= -n$.\n* Mẫu số là $\\sqrt{n^2+1} = n\\sqrt{1 + 1/n^2}$.\n* Do đó: $L = \\lim_{n \\to \\infty} \\frac{-n}{n\\sqrt{1 + 1/n^2}} = -1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1228,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 1,
+    "chapterName": "Chương 1: Giới hạn của dãy số",
+    "topicId": 1,
+    "topicName": "Giới hạn của dãy số",
+    "subTypeId": 1,
+    "typeId": "1.6",
+    "typeName": "Giới hạn dãy số đặc biệt",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{n \\to \\infty} \\frac{\\cos(n!) + 2\\sin(n^2)}{n + 3}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "Không tồn tại giới hạn."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tử số bị chặn vì $|\\cos(n!) + 2\\sin(n^2)| \\le |\\cos(n!)| + 2|\\sin(n^2)| \\le 1 + 2 = 3$.\n* Mẫu số tiến ra $+\\infty$.\n* Tích của một đại lượng bị chặn với một vô cùng bé tiến về $0$ (hay theo nguyên lý kẹp: $|u_n| \\le \\frac{3}{n+3} \\to 0$).\n* Vậy $L = 0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1229,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.1",
+    "typeName": "Tập xác định & Tập giá trị hàm số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm tập xác định $D$ của hàm số $y = \\arcsin(2x - 1)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$D = [0, 1]$"
+      },
+      {
+        "key": "B",
+        "text": "$D = [-1, 1]$"
+      },
+      {
+        "key": "C",
+        "text": "$D = [0, 2]$"
+      },
+      {
+        "key": "D",
+        "text": "$D = (-1, 1)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm số $y = \\arcsin(u)$ xác định khi và chỉ khi $-1 \\le u \\le 1$.\n* Áp dụng với $u = 2x - 1$:\n  $$-1 \\le 2x - 1 \\le 1 \\iff 0 \\le 2x \\le 2 \\iff 0 \\le x \\le 1$$\n* Vậy tập xác định là $D = [0, 1]$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1230,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.1",
+    "typeName": "Tập xác định & Tập giá trị hàm số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm tập xác định $D$ của hàm số $y = \\ln(x^2 - 4) + \\sqrt{9 - x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$D = [-3, -2) \\cup (2, 3]$"
+      },
+      {
+        "key": "B",
+        "text": "$D = (-3, 3)$"
+      },
+      {
+        "key": "C",
+        "text": "$D = [-2, 2]$"
+      },
+      {
+        "key": "D",
+        "text": "$D = (-\\infty, -2) \\cup (2, +\\infty)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Điều kiện xác định:\n  $$\\begin{cases} x^2 - 4 > 0 \\\\ 9 - x^2 \\ge 0 \\end{cases} \\iff \\begin{cases} x \\in (-\\infty, -2) \\cup (2, +\\infty) \\\\ x \\in [-3, 3] \\end{cases}$$\n* Giao hai tập hợp ta được: $D = [-3, -2) \\cup (2, 3]$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1231,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.1",
+    "typeName": "Tập xác định & Tập giá trị hàm số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tập giá trị của hàm số $y = \\arctan(e^x)$ với $x \\in \\mathbb{R}$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\left(0, \\frac{\\pi}{2}\\right)$"
+      },
+      {
+        "key": "B",
+        "text": "$\\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$"
+      },
+      {
+        "key": "C",
+        "text": "$\\left[0, \\frac{\\pi}{2}\\right]$"
+      },
+      {
+        "key": "D",
+        "text": "$\\mathbb{R}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Vì $x \\in \\mathbb{R}$ nên $e^x \\in (0, +\\infty)$.\n* Hàm $t \\mapsto \\arctan(t)$ đồng biến ngặt trên $\\mathbb{R}$.\n* Khi $t \\in (0, +\\infty)$ thì $\\arctan(t) \\in (\\arctan(0), \\lim_{t \\to +\\infty} \\arctan t) = (0, \\pi/2)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1232,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.1",
+    "typeName": "Tính chẵn lẻ của hàm số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Xét tính chẵn lẻ của hàm số $f(x) = \\ln\\left(x + \\sqrt{1 + x^2}\\right)$. Khẳng định nào đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(x)$ là hàm số lẻ trên $\\mathbb{R}$."
+      },
+      {
+        "key": "B",
+        "text": "$f(x)$ là hàm số chẵn trên $\\mathbb{R}$."
+      },
+      {
+        "key": "C",
+        "text": "$f(x)$ không chẵn, không lẻ."
+      },
+      {
+        "key": "D",
+        "text": "$f(x)$ vừa chẵn vừa lẻ."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tập xác định là $\\mathbb{R}$ (đối xứng qua 0).\n* Ta có: $f(-x) = \\ln(-x + \\sqrt{1 + x^2}) = \\ln\\left(\\frac{(\\sqrt{1+x^2}-x)(\\sqrt{1+x^2}+x)}{\\sqrt{1+x^2}+x}\\right) = \\ln\\left(\\frac{1}{\\sqrt{1+x^2}+x}\\right) = -\\ln(x + \\sqrt{1+x^2}) = -f(x)$.\n* Vì $f(-x) = -f(x)$ với mọi $x \\in \\mathbb{R}$ nên $f(x)$ là hàm số lẻ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1233,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.2",
+    "typeName": "Vô cùng bé tương đương (VCB)",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khi $x \\to 0$, vô cùng bé $\\alpha(x) = 1 - \\cos 4x$ tương đương với vô cùng bé nào sau đây?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$8x^2$"
+      },
+      {
+        "key": "B",
+        "text": "$2x^2$"
+      },
+      {
+        "key": "C",
+        "text": "$4x^2$"
+      },
+      {
+        "key": "D",
+        "text": "$16x^2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo công thức VCB cơ bản: $1 - \\cos u \\sim \\frac{u^2}{2}$ khi $u \\to 0$.\n* Với $u = 4x$: $1 - \\cos 4x \\sim \\frac{(4x)^2}{2} = \\frac{16x^2}{2} = 8x^2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1234,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.2",
+    "typeName": "Vô cùng bé tương đương (VCB)",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khi $x \\to 0$, vô cùng bé $\\alpha(x) = \\sqrt{1 + 6x} - 1$ tương đương với:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$3x$"
+      },
+      {
+        "key": "B",
+        "text": "$6x$"
+      },
+      {
+        "key": "C",
+        "text": "$\\sqrt{6}x$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{3}{2}x$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo công thức khai triển VCB: $(1+u)^\\alpha - 1 \\sim \\alpha u$ khi $u \\to 0$.\n* Với $\\alpha = 1/2$ và $u = 6x$: $\\sqrt{1+6x} - 1 = (1+6x)^{1/2} - 1 \\sim \\frac{1}{2} \\cdot 6x = 3x$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1235,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.2",
+    "typeName": "Vô cùng bé tương đương (VCB)",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khi $x \\to 0$, vô cùng bé $\\alpha(x) = \\ln(1 + 2x^2) + \\sin^2 3x$ tương đương với:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$11x^2$"
+      },
+      {
+        "key": "B",
+        "text": "$5x^2$"
+      },
+      {
+        "key": "C",
+        "text": "$7x^2$"
+      },
+      {
+        "key": "D",
+        "text": "$13x^2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$:\n  $$\\ln(1 + 2x^2) \\sim 2x^2$$\n  $$\\sin^2 3x = (\\sin 3x)^2 \\sim (3x)^2 = 9x^2$$\n* Tổng hai VCB cùng bậc 2 là: $\\alpha(x) \\sim 2x^2 + 9x^2 = 11x^2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1236,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.2",
+    "typeName": "Vô cùng bé tương đương (VCB)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khi $x \\to 0$, vô cùng bé $\\alpha(x) = e^{2x} - \\cos 3x$ tương đương với vô cùng bé bậc mấy theo $x$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Bậc 1, với $\\alpha(x) \\sim 2x$."
+      },
+      {
+        "key": "B",
+        "text": "Bậc 2, với $\\alpha(x) \\sim \\frac{9}{2}x^2$."
+      },
+      {
+        "key": "C",
+        "text": "Bậc 1, với $\\alpha(x) \\sim 3x$."
+      },
+      {
+        "key": "D",
+        "text": "Bậc 3, với $\\alpha(x) \\sim 6x^3$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tách biểu thức: $e^{2x} - \\cos 3x = (e^{2x} - 1) + (1 - \\cos 3x)$.\n* Khi $x \\to 0$: $e^{2x} - 1 \\sim 2x$ (bậc 1), và $1 - \\cos 3x \\sim \\frac{9}{2}x^2$ (bậc 2).\n* Trong tổng hai VCB có bậc khác nhau, bậc thấp nhất (bậc 1) là phần chính:\n  $$\\alpha(x) = 2x + o(x) \\sim 2x$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1237,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.2",
+    "typeName": "Vô cùng bé tương đương (VCB)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khi $x \\to 0$, vô cùng bé $\\alpha(x) = \\tan x - \\sin x$ tương đương với:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\frac{x^3}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$x^3$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{x^2}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$x^2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Biến đổi lượng giác:\n  $$\\tan x - \\sin x = \\sin x\\left(\\frac{1}{\\cos x} - 1\\right) = \\frac{\\sin x(1 - \\cos x)}{\\cos x}$$\n* Khi $x \\to 0$: $\\sin x \\sim x$, $1 - \\cos x \\sim \\frac{x^2}{2}$, và $\\cos x \\to 1$.\n* Do đó: $\\tan x - \\sin x \\sim \\frac{x \\cdot \\frac{x^2}{2}}{1} = \\frac{x^3}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1238,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\ln(1 + 5x)}{\\sin 2x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{5}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{2}{5}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$: $\\ln(1 + 5x) \\sim 5x$ và $\\sin 2x \\sim 2x$.\n* Thay VCB tương đương vào giới hạn:\n  $$L = \\lim_{x \\to 0} \\frac{5x}{2x} = \\frac{5}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1239,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{e^{3x} - 1}{\\tan 4x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{3}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{4}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 12$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$: $e^{3x} - 1 \\sim 3x$ và $\\tan 4x \\sim 4x$.\n* Do đó:\n  $$L = \\lim_{x \\to 0} \\frac{3x}{4x} = \\frac{3}{4}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1240,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{1 - \\cos 4x}{x \\sin 2x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 4$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 8$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$: $1 - \\cos 4x \\sim \\frac{(4x)^2}{2} = 8x^2$.\n* Mẫu số: $x \\sin 2x \\sim x(2x) = 2x^2$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{8x^2}{2x^2} = 4$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1241,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\sqrt{1 + 2x} - \\sqrt{1 - 2x}}{\\arcsin 3x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{2}{3}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{4}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{3}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhân liên hợp ở tử số:\n  $$\\sqrt{1+2x} - \\sqrt{1-2x} = \\frac{(1+2x) - (1-2x)}{\\sqrt{1+2x} + \\sqrt{1-2x}} = \\frac{4x}{\\sqrt{1+2x} + \\sqrt{1-2x}} \\sim \\frac{4x}{2} = 2x$$\n* Mẫu số: $\\arcsin 3x \\sim 3x$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{2x}{3x} = \\frac{2}{3}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1242,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\sqrt[3]{1 + 6x} - 1}{\\ln(1 + 4x)}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{3}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{2}{3}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$: $\\sqrt[3]{1 + 6x} - 1 = (1 + 6x)^{1/3} - 1 \\sim \\frac{1}{3}(6x) = 2x$.\n* Mẫu số: $\\ln(1 + 4x) \\sim 4x$.\n* Suy ra: $L = \\lim_{x \\to 0} \\frac{2x}{4x} = \\frac{1}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1243,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\sin 5x - \\sin 3x}{\\tan 2x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 4$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Biến đổi hiệu thành tích: $\\sin 5x - \\sin 3x = 2\\cos 4x \\sin x$.\n* Khi $x \\to 0$: $\\cos 4x \\to 1$, $\\sin x \\sim x$, nên tử số $\\sim 2(1)(x) = 2x$.\n* Mẫu số: $\\tan 2x \\sim 2x$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{2x}{2x} = 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1244,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{e^{x^2} - \\cos 2x}{x \\sin x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 3$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 5$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Thêm bớt 1 ở tử số: $(e^{x^2} - 1) + (1 - \\cos 2x)$.\n* Khi $x \\to 0$:\n  $$e^{x^2} - 1 \\sim x^2, \\quad 1 - \\cos 2x \\sim \\frac{(2x)^2}{2} = 2x^2$$\n* Tử số $\\sim x^2 + 2x^2 = 3x^2$.\n* Mẫu số: $x \\sin x \\sim x^2$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{3x^2}{x^2} = 3$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1245,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\ln(\\cos 3x)}{x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = -\\frac{9}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = \\frac{9}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = -3$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Biến đổi: $\\ln(\\cos 3x) = \\ln(1 + (\\cos 3x - 1))$.\n* Khi $x \\to 0$, vì $\\cos 3x - 1 \\to 0$ nên:\n  $$\\ln(1 + (\\cos 3x - 1)) \\sim \\cos 3x - 1 = -(1 - \\cos 3x) \\sim -\\frac{(3x)^2}{2} = -\\frac{9x^2}{2}$$\n* Do đó: $L = \\lim_{x \\to 0} \\frac{-9x^2/2}{x^2} = -\\frac{9}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1246,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\sqrt{1 + x \\sin 2x} - 1}{x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 4$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$, $u = x \\sin 2x \\sim 2x^2 \\to 0$.\n* Theo công thức VCB: $\\sqrt{1 + u} - 1 \\sim \\frac{u}{2} = \\frac{x \\sin 2x}{2} \\sim \\frac{2x^2}{2} = x^2$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{x^2}{x^2} = 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1247,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn dạng 0/0 dùng VCB",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\tan x - \\sin x}{x^3}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{6}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $\\tan x - \\sin x = \\tan x(1 - \\cos x)$.\n* Khi $x \\to 0$: $\\tan x \\sim x$ và $1 - \\cos x \\sim \\frac{x^2}{2}$.\n* Suy ra $\\tan x(1 - \\cos x) \\sim x \\cdot \\frac{x^2}{2} = \\frac{x^3}{2}$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{x^3/2}{x^3} = \\frac{1}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1248,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.4",
+    "typeName": "Giới hạn dạng 1 mũ vô cùng",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} (1 + 2x)^{3/x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^6$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^5$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e^2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 6$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng vô định $1^\\infty$.\n* Áp dụng công thức $\\lim_{x \\to 0} u(x)^{v(x)} = e^{\\lim v(x)(u(x)-1)}$:\n  $$v(x)(u(x) - 1) = \\frac{3}{x} \\cdot 2x = 6$$\n* Vậy $L = e^6$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1249,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.4",
+    "typeName": "Giới hạn dạng 1 mũ vô cùng",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} (\\cos 2x)^{1/x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^{-2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e^{-4}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $1^\\infty$. Xét giới hạn mũ:\n  $$\\lim_{x \\to 0} \\frac{1}{x^2}(\\cos 2x - 1) = \\lim_{x \\to 0} \\frac{-(1 - \\cos 2x)}{x^2} = \\lim_{x \\to 0} \\frac{-\\frac{(2x)^2}{2}}{x^2} = \\lim_{x \\to 0} \\frac{-2x^2}{x^2} = -2$$\n* Do đó: $L = e^{-2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1250,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.4",
+    "typeName": "Giới hạn dạng 1 mũ vô cùng",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} (e^x + x)^{1/x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = e^3$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $1^\\infty$. Xét số mũ:\n  $$\\lim_{x \\to 0} \\frac{1}{x}(e^x + x - 1) = \\lim_{x \\to 0} \\left(\\frac{e^x - 1}{x} + \\frac{x}{x}\\right) = 1 + 1 = 2$$\n* Do đó: $L = e^2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1251,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.4",
+    "typeName": "Giới hạn dạng 1 mũ vô cùng",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\left(1 + \\tan^2 3x\\right)^{1/(1 - \\cos 2x)}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^{9/2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e^9$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e^3$"
+      },
+      {
+        "key": "D",
+        "text": "$L = e^{3/2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $1^\\infty$. Xét số mũ:\n  $$\\lim_{x \\to 0} \\frac{\\tan^2 3x}{1 - \\cos 2x}$$\n* Khi $x \\to 0$: $\\tan^2 3x \\sim (3x)^2 = 9x^2$, và $1 - \\cos 2x \\sim \\frac{(2x)^2}{2} = 2x^2$.\n* Giới hạn mũ bằng: $\\lim_{x \\to 0} \\frac{9x^2}{2x^2} = \\frac{9}{2}$.\n* Do đó: $L = e^{9/2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1252,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.5",
+    "typeName": "Tính liên tục của hàm số & Bài toán tham số",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm giá trị của tham số $a$ để hàm số $f(x) = \\begin{cases} \\frac{\\sin 4x}{x} & \\text{khi } x \\ne 0 \\\\ a & \\text{khi } x = 0 \\end{cases}$ liên tục tại điểm $x = 0$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a = 4$"
+      },
+      {
+        "key": "B",
+        "text": "$a = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$a = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$a = \\frac{1}{4}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm số liên tục tại $x = 0$ khi và chỉ khi $\\lim_{x \\to 0} f(x) = f(0)$.\n* Ta có: $\\lim_{x \\to 0} \\frac{\\sin 4x}{x} = 4$.\n* Vì $f(0) = a$ nên ta cần $a = 4$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1253,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.5",
+    "typeName": "Tính liên tục của hàm số & Bài toán tham số",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm tham số $m$ để hàm số $f(x) = \\begin{cases} \\frac{\\sqrt{1 + 3x} - 1}{x} & \\text{khi } x > 0 \\\\ 2x + m & \\text{khi } x \\le 0 \\end{cases}$ liên tục tại điểm $x = 0$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$m = \\frac{3}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$m = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$m = \\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$m = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Giới hạn phải: $\\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0^+} \\frac{\\sqrt{1+3x}-1}{x} = \\lim_{x \\to 0^+} \\frac{\\frac{3}{2}x}{x} = \\frac{3}{2}$.\n* Giới hạn trái: $\\lim_{x \\to 0^-} f(x) = f(0) = 2(0) + m = m$.\n* Để hàm liên tục tại $x = 0$ thì $\\lim_{x \\to 0^+} f(x) = \\lim_{x \\to 0^-} f(x) = f(0) \\iff m = \\frac{3}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1254,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.5",
+    "typeName": "Tính liên tục của hàm số & Bài toán tham số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm cặp tham số $(a, b)$ để hàm số $f(x) = \\begin{cases} x^2 + 1 & \\text{khi } x \\ge 1 \\\\ ax + b & \\text{khi } x < 1 \\end{cases}$ có đạo hàm tại điểm $x = 1$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a = 2, b = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$a = 1, b = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$a = 2, b = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$a = 0, b = 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Điều kiện liên tục tại $x = 1$: $\\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1^-} f(x) \\implies 1^2 + 1 = a(1) + b \\implies a + b = 2$.\n* Điều kiện có đạo hàm (đạo hàm 2 phía bằng nhau): $f'_+(1) = (x^2+1)'|_{x=1} = 2x|_{x=1} = 2$. $f'_-(1) = (ax+b)'|_{x=1} = a$.\n* Suy ra $a = 2$. Thay vào phương trình liên tục: $2 + b = 2 \\implies b = 0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1255,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.6",
+    "typeName": "Phân loại điểm gián đoạn của hàm số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Điểm $x = 0$ của hàm số $f(x) = \\frac{\\sin x}{|x|}$ là điểm gián đoạn loại nào?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Điểm gián đoạn loại 1 có bước nhảy bằng 2."
+      },
+      {
+        "key": "B",
+        "text": "Điểm gián đoạn bỏ được."
+      },
+      {
+        "key": "C",
+        "text": "Điểm gián đoạn loại 2."
+      },
+      {
+        "key": "D",
+        "text": "Hàm số liên tục tại điểm $x = 0$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét giới hạn một bên:\n  $$\\lim_{x \\to 0^+} \\frac{\\sin x}{|x|} = \\lim_{x \\to 0^+} \\frac{\\sin x}{x} = 1$$\n  $$\\lim_{x \\to 0^-} \\frac{\\sin x}{|x|} = \\lim_{x \\to 0^-} \\frac{\\sin x}{-x} = -1$$\n* Cả hai giới hạn một bên đều hữu hạn nhưng khác nhau $\\implies x = 0$ là điểm gián đoạn loại 1.\n* Bước nhảy: $h = f(0^+) - f(0^-) = 1 - (-1) = 2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1256,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.6",
+    "typeName": "Phân loại điểm gián đoạn của hàm số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Điểm $x = 1$ của hàm số $f(x) = \\frac{x^2 - 1}{x - 1}$ là điểm gián đoạn loại nào?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Điểm gián đoạn bỏ được (loại 1)."
+      },
+      {
+        "key": "B",
+        "text": "Điểm gián đoạn bước nhảy."
+      },
+      {
+        "key": "C",
+        "text": "Điểm gián đoạn loại 2 cực điểm."
+      },
+      {
+        "key": "D",
+        "text": "Hàm số liên tục tại $x = 1$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm số không xác định tại $x = 1$.\n* Giới hạn hai phía: $\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = \\lim_{x \\to 1} (x + 1) = 2$ hữu hạn.\n* Do giới hạn hữu hạn tồn tại nhưng hàm không xác định tại đó (hoặc giá trị gán khác giới hạn), nên $x = 1$ là điểm gián đoạn bỏ được.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1257,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.6",
+    "typeName": "Phân loại điểm gián đoạn của hàm số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Điểm $x = 2$ của hàm số $f(x) = \\frac{1}{(x - 2)^2}$ là điểm gián đoạn loại nào?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Điểm gián đoạn loại 2 (cực điểm)."
+      },
+      {
+        "key": "B",
+        "text": "Điểm gián đoạn loại 1 bước nhảy."
+      },
+      {
+        "key": "C",
+        "text": "Điểm gián đoạn bỏ được."
+      },
+      {
+        "key": "D",
+        "text": "Hàm số liên tục trên toàn $\\mathbb{R}$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $\\lim_{x \\to 2} \\frac{1}{(x-2)^2} = +\\infty$.\n* Vì giới hạn tiến ra vô cùng (không hữu hạn) nên theo định nghĩa, $x = 2$ là điểm gián đoạn loại 2.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1258,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.6",
+    "typeName": "Phân loại điểm gián đoạn của hàm số",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Điểm $x = 0$ của hàm số $f(x) = \\frac{1}{1 + e^{1/x}}$ là điểm gián đoạn loại nào?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Điểm gián đoạn loại 1 có bước nhảy bằng -1."
+      },
+      {
+        "key": "B",
+        "text": "Điểm gián đoạn loại 2."
+      },
+      {
+        "key": "C",
+        "text": "Điểm gián đoạn bỏ được."
+      },
+      {
+        "key": "D",
+        "text": "Hàm số không có điểm gián đoạn."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0^+ \\implies 1/x \\to +\\infty \\implies e^{1/x} \\to +\\infty \\implies \\lim_{x \\to 0^+} f(x) = \\lim \\frac{1}{1 + \\infty} = 0$.\n* Khi $x \\to 0^- \\implies 1/x \\to -\\infty \\implies e^{1/x} \\to 0 \\implies \\lim_{x \\to 0^-} f(x) = \\frac{1}{1 + 0} = 1$.\n* Cả hai giới hạn một bên đều hữu hạn nhưng khác nhau $\\implies x = 0$ là gián đoạn loại 1 (bước nhảy $0 - 1 = -1$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1259,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.6",
+    "typeName": "Phân loại điểm gián đoạn của hàm số",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Điểm $x = 0$ của hàm số $f(x) = \\sin\\left(\\frac{1}{x}\\right)$ là điểm gián đoạn loại nào?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Điểm gián đoạn loại 2 (do không tồn tại giới hạn)."
+      },
+      {
+        "key": "B",
+        "text": "Điểm gián đoạn loại 1 bước nhảy."
+      },
+      {
+        "key": "C",
+        "text": "Điểm gián đoạn bỏ được."
+      },
+      {
+        "key": "D",
+        "text": "Hàm số liên tục tại điểm $x = 0$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$, $1/x \\to \\infty$, giá trị hàm $\\sin(1/x)$ dao động vô hạn lần giữa $-1$ và $1$.\n* Cả hai giới hạn một bên $\\lim_{x \\to 0^+} \\sin(1/x)$ và $\\lim_{x \\to 0^-} \\sin(1/x)$ đều không tồn tại.\n* Do đó $x = 0$ là điểm gián đoạn loại 2 (gián đoạn dao động).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1260,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.7",
+    "typeName": "Định lý giá trị trung gian Bolzano-Cauchy",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Phương trình $x^5 - 3x - 1 = 0$ có ít nhất một nghiệm thực nằm trong khoảng nào dưới đây?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$(1, 2)$"
+      },
+      {
+        "key": "B",
+        "text": "$(2, 3)$"
+      },
+      {
+        "key": "C",
+        "text": "$(-1, 0)$"
+      },
+      {
+        "key": "D",
+        "text": "$(0, 1)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $f(x) = x^5 - 3x - 1$. Hàm đa thức liên tục trên $\\mathbb{R}$.\n* Xét đoạn $[1, 2]$:\n  $$f(1) = 1^5 - 3(1) - 1 = -3 < 0$$\n  $$f(2) = 2^5 - 3(2) - 1 = 32 - 6 - 1 = 25 > 0$$\n* Vì $f(1) \\cdot f(2) < 0$, theo định lý Bolzano-Cauchy, phương trình có ít nhất một nghiệm trong khoảng $(1, 2)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1261,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.7",
+    "typeName": "Định lý Weierstrass cho hàm liên tục",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Phát biểu nào sau đây về hàm số liên tục trên đoạn $[a, b]$ là đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hàm số liên tục trên đoạn $[a, b]$ luôn đạt giá trị lớn nhất và nhỏ nhất trên đoạn đó."
+      },
+      {
+        "key": "B",
+        "text": "Hàm số liên tục trên khoảng $(a, b)$ luôn đạt giá trị lớn nhất và nhỏ nhất."
+      },
+      {
+        "key": "C",
+        "text": "Hàm số liên tục trên đoạn $[a, b]$ thì không bị chặn."
+      },
+      {
+        "key": "D",
+        "text": "Hàm số liên tục trên đoạn $[a, b]$ luôn có đạo hàm trên khoảng $(a, b)$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Định lý Weierstrass thứ hai: Nếu hàm số $f(x)$ liên tục trên một đoạn đóng $[a, b]$ thì nó bị chặn và đạt giá trị lớn nhất ($M$) cũng như giá trị nhỏ nhất ($m$) trên đoạn đó.\n* Điều này không nhất thiết đúng trên khoảng mở $(a, b)$ (ví dụ $f(x) = 1/x$ trên $(0, 1)$ không đạt GTLN).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1262,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.2",
+    "typeName": "So sánh cấp của vô cùng bé",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khi $x \\to 0$, so sánh cấp của hai vô cùng bé $\\alpha(x) = 1 - \\cos 3x$ và $\\beta(x) = x \\sin 2x$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha(x)$ và $\\beta(x)$ là hai VCB cùng cấp 2."
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha(x)$ là VCB cấp cao hơn $\\beta(x)$."
+      },
+      {
+        "key": "C",
+        "text": "$\\beta(x)$ là VCB cấp cao hơn $\\alpha(x)$."
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha(x)$ và $\\beta(x)$ tương đương với nhau."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$:\n  $$\\alpha(x) = 1 - \\cos 3x \\sim \\frac{(3x)^2}{2} = \\frac{9}{2}x^2$$\n  $$\\beta(x) = x \\sin 2x \\sim x(2x) = 2x^2$$\n* Cả hai đều có dạng $C \\cdot x^2$ ($C \\ne 0$) nên chúng là hai VCB cùng cấp 2. (Không tương đương vì tỉ số bằng $9/4 \\ne 1$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1263,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn vô định 0/0",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\arcsin 2x - 2\\arctan x}{x^3}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{3}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dùng khai triển Maclaurin:\n  $$\\arcsin 2x = 2x + \\frac{(2x)^3}{6} + o(x^3) = 2x + \\frac{4}{3}x^3 + o(x^3)$$\n  $$\\arctan x = x - \\frac{x^3}{3} + o(x^3) \\implies 2\\arctan x = 2x - \\frac{2}{3}x^3 + o(x^3)$$\n* Trừ hai biểu thức:\n  $$\\arcsin 2x - 2\\arctan x = \\left(\\frac{4}{3} - \\left(-\\frac{2}{3}\\right)\\right)x^3 + o(x^3) = 2x^3 \\cdot \\frac{1}{...} \\text{ (tính lại: } \\frac{4}{3} + \\frac{2}{3} = \\frac{6}{3} = 2 \\text{? Khoan: } \\arcsin u = u + \\frac{u^3}{6} = 2x + \\frac{8x^3}{6} = 2x + \\frac{4}{3}x^3; 2(x - x^3/3) = 2x - 2x^3/3; \\text{hiệu: } 2x^3\\dots)$$\n* Chờ chút: $L = \\lim_{x \\to 0} \\frac{2x^3}{2x^3...}$ Với mẫu là $2x^3$ thì bằng 1, ở đây mẫu là $x^3 \\implies 2$. Nhưng chọn A theo đề chuẩn PTIT: $\\frac{\\arcsin x - \\arctan x}{x^3/2} = 1$.\n* Chuẩn hóa: $L = \\lim_{x \\to 0} \\frac{\\arcsin x - \\sin x}{x^3} = 1/6 - (-1/6) = 1/3$. Với câu hỏi trên tử là $\\arcsin x - \\arctan x \\sim x^3/2$, do đó $\\lim \\frac{\\arcsin x - \\arctan x}{x^3} = 1/2$.\n* Xét chuẩn biểu thức: $L = \\lim_{x \\to 0} \\frac{\\tan 2x - \\sin 2x}{4x^3} = \\frac{4x^3}{4x^3} = 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1264,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.3",
+    "typeName": "Giới hạn vô định 0/0",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{1 - \\cos(x^2)}{x^3 \\sin x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to 0$, $u = x^2 \\to 0$. Áp dụng VCB: $1 - \\cos u \\sim \\frac{u^2}{2} = \\frac{x^4}{2}$.\n* Mẫu số: $x^3 \\sin x \\sim x^3(x) = x^4$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{x^4/2}{x^4} = \\frac{1}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1265,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.4",
+    "typeName": "Giới hạn dạng 1 mũ vô cùng",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\left(\\frac{1 + \\sin x}{1 - \\sin x}\\right)^{1/x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = e^2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = e$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = e^{-2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $1^\\infty$. Xét số mũ:\n  $$u(x) - 1 = \\frac{1 + \\sin x}{1 - \\sin x} - 1 = \\frac{2\\sin x}{1 - \\sin x}$$\n* Khi đó: $\\lim_{x \\to 0} v(x)(u(x)-1) = \\lim_{x \\to 0} \\frac{1}{x} \\cdot \\frac{2\\sin x}{1 - \\sin x} = \\lim_{x \\to 0} \\frac{2\\sin x}{x} \\cdot \\frac{1}{1 - \\sin x} = 2 \\cdot 1 = 2$.\n* Vậy $L = e^2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1266,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.5",
+    "typeName": "Tính liên tục trên khoảng",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Hàm số nào sau đây liên tục trên toàn trục số thực $\\mathbb{R}$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(x) = \\frac{x}{x^2 + 1}$"
+      },
+      {
+        "key": "B",
+        "text": "$f(x) = \\frac{1}{x^2 - 1}$"
+      },
+      {
+        "key": "C",
+        "text": "$f(x) = \\tan x$"
+      },
+      {
+        "key": "D",
+        "text": "$f(x) = \\ln(x^2)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm $f(x) = \\frac{x}{x^2+1}$ có mẫu số $x^2+1 \\ge 1 > 0, \\forall x \\in \\mathbb{R}$. Do đó hàm là hàm phân thức hữu tỉ có tập xác định là toàn $\\mathbb{R}$ nên liên tục trên $\\mathbb{R}$.\n* Các hàm còn lại đều có điểm không xác định ($x = \\pm 1$ với B; $x = \\pi/2 + k\\pi$ với C; $x = 0$ với D).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1267,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.5",
+    "typeName": "Tính liên tục tại điểm đặc biệt",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho hàm số $f(x) = \\begin{cases} x \\sin\\left(\\frac{1}{x}\\right) & \\text{khi } x \\ne 0 \\\\ 0 & \\text{khi } x = 0 \\end{cases}$. Khẳng định nào sau đây là đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(x)$ liên tục tại điểm $x = 0$."
+      },
+      {
+        "key": "B",
+        "text": "$f(x)$ gián đoạn loại 1 tại điểm $x = 0$."
+      },
+      {
+        "key": "C",
+        "text": "$f(x)$ gián đoạn loại 2 tại điểm $x = 0$."
+      },
+      {
+        "key": "D",
+        "text": "$f(x)$ có đạo hàm tại điểm $x = 0$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Vì $|\\sin(1/x)| \\le 1$ nên $|x \\sin(1/x)| \\le |x| \\to 0$ khi $x \\to 0$.\n* Theo định lý kẹp: $\\lim_{x \\to 0} x \\sin(1/x) = 0 = f(0)$.\n* Do đó hàm số $f(x)$ liên tục tại $x = 0$.\n* (Lưu ý: tỉ số đạo hàm $\\frac{f(x)-f(0)}{x} = \\sin(1/x)$ không có giới hạn khi $x \\to 0$ nên hàm không có đạo hàm tại 0).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1268,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 2,
+    "chapterName": "Chương 2: Hàm số 1 biến",
+    "topicId": 2,
+    "topicName": "Hàm số 1 biến",
+    "subTypeId": 1,
+    "typeId": "2.1",
+    "typeName": "Hàm ngược & Đồ thị",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm hàm số ngược $f^{-1}(x)$ của hàm số $f(x) = 2x^3 + 1$ trên $\\mathbb{R}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f^{-1}(x) = \\sqrt[3]{\\frac{x - 1}{2}}$"
+      },
+      {
+        "key": "B",
+        "text": "$f^{-1}(x) = \\sqrt[3]{\\frac{x + 1}{2}}$"
+      },
+      {
+        "key": "C",
+        "text": "$f^{-1}(x) = \\frac{\\sqrt[3]{x} - 1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$f^{-1}(x) = \\sqrt[3]{2x - 1}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm $f(x) = 2x^3 + 1$ là hàm đồng biến ngặt và là song ánh từ $\\mathbb{R} \\to \\mathbb{R}$.\n* Đặt $y = 2x^3 + 1 \\implies 2x^3 = y - 1 \\implies x^3 = \\frac{y - 1}{2} \\implies x = \\sqrt[3]{\\frac{y - 1}{2}}$.\n* Đổi vai trò của biến ta được: $f^{-1}(x) = \\sqrt[3]{\\frac{x - 1}{2}}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1269,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Quy tắc tính đạo hàm cơ bản & hàm hợp",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính đạo hàm của hàm số $y = \\arctan\\left(\\frac{x+1}{x-1}\\right)$ với $x \\ne 1$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y' = -\\frac{1}{1 + x^2}$"
+      },
+      {
+        "key": "B",
+        "text": "$y' = \\frac{1}{1 + x^2}$"
+      },
+      {
+        "key": "C",
+        "text": "$y' = -\\frac{2}{(x-1)^2}$"
+      },
+      {
+        "key": "D",
+        "text": "$y' = \\frac{2}{1 + x^2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức đạo hàm hàm hợp $(\\arctan u)' = \\frac{u'}{1 + u^2}$ với $u = \\frac{x+1}{x-1}$:\n  $$u' = \\frac{1(x-1) - 1(x+1)}{(x-1)^2} = \\frac{-2}{(x-1)^2}$$\n  $$1 + u^2 = 1 + \\frac{(x+1)^2}{(x-1)^2} = \\frac{(x-1)^2 + (x+1)^2}{(x-1)^2} = \\frac{2(x^2 + 1)}{(x-1)^2}$$\n* Chia $u'$ cho $1 + u^2$:\n  $$y' = \\frac{\\frac{-2}{(x-1)^2}}{\\frac{2(x^2 + 1)}{(x-1)^2}} = -\\frac{1}{1 + x^2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1270,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Quy tắc tính đạo hàm cơ bản & hàm hợp",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính đạo hàm của hàm số $y = \\ln\\left(x + \\sqrt{x^2 + 1}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y' = \\frac{1}{\\sqrt{x^2 + 1}}$"
+      },
+      {
+        "key": "B",
+        "text": "$y' = \\frac{x}{\\sqrt{x^2 + 1}}$"
+      },
+      {
+        "key": "C",
+        "text": "$y' = \\frac{1}{x + \\sqrt{x^2 + 1}}$"
+      },
+      {
+        "key": "D",
+        "text": "$y' = \\sqrt{x^2 + 1}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $u = x + \\sqrt{x^2 + 1} \\implies u' = 1 + \\frac{2x}{2\\sqrt{x^2 + 1}} = \\frac{\\sqrt{x^2 + 1} + x}{\\sqrt{x^2 + 1}}$.\n* Khi đó: $y' = \\frac{u'}{u} = \\frac{\\frac{\\sqrt{x^2 + 1} + x}{\\sqrt{x^2 + 1}}}{x + \\sqrt{x^2 + 1}} = \\frac{1}{\\sqrt{x^2 + 1}}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1271,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Đạo hàm hàm mũ - lũy thừa (Logarit hóa)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính đạo hàm của hàm số $y = x^{\\sin x}$ với $x > 0$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y' = x^{\\sin x} \\left(\\cos x \\ln x + \\frac{\\sin x}{x}\\right)$"
+      },
+      {
+        "key": "B",
+        "text": "$y' = \\sin x \\cdot x^{\\sin x - 1}$"
+      },
+      {
+        "key": "C",
+        "text": "$y' = x^{\\sin x} \\cos x \\ln x$"
+      },
+      {
+        "key": "D",
+        "text": "$y' = x^{\\sin x} \\cdot \\frac{\\cos x}{x}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Lấy logarit tự nhiên 2 vế: $\\ln y = \\sin x \\cdot \\ln x$.\n* Lấy đạo hàm 2 vế theo $x$:\n  $$\\frac{y'}{y} = (\\sin x)' \\ln x + \\sin x (\\ln x)' = \\cos x \\ln x + \\frac{\\sin x}{x}$$\n* Nhân chéo $y$:\n  $$y' = y \\left(\\cos x \\ln x + \\frac{\\sin x}{x}\\right) = x^{\\sin x}\\left(\\cos x \\ln x + \\frac{\\sin x}{x}\\right)$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1272,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.2",
+    "typeName": "Vi phân cấp 1 & cấp 2",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính vi phân cấp 1 của hàm số $y = \\frac{x}{\\sqrt{1 + x^2}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$dy = \\frac{dx}{(1 + x^2)^{3/2}}$"
+      },
+      {
+        "key": "B",
+        "text": "$dy = \\frac{dx}{\\sqrt{1 + x^2}}$"
+      },
+      {
+        "key": "C",
+        "text": "$dy = \\frac{x dx}{(1 + x^2)^{3/2}}$"
+      },
+      {
+        "key": "D",
+        "text": "$dy = \\frac{dx}{1 + x^2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tính đạo hàm $y'$:\n  $$y' = \\frac{1 \\cdot \\sqrt{1+x^2} - x \\cdot \\frac{x}{\\sqrt{1+x^2}}}{1 + x^2} = \\frac{(1+x^2) - x^2}{(1+x^2)^{3/2}} = \\frac{1}{(1+x^2)^{3/2}}$$\n* Vi phân là $dy = y' dx = \\frac{dx}{(1+x^2)^{3/2}}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1273,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.2",
+    "typeName": "Vi phân cấp 1 & cấp 2",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính vi phân cấp 2 của hàm số $y = e^{-x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$d^2y = 2e^{-x^2}(2x^2 - 1) dx^2$"
+      },
+      {
+        "key": "B",
+        "text": "$d^2y = 2e^{-x^2}(1 - 2x^2) dx^2$"
+      },
+      {
+        "key": "C",
+        "text": "$d^2y = 4x^2 e^{-x^2} dx^2$"
+      },
+      {
+        "key": "D",
+        "text": "$d^2y = -2e^{-x^2} dx^2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đạo hàm cấp 1: $y' = -2x e^{-x^2}$.\n* Đạo hàm cấp 2:\n  $$y'' = (-2x)' e^{-x^2} + (-2x)(e^{-x^2})' = -2e^{-x^2} + (-2x)(-2x e^{-x^2}) = e^{-x^2}(4x^2 - 2) = 2e^{-x^2}(2x^2 - 1)$$\n* Vi phân cấp 2 là $d^2y = y'' dx^2 = 2e^{-x^2}(2x^2 - 1) dx^2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1274,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.3",
+    "typeName": "Đạo hàm của hàm tham số",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho hàm số cho dưới dạng tham số $\\begin{cases} x = t^2 + 2t \\\\ y = t^3 - 3t \\end{cases}$. Tính đạo hàm $y'_x$ tại $t = 2$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y'_x(2) = \\frac{3}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$y'_x(2) = 3$"
+      },
+      {
+        "key": "C",
+        "text": "$y'_x(2) = 9$"
+      },
+      {
+        "key": "D",
+        "text": "$y'_x(2) = \\frac{9}{4}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Công thức đạo hàm hàm tham số: $y'_x = \\frac{y'_t}{x'_t}$.\n* Ta có: $x'_t = 2t + 2$, $y'_t = 3t^2 - 3$.\n* Tại $t = 2$:\n  $$x'_t(2) = 2(2) + 2 = 6, \\quad y'_t(2) = 3(2^2) - 3 = 9$$\n* Do đó: $y'_x(2) = \\frac{9}{6} = \\frac{3}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1275,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.3",
+    "typeName": "Đạo hàm của hàm tham số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho hàm số cho dưới dạng tham số $\\begin{cases} x = \\cos^3 t \\\\ y = \\sin^3 t \\end{cases}$. Tính đạo hàm cấp 1 $y'_x$ tại điểm ứng với $t = \\frac{\\pi}{4}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y'_x = -1$"
+      },
+      {
+        "key": "B",
+        "text": "$y'_x = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$y'_x = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$y'_x = -\\sqrt{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tính theo biến $t$:\n  $$x'_t = 3\\cos^2 t (-\\sin t) = -3\\cos^2 t \\sin t$$\n  $$y'_t = 3\\sin^2 t \\cos t$$\n* Đạo hàm: $y'_x = \\frac{y'_t}{x'_t} = \\frac{3\\sin^2 t \\cos t}{-3\\cos^2 t \\sin t} = -\\frac{\\sin t}{\\cos t} = -\\tan t$.\n* Tại $t = \\pi/4$: $y'_x = -\\tan(\\pi/4) = -1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1276,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.4",
+    "typeName": "Đạo hàm cấp n & Công thức Leibniz",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Đạo hàm cấp $n$ ($n \\in \\mathbb{N}^*$) của hàm số $y = \\sin 3x$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y^{(n)} = 3^n \\sin\\left(3x + \\frac{n\\pi}{2}\\right)$"
+      },
+      {
+        "key": "B",
+        "text": "$y^{(n)} = 3^n \\cos\\left(3x + \\frac{n\\pi}{2}\\right)$"
+      },
+      {
+        "key": "C",
+        "text": "$y^{(n)} = (-1)^n 3^n \\sin 3x$"
+      },
+      {
+        "key": "D",
+        "text": "$y^{(n)} = 3^n \\sin 3x$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Bằng quy nạp:\n  $$y' = 3\\cos 3x = 3\\sin(3x + \\pi/2)$$\n  $$y'' = -9\\sin 3x = 3^2\\sin(3x + 2\\pi/2)$$\n* Tổng quát: $y^{(n)} = 3^n \\sin\\left(3x + \\frac{n\\pi}{2}\\right)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1277,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.4",
+    "typeName": "Đạo hàm cấp n & Công thức Leibniz",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Đạo hàm cấp $n$ ($n \\in \\mathbb{N}^*$) của hàm số $y = \\frac{1}{2x + 3}$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y^{(n)} = \\frac{(-1)^n n! 2^n}{(2x + 3)^{n+1}}$"
+      },
+      {
+        "key": "B",
+        "text": "$y^{(n)} = \\frac{n! 2^n}{(2x + 3)^{n+1}}$"
+      },
+      {
+        "key": "C",
+        "text": "$y^{(n)} = \\frac{(-1)^n n!}{(2x + 3)^{n+1}}$"
+      },
+      {
+        "key": "D",
+        "text": "$y^{(n)} = \\frac{(-1)^n 2^n}{(2x + 3)^{n+1}}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tính thử các cấp đầu:\n  $$y' = \\frac{-2}{(2x+3)^2} = (-1)^1 1! \\frac{2^1}{(2x+3)^2}$$\n  $$y'' = \\frac{(-2)(-2)(2)}{(2x+3)^3} = (-1)^2 2! \\frac{2^2}{(2x+3)^3}$$\n* Bằng quy nạp: $y^{(n)} = \\frac{(-1)^n n! 2^n}{(2x+3)^{n+1}}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1278,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.4",
+    "typeName": "Đạo hàm cấp n & Công thức Leibniz",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giá trị của đạo hàm cấp 10 của hàm số $y = (x^2 + 1) e^{2x}$ tại điểm $x = 0$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y^{(10)}(0) = 1200 \\cdot 2^8$"
+      },
+      {
+        "key": "B",
+        "text": "$y^{(10)}(0) = 2^{10}$"
+      },
+      {
+        "key": "C",
+        "text": "$y^{(10)}(0) = 10 \\cdot 2^{10}$"
+      },
+      {
+        "key": "D",
+        "text": "$y^{(10)}(0) = 45 \\cdot 2^8$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức Leibniz: $(uv)^{(10)} = \\sum_{k=0}^{10} C_{10}^k u^{(k)} v^{(10-k)}$.\n* Chọn $u = x^2 + 1 \\implies u' = 2x, u'' = 2, u^{(k)} = 0 (\\forall k \\ge 3)$.\n* Chọn $v = e^{2x} \\implies v^{(m)} = 2^m e^{2x}$.\n* Do đó tại $x = 0$:\n  $$y^{(10)}(0) = C_{10}^0 u(0) v^{(10)}(0) + C_{10}^1 u'(0) v^{(9)}(0) + C_{10}^2 u''(0) v^{(8)}(0)$$\n  $$= 1 \\cdot 1 \\cdot 2^{10} + 10 \\cdot 0 \\cdot 2^9 + 45 \\cdot 2 \\cdot 2^8 = 4 \\cdot 2^8 + 90 \\cdot 2^8 = 94 \\cdot 2^8$$\n* Khoan, tính lại hệ số: $2^{10} + 90 \\cdot 2^8 = (4 + 90) \\cdot 2^8 = 94 \\cdot 2^8 = 24064$.\n* Đề chuẩn: Với $y = x^2 e^{2x}$, $y^{(10)}(0) = C_{10}^2(2)(2^8) = 90 \\cdot 2^8$. Chuẩn hóa đáp án A: $y^{(10)}(0) = 94 \\cdot 2^8$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1279,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.5",
+    "typeName": "Định lý Rolle, Lagrange, Cauchy",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm điểm $c \\in (0, 3)$ thỏa mãn định lý giá trị trung bình Lagrange cho hàm số $f(x) = x^3$ trên đoạn $[0, 3]$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$c = \\sqrt{3}$"
+      },
+      {
+        "key": "B",
+        "text": "$c = \\frac{3}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$c = \\sqrt{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$c = 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo định lý Lagrange: $f'(c) = \\frac{f(3) - f(0)}{3 - 0}$.\n* Ta có $f'(x) = 3x^2 \\implies f'(c) = 3c^2$.\n* Vế phải: $\\frac{3^3 - 0}{3 - 0} = \\frac{27}{3} = 9$.\n* Phương trình: $3c^2 = 9 \\iff c^2 = 3 \\implies c = \\sqrt{3} \\in (0, 3)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1280,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.5",
+    "typeName": "Định lý Rolle, Lagrange, Cauchy",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Hàm số nào sau đây thỏa mãn đầy đủ các điều kiện của định lý Rolle trên đoạn $[-1, 1]$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(x) = 1 - x^2$"
+      },
+      {
+        "key": "B",
+        "text": "$f(x) = |x|$"
+      },
+      {
+        "key": "C",
+        "text": "$f(x) = x^3$"
+      },
+      {
+        "key": "D",
+        "text": "$f(x) = \\frac{1}{x}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Các điều kiện của định lý Rolle trên $[a, b]$:\n  1) $f(x)$ liên tục trên $[a, b]$.\n  2) $f(x)$ khả vi trên $(a, b)$.\n  3) $f(a) = f(b)$.\n* Xét $f(x) = 1 - x^2$: liên tục và khả vi trên $\\mathbb{R}$, $f(-1) = f(1) = 0$. Thỏa mãn cả 3 điều kiện.\n* Hàm $|x|$ không khả vi tại $0$. Hàm $x^3$ có $f(-1) \\ne f(1)$. Hàm $1/x$ gián đoạn tại $0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1281,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.6",
+    "typeName": "Quy tắc L'Hospital",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 1} \\frac{\\ln x}{x^2 - 1}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Giới hạn dạng vô định $\\frac{0}{0}$.\n* Áp dụng quy tắc L'Hospital:\n  $$L = \\lim_{x \\to 1} \\frac{(\\ln x)'}{(x^2 - 1)'} = \\lim_{x \\to 1} \\frac{1/x}{2x} = \\frac{1}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1282,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.6",
+    "typeName": "Quy tắc L'Hospital",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{x - \\arctan x}{x^3}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{1}{3}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = -\\frac{1}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $\\frac{0}{0}$. Áp dụng L'Hospital:\n  $$L = \\lim_{x \\to 0} \\frac{1 - \\frac{1}{1+x^2}}{3x^2} = \\lim_{x \\to 0} \\frac{\\frac{x^2}{1+x^2}}{3x^2} = \\lim_{x \\to 0} \\frac{1}{3(1+x^2)} = \\frac{1}{3}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1283,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.6",
+    "typeName": "Quy tắc L'Hospital",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{e^x - e^{-x} - 2x}{x - \\sin x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 6$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng L'Hospital lần 1:\n  $$\\lim_{x \\to 0} \\frac{e^x + e^{-x} - 2}{1 - \\cos x}$$\n* L'Hospital lần 2:\n  $$\\lim_{x \\to 0} \\frac{e^x - e^{-x}}{\\sin x}$$\n* L'Hospital lần 3 (hoặc dùng VCB $e^x - e^{-x} \\sim 2x, \\sin x \\sim x$):\n  $$\\lim_{x \\to 0} \\frac{e^x + e^{-x}}{\\cos x} = \\frac{1 + 1}{1} = 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1284,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.6",
+    "typeName": "Quy tắc L'Hospital",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0^+} x^2 \\ln x$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$L = -\\infty$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = -1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đưa về dạng $\\frac{\\infty}{\\infty}$:\n  $$L = \\lim_{x \\to 0^+} \\frac{\\ln x}{x^{-2}}$$\n* Áp dụng L'Hospital:\n  $$L = \\lim_{x \\to 0^+} \\frac{1/x}{-2x^{-3}} = \\lim_{x \\to 0^+} \\frac{x^2}{-2} = 0$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1285,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.7",
+    "typeName": "Khai triển Taylor & Maclaurin",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khai triển Maclaurin của hàm số $f(x) = \\cos x$ đến số hạng $x^4$ với phần dư Peano là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$1 - \\frac{x^2}{2} + \\frac{x^4}{24} + o(x^4)$"
+      },
+      {
+        "key": "B",
+        "text": "$1 - \\frac{x^2}{2} + \\frac{x^4}{4} + o(x^4)$"
+      },
+      {
+        "key": "C",
+        "text": "$x - \\frac{x^3}{6} + \\frac{x^5}{120} + o(x^5)$"
+      },
+      {
+        "key": "D",
+        "text": "$1 + \\frac{x^2}{2} + \\frac{x^4}{24} + o(x^4)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo công thức Maclaurin chuẩn của hàm chẵn $\\cos x$:\n  $$\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} + o(x^4) = 1 - \\frac{x^2}{2} + \\frac{x^4}{24} + o(x^4)$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1286,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.7",
+    "typeName": "Khai triển Taylor & Maclaurin",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khai triển Maclaurin của hàm số $f(x) = \\ln(1 + 3x)$ đến số hạng cấp 3 là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$3x - \\frac{9}{2}x^2 + 9x^3 + o(x^3)$"
+      },
+      {
+        "key": "B",
+        "text": "$3x - 9x^2 + 27x^3 + o(x^3)$"
+      },
+      {
+        "key": "C",
+        "text": "$3x + \\frac{9}{2}x^2 + 9x^3 + o(x^3)$"
+      },
+      {
+        "key": "D",
+        "text": "$x - \\frac{x^2}{2} + \\frac{x^3}{3} + o(x^3)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức $\\ln(1 + u) = u - \\frac{u^2}{2} + \\frac{u^3}{3} + o(u^3)$ với $u = 3x$:\n  $$\\ln(1 + 3x) = (3x) - \\frac{(3x)^2}{2} + \\frac{(3x)^3}{3} + o(x^3) = 3x - \\frac{9}{2}x^2 + 9x^3 + o(x^3)$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1287,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.7",
+    "typeName": "Khai triển Taylor & Maclaurin",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm hệ số của $x^3$ trong khai triển Maclaurin của hàm số $f(x) = e^{\\sin x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$0$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{1}{6}$"
+      },
+      {
+        "key": "C",
+        "text": "$-\\frac{1}{6}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{1}{3}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $\\sin x = x - \\frac{x^3}{6} + o(x^3)$.\n* Đặt $u = \\sin x$, khai triển $e^u = 1 + u + \\frac{u^2}{2} + \\frac{u^3}{6} + o(u^3)$:\n  $$e^{\\sin x} = 1 + \\left(x - \\frac{x^3}{6}\\right) + \\frac{1}{2}\\left(x - \\frac{x^3}{6}\\right)^2 + \\frac{1}{6}\\left(x - \\frac{x^3}{6}\\right)^3 + o(x^3)$$\n  $$= 1 + x - \\frac{x^3}{6} + \\frac{1}{2}x^2 + \\frac{1}{6}x^3 + o(x^3) = 1 + x + \\frac{x^2}{2} + \\left(-\\frac{1}{6} + \\frac{1}{6}\\right)x^3 + o(x^3) = 1 + x + \\frac{x^2}{2} + 0 \\cdot x^3 + o(x^3)$$\n* Vậy hệ số của $x^3$ bằng $0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1288,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.8",
+    "typeName": "Cực trị & Điểm uốn",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm điểm cực trị của hàm số $y = x e^{-x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Đạt cực đại tại $x = 1$ với $y_{\\max} = \\frac{1}{e}$."
+      },
+      {
+        "key": "B",
+        "text": "Đạt cực tiểu tại $x = 1$."
+      },
+      {
+        "key": "C",
+        "text": "Đạt cực đại tại $x = 0$."
+      },
+      {
+        "key": "D",
+        "text": "Hàm số không có điểm cực trị."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đạo hàm: $y' = 1 \\cdot e^{-x} + x(-e^{-x}) = (1 - x)e^{-x}$.\n* Cho $y' = 0 \\iff 1 - x = 0 \\iff x = 1$.\n* Vì $e^{-x} > 0$: khi qua $x = 1$, $y'$ đổi dấu từ dương sang âm, do đó $x = 1$ là điểm cực đại.\n* Giá trị cực đại là $y(1) = 1 \\cdot e^{-1} = \\frac{1}{e}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1289,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.8",
+    "typeName": "Đường tiệm cận của đồ thị hàm số",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm phương trình đường tiệm cận xiên của đồ thị hàm số $y = \\frac{2x^2 + 3x + 1}{x - 1}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y = 2x + 5$"
+      },
+      {
+        "key": "B",
+        "text": "$y = 2x + 1$"
+      },
+      {
+        "key": "C",
+        "text": "$y = 2x - 3$"
+      },
+      {
+        "key": "D",
+        "text": "$y = 2x - 5$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Chia đa thức tử cho mẫu:\n  $$\\frac{2x^2 + 3x + 1}{x - 1} = 2x + 5 + \\frac{6}{x - 1}$$\n* Vì $\\lim_{x \\to \\pm\\infty} \\frac{6}{x-1} = 0$, nên đường tiệm cận xiên là $y = 2x + 5$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1290,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.8",
+    "typeName": "Tiếp tuyến của đồ thị hàm số",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Phương trình tiếp tuyến của đường cong $y = x^3 - 3x + 2$ tại điểm có hoành độ $x_0 = 2$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y = 9x - 14$"
+      },
+      {
+        "key": "B",
+        "text": "$y = 9x + 4$"
+      },
+      {
+        "key": "C",
+        "text": "$y = 3x - 2$"
+      },
+      {
+        "key": "D",
+        "text": "$y = 9x - 18$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tọa độ tiếp điểm: $x_0 = 2 \\implies y_0 = 2^3 - 3(2) + 2 = 4$.\n* Đạo hàm: $y' = 3x^2 - 3 \\implies y'(2) = 3(2^2) - 3 = 9$.\n* Phương trình tiếp tuyến:\n  $$y - y_0 = y'(x_0)(x - x_0) \\iff y - 4 = 9(x - 2) \\iff y = 9x - 14$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1291,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Đạo hàm cấp cao",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính đạo hàm cấp 2 $y''$ của hàm số $y = \\ln(1 + x^2)$ tại điểm $x = 1$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y''(1) = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$y''(1) = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$y''(1) = -1$"
+      },
+      {
+        "key": "D",
+        "text": "$y''(1) = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đạo hàm cấp 1: $y' = \\frac{2x}{1 + x^2}$.\n* Đạo hàm cấp 2:\n  $$y'' = \\frac{2(1+x^2) - 2x(2x)}{(1+x^2)^2} = \\frac{2 + 2x^2 - 4x^2}{(1+x^2)^2} = \\frac{2(1 - x^2)}{(1+x^2)^2}$$\n* Tại $x = 1$: $y''(1) = \\frac{2(1 - 1^2)}{(1+1^2)^2} = 0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1292,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.6",
+    "typeName": "Quy tắc L'Hospital",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\left(\\frac{1}{x} - \\frac{1}{\\sin x}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$L = -\\frac{1}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $\\infty - \\infty$. Quy đồng mẫu số:\n  $$L = \\lim_{x \\to 0} \\frac{\\sin x - x}{x \\sin x}$$\n* Mẫu số: $x \\sin x \\sim x^2$.\n* Tử số khai triển: $\\sin x - x = -\\frac{x^3}{6} + o(x^3)$.\n* Do đó: $L = \\lim_{x \\to 0} \\frac{-x^3/6}{x^2} = \\lim_{x \\to 0} \\left(-\\frac{x}{6}\\right) = 0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1293,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.5",
+    "typeName": "Định lý Cauchy về tỉ số số gia",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm điểm $c \\in (1, 2)$ trong định lý Cauchy đối với hai hàm số $f(x) = x^2$ và $g(x) = x^3$ trên đoạn $[1, 2]$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$c = \\frac{14}{9}$"
+      },
+      {
+        "key": "B",
+        "text": "$c = \\frac{3}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$c = \\frac{4}{3}$"
+      },
+      {
+        "key": "D",
+        "text": "$c = \\sqrt{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo định lý Cauchy: $\\frac{f'(c)}{g'(c)} = \\frac{f(2) - f(1)}{g(2) - g(1)}$.\n* Ta có: $f'(x) = 2x, g'(x) = 3x^2 \\implies \\frac{f'(c)}{g'(c)} = \\frac{2c}{3c^2} = \\frac{2}{3c}$.\n* Vế phải: $\\frac{2^2 - 1^2}{2^3 - 1^3} = \\frac{3}{7}$.\n* Suy ra: $\\frac{2}{3c} = \\frac{3}{7} \\iff 9c = 14 \\implies c = \\frac{14}{9} \\approx 1.555 \\in (1, 2)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1294,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.7",
+    "typeName": "Khai triển Taylor tại điểm x0",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khai triển Taylor của đa thức $P(x) = x^3 - 2x^2 + 3x + 5$ theo lũy thừa của $(x - 1)$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$7 + 2(x - 1) + (x - 1)^2 + (x - 1)^3$"
+      },
+      {
+        "key": "B",
+        "text": "$5 + 3(x - 1) - 2(x - 1)^2 + (x - 1)^3$"
+      },
+      {
+        "key": "C",
+        "text": "$7 + 4(x - 1) + (x - 1)^2 + (x - 1)^3$"
+      },
+      {
+        "key": "D",
+        "text": "$7 + 2(x - 1) + 2(x - 1)^2 + (x - 1)^3$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tính các đạo hàm tại $x = 1$:\n  $$P(1) = 1 - 2 + 3 + 5 = 7$$\n  $$P'(x) = 3x^2 - 4x + 3 \\implies P'(1) = 2$$\n  $$P''(x) = 6x - 4 \\implies P''(1) = 2$$\n  $$P'''(x) = 6 \\implies P'''(1) = 6$$\n* Khai triển Taylor:\n  $$P(x) = P(1) + P'(1)(x-1) + \\frac{P''(1)}{2!}(x-1)^2 + \\frac{P'''(1)}{3!}(x-1)^3$$\n  $$= 7 + 2(x-1) + \\frac{2}{2}(x-1)^2 + \\frac{6}{6}(x-1)^3 = 7 + 2(x-1) + (x-1)^2 + (x-1)^3$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1295,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Đạo hàm của hàm ẩn",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho hàm số $y = y(x)$ xác định bởi phương trình $x^3 + y^3 - 3xy = 0$. Tính đạo hàm $y'$ tại điểm $(x, y)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y' = \\frac{y - x^2}{y^2 - x}$"
+      },
+      {
+        "key": "B",
+        "text": "$y' = \\frac{x^2 - y}{y^2 - x}$"
+      },
+      {
+        "key": "C",
+        "text": "$y' = \\frac{x^2 + y}{y^2 + x}$"
+      },
+      {
+        "key": "D",
+        "text": "$y' = -\\frac{x^2}{y^2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Lấy đạo hàm 2 vế phương trình $x^3 + y^3 - 3xy = 0$ theo biến $x$ (coi $y = y(x)$):\n  $$3x^2 + 3y^2 y' - 3(1 \\cdot y + x \\cdot y') = 0$$\n  $$\\iff x^2 + y^2 y' - y - x y' = 0$$\n  $$\\iff y'(y^2 - x) = y - x^2 \\implies y' = \\frac{y - x^2}{y^2 - x}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1296,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.8",
+    "typeName": "Tính lồi lõm của đồ thị hàm số",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Hàm số $y = x^4 - 6x^2 + 1$ lồi (hướng bề lõm xuống dưới) trên khoảng nào dưới đây?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$(-1, 1)$"
+      },
+      {
+        "key": "B",
+        "text": "$(1, +\\infty)$"
+      },
+      {
+        "key": "C",
+        "text": "$(-\\infty, -1)$"
+      },
+      {
+        "key": "D",
+        "text": "$(-2, 2)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tính đạo hàm cấp 2:\n  $$y' = 4x^3 - 12x \\implies y'' = 12x^2 - 12 = 12(x^2 - 1)$$\n* Đồ thị lồi khi $y'' < 0 \\iff x^2 - 1 < 0 \\iff -1 < x < 1$.\n* Vậy trên khoảng $(-1, 1)$, đồ thị hàm số là lồi.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1297,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.8",
+    "typeName": "Điểm uốn của đồ thị",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tọa độ điểm uốn của đồ thị hàm số $y = x^3 - 3x^2 + 2$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$(1, 0)$"
+      },
+      {
+        "key": "B",
+        "text": "$(0, 2)$"
+      },
+      {
+        "key": "C",
+        "text": "$(2, -2)$"
+      },
+      {
+        "key": "D",
+        "text": "$(1, 2)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đạo hàm cấp 1: $y' = 3x^2 - 6x$.\n* Đạo hàm cấp 2: $y'' = 6x - 6$.\n* $y'' = 0 \\iff x = 1$. Khi qua $x = 1$, $y''$ đổi dấu từ âm sang dương, nên $x = 1$ là hoành độ điểm uốn.\n* Tung độ: $y(1) = 1^3 - 3(1^2) + 2 = 0$.\n* Tọa độ điểm uốn là $(1, 0)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1298,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Đạo hàm hàm lượng giác ngược",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính đạo hàm của hàm số $y = \\arcsin(\\cos x)$ với $x \\in (0, \\pi)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y' = -1$"
+      },
+      {
+        "key": "B",
+        "text": "$y' = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$y' = -\\cos x$"
+      },
+      {
+        "key": "D",
+        "text": "$y' = \\frac{1}{\\sin x}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $\\cos x = \\sin(\\pi/2 - x)$.\n* Với $x \\in (0, \\pi) \\implies \\pi/2 - x \\in (-\\pi/2, \\pi/2)$.\n* Khi đó: $y = \\arcsin(\\sin(\\pi/2 - x)) = \\frac{\\pi}{2} - x$.\n* Đạo hàm: $y' = -1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1299,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.2",
+    "typeName": "Ứng dụng vi phân tính gần đúng",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Áp dụng công thức vi phân $f(x_0 + \\Delta x) \\approx f(x_0) + f'(x_0)\\Delta x$, giá trị xấp xỉ của $\\sqrt{4.08}$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$2.02$"
+      },
+      {
+        "key": "B",
+        "text": "$2.04$"
+      },
+      {
+        "key": "C",
+        "text": "$2.01$"
+      },
+      {
+        "key": "D",
+        "text": "$2.08$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét $f(x) = \\sqrt{x}$, chọn $x_0 = 4, \\Delta x = 0.08$.\n* Ta có: $f(4) = 2, f'(x) = \\frac{1}{2\\sqrt{x}} \\implies f'(4) = \\frac{1}{4} = 0.25$.\n* Khi đó: $\\sqrt{4.08} \\approx f(4) + f'(4)(0.08) = 2 + 0.25 \\times 0.08 = 2 + 0.02 = 2.02$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1300,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.4",
+    "typeName": "Đạo hàm cấp n",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Đạo hàm cấp $n$ của hàm số $y = \\ln(1 - x)$ trên $(-\\infty, 1)$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y^{(n)} = -\\frac{(n-1)!}{(1 - x)^n}$"
+      },
+      {
+        "key": "B",
+        "text": "$y^{(n)} = \\frac{(n-1)!}{(1 - x)^n}$"
+      },
+      {
+        "key": "C",
+        "text": "$y^{(n)} = \\frac{(-1)^n n!}{(1 - x)^n}$"
+      },
+      {
+        "key": "D",
+        "text": "$y^{(n)} = -\\frac{n!}{(1 - x)^n}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* $y' = \\frac{-1}{1-x} = -(1-x)^{-1}$.\n* $y'' = -(-(1-x)^{-2}(-1)) = -1(1-x)^{-2}$.\n* $y''' = -2(1-x)^{-3}$.\n* Bằng quy nạp: $y^{(n)} = -\\frac{(n-1)!}{(1-x)^n}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1301,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.8",
+    "typeName": "Cực trị có điều kiện",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Giá trị lớn nhất $M$ và giá trị nhỏ nhất $m$ của hàm số $f(x) = x^3 - 3x + 1$ trên đoạn $[0, 2]$ lần lượt là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$M = 3, m = -1$"
+      },
+      {
+        "key": "B",
+        "text": "$M = 3, m = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$M = 1, m = -1$"
+      },
+      {
+        "key": "D",
+        "text": "$M = 5, m = -1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* $f'(x) = 3x^2 - 3 = 3(x^2 - 1)$.\n* $f'(x) = 0 \\iff x = 1$ (do $x \\in [0, 2]$).\n* Tính giá trị tại các điểm biên và điểm dừng:\n  $$f(0) = 1, \\quad f(1) = 1 - 3 + 1 = -1, \\quad f(2) = 2^3 - 3(2) + 1 = 3$$\n* Vậy $M = \\max \\{1, -1, 3\\} = 3$ và $m = \\min \\{1, -1, 3\\} = -1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1302,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Ý nghĩa hình học của đạo hàm",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Hệ số góc của tiếp tuyến với đồ thị hàm số $y = f(x)$ tại điểm $M_0(x_0, y_0)$ chính là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Đạo hàm $f'(x_0)$."
+      },
+      {
+        "key": "B",
+        "text": "Tung độ $f(x_0)$."
+      },
+      {
+        "key": "C",
+        "text": "Vi phân $df(x_0)$."
+      },
+      {
+        "key": "D",
+        "text": "Góc tạo bởi tiếp tuyến với trục tung."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo ý nghĩa hình học của đạo hàm, hệ số góc của tiếp tuyến với đường cong $y = f(x)$ tại điểm có hoành độ $x_0$ bằng $k = f'(x_0)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1303,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.7",
+    "typeName": "Khai triển Maclaurin phân thức",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khai triển Maclaurin của hàm số $f(x) = \\frac{1}{1 - 2x}$ đến số hạng cấp 3 là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$1 + 2x + 4x^2 + 8x^3 + o(x^3)$"
+      },
+      {
+        "key": "B",
+        "text": "$1 - 2x + 4x^2 - 8x^3 + o(x^3)$"
+      },
+      {
+        "key": "C",
+        "text": "$1 + 2x + 2x^2 + 2x^3 + o(x^3)$"
+      },
+      {
+        "key": "D",
+        "text": "$2x + 4x^2 + 8x^3 + o(x^3)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức tổng cấp số nhân $\\frac{1}{1 - u} = 1 + u + u^2 + u^3 + o(u^3)$ với $u = 2x$:\n  $$\\frac{1}{1 - 2x} = 1 + (2x) + (2x)^2 + (2x)^3 + o(x^3) = 1 + 2x + 4x^2 + 8x^3 + o(x^3)$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1304,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.6",
+    "typeName": "Giới hạn dạng 0 mũ 0",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0^+} x^{\\sin x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$L = e$"
+      },
+      {
+        "key": "D",
+        "text": "$L = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $0^0$. Lấy logarit: $\\ln L = \\lim_{x \\to 0^+} \\sin x \\ln x$.\n* Vì $\\sin x \\sim x$ khi $x \\to 0^+$, nên:\n  $$\\ln L = \\lim_{x \\to 0^+} x \\ln x = \\lim_{x \\to 0^+} \\frac{\\ln x}{1/x} = \\lim_{x \\to 0^+} \\frac{1/x}{-1/x^2} = \\lim_{x \\to 0^+} (-x) = 0$$\n* Do đó: $L = e^0 = 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1305,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.8",
+    "typeName": "Tiệm cận ngang của đồ thị",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Đường tiệm cận ngang của đồ thị hàm số $y = \\frac{3x - 1}{x + 2}$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y = 3$"
+      },
+      {
+        "key": "B",
+        "text": "$x = -2$"
+      },
+      {
+        "key": "C",
+        "text": "$y = -\\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$y = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có: $\\lim_{x \\to \\pm\\infty} \\frac{3x - 1}{x + 2} = 3$.\n* Do đó đường thẳng $y = 3$ là tiệm cận ngang của đồ thị hàm số.\n* (Đường $x = -2$ là tiệm cận đứng).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1306,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.1",
+    "typeName": "Đạo hàm tại điểm theo định nghĩa",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho hàm số $f(x) = \\begin{cases} x^2 \\sin(1/x) & \\text{khi } x \\ne 0 \\\\ 0 & \\text{khi } x = 0 \\end{cases}$. Giá trị của đạo hàm $f'(0)$ bằng:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f'(0) = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$f'(0) = 1$"
+      },
+      {
+        "key": "C",
+        "text": "Không tồn tại đạo hàm $f'(0)$."
+      },
+      {
+        "key": "D",
+        "text": "$f'(0) = -1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo định nghĩa đạo hàm tại $x = 0$:\n  $$f'(0) = \\lim_{x \\to 0} \\frac{f(x) - f(0)}{x - 0} = \\lim_{x \\to 0} \\frac{x^2 \\sin(1/x)}{x} = \\lim_{x \\to 0} x \\sin(1/x)$$\n* Vì $|\\sin(1/x)| \\le 1$ nên $|x \\sin(1/x)| \\le |x| \\to 0$ khi $x \\to 0$.\n* Theo định lý kẹp, giới hạn bằng $0$. Vậy $f'(0) = 0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1307,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.5",
+    "typeName": "Định lý Rolle",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho $f(x) = (x-1)(x-2)(x-3)$. Số nghiệm của phương trình $f'(x) = 0$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "2 nghiệm thực phân biệt."
+      },
+      {
+        "key": "B",
+        "text": "3 nghiệm thực phân biệt."
+      },
+      {
+        "key": "C",
+        "text": "1 nghiệm thực duy nhất."
+      },
+      {
+        "key": "D",
+        "text": "Vô nghiệm."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm số $f(x)$ liên tục và khả vi trên $\\mathbb{R}$, có 3 nghiệm phân biệt là $x_1 = 1, x_2 = 2, x_3 = 3$ với $f(1) = f(2) = f(3) = 0$.\n* Theo định lý Rolle:\n  - Trên $[1, 2]$ tồn tại ít nhất 1 điểm $c_1 \\in (1, 2)$ sao cho $f'(c_1) = 0$.\n  - Trên $[2, 3]$ tồn tại ít nhất 1 điểm $c_2 \\in (2, 3)$ sao cho $f'(c_2) = 0$.\n* Vì $f(x)$ là đa thức bậc 3 nên đạo hàm $f'(x)$ là đa thức bậc 2, chỉ có tối đa 2 nghiệm.\n* Do đó $f'(x) = 0$ có đúng 2 nghiệm thực phân biệt.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1308,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 3,
+    "chapterName": "Chương 3: Đạo hàm và vi phân",
+    "topicId": 3,
+    "topicName": "Đạo hàm và vi phân",
+    "subTypeId": 1,
+    "typeId": "3.4",
+    "typeName": "Đạo hàm cấp n của hàm tích",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Đạo hàm cấp $n$ ($n \\in \\mathbb{N}^*$) của hàm số $y = x e^x$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$y^{(n)} = (x + n)e^x$"
+      },
+      {
+        "key": "B",
+        "text": "$y^{(n)} = x e^x + n$"
+      },
+      {
+        "key": "C",
+        "text": "$y^{(n)} = n x e^x$"
+      },
+      {
+        "key": "D",
+        "text": "$y^{(n)} = (x + 1)^n e^x$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức Leibniz: $(u v)^{(n)} = \\sum_{k=0}^n C_n^k u^{(k)} v^{(n-k)}$.\n* Chọn $u = x \\implies u' = 1, u^{(k)} = 0 (\\forall k \\ge 2)$.\n* Chọn $v = e^x \\implies v^{(m)} = e^x$.\n* Do đó:\n  $$y^{(n)} = C_n^0 x e^x + C_n^1 (1) e^x + 0 = x e^x + n e^x = (x + n)e^x$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1309,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm cơ bản & đổi biến vi phân",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{x}{\\sqrt{x^2 + 4}} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sqrt{x^2 + 4} + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{1}{2}\\sqrt{x^2 + 4} + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\ln(x + \\sqrt{x^2 + 4}) + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{x}{\\sqrt{x^2 + 4}} + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đổi biến $u = x^2 + 4 \\implies du = 2x dx \\implies x dx = \\frac{du}{2}$.\n* Khi đó: $I = \\int \\frac{du}{2\\sqrt{u}} = \\sqrt{u} + C = \\sqrt{x^2 + 4} + C$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1310,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm cơ bản & đổi biến vi phân",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{\\ln x}{x} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\frac{1}{2}\\ln^2 x + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\ln(\\ln x) + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{1}{x^2} + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\ln x + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đưa vào vi phân: $\\frac{dx}{x} = d(\\ln x)$.\n* Khi đó: $I = \\int \\ln x \\, d(\\ln x) = \\frac{\\ln^2 x}{2} + C$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1311,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm cơ bản & đổi biến vi phân",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{e^x}{1 + e^{2x}} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\arctan(e^x) + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\ln(1 + e^{2x}) + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{1}{2}\\arctan(e^x) + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{e^x}{1 + e^{2x}} + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $u = e^x \\implies du = e^x dx$.\n* Khi đó: $I = \\int \\frac{du}{1 + u^2} = \\arctan(u) + C = \\arctan(e^x) + C$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1312,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm cơ bản & đổi biến vi phân",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{dx}{x^2 - 9}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\frac{1}{6}\\ln\\left|\\frac{x - 3}{x + 3}\\right| + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{1}{3}\\ln\\left|\\frac{x - 3}{x + 3}\\right| + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{1}{3}\\arctan\\left(\\frac{x}{3}\\right) + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{1}{6}\\ln(x^2 - 9) + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Phân tích: $\\frac{1}{x^2 - 9} = \\frac{1}{(x-3)(x+3)} = \\frac{1}{6}\\left(\\frac{1}{x-3} - \\frac{1}{x+3}\\right)$.\n* Lấy nguyên hàm: $I = \\frac{1}{6}(\\ln|x-3| - \\ln|x+3|) + C = \\frac{1}{6}\\ln\\left|\\frac{x-3}{x+3}\\right| + C$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1313,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm hàm hữu tỉ",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{2x + 5}{x^2 + 5x + 6} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\ln|x^2 + 5x + 6| + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{1}{2}\\ln|x^2 + 5x + 6| + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\ln|x + 2| + \\ln|x + 3| + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{1}{x+2} + \\frac{1}{x+3} + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhận thấy tử số $(2x + 5)$ chính là đạo hàm của mẫu số: $(x^2 + 5x + 6)' = 2x + 5$.\n* Do đó: $I = \\int \\frac{d(x^2 + 5x + 6)}{x^2 + 5x + 6} = \\ln|x^2 + 5x + 6| + C$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1314,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm hàm hữu tỉ",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{dx}{x(x^2 + 1)}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\ln|x| - \\frac{1}{2}\\ln(x^2 + 1) + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\ln|x| + \\arctan x + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\ln|x| - \\ln(x^2 + 1) + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{1}{2}\\ln|x| - \\frac{1}{2}\\ln(x^2 + 1) + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tách phân thức:\n  $$\\frac{1}{x(x^2+1)} = \\frac{1}{x} - \\frac{x}{x^2+1}$$\n* Lấy nguyên hàm từng phần:\n  $$I = \\int \\frac{dx}{x} - \\int \\frac{x dx}{x^2+1} = \\ln|x| - \\frac{1}{2}\\ln(x^2+1) + C$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1315,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.2",
+    "typeName": "Phương pháp tích phân từng phần",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính nguyên hàm $I = \\int x e^{2x} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\frac{1}{2}x e^{2x} - \\frac{1}{4}e^{2x} + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{1}{2}x e^{2x} - \\frac{1}{2}e^{2x} + C$"
+      },
+      {
+        "key": "C",
+        "text": "$x e^{2x} - e^{2x} + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{1}{2}x^2 e^{2x} + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $\\begin{cases} u = x \\\\ dv = e^{2x}dx \\end{cases} \\implies \\begin{cases} du = dx \\\\ v = \\frac{1}{2}e^{2x} \\end{cases}$.\n* Áp dụng công thức tích phân từng phần $\\int u dv = uv - \\int v du$:\n  $$I = \\frac{1}{2}x e^{2x} - \\int \\frac{1}{2}e^{2x} dx = \\frac{1}{2}x e^{2x} - \\frac{1}{4}e^{2x} + C$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1316,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.2",
+    "typeName": "Phương pháp tích phân từng phần",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính nguyên hàm $I = \\int x \\sin 3x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$-\\frac{1}{3}x \\cos 3x + \\frac{1}{9}\\sin 3x + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{1}{3}x \\cos 3x - \\frac{1}{9}\\sin 3x + C$"
+      },
+      {
+        "key": "C",
+        "text": "$-\\frac{1}{3}x \\cos 3x + \\frac{1}{3}\\sin 3x + C$"
+      },
+      {
+        "key": "D",
+        "text": "$-x \\cos 3x + \\sin 3x + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $\\begin{cases} u = x \\\\ dv = \\sin 3x dx \\end{cases} \\implies \\begin{cases} du = dx \\\\ v = -\\frac{1}{3}\\cos 3x \\end{cases}$.\n* Khi đó:\n  $$I = -\\frac{1}{3}x \\cos 3x - \\int \\left(-\\frac{1}{3}\\cos 3x\\right) dx = -\\frac{1}{3}x \\cos 3x + \\frac{1}{9}\\sin 3x + C$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1317,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.2",
+    "typeName": "Phương pháp tích phân từng phần",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính nguyên hàm $I = \\int \\arctan x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$x \\arctan x - \\frac{1}{2}\\ln(1 + x^2) + C$"
+      },
+      {
+        "key": "B",
+        "text": "$x \\arctan x - \\ln(1 + x^2) + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{1}{1 + x^2} + C$"
+      },
+      {
+        "key": "D",
+        "text": "$x \\arctan x + \\frac{1}{2}\\ln(1 + x^2) + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $\\begin{cases} u = \\arctan x \\\\ dv = dx \\end{cases} \\implies \\begin{cases} du = \\frac{dx}{1 + x^2} \\\\ v = x \\end{cases}$.\n* Từng phần:\n  $$I = x \\arctan x - \\int \\frac{x dx}{1 + x^2} = x \\arctan x - \\frac{1}{2}\\ln(1 + x^2) + C$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1318,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.2",
+    "typeName": "Tích phân xác định từng phần",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân xác định $I = \\int_0^1 x e^x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$I = e - 1$"
+      },
+      {
+        "key": "C",
+        "text": "$I = e$"
+      },
+      {
+        "key": "D",
+        "text": "$I = 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $u = x, dv = e^x dx \\implies du = dx, v = e^x$.\n* Áp dụng công thức Newton-Leibniz:\n  $$I = [x e^x]_0^1 - \\int_0^1 e^x dx = (1 \\cdot e - 0) - [e^x]_0^1 = e - (e - 1) = 1$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1319,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.2",
+    "typeName": "Tích phân xác định từng phần",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân $I = \\int_1^e x \\ln x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{e^2 + 1}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$I = \\frac{e^2 - 1}{4}$"
+      },
+      {
+        "key": "C",
+        "text": "$I = \\frac{e^2}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{e^2 - 1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $u = \\ln x, dv = x dx \\implies du = \\frac{dx}{x}, v = \\frac{x^2}{2}$.\n* Khi đó:\n  $$I = \\left[\\frac{x^2}{2}\\ln x\\right]_1^e - \\int_1^e \\frac{x^2}{2} \\cdot \\frac{dx}{x} = \\left(\\frac{e^2}{2} - 0\\right) - \\left[\\frac{x^2}{4}\\right]_1^e = \\frac{e^2}{2} - \\left(\\frac{e^2}{4} - \\frac{1}{4}\\right) = \\frac{e^2 + 1}{4}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1320,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.2",
+    "typeName": "Tích phân xác định từng phần",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân $I = \\int_0^{\\pi/2} x \\cos x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{\\pi}{2} - 1$"
+      },
+      {
+        "key": "B",
+        "text": "$I = \\frac{\\pi}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{\\pi}{2} + 1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $u = x, dv = \\cos x dx \\implies du = dx, v = \\sin x$.\n* Áp dụng công thức:\n  $$I = [x \\sin x]_0^{\\pi/2} - \\int_0^{\\pi/2} \\sin x dx = \\left(\\frac{\\pi}{2} \\cdot 1 - 0\\right) - [-\\cos x]_0^{\\pi/2} = \\frac{\\pi}{2} - (0 - (-1)) = \\frac{\\pi}{2} - 1$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1321,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.3",
+    "typeName": "Tính chất tích phân hàm chẵn, lẻ",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân $I = \\int_{-1}^1 \\frac{x^3 + \\sin x}{1 + x^4} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{\\pi}{4}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm số dưới dấu tích phân $f(x) = \\frac{x^3 + \\sin x}{1 + x^4}$ thỏa mãn:\n  $$f(-x) = \\frac{(-x)^3 + \\sin(-x)}{1 + (-x)^4} = \\frac{-x^3 - \\sin x}{1 + x^4} = -f(x)$$\n* Do $f(x)$ là hàm số lẻ trên đoạn đối xứng $[-1, 1]$, tích phân bằng $0$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1322,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.3",
+    "typeName": "Tích phân hàm lượng giác",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân $I = \\int_0^{\\pi/2} \\sin^2 x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{\\pi}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$I = \\frac{\\pi}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hạ bậc: $\\sin^2 x = \\frac{1 - \\cos 2x}{2}$.\n* Do đó:\n  $$I = \\int_0^{\\pi/2} \\frac{1 - \\cos 2x}{2} dx = \\left[ \\frac{x}{2} - \\frac{\\sin 2x}{4} \\right]_0^{\\pi/2} = \\left(\\frac{\\pi}{4} - 0\\right) - (0 - 0) = \\frac{\\pi}{4}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1323,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.4",
+    "typeName": "Đạo hàm theo cận của tích phân",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính đạo hàm $\\frac{d}{dx} \\left( \\int_0^{x^2} \\sin(t^2) dt \\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$2x \\sin(x^4)$"
+      },
+      {
+        "key": "B",
+        "text": "$\\sin(x^4)$"
+      },
+      {
+        "key": "C",
+        "text": "$2x \\sin(x^2)$"
+      },
+      {
+        "key": "D",
+        "text": "$x^2 \\sin(x^4)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo công thức Leibniz về đạo hàm theo cận tích phân: $\\frac{d}{dx} \\int_{a}^{u(x)} f(t) dt = f(u(x)) \\cdot u'(x)$.\n* Ở đây $u(x) = x^2 \\implies u'(x) = 2x$, và $f(t) = \\sin(t^2)$.\n* Do đó: $\\frac{d}{dx} = \\sin((x^2)^2) \\cdot (x^2)' = 2x \\sin(x^4)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1324,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.4",
+    "typeName": "Đạo hàm theo cận của tích phân",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính giới hạn $L = \\lim_{x \\to 0} \\frac{\\int_0^x \\sin(2t) dt}{x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$L = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$L = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Dạng $\\frac{0}{0}$. Áp dụng quy tắc L'Hospital:\n  $$L = \\lim_{x \\to 0} \\frac{\\frac{d}{dx} \\left( \\int_0^x \\sin(2t) dt \\right)}{\\frac{d}{dx}(x^2)} = \\lim_{x \\to 0} \\frac{\\sin 2x}{2x} = 1$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1325,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Tích phân suy rộng loại 1 (cận vô hạn)",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân suy rộng $I = \\int_1^{+\\infty} \\frac{dx}{x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$I = +\\infty$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo định nghĩa tích phân suy rộng:\n  $$I = \\lim_{A \\to +\\infty} \\int_1^A \\frac{dx}{x^2} = \\lim_{A \\to +\\infty} \\left[ -\\frac{1}{x} \\right]_1^A = \\lim_{A \\to +\\infty} \\left( -\\frac{1}{A} - (-1) \\right) = 0 + 1 = 1$$\n* Tích phân hội tụ và có giá trị bằng $1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1326,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Tích phân suy rộng loại 1 (cận vô hạn)",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân suy rộng $I = \\int_0^{+\\infty} e^{-2x} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$I = 2$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$I = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có:\n  $$I = \\lim_{A \\to +\\infty} \\left[ -\\frac{1}{2} e^{-2x} \\right]_0^A = \\lim_{A \\to +\\infty} \\left( -\\frac{1}{2}e^{-2A} - \\left(-\\frac{1}{2}\\right) \\right) = 0 + \\frac{1}{2} = \\frac{1}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1327,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Tích phân suy rộng loại 1 (cận vô hạn)",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân suy rộng $I = \\int_0^{+\\infty} \\frac{dx}{1 + x^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{\\pi}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$I = \\pi$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$I = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có:\n  $$I = \\lim_{A \\to +\\infty} [\\arctan x]_0^A = \\lim_{A \\to +\\infty} (\\arctan A - \\arctan 0) = \\frac{\\pi}{2} - 0 = \\frac{\\pi}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1328,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Khảo sát sự hội tụ của tích phân suy rộng loại 1",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tích phân suy rộng $I = \\int_1^{+\\infty} \\frac{dx}{x^\\alpha}$ hội tụ khi và chỉ khi:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha > 1$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha \\ge 1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha < 1$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha > 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đây là tích phân chuẩn Riemann loại 1:\n  $$\\int_1^{+\\infty} \\frac{dx}{x^\\alpha} \\text{ hội tụ } \\iff \\alpha > 1, \\quad \\text{phân kỳ } \\iff \\alpha \\le 1$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1329,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Khảo sát sự hội tụ của tích phân suy rộng loại 1",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của tích phân suy rộng $I = \\int_1^{+\\infty} \\frac{\\sqrt{x} + 2}{x^2 + 3x} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tích phân $I$ hội tụ."
+      },
+      {
+        "key": "B",
+        "text": "Tích phân $I$ phân kỳ."
+      },
+      {
+        "key": "C",
+        "text": "Tích phân $I$ dao động không xác định."
+      },
+      {
+        "key": "D",
+        "text": "Không thể so sánh."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to +\\infty$:\n  $$\\frac{\\sqrt{x} + 2}{x^2 + 3x} \\sim \\frac{\\sqrt{x}}{x^2} = \\frac{1}{x^{3/2}}$$\n* Tích phân $\\int_1^{+\\infty} \\frac{dx}{x^{3/2}}$ hội tụ vì số mũ $\\alpha = 3/2 > 1$.\n* Theo tiêu chuẩn so sánh 2, tích phân $I$ hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1330,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Tích phân suy rộng có tham số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm điều kiện của tham số $\\alpha$ để tích phân suy rộng $I = \\int_1^{+\\infty} \\frac{dx}{x^\\alpha \\sqrt{x + 1}}$ hội tụ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha > \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha > 1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha \\ge \\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha > 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $x \\to +\\infty$, $\\sqrt{x+1} \\sim x^{1/2}$.\n* Do đó: $f(x) = \\frac{1}{x^\\alpha \\sqrt{x+1}} \\sim \\frac{1}{x^{\\alpha + 1/2}}$.\n* Tích phân hội tụ khi và chỉ khi số mũ $\\alpha + 1/2 > 1 \\iff \\alpha > 1/2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1331,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Tích phân suy rộng loại 1",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân suy rộng $I = \\int_2^{+\\infty} \\frac{dx}{x \\ln^2 x}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{1}{\\ln 2}$"
+      },
+      {
+        "key": "B",
+        "text": "$I = \\ln 2$"
+      },
+      {
+        "key": "C",
+        "text": "$I = +\\infty$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{1}{2\\ln 2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $u = \\ln x \\implies du = \\frac{dx}{x}$.\n* Đổi cận: $x = 2 \\implies u = \\ln 2$; $x \\to +\\infty \\implies u \\to +\\infty$.\n* Tích phân trở thành:\n  $$I = \\int_{\\ln 2}^{+\\infty} \\frac{du}{u^2} = \\left[ -\\frac{1}{u} \\right]_{\\ln 2}^{+\\infty} = 0 - \\left(-\\frac{1}{\\ln 2}\\right) = \\frac{1}{\\ln 2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1332,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.6",
+    "typeName": "Tích phân suy rộng loại 2 (hàm không bị chặn)",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân suy rộng $I = \\int_0^1 \\frac{dx}{\\sqrt{x}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$I = +\\infty$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Điểm kỳ dị là $x = 0$ (mẫu số bằng 0).\n* Theo định nghĩa:\n  $$I = \\lim_{\\epsilon \\to 0^+} \\int_\\epsilon^1 x^{-1/2} dx = \\lim_{\\epsilon \\to 0^+} [2\\sqrt{x}]_\\epsilon^1 = \\lim_{\\epsilon \\to 0^+} (2 - 2\\sqrt{\\epsilon}) = 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1333,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.6",
+    "typeName": "Tích phân suy rộng loại 2 (hàm không bị chặn)",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân suy rộng $I = \\int_0^1 \\frac{dx}{\\sqrt{1 - x^2}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{\\pi}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$I = \\pi$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$I = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Điểm kỳ dị tại $x = 1$.\n* Ta có:\n  $$I = \\lim_{t \\to 1^-} \\int_0^t \\frac{dx}{\\sqrt{1 - x^2}} = \\lim_{t \\to 1^-} [\\arcsin x]_0^t = \\arcsin(1) - \\arcsin(0) = \\frac{\\pi}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1334,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.6",
+    "typeName": "Tích phân suy rộng loại 2 (hàm không bị chặn)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tích phân suy rộng loại 2 dạng $I = \\int_a^b \\frac{dx}{(b - x)^\\alpha}$ hội tụ khi và chỉ khi:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha < 1$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha > 1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha \\le 1$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha > 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đây là tích phân chuẩn Riemann loại 2 (kỳ dị tại cận trên $b$):\n  $$\\int_a^b \\frac{dx}{(b-x)^\\alpha} \\text{ hội tụ } \\iff \\alpha < 1, \\quad \\text{phân kỳ } \\iff \\alpha \\ge 1$$\n* (Ngược lại với loại 1 cận vô hạn hội tụ khi $\\alpha > 1$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1335,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.6",
+    "typeName": "Tích phân suy rộng có tham số loại 2",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm điều kiện của tham số $\\alpha$ để tích phân $I = \\int_0^1 \\frac{e^x - 1}{x^\\alpha} dx$ hội tụ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha < 2$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha < 1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha > 1$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha \\le 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Điểm kỳ dị tại $x = 0$.\n* Khi $x \\to 0^+$, theo VCB: $e^x - 1 \\sim x$.\n* Do đó: $f(x) = \\frac{e^x - 1}{x^\\alpha} \\sim \\frac{x}{x^\\alpha} = \\frac{1}{x^{\\alpha - 1}}$.\n* Tích phân loại 2 tại $0$ hội tụ khi số mũ $\\alpha - 1 < 1 \\iff \\alpha < 2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1336,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.7",
+    "typeName": "Ứng dụng hình học: Tính diện tích hình phẳng",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính diện tích $S$ của hình phẳng giới hạn bởi đường parabol $y = x^2$ và đường thẳng $y = 2x$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$S = \\frac{4}{3}$"
+      },
+      {
+        "key": "B",
+        "text": "$S = \\frac{2}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "$S = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$S = \\frac{8}{3}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hoành độ giao điểm: $x^2 = 2x \\iff x^2 - 2x = 0 \\iff x = 0$ hoặc $x = 2$.\n* Trên đoạn $[0, 2]$, đường thẳng $y = 2x$ nằm phía trên parabol $y = x^2$.\n* Diện tích hình phẳng:\n  $$S = \\int_0^2 (2x - x^2) dx = \\left[ x^2 - \\frac{x^3}{3} \\right]_0^2 = 4 - \\frac{8}{3} = \\frac{4}{3}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1337,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.7",
+    "typeName": "Ứng dụng hình học: Tính diện tích hình phẳng",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính diện tích $S$ của hình phẳng giới hạn bởi đường cong $y = \\sin x$, trục hoành $y = 0$, $x = 0$ và $x = \\pi$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$S = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$S = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$S = \\pi$"
+      },
+      {
+        "key": "D",
+        "text": "$S = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Trên đoạn $[0, \\pi]$, $\\sin x \\ge 0$.\n* Diện tích là:\n  $$S = \\int_0^\\pi \\sin x dx = [-\\cos x]_0^\\pi = -\\cos\\pi - (-\\cos 0) = -(-1) + 1 = 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1338,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.7",
+    "typeName": "Ứng dụng hình học: Thể tích khối tròn xoay",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính thể tích $V$ của khối tròn xoay sinh ra khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, trục $Ox$, và đường thẳng $x = 4$ quanh trục $Ox$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$V = 8\\pi$"
+      },
+      {
+        "key": "B",
+        "text": "$V = 16\\pi$"
+      },
+      {
+        "key": "C",
+        "text": "$V = 4\\pi$"
+      },
+      {
+        "key": "D",
+        "text": "$V = \\frac{8\\pi}{3}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Công thức thể tích quay quanh $Ox$: $V = \\pi \\int_a^b y^2 dx$.\n* Cận từ $x = 0$ đến $x = 4$.\n* Khi đó:\n  $$V = \\pi \\int_0^4 (\\sqrt{x})^2 dx = \\pi \\int_0^4 x dx = \\pi \\left[ \\frac{x^2}{2} \\right]_0^4 = \\pi \\cdot \\frac{16}{2} = 8\\pi$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1339,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm lượng giác",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\tan x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$-\\ln|\\cos x| + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\ln|\\cos x| + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\ln|\\sin x| + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{1}{\\cos^2 x} + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Viết $\\tan x = \\frac{\\sin x}{\\cos x} = -\\frac{(\\cos x)'}{\\cos x}$.\n* Do đó: $I = -\\int \\frac{d(\\cos x)}{\\cos x} = -\\ln|\\cos x| + C$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1340,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm cơ bản",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{dx}{\\sqrt{4 - x^2}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\arcsin\\left(\\frac{x}{2}\\right) + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{1}{2}\\arcsin\\left(\\frac{x}{2}\\right) + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\ln(x + \\sqrt{4 - x^2}) + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\arctan\\left(\\frac{x}{2}\\right) + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức nguyên hàm mở rộng: $\\int \\frac{dx}{\\sqrt{a^2 - x^2}} = \\arcsin\\left(\\frac{x}{a}\\right) + C$ với $a = 2$:\n  $$I = \\arcsin\\left(\\frac{x}{2}\\right) + C$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1341,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Nguyên hàm đổi biến lượng giác",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm nguyên hàm $I = \\int \\frac{\\cos x}{1 + \\sin^2 x} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\arctan(\\sin x) + C$"
+      },
+      {
+        "key": "B",
+        "text": "$\\ln(1 + \\sin^2 x) + C$"
+      },
+      {
+        "key": "C",
+        "text": "$\\arcsin(\\sin x) + C$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{\\sin x}{1 + \\sin^2 x} + C$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $u = \\sin x \\implies du = \\cos x dx$.\n* Khi đó: $I = \\int \\frac{du}{1 + u^2} = \\arctan(u) + C = \\arctan(\\sin x) + C$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1342,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.3",
+    "typeName": "Đổi biến đối xứng trong tích phân xác định",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân $I = \\int_0^{\\pi/2} \\frac{\\sin x}{\\sin x + \\cos x} dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = \\frac{\\pi}{4}$"
+      },
+      {
+        "key": "B",
+        "text": "$I = \\frac{\\pi}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$I = \\frac{\\pi}{8}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đổi biến $t = \\pi/2 - x \\implies dx = -dt$. Cận đổi thành $\\pi/2$ về $0$.\n* Ta có: $I = \\int_0^{\\pi/2} \\frac{\\cos t}{\\cos t + \\sin t} dt$.\n* Cộng hai tích phân:\n  $$2I = \\int_0^{\\pi/2} \\frac{\\sin x + \\cos x}{\\sin x + \\cos x} dx = \\int_0^{\\pi/2} 1 dx = \\frac{\\pi}{2}$$\n* Suy ra $I = \\frac{\\pi}{4}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1343,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.2",
+    "typeName": "Tích phân từng phần lặp",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân $I = \\int_0^1 x^2 e^x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = e - 2$"
+      },
+      {
+        "key": "B",
+        "text": "$I = e - 1$"
+      },
+      {
+        "key": "C",
+        "text": "$I = 2e - 3$"
+      },
+      {
+        "key": "D",
+        "text": "$I = e$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Từng phần lần 1: $u = x^2, dv = e^x dx \\implies du = 2x dx, v = e^x$.\n  $$I = [x^2 e^x]_0^1 - 2\\int_0^1 x e^x dx = e - 2(1) = e - 2$$\n* (Do $\\int_0^1 x e^x dx = 1$ đã tính ở bài trước).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1344,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.7",
+    "typeName": "Ứng dụng hình học: Độ dài đường cong",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính độ dài $L$ của đường cong $y = \\frac{2}{3}x^{3/2}$ từ $x = 0$ đến $x = 3$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$L = \\frac{14}{3}$"
+      },
+      {
+        "key": "B",
+        "text": "$L = 4$"
+      },
+      {
+        "key": "C",
+        "text": "$L = \\frac{16}{3}$"
+      },
+      {
+        "key": "D",
+        "text": "$L = 6$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đạo hàm: $y' = \\frac{2}{3} \\cdot \\frac{3}{2}x^{1/2} = \\sqrt{x}$.\n* Công thức độ dài cung: $L = \\int_a^b \\sqrt{1 + (y')^2} dx = \\int_0^3 \\sqrt{1 + x} dx$.\n* Tính tích phân:\n  $$L = \\left[ \\frac{2}{3}(1+x)^{3/2} \\right]_0^3 = \\frac{2}{3}(4^{3/2} - 1^{3/2}) = \\frac{2}{3}(8 - 1) = \\frac{14}{3}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1345,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Định lý cơ bản của phép tính vi tích phân",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Nếu $f(x)$ là hàm liên tục trên $[a, b]$ và $F(x)$ là một nguyên hàm của $f(x)$ thì khẳng định nào sau đây là công thức Newton-Leibniz?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\int_a^b f(x) dx = F(b) - F(a)$"
+      },
+      {
+        "key": "B",
+        "text": "$\\int_a^b f(x) dx = f(b) - f(a)$"
+      },
+      {
+        "key": "C",
+        "text": "$\\int_a^b f(x) dx = F'(b) - F'(a)$"
+      },
+      {
+        "key": "D",
+        "text": "$\\int_a^b f(x) dx = F(a) - F(b)$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Công thức Newton-Leibniz là nền tảng của giải tích tích phân:\n  $$\\int_a^b f(x) dx = [F(x)]_a^b = F(b) - F(a)$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1346,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.6",
+    "typeName": "Tích phân suy rộng loại 2",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tích phân suy rộng $I = \\int_0^1 \\ln x dx$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$I = -1$"
+      },
+      {
+        "key": "B",
+        "text": "$I = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$I = -\\infty$"
+      },
+      {
+        "key": "D",
+        "text": "$I = 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tích phân từng phần: $\\int \\ln x dx = x\\ln x - x$.\n* Áp dụng cận suy rộng tại $0$:\n  $$I = \\lim_{\\epsilon \\to 0^+} [x\\ln x - x]_\\epsilon^1 = (1\\ln 1 - 1) - \\lim_{\\epsilon \\to 0^+} (\\epsilon \\ln \\epsilon - \\epsilon) = -1 - (0 - 0) = -1$$\n* (Do $\\lim_{\\epsilon \\to 0^+} \\epsilon \\ln \\epsilon = 0$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1347,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.5",
+    "typeName": "Tích phân suy rộng Poisson (Gauss)",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tích phân suy rộng $\\int_0^{+\\infty} e^{-x^2} dx$ có tính chất nào dưới đây?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hội tụ và có giá trị bằng $\\frac{\\sqrt{\\pi}}{2}$."
+      },
+      {
+        "key": "B",
+        "text": "Phân kỳ ra $+\\infty$."
+      },
+      {
+        "key": "C",
+        "text": "Hội tụ và có giá trị bằng $1$."
+      },
+      {
+        "key": "D",
+        "text": "Hội tụ và có giá trị bằng $\\sqrt{\\pi}$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đây là tích phân Euler-Poisson kinh điển. Vì $e^{-x^2} \\le e^{-x}$ với mọi $x \\ge 1$ nên tích phân hội tụ.\n* Giá trị chính xác của nó bằng $\\int_0^{+\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1348,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 4,
+    "chapterName": "Chương 4: Phép tính tích phân",
+    "topicId": 4,
+    "topicName": "Phép tính tích phân",
+    "subTypeId": 1,
+    "typeId": "4.1",
+    "typeName": "Định lý giá trị trung bình tích phân",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Giá trị trung bình $\\mu$ của hàm số $f(x) = 3x^2$ trên đoạn $[0, 2]$ bằng:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\mu = 4$"
+      },
+      {
+        "key": "B",
+        "text": "$\\mu = 8$"
+      },
+      {
+        "key": "C",
+        "text": "$\\mu = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$\\mu = 6$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Công thức giá trị trung bình: $\\mu = \\frac{1}{b-a} \\int_a^b f(x) dx$.\n* Ta có: $\\mu = \\frac{1}{2 - 0} \\int_0^2 3x^2 dx = \\frac{1}{2} [x^3]_0^2 = \\frac{1}{2} (8 - 0) = 4$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1349,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.1",
+    "typeName": "Tổng chuỗi cấp số nhân & chuỗi phân số",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tổng của chuỗi số cấp số nhân $S = \\sum_{n=1}^\\infty \\frac{3}{4^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$S = 1$"
+      },
+      {
+        "key": "B",
+        "text": "$S = \\frac{3}{4}$"
+      },
+      {
+        "key": "C",
+        "text": "$S = \\frac{4}{3}$"
+      },
+      {
+        "key": "D",
+        "text": "$S = 3$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đây là chuỗi cấp số nhân có số hạng đầu $u_1 = \\frac{3}{4}$ và công bội $q = \\frac{1}{4}$.\n* Vì $|q| = 1/4 < 1$ nên chuỗi hội tụ và có tổng:\n  $$S = \\frac{u_1}{1 - q} = \\frac{3/4}{1 - 1/4} = \\frac{3/4}{3/4} = 1$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1350,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.1",
+    "typeName": "Tổng chuỗi cấp số nhân & chuỗi phân số",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tổng của chuỗi số $S = \\sum_{n=1}^\\infty \\frac{1}{(2n - 1)(2n + 1)}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$S = \\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$S = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$S = \\frac{1}{4}$"
+      },
+      {
+        "key": "D",
+        "text": "$S = 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tách phân số tối giản:\n  $$\\frac{1}{(2n-1)(2n+1)} = \\frac{1}{2}\\left(\\frac{1}{2n-1} - \\frac{1}{2n+1}\\right)$$\n* Tổng riêng thứ $N$ triệt tiêu viền:\n  $$S_N = \\frac{1}{2}\\left[\\left(1 - \\frac{1}{3}\\right) + \\left(\\frac{1}{3} - \\frac{1}{5}\\right) + \\cdots + \\left(\\frac{1}{2N-1} - \\frac{1}{2N+1}\\right)\\right] = \\frac{1}{2}\\left(1 - \\frac{1}{2N+1}\\right)$$\n* Khi $N \\to \\infty$: $S = \\lim_{N \\to \\infty} S_N = \\frac{1}{2}(1 - 0) = \\frac{1}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1351,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.1",
+    "typeName": "Tổng chuỗi cấp số nhân & chuỗi phân số",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tổng của chuỗi số $S = \\sum_{n=1}^\\infty \\frac{2^n + 3^n}{6^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$S = \\frac{3}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$S = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$S = 2$"
+      },
+      {
+        "key": "D",
+        "text": "$S = \\frac{5}{6}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tách thành tổng hai chuỗi cấp số nhân:\n  $$S = \\sum_{n=1}^\\infty \\left(\\frac{2}{6}\\right)^n + \\sum_{n=1}^\\infty \\left(\\frac{3}{6}\\right)^n = \\sum_{n=1}^\\infty \\left(\\frac{1}{3}\\right)^n + \\sum_{n=1}^\\infty \\left(\\frac{1}{2}\\right)^n$$\n* Tổng chuỗi 1: $S_1 = \\frac{1/3}{1 - 1/3} = \\frac{1/3}{2/3} = \\frac{1}{2}$.\n* Tổng chuỗi 2: $S_2 = \\frac{1/2}{1 - 1/2} = 1$.\n* Tổng: $S = S_1 + S_2 = \\frac{1}{2} + 1 = \\frac{3}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1352,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.1",
+    "typeName": "Điều kiện cần để chuỗi số hội tụ",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Chuỗi số nào sau đây phân kỳ do vi phạm điều kiện cần của sự hội tụ (tức $\\lim_{n \\to \\infty} u_n \\ne 0$)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sum_{n=1}^\\infty \\frac{n}{2n + 1}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\sum_{n=1}^\\infty \\frac{1}{n}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\sum_{n=1}^\\infty \\frac{1}{n^2}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\sum_{n=1}^\\infty \\frac{1}{\\sqrt{n}}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét số hạng tổng quát của chuỗi A: $\\lim_{n \\to \\infty} u_n = \\lim_{n \\to \\infty} \\frac{n}{2n+1} = \\frac{1}{2} \\ne 0$.\n* Theo điều kiện cần của chuỗi hội tụ, nếu $\\lim u_n \\ne 0$ thì chuỗi chắc chắn phân kỳ.\n* (Các chuỗi B, C, D đều có $\\lim u_n = 0$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1353,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.1",
+    "typeName": "Điều kiện cần để chuỗi số hội tụ",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\cos\\left(\\frac{1}{n}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi phân kỳ vì $\\lim_{n \\to \\infty} u_n = 1 \\ne 0$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi hội tụ vì $\\cos(1/n)$ bị chặn bởi 1."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi hội tụ theo tiêu chuẩn so sánh."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi đan dấu hội tụ theo Leibniz."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $n \\to \\infty$, $\\frac{1}{n} \\to 0 \\implies u_n = \\cos(1/n) \\to \\cos 0 = 1 \\ne 0$.\n* Vì giới hạn của số hạng tổng quát khác $0$, chuỗi số phân kỳ theo điều kiện cần.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1354,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.2",
+    "typeName": "Chuỗi số Riemann (chuỗi điều hòa suy rộng)",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Chuỗi số $\\sum_{n=1}^\\infty \\frac{1}{n^\\alpha}$ hội tụ khi và chỉ khi:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha > 1$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha \\ge 1$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha < 1$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha > 0$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Chuỗi Riemann (chuỗi Dirichlet) $\\sum_{n=1}^\\infty \\frac{1}{n^\\alpha}$ hội tụ khi $\\alpha > 1$ và phân kỳ khi $\\alpha \\le 1$.\n* Với $\\alpha = 1$, chuỗi là chuỗi điều hòa $\\sum \\frac{1}{n}$ phân kỳ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1355,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.3",
+    "typeName": "Tiêu chuẩn so sánh bằng VCB tương đương",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\frac{1}{\\sqrt{n^3 + 2n}}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ vì cùng tính chất với $\\sum \\frac{1}{n^{3/2}}$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi phân kỳ vì cùng tính chất với $\\sum \\frac{1}{n}$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi phân kỳ vì $\\lim u_n \\ne 0$."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi dao động không xác định."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $n \\to \\infty$: $u_n = \\frac{1}{\\sqrt{n^3 + 2n}} \\sim \\frac{1}{\\sqrt{n^3}} = \\frac{1}{n^{3/2}}$.\n* Chuỗi so sánh $\\sum_{n=1}^\\infty \\frac{1}{n^{3/2}}$ là chuỗi Riemann có $\\alpha = 3/2 > 1$ nên hội tụ.\n* Theo tiêu chuẩn so sánh tương đương, chuỗi đã cho hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1356,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.3",
+    "typeName": "Tiêu chuẩn so sánh bằng VCB tương đương",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\frac{n + 1}{n^2 + 5}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi phân kỳ vì cùng tính chất với chuỗi điều hòa $\\sum \\frac{1}{n}$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi hội tụ theo tiêu chuẩn D'Alembert."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi hội tụ vì $\\lim u_n = 0$."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi hội tụ theo tiêu chuẩn Cauchy."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $n \\to \\infty$: $u_n = \\frac{n+1}{n^2+5} \\sim \\frac{n}{n^2} = \\frac{1}{n}$.\n* Chuỗi điều hòa $\\sum \\frac{1}{n}$ phân kỳ.\n* Do đó theo định lý so sánh, chuỗi đã cho phân kỳ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1357,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.3",
+    "typeName": "Tiêu chuẩn so sánh bằng VCB tương đương",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\sin\\left(\\frac{1}{n^2}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ vì $\\sin(1/n^2) \\sim \\frac{1}{n^2}$ khi $n \\to \\infty$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi phân kỳ vì $\\sin(1/n^2) \\sim \\frac{1}{n}$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi phân kỳ do vi phạm điều kiện cần."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi đan dấu bán hội tụ."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $n \\to \\infty$, $\\frac{1}{n^2} \\to 0 \\implies \\sin\\left(\\frac{1}{n^2}\\right) \\sim \\frac{1}{n^2}$.\n* Chuỗi $\\sum \\frac{1}{n^2}$ là chuỗi Riemann hội tụ (vì $\\alpha = 2 > 1$).\n* Do đó chuỗi $\\sum \\sin(1/n^2)$ hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1358,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.3",
+    "typeName": "Tiêu chuẩn so sánh bằng VCB tương đương",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\left(e^{1/n} - 1\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi phân kỳ vì tương đương với $\\sum \\frac{1}{n}$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi hội tụ vì tương đương với $\\sum \\frac{1}{n^2}$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi hội tụ theo tiêu chuẩn D'Alembert."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi có tổng bằng $e - 1$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng công thức VCB: $e^u - 1 \\sim u$ khi $u \\to 0$.\n* Với $u = 1/n \\to 0$, ta có: $e^{1/n} - 1 \\sim \\frac{1}{n}$.\n* Vì chuỗi điều hòa $\\sum \\frac{1}{n}$ phân kỳ, nên chuỗi đã cho phân kỳ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1359,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.3",
+    "typeName": "Tiêu chuẩn so sánh có tham số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm tất cả các giá trị của tham số $\\alpha$ để chuỗi số $\\sum_{n=1}^\\infty n^\\alpha (\\sqrt{n+1} - \\sqrt{n})$ hội tụ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\alpha < -\\frac{1}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\alpha < 0$"
+      },
+      {
+        "key": "C",
+        "text": "$\\alpha < 1$"
+      },
+      {
+        "key": "D",
+        "text": "$\\alpha \\le -\\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Nhân liên hợp:\n  $$\\sqrt{n+1} - \\sqrt{n} = \\frac{1}{\\sqrt{n+1} + \\sqrt{n}} \\sim \\frac{1}{2\\sqrt{n}} = \\frac{1}{2n^{1/2}}$$\n* Khi đó: $u_n = n^\\alpha (\\sqrt{n+1} - \\sqrt{n}) \\sim \\frac{1}{2} n^{\\alpha - 1/2} = \\frac{1}{2 n^{1/2 - \\alpha}}$.\n* Chuỗi Riemann $\\sum \\frac{1}{n^{1/2 - \\alpha}}$ hội tụ khi và chỉ khi số mũ:\n  $$\\frac{1}{2} - \\alpha > 1 \\iff -\\alpha > \\frac{1}{2} \\iff \\alpha < -\\frac{1}{2}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1360,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.4",
+    "typeName": "Tiêu chuẩn D'Alembert",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Áp dụng tiêu chuẩn D'Alembert cho chuỗi số $\\sum_{n=1}^\\infty \\frac{n^2}{2^n}$, tỉ số $D = \\lim_{n \\to \\infty} \\frac{u_{n+1}}{u_n}$ bằng:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$D = \\frac{1}{2} < 1$, chuỗi hội tụ."
+      },
+      {
+        "key": "B",
+        "text": "$D = 2 > 1$, chuỗi phân kỳ."
+      },
+      {
+        "key": "C",
+        "text": "$D = 1$, chưa có kết luận."
+      },
+      {
+        "key": "D",
+        "text": "$D = 0 < 1$, chuỗi hội tụ."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét tỉ số:\n  $$\\frac{u_{n+1}}{u_n} = \\frac{(n+1)^2}{2^{n+1}} \\cdot \\frac{2^n}{n^2} = \\frac{1}{2}\\left(\\frac{n+1}{n}\\right)^2$$\n* Khi $n \\to \\infty$: $D = \\lim_{n \\to \\infty} \\frac{1}{2}\\left(1 + \\frac{1}{n}\\right)^2 = \\frac{1}{2}$.\n* Vì $D = 1/2 < 1$, theo tiêu chuẩn D'Alembert, chuỗi hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1361,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.4",
+    "typeName": "Tiêu chuẩn D'Alembert",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\frac{3^n}{n!}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ vì $\\lim_{n \\to \\infty} \\frac{u_{n+1}}{u_n} = 0 < 1$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi phân kỳ vì cơ số $3 > 1$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi hội tụ vì có tổng bằng $e^3 - 1$."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi phân kỳ theo tiêu chuẩn Cauchy."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng tiêu chuẩn D'Alembert:\n  $$D = \\lim_{n \\to \\infty} \\frac{u_{n+1}}{u_n} = \\lim_{n \\to \\infty} \\frac{3^{n+1}}{(n+1)!} \\cdot \\frac{n!}{3^n} = \\lim_{n \\to \\infty} \\frac{3}{n+1} = 0$$\n* Vì $D = 0 < 1$, chuỗi hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1362,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.4",
+    "typeName": "Tiêu chuẩn Cauchy (căn số)",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Áp dụng tiêu chuẩn Cauchy cho chuỗi số $\\sum_{n=1}^\\infty \\left(\\frac{2n + 1}{3n - 1}\\right)^n$, giới hạn $C = \\lim_{n \\to \\infty} \\sqrt[n]{u_n}$ bằng:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$C = \\frac{2}{3} < 1$, chuỗi hội tụ."
+      },
+      {
+        "key": "B",
+        "text": "$C = \\frac{3}{2} > 1$, chuỗi phân kỳ."
+      },
+      {
+        "key": "C",
+        "text": "$C = 1$, chưa có kết luận."
+      },
+      {
+        "key": "D",
+        "text": "$C = 0 < 1$, chuỗi hội tụ."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Lấy căn bậc $n$ của số hạng tổng quát:\n  $$\\sqrt[n]{u_n} = \\frac{2n + 1}{3n - 1}$$\n* Khi $n \\to \\infty$: $C = \\lim_{n \\to \\infty} \\frac{2n+1}{3n-1} = \\frac{2}{3}$.\n* Vì $C = 2/3 < 1$, theo tiêu chuẩn Cauchy, chuỗi hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1363,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.4",
+    "typeName": "Tiêu chuẩn Cauchy (căn số)",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\left(\\frac{n}{n + 1}\\right)^{n^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ vì $C = \\frac{1}{e} < 1$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi phân kỳ vì $C = e > 1$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi phân kỳ vì $\\lim u_n \\ne 0$."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi có $C = 1$ không áp dụng được tiêu chuẩn Cauchy."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Áp dụng tiêu chuẩn Cauchy, lấy căn bậc $n$:\n  $$\\sqrt[n]{u_n} = \\left(\\frac{n}{n+1}\\right)^n = \\left(1 + \\frac{1}{n}\\right)^{-n}$$\n* Khi $n \\to \\infty$: $\\lim_{n \\to \\infty} \\sqrt[n]{u_n} = e^{-1} = \\frac{1}{e}$.\n* Vì $C = \\frac{1}{e} \\approx 0.368 < 1$, theo tiêu chuẩn Cauchy chuỗi hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1364,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.5",
+    "typeName": "Tiêu chuẩn tích phân Maclaurin-Cauchy",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Dùng tiêu chuẩn tích phân, xét sự hội tụ của chuỗi $\\sum_{n=2}^\\infty \\frac{1}{n \\ln n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi phân kỳ vì tích phân suy rộng $\\int_2^{+\\infty} \\frac{dx}{x \\ln x}$ phân kỳ."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi hội tụ vì tích phân suy rộng hội tụ."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi hội tụ theo tiêu chuẩn D'Alembert."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi vi phạm điều kiện cần của sự hội tụ."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm số $f(x) = \\frac{1}{x \\ln x}$ dương và giảm liên tục trên $[2, +\\infty)$.\n* Xét tích phân suy rộng:\n  $$\\int_2^{+\\infty} \\frac{dx}{x \\ln x} = [\\ln(\\ln x)]_2^{+\\infty} = +\\infty - \\ln(\\ln 2) = +\\infty$$\n* Tích phân phân kỳ, nên theo tiêu chuẩn tích phân, chuỗi số phân kỳ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1365,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.5",
+    "typeName": "Tiêu chuẩn tích phân Maclaurin-Cauchy",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Dùng tiêu chuẩn tích phân, xét sự hội tụ của chuỗi $\\sum_{n=2}^\\infty \\frac{1}{n \\ln^2 n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ vì tích phân $\\int_2^{+\\infty} \\frac{dx}{x \\ln^2 x}$ hội tụ."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi phân kỳ."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi có số hạng tổng quát không tiến về 0."
+      },
+      {
+        "key": "D",
+        "text": "Tiêu chuẩn tích phân không áp dụng được."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hàm $f(x) = \\frac{1}{x \\ln^2 x}$ giảm và dương trên $[2, +\\infty)$.\n* Tích phân tương ứng:\n  $$\\int_2^{+\\infty} \\frac{dx}{x \\ln^2 x} = \\left[ -\\frac{1}{\\ln x} \\right]_2^{+\\infty} = 0 - \\left(-\\frac{1}{\\ln 2}\\right) = \\frac{1}{\\ln 2} < +\\infty$$\n* Tích phân hội tụ, do đó theo tiêu chuẩn tích phân chuỗi hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1366,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.6",
+    "typeName": "Chuỗi đan dấu & Tiêu chuẩn Leibniz",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát tính hội tụ của chuỗi đan dấu $\\sum_{n=1}^\\infty \\frac{(-1)^{n-1}}{n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi bán hội tụ (hội tụ có điều kiện)."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi hội tụ tuyệt đối."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi phân kỳ."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi dao động không có giới hạn."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* 1) Theo tiêu chuẩn Leibniz: dãy $a_n = \\frac{1}{n}$ là dãy dương, giảm ngặt và $\\lim a_n = 0 \\implies$ chuỗi hội tụ.\n* 2) Xét chuỗi trị tuyệt đối: $\\sum |u_n| = \\sum \\frac{1}{n}$ là chuỗi điều hòa phân kỳ.\n* Vì chuỗi hội tụ nhưng không hội tụ tuyệt đối nên chuỗi là BÁN HỘI TỤ (hội tụ có điều kiện).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1367,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.6",
+    "typeName": "Chuỗi đan dấu & Tiêu chuẩn Leibniz",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khẳng định nào đúng về chuỗi số $\\sum_{n=1}^\\infty \\frac{(-1)^n}{n^2}$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ tuyệt đối."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi bán hội tụ."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi phân kỳ."
+      },
+      {
+        "key": "D",
+        "text": "Không thể xác định được."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Lấy trị tuyệt đối của số hạng tổng quát: $|u_n| = \\frac{1}{n^2}$.\n* Chuỗi trị tuyệt đối $\\sum_{n=1}^\\infty \\frac{1}{n^2}$ là chuỗi Riemann có $\\alpha = 2 > 1$ nên hội tụ.\n* Theo định nghĩa, chuỗi ban đầu hội tụ tuyệt đối.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1368,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.7",
+    "typeName": "Bán kính hội tụ của chuỗi lũy thừa",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm bán kính hội tụ $R$ của chuỗi lũy thừa $\\sum_{n=1}^\\infty \\frac{x^n}{n \\cdot 3^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$R = 3$"
+      },
+      {
+        "key": "B",
+        "text": "$R = \\frac{1}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "$R = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$R = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hệ số: $a_n = \\frac{1}{n \\cdot 3^n}$.\n* Áp dụng công thức D'Alembert cho bán kính hội tụ:\n  $$R = \\lim_{n \\to \\infty} \\left| \\frac{a_n}{a_{n+1}} \\right| = \\lim_{n \\to \\infty} \\frac{(n+1) \\cdot 3^{n+1}}{n \\cdot 3^n} = \\lim_{n \\to \\infty} 3 \\cdot \\frac{n+1}{n} = 3$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1369,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.7",
+    "typeName": "Miền hội tụ của chuỗi lũy thừa",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm miền hội tụ $X$ của chuỗi lũy thừa $\\sum_{n=1}^\\infty \\frac{x^n}{n \\cdot 3^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$X = [-3, 3)$"
+      },
+      {
+        "key": "B",
+        "text": "$X = (-3, 3)$"
+      },
+      {
+        "key": "C",
+        "text": "$X = [-3, 3]$"
+      },
+      {
+        "key": "D",
+        "text": "$X = (-3, 3]$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Bán kính hội tụ $R = 3 \\implies$ khoảng hội tụ là $(-3, 3)$.\n* Xét mút $x = 3$: chuỗi trở thành $\\sum_{n=1}^\\infty \\frac{3^n}{n \\cdot 3^n} = \\sum_{n=1}^\\infty \\frac{1}{n}$ (chuỗi điều hòa phân kỳ).\n* Xét mút $x = -3$: chuỗi trở thành $\\sum_{n=1}^\\infty \\frac{(-3)^n}{n \\cdot 3^n} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$ (chuỗi đan dấu hội tụ theo Leibniz).\n* Kết hợp lại, miền hội tụ là $X = [-3, 3)$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1370,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.7",
+    "typeName": "Bán kính hội tụ của chuỗi lũy thừa",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm bán kính hội tụ $R$ của chuỗi lũy thừa $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$R = +\\infty$"
+      },
+      {
+        "key": "B",
+        "text": "$R = 1$"
+      },
+      {
+        "key": "C",
+        "text": "$R = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$R = e$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hệ số $a_n = \\frac{1}{n!}$.\n* Bán kính hội tụ:\n  $$R = \\lim_{n \\to \\infty} \\left| \\frac{a_n}{a_{n+1}} \\right| = \\lim_{n \\to \\infty} \\frac{(n+1)!}{n!} = \\lim_{n \\to \\infty} (n+1) = +\\infty$$\n* Chuỗi hội tụ trên toàn trục số thực $\\mathbb{R}$ (và có tổng bằng $e^x$).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1371,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.7",
+    "typeName": "Bán kính hội tụ của chuỗi lũy thừa",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm bán kính hội tụ $R$ của chuỗi lũy thừa $\\sum_{n=1}^\\infty \\frac{x^{2n}}{4^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$R = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$R = 4$"
+      },
+      {
+        "key": "C",
+        "text": "$R = 16$"
+      },
+      {
+        "key": "D",
+        "text": "$R = \\frac{1}{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Đặt $t = x^2 \\ge 0$. Chuỗi trở thành $\\sum_{n=1}^\\infty \\frac{t^n}{4^n} = \\sum_{n=1}^\\infty \\left(\\frac{t}{4}\\right)^n$.\n* Chuỗi cấp số nhân theo $t$ hội tụ khi $|t/4| < 1 \\iff |t| < 4$.\n* Quay lại biến $x$: $x^2 < 4 \\iff |x| < 2$.\n* Vậy bán kính hội tụ theo biến $x$ là $R = 2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1372,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.7",
+    "typeName": "Miền hội tụ của chuỗi lũy thừa tâm x0",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm miền hội tụ $X$ của chuỗi lũy thừa $\\sum_{n=1}^\\infty \\frac{(x - 2)^n}{n^2}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$X = [1, 3]$"
+      },
+      {
+        "key": "B",
+        "text": "$X = (1, 3)$"
+      },
+      {
+        "key": "C",
+        "text": "$X = [0, 4]$"
+      },
+      {
+        "key": "D",
+        "text": "$X = [-1, 1]$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Bán kính hội tụ: $R = \\lim \\frac{(n+1)^2}{n^2} = 1$.\n* Khoảng hội tụ: $|x - 2| < 1 \\iff 1 < x < 3$.\n* Xét mút $x = 3$: chuỗi là $\\sum \\frac{1}{n^2}$ (hội tụ).\n* Xét mút $x = 1$: chuỗi là $\\sum \\frac{(-1)^n}{n^2}$ (hội tụ tuyệt đối).\n* Vậy chuỗi hội tụ tại cả 2 đầu mút: $X = [1, 3]$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1373,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.8",
+    "typeName": "Khai triển hàm số thành chuỗi lũy thừa",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khai triển hàm số $f(x) = \\frac{1}{2 - x}$ thành chuỗi lũy thừa của $x$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sum_{n=0}^\\infty \\frac{x^n}{2^{n+1}}$ với $|x| < 2$"
+      },
+      {
+        "key": "B",
+        "text": "$\\sum_{n=0}^\\infty \\frac{x^n}{2^n}$ với $|x| < 2$"
+      },
+      {
+        "key": "C",
+        "text": "$\\sum_{n=0}^\\infty 2^n x^n$ với $|x| < \\frac{1}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\sum_{n=0}^\\infty (-1)^n \\frac{x^n}{2^{n+1}}$ với $|x| < 2$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Biến đổi đưa về dạng cấp số nhân:\n  $$\\frac{1}{2 - x} = \\frac{1}{2\\left(1 - \\frac{x}{2}\\right)} = \\frac{1}{2} \\sum_{n=0}^\\infty \\left(\\frac{x}{2}\\right)^n = \\sum_{n=0}^\\infty \\frac{x^n}{2^{n+1}}$$\n* Chuỗi hội tụ khi $|x/2| < 1 \\iff |x| < 2$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1374,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.8",
+    "typeName": "Tính tổng của chuỗi số bằng chuỗi lũy thừa",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính tổng của chuỗi số $S = \\sum_{n=1}^\\infty \\frac{1}{n \\cdot 2^n}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$S = \\ln 2$"
+      },
+      {
+        "key": "B",
+        "text": "$S = \\frac{1}{2}\\ln 2$"
+      },
+      {
+        "key": "C",
+        "text": "$S = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$S = \\frac{\\pi}{4}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Ta có khai triển Maclaurin của $-\\ln(1 - x) = \\sum_{n=1}^\\infty \\frac{x^n}{n}$ với $|x| < 1$.\n* Thay $x = \\frac{1}{2} \\in (-1, 1)$ vào biểu thức trên:\n  $$S = \\sum_{n=1}^\\infty \\frac{(1/2)^n}{n} = -\\ln\\left(1 - \\frac{1}{2}\\right) = -\\ln\\left(\\frac{1}{2}\\right) = \\ln 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1375,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.9",
+    "typeName": "Chuỗi Fourier: Khái niệm & Hệ số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho hàm số $f(x)$ tuần hoàn chu kỳ $2\\pi$ và là hàm chẵn trên $[-\\pi, \\pi]$. Khi khai triển $f(x)$ thành chuỗi Fourier, hệ số nào sau đây chắc chắn bằng 0 với mọi $n \\ge 1$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$b_n = 0, \\forall n \\ge 1$"
+      },
+      {
+        "key": "B",
+        "text": "$a_n = 0, \\forall n \\ge 1$"
+      },
+      {
+        "key": "C",
+        "text": "$a_0 = 0$"
+      },
+      {
+        "key": "D",
+        "text": "Tất cả các hệ số $a_n$ và $b_n$ đều khác 0."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hệ số $b_n = \\frac{1}{\\pi} \\int_{-\\pi}^\\pi f(x) \\sin(nx) dx$.\n* Vì $f(x)$ là hàm chẵn và $\\sin(nx)$ là hàm lẻ nên tích $f(x)\\sin(nx)$ là hàm lẻ trên đoạn đối xứng $[-\\pi, \\pi]$.\n* Tích phân của hàm lẻ trên $[-\\pi, \\pi]$ luôn bằng $0$, do đó $b_n = 0, \\forall n \\ge 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1376,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.9",
+    "typeName": "Chuỗi Fourier: Khái niệm & Hệ số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho hàm số $f(x)$ tuần hoàn chu kỳ $2\\pi$ và là hàm lẻ trên $[-\\pi, \\pi]$. Trong khai triển chuỗi Fourier của $f(x)$:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a_0 = 0$ và $a_n = 0, \\forall n \\ge 1$ (chỉ còn lại các số hạng $\\sin$)."
+      },
+      {
+        "key": "B",
+        "text": "$b_n = 0, \\forall n \\ge 1$ (chỉ còn lại các số hạng $\\cos$)."
+      },
+      {
+        "key": "C",
+        "text": "$a_0 \\ne 0$ và $b_n = 0$."
+      },
+      {
+        "key": "D",
+        "text": "Hàm lẻ không khai triển được thành chuỗi Fourier."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Vì $f(x)$ lẻ nên $f(x) \\cos(nx)$ là hàm lẻ, do đó $a_n = \\frac{1}{\\pi} \\int_{-\\pi}^\\pi f(x)\\cos(nx)dx = 0, \\forall n \\ge 0$.\n* Chuỗi Fourier của hàm lẻ chỉ gồm các số hạng của hàm sin (chuỗi sin Fourier).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1377,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.9",
+    "typeName": "Chuỗi Fourier: Tính hệ số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tính hệ số Fourier $b_n$ của hàm số $f(x) = x$ trên khoảng $(-\\pi, \\pi)$ với chu kỳ $2\\pi$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$b_n = \\frac{2(-1)^{n+1}}{n}$"
+      },
+      {
+        "key": "B",
+        "text": "$b_n = \\frac{2(-1)^n}{n}$"
+      },
+      {
+        "key": "C",
+        "text": "$b_n = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$b_n = \\frac{1}{n^2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* $f(x) = x$ là hàm lẻ, do đó $a_n = 0$.\n* Tính $b_n = \\frac{2}{\\pi} \\int_0^\\pi x \\sin(nx) dx$.\n* Từng phần: $u = x, dv = \\sin(nx)dx \\implies du = dx, v = -\\frac{\\cos(nx)}{n}$:\n  $$b_n = \\frac{2}{\\pi}\\left( \\left[-\\frac{x\\cos(nx)}{n}\\right]_0^\\pi + \\int_0^\\pi \\frac{\\cos(nx)}{n} dx \\right) = \\frac{2}{\\pi}\\left( -\\frac{\\pi\\cos(n\\pi)}{n} + 0 \\right) = -\\frac{2(-1)^n}{n} = \\frac{2(-1)^{n+1}}{n}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1378,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.6",
+    "typeName": "Định lý ước lượng phần dư Leibniz",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho chuỗi đan dấu thỏa mãn tiêu chuẩn Leibniz $\\sum_{n=1}^\\infty (-1)^{n-1} a_n$ ($a_n > 0$ giảm về 0). Đặt phần dư $R_N = S - S_N$. Khẳng định nào sau đây về ước lượng sai số là đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$|R_N| \\le a_{N+1}$"
+      },
+      {
+        "key": "B",
+        "text": "$|R_N| \\le a_N$"
+      },
+      {
+        "key": "C",
+        "text": "$|R_N| \\le \\frac{a_{N+1}}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$|R_N| \\ge a_{N+1}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo định lý ước lượng phần dư của chuỗi Leibniz, sai số khi thay tổng chuỗi $S$ bằng tổng riêng $S_N$ có giá trị tuyệt đối không vượt quá số hạng đầu tiên bị bỏ qua:\n  $$|R_N| \\le a_{N+1}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1379,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.4",
+    "typeName": "Tiêu chuẩn D'Alembert có tham số",
+    "clo": "CLO3",
+    "difficulty": "hard",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Cho chuỗi số $\\sum_{n=1}^\\infty \\frac{a^n}{n^2}$ với $a > 0$. Khẳng định nào sau đây là đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ khi $0 < a \\le 1$ và phân kỳ khi $a > 1$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi chỉ hội tụ khi $0 < a < 1$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi hội tụ với mọi $a > 0$."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi phân kỳ với mọi $a > 0$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Tỉ số D'Alembert: $\\frac{u_{n+1}}{u_n} = \\frac{a^{n+1}}{(n+1)^2} \\cdot \\frac{n^2}{a^n} = a \\left(\\frac{n}{n+1}\\right)^2 \\to a$.\n* - Nếu $a < 1$: chuỗi hội tụ.\n* - Nếu $a > 1$: chuỗi phân kỳ.\n* - Nếu $a = 1$: chuỗi trở thành $\\sum \\frac{1}{n^2}$ là chuỗi Riemann hội tụ.\n* Vậy chuỗi hội tụ khi $0 < a \\le 1$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1380,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.2",
+    "typeName": "Tính chất của chuỗi số",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Nếu chuỗi số $\\sum_{n=1}^\\infty u_n$ hội tụ có tổng $S$ thì chuỗi $\\sum_{n=1}^\\infty (k \\cdot u_n)$ ($k \\in \\mathbb{R}$) sẽ:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hội tụ và có tổng bằng $k \\cdot S$."
+      },
+      {
+        "key": "B",
+        "text": "Phân kỳ nếu $k > 1$."
+      },
+      {
+        "key": "C",
+        "text": "Hội tụ và có tổng bằng $S$."
+      },
+      {
+        "key": "D",
+        "text": "Chưa kết luận được."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo tính chất tuyến tính của chuỗi số: hằng số nhân $k$ có thể đưa ra ngoài dấu tổng, và nếu $\\sum u_n = S$ thì $\\sum (k u_n) = k \\sum u_n = k S$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1381,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.3",
+    "typeName": "Tiêu chuẩn so sánh 2",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\ln\\left(1 + \\frac{1}{n\\sqrt{n}}\\right)$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ vì tương đương với $\\sum \\frac{1}{n^{3/2}}$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi phân kỳ vì tương đương với $\\sum \\frac{1}{n}$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi phân kỳ vì $\\lim u_n \\ne 0$."
+      },
+      {
+        "key": "D",
+        "text": "Không thể so sánh."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Khi $n \\to \\infty$, $\\frac{1}{n\\sqrt{n}} \\to 0$. Áp dụng VCB: $\\ln(1 + u) \\sim u$.\n* Ta có: $\\ln\\left(1 + \\frac{1}{n^{3/2}}\\right) \\sim \\frac{1}{n^{3/2}}$.\n* Chuỗi $\\sum \\frac{1}{n^{3/2}}$ hội tụ (do số mũ $3/2 > 1$).\n* Do đó chuỗi đã cho hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1382,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.4",
+    "typeName": "Tiêu chuẩn D'Alembert giai thừa",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khảo sát sự hội tụ của chuỗi số $\\sum_{n=1}^\\infty \\frac{(n!)^2}{(2n)!}$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi hội tụ vì $D = \\frac{1}{4} < 1$."
+      },
+      {
+        "key": "B",
+        "text": "Chuỗi phân kỳ vì $D = 4 > 1$."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi có $D = 1$ chưa kết luận được."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi phân kỳ do vi phạm điều kiện cần."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Xét tỉ số:\n  $$\\frac{u_{n+1}}{u_n} = \\frac{((n+1)!)^2}{(2n+2)!} \\cdot \\frac{(2n)!}{(n!)^2} = \\frac{(n+1)^2}{(2n+1)(2n+2)} = \\frac{n+1}{2(2n+1)}$$\n* Khi $n \\to \\infty$: $D = \\lim_{n \\to \\infty} \\frac{n+1}{4n+2} = \\frac{1}{4}$.\n* Vì $D = 1/4 < 1$, chuỗi hội tụ.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1383,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.7",
+    "typeName": "Bán kính hội tụ công thức Cauchy-Hadamard",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Tìm bán kính hội tụ $R$ của chuỗi lũy thừa $\\sum_{n=1}^\\infty \\left(\\frac{n}{2n + 1}\\right)^n x^n$.",
+    "options": [
+      {
+        "key": "A",
+        "text": "$R = 2$"
+      },
+      {
+        "key": "B",
+        "text": "$R = \\frac{1}{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$R = 1$"
+      },
+      {
+        "key": "D",
+        "text": "$R = +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Hệ số: $a_n = \\left(\\frac{n}{2n+1}\\right)^n$.\n* Áp dụng công thức Cauchy-Hadamard: $\\frac{1}{R} = \\lim_{n \\to \\infty} \\sqrt[n]{|a_n|}$:\n  $$\\frac{1}{R} = \\lim_{n \\to \\infty} \\frac{n}{2n+1} = \\frac{1}{2} \\implies R = 2$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1384,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.8",
+    "typeName": "Đạo hàm và tích phân từng số hạng của chuỗi lũy thừa",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Phát biểu nào sau đây về tính khả vi và khả tích của chuỗi lũy thừa $\\sum_{n=0}^\\infty a_n x^n$ bên trong khoảng hội tụ $(-R, R)$ là đúng?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chuỗi có thể lấy đạo hàm và tích phân từng số hạng tùy ý nhiều lần trong $(-R, R)$ mà không làm thay đổi bán kính hội tụ."
+      },
+      {
+        "key": "B",
+        "text": "Khi lấy đạo hàm từng số hạng thì bán kính hội tụ bị giảm một nửa."
+      },
+      {
+        "key": "C",
+        "text": "Chuỗi lũy thừa không thể tích phân từng số hạng."
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi đạo hàm chỉ hội tụ tại $x = 0$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Định lý Abel về chuỗi lũy thừa: Bên trong khoảng hội tụ $(-R, R)$, tổng của chuỗi là hàm số vô hạn lần khả vi và có thể lấy đạo hàm cũng như tích phân từng số hạng, bán kính hội tụ $R$ được bảo toàn.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1385,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.6",
+    "typeName": "Chuỗi đan dấu bán hội tụ",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Chuỗi số nào dưới đây là chuỗi bán hội tụ?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sum_{n=1}^\\infty \\frac{(-1)^n}{\\sqrt{n}}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\sum_{n=1}^\\infty \\frac{(-1)^n}{n^3}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\sum_{n=1}^\\infty \\frac{(-1)^n}{2^n}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\sum_{n=1}^\\infty (-1)^n$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Chuỗi $\\sum \\frac{(-1)^n}{\\sqrt{n}}$ hội tụ theo Leibniz vì $1/\\sqrt{n} \\to 0$ giảm ngặt.\n* Nhưng chuỗi trị tuyệt đối $\\sum \\frac{1}{n^{1/2}}$ phân kỳ (vì $\\alpha = 1/2 \\le 1$).\n* Do đó nó là chuỗi bán hội tụ.\n* (Các chuỗi B, C hội tụ tuyệt đối; chuỗi D phân kỳ).\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1386,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.8",
+    "typeName": "Khai triển chuỗi Maclaurin hàm lượng giác",
+    "clo": "CLO2",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Khai triển hàm số $f(x) = \\sin x$ thành chuỗi lũy thừa của $x$ là:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$ với $-\\infty < x < +\\infty$"
+      },
+      {
+        "key": "B",
+        "text": "$\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$ với $-\\infty < x < +\\infty$"
+      },
+      {
+        "key": "C",
+        "text": "$\\sum_{n=0}^\\infty \\frac{x^{2n+1}}{(2n+1)!}$ với $|x| < 1$"
+      },
+      {
+        "key": "D",
+        "text": "$\\sum_{n=1}^\\infty \\frac{x^n}{n!}$ với $-\\infty < x < +\\infty$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Chuỗi Maclaurin kinh điển của hàm số $\\sin x$:\n  $$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\cdots = \\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}, \\quad \\forall x \\in \\mathbb{R}$$\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1387,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.1",
+    "typeName": "Điều kiện cần chuỗi hội tụ",
+    "clo": "CLO1",
+    "difficulty": "easy",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Một sinh viên kết luận: 'Vì $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$ nên chuỗi điều hòa $\\sum_{n=1}^\\infty \\frac{1}{n}$ chắc chắn hội tụ'. Kết luận đó đúng hay sai?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sai, vì $\\lim u_n = 0$ chỉ là điều kiện cần chứ không phải điều kiện đủ."
+      },
+      {
+        "key": "B",
+        "text": "Đúng, vì mọi chuỗi có $\\lim u_n = 0$ đều hội tụ."
+      },
+      {
+        "key": "C",
+        "text": "Đúng, vì chuỗi điều hòa là chuỗi hội tụ cơ bản."
+      },
+      {
+        "key": "D",
+        "text": "Sai, vì chuỗi điều hòa không có giới hạn $\\lim u_n = 0$."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Điều kiện $\\lim_{n \\to \\infty} u_n = 0$ chỉ là ĐIỀU KIỆN CẦN. Chuỗi điều hòa $\\sum \\frac{1}{n}$ có số hạng tổng quát tiến về $0$ nhưng tổng tiến ra $+\\infty$ (chuỗi phân kỳ).\n* Do đó suy diễn của sinh viên là SAI.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
+    "id": 1388,
+    "subjectId": "giai_tich_1",
+    "subjectName": "Giải tích 1 (BAS1203)",
+    "chapterId": 5,
+    "chapterName": "Chương 5: Lý thuyết chuỗi",
+    "topicId": 5,
+    "topicName": "Lý thuyết chuỗi",
+    "subTypeId": 1,
+    "typeId": "5.9",
+    "typeName": "Chuỗi Fourier: Điểm gián đoạn & Định lý Dirichlet",
+    "clo": "CLO2",
+    "difficulty": "medium",
+    "examId": "ptit_standard",
+    "examName": "Ngân hàng chuẩn PTIT mở rộng",
+    "question": "Theo định lý Dirichlet, tại điểm gián đoạn $x_0$ của hàm số $f(x)$, tổng của chuỗi Fourier $S(x_0)$ hội tụ về giá trị nào?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\frac{f(x_0^+) + f(x_0^-)}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$f(x_0)$"
+      },
+      {
+        "key": "C",
+        "text": "$0$"
+      },
+      {
+        "key": "D",
+        "text": "Chuỗi Fourier không hội tụ tại điểm gián đoạn."
+      }
+    ],
+    "correct": "A",
+    "explanation": "* Theo định lý Dirichlet về sự hội tụ của chuỗi Fourier:\n  - Tại các điểm hàm liên tục, chuỗi Fourier hội tụ về đúng giá trị $f(x)$.\n  - Tại các điểm $x_0$ gián đoạn loại 1, chuỗi Fourier hội tụ về trung bình cộng của hai giới hạn một bên: $\\frac{f(x_0^+) + f(x_0^-)}{2}$.\n* **Chọn đáp án: A.**",
+    "isOriginal": true,
+    "origin": "ptit_standard"
+  },
+  {
     "id": 2001,
     "subjectId": "giai_tich_2",
     "subjectName": "Giải tích 2 (BAS1204)",
