@@ -678,12 +678,19 @@
           mipoEl.classList.add('visible');
         }
         const dx = e.clientX - mipo.x;
-        if (!cutscene.active && Math.abs(dx) > 1.5) {
+        const dNow = Math.hypot((e.clientX + 28) - (tu.x + 22), (e.clientY + 26) - (tu.y + 22));
+        const talkingClose = (tu.mode === 'play' || Date.now() < tu.playUntil || tuBubble.classList.contains('show') || mipoBubble.classList.contains('show')) && dNow < 110;
+        if (!cutscene.active && !talkingClose && Math.abs(dx) > 1.5) {
           mipo.facing = dx > 0 ? 1 : -1;
         }
         mipo.x = e.clientX;
         mipo.y = e.clientY;
         mipo.isPointerHover = isClickableControl(e.target);
+
+        if (talkingClose && !cutscene.active) {
+          const tuOnLeft = (tu.x + 22) <= (mipo.x + 28);
+          mipo.facing = tuOnLeft ? -1 : 1;
+        }
 
         mipoEl.style.transform = `translate3d(${mipo.x}px, ${mipo.y}px, 0)`;
         mipoEl.classList.toggle('is-pointer', mipo.isPointerHover);
@@ -752,7 +759,7 @@
       if (cutscene.active) return;
 
       const now = Date.now();
-      tu.playUntil = now + 1100;
+      tu.playUntil = now + 1800;
       tu.hopPhase = 1.0;
 
       if (tu.mode === 'follow' && now < tu.followUntil - 1000) {
@@ -764,6 +771,14 @@
         tu.followUntil = now + 9000;
         const phrase = CUTE_WORDS[Math.floor(Math.random() * CUTE_WORDS.length)];
         showBubble(tuBubble, tu, phrase, 1800);
+      }
+
+      if (mipo.active) {
+        const tuOnLeft = (tu.x + 22) <= (mipo.x + 28);
+        tu.facing = tuOnLeft ? 1 : -1;
+        mipo.facing = tuOnLeft ? -1 : 1;
+        tuWrap.style.transform = `scaleX(${tu.facing})`;
+        mipoWrap.style.transform = `scaleX(${mipo.facing})`;
       }
 
       for (let i = 0; i < 4; i++) {
@@ -1010,9 +1025,18 @@
 
       const tuCenterX = tu.x + 22;
       const tuCenterY = tu.y + 22;
-      const mipoCenterX = mipo.x + 26;
+      const mipoCenterX = mipo.x + 28;
       const mipoCenterY = mipo.y + 26;
       const dist = mipo.active ? Math.hypot(mipoCenterX - tuCenterX, mipoCenterY - tuCenterY) : 9999;
+      const isTalkingTogether = tuBubble.classList.contains('show') || mipoBubble.classList.contains('show');
+      const shouldFaceEachOther =
+        cutscene.active ||
+        (mipo.active && (
+          tu.mode === 'play' ||
+          now < tu.playUntil ||
+          (isTalkingTogether && dist < 180) ||
+          (dist < 110 && mipoIdleMs > 120)
+        ));
 
       if (cutscene.active) {
         const preferLeft = (mipo.x > 88);
@@ -1022,7 +1046,6 @@
         tu.mode = 'play';
         tu.playUntil = now + 700;
         mipo.lastBoopTime = now + 900;
-        tu.facing = mipoCenterX >= tuCenterX ? 1 : -1;
 
         if (now - tu.lastInteractionFx > 800) {
           tu.lastInteractionFx = now;
@@ -1035,9 +1058,14 @@
           }
         }
       } else if (mipo.active && tu.mode === 'follow' && now < tu.followUntil) {
-        const offsetX = mipo.facing > 0 ? -68 : 26;
-        tu.targetX = Math.max(12, Math.min(maxW, mipo.x + offsetX));
-        tu.targetY = Math.max(76, Math.min(groundY, mipo.y - 8));
+        if (now < tu.playUntil && dist < 110) {
+          tu.targetX = tu.x;
+          tu.targetY = tu.y;
+        } else {
+          const offsetX = mipoCenterX >= tuCenterX ? -58 : 22;
+          tu.targetX = Math.max(12, Math.min(maxW, mipo.x + offsetX));
+          tu.targetY = Math.max(76, Math.min(groundY, mipo.y - 8));
+        }
       } else if (mipo.active && dist < 240 && mipo.y > window.innerHeight * 0.55) {
         if (tu.mode === 'sleep' || tu.mode === 'sit' || tu.mode === 'wander') {
           if (Math.random() < 0.04) showBubble(tuBubble, tu, '! ♪', 900);
@@ -1099,8 +1127,8 @@
         tu.y += (groundY - tu.y) * 0.12;
       }
 
-      if (cutscene.active) {
-        const tuOnLeft = tu.x <= mipo.x;
+      if (shouldFaceEachOther) {
+        const tuOnLeft = tuCenterX <= mipoCenterX;
         tu.facing = tuOnLeft ? 1 : -1;
         mipo.facing = tuOnLeft ? -1 : 1;
         mipoWrap.style.transform = `scaleX(${mipo.facing})`;
