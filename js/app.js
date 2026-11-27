@@ -1228,16 +1228,8 @@
     if (el.btnQuizNext) {
       if (state.quiz.currentIndex === total - 1) {
         el.btnQuizNext.textContent = 'Hoàn thành đề thi ✓';
-        el.btnQuizNext.onclick = promptSubmitQuiz;
       } else {
-        el.btnQuizNext.textContent = 'Câu sau → [→]';
-        el.btnQuizNext.onclick = () => {
-          if (state.quiz.currentIndex < total - 1) {
-            state.quiz.currentIndex++;
-            renderQuizNav();
-            renderQuizQuestion();
-          }
-        };
+        el.btnQuizNext.innerHTML = 'Câu sau → <span class="kbd-hint">→</span>';
       }
     }
   }
@@ -2900,7 +2892,11 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
     }
   });
   el.btnQuizNext.addEventListener('click', () => {
-    if (state.quiz.currentIndex < state.quiz.questions.length - 1) {
+    const total = state.quiz.questions.length;
+    if (total === 0) return;
+    if (state.quiz.currentIndex >= total - 1) {
+      promptSubmitQuiz();
+    } else {
       state.quiz.currentIndex++;
       renderQuizNav();
       renderQuizQuestion();
