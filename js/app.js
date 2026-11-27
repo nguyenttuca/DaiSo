@@ -593,6 +593,9 @@
       if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'block';
     }
 
+    if (window.MipoDogs && window.MipoDogs.syncExamState) {
+      window.MipoDogs.syncExamState();
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   window.switchAppTab = switchTab;
@@ -1178,6 +1181,9 @@
   function startQuizTimer() {
     clearInterval(state.quiz.timerInterval);
     updateTimerDisplay();
+    if (window.MipoDogs && window.MipoDogs.syncExamState) {
+      window.MipoDogs.syncExamState();
+    }
 
     state.quiz.timerInterval = setInterval(() => {
       state.quiz.timeLeft--;

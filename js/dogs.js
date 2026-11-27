@@ -2,7 +2,10 @@
 // Interactive Equal-Sized Pixel Dogs:
 // - Mipo (White Puppy) on Cursor (#pixelWhiteDogCursor)
 // - Tu (Black Puppy) on Screen Floor (#pixelBlackDogCompanion)
-// Hold stationary click over white dog / non-UI surface or Tu to trigger Confession Scene!
+// Features:
+// 1. Hold stationary click over white dog / non-UI surface or Tu -> Confession + Pixel Flower Scene
+// 2. Active Exam ("bắt đầu thi") -> Mouse returns to normal cursor; Mipo & Tu walk together
+//    to the bottom-left corner, hop onto the PTIT Library study desk, and study together!
 (function () {
   'use strict';
 
@@ -18,6 +21,7 @@
     const noseFill = isWhite ? '#0f172a' : '#fb7185';
     const collarFill = isWhite ? '#38bdf8' : '#f43f5e';
     const bellFill = isWhite ? '#facc15' : '#fde047';
+    const glassesRim = isWhite ? '#0284c7' : '#38bdf8';
     const prefix = isWhite ? 'wdog' : 'bdog';
 
     // Identical 18x18 pixel grid rendered at exact 44x44 size for both Mipo & Tu
@@ -62,6 +66,18 @@
         <g class="${prefix}-eyes-sleep" style="display:none;">
           <rect x="7" y="7" width="2" height="1" fill="${sleepEye}"/>
           <rect x="11" y="7" width="2" height="1" fill="${sleepEye}"/>
+        </g>
+
+        <!-- Scholarly Pixel Reading Glasses (shown when studying in PTIT Library) -->
+        <g class="${prefix}-glasses" style="display:none;">
+          <rect x="4" y="6" width="2" height="1" fill="${glassesRim}"/>
+          <rect x="6" y="5" width="3" height="1" fill="${glassesRim}"/>
+          <rect x="6" y="6" width="1" height="2" fill="${glassesRim}"/>
+          <rect x="7" y="8" width="1" height="1" fill="${glassesRim}"/>
+          <rect x="9" y="6" width="1" height="1" fill="${glassesRim}"/>
+          <rect x="10" y="5" width="3" height="1" fill="${glassesRim}"/>
+          <rect x="12" y="6" width="1" height="2" fill="${glassesRim}"/>
+          <rect x="10" y="8" width="2" height="1" fill="${glassesRim}"/>
         </g>
 
         <!-- Rosy pixel cheeks -->
@@ -122,11 +138,9 @@
     // Crisp 12x12 pixel rose/flower offered by Tu to Mipo
     return `
       <svg class="pixel-flower-svg" viewBox="0 0 12 12" width="24" height="24" shape-rendering="crispEdges" aria-hidden="true">
-        <!-- Stem & leaves -->
         <rect x="5" y="6" width="2" height="5" fill="#16a34a"/>
         <rect x="3" y="8" width="2" height="2" fill="#22c55e"/>
         <rect x="7" y="7" width="2" height="2" fill="#22c55e"/>
-        <!-- Rose/blossom petals -->
         <rect x="4" y="1" width="4" height="2" fill="#f43f5e"/>
         <rect x="3" y="2" width="6" height="4" fill="#fb7185"/>
         <rect x="4" y="3" width="4" height="2" fill="#e11d48"/>
@@ -134,6 +148,142 @@
         <rect x="4" y="5" width="4" height="1" fill="#be123c"/>
       </svg>
     `;
+  }
+
+  function createLibraryDeskSvg() {
+    // 96x64 pixel-art PTIT Library Scene rendered 2x at 192x128px
+    // Top of oak desk surface sits at SVG y=39 (78px from top edge), legs down to bottom.
+    return `
+      <svg class="ptit-lib-svg" viewBox="0 0 96 64" width="192" height="128" shape-rendering="crispEdges" aria-hidden="true">
+        <!-- Library Backdrop Frame & Wall -->
+        <rect x="4" y="6" width="88" height="34" fill="#78350f"/>
+        <rect class="lib-wall-fill" x="6" y="8" width="84" height="31" fill="#fef3c7"/>
+
+        <!-- Left PTIT Library Bookshelf -->
+        <rect x="7" y="9" width="20" height="30" fill="#92400e"/>
+        <rect x="8" y="10" width="18" height="8" fill="#451a03"/>
+        <rect x="8" y="20" width="18" height="8" fill="#451a03"/>
+        <rect x="8" y="30" width="18" height="9" fill="#451a03"/>
+        <!-- Bookshelf top row books -->
+        <rect x="9" y="12" width="3" height="6" fill="#dc2626"/>
+        <rect x="12" y="11" width="3" height="7" fill="#2563eb"/>
+        <rect x="15" y="13" width="2" height="5" fill="#16a34a"/>
+        <rect x="17" y="12" width="3" height="6" fill="#eab308"/>
+        <rect x="21" y="12" width="3" height="6" fill="#9333ea"/>
+        <!-- Bookshelf middle row books -->
+        <rect x="9" y="22" width="2" height="6" fill="#0ea5e9"/>
+        <rect x="11" y="21" width="3" height="7" fill="#f43f5e"/>
+        <rect x="15" y="23" width="3" height="5" fill="#f97316"/>
+        <rect x="19" y="22" width="2" height="6" fill="#10b981"/>
+        <rect x="22" y="21" width="3" height="7" fill="#6366f1"/>
+        <!-- Tiny pixel succulent on bottom shelf -->
+        <rect x="10" y="35" width="4" height="4" fill="#ea580c"/>
+        <rect x="10" y="33" width="2" height="2" fill="#22c55e"/>
+        <rect x="12" y="32" width="2" height="3" fill="#16a34a"/>
+        <rect x="17" y="32" width="8" height="3" fill="#3b82f6"/>
+        <rect x="16" y="35" width="9" height="4" fill="#dc2626"/>
+
+        <!-- Library Center Window -->
+        <rect x="30" y="11" width="36" height="23" fill="#92400e"/>
+        <rect class="lib-window-glass" x="32" y="13" width="32" height="19" fill="#bae6fd"/>
+        <!-- Subtle cloud / stars inside window -->
+        <rect class="lib-window-accent" x="35" y="15" width="4" height="2" fill="#ffffff"/>
+        <rect class="lib-window-accent" x="55" y="16" width="5" height="2" fill="#ffffff"/>
+        <rect class="lib-window-star" x="37" y="16" width="1" height="1" fill="#fde047" style="display:none;"/>
+        <rect class="lib-window-star" x="58" y="15" width="2" height="2" fill="#fef08a" style="display:none;"/>
+        <rect class="lib-window-star" x="43" y="25" width="1" height="1" fill="#fde047" style="display:none;"/>
+        <!-- Window Mullions -->
+        <rect x="47" y="13" width="2" height="19" fill="#92400e"/>
+        <rect x="32" y="22" width="32" height="2" fill="#92400e"/>
+
+        <!-- Right PTIT Library Bookshelf -->
+        <rect x="69" y="9" width="20" height="30" fill="#92400e"/>
+        <rect x="70" y="10" width="18" height="8" fill="#451a03"/>
+        <rect x="70" y="20" width="18" height="8" fill="#451a03"/>
+        <rect x="70" y="30" width="18" height="9" fill="#451a03"/>
+        <!-- Bookshelf top row -->
+        <rect x="71" y="12" width="3" height="6" fill="#0284c7"/>
+        <rect x="74" y="11" width="3" height="7" fill="#dc2626"/>
+        <rect x="78" y="12" width="3" height="6" fill="#eab308"/>
+        <rect x="82" y="12" width="4" height="6" fill="#14b8a6"/>
+        <!-- Bookshelf middle row -->
+        <rect x="72" y="22" width="3" height="6" fill="#8b5cf6"/>
+        <rect x="76" y="21" width="3" height="7" fill="#ec4899"/>
+        <rect x="80" y="23" width="4" height="5" fill="#22c55e"/>
+        <!-- Study binders on bottom -->
+        <rect x="71" y="33" width="7" height="6" fill="#f59e0b"/>
+        <rect x="79" y="32" width="8" height="7" fill="#2563eb"/>
+
+        <!-- Iconic Green Banker's Desk Lamp (left corner of desk) -->
+        <rect class="lib-lamp-glow" x="3" y="29" width="15" height="11" fill="#fef08a" opacity="0.28"/>
+        <rect x="6" y="37" width="6" height="2" fill="#ca8a04"/>
+        <rect x="8" y="31" width="2" height="6" fill="#eab308"/>
+        <rect x="5" y="27" width="9" height="4" fill="#15803d"/>
+        <rect x="6" y="28" width="7" height="2" fill="#22c55e"/>
+        <rect x="7" y="30" width="5" height="1" fill="#fef08a"/>
+
+        <!-- PTIT Red Mug & Pencils (right corner of desk) -->
+        <rect x="84" y="31" width="1" height="4" fill="#eab308"/>
+        <rect x="86" y="30" width="1" height="5" fill="#38bdf8"/>
+        <rect x="83" y="34" width="5" height="5" fill="#dc2626"/>
+        <rect x="88" y="35" width="2" height="3" fill="#dc2626"/>
+        <rect x="84" y="35" width="2" height="2" fill="#ffffff"/>
+
+        <!-- Wide Oak Wooden Study Desk (Top plank sits at y=39..44) -->
+        <rect x="1" y="39" width="94" height="1" fill="#fbbf24"/>
+        <rect x="0" y="40" width="96" height="4" fill="#d97706"/>
+        <rect x="0" y="44" width="96" height="2" fill="#78350f"/>
+        <rect x="2" y="46" width="92" height="3" fill="#92400e"/>
+
+        <!-- Desk Drawers & Legs -->
+        <rect x="5" y="49" width="4" height="15" fill="#78350f"/>
+        <rect x="6" y="49" width="2" height="15" fill="#92400e"/>
+        <rect x="87" y="49" width="4" height="15" fill="#78350f"/>
+        <rect x="88" y="49" width="2" height="15" fill="#92400e"/>
+        <!-- Subtle library desk modesty panel & drawers -->
+        <rect x="12" y="49" width="72" height="8" fill="#b45309" opacity="0.22"/>
+        <rect x="14" y="49" width="20" height="6" fill="#78350f"/>
+        <rect x="22" y="51" width="4" height="1" fill="#fde047"/>
+        <rect x="62" y="49" width="20" height="6" fill="#78350f"/>
+        <rect x="70" y="51" width="4" height="1" fill="#fde047"/>
+
+        <!-- Open Pixel Textbooks & Notebooks Right Between/Under Dogs on Desk Top -->
+        <!-- Left notebook (near Tu) -->
+        <rect x="22" y="40" width="14" height="3" fill="#1d4ed8"/>
+        <rect x="23" y="40" width="12" height="2" fill="#ffffff"/>
+        <rect x="28" y="40" width="1" height="2" fill="#94a3b8"/>
+        <!-- Center shared PTIT math textbook -->
+        <rect x="42" y="40" width="13" height="3" fill="#dc2626"/>
+        <rect x="43" y="40" width="11" height="2" fill="#fffbeb"/>
+        <rect x="48" y="40" width="1" height="2" fill="#cbd5e1"/>
+        <rect x="44" y="41" width="3" height="1" fill="#ef4444"/>
+        <rect x="50" y="41" width="3" height="1" fill="#2563eb"/>
+        <!-- Right notebook & pencil (near Mipo) -->
+        <rect x="61" y="40" width="14" height="3" fill="#0284c7"/>
+        <rect x="62" y="40" width="12" height="2" fill="#ffffff"/>
+        <rect x="67" y="40" width="1" height="2" fill="#94a3b8"/>
+        <rect x="76" y="41" width="5" height="1" fill="#facc15"/>
+        <rect x="81" y="41" width="1" height="1" fill="#fb7185"/>
+      </svg>
+    `;
+  }
+
+  function isElementVisible(el) {
+    if (!el) return false;
+    const style = window.getComputedStyle(el);
+    return style.display !== 'none' && style.visibility !== 'hidden';
+  }
+
+  function shouldBeInStudyMode() {
+    const quizView = document.getElementById('quizView');
+    const quizActive = document.getElementById('quizActiveScreen');
+    if (isElementVisible(quizView) && isElementVisible(quizActive)) return true;
+
+    const soloView = document.getElementById('soloView');
+    const soloBattle = document.getElementById('soloBattleScreen');
+    if (isElementVisible(soloView) && isElementVisible(soloBattle)) return true;
+
+    return false;
   }
 
   function initPixelDogs() {
@@ -146,7 +296,17 @@
     fxLayer.id = 'pixelDogFxLayer';
     document.body.appendChild(fxLayer);
 
-    // 2. White Dog Cursor = MIPO (44x44px)
+    // 2. PTIT Library Study Desk Scene (Bottom-Left)
+    const deskEl = document.createElement('div');
+    deskEl.id = 'ptitLibraryDesk';
+    deskEl.title = 'Thư viện PTIT • Bấm để cổ vũ Mipo & Tú ôn thi!';
+    deskEl.innerHTML = `
+      <div class="ptit-lib-sign">THƯ VIỆN PTIT</div>
+      ${createLibraryDeskSvg()}
+    `;
+    document.body.appendChild(deskEl);
+
+    // 3. White Dog Cursor = MIPO (44x44px)
     const mipoEl = document.createElement('div');
     mipoEl.id = 'pixelWhiteDogCursor';
     mipoEl.innerHTML = `
@@ -158,7 +318,7 @@
     `;
     document.body.appendChild(mipoEl);
 
-    // 3. Black Dog Screen Companion = TU (exact same 44x44px!)
+    // 4. Black Dog Screen Companion = TU (exact same 44x44px!)
     const tuEl = document.createElement('div');
     tuEl.id = 'pixelBlackDogCompanion';
     tuEl.title = 'Tú • Giữ chuột hoặc đưa Mipo lại gần để xem bất ngờ!';
@@ -183,6 +343,9 @@
     // Mipo (white dog cursor) state
     const mipo = {
       active: false,
+      pointerInside: false,
+      lastPointerX: window.innerWidth * 0.5,
+      lastPointerY: window.innerHeight * 0.5,
       x: window.innerWidth * 0.5,
       y: window.innerHeight * 0.5,
       facing: 1,
@@ -199,7 +362,7 @@
       vx: 0,
       vy: 0,
       facing: -1,
-      mode: 'wander', // 'wander' | 'sit' | 'sleep' | 'approach' | 'play' | 'follow' | 'confess'
+      mode: 'wander', // 'wander' | 'sit' | 'sleep' | 'approach' | 'play' | 'follow' | 'confess' | 'study'
       targetX: window.innerWidth * 0.3,
       targetY: floorY(),
       modeTimer: 160,
@@ -220,6 +383,24 @@
       stepTimers: []
     };
 
+    // PTIT Library Exam Study Mode State
+    const study = {
+      active: false,
+      phase: 'none', // 'none' | 'meetup' | 'walk' | 'climb' | 'studying'
+      phaseStartedAt: 0,
+      climbProgress: 0,
+      climbStartTuX: 0,
+      climbStartTuY: 0,
+      climbStartMipoX: 0,
+      climbStartMipoY: 0,
+      mipoX: window.innerWidth * 0.5,
+      mipoY: window.innerHeight * 0.5,
+      mipoHopPhase: 0,
+      lastChatAt: 0,
+      chatIdx: 0,
+      deskRectCache: null
+    };
+
     const CUTE_WORDS = [
       'gâu! ♥',
       '*vẫy đuôi*',
@@ -229,6 +410,15 @@
       'tớ yêu thầy Dũng nhất',
       'thằng Hải nó sút vật',
       'nay hà nội cute không cậu :3'
+    ];
+
+    const STUDY_DIALOGUES = [
+      { who: 'tu', text: 'tập trung giải đề nha cậu!' },
+      { who: 'mipo', text: 'câu này áp dụng công thức nè 📖' },
+      { who: 'tu', text: 'tú ghi chép xong rùi đó~' },
+      { who: 'mipo', text: 'thư viện PTIT mát quá ha!' },
+      { who: 'tu', text: 'A+ thẳng tiến luôn nhé ♥' },
+      { who: 'mipo', text: 'kiểm tra kỹ dấu trừ nha cậu!' }
     ];
 
     function showBubble(bubbleEl, timerOwner, text, durationMs = 1700) {
@@ -268,12 +458,12 @@
 
     function isClickableControl(target) {
       if (!target || !target.closest) return false;
-      return !!target.closest('button, a, label, input, select, textarea, .subject-chip, .nav-dot, .filter-chip, #pixelBlackDogCompanion');
+      return !!target.closest('button, a, label, input, select, textarea, .subject-chip, .nav-dot, .filter-chip, #pixelBlackDogCompanion, #ptitLibraryDesk');
     }
 
     function isHoldBlockedTarget(target) {
       if (!target || !target.closest) return false;
-      return !!target.closest('button, a, input, select, textarea, .option-btn, .nav-dot, .subject-chip, .diff-card, .chapter-check-card, .source-radio-card, .size-pill-card, .matrix-pill, .filter-chip');
+      return !!target.closest('button, a, input, select, textarea, .option-btn, .nav-dot, .subject-chip, .diff-card, .chapter-check-card, .source-radio-card, .size-pill-card, .matrix-pill, .filter-chip, #ptitLibraryDesk');
     }
 
     function stopConfessionTimers() {
@@ -281,7 +471,136 @@
       cutscene.stepTimers = [];
     }
 
+    function cancelConfessionScene() {
+      if (cutscene.holdTimer) {
+        clearTimeout(cutscene.holdTimer);
+        cutscene.holdTimer = null;
+      }
+      stopConfessionTimers();
+      cutscene.active = false;
+      tuEl.classList.remove('is-confessing');
+      tuFlower.classList.remove('visible', 'offering');
+    }
+
+    function getDeskTargets() {
+      const r = deskEl.getBoundingClientRect();
+      // Account for responsive scale on smaller screens cleanly
+      const scaleX = r.width / 192 || 1;
+      const scaleY = r.height / 128 || 1;
+      const gY = floorY();
+      // Desk oak top surface sits at SVG y=39 (~78px in 128px box); paws sit at ~40px from dog top
+      const seatY = r.top + (80 * scaleY) - 41;
+      return {
+        rect: r,
+        tuSeatX: r.left + 28 * scaleX,
+        tuSeatY: seatY,
+        mipoSeatX: r.left + 104 * scaleX,
+        mipoSeatY: seatY,
+        walkStageTuX: r.left + 30 * scaleX,
+        walkStageMipoX: r.left + 90 * scaleX,
+        walkFloorY: gY
+      };
+    }
+
+    function enterStudyMode() {
+      if (study.active) return;
+
+      cancelConfessionScene();
+      study.active = true;
+      study.phase = 'meetup';
+      study.phaseStartedAt = Date.now();
+      study.lastChatAt = Date.now();
+      study.chatIdx = 0;
+
+      // Return mouse back to normal system cursor immediately
+      document.body.classList.remove('pixel-dog-cursor-active');
+      mipo.active = false;
+      mipoEl.classList.remove('is-pointer', 'is-clicking', 'is-playing');
+      mipoEl.classList.add('visible', 'is-detached');
+      mipoEl.classList.remove('is-studying');
+      tuEl.classList.remove('is-sleeping', 'is-studying');
+      tu.mode = 'study';
+      tu.followUntil = 0;
+      tu.playUntil = 0;
+
+      // Determine starting spot for detached Mipo
+      study.mipoX = Math.max(12, Math.min(window.innerWidth - 56, mipo.pointerInside ? mipo.lastPointerX : window.innerWidth * 0.52));
+      study.mipoY = Math.max(70, Math.min(floorY(), mipo.pointerInside ? mipo.lastPointerY : window.innerHeight * 0.58));
+      study.mipoHopPhase = 0.7;
+
+      // Reveal PTIT Library Desk in bottom-left corner
+      deskEl.classList.add('visible');
+
+      // Show cute start-walk dialogue
+      showBubble(tuBubble, tu, 'đi học thư viện PTIT thui!', 2100);
+      setTimeout(() => {
+        if (study.active && (study.phase === 'meetup' || study.phase === 'walk')) {
+          showBubble(mipoBubble, mipo, 'cùng ôn thi nha tú~', 2000);
+        }
+      }, 420);
+    }
+
+    function exitStudyMode() {
+      if (!study.active) return;
+
+      study.active = false;
+      study.phase = 'none';
+      deskEl.classList.remove('visible');
+      mipoEl.classList.remove('is-studying', 'is-detached');
+      tuEl.classList.remove('is-studying');
+      tu.mode = 'wander';
+      tu.hopPhase = 0.8;
+      tu.targetX = Math.min(window.innerWidth - 90, Math.max(220, window.innerWidth * 0.45));
+      tu.targetY = floorY();
+      tu.modeTimer = 180;
+
+      hideBubble(mipoBubble, mipo);
+      showBubble(tuBubble, tu, 'thi tốt rồi nè! ♥', 1700);
+      spawnHeartParticle(tu.x + 22, tu.y - 4, 'heart');
+
+      // Restore Mipo cursor cleanly if pointer is inside viewport
+      if (supportsFinePointer && mipo.pointerInside) {
+        mipo.active = true;
+        mipo.x = mipo.lastPointerX;
+        mipo.y = mipo.lastPointerY;
+        mipo.lastMoveTime = Date.now();
+        document.body.classList.add('pixel-dog-cursor-active');
+        mipoEl.classList.add('visible');
+        mipoEl.style.transform = `translate3d(${mipo.x}px, ${mipo.y}px, 0)`;
+      } else {
+        mipoEl.classList.remove('visible');
+        document.body.classList.remove('pixel-dog-cursor-active');
+      }
+    }
+
+    function syncExamState() {
+      const shouldStudy = shouldBeInStudyMode();
+      if (shouldStudy && !study.active) {
+        enterStudyMode();
+      } else if (!shouldStudy && study.active) {
+        exitStudyMode();
+      }
+    }
+
+    function triggerStudyCheer() {
+      if (!study.active || study.phase !== 'studying') return;
+      const line = STUDY_DIALOGUES[study.chatIdx % STUDY_DIALOGUES.length];
+      study.chatIdx++;
+      study.lastChatAt = Date.now();
+      const targets = getDeskTargets();
+      if (line.who === 'tu') {
+        tu.hopPhase = 0.7;
+        showBubble(tuBubble, tu, line.text, 2200);
+        spawnHeartParticle(targets.tuSeatX + 22, targets.tuSeatY - 8, 'sparkle');
+      } else {
+        study.mipoHopPhase = 0.7;
+        showBubble(mipoBubble, mipo, line.text, 2200);
+        spawnHeartParticle(targets.mipoSeatX + 22, targets.mipoSeatY - 8, 'heart');
+      }
+    }
+
     function startConfessionScene() {
+      if (study.active) return;
       stopConfessionTimers();
       cutscene.active = true;
       tu.mode = 'confess';
@@ -291,33 +610,30 @@
       tuFlower.classList.remove('visible', 'offering');
       tuEl.classList.remove('is-confessing');
 
-      // Step 1: Tu says: "chào cậu tớ là tú"
       const t1 = setTimeout(() => {
-        if (!cutscene.active) return;
+        if (!cutscene.active || study.active) return;
         tuEl.classList.add('is-confessing');
         showBubble(tuBubble, tu, 'chào cậu tớ là tú', 1750);
         spawnHeartParticle(tu.x + 22, tu.y - 4, 'sparkle');
       }, 480);
 
-      // Step 2: Mipo replies: "tớ là mipo"
       const t2 = setTimeout(() => {
-        if (!cutscene.active) return;
+        if (!cutscene.active || study.active) return;
         hideBubble(tuBubble, tu);
         mipo.lastBoopTime = Date.now() + 3000;
         showBubble(mipoBubble, mipo, 'tớ là mipo', 1750);
         spawnHeartParticle(mipo.x + 22, mipo.y, 'sparkle');
       }, 2250);
 
-      // Step 3: Tu pulls out pixel flower & says: "tớ thích cậu á :3"
       const t3 = setTimeout(() => {
-        if (!cutscene.active) return;
+        if (!cutscene.active || study.active) return;
         hideBubble(mipoBubble, mipo);
         tuFlower.classList.add('visible');
         showBubble(tuBubble, tu, 'tớ thích cậu á :3', 2800);
         tu.hopPhase = 1.0;
 
         const tFlower = setTimeout(() => {
-          if (!cutscene.active) return;
+          if (!cutscene.active || study.active) return;
           tuFlower.classList.add('offering');
           for (let i = 0; i < 6; i++) {
             setTimeout(() => {
@@ -325,15 +641,15 @@
             }, i * 110);
           }
           setTimeout(() => {
-            if (!cutscene.active) return;
+            if (!cutscene.active || study.active) return;
             showBubble(mipoBubble, mipo, '♥ :3', 1600);
           }, 350);
         }, 420);
         cutscene.stepTimers.push(tFlower);
       }, 4000);
 
-      // Step 4: Return to buddy mode
       const tEnd = setTimeout(() => {
+        if (study.active) return;
         cutscene.active = false;
         tuEl.classList.remove('is-confessing');
         tuFlower.classList.remove('visible', 'offering');
@@ -346,6 +662,16 @@
 
     if (supportsFinePointer) {
       window.addEventListener('mousemove', (e) => {
+        mipo.pointerInside = true;
+        mipo.lastPointerX = e.clientX;
+        mipo.lastPointerY = e.clientY;
+        mipo.lastMoveTime = Date.now();
+
+        if (study.active) {
+          document.body.classList.remove('pixel-dog-cursor-active');
+          return;
+        }
+
         if (!mipo.active) {
           mipo.active = true;
           document.body.classList.add('pixel-dog-cursor-active');
@@ -357,7 +683,6 @@
         }
         mipo.x = e.clientX;
         mipo.y = e.clientY;
-        mipo.lastMoveTime = Date.now();
         mipo.isPointerHover = isClickableControl(e.target);
 
         mipoEl.style.transform = `translate3d(${mipo.x}px, ${mipo.y}px, 0)`;
@@ -374,13 +699,15 @@
       }, { passive: true });
 
       document.addEventListener('mouseleave', () => {
+        mipo.pointerInside = false;
+        if (study.active) return;
         mipo.active = false;
         mipoEl.classList.remove('visible');
         document.body.classList.remove('pixel-dog-cursor-active');
       });
 
       window.addEventListener('mousedown', (e) => {
-        if (e.button !== 0) return;
+        if (e.button !== 0 || study.active) return;
         mipoEl.classList.add('is-clicking');
 
         clearTimeout(cutscene.holdTimer);
@@ -407,10 +734,19 @@
       });
     }
 
+    deskEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (study.active) triggerStudyCheer();
+    });
+
     tuEl.addEventListener('click', (e) => {
       e.stopPropagation();
       if (cutscene.suppressNextTuClick) {
         cutscene.suppressNextTuClick = false;
+        return;
+      }
+      if (study.active) {
+        triggerStudyCheer();
         return;
       }
       if (cutscene.active) return;
@@ -441,6 +777,7 @@
     });
 
     tuEl.addEventListener('touchstart', () => {
+      if (study.active) return;
       clearTimeout(cutscene.holdTimer);
       cutscene.holdTimer = setTimeout(() => {
         cutscene.suppressNextTuClick = true;
@@ -455,14 +792,38 @@
       }
     }, { passive: true });
 
+    // Watch exam screens automatically in case any flow toggles display directly
+    const observer = new MutationObserver(() => {
+      syncExamState();
+    });
+    ['quizView', 'quizActiveScreen', 'soloView', 'soloBattleScreen'].forEach(id => {
+      const node = document.getElementById(id);
+      if (node) observer.observe(node, { attributes: true, attributeFilter: ['style', 'class'] });
+    });
+
+    window.MipoDogs = {
+      enterStudyMode,
+      exitStudyMode,
+      syncExamState,
+      getStudyState: () => ({
+        active: study.active,
+        phase: study.phase,
+        tuX: Math.round(tu.x),
+        tuY: Math.round(tu.y),
+        mipoX: Math.round(study.mipoX),
+        mipoY: Math.round(study.mipoY)
+      })
+    };
+
     let tick = 0;
     let sleepFxTick = 0;
 
-    function updateFrameSprites(elRoot, prefix, isMoving, isHappy, isSleeping, fastWag) {
+    function updateFrameSprites(elRoot, prefix, isMoving, isHappy, isSleeping, fastWag, isStudying) {
       const legs1 = elRoot.querySelector(`.${prefix}-legs-1`);
       const legs2 = elRoot.querySelector(`.${prefix}-legs-2`);
       const tail1 = elRoot.querySelector(`.${prefix}-tail-1`);
       const tail2 = elRoot.querySelector(`.${prefix}-tail-2`);
+      const glasses = elRoot.querySelector(`.${prefix}-glasses`);
 
       const walkToggle = isMoving && Math.floor(tick / 7) % 2 === 1;
       if (legs1 && legs2) {
@@ -470,11 +831,15 @@
         legs2.style.display = walkToggle ? '' : 'none';
       }
 
-      const wagRate = fastWag ? 5 : 14;
+      const wagRate = isStudying ? 20 : (fastWag ? 5 : 14);
       const wagToggle = !isSleeping && Math.floor(tick / wagRate) % 2 === 1;
       if (tail1 && tail2) {
         tail1.style.display = wagToggle ? 'none' : '';
         tail2.style.display = wagToggle ? '' : 'none';
+      }
+
+      if (glasses) {
+        glasses.style.display = isStudying ? '' : 'none';
       }
 
       const eOpen = elRoot.querySelector(`.${prefix}-eyes-open`);
@@ -489,29 +854,161 @@
       }
     }
 
+    function moveTowards(curX, curY, destX, destY, speed) {
+      const dx = destX - curX;
+      const dy = destY - curY;
+      const d = Math.hypot(dx, dy);
+      if (d <= 2.5) {
+        return { x: destX, y: destY, moved: false, vx: 0, vy: 0, dist: d };
+      }
+      const stepDist = Math.min(speed, d);
+      const vx = (dx / d) * stepDist;
+      const vy = (dy / d) * stepDist;
+      return { x: curX + vx, y: curY + vy, moved: true, vx, vy, dist: d };
+    }
+
     function step() {
       tick++;
       const now = Date.now();
       const maxW = Math.max(120, window.innerWidth - 60);
       const groundY = floorY();
 
-      // 1. Update Mipo (White Dog Cursor)
+      // ================================================================
+      // STUDY MODE IN PTIT LIBRARY (Active when taking an exam)
+      // ================================================================
+      if (study.active) {
+        const targets = getDeskTargets();
+        const elapsed = now - study.phaseStartedAt;
+
+        if (study.phase === 'meetup') {
+          // Bring Mipo & Tu side-by-side at floor height toward a shared starting spot before walking together
+          const meetX = Math.max(targets.walkStageMipoX + 36, Math.min(maxW - 70, (tu.x + study.mipoX) * 0.5 - 24));
+          const stepTu = moveTowards(tu.x, tu.y, meetX, targets.walkFloorY, 7.5);
+          const stepMipo = moveTowards(study.mipoX, study.mipoY, meetX + 54, targets.walkFloorY, 8.5);
+          tu.x = stepTu.x;
+          tu.y = stepTu.y;
+          study.mipoX = stepMipo.x;
+          study.mipoY = stepMipo.y;
+          if (Math.abs(stepTu.vx) > 0.2) tu.facing = stepTu.vx > 0 ? 1 : -1;
+          if (Math.abs(stepMipo.vx) > 0.2) mipo.facing = stepMipo.vx > 0 ? 1 : -1;
+
+          updateFrameSprites(tuEl, 'bdog', stepTu.moved, true, false, true, false);
+          updateFrameSprites(mipoEl, 'wdog', stepMipo.moved, true, false, true, false);
+
+          if ((stepTu.dist < 14 && stepMipo.dist < 14) || elapsed > 900) {
+            study.phase = 'walk';
+            study.phaseStartedAt = now;
+          }
+        } else if (study.phase === 'walk') {
+          // Both dogs walk side-by-side together to the bottom-left PTIT Library desk!
+          const stepTu = moveTowards(tu.x, tu.y, targets.walkStageTuX, targets.walkFloorY, 3.8);
+          const stepMipo = moveTowards(study.mipoX, study.mipoY, targets.walkStageMipoX, targets.walkFloorY, 3.8);
+          tu.x = stepTu.x;
+          tu.y = stepTu.y;
+          study.mipoX = stepMipo.x;
+          study.mipoY = stepMipo.y;
+
+          if (Math.abs(stepTu.vx) > 0.15) tu.facing = stepTu.vx > 0 ? 1 : -1;
+          if (Math.abs(stepMipo.vx) > 0.15) mipo.facing = stepMipo.vx > 0 ? 1 : -1;
+
+          updateFrameSprites(tuEl, 'bdog', stepTu.moved, true, false, true, false);
+          updateFrameSprites(mipoEl, 'wdog', stepMipo.moved, true, false, true, false);
+
+          if ((stepTu.dist < 8 && stepMipo.dist < 8) || (now - study.phaseStartedAt > 2500)) {
+            study.phase = 'climb';
+            study.phaseStartedAt = now;
+            study.climbProgress = 0;
+            study.climbStartTuX = tu.x;
+            study.climbStartTuY = tu.y;
+            study.climbStartMipoX = study.mipoX;
+            study.climbStartMipoY = study.mipoY;
+            tu.facing = 1;
+            mipo.facing = -1;
+          }
+        } else if (study.phase === 'climb') {
+          // Jump together up onto the study desk top!
+          study.climbProgress = Math.min(1, study.climbProgress + 0.05);
+          const ease = 1 - Math.pow(1 - study.climbProgress, 3);
+          const arc = Math.sin(study.climbProgress * Math.PI) * 24;
+
+          tu.x = study.climbStartTuX + (targets.tuSeatX - study.climbStartTuX) * ease;
+          tu.y = study.climbStartTuY + (targets.tuSeatY - study.climbStartTuY) * ease - arc;
+          study.mipoX = study.climbStartMipoX + (targets.mipoSeatX - study.climbStartMipoX) * ease;
+          study.mipoY = study.climbStartMipoY + (targets.mipoSeatY - study.climbStartMipoY) * ease - arc;
+          tu.facing = 1;
+          mipo.facing = -1;
+
+          updateFrameSprites(tuEl, 'bdog', false, true, false, true, true);
+          updateFrameSprites(mipoEl, 'wdog', false, true, false, true, true);
+
+          if (study.climbProgress >= 1) {
+            study.phase = 'studying';
+            study.phaseStartedAt = now;
+            study.lastChatAt = now;
+            tuEl.classList.add('is-studying');
+            mipoEl.classList.add('is-studying');
+            showBubble(tuBubble, tu, 'ngồi học thôi mipo!', 1900);
+            spawnHeartParticle(targets.tuSeatX + 22, targets.tuSeatY - 8, 'sparkle');
+            spawnHeartParticle(targets.mipoSeatX + 22, targets.mipoSeatY - 8, 'heart');
+          }
+        } else if (study.phase === 'studying') {
+          // Stay seated pixel-perfectly on the study desk top even on resize
+          tu.x = targets.tuSeatX;
+          tu.y = targets.tuSeatY;
+          study.mipoX = targets.mipoSeatX;
+          study.mipoY = targets.mipoSeatY;
+          tu.facing = 1;
+          mipo.facing = -1;
+
+          updateFrameSprites(tuEl, 'bdog', false, false, false, false, true);
+          updateFrameSprites(mipoEl, 'wdog', false, false, false, false, true);
+
+          if (now - study.lastChatAt > 9500) {
+            triggerStudyCheer();
+          }
+        }
+
+        // Apply optional cheers hops while studying
+        let tuHopY = 0;
+        if (tu.hopPhase > 0.02) {
+          tuHopY = -Math.sin(tu.hopPhase * Math.PI) * 10;
+          tu.hopPhase = Math.max(0, tu.hopPhase - 0.07);
+        }
+        let mipoHopY = 0;
+        if (study.mipoHopPhase > 0.02) {
+          mipoHopY = -Math.sin(study.mipoHopPhase * Math.PI) * 10;
+          study.mipoHopPhase = Math.max(0, study.mipoHopPhase - 0.07);
+        }
+
+        tuEl.classList.toggle('is-happy', study.phase !== 'studying');
+        tuEl.classList.toggle('is-sleeping', false);
+        tuEl.style.transform = `translate3d(${Math.round(tu.x)}px, ${Math.round(tu.y + tuHopY)}px, 0)`;
+        tuWrap.style.transform = `scaleX(${tu.facing})`;
+
+        mipoEl.style.transform = `translate3d(${Math.round(study.mipoX)}px, ${Math.round(study.mipoY + mipoHopY)}px, 0)`;
+        mipoWrap.style.transform = `scaleX(${mipo.facing})`;
+
+        requestAnimationFrame(step);
+        return;
+      }
+
+      // ================================================================
+      // NORMAL CURSOR + FLOOR COMPANION MODE
+      // ================================================================
       const mipoIdleMs = now - mipo.lastMoveTime;
       const mipoMoving = mipo.active && mipoIdleMs < 130 && !cutscene.active;
       const mipoPlaying = mipo.active && (now < mipo.lastBoopTime || cutscene.active);
       if (mipo.active) {
-        updateFrameSprites(mipoEl, 'wdog', mipoMoving, mipoPlaying, false, mipoMoving || mipoPlaying);
+        updateFrameSprites(mipoEl, 'wdog', mipoMoving, mipoPlaying, false, mipoMoving || mipoPlaying, false);
         mipoEl.classList.toggle('is-playing', mipoPlaying);
       }
 
-      // 2. Distance between Mipo and Tu
       const tuCenterX = tu.x + 22;
       const tuCenterY = tu.y + 22;
       const mipoCenterX = mipo.x + 26;
       const mipoCenterY = mipo.y + 26;
       const dist = mipo.active ? Math.hypot(mipoCenterX - tuCenterX, mipoCenterY - tuCenterY) : 9999;
 
-      // 3. Tu Behavior / Cutscene
       if (cutscene.active) {
         const preferLeft = (mipo.x > 88);
         tu.targetX = preferLeft ? Math.max(10, mipo.x - 52) : Math.min(maxW, mipo.x + 62);
@@ -572,7 +1069,6 @@
         }
       }
 
-      // 4. Move Tu Smoothly
       let isMoving = false;
       if (tu.mode === 'wander' || tu.mode === 'approach' || tu.mode === 'follow' || cutscene.active) {
         const dx = tu.targetX - tu.x;
@@ -625,7 +1121,7 @@
       const isSleeping = tu.mode === 'sleep' && !cutscene.active;
       const fastWag = cutscene.active || tu.mode === 'play' || tu.mode === 'approach' || tu.mode === 'follow';
 
-      updateFrameSprites(tuEl, 'bdog', isMoving, isHappy, isSleeping, fastWag);
+      updateFrameSprites(tuEl, 'bdog', isMoving, isHappy, isSleeping, fastWag, false);
 
       tuEl.style.transform = `translate3d(${Math.round(tu.x)}px, ${Math.round(tu.y + hopY)}px, 0)`;
       tuWrap.style.transform = `scaleX(${tu.facing})`;
@@ -636,6 +1132,8 @@
     }
 
     requestAnimationFrame(step);
+    // Sync immediately on boot in case an exam screen is already open
+    syncExamState();
   }
 
   if (document.readyState === 'loading') {

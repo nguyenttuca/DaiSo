@@ -159,6 +159,9 @@
       fetchActiveRooms();
       fetchMatchHistory();
     }
+    if (window.MipoDogs && window.MipoDogs.syncExamState) {
+      window.MipoDogs.syncExamState();
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 

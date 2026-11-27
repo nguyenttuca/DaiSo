@@ -3547,3 +3547,153 @@ body {
     transform: translateY(-4px);
   }
 }
+
+@keyframes dogStudyBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* ===================================================================
+   PTIT LIBRARY STUDY SCENE (Active During Exams)
+   =================================================================== */
+
+#pixelWhiteDogCursor.is-detached {
+  width: 44px;
+  height: 44px;
+}
+
+#pixelWhiteDogCursor.is-detached .cursor-pin-dot {
+  opacity: 0;
+}
+
+#pixelWhiteDogCursor.is-detached .mipo-sprite-wrap {
+  top: 0;
+  left: 0;
+}
+
+#pixelWhiteDogCursor.is-detached .mipo-bubble {
+  top: auto;
+  bottom: 50px;
+  left: 22px;
+}
+
+#pixelBlackDogCompanion.is-studying .dog-ground-shadow {
+  opacity: 0.28;
+  bottom: 0;
+}
+
+#pixelBlackDogCompanion.is-studying .tu-sprite-wrap,
+#pixelWhiteDogCursor.is-studying .mipo-sprite-wrap {
+  animation: dogStudyBob 1.7s ease-in-out infinite;
+}
+
+#pixelWhiteDogCursor.is-studying .mipo-sprite-wrap {
+  animation-delay: 0.45s;
+}
+
+#pixelBlackDogCompanion.is-studying .dog-emote-bubble {
+  left: -4px;
+  transform: translateX(0) translateY(4px) scale(0.85);
+}
+
+#pixelBlackDogCompanion.is-studying .dog-emote-bubble.show {
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+#pixelBlackDogCompanion.is-studying .dog-emote-bubble::after {
+  left: 26px;
+}
+
+#pixelWhiteDogCursor.is-studying .dog-emote-bubble.mipo-bubble {
+  top: auto;
+  bottom: 50px;
+  left: 22px;
+}
+
+#ptitLibraryDesk {
+  position: fixed;
+  left: 6px;
+  bottom: 8px;
+  width: 168px;
+  height: 112px;
+  z-index: 99985;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(28px) scale(0.95);
+  transform-origin: bottom left;
+  transition: opacity 0.35s ease, transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 8px 16px rgba(15, 23, 42, 0.22));
+  user-select: none;
+}
+
+#ptitLibraryDesk.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.ptit-lib-sign {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dc2626;
+  color: #fef08a;
+  border: 2px solid #78350f;
+  box-shadow: 0 2px 0 rgba(15, 23, 42, 0.25);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.ptit-lib-svg {
+  display: block;
+  width: 168px;
+  height: 112px;
+  image-rendering: pixelated;
+}
+
+[data-theme="dark"] #ptitLibraryDesk {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+}
+
+[data-theme="dark"] #ptitLibraryDesk .lib-wall-fill {
+  fill: #1e293b;
+}
+
+[data-theme="dark"] #ptitLibraryDesk .lib-window-glass {
+  fill: #0f172a;
+}
+
+[data-theme="dark"] #ptitLibraryDesk .lib-window-accent {
+  display: none;
+}
+
+[data-theme="dark"] #ptitLibraryDesk .lib-window-star {
+  display: block !important;
+}
+
+[data-theme="dark"] #ptitLibraryDesk .lib-lamp-glow {
+  opacity: 0.45;
+}
+
+@media (max-width: 640px) {
+  #ptitLibraryDesk {
+    left: 6px;
+    bottom: 4px;
+    transform: translateY(24px) scale(0.84);
+  }
+  #ptitLibraryDesk.visible {
+    transform: translateY(0) scale(0.84);
+  }
+}
