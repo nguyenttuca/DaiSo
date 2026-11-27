@@ -3,6 +3,11 @@
 (function() {
   'use strict';
 
+  const px = (name, size = 15, cls = '') =>
+    (typeof window !== 'undefined' && typeof window.pxIcon === 'function')
+      ? window.pxIcon(name, size, cls)
+      : '';
+
   // --- KaTeX Helper ---
   function renderMath(container) {
     if (!container) return;
@@ -48,11 +53,11 @@
 
   function getDifficultyBadgeHtml(diff) {
     if (diff === 'easy') {
-      return `<span class="diff-tag diff-easy" title="Mức độ Dễ">🟢 Dễ</span>`;
+      return `<span class="diff-tag diff-easy" title="Mức độ Dễ">${px('dot-green', 12)} Dễ</span>`;
     } else if (diff === 'hard') {
-      return `<span class="diff-tag diff-hard" title="Mức độ Khó">🔴 Khó</span>`;
+      return `<span class="diff-tag diff-hard" title="Mức độ Khó">${px('dot-red', 12)} Khó</span>`;
     }
-    return `<span class="diff-tag diff-medium" title="Mức độ Trung bình">🟡 Trung bình</span>`;
+    return `<span class="diff-tag diff-medium" title="Mức độ Trung bình">${px('dot-yellow', 12)} Trung bình</span>`;
   }
 
   function escapeHtml(str) {
@@ -223,7 +228,7 @@
 
   function sendWsMessage(data) {
     if (window.location.protocol === 'file:' || window.location.hostname.endsWith('github.io')) {
-      showToast('⚠️ Chế độ Đấu Solo PvP trực tiếp cần WebSocket server (chạy local qua "npm start"). Trên GitHub Pages, bạn hãy dùng các chế độ Thi thử & Luyện tập!');
+      showToast('Chế độ Đấu Solo PvP trực tiếp cần WebSocket server (chạy local qua "npm start"). Trên GitHub Pages, bạn hãy dùng các chế độ Thi thử & Luyện tập!', 'warn');
       return;
     }
     if (soloState.ws && soloState.ws.readyState === WebSocket.OPEN) {
@@ -282,7 +287,7 @@
       case 'PLAYER_JOINED': {
         soloState.players = data.players;
         renderWaitingRoom();
-        showToast(`👋 ${data.player.nickname} vừa vào phòng!`);
+        showToast(`${data.player.nickname} vừa vào phòng!`, 'wavehand');
         break;
       }
 
@@ -303,7 +308,7 @@
         }
         soloState.players = data.players;
         renderWaitingRoom();
-        showToast('👑 Quyền chủ phòng đã được chuyển giao!');
+        showToast('Quyền chủ phòng đã được chuyển giao!', 'crown');
         break;
       }
 
@@ -378,7 +383,7 @@
           p.answered_count = data.answeredCount;
         }
         renderBattleProgressTracker();
-        showToast(`🏁 ${data.nickname || (p ? p.nickname : 'Đấu thủ')} đã nộp bài (${data.score}đ)!`);
+        showToast(`${data.nickname || (p ? p.nickname : 'Đấu thủ')} đã nộp bài (${data.score}đ)!`, 'flag');
         break;
       }
 
@@ -395,7 +400,7 @@
         soloState.players = data.players;
         renderWaitingRoom();
         switchSoloScreen('waiting');
-        showToast('↺ Trận đấu mới đã sẵn sàng tại phòng chờ!');
+        showToast('Trận đấu mới đã sẵn sàng tại phòng chờ!', 'refresh');
         break;
       }
     }
@@ -491,7 +496,7 @@
         soloEl.historyList.innerHTML = history.slice(0, 5).map(m => `
           <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border-light);">
             <div>
-              <strong>🏆 ${escapeHtml(m.winner_name)}</strong> <span style="color:var(--primary); font-weight:700;">(${m.winner_score}đ)</span>
+              <strong>${px('trophy', 14)} ${escapeHtml(m.winner_name)}</strong> <span style="color:var(--primary); font-weight:700;">(${m.winner_score}đ)</span>
               <div style="font-size:0.75rem; color:var(--text-muted);">Phòng ${m.room_code} • ${m.player_count} người đấu • ${m.config_summary}</div>
             </div>
             <span style="font-size:0.75rem; color:var(--text-muted);">${new Date(m.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
@@ -573,7 +578,7 @@
                 ${escapeHtml(p.nickname)} ${isSelf ? '<span style="color:var(--primary); font-size:0.75rem;">(Bạn)</span>' : ''}
               </div>
               <div class="player-tag-line">
-                ${isPlayerHost ? '<span class="host-crown-badge" title="Chủ phòng">👑 Chủ phòng</span>' : '<span style="color:var(--success-solid)">🟢 Sẵn sàng</span>'}
+                ${isPlayerHost ? `<span class="host-crown-badge" title="Chủ phòng">${px('crown', 13)} Chủ phòng</span>` : `<span style="color:var(--success-solid); display:inline-flex; align-items:center; gap:4px;">${px('dot-green', 11)} Sẵn sàng</span>`}
               </div>
             </div>
           </div>
@@ -590,7 +595,7 @@
           : 'Có thể bấm bắt đầu ngay hoặc đợi thêm người chơi khác.';
       } else {
         soloEl.btnStartSoloGame.style.display = 'none';
-        soloEl.waitingPlayerStatusHint.textContent = '⏳ Đang đợi chủ phòng bấm bắt đầu trận đấu...';
+        soloEl.waitingPlayerStatusHint.innerHTML = `${px('hourglass', 14)} Đang đợi chủ phòng bấm bắt đầu trận đấu...`;
       }
     }
   }
@@ -621,7 +626,7 @@
             </div>
           </div>
           <div class="battle-player-stat ${isFinished ? 'finished' : ''}">
-            ${isFinished ? `✓ Đã nộp (${count}/${total})` : `Đã làm: ${count}/${total} (${percent}%)`}
+            ${isFinished ? `${px('check', 13)} Đã nộp (${count}/${total})` : `Đã làm: ${count}/${total} (${percent}%)`}
           </div>
         </div>
       `;
@@ -666,9 +671,9 @@
     const isFlagged = soloState.flags.has(q.id);
     if (soloEl.btnSoloFlag) {
       soloEl.btnSoloFlag.classList.toggle('active', isFlagged);
-      soloEl.btnSoloFlag.innerHTML = isFlagged 
-        ? `★ Đã đánh dấu <span class="kbd-hint">F</span>` 
-        : `☆ Đánh dấu <span class="kbd-hint">F</span>`;
+      soloEl.btnSoloFlag.innerHTML = isFlagged
+        ? `${px('star-full', 14)} Đã đánh dấu <span class="kbd-hint">F</span>`
+        : `${px('star-empty', 14)} Đánh dấu <span class="kbd-hint">F</span>`;
     }
 
     const selectedKey = soloState.answers[q.id];
@@ -790,7 +795,7 @@
       totalTime: soloState.timeSpent
     });
 
-    showToast('🏁 Đã gửi bài thi của bạn lên máy chủ! Đang chờ đối thủ nộp bài...');
+    showToast('Đã gửi bài thi của bạn lên máy chủ! Đang chờ đối thủ nộp bài...', 'flag');
     renderBattleProgressTracker();
   }
 
@@ -800,7 +805,7 @@
 
     const winner = leaderboard[0];
     if (soloEl.winnerAnnouncement) {
-      soloEl.winnerAnnouncement.innerHTML = `👑 Quán Quân: <span style="color:var(--primary);">${escapeHtml(winner.nickname)}</span> (${winner.score}đ • ${winner.correctCount}/${winner.totalQuestions} đúng)`;
+      soloEl.winnerAnnouncement.innerHTML = `${px('crown', 16)} Quán Quân: <span style="color:var(--primary);">${escapeHtml(winner.nickname)}</span> (${winner.score}đ • ${winner.correctCount}/${winner.totalQuestions} đúng)`;
     }
     if (soloEl.matchSummarySub && soloState.room) {
       soloEl.matchSummarySub.textContent = `Phòng: ${soloState.room.code} • Số người đấu: ${leaderboard.length} • Thời gian giới hạn: ${Math.round(soloState.room.duration_seconds / 60)} phút`;
@@ -814,7 +819,7 @@
         const p2 = leaderboard[1];
         podiumHtml += `
           <div class="podium-slot second">
-            <div class="podium-crown">🥈</div>
+            <div class="podium-crown">${px('medal-2', 24)}</div>
             <div class="podium-avatar" style="background-color: ${p2.avatarColor || '#6b7280'}">${(p2.nickname || 'U').charAt(0)}</div>
             <div class="podium-name">${escapeHtml(p2.nickname)}</div>
             <div class="podium-score">${p2.score} điểm</div>
@@ -825,7 +830,7 @@
       // Rank 1 (Gold)
       podiumHtml += `
         <div class="podium-slot first">
-          <div class="podium-crown">👑 🥇</div>
+          <div class="podium-crown">${px('crown', 20)} ${px('medal-1', 24)}</div>
           <div class="podium-avatar" style="background-color: ${winner.avatarColor || '#d97706'}">${(winner.nickname || 'U').charAt(0)}</div>
           <div class="podium-name" style="font-size:1.05rem;">${escapeHtml(winner.nickname)}</div>
           <div class="podium-score" style="font-weight:700; color:var(--primary);">${winner.score} điểm (${winner.correctCount}/${winner.totalQuestions})</div>
@@ -837,7 +842,7 @@
         const p3 = leaderboard[2];
         podiumHtml += `
           <div class="podium-slot third">
-            <div class="podium-crown">🥉</div>
+            <div class="podium-crown">${px('medal-3', 24)}</div>
             <div class="podium-avatar" style="background-color: ${p3.avatarColor || '#b45309'}">${(p3.nickname || 'U').charAt(0)}</div>
             <div class="podium-name">${escapeHtml(p3.nickname)}</div>
             <div class="podium-score">${p3.score} điểm</div>
@@ -855,7 +860,7 @@
         const mins = Math.floor((p.totalTime || 0) / 60);
         const secs = (p.totalTime || 0) % 60;
         const timeStr = `${mins}m ${secs}s`;
-        const rankMedal = p.rank === 1 ? '🥇' : (p.rank === 2 ? '🥈' : (p.rank === 3 ? '🥉' : `#${p.rank}`));
+        const rankMedal = p.rank === 1 ? px('medal-1', 18) : (p.rank === 2 ? px('medal-2', 18) : (p.rank === 3 ? px('medal-3', 18) : `#${p.rank}`));
 
         return `
           <tr class="${isSelf ? 'is-user-row' : ''}">
@@ -870,7 +875,7 @@
             <td><strong>${p.correctCount}</strong> / ${p.totalQuestions}</td>
             <td><strong style="color:var(--primary); font-size:1.05rem;">${p.score}</strong> / 10</td>
             <td>${timeStr}</td>
-            <td><span style="color:var(--success-solid); font-weight:600;">✓ Hoàn thành</span></td>
+            <td><span style="color:var(--success-solid); font-weight:600; display:inline-flex; align-items:center; gap:4px;">${px('check', 13)} Hoàn thành</span></td>
           </tr>
         `;
       }).join('');
@@ -888,10 +893,10 @@
 
           if (opt.key === q.correct) {
             optClass = 'correct';
-            badgeIcon = '✓';
+            badgeIcon = px('check', 13);
           } else if (opt.key === userAns && !isCorrect) {
             optClass = 'incorrect';
-            badgeIcon = '✗';
+            badgeIcon = px('cross', 13);
           }
 
           return `
@@ -908,7 +913,7 @@
               <span class="topic-tag">${escapeHtml(q.topicName)}</span>
               <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
                 ${getDifficultyBadgeHtml(q.difficulty)}
-                ${userAns ? (isCorrect ? `<span style="color:var(--success-solid); font-weight:700">✓ Bạn làm đúng</span>` : `<span style="color:var(--error-solid); font-weight:700">✗ Bạn chọn ${userAns} (Đáp án: ${q.correct})</span>`) : `<span style="color:var(--warn-solid); font-weight:700">Chưa làm</span>`}
+                ${userAns ? (isCorrect ? `<span style="color:var(--success-solid); font-weight:700; display:inline-flex; align-items:center; gap:4px;">${px('check', 13)} Bạn làm đúng</span>` : `<span style="color:var(--error-solid); font-weight:700; display:inline-flex; align-items:center; gap:4px;">${px('cross', 13)} Bạn chọn ${userAns} (Đáp án: ${q.correct})</span>`) : `<span style="color:var(--warn-solid); font-weight:700">Chưa làm</span>`}
                 <span class="orig-tag highlight">${escapeHtml(q.examName)} • C${q.originalId}</span>
               </div>
             </div>
@@ -933,7 +938,7 @@
   }
 
   // Toast Notification
-  function showToast(msg) {
+  function showToast(msg, iconName = null) {
     const existing = document.getElementById('soloToast');
     if (existing) existing.remove();
 
@@ -943,6 +948,9 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background-color: var(--text-main);
       color: var(--bg-main);
       padding: 12px 20px;
@@ -954,7 +962,9 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
       animation: toastIn 0.3s ease;
     `;
-    toast.textContent = msg;
+    toast.innerHTML = iconName
+      ? `${px(iconName, 14)} <span>${escapeHtml(msg)}</span>`
+      : escapeHtml(msg);
     document.body.appendChild(toast);
 
     setTimeout(() => {
@@ -997,7 +1007,7 @@
       soloEl.btnCopyRoomCode.addEventListener('click', () => {
         if (soloState.room && soloState.room.code) {
           navigator.clipboard.writeText(soloState.room.code);
-          showToast(`📋 Đã sao chép mã phòng: ${soloState.room.code}`);
+          showToast(`Đã sao chép mã phòng: ${soloState.room.code}`, 'clipboard');
         }
       });
     }
@@ -1007,7 +1017,7 @@
         if (soloState.room && soloState.room.code) {
           const url = `${window.location.origin}?room=${soloState.room.code}`;
           navigator.clipboard.writeText(url);
-          showToast(`🔗 Đã sao chép link mời: ${url}`);
+          showToast(`Đã sao chép link mời: ${url}`, 'link');
         }
       });
     }

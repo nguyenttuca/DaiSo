@@ -52,7 +52,7 @@
   </script>
 
   <!-- Application Styles (Relative Path for GitHub Pages) -->
-  <link rel="stylesheet" href="./css/style.css?v=mipo4">
+  <link rel="stylesheet" href="./css/style.css?v=mipo6">
 </head>
 <body>
 
@@ -66,31 +66,29 @@
       <!-- Mode Switcher Tabs -->
       <nav class="nav-modes">
         <button class="nav-tab active" id="tabQuiz">
-          <span>⚡</span> Thi thử & Chuẩn CLO
+          <span class="px-slot" data-px="bolt"></span> Thi thử & Chuẩn CLO
         </button>
         <button class="nav-tab" id="tabTypePractice">
-          <span>🎯</span> Luyện theo Dạng bài
+          <span class="px-slot" data-px="target"></span> Luyện theo Dạng bài
         </button>
         <button class="nav-tab" id="tabPractice">
-          <span id="tabPracticeLabel"><span>📖</span> Ngân hàng đề</span>
+          <span id="tabPracticeLabel"><span class="px-slot" data-px="book"></span> Ngân hàng đề</span>
         </button>
         <button class="nav-tab" id="tabMistakes">
-          <span>📕</span> Sổ tay câu sai
+          <span class="px-slot" data-px="book-red"></span> Sổ tay câu sai
         </button>
         <button class="nav-tab" id="tabBankManager">
-          <span>⚙️</span> Quản lý & Nhập đề
+          <span class="px-slot" data-px="gear"></span> Quản lý & Nhập đề
         </button>
         <button class="nav-tab" id="tabSolo">
-          <span>⚔️</span> Đấu Solo <span class="tab-badge-live">LIVE</span>
+          <span class="px-slot" data-px="sword"></span> Đấu Solo <span class="tab-badge-live">LIVE</span>
         </button>
       </nav>
 
       <!-- Utility Actions -->
       <div class="header-actions">
         <button class="btn-icon" id="themeToggle" title="Chuyển chế độ Sáng / Tối">
-          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
+          <span class="px-slot" data-px="moon" data-px-size="18"></span>
         </button>
       </div>
     </div>
@@ -105,7 +103,7 @@
     <div class="subject-switcher-container">
       <div class="subject-switcher-header">
         <div class="subject-switcher-title">
-          <span>📐</span> <strong>Chọn Môn Toán Học Phần PTIT:</strong>
+          <span class="px-slot" data-px="ruler"></span> <strong>Chọn Môn Toán Học Phần PTIT:</strong>
         </div>
         <div style="font-size:0.82rem; color:var(--text-muted);">
           Quyết định 292/QĐ-HV • Thang Rubric 5 mức • Chuẩn đầu ra CLO1, CLO2, CLO3
@@ -127,7 +125,7 @@
       <!-- 1A. START SCREEN (Chỉ bắt đầu khi người dùng bấm nút) -->
       <div id="quizStartScreen" class="start-exam-card">
         <div class="start-header">
-          <div class="start-badge" id="startExamBadge">📐 Tùy Biến Ma Trận Đề Thi • Chuẩn CLO PTIT</div>
+          <div class="start-badge" id="startExamBadge"><span class="px-slot" data-px="ruler" data-px-size="13"></span> Tùy Biến Ma Trận Đề Thi • Chuẩn CLO PTIT</div>
           <h2 class="start-title" id="startExamTitle">Thi Thử Đại Số Tuyến Tính & Toán Rời Rạc PTIT</h2>
           <p class="start-subtitle" id="startExamSubtitle">
             Tự do tùy biến ma trận đề thi: chọn bất kỳ tổ hợp chương nào của môn học, thiết lập số lượng câu (20 - 40 câu) và thời gian (20 - 60 phút) cùng thuật toán bốc đề thông minh phân bổ theo tỷ lệ chuẩn CLO1, CLO2, CLO3.
@@ -139,7 +137,7 @@
           <div class="matrix-box-header">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
               <div>
-                <span class="matrix-title-icon">📚</span>
+                <span class="matrix-title-icon"><span class="px-slot" data-px="books" data-px-size="17"></span></span>
                 <strong style="font-size: 1.05rem;">Bước 1: Chọn các Chương / Chuyên đề đưa vào đề thi</strong>
               </div>
               <!-- Quick Select Buttons -->
@@ -164,27 +162,27 @@
             <!-- Col 1: Nguồn câu hỏi -->
             <div class="matrix-setting-col">
               <label class="matrix-setting-label">
-                <span>🎯</span> Bước 2: Chọn nguồn câu hỏi:
+                <span class="px-slot" data-px="target"></span> Bước 2: Chọn nguồn câu hỏi:
               </label>
               <div class="matrix-source-options">
                 <label class="source-radio-card active">
                   <input type="radio" name="quizSourceOption" value="all" checked>
                   <div class="source-info">
-                    <strong>🔄 Toàn bộ ngân hàng môn học</strong>
+                    <strong><span class="px-slot" data-px="refresh" data-px-size="14"></span> Toàn bộ ngân hàng môn học</strong>
                     <span>Bao gồm cả đề thi chuẩn PTIT, đề mở rộng & câu tự nhập</span>
                   </div>
                 </label>
                 <label class="source-radio-card">
                   <input type="radio" name="quizSourceOption" value="original">
                   <div class="source-info">
-                    <strong>⭐️ Chỉ câu chuẩn đề thi PTIT</strong>
+                    <strong><span class="px-slot" data-px="star-full" data-px-size="14"></span> Chỉ câu chuẩn đề thi PTIT</strong>
                     <span>Bộ câu hỏi chuẩn hóa từ đề thi kết thúc học phần</span>
                   </div>
                 </label>
                 <label class="source-radio-card">
                   <input type="radio" name="quizSourceOption" value="extra">
                   <div class="source-info">
-                    <strong>📚 Câu hỏi luyện tập & mở rộng</strong>
+                    <strong><span class="px-slot" data-px="books" data-px-size="14"></span> Câu hỏi luyện tập & mở rộng</strong>
                     <span>Bộ câu hỏi phân loại mở rộng bám sát đề cương chi tiết</span>
                   </div>
                 </label>
@@ -194,7 +192,7 @@
             <!-- Col 2: Số lượng câu & Thời gian -->
             <div class="matrix-setting-col">
               <label class="matrix-setting-label">
-                <span>⏱</span> Bước 3: Quy mô đề thi (20 - 40 câu) & Thời gian (20 - 60 phút):
+                <span class="px-slot" data-px="clock"></span> Bước 3: Quy mô đề thi (20 - 40 câu) & Thời gian (20 - 60 phút):
               </label>
               <div class="matrix-size-grid">
                 <label class="size-pill-card active">
@@ -219,7 +217,7 @@
                 </label>
                 <label class="size-pill-card" id="cardCustomSize">
                   <input type="radio" name="quizQuestionCount" value="custom">
-                  <span class="size-text">⚙️ Tự chỉnh linh hoạt</span>
+                  <span class="size-text"><span class="px-slot" data-px="gear" data-px-size="14"></span> Tự chỉnh linh hoạt</span>
                 </label>
               </div>
 
@@ -258,7 +256,7 @@
                   <strong id="summaryExamText">20 câu hỏi • 25:00 phút</strong>
                 </div>
                 <div class="summary-line" style="border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 6px;">
-                  <span>🧠 Thuật toán thông minh:</span>
+                  <span><span class="px-slot" data-px="brain" data-px-size="14"></span> Thuật toán thông minh:</span>
                   <strong id="summaryDistributionText" style="color: var(--primary);">Ưu tiên câu mới & câu cần ôn tập (Chống lặp)</strong>
                 </div>
               </div>
@@ -268,14 +266,14 @@
           <!-- Bước 4: Chọn cấu trúc đề thi & Chuẩn CLO -->
           <div class="matrix-difficulty-box">
             <label class="matrix-setting-label">
-              <span>📊</span> Bước 4: Chọn mức độ & Cấu trúc chuẩn CLO PTIT:
+              <span class="px-slot" data-px="chart"></span> Bước 4: Chọn mức độ & Cấu trúc chuẩn CLO PTIT:
             </label>
             <div class="matrix-diff-grid">
               <label class="diff-card active" data-diff="medium">
                 <input type="radio" name="quizDifficulty" value="medium" checked>
                 <div class="diff-card-inner">
                   <div class="diff-card-top">
-                    <span class="diff-pill pill-medium">🟡 Chuẩn PTIT (Khuyên dùng)</span>
+                    <span class="diff-pill pill-medium"><span class="px-slot" data-px="dot-yellow" data-px-size="13"></span> Chuẩn PTIT (Khuyên dùng)</span>
                     <span class="diff-percent-tag">40% CLO1 • 40% CLO2 • 20% CLO3</span>
                   </div>
                   <div class="diff-card-desc">
@@ -288,7 +286,7 @@
                 <input type="radio" name="quizDifficulty" value="easy">
                 <div class="diff-card-inner">
                   <div class="diff-card-top">
-                    <span class="diff-pill pill-easy">🟢 Đề Nền tảng (Dễ)</span>
+                    <span class="diff-pill pill-easy"><span class="px-slot" data-px="dot-green" data-px-size="13"></span> Đề Nền tảng (Dễ)</span>
                     <span class="diff-percent-tag">50% CLO1 • 40% CLO2 • 10% CLO3</span>
                   </div>
                   <div class="diff-card-desc">
@@ -301,7 +299,7 @@
                 <input type="radio" name="quizDifficulty" value="hard">
                 <div class="diff-card-inner">
                   <div class="diff-card-top">
-                    <span class="diff-pill pill-hard">🔴 Đề Khó (Phân loại 9-10)</span>
+                    <span class="diff-pill pill-hard"><span class="px-slot" data-px="dot-red" data-px-size="13"></span> Đề Khó (Phân loại 9-10)</span>
                     <span class="diff-percent-tag">25% CLO1 • 45% CLO2 • 30% CLO3</span>
                   </div>
                   <div class="diff-card-desc">
@@ -314,12 +312,12 @@
         </div>
 
         <div class="start-notes" style="background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success-solid); margin-bottom: 20px;">
-          <p><strong style="color: var(--success-solid);">🧠 Bốc đề Thông minh & Chống trùng lặp (Spaced Repetition):</strong> Hệ thống tự động phân loại: <strong>1. Câu chưa từng làm</strong> ➔ <strong>2. Câu từng làm sai</strong> ➔ <strong>3. Câu làm từ lâu</strong> để củng cố trí nhớ dài hạn. Tuyệt đối không lặp lại câu vừa làm đúng và tự động cân bằng khi ngân hàng đề có giới hạn.</p>
+          <p><strong style="color: var(--success-solid);"><span class="px-slot" data-px="brain" data-px-size="14"></span> Bốc đề Thông minh & Chống trùng lặp (Spaced Repetition):</strong> Hệ thống tự động phân loại: <strong>1. Câu chưa từng làm</strong> ➔ <strong>2. Câu từng làm sai</strong> ➔ <strong>3. Câu làm từ lâu</strong> để củng cố trí nhớ dài hạn. Tuyệt đối không lặp lại câu vừa làm đúng và tự động cân bằng khi ngân hàng đề có giới hạn.</p>
           <p style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted);">Hỗ trợ phím tắt: <span class="kbd-hint">1-4</span> / <span class="kbd-hint">A-D</span> chọn đáp án • <span class="kbd-hint">←</span> <span class="kbd-hint">→</span> chuyển câu • <span class="kbd-hint">F</span> đánh dấu xem lại.</p>
         </div>
 
         <button class="btn btn-primary btn-start-exam" id="btnStartExam">
-          ⚡ Bắt đầu làm bài thi theo ma trận đã chọn
+          <span class="px-slot" data-px="bolt"></span> Bắt đầu làm bài thi theo ma trận đã chọn
         </button>
       </div>
 
@@ -328,9 +326,7 @@
         <!-- Top info bar with timer -->
         <div class="quiz-top-bar">
           <div class="timer-box" title="Thời gian còn lại">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <span class="px-slot" data-px="clock" data-px-size="18"></span>
             <span id="quizTimer">25:00</span>
           </div>
 
@@ -340,7 +336,7 @@
 
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
             <button class="btn btn-flag" id="btnQuizFlag">
-              ☆ Đánh dấu xem lại <span class="kbd-hint">F</span>
+              <span class="px-slot" data-px="star-empty" data-px-size="14"></span> Đánh dấu xem lại <span class="kbd-hint">F</span>
             </button>
             <button class="btn btn-cancel-quiz" id="btnQuizCancel" title="Hủy lượt thi này">
               Hủy thi
@@ -388,10 +384,10 @@
         <div class="score-sub" id="reviewScoreSub">Điểm: --/10 • Thời gian: --</div>
         <div class="score-actions">
           <button class="btn btn-primary" id="btnRetryTest">
-            ↺ Làm lại đề thi này
+            <span class="px-slot" data-px="refresh" data-px-size="14"></span> Làm lại đề thi này
           </button>
           <button class="btn" id="btnNewTest">
-            ⚡ Tạo đề thi mới (20 câu khác)
+            <span class="px-slot" data-px="bolt" data-px-size="14"></span> Tạo đề thi mới (20 câu khác)
           </button>
         </div>
       </div>
@@ -426,7 +422,7 @@
       <!-- Header bar with Chapter selector -->
       <div class="tp-header-card">
         <div class="tp-intro">
-          <div class="start-badge" id="tpIntroBadge">🎯 ÔN TẬP CHUYÊN SÂU • THEO CHƯƠNG & DẠNG BÀI</div>
+          <div class="start-badge" id="tpIntroBadge"><span class="px-slot" data-px="target" data-px-size="13"></span> ÔN TẬP CHUYÊN SÂU • THEO CHƯƠNG & DẠNG BÀI</div>
           <h2 id="tpIntroTitle" style="font-size: 1.45rem; font-weight: 700; margin: 8px 0 6px;">Luyện Tập Theo Dạng Bài (Chuẩn CLO PTIT)</h2>
           <p id="tpIntroDesc" style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
             Hệ thống hóa toàn bộ các chương và dạng bài trọng tâm theo chuẩn đề cương PTIT. Tự động chấm điểm ngay, hiển thị công thức toán KaTeX chi tiết và phân loại theo từng chuẩn năng lực CLO1, CLO2, CLO3.
@@ -500,8 +496,8 @@
         <!-- Origin Select -->
         <select class="select-filter" id="practiceOriginSelect">
           <option value="all">Tất cả nguồn (612 câu: 81 gốc + 531 mở rộng)</option>
-          <option value="original">⭐️ Chỉ 81 câu Đề thi gốc PTIT</option>
-          <option value="extra">📚 Chỉ 531 câu Luyện tập mở rộng</option>
+          <option value="original">Chỉ 81 câu Đề thi gốc PTIT</option>
+          <option value="extra">Chỉ 531 câu Luyện tập mở rộng</option>
           <option value="de101">Đề minh họa 101 • PTIT (40 câu gốc)</option>
           <option value="de_ontap">Đề ôn tập PTIT • 80 phút (41 câu gốc)</option>
         </select>
@@ -509,9 +505,9 @@
         <!-- Difficulty Select -->
         <select class="select-filter" id="practiceDifficultySelect">
           <option value="all">Tất cả mức độ (Dễ, TB, Khó)</option>
-          <option value="easy">🟢 Mức độ Dễ</option>
-          <option value="medium">🟡 Mức độ Trung bình</option>
-          <option value="hard">🔴 Mức độ Khó</option>
+          <option value="easy">Mức độ Dễ</option>
+          <option value="medium">Mức độ Trung bình</option>
+          <option value="hard">Mức độ Khó</option>
         </select>
 
         <!-- Status Select -->
@@ -520,7 +516,7 @@
           <option value="unanswered">Chưa làm</option>
           <option value="correct">Đã làm đúng</option>
           <option value="incorrect">Đã làm sai</option>
-          <option value="bookmarked">Đã đánh dấu sao ⭐</option>
+          <option value="bookmarked">Đã đánh dấu sao</option>
         </select>
 
         <!-- Keyword Search -->
@@ -528,7 +524,7 @@
 
         <!-- View mode toggle -->
         <button class="btn" id="btnToggleViewMode" title="Chuyển đổi chế độ xem">
-          Chuyển xem dạng danh sách 📜
+          <span class="px-slot" data-px="scroll" data-px-size="14"></span> Chuyển xem dạng danh sách
         </button>
 
         <!-- Reset Button -->
@@ -547,7 +543,7 @@
     <section id="mistakesView" style="display: none;">
       <div class="mistakes-container">
         <div class="start-header">
-          <div class="start-badge" style="background:#fee2e2; color:#991b1b;">📕 CỦNG CỐ KIẾN THỨC • SỔ TAY CÂU SAI</div>
+          <div class="start-badge" style="background:#fee2e2; color:#991b1b;"><span class="px-slot" data-px="book-red" data-px-size="13"></span> CỦNG CỐ KIẾN THỨC • SỔ TAY CÂU SAI</div>
           <h2 class="start-title" id="mistakesTitle">Sổ Tay Câu Sai - Môn Học</h2>
           <p class="start-subtitle">
             Tổng hợp tất cả các câu hỏi bạn từng làm sai trong quá trình thi thử và luyện tập. Luyện lại các câu này là phương pháp hiệu quả nhất để nâng cao điểm chuẩn CLO và chuẩn bị cho kỳ thi!
@@ -559,7 +555,7 @@
           </div>
           <div style="display: flex; gap: 8px;">
             <button class="btn btn-primary" id="btnPracticeMistakes">
-              ⚡ Luyện tập lại các câu sai này
+              <span class="px-slot" data-px="bolt" data-px-size="14"></span> Luyện tập lại các câu sai này
             </button>
             <button class="btn" id="btnClearMistakes" style="color: var(--error-text);">
               Xóa lịch sử sai
@@ -578,7 +574,7 @@
     <section id="bankManagerView" style="display: none;">
       <div class="bank-manager-card">
         <div class="start-header">
-          <div class="start-badge" style="background:#e0f2fe; color:#0369a1;">⚙️ QUẢN TRỊ DỮ LIỆU • NGÂN HÀNG CÂU HỎI</div>
+          <div class="start-badge" style="background:#e0f2fe; color:#0369a1;"><span class="px-slot" data-px="gear" data-px-size="13"></span> QUẢN TRỊ DỮ LIỆU • NGÂN HÀNG CÂU HỎI</div>
           <h2 class="start-title">Quản Lý & Nhập Ngân Hàng Đề Thi</h2>
           <p class="start-subtitle">
             Hỗ trợ xem thống kê ngân hàng 4 môn, nhập thêm câu hỏi từ file JSON, dán đề dạng Text/Markdown tự động phân tích câu hỏi, thêm câu hỏi thủ công có Live KaTeX Preview, và xuất file sao lưu.
@@ -587,11 +583,11 @@
 
         <!-- Sub tabs -->
         <div class="bank-tabs-bar">
-          <button class="bank-tab-btn active" data-bank-pane="bankStats">📊 Thống kê ngân hàng</button>
-          <button class="bank-tab-btn" data-bank-pane="bankImportJson">📥 Nhập file JSON / Dán JSON</button>
-          <button class="bank-tab-btn" data-bank-pane="bankImportText">📝 Nhập nhanh dạng Text/Markdown</button>
-          <button class="bank-tab-btn" data-bank-pane="bankAddManual">➕ Thêm câu hỏi thủ công</button>
-          <button class="bank-tab-btn" data-bank-pane="bankExport">📤 Xuất & Sao lưu</button>
+          <button class="bank-tab-btn active" data-bank-pane="bankStats"><span class="px-slot" data-px="chart"></span> Thống kê ngân hàng</button>
+          <button class="bank-tab-btn" data-bank-pane="bankImportJson"><span class="px-slot" data-px="inbox"></span> Nhập file JSON / Dán JSON</button>
+          <button class="bank-tab-btn" data-bank-pane="bankImportText"><span class="px-slot" data-px="note"></span> Nhập nhanh dạng Text/Markdown</button>
+          <button class="bank-tab-btn" data-bank-pane="bankAddManual"><span class="px-slot" data-px="plus"></span> Thêm câu hỏi thủ công</button>
+          <button class="bank-tab-btn" data-bank-pane="bankExport"><span class="px-slot" data-px="outbox"></span> Xuất & Sao lưu</button>
         </div>
 
         <!-- Pane 1: Stats -->
@@ -638,7 +634,7 @@
               <option value="toan_roi_rac">Toán rời rạc (INT1358)</option>
             </select>
             <button class="btn btn-primary" id="btnExecuteImportJson">
-              📥 Nạp câu hỏi vào ngân hàng
+              <span class="px-slot" data-px="inbox" data-px-size="14"></span> Nạp câu hỏi vào ngân hàng
             </button>
             <div id="bankJsonStatus" style="font-size: 0.88rem; font-weight: 600;"></div>
           </div>
@@ -647,7 +643,7 @@
         <!-- Pane 3: Import Text/Markdown -->
         <div class="bank-pane" id="paneBankImportText">
           <div style="background: var(--bg-subtle); padding: 12px 16px; border-radius: var(--radius-md); margin-bottom: 14px; font-size: 0.85rem; line-height: 1.5;">
-            <strong>💡 Cú pháp nhận dạng thông minh:</strong> Bạn chỉ cần copy paste câu hỏi dạng văn bản. Hệ thống tự động phân tách câu, phương án A/B/C/D, đáp án đúng và lời giải:<br>
+            <strong><span class="px-slot" data-px="bulb" data-px-size="14"></span> Cú pháp nhận dạng thông minh:</strong> Bạn chỉ cần copy paste câu hỏi dạng văn bản. Hệ thống tự động phân tách câu, phương án A/B/C/D, đáp án đúng và lời giải:<br>
             <code>[Câu 1] [Chương 1] [CLO1] [Dễ]</code><br>
             <code>Nội dung câu hỏi có công thức LaTeX: $\lim_{x \to 0} \frac{\sin x}{x}$</code><br>
             <code>A. $1$</code><br>
@@ -670,7 +666,7 @@
             <textarea class="bank-textarea" id="bankRawTextarea" placeholder="Dán văn bản các câu hỏi trắc nghiệm vào đây..."></textarea>
           </div>
           <button class="btn btn-primary" id="btnParseRawText">
-            ⚡ Phân tích & Nạp vào ngân hàng
+            <span class="px-slot" data-px="bolt" data-px-size="14"></span> Phân tích & Nạp vào ngân hàng
           </button>
           <div id="bankTextStatus" style="margin-top: 8px; font-size: 0.88rem; font-weight: 600;"></div>
         </div>
@@ -702,9 +698,9 @@
             <div>
               <label style="font-size:0.82rem; font-weight:600;">Mức độ khó:</label>
               <select class="select-filter" id="manualDiffSelect" style="width:100%;">
-                <option value="easy">🟢 Dễ</option>
-                <option value="medium" selected>🟡 Trung bình</option>
-                <option value="hard">🔴 Khó</option>
+                <option value="easy">Dễ</option>
+                <option value="medium" selected>Trung bình</option>
+                <option value="hard">Khó</option>
               </select>
             </div>
           </div>
@@ -752,7 +748,7 @@
           <!-- Live preview button & box -->
           <div style="margin-bottom: 12px;">
             <button class="btn" id="btnPreviewManualQuestion" style="margin-bottom: 8px;">
-              👁️ Xem trước hiển thị công thức KaTeX
+              <span class="px-slot" data-px="eye" data-px-size="14"></span> Xem trước hiển thị công thức KaTeX
             </button>
             <div class="bank-preview-box" id="manualPreviewBox">
               <em>(Bấm nút trên để xem trước giao diện và công thức toán)</em>
@@ -760,7 +756,7 @@
           </div>
 
           <button class="btn btn-primary" id="btnSaveManualQuestion">
-            💾 Lưu câu hỏi vào ngân hàng đề
+            <span class="px-slot" data-px="save" data-px-size="14"></span> Lưu câu hỏi vào ngân hàng đề
           </button>
           <span id="manualSaveStatus" style="margin-left: 10px; font-weight: 600;"></span>
         </div>
@@ -772,23 +768,23 @@
           </p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
             <button class="btn btn-primary" id="btnExportAllJson">
-              📤 Xuất Toàn Bộ Ngân Hàng (Tất cả 4 môn)
+              <span class="px-slot" data-px="outbox" data-px-size="14"></span> Xuất Toàn Bộ Ngân Hàng (Tất cả 4 môn)
             </button>
             <button class="btn" id="btnExportCurrentSubjectJson">
-              📤 Xuất Ngân Hàng Môn Đang Chọn
+              <span class="px-slot" data-px="outbox" data-px-size="14"></span> Xuất Ngân Hàng Môn Đang Chọn
             </button>
           </div>
 
           <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;">
 
           <h4 style="font-size: 1rem; font-weight: 700; color: var(--error-text); margin-bottom: 8px;">
-            ⚠️ Vùng nguy hiểm: Khôi phục ngân hàng đề
+            <span class="px-slot" data-px="warn" data-px-size="15"></span> Vùng nguy hiểm: Khôi phục ngân hàng đề
           </h4>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
             Xóa toàn bộ các câu hỏi do bạn tự thêm hoặc import vào và khôi phục về ngân hàng đề chuẩn PTIT ban đầu.
           </p>
           <button class="btn" id="btnResetToDefaultBank" style="color: var(--error-text); border-color: var(--error-border);">
-            🔄 Khôi phục về ngân hàng câu hỏi gốc mặc định
+            <span class="px-slot" data-px="refresh" data-px-size="14"></span> Khôi phục về ngân hàng câu hỏi gốc mặc định
           </button>
         </div>
       </div>
@@ -804,7 +800,7 @@
         <!-- Hub Header -->
         <div class="start-header" style="text-align: center; margin-bottom: 24px;">
           <div class="start-badge" style="background-color: var(--primary-light); color: var(--primary);">
-            ⚔️ Đấu Đối Kháng Thời Gian Thực
+            <span class="px-slot" data-px="sword" data-px-size="13"></span> Đấu Đối Kháng Thời Gian Thực
           </div>
           <h2 class="start-title">Đấu Solo Đại Số Tuyến Tính & Toán Rời Rạc</h2>
           <p class="start-subtitle">
@@ -815,7 +811,7 @@
         <!-- Nickname & Profile Setup -->
         <div class="solo-card" style="margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto;">
           <div class="solo-card-header" style="margin-bottom: 12px; padding-bottom: 10px;">
-            <div class="solo-card-icon">👤</div>
+            <div class="solo-card-icon"><span class="px-slot" data-px="user" data-px-size="20"></span></div>
             <div>
               <h3 class="solo-card-title">Hồ sơ thi đấu của bạn</h3>
               <p class="solo-card-desc">Tên và màu hiển thị để các đối thủ trong phòng nhìn thấy bạn</p>
@@ -844,7 +840,7 @@
           <!-- Card 1: Tạo phòng mới -->
           <div class="solo-card">
             <div class="solo-card-header">
-              <div class="solo-card-icon" style="background-color: #ecfdf5; color: #059669;">➕</div>
+              <div class="solo-card-icon" style="background-color: #ecfdf5; color: #059669;"><span class="px-slot" data-px="plus" data-px-size="18"></span></div>
               <div>
                 <h3 class="solo-card-title">Tạo phòng đấu mới</h3>
                 <p class="solo-card-desc">Làm chủ phòng và mời bạn bè vào solo</p>
@@ -863,7 +859,7 @@
             <div class="solo-field-group">
               <label class="solo-field-label">Thời gian làm bài:</label>
               <select class="select-filter" id="soloDuration" style="width: 100%;">
-                <option value="300">5 phút (Bắn tỉa siêu tốc ⚡)</option>
+                <option value="300">5 phút (Bắn tỉa siêu tốc)</option>
                 <option value="600">10 phút (Tốc độ cao)</option>
                 <option value="900">15 phút (Chuẩn thi nhanh)</option>
                 <option value="1500" selected>25 phút (Chuẩn thi hết môn)</option>
@@ -880,14 +876,14 @@
             </div>
 
             <button class="btn btn-primary" id="btnCreateRoom" style="width: 100%; margin-top: auto; padding: 12px; font-weight: 700;">
-              ⚡ Tạo phòng & Lấy mã
+              <span class="px-slot" data-px="bolt" data-px-size="14"></span> Tạo phòng & Lấy mã
             </button>
           </div>
 
           <!-- Card 2: Vào phòng bằng mã -->
           <div class="solo-card">
             <div class="solo-card-header">
-              <div class="solo-card-icon" style="background-color: #eff6ff; color: #2563eb;">🔑</div>
+              <div class="solo-card-icon" style="background-color: #eff6ff; color: #2563eb;"><span class="px-slot" data-px="key" data-px-size="18"></span></div>
               <div>
                 <h3 class="solo-card-title">Tham gia phòng đấu</h3>
                 <p class="solo-card-desc">Nhập mã 6 ký tự do đối thủ gửi cho bạn</p>
@@ -901,7 +897,7 @@
             </div>
 
             <button class="btn btn-primary" id="btnJoinRoom" style="width: 100%; margin-top: auto; padding: 12px; font-weight: 700; background-color: #2563eb;">
-              🚀 Vào phòng thi đấu
+              <span class="px-slot" data-px="rocket" data-px-size="14"></span> Vào phòng thi đấu
             </button>
           </div>
         </div>
@@ -911,7 +907,7 @@
           <!-- Open Rooms -->
           <div class="solo-card">
             <div class="solo-card-header" style="margin-bottom: 12px;">
-              <div class="solo-card-icon" style="width: 32px; height: 32px; font-size: 1rem;">🌐</div>
+              <div class="solo-card-icon" style="width: 32px; height: 32px; font-size: 1rem;"><span class="px-slot" data-px="globe" data-px-size="16"></span></div>
               <div>
                 <h4 class="solo-card-title" style="font-size: 1rem;">Phòng đang chờ trên máy chủ</h4>
                 <p class="solo-card-desc">Bấm vào để tham gia ngay</p>
@@ -925,7 +921,7 @@
           <!-- Match History -->
           <div class="solo-card">
             <div class="solo-card-header" style="margin-bottom: 12px;">
-              <div class="solo-card-icon" style="width: 32px; height: 32px; font-size: 1rem; background-color: #fef3c7; color: #d97706;">🏆</div>
+              <div class="solo-card-icon" style="width: 32px; height: 32px; font-size: 1rem; background-color: #fef3c7; color: #d97706;"><span class="px-slot" data-px="trophy" data-px-size="16"></span></div>
               <div>
                 <h4 class="solo-card-title" style="font-size: 1rem;">Lịch sử các trận đấu đã diễn ra</h4>
                 <p class="solo-card-desc">Lưu trong cơ sở dữ liệu SQLite</p>
@@ -950,8 +946,8 @@
               Gửi mã này cho đối thủ hoặc bấm nút copy link bên dưới để người khác vào phòng cùng bạn.
             </p>
             <div class="room-copy-btns">
-              <button class="btn" id="btnCopyRoomCode">📋 Sao chép mã</button>
-              <button class="btn btn-primary" id="btnCopyRoomLink">🔗 Sao chép link mời</button>
+              <button class="btn" id="btnCopyRoomCode"><span class="px-slot" data-px="clipboard" data-px-size="14"></span> Sao chép mã</button>
+              <button class="btn btn-primary" id="btnCopyRoomLink"><span class="px-slot" data-px="link" data-px-size="14"></span> Sao chép link mời</button>
             </div>
           </div>
 
@@ -978,7 +974,7 @@
             <div id="waitingHostControls" style="display: flex; gap: 10px; align-items: center;">
               <span id="waitingPlayerStatusHint" style="font-size: 0.85rem; color: var(--text-muted);"></span>
               <button class="btn btn-primary" id="btnStartSoloGame" style="padding: 12px 24px; font-weight: 700; font-size: 1rem; background-color: var(--success-solid);">
-                🚀 BẮT ĐẦU TRẬN ĐẤU
+                <span class="px-slot" data-px="rocket" data-px-size="15"></span> BẮT ĐẦU TRẬN ĐẤU
               </button>
             </div>
           </div>
@@ -991,7 +987,7 @@
         <div class="battle-scoreboard-box">
           <div class="battle-scoreboard-header">
             <span class="battle-scoreboard-title">
-              ⚔️ TIẾN ĐỘ THI ĐẤU THỜI GIAN THỰC (REAL-TIME PROGRESS):
+              <span class="px-slot" data-px="sword" data-px-size="15"></span> TIẾN ĐỘ THI ĐẤU THỜI GIAN THỰC (REAL-TIME PROGRESS):
             </span>
             <span style="font-size: 0.8rem; color: var(--text-muted);">Cập nhật ngay tức thì khi đối thủ chọn đáp án</span>
           </div>
@@ -1003,9 +999,7 @@
         <!-- Top info bar with timer and submit -->
         <div class="quiz-top-bar">
           <div class="timer-box" title="Thời gian thi đấu còn lại">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <span class="px-slot" data-px="clock" data-px-size="18"></span>
             <span id="soloBattleTimer">25:00</span>
           </div>
 
@@ -1015,10 +1009,10 @@
 
           <div style="display:flex; gap:8px;">
             <button class="btn btn-flag" id="btnSoloFlag">
-              ☆ Đánh dấu <span class="kbd-hint">F</span>
+              <span class="px-slot" data-px="star-empty" data-px-size="14"></span> Đánh dấu <span class="kbd-hint">F</span>
             </button>
             <button class="btn btn-submit" id="btnSoloSubmit" style="background-color: var(--success-solid);">
-              Nộp bài solo 🏁
+              Nộp bài solo <span class="px-slot" data-px="flag" data-px-size="14"></span>
             </button>
           </div>
         </div>
@@ -1034,13 +1028,13 @@
         <!-- Bottom Controls -->
         <div class="quiz-controls">
           <button class="btn" id="btnSoloPrev" disabled>
-            ← Câu trước <span class="kbd-hint">←</span>
+            <span class="kbd-hint">←</span> Câu trước
           </button>
           <span style="font-size:0.85rem; color:var(--text-muted)">
             Phím tắt: <span class="kbd-hint">1-4</span> / <span class="kbd-hint">A-D</span> chọn đáp án • <span class="kbd-hint">←</span> <span class="kbd-hint">→</span> chuyển câu
           </span>
           <button class="btn btn-primary" id="btnSoloNext">
-            Câu sau → <span class="kbd-hint">→</span>
+            Câu sau <span class="kbd-hint">→</span>
           </button>
         </div>
       </div>
@@ -1048,17 +1042,17 @@
       <!-- 4D. RESULTS & LEADERBOARD SCREEN / KẾT QUẢ & BẢNG XẾP HẠNG -->
       <div id="soloResultScreen" style="display: none;">
         <div class="score-banner" style="margin-bottom: 24px;">
-          <div class="score-badge high">🏆 BẢNG XẾP HẠNG TRẬN ĐẤU SOLO</div>
+          <div class="score-badge high"><span class="px-slot" data-px="trophy" data-px-size="14"></span> BẢNG XẾP HẠNG TRẬN ĐẤU SOLO</div>
           <h2 style="margin: 8px 0; font-size: 1.6rem; font-weight: 800;" id="soloWinnerAnnouncement">
             Người chiến thắng: --
           </h2>
           <div class="score-sub" id="soloMatchSummarySub">Phòng: ------ • Thời gian: --</div>
           <div class="score-actions" style="margin-top: 16px;">
             <button class="btn btn-primary" id="btnSoloRematch">
-              ↺ Tái đấu trận mới (Giữ nguyên phòng)
+              <span class="px-slot" data-px="refresh" data-px-size="14"></span> Tái đấu trận mới (Giữ nguyên phòng)
             </button>
             <button class="btn" id="btnSoloBackHub">
-              🏠 Quay về Sảnh Solo
+              <span class="px-slot" data-px="home" data-px-size="14"></span> Quay về Sảnh Solo
             </button>
           </div>
         </div>
@@ -1110,10 +1104,11 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="./data/questions.js?v=mipo4"></script>
-  <script src="./data/theory_docs.js?v=mipo4"></script>
-  <script src="./js/app.js?v=mipo4"></script>
-  <script src="./js/solo.js?v=mipo4"></script>
-  <script src="./js/dogs.js?v=mipo4"></script>
+  <script src="./js/pixel-icons.js?v=mipo5"></script>
+  <script src="./data/questions.js?v=mipo5"></script>
+  <script src="./data/theory_docs.js?v=mipo5"></script>
+  <script src="./js/app.js?v=mipo5"></script>
+  <script src="./js/solo.js?v=mipo5"></script>
+  <script src="./js/dogs.js?v=mipo5"></script>
 </body>
 </html>

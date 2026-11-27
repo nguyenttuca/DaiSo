@@ -14,6 +14,11 @@
 (function () {
   'use strict';
 
+  const px = (name, size = 15, cls = '') =>
+    (typeof window !== 'undefined' && typeof window.pxIcon === 'function')
+      ? window.pxIcon(name, size, cls)
+      : '';
+
   // ===================================================================
   // 1. SUBJECTS DEFINITION & METADATA (PTIT STANDARDS)
   // ===================================================================
@@ -23,7 +28,7 @@
       code: "BAS1201",
       name: "Đại số tuyến tính",
       fullName: "Đại số / Đại số tuyến tính (BAS1201)",
-      icon: "📐",
+      icon: "ruler",
       desc: "Logic & Tập hợp, Ma trận, Định thức, Hệ PTTT, Không gian véc tơ, Ánh xạ tuyến tính & Dạng toàn phương",
       cloDesc: {
         CLO1: "Hiểu khái niệm cơ bản về logic, tập hợp, ánh xạ, số phức, ma trận, định thức, hệ PTTT, không gian véc tơ, ánh xạ tuyến tính và không gian Euclid.",
@@ -44,7 +49,7 @@
       code: "BAS1203",
       name: "Giải tích 1",
       fullName: "Giải tích 1 (BAS1203)",
-      icon: "📈",
+      icon: "chart-up",
       desc: "Giới hạn dãy số, hàm số 1 biến, vi phân, tích phân & lý thuyết chuỗi",
       cloDesc: {
         CLO1: "Hiểu kiến thức nền tảng: giới hạn dãy số, tính liên tục hàm 1 biến, đạo hàm, vi phân, nguyên hàm, tích phân, chuỗi số & chuỗi lũy thừa.",
@@ -64,7 +69,7 @@
       code: "BAS1204",
       name: "Giải tích 2",
       fullName: "Giải tích 2 (BAS1204)",
-      icon: "🌊",
+      icon: "wave",
       desc: "Hàm nhiều biến, tích phân bội, tích phân đường, tích phân mặt & phương trình vi phân",
       cloDesc: {
         CLO1: "Hiểu kiến thức nền tảng: hàm nhiều biến (giới hạn, liên tục, đạo hàm riêng, vi phân), tích phân bội, tích phân đường, mặt và PTVP.",
@@ -83,7 +88,7 @@
       code: "INT1358",
       name: "Toán rời rạc",
       fullName: "Toán rời rạc (INT1358 / INT1359)",
-      icon: "🎲",
+      icon: "dice",
       desc: "Bài toán đếm, Đại số Boole, Thuật toán sinh & quay lui, Lý thuyết đồ thị & cây khung",
       cloDesc: {
         CLO1: "Hiểu kiến thức nền tảng: bài toán đếm, tồn tại, liệt kê, tối ưu tổ hợp, lý thuyết đồ thị (vô hướng, có hướng, cây) và đại số Boole.",
@@ -144,21 +149,21 @@
 
   function getDifficultyBadgeHtml(diff) {
     if (diff === 'easy') {
-      return `<span class="diff-tag diff-easy" title="Mức độ Dễ">🟢 Dễ</span>`;
+      return `<span class="diff-tag diff-easy" title="Mức độ Dễ">${px('dot-green', 12)} Dễ</span>`;
     } else if (diff === 'hard') {
-      return `<span class="diff-tag diff-hard" title="Mức độ Khó">🔴 Khó</span>`;
+      return `<span class="diff-tag diff-hard" title="Mức độ Khó">${px('dot-red', 12)} Khó</span>`;
     }
-    return `<span class="diff-tag diff-medium" title="Mức độ Trung bình">🟡 Trung bình</span>`;
+    return `<span class="diff-tag diff-medium" title="Mức độ Trung bình">${px('dot-yellow', 12)} Trung bình</span>`;
   }
 
   function getCloBadgeHtml(clo) {
     const c = clo || 'CLO2';
     if (c === 'CLO1') {
-      return `<span class="clo-tag clo1" title="CLO1: Hiểu kiến thức nền tảng">📘 CLO1: Nền tảng</span>`;
+      return `<span class="clo-tag clo1" title="CLO1: Hiểu kiến thức nền tảng">${px('book-blue', 13)} CLO1: Nền tảng</span>`;
     } else if (c === 'CLO3') {
-      return `<span class="clo-tag clo3" title="CLO3: Kỹ năng phân tích & vận dụng cao">🟣 CLO3: Vận dụng cao</span>`;
+      return `<span class="clo-tag clo3" title="CLO3: Kỹ năng phân tích & vận dụng cao">${px('sparkles', 13)} CLO3: Vận dụng cao</span>`;
     }
-    return `<span class="clo-tag clo2" title="CLO2: Kỹ năng tính toán cơ bản">🔷 CLO2: Tính toán</span>`;
+    return `<span class="clo-tag clo2" title="CLO2: Kỹ năng tính toán cơ bản">${px('bolt', 13)} CLO2: Tính toán</span>`;
   }
 
   // --- Rubric 5 Mức theo Quyết định 292/QĐ-HV (Học viện CNBCVT) ---
@@ -533,9 +538,7 @@
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme_mode', theme);
     if (el.themeToggle) {
-      el.themeToggle.innerHTML = theme === 'dark'
-        ? `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>`
-        : `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>`;
+      el.themeToggle.innerHTML = theme === 'dark' ? px('sun', 18) : px('moon', 18);
     }
   }
 
@@ -616,7 +619,7 @@
       const isActive = (k === currentSubKey);
       return `
         <div class="subject-chip ${isActive ? 'active' : ''}" data-subject="${sub.id}">
-          <div class="subject-chip-icon">${sub.icon}</div>
+          <div class="subject-chip-icon">${px(sub.icon, 24)}</div>
           <div class="subject-chip-info">
             <div class="subject-chip-name">${escapeHtml(sub.name)}</div>
             <div class="subject-chip-meta">
@@ -654,7 +657,7 @@
 
     el.subjectCloInfoBox.innerHTML = `
       <div class="clo-info-title">
-        <span>📋</span> <strong>Chuẩn đầu ra (CLO) môn ${escapeHtml(sub.name)} (${sub.code}) theo Đề cương PTIT & Quyết định 292/QĐ-HV:</strong>
+        <span>${px('clipboard', 15)}</span> <strong>Chuẩn đầu ra (CLO) môn ${escapeHtml(sub.name)} (${sub.code}) theo Đề cương PTIT & Quyết định 292/QĐ-HV:</strong>
       </div>
       <div class="clo-info-list">
         <div class="clo-info-item">
@@ -682,7 +685,7 @@
     // Update UI headers
     const sub = SUBJECTS[subjectId];
     if (el.startExamBadge) {
-      el.startExamBadge.textContent = `${sub.icon} ${sub.fullName} • Chuẩn CLO PTIT`;
+      el.startExamBadge.innerHTML = `${px(sub.icon, 13)} ${escapeHtml(sub.fullName)} • Chuẩn CLO PTIT`;
     }
     if (el.startExamTitle) {
       el.startExamTitle.textContent = `Thi Thử ${sub.name} PTIT`;
@@ -829,7 +832,7 @@
     const chText = selectedChapters.length === sub.chapters.length
       ? `Tất cả ${sub.chapters.length} chương môn ${sub.name}`
       : selectedChapters.length === 0
-        ? 'Chưa chọn chương nào ⚠️'
+        ? `${px('warn', 13)} Chưa chọn chương nào`
         : `Chương ${selectedChapters.sort((a,b)=>a-b).join(', ')} (${selectedChapters.length}/${sub.chapters.length} chương)`;
 
     const actualCount = Math.min(reqCount, pool.length);
@@ -865,12 +868,12 @@
     const summaryDistributionText = document.getElementById('summaryDistributionText');
     if (summaryDistributionText) {
       if (newInPool >= actualCount) {
-        summaryDistributionText.innerHTML = `✨ <strong>100% câu mới (${newInPool} câu chưa làm)</strong>`;
+        summaryDistributionText.innerHTML = `${px('sparkles', 14)} <strong>100% câu mới (${newInPool} câu chưa làm)</strong>`;
       } else {
         const takeNew = newInPool;
         const takeWrong = Math.min(wrongInPool, actualCount - takeNew);
         const takeOld = Math.max(0, actualCount - takeNew - takeWrong);
-        summaryDistributionText.innerHTML = `✨ <strong>${takeNew} câu mới</strong> + 🎯 <strong>${takeWrong} câu sai</strong> + 🔄 <strong>${takeOld} câu ôn lại</strong>`;
+        summaryDistributionText.innerHTML = `${px('sparkles', 14)} <strong>${takeNew} câu mới</strong> + ${px('target', 14)} <strong>${takeWrong} câu sai</strong> + ${px('refresh', 14)} <strong>${takeOld} câu ôn lại</strong>`;
       }
     }
 
@@ -878,20 +881,20 @@
     const summarySourceText = document.getElementById('summarySourceText');
     const summaryExamText = document.getElementById('summaryExamText');
 
-    if (summaryChaptersText) summaryChaptersText.textContent = chText;
+    if (summaryChaptersText) summaryChaptersText.innerHTML = chText;
     if (summarySourceText) summarySourceText.textContent = `${pool.length} câu khả dụng (${newInPool} mới • ${wrongInPool} cần ôn • ${doneInPool} đã làm)`;
     if (summaryExamText) summaryExamText.textContent = examText;
 
     const btnStart = document.getElementById('btnStartExam');
     if (btnStart) {
       if (selectedChapters.length === 0) {
-        btnStart.textContent = '⚠️ Vui lòng chọn ít nhất 1 chương';
+        btnStart.innerHTML = `${px('warn', 15)} Vui lòng chọn ít nhất 1 chương`;
         btnStart.disabled = true;
       } else if (pool.length === 0) {
-        btnStart.textContent = '⚠️ Không có câu hỏi phù hợp';
+        btnStart.innerHTML = `${px('warn', 15)} Không có câu hỏi phù hợp`;
         btnStart.disabled = true;
       } else {
-        btnStart.textContent = `⚡ Bắt đầu làm bài thi (${actualCount} câu • ${reqDur} phút)`;
+        btnStart.innerHTML = `${px('bolt', 15)} Bắt đầu làm bài thi (${actualCount} câu • ${reqDur} phút)`;
         btnStart.disabled = false;
       }
     }
@@ -1255,13 +1258,15 @@
       const currentQ = questions[state.quiz.currentIndex];
       const isFlagged = currentQ && state.quiz.flags.has(currentQ.id);
       el.btnQuizFlag.classList.toggle('active', isFlagged);
-      el.btnQuizFlag.innerHTML = isFlagged ? '★ Bỏ đánh dấu [F]' : '☆ Đánh dấu xem lại [F]';
+      el.btnQuizFlag.innerHTML = isFlagged
+        ? `${px('star-full', 14)} Bỏ đánh dấu <span class="kbd-hint">F</span>`
+        : `${px('star-empty', 14)} Đánh dấu xem lại <span class="kbd-hint">F</span>`;
     }
 
     if (el.btnQuizPrev) el.btnQuizPrev.disabled = state.quiz.currentIndex === 0;
     if (el.btnQuizNext) {
       if (state.quiz.currentIndex === total - 1) {
-        el.btnQuizNext.textContent = 'Hoàn thành đề thi ✓';
+        el.btnQuizNext.innerHTML = `Hoàn thành đề thi ${px('check', 14)}`;
       } else {
         el.btnQuizNext.innerHTML = 'Câu sau <span class="kbd-hint">→</span>';
       }
@@ -1346,7 +1351,7 @@
 
     let msg = `Bạn đã hoàn thành ${answered}/${total} câu hỏi.`;
     if (unanswered > 0) {
-      msg += `\n⚠️ Còn ${unanswered} câu chưa trả lời!`;
+      msg += `\nLưu ý: Còn ${unanswered} câu chưa trả lời!`;
     }
     msg += `\n\nBạn có chắc chắn muốn nộp bài để chấm điểm và đánh giá chuẩn CLO?`;
 
@@ -1403,18 +1408,18 @@
     if (el.reviewScoreValue) el.reviewScoreValue.textContent = `${score}/${total}`;
 
     let badgeClass = 'high';
-    let badgeText = 'Xuất sắc 🎉';
+    let badgeText = `${px('party', 14)} Xuất sắc`;
     if (percent < 50) {
       badgeClass = 'low';
-      badgeText = 'Cần ôn tập thêm 📚';
+      badgeText = `${px('books', 14)} Cần ôn tập thêm`;
     } else if (percent < 80) {
       badgeClass = 'mid';
-      badgeText = 'Khá tốt 👏';
+      badgeText = `${px('clap', 14)} Khá tốt`;
     }
 
     if (el.reviewScoreBadge) {
       el.reviewScoreBadge.className = `score-badge ${badgeClass}`;
-      el.reviewScoreBadge.textContent = badgeText;
+      el.reviewScoreBadge.innerHTML = badgeText;
     }
     if (el.reviewScoreSub) {
       el.reviewScoreSub.innerHTML = `Điểm tổng: <strong>${point}/10</strong> (${percent}%) • Thời gian làm: <strong>${timeSpentStr}</strong>`;
@@ -1462,26 +1467,26 @@
     // Lời khuyên của Cố vấn học tập (CVHT) theo Phụ lục IV
     let advice = "";
     if (s1 < 5.5) {
-      advice += `⚠️ <strong>Cảnh báo CLO1 (${s1.toFixed(1)}/10):</strong> Bạn đang bị hổng kiến thức lý thuyết nền tảng và các định nghĩa/tính chất cốt lõi. Hãy xem lại kỹ tài liệu lý thuyết và cẩm nang công thức trước khi làm bài tính toán.<br>`;
+      advice += `${px('warn', 14)} <strong>Cảnh báo CLO1 (${s1.toFixed(1)}/10):</strong> Bạn đang bị hổng kiến thức lý thuyết nền tảng và các định nghĩa/tính chất cốt lõi. Hãy xem lại kỹ tài liệu lý thuyết và cẩm nang công thức trước khi làm bài tính toán.<br>`;
     }
     if (s2 < 5.5) {
-      advice += `⚠️ <strong>Cảnh báo CLO2 (${s2.toFixed(1)}/10):</strong> Kỹ năng tính toán cơ bản của bạn chưa đủ vững. Đây là phần chiếm 70%–80% đề thi kết thúc học phần PTIT để qua môn. Hãy rèn luyện thêm các dạng bài tính toán mẫu và công thức bấm máy Casio.<br>`;
+      advice += `${px('warn', 14)} <strong>Cảnh báo CLO2 (${s2.toFixed(1)}/10):</strong> Kỹ năng tính toán cơ bản của bạn chưa đủ vững. Đây là phần chiếm 70%–80% đề thi kết thúc học phần PTIT để qua môn. Hãy rèn luyện thêm các dạng bài tính toán mẫu và công thức bấm máy Casio.<br>`;
     }
     if (s3 < 5.5) {
-      advice += `💡 <strong>Gợi ý CLO3 (${s3.toFixed(1)}/10):</strong> Các câu phân loại điểm 8–10 (chứa tham số $m$, bài toán mô hình) còn sai sót. Sau khi làm chắc chắn CLO1 & CLO2, hãy tập trung giải các bài toán nâng cao này.`;
+      advice += `${px('bulb', 14)} <strong>Gợi ý CLO3 (${s3.toFixed(1)}/10):</strong> Các câu phân loại điểm 8–10 (chứa tham số $m$, bài toán mô hình) còn sai sót. Sau khi làm chắc chắn CLO1 & CLO2, hãy tập trung giải các bài toán nâng cao này.`;
     }
     if (!advice) {
-      advice = `🎉 <strong>Tuyệt vời!</strong> Bạn đạt mức tốt đến xuất sắc ở cả 3 chuẩn CLO của môn ${sub.name}. Hãy tiếp tục duy trì phong độ này trong kỳ thi chính thức!`;
+      advice = `${px('party', 14)} <strong>Tuyệt vời!</strong> Bạn đạt mức tốt đến xuất sắc ở cả 3 chuẩn CLO của môn ${sub.name}. Hãy tiếp tục duy trì phong độ này trong kỳ thi chính thức!`;
     }
 
     el.cloAssessmentContainer.innerHTML = `
       <div class="clo-assessment-header">
         <div class="clo-assessment-title">
-          <span>📊</span> Đánh Giá Mức Độ Đạt Chuẩn Đầu Ra Học Phần (CLO)
+          <span>${px('chart', 16)}</span> Đánh Giá Mức Độ Đạt Chuẩn Đầu Ra Học Phần (CLO)
         </div>
         <div>
           <span class="clo-status-badge ${isHpPassed ? 'clo-status-pass' : 'clo-status-fail'}">
-            ${isHpPassed ? '✓ ĐẠT CHUẨN ĐẦU RA HỌC PHẦN' : '✗ CHƯA ĐẠT (CẦN ÔN TẬP LẠI)'} • CLO_HP = ${cloHP}/10
+            ${isHpPassed ? `${px('check', 13)} ĐẠT CHUẨN ĐẦU RA HỌC PHẦN` : `${px('cross', 13)} CHƯA ĐẠT (CẦN ÔN TẬP LẠI)`} • CLO_HP = ${cloHP}/10
           </span>
         </div>
       </div>
@@ -1545,7 +1550,7 @@
 
       <div class="rubric-advisor-note">
         <div style="font-weight:700; color:var(--warn-text); margin-bottom:4px;">
-          👨‍🏫 Nhận xét & Tư vấn chiến thuật ôn thi (CVHT PTIT):
+          ${px('teacher', 16)} Nhận xét & Tư vấn chiến thuật ôn thi (CVHT PTIT):
         </div>
         <div>${advice}</div>
       </div>
@@ -1593,10 +1598,10 @@
 
         if (opt.key === q.correct) {
           optClass = 'correct';
-          badgeIcon = '✓';
+          badgeIcon = px('check', 13);
         } else if (opt.key === userAns && !isCorrect) {
           optClass = 'incorrect';
-          badgeIcon = '✗';
+          badgeIcon = px('cross', 13);
         }
 
         return `
@@ -1628,7 +1633,7 @@
 
         <div class="solution-box visible">
           <div class="sol-title">
-            <span>💡 Lời giải chi tiết & Phương pháp giải</span>
+            <span>${px('bulb', 15)} Lời giải chi tiết & Phương pháp giải</span>
             <span class="badge-ans">Đáp án đúng: ${q.correct}</span>
           </div>
           <div class="sol-text">
@@ -1651,7 +1656,7 @@
     const sub = SUBJECTS[state.activeSubject] || SUBJECTS.dai_so;
     const introBadge = document.getElementById('tpIntroBadge');
     const introTitle = document.getElementById('tpIntroTitle');
-    if (introBadge) introBadge.textContent = `🎯 ÔN TẬP CHUYÊN SÂU • MÔN ${sub.name.toUpperCase()} (${sub.code})`;
+    if (introBadge) introBadge.innerHTML = `${px('target', 13)} ÔN TẬP CHUYÊN SÂU • MÔN ${escapeHtml(sub.name.toUpperCase())} (${sub.code})`;
     if (introTitle) introTitle.textContent = `Luyện Tập Theo Dạng Bài • ${sub.name} PTIT`;
 
     renderTpChapterSelector();
@@ -1752,7 +1757,7 @@
       const typeTitle = firstQ ? (firstQ.typeName || `Dạng bài ${subId}`) : `Dạng bài ${subId}`;
       el.tpQuestionsBanner.innerHTML = `
         <div style="font-weight:700; font-size:1.1rem; color:var(--text-main); margin-bottom:4px;">
-          🎯 ${escapeHtml(typeTitle)}
+          ${px('target', 16)} ${escapeHtml(typeTitle)}
         </div>
         <div style="font-size:0.86rem; color:var(--text-muted);">
           Tổng số ${questions.length} câu hỏi luyện tập trực tiếp • Chấm điểm tức thì & Xem lời giải chi tiết
@@ -1783,10 +1788,10 @@
         if (isAnswered) {
           if (opt.key === q.correct) {
             optClass = 'correct';
-            badgeIcon = '✓';
+            badgeIcon = px('check', 13);
           } else if (opt.key === savedAns && !isCorrect) {
             optClass = 'incorrect';
-            badgeIcon = '✗';
+            badgeIcon = px('cross', 13);
           }
         }
 
@@ -1819,7 +1824,7 @@
 
         <div class="solution-box ${isAnswered ? 'visible' : ''}" id="sol_tp_${q.id}">
           <div class="sol-title">
-            <span>💡 Lời giải chi tiết & Phương pháp giải</span>
+            <span>${px('bulb', 15)} Lời giải chi tiết & Phương pháp giải</span>
             <span class="badge-ans">Đáp án đúng: ${q.correct}</span>
           </div>
           <div class="sol-text">
@@ -1954,10 +1959,10 @@
         if (isAnswered) {
           if (opt.key === q.correct) {
             optClass = 'correct';
-            badgeIcon = '✓';
+            badgeIcon = px('check', 13);
           } else if (opt.key === userAns && !isCorrect) {
             optClass = 'incorrect';
-            badgeIcon = '✗';
+            badgeIcon = px('cross', 13);
           }
         }
 
@@ -1977,7 +1982,7 @@
             ${getDifficultyBadgeHtml(q.difficulty)}
           </div>
           <button class="btn btn-star ${isBookmarked ? 'active' : ''}" id="btnBookmarkQ" title="Đánh dấu câu hỏi này">
-            ${isBookmarked ? '⭐ Đã lưu' : '☆ Lưu câu hỏi'}
+            ${isBookmarked ? `${px('star-full', 14)} Đã lưu` : `${px('star-empty', 14)} Lưu câu hỏi`}
           </button>
         </div>
 
@@ -1992,7 +1997,7 @@
 
         <div class="solution-box ${isAnswered ? 'visible' : ''}">
           <div class="sol-title">
-            <span>💡 Lời giải chi tiết & Phương pháp giải</span>
+            <span>${px('bulb', 15)} Lời giải chi tiết & Phương pháp giải</span>
             <span class="badge-ans">Đáp án đúng: ${q.correct}</span>
           </div>
           <div class="sol-text">
@@ -2064,10 +2069,10 @@
           if (isAnswered) {
             if (opt.key === q.correct) {
               optClass = 'correct';
-              badgeIcon = '✓';
+              badgeIcon = px('check', 13);
             } else if (opt.key === userAns && !isCorrect) {
               optClass = 'incorrect';
-              badgeIcon = '✗';
+              badgeIcon = px('cross', 13);
             }
           }
 
@@ -2100,7 +2105,7 @@
 
           <div class="solution-box ${isAnswered ? 'visible' : ''}">
             <div class="sol-title">
-              <span>💡 Lời giải chi tiết & Phương pháp giải</span>
+              <span>${px('bulb', 15)} Lời giải chi tiết & Phương pháp giải</span>
               <span class="badge-ans">Đáp án đúng: ${q.correct}</span>
             </div>
             <div class="sol-text">
@@ -2173,7 +2178,7 @@
     if (mistakes.length === 0) {
       container.innerHTML = `
         <div style="text-align:center; padding: 48px 20px; color:var(--text-muted); background:var(--bg-subtle); border-radius:var(--radius-lg);">
-          <div style="font-size:2.5rem; margin-bottom:12px;">🎉</div>
+          <div style="margin-bottom:12px;">${px('party', 38)}</div>
           <div style="font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:6px;">Chưa có câu sai nào trong môn ${sub.name}!</div>
           <div>Bạn đã làm đúng tất cả các câu đã thử sức. Hãy tiếp tục làm bài thi thử để kiểm tra toàn diện!</div>
         </div>
@@ -2219,7 +2224,7 @@
 
         <div class="solution-box visible">
           <div class="sol-title">
-            <span>💡 Lời giải chi tiết</span>
+            <span>${px('bulb', 15)} Lời giải chi tiết</span>
             <span class="badge-ans">Đáp án đúng: ${q.correct}</span>
           </div>
           <div class="sol-text">
@@ -2393,7 +2398,7 @@
         };
 
         saveCustomQuestions([newQ]);
-        document.getElementById('manualSaveStatus').textContent = `✓ Đã thêm câu #${newId} thành công!`;
+        document.getElementById('manualSaveStatus').innerHTML = `${px('check', 14)} Đã thêm câu #${newId} thành công!`;
         setTimeout(() => { document.getElementById('manualSaveStatus').textContent = ''; }, 3000);
 
         // Clear fields
@@ -2502,7 +2507,7 @@
           saveCustomQuestions(questionsToAdd);
           if (statusEl) {
             statusEl.style.color = 'var(--success-solid)';
-            statusEl.textContent = `✓ Đã nạp thành công ${added} câu hỏi vào ngân hàng!`;
+            statusEl.innerHTML = `${px('check', 14)} Đã nạp thành công ${added} câu hỏi vào ngân hàng!`;
           }
           showToast(`Đã nạp ${added} câu hỏi vào ngân hàng thành công!`);
           textarea.value = '';
@@ -2562,7 +2567,7 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
         saveCustomQuestions(parsed);
         if (statusEl) {
           statusEl.style.color = 'var(--success-solid)';
-          statusEl.textContent = `✓ Đã tự động phân tích và nạp ${parsed.length} câu hỏi thành công!`;
+          statusEl.innerHTML = `${px('check', 14)} Đã tự động phân tích và nạp ${parsed.length} câu hỏi thành công!`;
         }
         showToast(`Đã nhận dạng thành công ${parsed.length} câu hỏi!`);
         textarea.value = '';
@@ -2652,7 +2657,7 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
 
       html += `
         <tr>
-          <td><strong>${s.icon} ${escapeHtml(s.name)}</strong></td>
+          <td><strong>${px(s.icon, 15)} ${escapeHtml(s.name)}</strong></td>
           <td><code>${s.code}</code></td>
           <td>${s.chapters.length} chương</td>
           <td><strong style="color:var(--primary);">${qs.length}</strong></td>
@@ -2788,7 +2793,7 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
   }
 
   // --- Utility Helpers ---
-  function showToast(message) {
+  function showToast(message, iconName = 'check') {
     let toast = document.querySelector('.toast-notification');
     if (!toast) {
       toast = document.createElement('div');
@@ -2797,6 +2802,9 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
         position: fixed;
         bottom: 18px;
         left: 50%;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         background: var(--text-main);
         color: var(--bg-card);
         padding: 10px 18px;
@@ -2814,7 +2822,9 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
       document.body.appendChild(toast);
     }
 
-    toast.textContent = message;
+    toast.innerHTML = iconName
+      ? `${px(iconName, 14)} <span>${escapeHtml(message)}</span>`
+      : escapeHtml(message);
     setTimeout(() => {
       toast.style.opacity = '1';
       toast.style.transform = 'translate(-50%, 0)';
@@ -3003,9 +3013,9 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
 
   el.btnToggleViewMode.addEventListener('click', () => {
     state.practice.viewMode = state.practice.viewMode === 'focus' ? 'list' : 'focus';
-    el.btnToggleViewMode.textContent = state.practice.viewMode === 'focus' 
-      ? 'Chuyển xem dạng danh sách 📜' 
-      : 'Chuyển xem từng câu 🎯';
+    el.btnToggleViewMode.innerHTML = state.practice.viewMode === 'focus'
+      ? `${px('scroll', 14)} Chuyển xem dạng danh sách`
+      : `${px('target', 14)} Chuyển xem từng câu`;
     renderPracticeView();
   });
 
@@ -3017,7 +3027,7 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
   initMatrixUI();
   const initSub = SUBJECTS[state.activeSubject] || SUBJECTS.dai_so;
   if (el.startExamBadge) {
-    el.startExamBadge.textContent = `${initSub.icon} ${initSub.fullName} • Chuẩn CLO PTIT`;
+    el.startExamBadge.innerHTML = `${px(initSub.icon, 13)} ${escapeHtml(initSub.fullName)} • Chuẩn CLO PTIT`;
   }
   if (el.startExamTitle) {
     el.startExamTitle.textContent = `Thi Thử ${initSub.name} PTIT`;
