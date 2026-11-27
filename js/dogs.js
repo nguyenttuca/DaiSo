@@ -222,11 +222,13 @@
 
     const CUTE_WORDS = [
       'gâu! ♥',
-      'mipo ơi~',
       '*vẫy đuôi*',
-      'tú nè! ♥',
       '*boop!* 💖',
-      'chơi cùng tú nhé!'
+      'cậu ơiii học thoi :3',
+      'nhớ ngủ sớm nha',
+      'tớ yêu thầy Dũng nhất',
+      'thằng Hải nó sút vật',
+      'nay hà nội cute không cậu :3'
     ];
 
     function showBubble(bubbleEl, timerOwner, text, durationMs = 1700) {
