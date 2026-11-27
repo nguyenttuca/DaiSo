@@ -447,6 +447,7 @@
   const el = {
     themeToggle: document.getElementById('themeToggle'),
     brandTotalBadge: document.getElementById('brandTotalBadge'),
+    subjectSwitcherContainer: document.querySelector('.subject-switcher-container'),
     subjectChipsGrid: document.getElementById('subjectChipsGrid'),
     subjectCloInfoBox: document.getElementById('subjectCloInfoBox'),
 
@@ -487,6 +488,7 @@
     quizActiveScreen: document.getElementById('quizActiveScreen'),
     quizTimer: document.getElementById('quizTimer'),
     quizProgressText: document.getElementById('quizProgressText'),
+    quizProgressBarFill: document.getElementById('quizProgressBarFill'),
     quizNavGrid: document.getElementById('quizNavGrid'),
     quizQuestionContainer: document.getElementById('quizQuestionContainer'),
     btnQuizPrev: document.getElementById('btnQuizPrev'),
@@ -530,6 +532,11 @@
     state.theme = theme;
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme_mode', theme);
+    if (el.themeToggle) {
+      el.themeToggle.innerHTML = theme === 'dark'
+        ? `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>`
+        : `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>`;
+    }
   }
 
   // --- Tab Management ---
@@ -553,25 +560,34 @@
 
     if (tab === 'quiz') {
       if (!state.quiz.started) {
+        if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'block';
         el.quizStartScreen.style.display = 'block';
         el.quizActiveScreen.style.display = 'none';
         updateMatrixSummary();
       } else {
+        if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'none';
         el.quizStartScreen.style.display = 'none';
         el.quizActiveScreen.style.display = 'block';
         renderQuizNav();
         renderQuizQuestion();
       }
     } else if (tab === 'review') {
+      if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'none';
       renderReviewView();
     } else if (tab === 'typePractice') {
+      if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'block';
       renderTypePracticeView();
     } else if (tab === 'practice') {
+      if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'block';
       renderPracticeView();
     } else if (tab === 'mistakes') {
+      if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'block';
       renderMistakesView();
     } else if (tab === 'bankManager') {
+      if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'block';
       renderBankManagerView();
+    } else if (tab === 'solo') {
+      if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'block';
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -770,6 +786,19 @@
       const durVal = (countRadio.dataset && countRadio.dataset.duration) || '25';
       reqDur = parseInt(durVal, 10) || 25;
     }
+
+    // Update active class on size pill cards & quick-select chapter pills
+    document.querySelectorAll('.size-pill-card').forEach(card => {
+      const r = card.querySelector('input[type="radio"]');
+      card.classList.toggle('active', !!(r && r.checked));
+    });
+    const btnAll = document.getElementById('btnSelectAllChapters');
+    const btnHalf = document.getElementById('btnSelectHalfChapters');
+    const btnClear = document.getElementById('btnClearChapters');
+    const halfCount = Math.ceil(sub.chapters.length / 2);
+    if (btnAll) btnAll.classList.toggle('active', selectedChapters.length === sub.chapters.length);
+    if (btnClear) btnClear.classList.toggle('active', selectedChapters.length === 0);
+    if (btnHalf) btnHalf.classList.toggle('active', selectedChapters.length === halfCount && selectedChapters.every(c => c <= halfCount));
 
     // Source selection
     const sourceRadio = document.querySelector('input[name="quizSourceOption"]:checked');
@@ -1128,6 +1157,7 @@
     state.quiz.timeSpent = 0;
 
     // Switch view
+    if (el.subjectSwitcherContainer) el.subjectSwitcherContainer.style.display = 'none';
     el.quizStartScreen.style.display = 'none';
     el.quizActiveScreen.style.display = 'block';
 
@@ -1216,6 +1246,10 @@
     if (el.quizProgressText) {
       el.quizProgressText.textContent = `Đã làm ${answeredCount}/${total} câu`;
     }
+    if (el.quizProgressBarFill) {
+      const pct = total > 0 ? Math.round((answeredCount / total) * 100) : 0;
+      el.quizProgressBarFill.style.width = `${pct}%`;
+    }
 
     if (el.btnQuizFlag) {
       const currentQ = questions[state.quiz.currentIndex];
@@ -1229,7 +1263,7 @@
       if (state.quiz.currentIndex === total - 1) {
         el.btnQuizNext.textContent = 'Hoàn thành đề thi ✓';
       } else {
-        el.btnQuizNext.innerHTML = 'Câu sau → <span class="kbd-hint">→</span>';
+        el.btnQuizNext.innerHTML = 'Câu sau <span class="kbd-hint">→</span>';
       }
     }
   }
@@ -2761,18 +2795,20 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
       toast.className = 'toast-notification';
       toast.style.cssText = `
         position: fixed;
-        bottom: 24px;
-        right: 24px;
+        bottom: 18px;
+        left: 50%;
         background: var(--text-main);
         color: var(--bg-card);
-        padding: 12px 20px;
-        border-radius: var(--radius-md);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-        font-size: 0.9rem;
+        padding: 10px 18px;
+        border-radius: var(--radius-full);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+        font-size: 0.86rem;
         font-weight: 600;
         z-index: 9999;
+        pointer-events: none;
+        white-space: nowrap;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        transform: translateY(20px);
+        transform: translate(-50%, 16px);
         opacity: 0;
       `;
       document.body.appendChild(toast);
@@ -2781,12 +2817,12 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
     toast.textContent = message;
     setTimeout(() => {
       toast.style.opacity = '1';
-      toast.style.transform = 'translateY(0)';
+      toast.style.transform = 'translate(-50%, 0)';
     }, 10);
 
     setTimeout(() => {
       toast.style.opacity = '0';
-      toast.style.transform = 'translateY(10px)';
+      toast.style.transform = 'translate(-50%, 10px)';
       setTimeout(() => toast.remove(), 300);
     }, 3200);
   }
@@ -2979,6 +3015,14 @@ Lời giải: Áp dụng công thức $(uv)' = u'v + uv'$, ta có $f'(x) = \\ln(
   el.quizActiveScreen.style.display = 'none';
 
   initMatrixUI();
+  const initSub = SUBJECTS[state.activeSubject] || SUBJECTS.dai_so;
+  if (el.startExamBadge) {
+    el.startExamBadge.textContent = `${initSub.icon} ${initSub.fullName} • Chuẩn CLO PTIT`;
+  }
+  if (el.startExamTitle) {
+    el.startExamTitle.textContent = `Thi Thử ${initSub.name} PTIT`;
+  }
+  renderMath(el.quizStartScreen);
   initBankManager();
 
   console.log(`PTIT Math Exam Prep App initialized with ${state.allQuestions.length} questions across 4 subjects.`);
