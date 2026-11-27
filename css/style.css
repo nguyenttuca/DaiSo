@@ -3409,14 +3409,14 @@ body {
   filter: drop-shadow(0 1px 2px rgba(244, 63, 94, 0.45));
 }
 
-#pixelWhiteDogCursor.is-playing .mipo-sprite-wrap {
+#pixelWhiteDogCursor.is-playing .pixel-dog-svg {
   animation: dogHappyBounce 0.35s ease infinite alternate;
 }
 
 .dog-emote-bubble.mipo-bubble {
-  top: -38px;
+  top: -46px;
   bottom: auto;
-  left: 34px;
+  left: 42px;
 }
 
 /* Tu (Black Puppy on Screen - Exact Same 44x44px!) */
@@ -3434,7 +3434,16 @@ body {
 }
 
 #pixelBlackDogCompanion.is-confessing .dog-emote-bubble {
-  left: 4px;
+  left: 0;
+  transform: translateX(-58%) translateY(4px) scale(0.85);
+}
+
+#pixelBlackDogCompanion.is-confessing .dog-emote-bubble.show {
+  transform: translateX(-58%) translateY(0) scale(1);
+}
+
+#pixelBlackDogCompanion.is-confessing .dog-emote-bubble::after {
+  left: 72%;
 }
 
 .tu-sprite-wrap {
@@ -3641,12 +3650,12 @@ body {
   bottom: 0;
 }
 
-#pixelBlackDogCompanion.is-studying .tu-sprite-wrap,
-#pixelWhiteDogCursor.is-studying .mipo-sprite-wrap {
+#pixelBlackDogCompanion.is-studying .pixel-dog-svg,
+#pixelWhiteDogCursor.is-studying .pixel-dog-svg {
   animation: dogStudyBob 1.7s ease-in-out infinite;
 }
 
-#pixelWhiteDogCursor.is-studying .mipo-sprite-wrap {
+#pixelWhiteDogCursor.is-studying .pixel-dog-svg {
   animation-delay: 0.45s;
 }
 
