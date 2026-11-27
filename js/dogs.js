@@ -484,20 +484,20 @@
 
     function getDeskTargets() {
       const r = deskEl.getBoundingClientRect();
-      // Account for responsive scale on smaller screens cleanly
-      const scaleX = r.width / 192 || 1;
-      const scaleY = r.height / 128 || 1;
+      const w = r.width || 126;
+      const h = r.height || 84;
+      const scaleX = w / 126;
       const gY = floorY();
-      // Desk oak top surface sits at SVG y=39 (~78px in 128px box); paws sit at ~40px from dog top
-      const seatY = r.top + (80 * scaleY) - 41;
+      // Desk oak top surface sits at SVG y=39 (~52px in 84px mini desk); 28px puppy paws rest at +26.5px from dog top
+      const seatY = r.top + h * (40 / 64) - 27;
       return {
         rect: r,
-        tuSeatX: r.left + 28 * scaleX,
+        tuSeatX: r.left + 21 * scaleX,
         tuSeatY: seatY,
-        mipoSeatX: r.left + 104 * scaleX,
+        mipoSeatX: r.left + 76 * scaleX,
         mipoSeatY: seatY,
-        walkStageTuX: r.left + 30 * scaleX,
-        walkStageMipoX: r.left + 90 * scaleX,
+        walkStageTuX: r.left + 14 * scaleX,
+        walkStageMipoX: r.left + 64 * scaleX,
         walkFloorY: gY
       };
     }
@@ -591,11 +591,11 @@
       if (line.who === 'tu') {
         tu.hopPhase = 0.7;
         showBubble(tuBubble, tu, line.text, 2200);
-        spawnHeartParticle(targets.tuSeatX + 22, targets.tuSeatY - 8, 'sparkle');
+        spawnHeartParticle(targets.tuSeatX + 14, targets.tuSeatY - 6, 'sparkle');
       } else {
         study.mipoHopPhase = 0.7;
         showBubble(mipoBubble, mipo, line.text, 2200);
-        spawnHeartParticle(targets.mipoSeatX + 22, targets.mipoSeatY - 8, 'heart');
+        spawnHeartParticle(targets.mipoSeatX + 14, targets.mipoSeatY - 6, 'heart');
       }
     }
 
@@ -941,6 +941,11 @@
           updateFrameSprites(tuEl, 'bdog', false, true, false, true, true);
           updateFrameSprites(mipoEl, 'wdog', false, true, false, true, true);
 
+          if (study.climbProgress >= 0.65 && !tuEl.classList.contains('is-studying')) {
+            tuEl.classList.add('is-studying');
+            mipoEl.classList.add('is-studying');
+          }
+
           if (study.climbProgress >= 1) {
             study.phase = 'studying';
             study.phaseStartedAt = now;
@@ -948,8 +953,8 @@
             tuEl.classList.add('is-studying');
             mipoEl.classList.add('is-studying');
             showBubble(tuBubble, tu, 'ngồi học thôi mipo!', 1900);
-            spawnHeartParticle(targets.tuSeatX + 22, targets.tuSeatY - 8, 'sparkle');
-            spawnHeartParticle(targets.mipoSeatX + 22, targets.mipoSeatY - 8, 'heart');
+            spawnHeartParticle(targets.tuSeatX + 14, targets.tuSeatY - 6, 'sparkle');
+            spawnHeartParticle(targets.mipoSeatX + 14, targets.mipoSeatY - 6, 'heart');
           }
         } else if (study.phase === 'studying') {
           // Stay seated pixel-perfectly on the study desk top even on resize

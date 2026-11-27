@@ -173,12 +173,46 @@ body {
 }
 
 .brand {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 241, 242, 0.92) 0%, rgba(252, 231, 243, 0.88) 52%, rgba(238, 242, 255, 0.92) 100%);
+  border: 1.5px solid rgba(244, 63, 94, 0.28);
+  box-shadow: 0 2px 8px -2px rgba(236, 72, 153, 0.16);
+  overflow: hidden;
+}
+
+.brand::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.72;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 20' shape-rendering='crispEdges'%3E%3C!-- Left pink pixel sakura --%3E%3Crect x='3' y='3' width='2' height='2' fill='%23fb7185'/%3E%3Crect x='1' y='5' width='2' height='2' fill='%23fda4af'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%23fda4af'/%3E%3Crect x='3' y='7' width='2' height='2' fill='%23fb7185'/%3E%3Crect x='3' y='5' width='2' height='2' fill='%23fde047'/%3E%3Crect x='1' y='9' width='2' height='1' fill='%234ade80'/%3E%3Crect x='6' y='8' width='2' height='2' fill='%2322c55e'/%3E%3C!-- Bottom-left mini daisy --%3E%3Crect x='11' y='13' width='1' height='1' fill='%23f472b6'/%3E%3Crect x='10' y='14' width='1' height='1' fill='%23f9a8d4'/%3E%3Crect x='12' y='14' width='1' height='1' fill='%23f9a8d4'/%3E%3Crect x='11' y='15' width='1' height='1' fill='%23f472b6'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%23fef08a'/%3E%3C!-- Subtle center-top & bottom leaves/petals behind text --%3E%3Crect x='22' y='2' width='1' height='1' fill='%23fbcfe8'/%3E%3Crect x='27' y='16' width='2' height='1' fill='%2386efac'/%3E%3Crect x='32' y='3' width='1' height='1' fill='%23c4b5fd'/%3E%3Crect x='33' y='2' width='1' height='1' fill='%23ddd6fe'/%3E%3Crect x='33' y='3' width='1' height='1' fill='%23fde047'/%3E%3Crect x='34' y='3' width='1' height='1' fill='%23c4b5fd'/%3E%3Crect x='33' y='4' width='1' height='1' fill='%23ddd6fe'/%3E%3Crect x='42' y='15' width='1' height='1' fill='%23fda4af'/%3E%3Crect x='46' y='2' width='1' height='1' fill='%2393c5fd'/%3E%3C!-- Right pixel blossom cluster --%3E%3Crect x='55' y='4' width='2' height='2' fill='%23f472b6'/%3E%3Crect x='53' y='6' width='2' height='2' fill='%23fbcfe8'/%3E%3Crect x='57' y='6' width='2' height='2' fill='%23fbcfe8'/%3E%3Crect x='55' y='8' width='2' height='2' fill='%23f472b6'/%3E%3Crect x='55' y='6' width='2' height='2' fill='%23facc15'/%3E%3Crect x='53' y='10' width='2' height='1' fill='%234ade80'/%3E%3Crect x='58' y='9' width='2' height='2' fill='%2322c55e'/%3E%3C!-- Mini corner violet flower --%3E%3Crect x='59' y='13' width='1' height='1' fill='%23a78bfa'/%3E%3Crect x='58' y='14' width='1' height='1' fill='%23c4b5fd'/%3E%3Crect x='60' y='14' width='1' height='1' fill='%23c4b5fd'/%3E%3Crect x='59' y='15' width='1' height='1' fill='%23a78bfa'/%3E%3Crect x='59' y='14' width='1' height='1' fill='%23fef08a'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .brand {
+  background: linear-gradient(135deg, rgba(49, 46, 129, 0.45) 0%, rgba(131, 24, 67, 0.34) 55%, rgba(30, 41, 59, 0.72) 100%);
+  border-color: rgba(244, 114, 182, 0.34);
+  box-shadow: 0 2px 10px -2px rgba(244, 114, 182, 0.22);
+}
+
+[data-theme="dark"] .brand::before {
+  opacity: 0.62;
 }
 
 .brand-title {
+  position: relative;
+  z-index: 1;
   font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -187,7 +221,12 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.72));
   user-select: none;
+}
+
+[data-theme="dark"] .brand-title {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.75));
 }
 
 /* Nav Tabs */
@@ -3581,8 +3620,24 @@ body {
   left: 22px;
 }
 
+#pixelBlackDogCompanion.is-studying,
+#pixelWhiteDogCursor.is-studying {
+  width: 28px;
+  height: 28px;
+}
+
+#pixelBlackDogCompanion.is-studying .tu-sprite-wrap,
+#pixelWhiteDogCursor.is-studying .mipo-sprite-wrap,
+#pixelBlackDogCompanion.is-studying .pixel-dog-svg,
+#pixelWhiteDogCursor.is-studying .pixel-dog-svg {
+  width: 28px;
+  height: 28px;
+}
+
 #pixelBlackDogCompanion.is-studying .dog-ground-shadow {
-  opacity: 0.28;
+  width: 20px;
+  left: 4px;
+  opacity: 0.24;
   bottom: 0;
 }
 
@@ -3596,7 +3651,10 @@ body {
 }
 
 #pixelBlackDogCompanion.is-studying .dog-emote-bubble {
+  bottom: 34px;
   left: -4px;
+  padding: 1px 7px;
+  font-size: 0.66rem;
   transform: translateX(0) translateY(4px) scale(0.85);
 }
 
@@ -3605,28 +3663,30 @@ body {
 }
 
 #pixelBlackDogCompanion.is-studying .dog-emote-bubble::after {
-  left: 26px;
+  left: 18px;
 }
 
 #pixelWhiteDogCursor.is-studying .dog-emote-bubble.mipo-bubble {
   top: auto;
-  bottom: 50px;
-  left: 22px;
+  bottom: 34px;
+  left: 14px;
+  padding: 1px 7px;
+  font-size: 0.66rem;
 }
 
 #ptitLibraryDesk {
   position: fixed;
-  left: 6px;
-  bottom: 8px;
-  width: 168px;
-  height: 112px;
+  left: 8px;
+  bottom: 6px;
+  width: 126px;
+  height: 84px;
   z-index: 99985;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(28px) scale(0.95);
+  transform: translateY(20px) scale(0.95);
   transform-origin: bottom left;
   transition: opacity 0.35s ease, transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 8px 16px rgba(15, 23, 42, 0.22));
+  filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.2));
   user-select: none;
 }
 
@@ -3639,27 +3699,27 @@ body {
 
 .ptit-lib-sign {
   position: absolute;
-  top: -5px;
+  top: -6px;
   left: 50%;
   transform: translateX(-50%);
   background: #dc2626;
   color: #fef08a;
-  border: 2px solid #78350f;
-  box-shadow: 0 2px 0 rgba(15, 23, 42, 0.25);
-  border-radius: 4px;
-  padding: 1px 7px;
+  border: 1.5px solid #78350f;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.25);
+  border-radius: 3px;
+  padding: 0 5px;
   font-family: var(--font-mono);
-  font-size: 0.58rem;
+  font-size: 0.48rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
   z-index: 3;
 }
 
 .ptit-lib-svg {
   display: block;
-  width: 168px;
-  height: 112px;
+  width: 126px;
+  height: 84px;
   image-rendering: pixelated;
 }
 
@@ -3685,6 +3745,13 @@ body {
 
 [data-theme="dark"] #ptitLibraryDesk .lib-lamp-glow {
   opacity: 0.45;
+}
+
+@media (max-width: 1320px) {
+  #quizActiveScreen,
+  #soloBattleScreen {
+    padding-bottom: 96px;
+  }
 }
 
 @media (max-width: 640px) {
